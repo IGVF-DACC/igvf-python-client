@@ -1,0 +1,15 @@
+
+```python
+from {{{packageName}}} import {{{classname}}}
+
+api = {{{classname}}}()
+
+{{#asyncio}}await {{/asyncio}}api.{{{operationId}}}(**parameters) {{#summary}}# {{{.}}} {{/summary}}
+```
+
+{{#vendorExtensions.x-py-postponed-example-imports.size}}
+{{#vendorExtensions.x-py-postponed-example-imports}}
+{{{.}}}
+{{/vendorExtensions.x-py-postponed-example-imports}}
+{{classname}}.update_forward_refs()
+{{/vendorExtensions.x-py-postponed-example-imports.size}}
