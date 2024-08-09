@@ -41,9 +41,6 @@ class TestSoftwareVersionResults(unittest.TestCase):
                         publications = [
                             ''
                             ], 
-                        publication_identifiers = [
-                            'PMCID:PMC80728'
-                            ], 
                         lab = '', 
                         award = '', 
                         status = 'archived', 

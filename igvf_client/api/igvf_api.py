@@ -41272,7 +41272,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
-        include_fiel: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -41301,8 +41301,8 @@ class IgvfApi:
         :type sort: List[str]
         :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
-        :param include_fiel: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fiel: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -41333,7 +41333,7 @@ class IgvfApi:
             limit=limit,
             sort=sort,
             field_filters=field_filters,
-            include_fiel=include_fiel,
+            include_fields=include_fields,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -41366,7 +41366,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
-        include_fiel: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -41395,8 +41395,8 @@ class IgvfApi:
         :type sort: List[str]
         :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
-        :param include_fiel: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fiel: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -41427,7 +41427,7 @@ class IgvfApi:
             limit=limit,
             sort=sort,
             field_filters=field_filters,
-            include_fiel=include_fiel,
+            include_fields=include_fields,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -41460,7 +41460,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
-        include_fiel: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -41489,8 +41489,8 @@ class IgvfApi:
         :type sort: List[str]
         :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
-        :param include_fiel: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fiel: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -41521,7 +41521,7 @@ class IgvfApi:
             limit=limit,
             sort=sort,
             field_filters=field_filters,
-            include_fiel=include_fiel,
+            include_fields=include_fields,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -41549,7 +41549,7 @@ class IgvfApi:
         limit,
         sort,
         field_filters,
-        include_fiel,
+        include_fields,
         frame,
         _request_auth,
         _content_type,
@@ -41594,9 +41594,9 @@ class IgvfApi:
             for k, v in field_filters.items():
                 _query_params.append((k, v))
             
-        if include_fiel is not None:
+        if include_fields is not None:
             
-            _query_params.append(('field', include_fiel))
+            _query_params.append(('field', include_fields))
             
         if frame is not None:
             

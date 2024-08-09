@@ -36,9 +36,6 @@ class TestPublication(unittest.TestCase):
         if include_optional:
             return Publication(
                 release_timestamp = '',
-                publication_identifiers = [
-                    'PMCID:PMC80728'
-                    ],
                 status = 'archived',
                 lab = '',
                 award = '',
@@ -69,6 +66,9 @@ class TestPublication(unittest.TestCase):
                 page = '',
                 volume = '',
                 journal = '',
+                publication_identifiers = [
+                    'PMCID:PMC80728'
+                    ],
                 published_by = [
                     'community'
                     ],

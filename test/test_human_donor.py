@@ -40,9 +40,6 @@ class TestHumanDonor(unittest.TestCase):
                 publications = [
                     ''
                     ],
-                publication_identifiers = [
-                    'PMCID:PMC80728'
-                    ],
                 url = '',
                 documents = [
                     ''

@@ -54,9 +54,6 @@ class TestPredictionSet(unittest.TestCase):
                 publications = [
                     ''
                     ],
-                publication_identifiers = [
-                    'PMCID:PMC80728'
-                    ],
                 documents = [
                     ''
                     ],
@@ -93,6 +90,9 @@ class TestPredictionSet(unittest.TestCase):
                     ],
                 file_set_type = 'pathogenicity',
                 scope = 'genes',
+                assessed_genes = [
+                    ''
+                    ],
                 id = '',
                 type = [
                     ''

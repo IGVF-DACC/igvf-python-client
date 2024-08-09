@@ -42,9 +42,6 @@ class TestAnalysisSet(unittest.TestCase):
                 publications = [
                     ''
                     ],
-                publication_identifiers = [
-                    'PMCID:PMC80728'
-                    ],
                 documents = [
                     ''
                     ],

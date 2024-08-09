@@ -116,9 +116,6 @@ class TestSearchResultItem(unittest.TestCase):
                 publications = [
                     ''
                     ],
-                publication_identifiers = [
-                    'PMCID:PMC80728'
-                    ],
                 documents = [
                     ''
                     ],
@@ -220,6 +217,9 @@ class TestSearchResultItem(unittest.TestCase):
                 sequencing_run = 1,
                 illumina_read_type = 'R1',
                 index = '',
+                base_modifications = [
+                    '4mC'
+                    ],
                 seqspecs = [
                     ''
                     ],
@@ -249,7 +249,6 @@ class TestSearchResultItem(unittest.TestCase):
                 assay_titles = [
                     ''
                     ],
-                library_construction_platform = '',
                 measurement_sets = [
                     ''
                     ],
@@ -439,6 +438,9 @@ class TestSearchResultItem(unittest.TestCase):
                 page = '',
                 volume = '',
                 journal = '',
+                publication_identifiers = [
+                    'PMCID:PMC80728'
+                    ],
                 published_by = [
                     'community'
                     ],

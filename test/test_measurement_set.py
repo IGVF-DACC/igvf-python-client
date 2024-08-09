@@ -39,9 +39,6 @@ class TestMeasurementSet(unittest.TestCase):
                 publications = [
                     ''
                     ],
-                publication_identifiers = [
-                    'PMCID:PMC80728'
-                    ],
                 documents = [
                     ''
                     ],
@@ -77,7 +74,6 @@ class TestMeasurementSet(unittest.TestCase):
                     ],
                 file_set_type = 'experimental data',
                 assay_term = '',
-                library_construction_platform = '',
                 protocols = [
                     'https://www.protocols.io/k'
                     ],

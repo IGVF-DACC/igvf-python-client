@@ -39,9 +39,6 @@ class TestAuxiliarySet(unittest.TestCase):
                 publications = [
                     ''
                     ],
-                publication_identifiers = [
-                    'PMCID:PMC80728'
-                    ],
                 documents = [
                     ''
                     ],
@@ -77,7 +74,6 @@ class TestAuxiliarySet(unittest.TestCase):
                     ''
                     ],
                 file_set_type = 'cell hashing',
-                library_construction_platform = '',
                 id = '',
                 type = [
                     ''

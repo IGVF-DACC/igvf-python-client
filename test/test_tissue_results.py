@@ -41,9 +41,6 @@ class TestTissueResults(unittest.TestCase):
                         publications = [
                             ''
                             ], 
-                        publication_identifiers = [
-                            'PMCID:PMC80728'
-                            ], 
                         taxa = 'Homo sapiens', 
                         url = '', 
                         sources = [

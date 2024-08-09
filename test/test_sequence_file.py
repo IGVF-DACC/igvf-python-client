@@ -92,6 +92,9 @@ class TestSequenceFile(unittest.TestCase):
                 sequencing_run = 1,
                 illumina_read_type = 'R1',
                 index = '',
+                base_modifications = [
+                    '4mC'
+                    ],
                 id = '',
                 type = [
                     ''
