@@ -1344,16 +1344,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -1921,16 +1912,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -2849,16 +2831,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -3387,16 +3360,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -3894,16 +3858,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -4192,20 +4147,7 @@
               "items": {
                 "title": "Quantity Units",
                 "description": "The unit of measurement for a quantity associated with the phenotypic feature.",
-                "type": "string",
-                "enum": [
-                  "meter",
-                  "micromole",
-                  "nanogram",
-                  "microgram",
-                  "milligram",
-                  "gram",
-                  "kilogram",
-                  "milli-International Unit per milliliter",
-                  "picogram per milliliter",
-                  "nanogram per milliliter",
-                  "milligram per deciliter"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by phenotypic_features.quantity_units",
@@ -4707,16 +4649,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -4992,20 +4925,7 @@
               "items": {
                 "title": "Quantity Units",
                 "description": "The unit of measurement for a quantity associated with the phenotypic feature.",
-                "type": "string",
-                "enum": [
-                  "meter",
-                  "micromole",
-                  "nanogram",
-                  "microgram",
-                  "milligram",
-                  "gram",
-                  "kilogram",
-                  "milli-International Unit per milliliter",
-                  "picogram per milliliter",
-                  "nanogram per milliliter",
-                  "milligram per deciliter"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by phenotypic_features.quantity_units",
@@ -5613,16 +5533,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -6524,16 +6435,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -7366,16 +7268,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -8227,16 +8120,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -9034,16 +8918,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -9939,16 +9814,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -10799,16 +10665,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -11765,16 +11622,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -12865,16 +12713,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -13831,16 +13670,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -14713,16 +14543,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -14980,12 +14801,7 @@
               "items": {
                 "title": "Sex",
                 "description": "Sex of the donor.",
-                "type": "string",
-                "enum": [
-                  "male",
-                  "female",
-                  "unspecified"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by donors.sex",
@@ -15001,15 +14817,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by donors.status",
@@ -15111,101 +14919,6 @@
                 "description": "The type of content in the file.",
                 "type": "string",
                 "title": "Content Type",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "genome reference",
-                      "elements reference",
-                      "exclusion list",
-                      "inclusion list",
-                      "spike-ins"
-                    ]
-                  },
-                  {
-                    "enum": [
-                      "biological_context",
-                      "coding_variants",
-                      "complexes",
-                      "complexes_complexes",
-                      "complexes_proteins",
-                      "complexes_terms",
-                      "diseases_genes",
-                      "documentation (readme)",
-                      "drugs",
-                      "elements_genes",
-                      "genes",
-                      "genes_genes",
-                      "genes_pathways",
-                      "genes_terms",
-                      "genes_transcripts",
-                      "go_terms_proteins",
-                      "guide RNA sequences",
-                      "motifs",
-                      "motifs_proteins",
-                      "ontology_terms",
-                      "ontology_terms_ontology_terms",
-                      "pathways",
-                      "pathways_pathways",
-                      "proteins",
-                      "proteins_proteins",
-                      "regulatory_regions",
-                      "regulatory_regions_genes",
-                      "regulatory_regions_genes_biosamples",
-                      "regulatory_regions_genes_biosamples_donors",
-                      "regulatory_regions_genes_biosamples_treatments_chebi",
-                      "regulatory_regions_genes_biosamples_treatments_proteins",
-                      "regulatory_regions_regulatory_regions",
-                      "sequence barcodes",
-                      "studies",
-                      "studies_variants",
-                      "studies_variants_phenotypes",
-                      "transcriptome reference",
-                      "transcripts",
-                      "transcripts_proteins",
-                      "variants",
-                      "variants_coding_variants",
-                      "variants_diseases",
-                      "variants_diseases_genes",
-                      "variants_drugs",
-                      "variants_drugs_genes",
-                      "variants_genes",
-                      "variants_genes_terms",
-                      "variants_phenotypes",
-                      "variants_phenotypes_studies",
-                      "variants_proteins",
-                      "variants_proteins_terms",
-                      "variants_proteins_biosamples",
-                      "variants_proteins_phenotypes",
-                      "variants_regulatory_regions",
-                      "variants_variants",
-                      "vector sequences"
-                    ],
-                    "permission": "admin_only"
-                  }
-                ],
-                "enum": [
-                  "barcode to element mapping",
-                  "barcode to sample mapping",
-                  "differential gene expression quantifications",
-                  "differential transcript expression quantifications",
-                  "editing templates",
-                  "element quantifications",
-                  "elements reference",
-                  "fold change over control",
-                  "guide quantifications",
-                  "guide RNA sequences",
-                  "MPRA sequence designs",
-                  "peaks",
-                  "prime editing guide RNA sequences",
-                  "protein to protein interaction score",
-                  "tissue positions",
-                  "sample sort parameters",
-                  "sequence barcodes",
-                  "SNP effect matrix",
-                  "variants",
-                  "variant effects",
-                  "variant to element mapping"
-                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -15334,13 +15047,7 @@
               "items": {
                 "title": "Upload Status",
                 "description": "The upload/validation status of the file.",
-                "type": "string",
-                "enum": [
-                  "pending",
-                  "file not found",
-                  "invalidated",
-                  "validated"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by files.upload_status",
@@ -15423,13 +15130,6 @@
               "items": {
                 "type": "string",
                 "title": "File Set Type",
-                "enum": [
-                  "pathogenicity",
-                  "functional effect",
-                  "protein stability",
-                  "activity level",
-                  "binding effect"
-                ],
                 "comment": "File set type describes the feature being predicted by the results in the prediction set.",
                 "description": "The category that best describes this prediction set."
               }
@@ -15760,13 +15460,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by samples.sample_terms.status",
@@ -15814,15 +15508,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by samples.status",
@@ -15883,11 +15569,7 @@
               "items": {
                 "description": "The species of the organism.",
                 "type": "string",
-                "title": "Taxa",
-                "enum": [
-                  "Homo sapiens",
-                  "Mus musculus"
-                ]
+                "title": "Taxa"
               }
             },
             "description": "Filter by samples.taxa",
@@ -16258,16 +15940,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -16525,12 +16198,7 @@
               "items": {
                 "title": "Sex",
                 "description": "Sex of the donor.",
-                "type": "string",
-                "enum": [
-                  "male",
-                  "female",
-                  "unspecified"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by donors.sex",
@@ -16546,15 +16214,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by donors.status",
@@ -16661,101 +16321,6 @@
                 "description": "The type of content in the file.",
                 "type": "string",
                 "title": "Content Type",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "genome reference",
-                      "elements reference",
-                      "exclusion list",
-                      "inclusion list",
-                      "spike-ins"
-                    ]
-                  },
-                  {
-                    "enum": [
-                      "biological_context",
-                      "coding_variants",
-                      "complexes",
-                      "complexes_complexes",
-                      "complexes_proteins",
-                      "complexes_terms",
-                      "diseases_genes",
-                      "documentation (readme)",
-                      "drugs",
-                      "elements_genes",
-                      "genes",
-                      "genes_genes",
-                      "genes_pathways",
-                      "genes_terms",
-                      "genes_transcripts",
-                      "go_terms_proteins",
-                      "guide RNA sequences",
-                      "motifs",
-                      "motifs_proteins",
-                      "ontology_terms",
-                      "ontology_terms_ontology_terms",
-                      "pathways",
-                      "pathways_pathways",
-                      "proteins",
-                      "proteins_proteins",
-                      "regulatory_regions",
-                      "regulatory_regions_genes",
-                      "regulatory_regions_genes_biosamples",
-                      "regulatory_regions_genes_biosamples_donors",
-                      "regulatory_regions_genes_biosamples_treatments_chebi",
-                      "regulatory_regions_genes_biosamples_treatments_proteins",
-                      "regulatory_regions_regulatory_regions",
-                      "sequence barcodes",
-                      "studies",
-                      "studies_variants",
-                      "studies_variants_phenotypes",
-                      "transcriptome reference",
-                      "transcripts",
-                      "transcripts_proteins",
-                      "variants",
-                      "variants_coding_variants",
-                      "variants_diseases",
-                      "variants_diseases_genes",
-                      "variants_drugs",
-                      "variants_drugs_genes",
-                      "variants_genes",
-                      "variants_genes_terms",
-                      "variants_phenotypes",
-                      "variants_phenotypes_studies",
-                      "variants_proteins",
-                      "variants_proteins_terms",
-                      "variants_proteins_biosamples",
-                      "variants_proteins_phenotypes",
-                      "variants_regulatory_regions",
-                      "variants_variants",
-                      "vector sequences"
-                    ],
-                    "permission": "admin_only"
-                  }
-                ],
-                "enum": [
-                  "barcode to element mapping",
-                  "barcode to sample mapping",
-                  "differential gene expression quantifications",
-                  "differential transcript expression quantifications",
-                  "editing templates",
-                  "element quantifications",
-                  "elements reference",
-                  "fold change over control",
-                  "guide quantifications",
-                  "guide RNA sequences",
-                  "MPRA sequence designs",
-                  "peaks",
-                  "prime editing guide RNA sequences",
-                  "protein to protein interaction score",
-                  "tissue positions",
-                  "sample sort parameters",
-                  "sequence barcodes",
-                  "SNP effect matrix",
-                  "variants",
-                  "variant effects",
-                  "variant to element mapping"
-                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -16884,13 +16449,7 @@
               "items": {
                 "title": "Upload Status",
                 "description": "The upload/validation status of the file.",
-                "type": "string",
-                "enum": [
-                  "pending",
-                  "file not found",
-                  "invalidated",
-                  "validated"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by files.upload_status",
@@ -17001,52 +16560,7 @@
               "items": {
                 "title": "Preferred Assay Title",
                 "description": "The custom lab preferred label for the experiment performed in this measurement set.",
-                "type": "string",
-                "enum": [
-                  "10x multiome",
-                  "10x multiome with MULTI-seq",
-                  "AAV-MPRA",
-                  "ATAC-seq",
-                  "CERES-seq",
-                  "Cell painting",
-                  "CRISPR FlowFISH",
-                  "DOGMA-seq",
-                  "Histone ChIP-seq",
-                  "Hi-C",
-                  "HT-recruit",
-                  "lentiMPRA",
-                  "MERFISH",
-                  "MIAA",
-                  "mN2H",
-                  "MPRA",
-                  "MPRA (scQer)",
-                  "MULTI-seq",
-                  "Parse SPLiT-seq",
-                  "Perturb-seq",
-                  "RNA-seq",
-                  "SGE",
-                  "scATAC-seq",
-                  "scNT-seq",
-                  "scNT-seq2",
-                  "scRNA-seq",
-                  "semi-qY2H",
-                  "SHARE-seq",
-                  "smFISH",
-                  "snATAC-seq",
-                  "snmC-Seq2",
-                  "snMCT-seq",
-                  "snM3C-seq",
-                  "snRNA-seq",
-                  "Spatial transcriptomics",
-                  "SUPERSTARR",
-                  "TAP-seq",
-                  "TF ChIP-seq",
-                  "VAMP-seq",
-                  "Variant FlowFISH",
-                  "Variant painting",
-                  "Y2H",
-                  "yN2H"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by measurement_sets.preferred_assay_title",
@@ -17347,13 +16861,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by samples.sample_terms.status",
@@ -17401,15 +16909,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by samples.status",
@@ -17470,11 +16970,7 @@
               "items": {
                 "description": "The species of the organism.",
                 "type": "string",
-                "title": "Taxa",
-                "enum": [
-                  "Homo sapiens",
-                  "Mus musculus"
-                ]
+                "title": "Taxa"
               }
             },
             "description": "Filter by samples.taxa",
@@ -17961,15 +17457,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by applied_to_samples.status",
@@ -18093,16 +17581,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -18334,101 +17813,6 @@
                 "description": "The type of content in the file.",
                 "type": "string",
                 "title": "Content Type",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "genome reference",
-                      "elements reference",
-                      "exclusion list",
-                      "inclusion list",
-                      "spike-ins"
-                    ]
-                  },
-                  {
-                    "enum": [
-                      "biological_context",
-                      "coding_variants",
-                      "complexes",
-                      "complexes_complexes",
-                      "complexes_proteins",
-                      "complexes_terms",
-                      "diseases_genes",
-                      "documentation (readme)",
-                      "drugs",
-                      "elements_genes",
-                      "genes",
-                      "genes_genes",
-                      "genes_pathways",
-                      "genes_terms",
-                      "genes_transcripts",
-                      "go_terms_proteins",
-                      "guide RNA sequences",
-                      "motifs",
-                      "motifs_proteins",
-                      "ontology_terms",
-                      "ontology_terms_ontology_terms",
-                      "pathways",
-                      "pathways_pathways",
-                      "proteins",
-                      "proteins_proteins",
-                      "regulatory_regions",
-                      "regulatory_regions_genes",
-                      "regulatory_regions_genes_biosamples",
-                      "regulatory_regions_genes_biosamples_donors",
-                      "regulatory_regions_genes_biosamples_treatments_chebi",
-                      "regulatory_regions_genes_biosamples_treatments_proteins",
-                      "regulatory_regions_regulatory_regions",
-                      "sequence barcodes",
-                      "studies",
-                      "studies_variants",
-                      "studies_variants_phenotypes",
-                      "transcriptome reference",
-                      "transcripts",
-                      "transcripts_proteins",
-                      "variants",
-                      "variants_coding_variants",
-                      "variants_diseases",
-                      "variants_diseases_genes",
-                      "variants_drugs",
-                      "variants_drugs_genes",
-                      "variants_genes",
-                      "variants_genes_terms",
-                      "variants_phenotypes",
-                      "variants_phenotypes_studies",
-                      "variants_proteins",
-                      "variants_proteins_terms",
-                      "variants_proteins_biosamples",
-                      "variants_proteins_phenotypes",
-                      "variants_regulatory_regions",
-                      "variants_variants",
-                      "vector sequences"
-                    ],
-                    "permission": "admin_only"
-                  }
-                ],
-                "enum": [
-                  "barcode to element mapping",
-                  "barcode to sample mapping",
-                  "differential gene expression quantifications",
-                  "differential transcript expression quantifications",
-                  "editing templates",
-                  "element quantifications",
-                  "elements reference",
-                  "fold change over control",
-                  "guide quantifications",
-                  "guide RNA sequences",
-                  "MPRA sequence designs",
-                  "peaks",
-                  "prime editing guide RNA sequences",
-                  "protein to protein interaction score",
-                  "tissue positions",
-                  "sample sort parameters",
-                  "sequence barcodes",
-                  "SNP effect matrix",
-                  "variants",
-                  "variant effects",
-                  "variant to element mapping"
-                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -18460,13 +17844,7 @@
               "items": {
                 "title": "Upload Status",
                 "description": "The upload/validation status of the file.",
-                "type": "string",
-                "enum": [
-                  "pending",
-                  "file not found",
-                  "invalidated",
-                  "validated"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by files.upload_status",
@@ -19501,16 +18879,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -19768,12 +19137,7 @@
               "items": {
                 "title": "Sex",
                 "description": "Sex of the donor.",
-                "type": "string",
-                "enum": [
-                  "male",
-                  "female",
-                  "unspecified"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by donors.sex",
@@ -19789,15 +19153,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by donors.status",
@@ -19906,101 +19262,6 @@
                 "description": "The type of content in the file.",
                 "type": "string",
                 "title": "Content Type",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "genome reference",
-                      "elements reference",
-                      "exclusion list",
-                      "inclusion list",
-                      "spike-ins"
-                    ]
-                  },
-                  {
-                    "enum": [
-                      "biological_context",
-                      "coding_variants",
-                      "complexes",
-                      "complexes_complexes",
-                      "complexes_proteins",
-                      "complexes_terms",
-                      "diseases_genes",
-                      "documentation (readme)",
-                      "drugs",
-                      "elements_genes",
-                      "genes",
-                      "genes_genes",
-                      "genes_pathways",
-                      "genes_terms",
-                      "genes_transcripts",
-                      "go_terms_proteins",
-                      "guide RNA sequences",
-                      "motifs",
-                      "motifs_proteins",
-                      "ontology_terms",
-                      "ontology_terms_ontology_terms",
-                      "pathways",
-                      "pathways_pathways",
-                      "proteins",
-                      "proteins_proteins",
-                      "regulatory_regions",
-                      "regulatory_regions_genes",
-                      "regulatory_regions_genes_biosamples",
-                      "regulatory_regions_genes_biosamples_donors",
-                      "regulatory_regions_genes_biosamples_treatments_chebi",
-                      "regulatory_regions_genes_biosamples_treatments_proteins",
-                      "regulatory_regions_regulatory_regions",
-                      "sequence barcodes",
-                      "studies",
-                      "studies_variants",
-                      "studies_variants_phenotypes",
-                      "transcriptome reference",
-                      "transcripts",
-                      "transcripts_proteins",
-                      "variants",
-                      "variants_coding_variants",
-                      "variants_diseases",
-                      "variants_diseases_genes",
-                      "variants_drugs",
-                      "variants_drugs_genes",
-                      "variants_genes",
-                      "variants_genes_terms",
-                      "variants_phenotypes",
-                      "variants_phenotypes_studies",
-                      "variants_proteins",
-                      "variants_proteins_terms",
-                      "variants_proteins_biosamples",
-                      "variants_proteins_phenotypes",
-                      "variants_regulatory_regions",
-                      "variants_variants",
-                      "vector sequences"
-                    ],
-                    "permission": "admin_only"
-                  }
-                ],
-                "enum": [
-                  "barcode to element mapping",
-                  "barcode to sample mapping",
-                  "differential gene expression quantifications",
-                  "differential transcript expression quantifications",
-                  "editing templates",
-                  "element quantifications",
-                  "elements reference",
-                  "fold change over control",
-                  "guide quantifications",
-                  "guide RNA sequences",
-                  "MPRA sequence designs",
-                  "peaks",
-                  "prime editing guide RNA sequences",
-                  "protein to protein interaction score",
-                  "tissue positions",
-                  "sample sort parameters",
-                  "sequence barcodes",
-                  "SNP effect matrix",
-                  "variants",
-                  "variant effects",
-                  "variant to element mapping"
-                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -20129,13 +19390,7 @@
               "items": {
                 "title": "Upload Status",
                 "description": "The upload/validation status of the file.",
-                "type": "string",
-                "enum": [
-                  "pending",
-                  "file not found",
-                  "invalidated",
-                  "validated"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by files.upload_status",
@@ -20480,13 +19735,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by samples.sample_terms.status",
@@ -20534,15 +19783,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by samples.status",
@@ -20603,11 +19844,7 @@
               "items": {
                 "description": "The species of the organism.",
                 "type": "string",
-                "title": "Taxa",
-                "enum": [
-                  "Homo sapiens",
-                  "Mus musculus"
-                ]
+                "title": "Taxa"
               }
             },
             "description": "Filter by samples.taxa",
@@ -21098,16 +20335,7 @@
                 "title": "File Set Type",
                 "description": "The category that best describes this auxiliary file set.",
                 "comment": "File set type describes the content of the construct library set. Cell hashing is the antibody barcoding of cell batches. Cell sorting is data collected during fluorescence activated cell sorting. Circularized RNA barcode detection is reporter detection (such as for MPRA) through sequencing circularized barcoded RNA molecules. gRNA sequencing is sequencing data of guide RNAs. Oligo-conjugated lipids are lipid- and cholesterol-modified oligonucleotides. Quantification DNA barcode sequencing is sequencing data of barcodes, such as for MPRA. Variant sequencing is sequencing data of genomic DNA sequences with variants introduced.",
-                "type": "string",
-                "enum": [
-                  "cell hashing",
-                  "cell sorting",
-                  "circularized RNA barcode detection",
-                  "gRNA sequencing",
-                  "oligo-conjugated lipids",
-                  "quantification DNA barcode sequencing",
-                  "variant sequencing"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by auxiliary_sets.file_set_type",
@@ -21136,16 +20364,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -21455,12 +20674,7 @@
               "items": {
                 "title": "Sex",
                 "description": "Sex of the donor.",
-                "type": "string",
-                "enum": [
-                  "male",
-                  "female",
-                  "unspecified"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by donors.sex",
@@ -21476,15 +20690,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by donors.status",
@@ -21601,101 +20807,6 @@
                 "description": "The type of content in the file.",
                 "type": "string",
                 "title": "Content Type",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "genome reference",
-                      "elements reference",
-                      "exclusion list",
-                      "inclusion list",
-                      "spike-ins"
-                    ]
-                  },
-                  {
-                    "enum": [
-                      "biological_context",
-                      "coding_variants",
-                      "complexes",
-                      "complexes_complexes",
-                      "complexes_proteins",
-                      "complexes_terms",
-                      "diseases_genes",
-                      "documentation (readme)",
-                      "drugs",
-                      "elements_genes",
-                      "genes",
-                      "genes_genes",
-                      "genes_pathways",
-                      "genes_terms",
-                      "genes_transcripts",
-                      "go_terms_proteins",
-                      "guide RNA sequences",
-                      "motifs",
-                      "motifs_proteins",
-                      "ontology_terms",
-                      "ontology_terms_ontology_terms",
-                      "pathways",
-                      "pathways_pathways",
-                      "proteins",
-                      "proteins_proteins",
-                      "regulatory_regions",
-                      "regulatory_regions_genes",
-                      "regulatory_regions_genes_biosamples",
-                      "regulatory_regions_genes_biosamples_donors",
-                      "regulatory_regions_genes_biosamples_treatments_chebi",
-                      "regulatory_regions_genes_biosamples_treatments_proteins",
-                      "regulatory_regions_regulatory_regions",
-                      "sequence barcodes",
-                      "studies",
-                      "studies_variants",
-                      "studies_variants_phenotypes",
-                      "transcriptome reference",
-                      "transcripts",
-                      "transcripts_proteins",
-                      "variants",
-                      "variants_coding_variants",
-                      "variants_diseases",
-                      "variants_diseases_genes",
-                      "variants_drugs",
-                      "variants_drugs_genes",
-                      "variants_genes",
-                      "variants_genes_terms",
-                      "variants_phenotypes",
-                      "variants_phenotypes_studies",
-                      "variants_proteins",
-                      "variants_proteins_terms",
-                      "variants_proteins_biosamples",
-                      "variants_proteins_phenotypes",
-                      "variants_regulatory_regions",
-                      "variants_variants",
-                      "vector sequences"
-                    ],
-                    "permission": "admin_only"
-                  }
-                ],
-                "enum": [
-                  "barcode to element mapping",
-                  "barcode to sample mapping",
-                  "differential gene expression quantifications",
-                  "differential transcript expression quantifications",
-                  "editing templates",
-                  "element quantifications",
-                  "elements reference",
-                  "fold change over control",
-                  "guide quantifications",
-                  "guide RNA sequences",
-                  "MPRA sequence designs",
-                  "peaks",
-                  "prime editing guide RNA sequences",
-                  "protein to protein interaction score",
-                  "tissue positions",
-                  "sample sort parameters",
-                  "sequence barcodes",
-                  "SNP effect matrix",
-                  "variants",
-                  "variant effects",
-                  "variant to element mapping"
-                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -21839,13 +20950,7 @@
               "items": {
                 "title": "Upload Status",
                 "description": "The upload/validation status of the file.",
-                "type": "string",
-                "enum": [
-                  "pending",
-                  "file not found",
-                  "invalidated",
-                  "validated"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by files.upload_status",
@@ -22174,17 +21279,6 @@
               "items": {
                 "title": "Purpose",
                 "type": "string",
-                "enum": [
-                  "activation",
-                  "agonist",
-                  "antagonist",
-                  "control",
-                  "differentiation",
-                  "de-differentiation",
-                  "perturbation",
-                  "selection",
-                  "stimulation"
-                ],
                 "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
               }
             },
@@ -22214,11 +21308,6 @@
               "items": {
                 "title": "Treatment Type",
                 "type": "string",
-                "enum": [
-                  "chemical",
-                  "protein",
-                  "environmental"
-                ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
               }
             },
@@ -22294,13 +21383,7 @@
                 "title": "File Set Type",
                 "description": "The type or category of this construct library set.",
                 "comment": "File set type describes the content of the construct library set. Guide libraries are guides used for CRISPR screens. Reporter libraries are reporters used for MPRA. Expression vector libraries are used when the content of the vector (a specific allele, gene, exon, or tile of a protein) will be expressed in the target cells. Editing template libraries are used for SGE.",
-                "type": "string",
-                "enum": [
-                  "guide library",
-                  "reporter library",
-                  "expression vector library",
-                  "editing template library"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by samples.construct_library_sets.file_set_type",
@@ -22484,13 +21567,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by samples.sample_terms.status",
@@ -22538,15 +21615,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by samples.status",
@@ -22607,11 +21676,7 @@
               "items": {
                 "description": "The species of the organism.",
                 "type": "string",
-                "title": "Taxa",
-                "enum": [
-                  "Homo sapiens",
-                  "Mus musculus"
-                ]
+                "title": "Taxa"
               }
             },
             "description": "Filter by samples.taxa",
@@ -22640,17 +21705,6 @@
               "items": {
                 "title": "Purpose",
                 "type": "string",
-                "enum": [
-                  "activation",
-                  "agonist",
-                  "antagonist",
-                  "control",
-                  "differentiation",
-                  "de-differentiation",
-                  "perturbation",
-                  "selection",
-                  "stimulation"
-                ],
                 "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
               }
             },
@@ -22680,11 +21734,6 @@
               "items": {
                 "title": "Treatment Type",
                 "type": "string",
-                "enum": [
-                  "chemical",
-                  "protein",
-                  "environmental"
-                ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
               }
             },
@@ -23158,16 +22207,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -23425,12 +22465,7 @@
               "items": {
                 "title": "Sex",
                 "description": "Sex of the donor.",
-                "type": "string",
-                "enum": [
-                  "male",
-                  "female",
-                  "unspecified"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by donors.sex",
@@ -23446,15 +22481,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by donors.status",
@@ -23559,101 +22586,6 @@
                 "description": "The type of content in the file.",
                 "type": "string",
                 "title": "Content Type",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "genome reference",
-                      "elements reference",
-                      "exclusion list",
-                      "inclusion list",
-                      "spike-ins"
-                    ]
-                  },
-                  {
-                    "enum": [
-                      "biological_context",
-                      "coding_variants",
-                      "complexes",
-                      "complexes_complexes",
-                      "complexes_proteins",
-                      "complexes_terms",
-                      "diseases_genes",
-                      "documentation (readme)",
-                      "drugs",
-                      "elements_genes",
-                      "genes",
-                      "genes_genes",
-                      "genes_pathways",
-                      "genes_terms",
-                      "genes_transcripts",
-                      "go_terms_proteins",
-                      "guide RNA sequences",
-                      "motifs",
-                      "motifs_proteins",
-                      "ontology_terms",
-                      "ontology_terms_ontology_terms",
-                      "pathways",
-                      "pathways_pathways",
-                      "proteins",
-                      "proteins_proteins",
-                      "regulatory_regions",
-                      "regulatory_regions_genes",
-                      "regulatory_regions_genes_biosamples",
-                      "regulatory_regions_genes_biosamples_donors",
-                      "regulatory_regions_genes_biosamples_treatments_chebi",
-                      "regulatory_regions_genes_biosamples_treatments_proteins",
-                      "regulatory_regions_regulatory_regions",
-                      "sequence barcodes",
-                      "studies",
-                      "studies_variants",
-                      "studies_variants_phenotypes",
-                      "transcriptome reference",
-                      "transcripts",
-                      "transcripts_proteins",
-                      "variants",
-                      "variants_coding_variants",
-                      "variants_diseases",
-                      "variants_diseases_genes",
-                      "variants_drugs",
-                      "variants_drugs_genes",
-                      "variants_genes",
-                      "variants_genes_terms",
-                      "variants_phenotypes",
-                      "variants_phenotypes_studies",
-                      "variants_proteins",
-                      "variants_proteins_terms",
-                      "variants_proteins_biosamples",
-                      "variants_proteins_phenotypes",
-                      "variants_regulatory_regions",
-                      "variants_variants",
-                      "vector sequences"
-                    ],
-                    "permission": "admin_only"
-                  }
-                ],
-                "enum": [
-                  "barcode to element mapping",
-                  "barcode to sample mapping",
-                  "differential gene expression quantifications",
-                  "differential transcript expression quantifications",
-                  "editing templates",
-                  "element quantifications",
-                  "elements reference",
-                  "fold change over control",
-                  "guide quantifications",
-                  "guide RNA sequences",
-                  "MPRA sequence designs",
-                  "peaks",
-                  "prime editing guide RNA sequences",
-                  "protein to protein interaction score",
-                  "tissue positions",
-                  "sample sort parameters",
-                  "sequence barcodes",
-                  "SNP effect matrix",
-                  "variants",
-                  "variant effects",
-                  "variant to element mapping"
-                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -23782,13 +22714,7 @@
               "items": {
                 "title": "Upload Status",
                 "description": "The upload/validation status of the file.",
-                "type": "string",
-                "enum": [
-                  "pending",
-                  "file not found",
-                  "invalidated",
-                  "validated"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by files.upload_status",
@@ -24256,13 +23182,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by samples.sample_terms.status",
@@ -24310,15 +23230,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by samples.status",
@@ -24379,11 +23291,7 @@
               "items": {
                 "description": "The species of the organism.",
                 "type": "string",
-                "title": "Taxa",
-                "enum": [
-                  "Homo sapiens",
-                  "Mus musculus"
-                ]
+                "title": "Taxa"
               }
             },
             "description": "Filter by samples.taxa",
@@ -24801,16 +23709,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -25068,12 +23967,7 @@
               "items": {
                 "title": "Sex",
                 "description": "Sex of the donor.",
-                "type": "string",
-                "enum": [
-                  "male",
-                  "female",
-                  "unspecified"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by donors.sex",
@@ -25089,15 +23983,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by donors.status",
@@ -25202,101 +24088,6 @@
                 "description": "The type of content in the file.",
                 "type": "string",
                 "title": "Content Type",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "genome reference",
-                      "elements reference",
-                      "exclusion list",
-                      "inclusion list",
-                      "spike-ins"
-                    ]
-                  },
-                  {
-                    "enum": [
-                      "biological_context",
-                      "coding_variants",
-                      "complexes",
-                      "complexes_complexes",
-                      "complexes_proteins",
-                      "complexes_terms",
-                      "diseases_genes",
-                      "documentation (readme)",
-                      "drugs",
-                      "elements_genes",
-                      "genes",
-                      "genes_genes",
-                      "genes_pathways",
-                      "genes_terms",
-                      "genes_transcripts",
-                      "go_terms_proteins",
-                      "guide RNA sequences",
-                      "motifs",
-                      "motifs_proteins",
-                      "ontology_terms",
-                      "ontology_terms_ontology_terms",
-                      "pathways",
-                      "pathways_pathways",
-                      "proteins",
-                      "proteins_proteins",
-                      "regulatory_regions",
-                      "regulatory_regions_genes",
-                      "regulatory_regions_genes_biosamples",
-                      "regulatory_regions_genes_biosamples_donors",
-                      "regulatory_regions_genes_biosamples_treatments_chebi",
-                      "regulatory_regions_genes_biosamples_treatments_proteins",
-                      "regulatory_regions_regulatory_regions",
-                      "sequence barcodes",
-                      "studies",
-                      "studies_variants",
-                      "studies_variants_phenotypes",
-                      "transcriptome reference",
-                      "transcripts",
-                      "transcripts_proteins",
-                      "variants",
-                      "variants_coding_variants",
-                      "variants_diseases",
-                      "variants_diseases_genes",
-                      "variants_drugs",
-                      "variants_drugs_genes",
-                      "variants_genes",
-                      "variants_genes_terms",
-                      "variants_phenotypes",
-                      "variants_phenotypes_studies",
-                      "variants_proteins",
-                      "variants_proteins_terms",
-                      "variants_proteins_biosamples",
-                      "variants_proteins_phenotypes",
-                      "variants_regulatory_regions",
-                      "variants_variants",
-                      "vector sequences"
-                    ],
-                    "permission": "admin_only"
-                  }
-                ],
-                "enum": [
-                  "barcode to element mapping",
-                  "barcode to sample mapping",
-                  "differential gene expression quantifications",
-                  "differential transcript expression quantifications",
-                  "editing templates",
-                  "element quantifications",
-                  "elements reference",
-                  "fold change over control",
-                  "guide quantifications",
-                  "guide RNA sequences",
-                  "MPRA sequence designs",
-                  "peaks",
-                  "prime editing guide RNA sequences",
-                  "protein to protein interaction score",
-                  "tissue positions",
-                  "sample sort parameters",
-                  "sequence barcodes",
-                  "SNP effect matrix",
-                  "variants",
-                  "variant effects",
-                  "variant to element mapping"
-                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -25425,13 +24216,7 @@
               "items": {
                 "title": "Upload Status",
                 "description": "The upload/validation status of the file.",
-                "type": "string",
-                "enum": [
-                  "pending",
-                  "file not found",
-                  "invalidated",
-                  "validated"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by files.upload_status",
@@ -25924,13 +24709,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by samples.sample_terms.status",
@@ -25978,15 +24757,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by samples.status",
@@ -26047,11 +24818,7 @@
               "items": {
                 "description": "The species of the organism.",
                 "type": "string",
-                "title": "Taxa",
-                "enum": [
-                  "Homo sapiens",
-                  "Mus musculus"
-                ]
+                "title": "Taxa"
               }
             },
             "description": "Filter by samples.taxa",
@@ -27504,16 +26271,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -28017,16 +26775,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by awards.component",
@@ -28516,16 +27265,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -29168,16 +27908,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -32755,16 +31486,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -33294,16 +32016,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -34024,16 +32737,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -34094,17 +32798,6 @@
               "items": {
                 "title": "Purpose",
                 "type": "string",
-                "enum": [
-                  "activation",
-                  "agonist",
-                  "antagonist",
-                  "control",
-                  "differentiation",
-                  "de-differentiation",
-                  "perturbation",
-                  "selection",
-                  "stimulation"
-                ],
                 "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
               }
             },
@@ -34120,13 +32813,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by cell_fate_change_treatments.status",
@@ -34155,11 +32842,6 @@
               "items": {
                 "title": "Treatment Type",
                 "type": "string",
-                "enum": [
-                  "chemical",
-                  "protein",
-                  "environmental"
-                ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
               }
             },
@@ -34519,15 +33201,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by file_sets.status",
@@ -34696,13 +33370,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by modifications.status",
@@ -35409,17 +34077,6 @@
               "items": {
                 "title": "Purpose",
                 "type": "string",
-                "enum": [
-                  "activation",
-                  "agonist",
-                  "antagonist",
-                  "control",
-                  "differentiation",
-                  "de-differentiation",
-                  "perturbation",
-                  "selection",
-                  "stimulation"
-                ],
                 "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
               }
             },
@@ -35435,13 +34092,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by treatments.status",
@@ -35470,11 +34121,6 @@
               "items": {
                 "title": "Treatment Type",
                 "type": "string",
-                "enum": [
-                  "chemical",
-                  "protein",
-                  "environmental"
-                ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
               }
             },
@@ -35791,16 +34437,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -36148,15 +34785,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by file_sets.status",
@@ -36243,13 +34872,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by modifications.status",
@@ -36468,15 +35091,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by multiplexed_samples.status",
@@ -36921,17 +35536,6 @@
               "items": {
                 "title": "Purpose",
                 "type": "string",
-                "enum": [
-                  "activation",
-                  "agonist",
-                  "antagonist",
-                  "control",
-                  "differentiation",
-                  "de-differentiation",
-                  "perturbation",
-                  "selection",
-                  "stimulation"
-                ],
                 "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
               }
             },
@@ -36947,13 +35551,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by treatments.status",
@@ -36982,11 +35580,6 @@
               "items": {
                 "title": "Treatment Type",
                 "type": "string",
-                "enum": [
-                  "chemical",
-                  "protein",
-                  "environmental"
-                ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
               }
             },
@@ -37312,16 +35905,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -37656,15 +36240,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by file_sets.status",
@@ -37812,13 +36388,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by modifications.status",
@@ -38458,17 +37028,6 @@
               "items": {
                 "title": "Purpose",
                 "type": "string",
-                "enum": [
-                  "activation",
-                  "agonist",
-                  "antagonist",
-                  "control",
-                  "differentiation",
-                  "de-differentiation",
-                  "perturbation",
-                  "selection",
-                  "stimulation"
-                ],
                 "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
               }
             },
@@ -38484,13 +37043,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by treatments.status",
@@ -38519,11 +37072,6 @@
               "items": {
                 "title": "Treatment Type",
                 "type": "string",
-                "enum": [
-                  "chemical",
-                  "protein",
-                  "environmental"
-                ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
               }
             },
@@ -38840,16 +37388,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -39088,15 +37627,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by file_sets.status",
@@ -39997,16 +38528,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -40356,15 +38878,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by file_sets.status",
@@ -40512,13 +39026,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by modifications.status",
@@ -41199,17 +39707,6 @@
               "items": {
                 "title": "Purpose",
                 "type": "string",
-                "enum": [
-                  "activation",
-                  "agonist",
-                  "antagonist",
-                  "control",
-                  "differentiation",
-                  "de-differentiation",
-                  "perturbation",
-                  "selection",
-                  "stimulation"
-                ],
                 "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
               }
             },
@@ -41225,13 +39722,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by treatments.status",
@@ -41260,11 +39751,6 @@
               "items": {
                 "title": "Treatment Type",
                 "type": "string",
-                "enum": [
-                  "chemical",
-                  "protein",
-                  "environmental"
-                ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
               }
             },
@@ -41620,16 +40106,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -41964,15 +40441,7 @@
                 "title": "Status",
                 "type": "string",
                 "description": "The status of the metadata object.",
-                "comment": "Do not submit.  This is set by admins along the process of metadata submission.",
-                "enum": [
-                  "in progress",
-                  "released",
-                  "deleted",
-                  "replaced",
-                  "revoked",
-                  "archived"
-                ]
+                "comment": "Do not submit.  This is set by admins along the process of metadata submission."
               }
             },
             "description": "Filter by file_sets.status",
@@ -42120,13 +40589,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by modifications.status",
@@ -42751,17 +41214,6 @@
               "items": {
                 "title": "Purpose",
                 "type": "string",
-                "enum": [
-                  "activation",
-                  "agonist",
-                  "antagonist",
-                  "control",
-                  "differentiation",
-                  "de-differentiation",
-                  "perturbation",
-                  "selection",
-                  "stimulation"
-                ],
                 "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
               }
             },
@@ -42777,13 +41229,7 @@
               "items": {
                 "title": "Status",
                 "type": "string",
-                "description": "The status of the metadata object.",
-                "enum": [
-                  "archived",
-                  "deleted",
-                  "in progress",
-                  "released"
-                ]
+                "description": "The status of the metadata object."
               }
             },
             "description": "Filter by treatments.status",
@@ -42812,11 +41258,6 @@
               "items": {
                 "title": "Treatment Type",
                 "type": "string",
-                "enum": [
-                  "chemical",
-                  "protein",
-                  "environmental"
-                ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
               }
             },
@@ -43101,16 +41542,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -43621,16 +42053,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -44576,16 +42999,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",
@@ -45803,16 +44217,7 @@
               "items": {
                 "title": "Project Component",
                 "description": "The project component the award is associated with.",
-                "type": "string",
-                "enum": [
-                  "affiliate",
-                  "data analysis",
-                  "data coordination",
-                  "functional characterization",
-                  "mapping",
-                  "networks",
-                  "predictive modeling"
-                ]
+                "type": "string"
               }
             },
             "description": "Filter by award.component",

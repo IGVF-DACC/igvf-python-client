@@ -30,7 +30,6 @@ from igvf_client.models.award_results import AwardResults
 from igvf_client.models.biomarker_results import BiomarkerResults
 from igvf_client.models.configuration_file_results import ConfigurationFileResults
 from igvf_client.models.construct_library_set_results import ConstructLibrarySetResults
-from igvf_client.models.content_type import ContentType
 from igvf_client.models.crispr_modification_results import CrisprModificationResults
 from igvf_client.models.curated_set_results import CuratedSetResults
 from igvf_client.models.degron_modification_results import DegronModificationResults
@@ -1857,7 +1856,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -1985,7 +1984,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -2239,7 +2238,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -2367,7 +2366,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -2621,7 +2620,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -2749,7 +2748,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -5708,7 +5707,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -5835,7 +5834,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -6090,7 +6089,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -6217,7 +6216,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -6472,7 +6471,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -6599,7 +6598,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -10158,7 +10157,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
@@ -10293,7 +10292,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_file_format: Filter by files.file_format
         :type files_file_format: List[str]
         :param files_upload_status: Filter by files.upload_status
@@ -10552,7 +10551,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
@@ -10687,7 +10686,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_file_format: Filter by files.file_format
         :type files_file_format: List[str]
         :param files_upload_status: Filter by files.upload_status
@@ -10946,7 +10945,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
@@ -11081,7 +11080,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_file_format: Filter by files.file_format
         :type files_file_format: List[str]
         :param files_upload_status: Filter by files.upload_status
@@ -12710,7 +12709,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -12837,7 +12836,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -13088,7 +13087,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -13215,7 +13214,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -13466,7 +13465,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -13593,7 +13592,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -25252,7 +25251,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -25420,7 +25419,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -25758,7 +25757,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -25926,7 +25925,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -26264,7 +26263,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -26432,7 +26431,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -28537,7 +28536,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -28670,7 +28669,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -28939,7 +28938,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -29072,7 +29071,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -29341,7 +29340,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -29474,7 +29473,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -35449,7 +35448,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -35590,7 +35589,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -35883,7 +35882,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -36024,7 +36023,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -36317,7 +36316,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -36458,7 +36457,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[ContentType]
+        :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -41273,7 +41272,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
-        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fiel: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -41302,8 +41301,8 @@ class IgvfApi:
         :type sort: List[str]
         :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
-        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fields: List[str]
+        :param include_fiel: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fiel: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -41334,7 +41333,7 @@ class IgvfApi:
             limit=limit,
             sort=sort,
             field_filters=field_filters,
-            include_fields=include_fields,
+            include_fiel=include_fiel,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -41367,7 +41366,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
-        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fiel: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -41396,8 +41395,8 @@ class IgvfApi:
         :type sort: List[str]
         :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
-        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fields: List[str]
+        :param include_fiel: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fiel: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -41428,7 +41427,7 @@ class IgvfApi:
             limit=limit,
             sort=sort,
             field_filters=field_filters,
-            include_fields=include_fields,
+            include_fiel=include_fiel,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -41461,7 +41460,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
-        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fiel: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -41490,8 +41489,8 @@ class IgvfApi:
         :type sort: List[str]
         :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
-        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fields: List[str]
+        :param include_fiel: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fiel: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -41522,7 +41521,7 @@ class IgvfApi:
             limit=limit,
             sort=sort,
             field_filters=field_filters,
-            include_fields=include_fields,
+            include_fiel=include_fiel,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -41550,7 +41549,7 @@ class IgvfApi:
         limit,
         sort,
         field_filters,
-        include_fields,
+        include_fiel,
         frame,
         _request_auth,
         _content_type,
@@ -41595,9 +41594,9 @@ class IgvfApi:
             for k, v in field_filters.items():
                 _query_params.append((k, v))
             
-        if include_fields is not None:
+        if include_fiel is not None:
             
-            _query_params.append(('field', include_fields))
+            _query_params.append(('field', include_fiel))
             
         if frame is not None:
             

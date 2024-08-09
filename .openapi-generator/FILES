@@ -27,7 +27,6 @@ docs/ConfigurationFile.md
 docs/ConfigurationFileResults.md
 docs/ConstructLibrarySet.md
 docs/ConstructLibrarySetResults.md
-docs/ContentType.md
 docs/CrisprModification.md
 docs/CrisprModificationResults.md
 docs/CuratedSet.md
@@ -163,7 +162,6 @@ igvf_client/models/configuration_file.py
 igvf_client/models/configuration_file_results.py
 igvf_client/models/construct_library_set.py
 igvf_client/models/construct_library_set_results.py
-igvf_client/models/content_type.py
 igvf_client/models/crispr_modification.py
 igvf_client/models/crispr_modification_results.py
 igvf_client/models/curated_set.py
@@ -273,5 +271,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_content_type.py
 tox.ini

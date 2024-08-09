@@ -55,7 +55,6 @@ from igvf_client.models.configuration_file import ConfigurationFile
 from igvf_client.models.configuration_file_results import ConfigurationFileResults
 from igvf_client.models.construct_library_set import ConstructLibrarySet
 from igvf_client.models.construct_library_set_results import ConstructLibrarySetResults
-from igvf_client.models.content_type import ContentType
 from igvf_client.models.crispr_modification import CrisprModification
 from igvf_client.models.crispr_modification_results import CrisprModificationResults
 from igvf_client.models.curated_set import CuratedSet
