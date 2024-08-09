@@ -29,7 +29,6 @@ class AuxiliarySet(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -51,7 +50,6 @@ class AuxiliarySet(BaseModel):
     samples: Optional[List[StrictStr]] = Field(default=None, description="The sample(s) associated with this file set.")
     donors: Optional[List[StrictStr]] = Field(default=None, description="The donors of the samples associated with this auxiliary set.")
     file_set_type: Optional[StrictStr] = Field(default=None, description="The category that best describes this auxiliary file set.")
-    library_construction_platform: Optional[StrictStr] = Field(default=None, description="The platform used to construct the library sequenced in this auxiliary set.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
@@ -60,7 +58,7 @@ class AuxiliarySet(BaseModel):
     submitted_files_timestamp: Optional[StrictStr] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets that use this file set as an input.")
     measurement_sets: Optional[List[StrictStr]] = Field(default=None, description="The measurement sets that link to this auxiliary set.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "library_construction_platform", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "measurement_sets"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "measurement_sets"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -196,7 +194,6 @@ class AuxiliarySet(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publications": obj.get("publications"),
-            "publication_identifiers": obj.get("publication_identifiers"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
@@ -218,7 +215,6 @@ class AuxiliarySet(BaseModel):
             "samples": obj.get("samples"),
             "donors": obj.get("donors"),
             "file_set_type": obj.get("file_set_type"),
-            "library_construction_platform": obj.get("library_construction_platform"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **sequencing_run** | **int** | An ordinal number indicating which sequencing run of the associated library that the file belongs to. | [optional] 
 **illumina_read_type** | **str** | The read type of the file. Relevant only for files produced using an Illumina sequencing platform. | [optional] 
 **index** | **str** | An Illumina index associated with the file. | [optional] 
+**base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the sequence file. | [optional] 

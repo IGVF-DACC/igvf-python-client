@@ -31,7 +31,6 @@ class HumanDonor(BaseModel):
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
@@ -60,7 +59,7 @@ class HumanDonor(BaseModel):
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the human donor.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publications", "publication_identifiers", "url", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "sex", "phenotypic_features", "virtual", "related_donors", "ethnicities", "human_donor_identifiers", "@id", "@type", "summary"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publications", "url", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "sex", "phenotypic_features", "virtual", "related_donors", "ethnicities", "human_donor_identifiers", "@id", "@type", "summary"]
 
     @field_validator('taxa')
     def taxa_validate_enum(cls, value):
@@ -232,7 +231,6 @@ class HumanDonor(BaseModel):
             "release_timestamp": obj.get("release_timestamp"),
             "taxa": obj.get("taxa"),
             "publications": obj.get("publications"),
-            "publication_identifiers": obj.get("publication_identifiers"),
             "url": obj.get("url"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),

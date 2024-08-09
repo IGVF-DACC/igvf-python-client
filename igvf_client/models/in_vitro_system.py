@@ -29,7 +29,6 @@ class InVitroSystem(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
     sources: Optional[List[StrictStr]] = Field(default=None, description="The originating lab(s) or vendor(s).")
@@ -102,7 +101,7 @@ class InVitroSystem(BaseModel):
     parts: Optional[List[StrictStr]] = Field(default=None, description="The parts into which this sample has been divided.")
     pooled_in: Optional[List[StrictStr]] = Field(default=None, description="The pooled samples in which this sample is included.")
     demultiplexed_to: Optional[List[StrictStr]] = Field(default=None, description="The parts into which this sample has been demultiplexed.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "taxa", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "lower_bound_age", "upper_bound_age", "age_units", "sample_terms", "disease_terms", "pooled_from", "part_of", "originated_from", "treatments", "donors", "biomarkers", "embryonic", "modifications", "cellular_sub_pool", "starting_amount", "starting_amount_units", "dbxrefs", "date_obtained", "sorted_from", "sorted_from_detail", "virtual", "construct_library_sets", "moi", "nucleic_acid_delivery", "time_post_library_delivery", "time_post_library_delivery_units", "protocols", "classifications", "time_post_change", "time_post_change_units", "cell_fate_change_treatments", "cell_fate_change_protocol", "demultiplexed_from", "passage_number", "targeted_sample_term", "growth_medium", "@id", "@type", "summary", "file_sets", "multiplexed_in", "sorted_fractions", "origin_of", "institutional_certificates", "sex", "age", "upper_bound_age_in_hours", "lower_bound_age_in_hours", "parts", "pooled_in", "demultiplexed_to"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "taxa", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "lower_bound_age", "upper_bound_age", "age_units", "sample_terms", "disease_terms", "pooled_from", "part_of", "originated_from", "treatments", "donors", "biomarkers", "embryonic", "modifications", "cellular_sub_pool", "starting_amount", "starting_amount_units", "dbxrefs", "date_obtained", "sorted_from", "sorted_from_detail", "virtual", "construct_library_sets", "moi", "nucleic_acid_delivery", "time_post_library_delivery", "time_post_library_delivery_units", "protocols", "classifications", "time_post_change", "time_post_change_units", "cell_fate_change_treatments", "cell_fate_change_protocol", "demultiplexed_from", "passage_number", "targeted_sample_term", "growth_medium", "@id", "@type", "summary", "file_sets", "multiplexed_in", "sorted_fractions", "origin_of", "institutional_certificates", "sex", "age", "upper_bound_age_in_hours", "lower_bound_age_in_hours", "parts", "pooled_in", "demultiplexed_to"]
 
     @field_validator('taxa')
     def taxa_validate_enum(cls, value):
@@ -359,7 +358,6 @@ class InVitroSystem(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publications": obj.get("publications"),
-            "publication_identifiers": obj.get("publication_identifiers"),
             "taxa": obj.get("taxa"),
             "url": obj.get("url"),
             "sources": obj.get("sources"),

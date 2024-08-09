@@ -48,7 +48,7 @@ class OpenReadingFrame(BaseModel):
     pct_coverage_orf: Optional[Union[Annotated[float, Field(le=100, strict=True, ge=0)], Annotated[int, Field(le=100, strict=True, ge=0)]]] = Field(default=None, description="The percentage of Ensembl protein covered by ORF.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["release_timestamp", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "lab", "award", "orf_id", "gene", "protein_id", "dbxrefs", "pct_identical_protein", "pct_coverage_protein", "pct_coverage_orf", "@id", "@type", "summary"]
 
     @field_validator('status')

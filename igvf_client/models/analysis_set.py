@@ -30,7 +30,6 @@ class AnalysisSet(BaseModel):
     input_file_sets: Optional[List[StrictStr]] = Field(default=None, description="The file set(s) required for this analysis.")
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -59,7 +58,7 @@ class AnalysisSet(BaseModel):
     submitted_files_timestamp: Optional[StrictStr] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets that use this file set as an input.")
     assay_titles: Optional[List[StrictStr]] = Field(default=None, description="Title(s) of assays that produced data analyzed in the analysis set.")
-    __properties: ClassVar[List[str]] = ["input_file_sets", "release_timestamp", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assay_titles"]
+    __properties: ClassVar[List[str]] = ["input_file_sets", "release_timestamp", "publications", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assay_titles"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -196,7 +195,6 @@ class AnalysisSet(BaseModel):
             "input_file_sets": obj.get("input_file_sets"),
             "release_timestamp": obj.get("release_timestamp"),
             "publications": obj.get("publications"),
-            "publication_identifiers": obj.get("publication_identifiers"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),

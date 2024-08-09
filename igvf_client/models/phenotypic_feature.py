@@ -45,7 +45,7 @@ class PhenotypicFeature(BaseModel):
     observation_date: Optional[StrictStr] = Field(default=None, description="The date the feature was observed or measured.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "feature", "quantity", "quantity_units", "observation_date", "@id", "@type", "summary"]
 
     @field_validator('status')

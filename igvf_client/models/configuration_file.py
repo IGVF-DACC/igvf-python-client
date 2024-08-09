@@ -157,8 +157,8 @@ class ConfigurationFile(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['yaml']):
-            raise ValueError("must be one of enum values ('yaml')")
+        if value not in set(['yaml', 'json']):
+            raise ValueError("must be one of enum values ('yaml', 'json')")
         return value
 
     @field_validator('md5sum')

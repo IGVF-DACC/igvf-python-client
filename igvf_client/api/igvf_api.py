@@ -30,6 +30,7 @@ from igvf_client.models.award_results import AwardResults
 from igvf_client.models.biomarker_results import BiomarkerResults
 from igvf_client.models.configuration_file_results import ConfigurationFileResults
 from igvf_client.models.construct_library_set_results import ConstructLibrarySetResults
+from igvf_client.models.content_type import ContentType
 from igvf_client.models.crispr_modification_results import CrisprModificationResults
 from igvf_client.models.curated_set_results import CuratedSetResults
 from igvf_client.models.degron_modification_results import DegronModificationResults
@@ -1856,7 +1857,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -1873,8 +1874,8 @@ class IgvfApi:
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -1984,7 +1985,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -2017,10 +2018,10 @@ class IgvfApi:
         :type lab_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -2150,8 +2151,8 @@ class IgvfApi:
             lab_id=lab_id,
             lab_title=lab_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -2238,7 +2239,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -2255,8 +2256,8 @@ class IgvfApi:
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -2366,7 +2367,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -2399,10 +2400,10 @@ class IgvfApi:
         :type lab_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -2532,8 +2533,8 @@ class IgvfApi:
             lab_id=lab_id,
             lab_title=lab_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -2620,7 +2621,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -2637,8 +2638,8 @@ class IgvfApi:
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -2748,7 +2749,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -2781,10 +2782,10 @@ class IgvfApi:
         :type lab_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -2914,8 +2915,8 @@ class IgvfApi:
             lab_id=lab_id,
             lab_title=lab_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -3014,8 +3015,8 @@ class IgvfApi:
         lab_id,
         lab_title,
         notes,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         samples_id,
@@ -3100,8 +3101,8 @@ class IgvfApi:
             'lab.@id': 'multi',
             'lab.title': 'multi',
             'notes': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'samples.@id': 'multi',
@@ -3334,13 +3335,13 @@ class IgvfApi:
             
             _query_params.append(('notes', notes))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -5707,7 +5708,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -5719,14 +5720,13 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
-        library_construction_platform: Annotated[Optional[List[StrictStr]], Field(description="Filter by library_construction_platform")] = None,
         measurement_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.@id")] = None,
         measurement_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.accession")] = None,
         measurement_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by measurement_sets.aliases")] = None,
         measurement_sets_preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.preferred_assay_title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -5835,7 +5835,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -5858,8 +5858,6 @@ class IgvfApi:
         :type lab_id: List[str]
         :param lab_title: Filter by lab.title
         :type lab_title: List[str]
-        :param library_construction_platform: Filter by library_construction_platform
-        :type library_construction_platform: List[str]
         :param measurement_sets_id: Filter by measurement_sets.@id
         :type measurement_sets_id: List[str]
         :param measurement_sets_accession: Filter by measurement_sets.accession
@@ -5870,10 +5868,10 @@ class IgvfApi:
         :type measurement_sets_preferred_assay_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -5999,14 +5997,13 @@ class IgvfApi:
             input_file_set_for=input_file_set_for,
             lab_id=lab_id,
             lab_title=lab_title,
-            library_construction_platform=library_construction_platform,
             measurement_sets_id=measurement_sets_id,
             measurement_sets_accession=measurement_sets_accession,
             measurement_sets_aliases=measurement_sets_aliases,
             measurement_sets_preferred_assay_title=measurement_sets_preferred_assay_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -6093,7 +6090,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -6105,14 +6102,13 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
-        library_construction_platform: Annotated[Optional[List[StrictStr]], Field(description="Filter by library_construction_platform")] = None,
         measurement_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.@id")] = None,
         measurement_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.accession")] = None,
         measurement_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by measurement_sets.aliases")] = None,
         measurement_sets_preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.preferred_assay_title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -6221,7 +6217,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -6244,8 +6240,6 @@ class IgvfApi:
         :type lab_id: List[str]
         :param lab_title: Filter by lab.title
         :type lab_title: List[str]
-        :param library_construction_platform: Filter by library_construction_platform
-        :type library_construction_platform: List[str]
         :param measurement_sets_id: Filter by measurement_sets.@id
         :type measurement_sets_id: List[str]
         :param measurement_sets_accession: Filter by measurement_sets.accession
@@ -6256,10 +6250,10 @@ class IgvfApi:
         :type measurement_sets_preferred_assay_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -6385,14 +6379,13 @@ class IgvfApi:
             input_file_set_for=input_file_set_for,
             lab_id=lab_id,
             lab_title=lab_title,
-            library_construction_platform=library_construction_platform,
             measurement_sets_id=measurement_sets_id,
             measurement_sets_accession=measurement_sets_accession,
             measurement_sets_aliases=measurement_sets_aliases,
             measurement_sets_preferred_assay_title=measurement_sets_preferred_assay_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -6479,7 +6472,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -6491,14 +6484,13 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
-        library_construction_platform: Annotated[Optional[List[StrictStr]], Field(description="Filter by library_construction_platform")] = None,
         measurement_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.@id")] = None,
         measurement_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.accession")] = None,
         measurement_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by measurement_sets.aliases")] = None,
         measurement_sets_preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.preferred_assay_title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -6607,7 +6599,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -6630,8 +6622,6 @@ class IgvfApi:
         :type lab_id: List[str]
         :param lab_title: Filter by lab.title
         :type lab_title: List[str]
-        :param library_construction_platform: Filter by library_construction_platform
-        :type library_construction_platform: List[str]
         :param measurement_sets_id: Filter by measurement_sets.@id
         :type measurement_sets_id: List[str]
         :param measurement_sets_accession: Filter by measurement_sets.accession
@@ -6642,10 +6632,10 @@ class IgvfApi:
         :type measurement_sets_preferred_assay_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -6771,14 +6761,13 @@ class IgvfApi:
             input_file_set_for=input_file_set_for,
             lab_id=lab_id,
             lab_title=lab_title,
-            library_construction_platform=library_construction_platform,
             measurement_sets_id=measurement_sets_id,
             measurement_sets_accession=measurement_sets_accession,
             measurement_sets_aliases=measurement_sets_aliases,
             measurement_sets_preferred_assay_title=measurement_sets_preferred_assay_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -6872,14 +6861,13 @@ class IgvfApi:
         input_file_set_for,
         lab_id,
         lab_title,
-        library_construction_platform,
         measurement_sets_id,
         measurement_sets_accession,
         measurement_sets_aliases,
         measurement_sets_preferred_assay_title,
         notes,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         samples_id,
@@ -6959,14 +6947,13 @@ class IgvfApi:
             'input_file_set_for': 'multi',
             'lab.@id': 'multi',
             'lab.title': 'multi',
-            'library_construction_platform': 'multi',
             'measurement_sets.@id': 'multi',
             'measurement_sets.accession': 'multi',
             'measurement_sets.aliases': 'multi',
             'measurement_sets.preferred_assay_title': 'multi',
             'notes': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'samples.@id': 'multi',
@@ -7176,10 +7163,6 @@ class IgvfApi:
             
             _query_params.append(('lab.title', lab_title))
             
-        if library_construction_platform is not None:
-            
-            _query_params.append(('library_construction_platform', library_construction_platform))
-            
         if measurement_sets_id is not None:
             
             _query_params.append(('measurement_sets.@id', measurement_sets_id))
@@ -7200,13 +7183,13 @@ class IgvfApi:
             
             _query_params.append(('notes', notes))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -10175,7 +10158,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
@@ -10198,8 +10181,8 @@ class IgvfApi:
         orf_list_gene: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.gene")] = None,
         orf_list_orf_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.orf_id")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         scope: Annotated[Optional[List[StrictStr]], Field(description="Filter by scope")] = None,
@@ -10310,7 +10293,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_file_format: Filter by files.file_format
         :type files_file_format: List[str]
         :param files_upload_status: Filter by files.upload_status
@@ -10355,10 +10338,10 @@ class IgvfApi:
         :type orf_list_orf_id: List[str]
         :param product_id: Filter by product_id
         :type product_id: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -10484,8 +10467,8 @@ class IgvfApi:
             orf_list_gene=orf_list_gene,
             orf_list_orf_id=orf_list_orf_id,
             product_id=product_id,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             scope=scope,
@@ -10569,7 +10552,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
@@ -10592,8 +10575,8 @@ class IgvfApi:
         orf_list_gene: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.gene")] = None,
         orf_list_orf_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.orf_id")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         scope: Annotated[Optional[List[StrictStr]], Field(description="Filter by scope")] = None,
@@ -10704,7 +10687,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_file_format: Filter by files.file_format
         :type files_file_format: List[str]
         :param files_upload_status: Filter by files.upload_status
@@ -10749,10 +10732,10 @@ class IgvfApi:
         :type orf_list_orf_id: List[str]
         :param product_id: Filter by product_id
         :type product_id: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -10878,8 +10861,8 @@ class IgvfApi:
             orf_list_gene=orf_list_gene,
             orf_list_orf_id=orf_list_orf_id,
             product_id=product_id,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             scope=scope,
@@ -10963,7 +10946,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
@@ -10986,8 +10969,8 @@ class IgvfApi:
         orf_list_gene: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.gene")] = None,
         orf_list_orf_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.orf_id")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         scope: Annotated[Optional[List[StrictStr]], Field(description="Filter by scope")] = None,
@@ -11098,7 +11081,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_file_format: Filter by files.file_format
         :type files_file_format: List[str]
         :param files_upload_status: Filter by files.upload_status
@@ -11143,10 +11126,10 @@ class IgvfApi:
         :type orf_list_orf_id: List[str]
         :param product_id: Filter by product_id
         :type product_id: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -11272,8 +11255,8 @@ class IgvfApi:
             orf_list_gene=orf_list_gene,
             orf_list_orf_id=orf_list_orf_id,
             product_id=product_id,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             scope=scope,
@@ -11375,8 +11358,8 @@ class IgvfApi:
         orf_list_gene,
         orf_list_orf_id,
         product_id,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         scope,
@@ -11464,8 +11447,8 @@ class IgvfApi:
             'orf_list.gene': 'multi',
             'orf_list.orf_id': 'multi',
             'product_id': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'scope': 'multi',
@@ -11731,13 +11714,13 @@ class IgvfApi:
             
             _query_params.append(('product_id', product_id))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -12727,7 +12710,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -12740,8 +12723,8 @@ class IgvfApi:
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -12854,7 +12837,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -12879,10 +12862,10 @@ class IgvfApi:
         :type lab_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -13014,8 +12997,8 @@ class IgvfApi:
             lab_id=lab_id,
             lab_title=lab_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -13105,7 +13088,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -13118,8 +13101,8 @@ class IgvfApi:
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -13232,7 +13215,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -13257,10 +13240,10 @@ class IgvfApi:
         :type lab_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -13392,8 +13375,8 @@ class IgvfApi:
             lab_id=lab_id,
             lab_title=lab_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -13483,7 +13466,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -13496,8 +13479,8 @@ class IgvfApi:
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -13610,7 +13593,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -13635,10 +13618,10 @@ class IgvfApi:
         :type lab_title: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -13770,8 +13753,8 @@ class IgvfApi:
             lab_id=lab_id,
             lab_title=lab_title,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -13869,8 +13852,8 @@ class IgvfApi:
         lab_id,
         lab_title,
         notes,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         samples_id,
@@ -13954,8 +13937,8 @@ class IgvfApi:
             'lab.@id': 'multi',
             'lab.title': 'multi',
             'notes': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'samples.@id': 'multi',
@@ -14175,13 +14158,13 @@ class IgvfApi:
             
             _query_params.append(('notes', notes))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -18144,8 +18127,8 @@ class IgvfApi:
         phenotypic_features_feature_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by phenotypic_features.feature.term_name")] = None,
         phenotypic_features_observation_date: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.observation_date")] = None,
         phenotypic_features_quantity_units: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.quantity_units")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         related_donors_donor_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.@id")] = None,
         related_donors_donor_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.accession")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -18227,10 +18210,10 @@ class IgvfApi:
         :type phenotypic_features_observation_date: List[str]
         :param phenotypic_features_quantity_units: Filter by phenotypic_features.quantity_units
         :type phenotypic_features_quantity_units: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param related_donors_donor_id: Filter by related_donors.donor.@id
         :type related_donors_donor_id: List[str]
         :param related_donors_donor_accession: Filter by related_donors.donor.accession
@@ -18307,8 +18290,8 @@ class IgvfApi:
             phenotypic_features_feature_term_name=phenotypic_features_feature_term_name,
             phenotypic_features_observation_date=phenotypic_features_observation_date,
             phenotypic_features_quantity_units=phenotypic_features_quantity_units,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             related_donors_donor_id=related_donors_donor_id,
             related_donors_donor_accession=related_donors_donor_accession,
             release_timestamp=release_timestamp,
@@ -18374,8 +18357,8 @@ class IgvfApi:
         phenotypic_features_feature_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by phenotypic_features.feature.term_name")] = None,
         phenotypic_features_observation_date: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.observation_date")] = None,
         phenotypic_features_quantity_units: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.quantity_units")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         related_donors_donor_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.@id")] = None,
         related_donors_donor_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.accession")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -18457,10 +18440,10 @@ class IgvfApi:
         :type phenotypic_features_observation_date: List[str]
         :param phenotypic_features_quantity_units: Filter by phenotypic_features.quantity_units
         :type phenotypic_features_quantity_units: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param related_donors_donor_id: Filter by related_donors.donor.@id
         :type related_donors_donor_id: List[str]
         :param related_donors_donor_accession: Filter by related_donors.donor.accession
@@ -18537,8 +18520,8 @@ class IgvfApi:
             phenotypic_features_feature_term_name=phenotypic_features_feature_term_name,
             phenotypic_features_observation_date=phenotypic_features_observation_date,
             phenotypic_features_quantity_units=phenotypic_features_quantity_units,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             related_donors_donor_id=related_donors_donor_id,
             related_donors_donor_accession=related_donors_donor_accession,
             release_timestamp=release_timestamp,
@@ -18604,8 +18587,8 @@ class IgvfApi:
         phenotypic_features_feature_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by phenotypic_features.feature.term_name")] = None,
         phenotypic_features_observation_date: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.observation_date")] = None,
         phenotypic_features_quantity_units: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.quantity_units")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         related_donors_donor_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.@id")] = None,
         related_donors_donor_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.accession")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -18687,10 +18670,10 @@ class IgvfApi:
         :type phenotypic_features_observation_date: List[str]
         :param phenotypic_features_quantity_units: Filter by phenotypic_features.quantity_units
         :type phenotypic_features_quantity_units: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param related_donors_donor_id: Filter by related_donors.donor.@id
         :type related_donors_donor_id: List[str]
         :param related_donors_donor_accession: Filter by related_donors.donor.accession
@@ -18767,8 +18750,8 @@ class IgvfApi:
             phenotypic_features_feature_term_name=phenotypic_features_feature_term_name,
             phenotypic_features_observation_date=phenotypic_features_observation_date,
             phenotypic_features_quantity_units=phenotypic_features_quantity_units,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             related_donors_donor_id=related_donors_donor_id,
             related_donors_donor_accession=related_donors_donor_accession,
             release_timestamp=release_timestamp,
@@ -18829,8 +18812,8 @@ class IgvfApi:
         phenotypic_features_feature_term_name,
         phenotypic_features_observation_date,
         phenotypic_features_quantity_units,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         related_donors_donor_id,
         related_donors_donor_accession,
         release_timestamp,
@@ -18877,8 +18860,8 @@ class IgvfApi:
             'phenotypic_features.feature.term_name': 'multi',
             'phenotypic_features.observation_date': 'multi',
             'phenotypic_features.quantity_units': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'related_donors.donor.@id': 'multi',
             'related_donors.donor.accession': 'multi',
             'release_timestamp': 'multi',
@@ -19004,13 +18987,13 @@ class IgvfApi:
             
             _query_params.append(('phenotypic_features.quantity_units', phenotypic_features_quantity_units))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if related_donors_donor_id is not None:
             
@@ -20777,8 +20760,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -20961,10 +20944,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -21120,8 +21103,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -21247,8 +21230,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -21431,10 +21414,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -21590,8 +21573,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -21717,8 +21700,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -21901,10 +21884,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -22060,8 +22043,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -22182,8 +22165,8 @@ class IgvfApi:
         pooled_in,
         product_id,
         protocols,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         sample_terms_id,
@@ -22290,8 +22273,8 @@ class IgvfApi:
             'pooled_in': 'multi',
             'product_id': 'multi',
             'protocols': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'sample_terms.@id': 'multi',
@@ -22600,13 +22583,13 @@ class IgvfApi:
             
             _query_params.append(('protocols', protocols))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -25269,7 +25252,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -25282,14 +25265,12 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
-        library_construction_platform_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by library_construction_platform.@id")] = None,
-        library_construction_platform_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by library_construction_platform.term_name")] = None,
         multiome_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=2)]]], Field(description="Filter by multiome_size")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by preferred_assay_title")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         related_multiome_datasets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.@id")] = None,
         related_multiome_datasets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.accession")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -25439,7 +25420,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -25464,10 +25445,6 @@ class IgvfApi:
         :type lab_id: List[str]
         :param lab_title: Filter by lab.title
         :type lab_title: List[str]
-        :param library_construction_platform_id: Filter by library_construction_platform.@id
-        :type library_construction_platform_id: List[str]
-        :param library_construction_platform_term_name: Filter by library_construction_platform.term_name
-        :type library_construction_platform_term_name: List[str]
         :param multiome_size: Filter by multiome_size
         :type multiome_size: List[int]
         :param notes: Filter by notes
@@ -25476,10 +25453,10 @@ class IgvfApi:
         :type preferred_assay_title: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param related_multiome_datasets_id: Filter by related_multiome_datasets.@id
         :type related_multiome_datasets_id: List[str]
         :param related_multiome_datasets_accession: Filter by related_multiome_datasets.accession
@@ -25658,14 +25635,12 @@ class IgvfApi:
             input_file_set_for=input_file_set_for,
             lab_id=lab_id,
             lab_title=lab_title,
-            library_construction_platform_id=library_construction_platform_id,
-            library_construction_platform_term_name=library_construction_platform_term_name,
             multiome_size=multiome_size,
             notes=notes,
             preferred_assay_title=preferred_assay_title,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             related_multiome_datasets_id=related_multiome_datasets_id,
             related_multiome_datasets_accession=related_multiome_datasets_accession,
             release_timestamp=release_timestamp,
@@ -25783,7 +25758,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -25796,14 +25771,12 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
-        library_construction_platform_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by library_construction_platform.@id")] = None,
-        library_construction_platform_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by library_construction_platform.term_name")] = None,
         multiome_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=2)]]], Field(description="Filter by multiome_size")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by preferred_assay_title")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         related_multiome_datasets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.@id")] = None,
         related_multiome_datasets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.accession")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -25953,7 +25926,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -25978,10 +25951,6 @@ class IgvfApi:
         :type lab_id: List[str]
         :param lab_title: Filter by lab.title
         :type lab_title: List[str]
-        :param library_construction_platform_id: Filter by library_construction_platform.@id
-        :type library_construction_platform_id: List[str]
-        :param library_construction_platform_term_name: Filter by library_construction_platform.term_name
-        :type library_construction_platform_term_name: List[str]
         :param multiome_size: Filter by multiome_size
         :type multiome_size: List[int]
         :param notes: Filter by notes
@@ -25990,10 +25959,10 @@ class IgvfApi:
         :type preferred_assay_title: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param related_multiome_datasets_id: Filter by related_multiome_datasets.@id
         :type related_multiome_datasets_id: List[str]
         :param related_multiome_datasets_accession: Filter by related_multiome_datasets.accession
@@ -26172,14 +26141,12 @@ class IgvfApi:
             input_file_set_for=input_file_set_for,
             lab_id=lab_id,
             lab_title=lab_title,
-            library_construction_platform_id=library_construction_platform_id,
-            library_construction_platform_term_name=library_construction_platform_term_name,
             multiome_size=multiome_size,
             notes=notes,
             preferred_assay_title=preferred_assay_title,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             related_multiome_datasets_id=related_multiome_datasets_id,
             related_multiome_datasets_accession=related_multiome_datasets_accession,
             release_timestamp=release_timestamp,
@@ -26297,7 +26264,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -26310,14 +26277,12 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         lab_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
-        library_construction_platform_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by library_construction_platform.@id")] = None,
-        library_construction_platform_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by library_construction_platform.term_name")] = None,
         multiome_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=2)]]], Field(description="Filter by multiome_size")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by preferred_assay_title")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         related_multiome_datasets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.@id")] = None,
         related_multiome_datasets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.accession")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -26467,7 +26432,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -26492,10 +26457,6 @@ class IgvfApi:
         :type lab_id: List[str]
         :param lab_title: Filter by lab.title
         :type lab_title: List[str]
-        :param library_construction_platform_id: Filter by library_construction_platform.@id
-        :type library_construction_platform_id: List[str]
-        :param library_construction_platform_term_name: Filter by library_construction_platform.term_name
-        :type library_construction_platform_term_name: List[str]
         :param multiome_size: Filter by multiome_size
         :type multiome_size: List[int]
         :param notes: Filter by notes
@@ -26504,10 +26465,10 @@ class IgvfApi:
         :type preferred_assay_title: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param related_multiome_datasets_id: Filter by related_multiome_datasets.@id
         :type related_multiome_datasets_id: List[str]
         :param related_multiome_datasets_accession: Filter by related_multiome_datasets.accession
@@ -26686,14 +26647,12 @@ class IgvfApi:
             input_file_set_for=input_file_set_for,
             lab_id=lab_id,
             lab_title=lab_title,
-            library_construction_platform_id=library_construction_platform_id,
-            library_construction_platform_term_name=library_construction_platform_term_name,
             multiome_size=multiome_size,
             notes=notes,
             preferred_assay_title=preferred_assay_title,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             related_multiome_datasets_id=related_multiome_datasets_id,
             related_multiome_datasets_accession=related_multiome_datasets_accession,
             release_timestamp=release_timestamp,
@@ -26819,14 +26778,12 @@ class IgvfApi:
         input_file_set_for,
         lab_id,
         lab_title,
-        library_construction_platform_id,
-        library_construction_platform_term_name,
         multiome_size,
         notes,
         preferred_assay_title,
         protocols,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         related_multiome_datasets_id,
         related_multiome_datasets_accession,
         release_timestamp,
@@ -26938,14 +26895,12 @@ class IgvfApi:
             'input_file_set_for': 'multi',
             'lab.@id': 'multi',
             'lab.title': 'multi',
-            'library_construction_platform.@id': 'multi',
-            'library_construction_platform.term_name': 'multi',
             'multiome_size': 'multi',
             'notes': 'multi',
             'preferred_assay_title': 'multi',
             'protocols': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'related_multiome_datasets.@id': 'multi',
             'related_multiome_datasets.accession': 'multi',
             'release_timestamp': 'multi',
@@ -27220,14 +27175,6 @@ class IgvfApi:
             
             _query_params.append(('lab.title', lab_title))
             
-        if library_construction_platform_id is not None:
-            
-            _query_params.append(('library_construction_platform.@id', library_construction_platform_id))
-            
-        if library_construction_platform_term_name is not None:
-            
-            _query_params.append(('library_construction_platform.term_name', library_construction_platform_term_name))
-            
         if multiome_size is not None:
             
             _query_params.append(('multiome_size', multiome_size))
@@ -27244,13 +27191,13 @@ class IgvfApi:
             
             _query_params.append(('protocols', protocols))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if related_multiome_datasets_id is not None:
             
@@ -28590,7 +28537,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -28610,8 +28557,8 @@ class IgvfApi:
         model_zoo_location: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by model_zoo_location")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         prediction_objects: Annotated[Optional[List[StrictStr]], Field(description="Filter by prediction_objects")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -28723,7 +28670,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -28762,10 +28709,10 @@ class IgvfApi:
         :type notes: List[str]
         :param prediction_objects: Filter by prediction_objects
         :type prediction_objects: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -28902,8 +28849,8 @@ class IgvfApi:
             model_zoo_location=model_zoo_location,
             notes=notes,
             prediction_objects=prediction_objects,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -28992,7 +28939,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -29012,8 +28959,8 @@ class IgvfApi:
         model_zoo_location: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by model_zoo_location")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         prediction_objects: Annotated[Optional[List[StrictStr]], Field(description="Filter by prediction_objects")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -29125,7 +29072,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -29164,10 +29111,10 @@ class IgvfApi:
         :type notes: List[str]
         :param prediction_objects: Filter by prediction_objects
         :type prediction_objects: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -29304,8 +29251,8 @@ class IgvfApi:
             model_zoo_location=model_zoo_location,
             notes=notes,
             prediction_objects=prediction_objects,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -29394,7 +29341,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -29414,8 +29361,8 @@ class IgvfApi:
         model_zoo_location: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by model_zoo_location")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         prediction_objects: Annotated[Optional[List[StrictStr]], Field(description="Filter by prediction_objects")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -29527,7 +29474,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -29566,10 +29513,10 @@ class IgvfApi:
         :type notes: List[str]
         :param prediction_objects: Filter by prediction_objects
         :type prediction_objects: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -29706,8 +29653,8 @@ class IgvfApi:
             model_zoo_location=model_zoo_location,
             notes=notes,
             prediction_objects=prediction_objects,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -29811,8 +29758,8 @@ class IgvfApi:
         model_zoo_location,
         notes,
         prediction_objects,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         samples_id,
@@ -29902,8 +29849,8 @@ class IgvfApi:
             'model_zoo_location': 'multi',
             'notes': 'multi',
             'prediction_objects': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'samples.@id': 'multi',
@@ -30150,13 +30097,13 @@ class IgvfApi:
             
             _query_params.append(('prediction_objects', prediction_objects))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -30378,8 +30325,8 @@ class IgvfApi:
         nucleic_acid_delivery: Annotated[Optional[List[StrictStr]], Field(description="Filter by nucleic_acid_delivery")] = None,
         origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -30533,10 +30480,10 @@ class IgvfApi:
         :type origin_of: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -30667,8 +30614,8 @@ class IgvfApi:
             nucleic_acid_delivery=nucleic_acid_delivery,
             origin_of=origin_of,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -30776,8 +30723,8 @@ class IgvfApi:
         nucleic_acid_delivery: Annotated[Optional[List[StrictStr]], Field(description="Filter by nucleic_acid_delivery")] = None,
         origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -30931,10 +30878,10 @@ class IgvfApi:
         :type origin_of: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -31065,8 +31012,8 @@ class IgvfApi:
             nucleic_acid_delivery=nucleic_acid_delivery,
             origin_of=origin_of,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -31174,8 +31121,8 @@ class IgvfApi:
         nucleic_acid_delivery: Annotated[Optional[List[StrictStr]], Field(description="Filter by nucleic_acid_delivery")] = None,
         origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -31329,10 +31276,10 @@ class IgvfApi:
         :type origin_of: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -31463,8 +31410,8 @@ class IgvfApi:
             nucleic_acid_delivery=nucleic_acid_delivery,
             origin_of=origin_of,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -31567,8 +31514,8 @@ class IgvfApi:
         nucleic_acid_delivery,
         origin_of,
         protocols,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         sample_terms_id,
@@ -31657,8 +31604,8 @@ class IgvfApi:
             'nucleic_acid_delivery': 'multi',
             'origin_of': 'multi',
             'protocols': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'sample_terms.@id': 'multi',
@@ -31916,13 +31863,13 @@ class IgvfApi:
             
             _query_params.append(('protocols', protocols))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -35478,6 +35425,7 @@ class IgvfApi:
         accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by accession")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
+        assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         award_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.component")] = None,
         award_contact_pi_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.contact_pi.@id")] = None,
@@ -35501,7 +35449,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -35521,8 +35469,8 @@ class IgvfApi:
         large_scale_loci_list_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by large_scale_loci_list.accession")] = None,
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -35593,6 +35541,8 @@ class IgvfApi:
         :type aliases: List[str]
         :param alternate_accessions: Filter by alternate_accessions
         :type alternate_accessions: List[str]
+        :param assessed_genes: Filter by assessed_genes
+        :type assessed_genes: List[str]
         :param award_id: Filter by award.@id
         :type award_id: List[str]
         :param award_component: Filter by award.component
@@ -35640,7 +35590,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -35679,10 +35629,10 @@ class IgvfApi:
         :type large_scale_loci_list_aliases: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -35791,6 +35741,7 @@ class IgvfApi:
             accession=accession,
             aliases=aliases,
             alternate_accessions=alternate_accessions,
+            assessed_genes=assessed_genes,
             award_id=award_id,
             award_component=award_component,
             award_contact_pi_id=award_contact_pi_id,
@@ -35834,8 +35785,8 @@ class IgvfApi:
             large_scale_loci_list_accession=large_scale_loci_list_accession,
             large_scale_loci_list_aliases=large_scale_loci_list_aliases,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -35908,6 +35859,7 @@ class IgvfApi:
         accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by accession")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
+        assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         award_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.component")] = None,
         award_contact_pi_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.contact_pi.@id")] = None,
@@ -35931,7 +35883,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -35951,8 +35903,8 @@ class IgvfApi:
         large_scale_loci_list_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by large_scale_loci_list.accession")] = None,
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -36023,6 +35975,8 @@ class IgvfApi:
         :type aliases: List[str]
         :param alternate_accessions: Filter by alternate_accessions
         :type alternate_accessions: List[str]
+        :param assessed_genes: Filter by assessed_genes
+        :type assessed_genes: List[str]
         :param award_id: Filter by award.@id
         :type award_id: List[str]
         :param award_component: Filter by award.component
@@ -36070,7 +36024,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -36109,10 +36063,10 @@ class IgvfApi:
         :type large_scale_loci_list_aliases: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -36221,6 +36175,7 @@ class IgvfApi:
             accession=accession,
             aliases=aliases,
             alternate_accessions=alternate_accessions,
+            assessed_genes=assessed_genes,
             award_id=award_id,
             award_component=award_component,
             award_contact_pi_id=award_contact_pi_id,
@@ -36264,8 +36219,8 @@ class IgvfApi:
             large_scale_loci_list_accession=large_scale_loci_list_accession,
             large_scale_loci_list_aliases=large_scale_loci_list_aliases,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -36338,6 +36293,7 @@ class IgvfApi:
         accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by accession")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
+        assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         award_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.component")] = None,
         award_contact_pi_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.contact_pi.@id")] = None,
@@ -36361,7 +36317,7 @@ class IgvfApi:
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
         files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
-        files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
+        files_content_type: Annotated[Optional[List[ContentType]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_file_size: Annotated[Optional[List[Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by files.file_size")] = None,
@@ -36381,8 +36337,8 @@ class IgvfApi:
         large_scale_loci_list_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by large_scale_loci_list.accession")] = None,
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
@@ -36453,6 +36409,8 @@ class IgvfApi:
         :type aliases: List[str]
         :param alternate_accessions: Filter by alternate_accessions
         :type alternate_accessions: List[str]
+        :param assessed_genes: Filter by assessed_genes
+        :type assessed_genes: List[str]
         :param award_id: Filter by award.@id
         :type award_id: List[str]
         :param award_component: Filter by award.component
@@ -36500,7 +36458,7 @@ class IgvfApi:
         :param files_aliases: Filter by files.aliases
         :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
-        :type files_content_type: List[str]
+        :type files_content_type: List[ContentType]
         :param files_creation_timestamp: Filter by files.creation_timestamp
         :type files_creation_timestamp: List[str]
         :param files_file_format: Filter by files.file_format
@@ -36539,10 +36497,10 @@ class IgvfApi:
         :type large_scale_loci_list_aliases: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -36651,6 +36609,7 @@ class IgvfApi:
             accession=accession,
             aliases=aliases,
             alternate_accessions=alternate_accessions,
+            assessed_genes=assessed_genes,
             award_id=award_id,
             award_component=award_component,
             award_contact_pi_id=award_contact_pi_id,
@@ -36694,8 +36653,8 @@ class IgvfApi:
             large_scale_loci_list_accession=large_scale_loci_list_accession,
             large_scale_loci_list_aliases=large_scale_loci_list_aliases,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             samples_id=samples_id,
@@ -36763,6 +36722,7 @@ class IgvfApi:
         accession,
         aliases,
         alternate_accessions,
+        assessed_genes,
         award_id,
         award_component,
         award_contact_pi_id,
@@ -36806,8 +36766,8 @@ class IgvfApi:
         large_scale_loci_list_accession,
         large_scale_loci_list_aliases,
         notes,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         samples_id,
@@ -36861,6 +36821,7 @@ class IgvfApi:
             'accession': 'multi',
             'aliases': 'multi',
             'alternate_accessions': 'multi',
+            'assessed_genes': 'multi',
             'award.@id': 'multi',
             'award.component': 'multi',
             'award.contact_pi.@id': 'multi',
@@ -36904,8 +36865,8 @@ class IgvfApi:
             'large_scale_loci_list.accession': 'multi',
             'large_scale_loci_list.aliases': 'multi',
             'notes': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'samples.@id': 'multi',
@@ -36983,6 +36944,10 @@ class IgvfApi:
         if alternate_accessions is not None:
             
             _query_params.append(('alternate_accessions', alternate_accessions))
+            
+        if assessed_genes is not None:
+            
+            _query_params.append(('assessed_genes', assessed_genes))
             
         if award_id is not None:
             
@@ -37156,13 +37121,13 @@ class IgvfApi:
             
             _query_params.append(('notes', notes))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -37417,8 +37382,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -37578,10 +37543,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -37721,8 +37686,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -37835,8 +37800,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -37996,10 +37961,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -38139,8 +38104,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -38253,8 +38218,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -38414,10 +38379,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -38557,8 +38522,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -38666,8 +38631,8 @@ class IgvfApi:
         pooled_in,
         product_id,
         protocols,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         sample_terms_id,
@@ -38761,8 +38726,8 @@ class IgvfApi:
             'pooled_in': 'multi',
             'product_id': 'multi',
             'protocols': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'sample_terms.@id': 'multi',
@@ -39028,13 +38993,13 @@ class IgvfApi:
             
             _query_params.append(('protocols', protocols))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -41705,8 +41670,8 @@ class IgvfApi:
         phenotypic_features_observation_date: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.observation_date")] = None,
         phenotypic_features_quantity_units: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.quantity_units")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         rodent_identifier: Annotated[Optional[List[StrictStr]], Field(description="Filter by rodent_identifier")] = None,
@@ -41794,10 +41759,10 @@ class IgvfApi:
         :type phenotypic_features_quantity_units: List[str]
         :param product_id: Filter by product_id
         :type product_id: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -41880,8 +41845,8 @@ class IgvfApi:
             phenotypic_features_observation_date=phenotypic_features_observation_date,
             phenotypic_features_quantity_units=phenotypic_features_quantity_units,
             product_id=product_id,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             rodent_identifier=rodent_identifier,
@@ -41951,8 +41916,8 @@ class IgvfApi:
         phenotypic_features_observation_date: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.observation_date")] = None,
         phenotypic_features_quantity_units: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.quantity_units")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         rodent_identifier: Annotated[Optional[List[StrictStr]], Field(description="Filter by rodent_identifier")] = None,
@@ -42040,10 +42005,10 @@ class IgvfApi:
         :type phenotypic_features_quantity_units: List[str]
         :param product_id: Filter by product_id
         :type product_id: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -42126,8 +42091,8 @@ class IgvfApi:
             phenotypic_features_observation_date=phenotypic_features_observation_date,
             phenotypic_features_quantity_units=phenotypic_features_quantity_units,
             product_id=product_id,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             rodent_identifier=rodent_identifier,
@@ -42197,8 +42162,8 @@ class IgvfApi:
         phenotypic_features_observation_date: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.observation_date")] = None,
         phenotypic_features_quantity_units: Annotated[Optional[List[StrictStr]], Field(description="Filter by phenotypic_features.quantity_units")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         rodent_identifier: Annotated[Optional[List[StrictStr]], Field(description="Filter by rodent_identifier")] = None,
@@ -42286,10 +42251,10 @@ class IgvfApi:
         :type phenotypic_features_quantity_units: List[str]
         :param product_id: Filter by product_id
         :type product_id: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -42372,8 +42337,8 @@ class IgvfApi:
             phenotypic_features_observation_date=phenotypic_features_observation_date,
             phenotypic_features_quantity_units=phenotypic_features_quantity_units,
             product_id=product_id,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             rodent_identifier=rodent_identifier,
@@ -42438,8 +42403,8 @@ class IgvfApi:
         phenotypic_features_observation_date,
         phenotypic_features_quantity_units,
         product_id,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         rodent_identifier,
@@ -42490,8 +42455,8 @@ class IgvfApi:
             'phenotypic_features.observation_date': 'multi',
             'phenotypic_features.quantity_units': 'multi',
             'product_id': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'rodent_identifier': 'multi',
@@ -42627,13 +42592,13 @@ class IgvfApi:
             
             _query_params.append(('product_id', product_id))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -44343,6 +44308,7 @@ class IgvfApi:
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
         award_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.component")] = None,
+        base_modifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by base_modifications")] = None,
         collections: Annotated[Optional[List[StrictStr]], Field(description="Filter by collections")] = None,
         content_md5sum: Annotated[Optional[List[Annotated[str, Field(strict=True, max_length=32)]]], Field(description="Filter by content_md5sum")] = None,
         content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by content_type")] = None,
@@ -44428,6 +44394,8 @@ class IgvfApi:
         :type award_id: List[str]
         :param award_component: Filter by award.component
         :type award_component: List[str]
+        :param base_modifications: Filter by base_modifications
+        :type base_modifications: List[str]
         :param collections: Filter by collections
         :type collections: List[str]
         :param content_md5sum: Filter by content_md5sum
@@ -44554,6 +44522,7 @@ class IgvfApi:
             anvil_url=anvil_url,
             award_id=award_id,
             award_component=award_component,
+            base_modifications=base_modifications,
             collections=collections,
             content_md5sum=content_md5sum,
             content_type=content_type,
@@ -44637,6 +44606,7 @@ class IgvfApi:
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
         award_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.component")] = None,
+        base_modifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by base_modifications")] = None,
         collections: Annotated[Optional[List[StrictStr]], Field(description="Filter by collections")] = None,
         content_md5sum: Annotated[Optional[List[Annotated[str, Field(strict=True, max_length=32)]]], Field(description="Filter by content_md5sum")] = None,
         content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by content_type")] = None,
@@ -44722,6 +44692,8 @@ class IgvfApi:
         :type award_id: List[str]
         :param award_component: Filter by award.component
         :type award_component: List[str]
+        :param base_modifications: Filter by base_modifications
+        :type base_modifications: List[str]
         :param collections: Filter by collections
         :type collections: List[str]
         :param content_md5sum: Filter by content_md5sum
@@ -44848,6 +44820,7 @@ class IgvfApi:
             anvil_url=anvil_url,
             award_id=award_id,
             award_component=award_component,
+            base_modifications=base_modifications,
             collections=collections,
             content_md5sum=content_md5sum,
             content_type=content_type,
@@ -44931,6 +44904,7 @@ class IgvfApi:
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
         award_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[List[StrictStr]], Field(description="Filter by award.component")] = None,
+        base_modifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by base_modifications")] = None,
         collections: Annotated[Optional[List[StrictStr]], Field(description="Filter by collections")] = None,
         content_md5sum: Annotated[Optional[List[Annotated[str, Field(strict=True, max_length=32)]]], Field(description="Filter by content_md5sum")] = None,
         content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by content_type")] = None,
@@ -45016,6 +44990,8 @@ class IgvfApi:
         :type award_id: List[str]
         :param award_component: Filter by award.component
         :type award_component: List[str]
+        :param base_modifications: Filter by base_modifications
+        :type base_modifications: List[str]
         :param collections: Filter by collections
         :type collections: List[str]
         :param content_md5sum: Filter by content_md5sum
@@ -45142,6 +45118,7 @@ class IgvfApi:
             anvil_url=anvil_url,
             award_id=award_id,
             award_component=award_component,
+            base_modifications=base_modifications,
             collections=collections,
             content_md5sum=content_md5sum,
             content_type=content_type,
@@ -45220,6 +45197,7 @@ class IgvfApi:
         anvil_url,
         award_id,
         award_component,
+        base_modifications,
         collections,
         content_md5sum,
         content_type,
@@ -45284,6 +45262,7 @@ class IgvfApi:
             'anvil_url': 'multi',
             'award.@id': 'multi',
             'award.component': 'multi',
+            'base_modifications': 'multi',
             'collections': 'multi',
             'content_md5sum': 'multi',
             'content_type': 'multi',
@@ -45384,6 +45363,10 @@ class IgvfApi:
         if award_component is not None:
             
             _query_params.append(('award.component', award_component))
+            
+        if base_modifications is not None:
+            
+            _query_params.append(('base_modifications', base_modifications))
             
         if collections is not None:
             
@@ -46793,8 +46776,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         source_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by source_url")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -46849,10 +46832,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param source_url: Filter by source_url
@@ -46911,8 +46894,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             source_url=source_url,
             status=status,
@@ -46963,8 +46946,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         source_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by source_url")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -47019,10 +47002,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param source_url: Filter by source_url
@@ -47081,8 +47064,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             source_url=source_url,
             status=status,
@@ -47133,8 +47116,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         source_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by source_url")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -47189,10 +47172,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param source_url: Filter by source_url
@@ -47251,8 +47234,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             source_url=source_url,
             status=status,
@@ -47298,8 +47281,8 @@ class IgvfApi:
         lab_title,
         name,
         notes,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         source_url,
         status,
@@ -47331,8 +47314,8 @@ class IgvfApi:
             'lab.title': 'multi',
             'name': 'multi',
             'notes': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'source_url': 'multi',
             'status': 'multi',
@@ -47407,13 +47390,13 @@ class IgvfApi:
             
             _query_params.append(('notes', notes))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -47515,8 +47498,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[StrictStr]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         software_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by software.@id")] = None,
         software_title: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by software.title")] = None,
@@ -47574,10 +47557,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param software_id: Filter by software.@id
@@ -47636,8 +47619,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             software_id=software_id,
             software_title=software_title,
@@ -47689,8 +47672,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[StrictStr]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         software_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by software.@id")] = None,
         software_title: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by software.title")] = None,
@@ -47748,10 +47731,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param software_id: Filter by software.@id
@@ -47810,8 +47793,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             software_id=software_id,
             software_title=software_title,
@@ -47863,8 +47846,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[StrictStr]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         software_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by software.@id")] = None,
         software_title: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by software.title")] = None,
@@ -47922,10 +47905,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param software_id: Filter by software.@id
@@ -47984,8 +47967,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             software_id=software_id,
             software_title=software_title,
@@ -48032,8 +48015,8 @@ class IgvfApi:
         lab_title,
         name,
         notes,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         software_id,
         software_title,
@@ -48066,8 +48049,8 @@ class IgvfApi:
             'lab.title': 'multi',
             'name': 'multi',
             'notes': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'software.@id': 'multi',
             'software.title': 'multi',
@@ -48149,13 +48132,13 @@ class IgvfApi:
             
             _query_params.append(('notes', notes))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -49966,8 +49949,8 @@ class IgvfApi:
         origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_material: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_material")] = None,
@@ -50080,10 +50063,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -50189,8 +50172,8 @@ class IgvfApi:
             origin_of=origin_of,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_material=sample_material,
@@ -50276,8 +50259,8 @@ class IgvfApi:
         origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_material: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_material")] = None,
@@ -50390,10 +50373,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -50499,8 +50482,8 @@ class IgvfApi:
             origin_of=origin_of,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_material=sample_material,
@@ -50586,8 +50569,8 @@ class IgvfApi:
         origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_material: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_material")] = None,
@@ -50700,10 +50683,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -50809,8 +50792,8 @@ class IgvfApi:
             origin_of=origin_of,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_material=sample_material,
@@ -50891,8 +50874,8 @@ class IgvfApi:
         origin_of,
         product_id,
         protocols,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         sample_material,
@@ -50959,8 +50942,8 @@ class IgvfApi:
             'origin_of': 'multi',
             'product_id': 'multi',
             'protocols': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'sample_material': 'multi',
@@ -51139,13 +51122,13 @@ class IgvfApi:
             
             _query_params.append(('protocols', protocols))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -51339,8 +51322,8 @@ class IgvfApi:
         preservation_method: Annotated[Optional[List[StrictStr]], Field(description="Filter by preservation_method")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -51506,10 +51489,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -51652,8 +51635,8 @@ class IgvfApi:
             preservation_method=preservation_method,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -51769,8 +51752,8 @@ class IgvfApi:
         preservation_method: Annotated[Optional[List[StrictStr]], Field(description="Filter by preservation_method")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -51936,10 +51919,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -52082,8 +52065,8 @@ class IgvfApi:
             preservation_method=preservation_method,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -52199,8 +52182,8 @@ class IgvfApi:
         preservation_method: Annotated[Optional[List[StrictStr]], Field(description="Filter by preservation_method")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -52366,10 +52349,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -52512,8 +52495,8 @@ class IgvfApi:
             preservation_method=preservation_method,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -52624,8 +52607,8 @@ class IgvfApi:
         preservation_method,
         product_id,
         protocols,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         sample_terms_id,
@@ -52722,8 +52705,8 @@ class IgvfApi:
             'preservation_method': 'multi',
             'product_id': 'multi',
             'protocols': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'sample_terms.@id': 'multi',
@@ -53001,13 +52984,13 @@ class IgvfApi:
             
             _query_params.append(('protocols', protocols))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -54827,8 +54810,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -54986,10 +54969,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -55128,8 +55111,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -55241,8 +55224,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -55400,10 +55383,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -55542,8 +55525,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -55655,8 +55638,8 @@ class IgvfApi:
         pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         product_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by product_id")] = None,
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms.@id")] = None,
@@ -55814,10 +55797,10 @@ class IgvfApi:
         :type product_id: List[str]
         :param protocols: Filter by protocols
         :type protocols: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -55956,8 +55939,8 @@ class IgvfApi:
             pooled_in=pooled_in,
             product_id=product_id,
             protocols=protocols,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             sample_terms_id=sample_terms_id,
@@ -56064,8 +56047,8 @@ class IgvfApi:
         pooled_in,
         product_id,
         protocols,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         sample_terms_id,
@@ -56158,8 +56141,8 @@ class IgvfApi:
             'pooled_in': 'multi',
             'product_id': 'multi',
             'protocols': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'sample_terms.@id': 'multi',
@@ -56421,13 +56404,13 @@ class IgvfApi:
             
             _query_params.append(('protocols', protocols))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             
@@ -56608,8 +56591,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         source_url: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by source_url")] = None,
@@ -56676,10 +56659,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -56747,8 +56730,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             source_url=source_url,
@@ -56806,8 +56789,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         source_url: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by source_url")] = None,
@@ -56874,10 +56857,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -56945,8 +56928,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             source_url=source_url,
@@ -57004,8 +56987,8 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
-        publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
-        publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
+        publications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications.@id")] = None,
+        publications_publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publications.publication_identifiers")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         revoke_detail: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by revoke_detail")] = None,
         source_url: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by source_url")] = None,
@@ -57072,10 +57055,10 @@ class IgvfApi:
         :type name: List[str]
         :param notes: Filter by notes
         :type notes: List[str]
-        :param publication_identifiers: Filter by publication_identifiers
-        :type publication_identifiers: List[str]
-        :param publications: Filter by publications
-        :type publications: List[str]
+        :param publications_id: Filter by publications.@id
+        :type publications_id: List[str]
+        :param publications_publication_identifiers: Filter by publications.publication_identifiers
+        :type publications_publication_identifiers: List[str]
         :param release_timestamp: Filter by release_timestamp
         :type release_timestamp: List[str]
         :param revoke_detail: Filter by revoke_detail
@@ -57143,8 +57126,8 @@ class IgvfApi:
             lab_title=lab_title,
             name=name,
             notes=notes,
-            publication_identifiers=publication_identifiers,
-            publications=publications,
+            publications_id=publications_id,
+            publications_publication_identifiers=publications_publication_identifiers,
             release_timestamp=release_timestamp,
             revoke_detail=revoke_detail,
             source_url=source_url,
@@ -57197,8 +57180,8 @@ class IgvfApi:
         lab_title,
         name,
         notes,
-        publication_identifiers,
-        publications,
+        publications_id,
+        publications_publication_identifiers,
         release_timestamp,
         revoke_detail,
         source_url,
@@ -57237,8 +57220,8 @@ class IgvfApi:
             'lab.title': 'multi',
             'name': 'multi',
             'notes': 'multi',
-            'publication_identifiers': 'multi',
-            'publications': 'multi',
+            'publications.@id': 'multi',
+            'publications.publication_identifiers': 'multi',
             'release_timestamp': 'multi',
             'revoke_detail': 'multi',
             'source_url': 'multi',
@@ -57335,13 +57318,13 @@ class IgvfApi:
             
             _query_params.append(('notes', notes))
             
-        if publication_identifiers is not None:
+        if publications_id is not None:
             
-            _query_params.append(('publication_identifiers', publication_identifiers))
+            _query_params.append(('publications.@id', publications_id))
             
-        if publications is not None:
+        if publications_publication_identifiers is not None:
             
-            _query_params.append(('publications', publications))
+            _query_params.append(('publications.publication_identifiers', publications_publication_identifiers))
             
         if release_timestamp is not None:
             

@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
-**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] 
@@ -26,7 +25,7 @@ Name | Type | Description | Notes
 **downloaded_url** | **str** | An external resource to track the version of the software downloaded. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** |  | [optional] 
 **name** | **str** | A unique identifier for a software version. | [optional] 
 
 ## Example

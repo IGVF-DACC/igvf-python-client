@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **observation_date** | **str** | The date the feature was observed or measured. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** |  | [optional] 
 
 ## Example
 

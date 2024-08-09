@@ -3147,8 +3147,7 @@
               "type": "array",
               "items": {
                 "title": "Summary",
-                "type": "string",
-                "description": "A summary of the object."
+                "type": "string"
               }
             },
             "description": "Filter by summary",
@@ -4214,37 +4213,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -5032,37 +5029,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -6696,7 +6691,8 @@
                 "description": "The file format or extension of the file.",
                 "type": "string",
                 "enum": [
-                  "yaml"
+                  "yaml",
+                  "json"
                 ]
               }
             },
@@ -11786,6 +11782,29 @@
             "explode": true
           },
           {
+            "name": "base_modifications",
+            "in": "query",
+            "schema": {
+              "title": "Base Modifications",
+              "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
+              "type": "array",
+              "items": {
+                "title": "Base Modification",
+                "description": "The chemical modification to bases in a DNA sequence that is detected in this file.",
+                "type": "string",
+                "enum": [
+                  "4mC",
+                  "5hmC",
+                  "5mC",
+                  "6mA"
+                ]
+              }
+            },
+            "description": "Filter by base_modifications",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -12385,7 +12404,9 @@
                   "NovaSeq 6000 S1 Reagent Kit v1.5",
                   "NovaSeq 6000 S2 Reagent Kit v1.5",
                   "NovaSeq 6000 S4 Reagent Kit v1.5",
+                  "NovaSeq X Series 1.5B Reagent Kit",
                   "NovaSeq X Series 10B Reagent Kit",
+                  "NovaSeq X Series 25B Reagent Kit",
                   "ONT Ligation Sequencing Kit V14",
                   "Sequel sequencing kit 3.0",
                   "Sequel II sequencing kit 2.0"
@@ -15001,9 +15022,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Taxa",
                 "description": "The species of the organism.",
-                "type": "string"
+                "type": "string",
+                "title": "Taxa"
               }
             },
             "description": "Filter by donors.taxa",
@@ -15087,9 +15108,104 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Content Type",
                 "description": "The type of content in the file.",
                 "type": "string",
+                "title": "Content Type",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "genome reference",
+                      "elements reference",
+                      "exclusion list",
+                      "inclusion list",
+                      "spike-ins"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "biological_context",
+                      "coding_variants",
+                      "complexes",
+                      "complexes_complexes",
+                      "complexes_proteins",
+                      "complexes_terms",
+                      "diseases_genes",
+                      "documentation (readme)",
+                      "drugs",
+                      "elements_genes",
+                      "genes",
+                      "genes_genes",
+                      "genes_pathways",
+                      "genes_terms",
+                      "genes_transcripts",
+                      "go_terms_proteins",
+                      "guide RNA sequences",
+                      "motifs",
+                      "motifs_proteins",
+                      "ontology_terms",
+                      "ontology_terms_ontology_terms",
+                      "pathways",
+                      "pathways_pathways",
+                      "proteins",
+                      "proteins_proteins",
+                      "regulatory_regions",
+                      "regulatory_regions_genes",
+                      "regulatory_regions_genes_biosamples",
+                      "regulatory_regions_genes_biosamples_donors",
+                      "regulatory_regions_genes_biosamples_treatments_chebi",
+                      "regulatory_regions_genes_biosamples_treatments_proteins",
+                      "regulatory_regions_regulatory_regions",
+                      "sequence barcodes",
+                      "studies",
+                      "studies_variants",
+                      "studies_variants_phenotypes",
+                      "transcriptome reference",
+                      "transcripts",
+                      "transcripts_proteins",
+                      "variants",
+                      "variants_coding_variants",
+                      "variants_diseases",
+                      "variants_diseases_genes",
+                      "variants_drugs",
+                      "variants_drugs_genes",
+                      "variants_genes",
+                      "variants_genes_terms",
+                      "variants_phenotypes",
+                      "variants_phenotypes_studies",
+                      "variants_proteins",
+                      "variants_proteins_terms",
+                      "variants_proteins_biosamples",
+                      "variants_proteins_phenotypes",
+                      "variants_regulatory_regions",
+                      "variants_variants",
+                      "vector sequences"
+                    ],
+                    "permission": "admin_only"
+                  }
+                ],
+                "enum": [
+                  "barcode to element mapping",
+                  "barcode to sample mapping",
+                  "differential gene expression quantifications",
+                  "differential transcript expression quantifications",
+                  "editing templates",
+                  "element quantifications",
+                  "elements reference",
+                  "fold change over control",
+                  "guide quantifications",
+                  "guide RNA sequences",
+                  "MPRA sequence designs",
+                  "peaks",
+                  "prime editing guide RNA sequences",
+                  "protein to protein interaction score",
+                  "tissue positions",
+                  "sample sort parameters",
+                  "sequence barcodes",
+                  "SNP effect matrix",
+                  "variants",
+                  "variant effects",
+                  "variant to element mapping"
+                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -15120,9 +15236,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "File Format",
                 "description": "The file format or extension of the file.",
                 "type": "string",
+                "title": "File Format",
                 "comment": "This property is overwritten by the subclasses to define specific enum values."
               }
             },
@@ -15367,37 +15483,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -15507,9 +15621,9 @@
             "name": "samples.classifications",
             "in": "query",
             "schema": {
-              "title": "Classifications",
               "description": "The general category of this type of sample.",
               "type": "array",
+              "title": "Classifications",
               "items": {
                 "type": "string",
                 "title": "Classification",
@@ -15535,15 +15649,15 @@
             "name": "samples.construct_library_sets",
             "in": "query",
             "schema": {
-              "title": "Construct Library Sets",
               "description": "The construct library sets of vectors introduced to this sample prior to performing an assay.",
               "type": "array",
+              "title": "Construct Library Sets",
+              "comment": "See construct_library_set.json for available identifiers.",
               "items": {
                 "title": "Construct Library Set",
                 "type": "string",
                 "linkTo": "ConstructLibrarySet"
-              },
-              "comment": "See construct_library_set.json for available identifiers."
+              }
             },
             "description": "Filter by samples.construct_library_sets",
             "style": "form",
@@ -15584,10 +15698,10 @@
             "name": "samples.modifications",
             "in": "query",
             "schema": {
-              "title": "Modifications",
               "description": "Links to modifications applied to this biosample.",
               "type": "array",
               "maxItems": 2,
+              "title": "Modifications",
               "items": {
                 "type": "string",
                 "linkTo": [
@@ -15767,13 +15881,13 @@
             "schema": {
               "type": "array",
               "items": {
+                "description": "The species of the organism.",
+                "type": "string",
+                "title": "Taxa",
                 "enum": [
                   "Homo sapiens",
                   "Mus musculus"
-                ],
-                "title": "Taxa",
-                "description": "The species of the organism.",
-                "type": "string"
+                ]
               }
             },
             "description": "Filter by samples.taxa",
@@ -15784,9 +15898,9 @@
             "name": "samples.treatments",
             "in": "query",
             "schema": {
-              "title": "Treatments",
               "description": "A list of treatments applied to the biosample with the purpose of perturbation.",
               "type": "array",
+              "title": "Treatments",
               "items": {
                 "type": "string",
                 "linkTo": "Treatment",
@@ -16453,9 +16567,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Taxa",
                 "description": "The species of the organism.",
-                "type": "string"
+                "type": "string",
+                "title": "Taxa"
               }
             },
             "description": "Filter by donors.taxa",
@@ -16544,9 +16658,104 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Content Type",
                 "description": "The type of content in the file.",
                 "type": "string",
+                "title": "Content Type",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "genome reference",
+                      "elements reference",
+                      "exclusion list",
+                      "inclusion list",
+                      "spike-ins"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "biological_context",
+                      "coding_variants",
+                      "complexes",
+                      "complexes_complexes",
+                      "complexes_proteins",
+                      "complexes_terms",
+                      "diseases_genes",
+                      "documentation (readme)",
+                      "drugs",
+                      "elements_genes",
+                      "genes",
+                      "genes_genes",
+                      "genes_pathways",
+                      "genes_terms",
+                      "genes_transcripts",
+                      "go_terms_proteins",
+                      "guide RNA sequences",
+                      "motifs",
+                      "motifs_proteins",
+                      "ontology_terms",
+                      "ontology_terms_ontology_terms",
+                      "pathways",
+                      "pathways_pathways",
+                      "proteins",
+                      "proteins_proteins",
+                      "regulatory_regions",
+                      "regulatory_regions_genes",
+                      "regulatory_regions_genes_biosamples",
+                      "regulatory_regions_genes_biosamples_donors",
+                      "regulatory_regions_genes_biosamples_treatments_chebi",
+                      "regulatory_regions_genes_biosamples_treatments_proteins",
+                      "regulatory_regions_regulatory_regions",
+                      "sequence barcodes",
+                      "studies",
+                      "studies_variants",
+                      "studies_variants_phenotypes",
+                      "transcriptome reference",
+                      "transcripts",
+                      "transcripts_proteins",
+                      "variants",
+                      "variants_coding_variants",
+                      "variants_diseases",
+                      "variants_diseases_genes",
+                      "variants_drugs",
+                      "variants_drugs_genes",
+                      "variants_genes",
+                      "variants_genes_terms",
+                      "variants_phenotypes",
+                      "variants_phenotypes_studies",
+                      "variants_proteins",
+                      "variants_proteins_terms",
+                      "variants_proteins_biosamples",
+                      "variants_proteins_phenotypes",
+                      "variants_regulatory_regions",
+                      "variants_variants",
+                      "vector sequences"
+                    ],
+                    "permission": "admin_only"
+                  }
+                ],
+                "enum": [
+                  "barcode to element mapping",
+                  "barcode to sample mapping",
+                  "differential gene expression quantifications",
+                  "differential transcript expression quantifications",
+                  "editing templates",
+                  "element quantifications",
+                  "elements reference",
+                  "fold change over control",
+                  "guide quantifications",
+                  "guide RNA sequences",
+                  "MPRA sequence designs",
+                  "peaks",
+                  "prime editing guide RNA sequences",
+                  "protein to protein interaction score",
+                  "tissue positions",
+                  "sample sort parameters",
+                  "sequence barcodes",
+                  "SNP effect matrix",
+                  "variants",
+                  "variant effects",
+                  "variant to element mapping"
+                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -16577,9 +16786,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "File Format",
                 "description": "The file format or extension of the file.",
                 "type": "string",
+                "title": "File Format",
                 "comment": "This property is overwritten by the subclasses to define specific enum values."
               }
             },
@@ -16733,21 +16942,6 @@
             "explode": true
           },
           {
-            "name": "library_construction_platform",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Library Construction Platform",
-                "description": "The platform used to construct the library sequenced in this auxiliary set.",
-                "type": "string"
-              }
-            },
-            "description": "Filter by library_construction_platform",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "measurement_sets.@id",
             "in": "query",
             "schema": {
@@ -16819,6 +17013,7 @@
                   "DOGMA-seq",
                   "Histone ChIP-seq",
                   "Hi-C",
+                  "HT-recruit",
                   "lentiMPRA",
                   "MERFISH",
                   "MIAA",
@@ -16842,6 +17037,7 @@
                   "snMCT-seq",
                   "snM3C-seq",
                   "snRNA-seq",
+                  "Spatial transcriptomics",
                   "SUPERSTARR",
                   "TAP-seq",
                   "TF ChIP-seq",
@@ -16874,37 +17070,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -17014,9 +17208,9 @@
             "name": "samples.classifications",
             "in": "query",
             "schema": {
-              "title": "Classifications",
               "description": "The general category of this type of sample.",
               "type": "array",
+              "title": "Classifications",
               "items": {
                 "type": "string",
                 "title": "Classification",
@@ -17042,15 +17236,15 @@
             "name": "samples.construct_library_sets",
             "in": "query",
             "schema": {
-              "title": "Construct Library Sets",
               "description": "The construct library sets of vectors introduced to this sample prior to performing an assay.",
               "type": "array",
+              "title": "Construct Library Sets",
+              "comment": "See construct_library_set.json for available identifiers.",
               "items": {
                 "title": "Construct Library Set",
                 "type": "string",
                 "linkTo": "ConstructLibrarySet"
-              },
-              "comment": "See construct_library_set.json for available identifiers."
+              }
             },
             "description": "Filter by samples.construct_library_sets",
             "style": "form",
@@ -17091,10 +17285,10 @@
             "name": "samples.modifications",
             "in": "query",
             "schema": {
-              "title": "Modifications",
               "description": "Links to modifications applied to this biosample.",
               "type": "array",
               "maxItems": 2,
+              "title": "Modifications",
               "items": {
                 "type": "string",
                 "linkTo": [
@@ -17274,13 +17468,13 @@
             "schema": {
               "type": "array",
               "items": {
+                "description": "The species of the organism.",
+                "type": "string",
+                "title": "Taxa",
                 "enum": [
                   "Homo sapiens",
                   "Mus musculus"
-                ],
-                "title": "Taxa",
-                "description": "The species of the organism.",
-                "type": "string"
+                ]
               }
             },
             "description": "Filter by samples.taxa",
@@ -17291,9 +17485,9 @@
             "name": "samples.treatments",
             "in": "query",
             "schema": {
-              "title": "Treatments",
               "description": "A list of treatments applied to the biosample with the purpose of perturbation.",
               "type": "array",
+              "title": "Treatments",
               "items": {
                 "type": "string",
                 "linkTo": "Treatment",
@@ -18137,9 +18331,104 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Content Type",
                 "description": "The type of content in the file.",
                 "type": "string",
+                "title": "Content Type",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "genome reference",
+                      "elements reference",
+                      "exclusion list",
+                      "inclusion list",
+                      "spike-ins"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "biological_context",
+                      "coding_variants",
+                      "complexes",
+                      "complexes_complexes",
+                      "complexes_proteins",
+                      "complexes_terms",
+                      "diseases_genes",
+                      "documentation (readme)",
+                      "drugs",
+                      "elements_genes",
+                      "genes",
+                      "genes_genes",
+                      "genes_pathways",
+                      "genes_terms",
+                      "genes_transcripts",
+                      "go_terms_proteins",
+                      "guide RNA sequences",
+                      "motifs",
+                      "motifs_proteins",
+                      "ontology_terms",
+                      "ontology_terms_ontology_terms",
+                      "pathways",
+                      "pathways_pathways",
+                      "proteins",
+                      "proteins_proteins",
+                      "regulatory_regions",
+                      "regulatory_regions_genes",
+                      "regulatory_regions_genes_biosamples",
+                      "regulatory_regions_genes_biosamples_donors",
+                      "regulatory_regions_genes_biosamples_treatments_chebi",
+                      "regulatory_regions_genes_biosamples_treatments_proteins",
+                      "regulatory_regions_regulatory_regions",
+                      "sequence barcodes",
+                      "studies",
+                      "studies_variants",
+                      "studies_variants_phenotypes",
+                      "transcriptome reference",
+                      "transcripts",
+                      "transcripts_proteins",
+                      "variants",
+                      "variants_coding_variants",
+                      "variants_diseases",
+                      "variants_diseases_genes",
+                      "variants_drugs",
+                      "variants_drugs_genes",
+                      "variants_genes",
+                      "variants_genes_terms",
+                      "variants_phenotypes",
+                      "variants_phenotypes_studies",
+                      "variants_proteins",
+                      "variants_proteins_terms",
+                      "variants_proteins_biosamples",
+                      "variants_proteins_phenotypes",
+                      "variants_regulatory_regions",
+                      "variants_variants",
+                      "vector sequences"
+                    ],
+                    "permission": "admin_only"
+                  }
+                ],
+                "enum": [
+                  "barcode to element mapping",
+                  "barcode to sample mapping",
+                  "differential gene expression quantifications",
+                  "differential transcript expression quantifications",
+                  "editing templates",
+                  "element quantifications",
+                  "elements reference",
+                  "fold change over control",
+                  "guide quantifications",
+                  "guide RNA sequences",
+                  "MPRA sequence designs",
+                  "peaks",
+                  "prime editing guide RNA sequences",
+                  "protein to protein interaction score",
+                  "tissue positions",
+                  "sample sort parameters",
+                  "sequence barcodes",
+                  "SNP effect matrix",
+                  "variants",
+                  "variant effects",
+                  "variant to element mapping"
+                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -18153,9 +18442,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "File Format",
                 "description": "The file format or extension of the file.",
                 "type": "string",
+                "title": "File Format",
                 "comment": "This property is overwritten by the subclasses to define specific enum values."
               }
             },
@@ -18516,37 +18805,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -19523,9 +19810,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Taxa",
                 "description": "The species of the organism.",
-                "type": "string"
+                "type": "string",
+                "title": "Taxa"
               }
             },
             "description": "Filter by donors.taxa",
@@ -19616,9 +19903,104 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Content Type",
                 "description": "The type of content in the file.",
                 "type": "string",
+                "title": "Content Type",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "genome reference",
+                      "elements reference",
+                      "exclusion list",
+                      "inclusion list",
+                      "spike-ins"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "biological_context",
+                      "coding_variants",
+                      "complexes",
+                      "complexes_complexes",
+                      "complexes_proteins",
+                      "complexes_terms",
+                      "diseases_genes",
+                      "documentation (readme)",
+                      "drugs",
+                      "elements_genes",
+                      "genes",
+                      "genes_genes",
+                      "genes_pathways",
+                      "genes_terms",
+                      "genes_transcripts",
+                      "go_terms_proteins",
+                      "guide RNA sequences",
+                      "motifs",
+                      "motifs_proteins",
+                      "ontology_terms",
+                      "ontology_terms_ontology_terms",
+                      "pathways",
+                      "pathways_pathways",
+                      "proteins",
+                      "proteins_proteins",
+                      "regulatory_regions",
+                      "regulatory_regions_genes",
+                      "regulatory_regions_genes_biosamples",
+                      "regulatory_regions_genes_biosamples_donors",
+                      "regulatory_regions_genes_biosamples_treatments_chebi",
+                      "regulatory_regions_genes_biosamples_treatments_proteins",
+                      "regulatory_regions_regulatory_regions",
+                      "sequence barcodes",
+                      "studies",
+                      "studies_variants",
+                      "studies_variants_phenotypes",
+                      "transcriptome reference",
+                      "transcripts",
+                      "transcripts_proteins",
+                      "variants",
+                      "variants_coding_variants",
+                      "variants_diseases",
+                      "variants_diseases_genes",
+                      "variants_drugs",
+                      "variants_drugs_genes",
+                      "variants_genes",
+                      "variants_genes_terms",
+                      "variants_phenotypes",
+                      "variants_phenotypes_studies",
+                      "variants_proteins",
+                      "variants_proteins_terms",
+                      "variants_proteins_biosamples",
+                      "variants_proteins_phenotypes",
+                      "variants_regulatory_regions",
+                      "variants_variants",
+                      "vector sequences"
+                    ],
+                    "permission": "admin_only"
+                  }
+                ],
+                "enum": [
+                  "barcode to element mapping",
+                  "barcode to sample mapping",
+                  "differential gene expression quantifications",
+                  "differential transcript expression quantifications",
+                  "editing templates",
+                  "element quantifications",
+                  "elements reference",
+                  "fold change over control",
+                  "guide quantifications",
+                  "guide RNA sequences",
+                  "MPRA sequence designs",
+                  "peaks",
+                  "prime editing guide RNA sequences",
+                  "protein to protein interaction score",
+                  "tissue positions",
+                  "sample sort parameters",
+                  "sequence barcodes",
+                  "SNP effect matrix",
+                  "variants",
+                  "variant effects",
+                  "variant to element mapping"
+                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -19649,9 +20031,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "File Format",
                 "description": "The file format or extension of the file.",
                 "type": "string",
+                "title": "File Format",
                 "comment": "This property is overwritten by the subclasses to define specific enum values."
               }
             },
@@ -19821,37 +20203,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -19961,9 +20341,9 @@
             "name": "samples.classifications",
             "in": "query",
             "schema": {
-              "title": "Classifications",
               "description": "The general category of this type of sample.",
               "type": "array",
+              "title": "Classifications",
               "items": {
                 "type": "string",
                 "title": "Classification",
@@ -19989,15 +20369,15 @@
             "name": "samples.construct_library_sets",
             "in": "query",
             "schema": {
-              "title": "Construct Library Sets",
               "description": "The construct library sets of vectors introduced to this sample prior to performing an assay.",
               "type": "array",
+              "title": "Construct Library Sets",
+              "comment": "See construct_library_set.json for available identifiers.",
               "items": {
                 "title": "Construct Library Set",
                 "type": "string",
                 "linkTo": "ConstructLibrarySet"
-              },
-              "comment": "See construct_library_set.json for available identifiers."
+              }
             },
             "description": "Filter by samples.construct_library_sets",
             "style": "form",
@@ -20038,10 +20418,10 @@
             "name": "samples.modifications",
             "in": "query",
             "schema": {
-              "title": "Modifications",
               "description": "Links to modifications applied to this biosample.",
               "type": "array",
               "maxItems": 2,
+              "title": "Modifications",
               "items": {
                 "type": "string",
                 "linkTo": [
@@ -20221,13 +20601,13 @@
             "schema": {
               "type": "array",
               "items": {
+                "description": "The species of the organism.",
+                "type": "string",
+                "title": "Taxa",
                 "enum": [
                   "Homo sapiens",
                   "Mus musculus"
-                ],
-                "title": "Taxa",
-                "description": "The species of the organism.",
-                "type": "string"
+                ]
               }
             },
             "description": "Filter by samples.taxa",
@@ -20238,9 +20618,9 @@
             "name": "samples.treatments",
             "in": "query",
             "schema": {
-              "title": "Treatments",
               "description": "A list of treatments applied to the biosample with the purpose of perturbation.",
               "type": "array",
+              "title": "Treatments",
               "items": {
                 "type": "string",
                 "linkTo": "Treatment",
@@ -21117,9 +21497,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Taxa",
                 "description": "The species of the organism.",
-                "type": "string"
+                "type": "string",
+                "title": "Taxa"
               }
             },
             "description": "Filter by donors.taxa",
@@ -21218,9 +21598,104 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Content Type",
                 "description": "The type of content in the file.",
                 "type": "string",
+                "title": "Content Type",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "genome reference",
+                      "elements reference",
+                      "exclusion list",
+                      "inclusion list",
+                      "spike-ins"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "biological_context",
+                      "coding_variants",
+                      "complexes",
+                      "complexes_complexes",
+                      "complexes_proteins",
+                      "complexes_terms",
+                      "diseases_genes",
+                      "documentation (readme)",
+                      "drugs",
+                      "elements_genes",
+                      "genes",
+                      "genes_genes",
+                      "genes_pathways",
+                      "genes_terms",
+                      "genes_transcripts",
+                      "go_terms_proteins",
+                      "guide RNA sequences",
+                      "motifs",
+                      "motifs_proteins",
+                      "ontology_terms",
+                      "ontology_terms_ontology_terms",
+                      "pathways",
+                      "pathways_pathways",
+                      "proteins",
+                      "proteins_proteins",
+                      "regulatory_regions",
+                      "regulatory_regions_genes",
+                      "regulatory_regions_genes_biosamples",
+                      "regulatory_regions_genes_biosamples_donors",
+                      "regulatory_regions_genes_biosamples_treatments_chebi",
+                      "regulatory_regions_genes_biosamples_treatments_proteins",
+                      "regulatory_regions_regulatory_regions",
+                      "sequence barcodes",
+                      "studies",
+                      "studies_variants",
+                      "studies_variants_phenotypes",
+                      "transcriptome reference",
+                      "transcripts",
+                      "transcripts_proteins",
+                      "variants",
+                      "variants_coding_variants",
+                      "variants_diseases",
+                      "variants_diseases_genes",
+                      "variants_drugs",
+                      "variants_drugs_genes",
+                      "variants_genes",
+                      "variants_genes_terms",
+                      "variants_phenotypes",
+                      "variants_phenotypes_studies",
+                      "variants_proteins",
+                      "variants_proteins_terms",
+                      "variants_proteins_biosamples",
+                      "variants_proteins_phenotypes",
+                      "variants_regulatory_regions",
+                      "variants_variants",
+                      "vector sequences"
+                    ],
+                    "permission": "admin_only"
+                  }
+                ],
+                "enum": [
+                  "barcode to element mapping",
+                  "barcode to sample mapping",
+                  "differential gene expression quantifications",
+                  "differential transcript expression quantifications",
+                  "editing templates",
+                  "element quantifications",
+                  "elements reference",
+                  "fold change over control",
+                  "guide quantifications",
+                  "guide RNA sequences",
+                  "MPRA sequence designs",
+                  "peaks",
+                  "prime editing guide RNA sequences",
+                  "protein to protein interaction score",
+                  "tissue positions",
+                  "sample sort parameters",
+                  "sequence barcodes",
+                  "SNP effect matrix",
+                  "variants",
+                  "variant effects",
+                  "variant to element mapping"
+                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -21251,9 +21726,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "File Format",
                 "description": "The file format or extension of the file.",
                 "type": "string",
+                "title": "File Format",
                 "comment": "This property is overwritten by the subclasses to define specific enum values."
               }
             },
@@ -21422,37 +21897,6 @@
             "explode": true
           },
           {
-            "name": "library_construction_platform.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "ID",
-                "type": "string"
-              }
-            },
-            "description": "Filter by library_construction_platform.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "library_construction_platform.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Term Name",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease.",
-                "comment": "The term should match the term identifiers specified in term_id.",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "type": "string"
-              }
-            },
-            "description": "Filter by library_construction_platform.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "multiome_size",
             "in": "query",
             "schema": {
@@ -21504,6 +21948,7 @@
                   "DOGMA-seq",
                   "Histone ChIP-seq",
                   "Hi-C",
+                  "HT-recruit",
                   "lentiMPRA",
                   "MERFISH",
                   "MIAA",
@@ -21527,6 +21972,7 @@
                   "snMCT-seq",
                   "snM3C-seq",
                   "snRNA-seq",
+                  "Spatial transcriptomics",
                   "SUPERSTARR",
                   "TAP-seq",
                   "TF ChIP-seq",
@@ -21560,37 +22006,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -21786,9 +22230,9 @@
             "name": "samples.classifications",
             "in": "query",
             "schema": {
-              "title": "Classifications",
               "description": "The general category of this type of sample.",
               "type": "array",
+              "title": "Classifications",
               "items": {
                 "type": "string",
                 "title": "Classification",
@@ -21916,8 +22360,7 @@
               "type": "array",
               "items": {
                 "title": "Summary",
-                "type": "string",
-                "description": "A summary of the object."
+                "type": "string"
               }
             },
             "description": "Filter by samples.construct_library_sets.small_scale_gene_list.summary",
@@ -22162,13 +22605,13 @@
             "schema": {
               "type": "array",
               "items": {
+                "description": "The species of the organism.",
+                "type": "string",
+                "title": "Taxa",
                 "enum": [
                   "Homo sapiens",
                   "Mus musculus"
-                ],
-                "title": "Taxa",
-                "description": "The species of the organism.",
-                "type": "string"
+                ]
               }
             },
             "description": "Filter by samples.taxa",
@@ -23024,9 +23467,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Taxa",
                 "description": "The species of the organism.",
-                "type": "string"
+                "type": "string",
+                "title": "Taxa"
               }
             },
             "description": "Filter by donors.taxa",
@@ -23113,9 +23556,104 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Content Type",
                 "description": "The type of content in the file.",
                 "type": "string",
+                "title": "Content Type",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "genome reference",
+                      "elements reference",
+                      "exclusion list",
+                      "inclusion list",
+                      "spike-ins"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "biological_context",
+                      "coding_variants",
+                      "complexes",
+                      "complexes_complexes",
+                      "complexes_proteins",
+                      "complexes_terms",
+                      "diseases_genes",
+                      "documentation (readme)",
+                      "drugs",
+                      "elements_genes",
+                      "genes",
+                      "genes_genes",
+                      "genes_pathways",
+                      "genes_terms",
+                      "genes_transcripts",
+                      "go_terms_proteins",
+                      "guide RNA sequences",
+                      "motifs",
+                      "motifs_proteins",
+                      "ontology_terms",
+                      "ontology_terms_ontology_terms",
+                      "pathways",
+                      "pathways_pathways",
+                      "proteins",
+                      "proteins_proteins",
+                      "regulatory_regions",
+                      "regulatory_regions_genes",
+                      "regulatory_regions_genes_biosamples",
+                      "regulatory_regions_genes_biosamples_donors",
+                      "regulatory_regions_genes_biosamples_treatments_chebi",
+                      "regulatory_regions_genes_biosamples_treatments_proteins",
+                      "regulatory_regions_regulatory_regions",
+                      "sequence barcodes",
+                      "studies",
+                      "studies_variants",
+                      "studies_variants_phenotypes",
+                      "transcriptome reference",
+                      "transcripts",
+                      "transcripts_proteins",
+                      "variants",
+                      "variants_coding_variants",
+                      "variants_diseases",
+                      "variants_diseases_genes",
+                      "variants_drugs",
+                      "variants_drugs_genes",
+                      "variants_genes",
+                      "variants_genes_terms",
+                      "variants_phenotypes",
+                      "variants_phenotypes_studies",
+                      "variants_proteins",
+                      "variants_proteins_terms",
+                      "variants_proteins_biosamples",
+                      "variants_proteins_phenotypes",
+                      "variants_regulatory_regions",
+                      "variants_variants",
+                      "vector sequences"
+                    ],
+                    "permission": "admin_only"
+                  }
+                ],
+                "enum": [
+                  "barcode to element mapping",
+                  "barcode to sample mapping",
+                  "differential gene expression quantifications",
+                  "differential transcript expression quantifications",
+                  "editing templates",
+                  "element quantifications",
+                  "elements reference",
+                  "fold change over control",
+                  "guide quantifications",
+                  "guide RNA sequences",
+                  "MPRA sequence designs",
+                  "peaks",
+                  "prime editing guide RNA sequences",
+                  "protein to protein interaction score",
+                  "tissue positions",
+                  "sample sort parameters",
+                  "sequence barcodes",
+                  "SNP effect matrix",
+                  "variants",
+                  "variant effects",
+                  "variant to element mapping"
+                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -23146,9 +23684,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "File Format",
                 "description": "The file format or extension of the file.",
                 "type": "string",
+                "title": "File Format",
                 "comment": "This property is overwritten by the subclasses to define specific enum values."
               }
             },
@@ -23441,37 +23979,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -23581,9 +24117,9 @@
             "name": "samples.classifications",
             "in": "query",
             "schema": {
-              "title": "Classifications",
               "description": "The general category of this type of sample.",
               "type": "array",
+              "title": "Classifications",
               "items": {
                 "type": "string",
                 "title": "Classification",
@@ -23609,15 +24145,15 @@
             "name": "samples.construct_library_sets",
             "in": "query",
             "schema": {
-              "title": "Construct Library Sets",
               "description": "The construct library sets of vectors introduced to this sample prior to performing an assay.",
               "type": "array",
+              "title": "Construct Library Sets",
+              "comment": "See construct_library_set.json for available identifiers.",
               "items": {
                 "title": "Construct Library Set",
                 "type": "string",
                 "linkTo": "ConstructLibrarySet"
-              },
-              "comment": "See construct_library_set.json for available identifiers."
+              }
             },
             "description": "Filter by samples.construct_library_sets",
             "style": "form",
@@ -23658,10 +24194,10 @@
             "name": "samples.modifications",
             "in": "query",
             "schema": {
-              "title": "Modifications",
               "description": "Links to modifications applied to this biosample.",
               "type": "array",
               "maxItems": 2,
+              "title": "Modifications",
               "items": {
                 "type": "string",
                 "linkTo": [
@@ -23841,13 +24377,13 @@
             "schema": {
               "type": "array",
               "items": {
+                "description": "The species of the organism.",
+                "type": "string",
+                "title": "Taxa",
                 "enum": [
                   "Homo sapiens",
                   "Mus musculus"
-                ],
-                "title": "Taxa",
-                "description": "The species of the organism.",
-                "type": "string"
+                ]
               }
             },
             "description": "Filter by samples.taxa",
@@ -23858,9 +24394,9 @@
             "name": "samples.treatments",
             "in": "query",
             "schema": {
-              "title": "Treatments",
               "description": "A list of treatments applied to the biosample with the purpose of perturbation.",
               "type": "array",
+              "title": "Treatments",
               "items": {
                 "type": "string",
                 "linkTo": "Treatment",
@@ -24228,6 +24764,22 @@
             "explode": true
           },
           {
+            "name": "assessed_genes",
+            "in": "query",
+            "schema": {
+              "title": "Assessed Genes",
+              "description": "A list of gene(s) assessed in this prediction set. This property is used to describe the gene(s) being investigated, especially how the input variables in the prediction set affect some critical functionality of the gene(s). For example, the effect could be predicted from genetic variants on the binding affinity of a transcription factor encoded by a gene (assessed_genes). It differs from small_scale_gene_list and large_scale_gene_list, as these are used when the input variables of the prediction set are genes.",
+              "type": "array",
+              "items": {
+                "title": "Gene",
+                "type": "string"
+              }
+            },
+            "description": "Filter by assessed_genes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -24558,9 +25110,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Taxa",
                 "description": "The species of the organism.",
-                "type": "string"
+                "type": "string",
+                "title": "Taxa"
               }
             },
             "description": "Filter by donors.taxa",
@@ -24647,9 +25199,104 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "Content Type",
                 "description": "The type of content in the file.",
                 "type": "string",
+                "title": "Content Type",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "genome reference",
+                      "elements reference",
+                      "exclusion list",
+                      "inclusion list",
+                      "spike-ins"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "biological_context",
+                      "coding_variants",
+                      "complexes",
+                      "complexes_complexes",
+                      "complexes_proteins",
+                      "complexes_terms",
+                      "diseases_genes",
+                      "documentation (readme)",
+                      "drugs",
+                      "elements_genes",
+                      "genes",
+                      "genes_genes",
+                      "genes_pathways",
+                      "genes_terms",
+                      "genes_transcripts",
+                      "go_terms_proteins",
+                      "guide RNA sequences",
+                      "motifs",
+                      "motifs_proteins",
+                      "ontology_terms",
+                      "ontology_terms_ontology_terms",
+                      "pathways",
+                      "pathways_pathways",
+                      "proteins",
+                      "proteins_proteins",
+                      "regulatory_regions",
+                      "regulatory_regions_genes",
+                      "regulatory_regions_genes_biosamples",
+                      "regulatory_regions_genes_biosamples_donors",
+                      "regulatory_regions_genes_biosamples_treatments_chebi",
+                      "regulatory_regions_genes_biosamples_treatments_proteins",
+                      "regulatory_regions_regulatory_regions",
+                      "sequence barcodes",
+                      "studies",
+                      "studies_variants",
+                      "studies_variants_phenotypes",
+                      "transcriptome reference",
+                      "transcripts",
+                      "transcripts_proteins",
+                      "variants",
+                      "variants_coding_variants",
+                      "variants_diseases",
+                      "variants_diseases_genes",
+                      "variants_drugs",
+                      "variants_drugs_genes",
+                      "variants_genes",
+                      "variants_genes_terms",
+                      "variants_phenotypes",
+                      "variants_phenotypes_studies",
+                      "variants_proteins",
+                      "variants_proteins_terms",
+                      "variants_proteins_biosamples",
+                      "variants_proteins_phenotypes",
+                      "variants_regulatory_regions",
+                      "variants_variants",
+                      "vector sequences"
+                    ],
+                    "permission": "admin_only"
+                  }
+                ],
+                "enum": [
+                  "barcode to element mapping",
+                  "barcode to sample mapping",
+                  "differential gene expression quantifications",
+                  "differential transcript expression quantifications",
+                  "editing templates",
+                  "element quantifications",
+                  "elements reference",
+                  "fold change over control",
+                  "guide quantifications",
+                  "guide RNA sequences",
+                  "MPRA sequence designs",
+                  "peaks",
+                  "prime editing guide RNA sequences",
+                  "protein to protein interaction score",
+                  "tissue positions",
+                  "sample sort parameters",
+                  "sequence barcodes",
+                  "SNP effect matrix",
+                  "variants",
+                  "variant effects",
+                  "variant to element mapping"
+                ],
                 "comment": "Content Type describes the content of the file."
               }
             },
@@ -24680,9 +25327,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "title": "File Format",
                 "description": "The file format or extension of the file.",
                 "type": "string",
+                "title": "File Format",
                 "comment": "This property is overwritten by the subclasses to define specific enum values."
               }
             },
@@ -24973,37 +25620,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -25113,9 +25758,9 @@
             "name": "samples.classifications",
             "in": "query",
             "schema": {
-              "title": "Classifications",
               "description": "The general category of this type of sample.",
               "type": "array",
+              "title": "Classifications",
               "items": {
                 "type": "string",
                 "title": "Classification",
@@ -25217,10 +25862,10 @@
             "name": "samples.modifications",
             "in": "query",
             "schema": {
-              "title": "Modifications",
               "description": "Links to modifications applied to this biosample.",
               "type": "array",
               "maxItems": 2,
+              "title": "Modifications",
               "items": {
                 "type": "string",
                 "linkTo": [
@@ -25400,13 +26045,13 @@
             "schema": {
               "type": "array",
               "items": {
+                "description": "The species of the organism.",
+                "type": "string",
+                "title": "Taxa",
                 "enum": [
                   "Homo sapiens",
                   "Mus musculus"
-                ],
-                "title": "Taxa",
-                "description": "The species of the organism.",
-                "type": "string"
+                ]
               }
             },
             "description": "Filter by samples.taxa",
@@ -25417,9 +26062,9 @@
             "name": "samples.treatments",
             "in": "query",
             "schema": {
-              "title": "Treatments",
               "description": "A list of treatments applied to the biosample with the purpose of perturbation.",
               "type": "array",
+              "title": "Treatments",
               "items": {
                 "type": "string",
                 "linkTo": "Treatment",
@@ -25536,7 +26181,7 @@
             "in": "query",
             "schema": {
               "title": "Small Scale Loci List",
-              "description": "A small scale (<=100) list of specific chromosomal region(s).",
+              "description": "A small scale (<=100) list of specific chromosomal region(s) whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genetic variants whose functionality is predicted in this prediction set.",
               "type": "array",
               "items": {
                 "title": "Locus",
@@ -26143,8 +26788,7 @@
               "type": "array",
               "items": {
                 "title": "Summary",
-                "type": "string",
-                "description": "A summary of the object."
+                "type": "string"
               }
             },
             "description": "Filter by summary",
@@ -29234,6 +29878,7 @@
                   "DOGMA-seq",
                   "Histone ChIP-seq",
                   "Hi-C",
+                  "HT-recruit",
                   "lentiMPRA",
                   "MERFISH",
                   "MIAA",
@@ -29257,6 +29902,7 @@
                   "snMCT-seq",
                   "snM3C-seq",
                   "snRNA-seq",
+                  "Spatial transcriptomics",
                   "SUPERSTARR",
                   "TAP-seq",
                   "TF ChIP-seq",
@@ -30280,7 +30926,9 @@
                   "NovaSeq 6000 S1 Reagent Kit v1.5",
                   "NovaSeq 6000 S2 Reagent Kit v1.5",
                   "NovaSeq 6000 S4 Reagent Kit v1.5",
+                  "NovaSeq X Series 1.5B Reagent Kit",
                   "NovaSeq X Series 10B Reagent Kit",
+                  "NovaSeq X Series 25B Reagent Kit",
                   "ONT Ligation Sequencing Kit V14",
                   "Sequel sequencing kit 3.0",
                   "Sequel II sequencing kit 2.0"
@@ -31454,8 +32102,7 @@
               "type": "array",
               "items": {
                 "title": "Summary",
-                "type": "string",
-                "description": "A summary of the object."
+                "type": "string"
               }
             },
             "description": "Filter by summary",
@@ -32393,8 +33040,7 @@
               "type": "array",
               "items": {
                 "title": "Summary",
-                "type": "string",
-                "description": "A summary of the object."
+                "type": "string"
               }
             },
             "description": "Filter by summary",
@@ -32851,7 +33497,7 @@
             "in": "query",
             "schema": {
               "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
                 "title": "Publication Identifier",
@@ -34319,37 +34965,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -35708,15 +36352,15 @@
             "name": "multiplexed_samples.construct_library_sets",
             "in": "query",
             "schema": {
-              "title": "Construct Library Sets",
               "description": "The construct library sets of vectors introduced to this sample prior to performing an assay.",
               "type": "array",
+              "title": "Construct Library Sets",
+              "comment": "See construct_library_set.json for available identifiers.",
               "items": {
                 "title": "Construct Library Set",
                 "type": "string",
                 "linkTo": "ConstructLibrarySet"
-              },
-              "comment": "See construct_library_set.json for available identifiers."
+              }
             },
             "description": "Filter by multiplexed_samples.construct_library_sets",
             "style": "form",
@@ -35924,37 +36568,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -37424,37 +38066,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -38670,37 +39310,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -40169,37 +40807,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -41723,37 +42359,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -42575,37 +43209,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -42712,8 +43344,7 @@
               "type": "array",
               "items": {
                 "title": "Summary",
-                "type": "string",
-                "description": "A summary of the object."
+                "type": "string"
               }
             },
             "description": "Filter by summary",
@@ -43127,37 +43758,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -43279,8 +43908,7 @@
               "type": "array",
               "items": {
                 "title": "Summary",
-                "type": "string",
-                "description": "A summary of the object."
+                "type": "string"
               }
             },
             "description": "Filter by summary",
@@ -45327,37 +45955,35 @@
             "explode": true
           },
           {
-            "name": "publication_identifiers",
+            "name": "publications.@id",
             "in": "query",
             "schema": {
-              "title": "Publication Identifiers",
-              "description": "The publication identifiers that provide more information about the object.",
               "type": "array",
               "items": {
-                "title": "Publication Identifier",
-                "description": "A publication identifier that provides more information about the object.",
-                "type": "string",
-                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+                "title": "ID",
+                "type": "string"
               }
             },
-            "description": "Filter by publication_identifiers",
+            "description": "Filter by publications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "publications",
+            "name": "publications.publication_identifiers",
             "in": "query",
             "schema": {
-              "title": "Publications",
-              "description": "The publications associated with this object.",
+              "title": "Publication Identifiers",
+              "description": "The publication identifiers associated with this publication object.",
               "type": "array",
               "items": {
-                "title": "Publication",
-                "description": "A publication associated with this object.",
-                "type": "string"
+                "title": "Publication Identifier",
+                "description": "An identifier that references data found in the object.",
+                "type": "string",
+                "uniqueKey": "publication:publication_identifiers",
+                "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
               }
             },
-            "description": "Filter by publications",
+            "description": "Filter by publications.publication_identifiers",
             "style": "form",
             "explode": true
           },
@@ -46594,8 +47220,7 @@
           },
           "summary": {
             "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
+            "type": "string"
           },
           "name_quantification": {
             "title": "Name and Quantification",
@@ -46840,18 +47465,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "url": {
@@ -47162,18 +47775,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "url": {
@@ -47980,7 +48581,8 @@
             "description": "The file format or extension of the file.",
             "type": "string",
             "enum": [
-              "yaml"
+              "yaml",
+              "json"
             ]
           },
           "file_format_specifications": {
@@ -50181,7 +50783,9 @@
               "NovaSeq 6000 S1 Reagent Kit v1.5",
               "NovaSeq 6000 S2 Reagent Kit v1.5",
               "NovaSeq 6000 S4 Reagent Kit v1.5",
+              "NovaSeq X Series 1.5B Reagent Kit",
               "NovaSeq X Series 10B Reagent Kit",
+              "NovaSeq X Series 25B Reagent Kit",
               "ONT Ligation Sequencing Kit V14",
               "Sequel sequencing kit 3.0",
               "Sequel II sequencing kit 2.0"
@@ -50209,6 +50813,23 @@
             "title": "Index",
             "description": "An Illumina index associated with the file.",
             "type": "string"
+          },
+          "base_modifications": {
+            "title": "Base Modifications",
+            "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Base Modification",
+              "description": "The chemical modification to bases in a DNA sequence that is detected in this file.",
+              "type": "string",
+              "enum": [
+                "4mC",
+                "5hmC",
+                "5mC",
+                "6mA"
+              ]
+            }
           },
           "@id": {
             "title": "ID",
@@ -51069,18 +51690,6 @@
               "type": "string"
             }
           },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
-          },
           "documents": {
             "title": "Documents",
             "description": "Documents that provide additional information (not data file).",
@@ -51337,18 +51946,6 @@
               "type": "string"
             }
           },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
-          },
           "documents": {
             "title": "Documents",
             "description": "Documents that provide additional information (not data file).",
@@ -51530,11 +52127,6 @@
               "variant sequencing"
             ]
           },
-          "library_construction_platform": {
-            "title": "Library Construction Platform",
-            "description": "The platform used to construct the library sequenced in this auxiliary set.",
-            "type": "string"
-          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -51683,18 +52275,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "documents": {
@@ -52112,18 +52692,6 @@
               "type": "string"
             }
           },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
-          },
           "documents": {
             "title": "Documents",
             "description": "Documents that provide additional information (not data file).",
@@ -52401,18 +52969,6 @@
               "type": "string"
             }
           },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
-          },
           "documents": {
             "title": "Documents",
             "description": "Documents that provide additional information (not data file).",
@@ -52588,11 +53144,6 @@
             "description": "The assay used to produce data in this measurement set.",
             "type": "string"
           },
-          "library_construction_platform": {
-            "title": "Library Construction Platform",
-            "description": "The platform used to construct the library sequenced in this measurement set.",
-            "type": "string"
-          },
           "protocols": {
             "title": "Protocols",
             "description": "Links to the protocol(s) for conducting the assay on Protocols.io.",
@@ -52619,6 +53170,7 @@
               "DOGMA-seq",
               "Histone ChIP-seq",
               "Hi-C",
+              "HT-recruit",
               "lentiMPRA",
               "MERFISH",
               "MIAA",
@@ -52642,6 +53194,7 @@
               "snMCT-seq",
               "snM3C-seq",
               "snRNA-seq",
+              "Spatial transcriptomics",
               "SUPERSTARR",
               "TAP-seq",
               "TF ChIP-seq",
@@ -52822,18 +53375,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "documents": {
@@ -53155,7 +53696,7 @@
           },
           "small_scale_loci_list": {
             "title": "Small Scale Loci List",
-            "description": "A small scale (<=100) list of specific chromosomal region(s).",
+            "description": "A small scale (<=100) list of specific chromosomal region(s) whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genetic variants whose functionality is predicted in this prediction set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -53201,12 +53742,12 @@
           },
           "large_scale_loci_list": {
             "title": "Large Scale Loci List",
-            "description": "A large scale list (>100) of specific chromosomal regions.",
+            "description": "A large scale list (>100) of specific chromosomal regions whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genetic variants whose functionality is predicted in this prediction set.",
             "type": "string"
           },
           "small_scale_gene_list": {
             "title": "Small Scale Gene List",
-            "description": "The specific, small scale list of (<=100) gene(s) this prediction set targets.",
+            "description": "The specific, small scale list of (<=100) gene(s) whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genes whose expression level is predicted in this prediction set. It differs from assessed_genes (see more information under assessed_genes).",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -53216,7 +53757,7 @@
           },
           "large_scale_gene_list": {
             "title": "Large Scale Gene List",
-            "description": "The large scale list of (>100 genes) this this prediction set targets.",
+            "description": "The large scale list of (>100 genes) whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genes whose expression level is predicted in this prediction set. It differs from assessed_genes (see more information under assessed_genes).",
             "type": "string"
           },
           "release_timestamp": {
@@ -53233,18 +53774,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "documents": {
@@ -53435,6 +53964,16 @@
               "loci",
               "genome-wide"
             ]
+          },
+          "assessed_genes": {
+            "title": "Assessed Genes",
+            "description": "A list of gene(s) assessed in this prediction set. This property is used to describe the gene(s) being investigated, especially how the input variables in the prediction set affect some critical functionality of the gene(s). For example, the effect could be predicted from genetic variants on the binding affinity of a transcription factor encoded by a gene (assessed_genes). It differs from small_scale_gene_list and large_scale_gene_list, as these are used when the input variables of the prediction set are genes.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Gene",
+              "type": "string"
+            }
           },
           "@id": {
             "title": "ID",
@@ -53694,8 +54233,7 @@
           },
           "summary": {
             "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
+            "type": "string"
           },
           "title": {
             "title": "Title",
@@ -54688,6 +55226,7 @@
                 "DOGMA-seq",
                 "Histone ChIP-seq",
                 "Hi-C",
+                "HT-recruit",
                 "lentiMPRA",
                 "MERFISH",
                 "MIAA",
@@ -54711,6 +55250,7 @@
                 "snMCT-seq",
                 "snM3C-seq",
                 "snRNA-seq",
+                "Spatial transcriptomics",
                 "SUPERSTARR",
                 "TAP-seq",
                 "TF ChIP-seq",
@@ -55108,7 +55648,9 @@
                 "NovaSeq 6000 S1 Reagent Kit v1.5",
                 "NovaSeq 6000 S2 Reagent Kit v1.5",
                 "NovaSeq 6000 S4 Reagent Kit v1.5",
+                "NovaSeq X Series 1.5B Reagent Kit",
                 "NovaSeq X Series 10B Reagent Kit",
+                "NovaSeq X Series 25B Reagent Kit",
                 "ONT Ligation Sequencing Kit V14",
                 "Sequel sequencing kit 3.0",
                 "Sequel II sequencing kit 2.0"
@@ -55514,8 +56056,7 @@
           },
           "summary": {
             "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
+            "type": "string"
           }
         }
       },
@@ -55808,8 +56349,7 @@
           },
           "summary": {
             "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
+            "type": "string"
           }
         }
       },
@@ -55823,18 +56363,6 @@
             "title": "Release Timestamp",
             "description": "The date the object was released.",
             "type": "string"
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "An identifier that references data found in the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
           },
           "status": {
             "title": "Status",
@@ -56005,6 +56533,18 @@
             "description": "The journal of the publication.",
             "type": "string"
           },
+          "publication_identifiers": {
+            "title": "Publication Identifiers",
+            "description": "The publication identifiers associated with this publication object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication Identifier",
+              "description": "An identifier that references data found in the object.",
+              "type": "string",
+              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
+            }
+          },
           "published_by": {
             "title": "Published By",
             "type": "array",
@@ -56123,18 +56663,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "taxa": {
@@ -56781,18 +57309,6 @@
               "type": "string"
             }
           },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
-          },
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
@@ -57222,18 +57738,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "taxa": {
@@ -57778,18 +58282,6 @@
               "type": "string"
             }
           },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
-          },
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
@@ -58180,18 +58672,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "taxa": {
@@ -58785,18 +59265,6 @@
               "type": "string"
             }
           },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
-          },
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
@@ -59325,18 +59793,6 @@
               "type": "string"
             }
           },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
-            }
-          },
           "lab": {
             "title": "Lab",
             "description": "Lab associated with the submission.",
@@ -59454,8 +59910,7 @@
           },
           "summary": {
             "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
+            "type": "string"
           },
           "versions": {
             "title": "Versions",
@@ -59509,18 +59964,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "lab": {
@@ -59629,8 +60072,7 @@
           },
           "summary": {
             "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
+            "type": "string"
           },
           "name": {
             "title": "Name",
@@ -60196,18 +60638,6 @@
               "title": "Publication",
               "description": "A publication associated with this object.",
               "type": "string"
-            }
-          },
-          "publication_identifiers": {
-            "title": "Publication Identifiers",
-            "description": "The publication identifiers that provide more information about the object.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Publication Identifier",
-              "description": "A publication identifier that provides more information about the object.",
-              "type": "string",
-              "pattern": "^(PMID:[0-9]+|doi:10\\.[0-9]{4}[\\d\\s\\S:\\.\\/]+|PMCID:PMC[0-9]+|[0-9]{4}\\.[0-9]{4})$"
             }
           },
           "documents": {

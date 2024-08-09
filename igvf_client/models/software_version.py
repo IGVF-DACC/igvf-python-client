@@ -29,7 +29,6 @@ class SoftwareVersion(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
@@ -47,7 +46,7 @@ class SoftwareVersion(BaseModel):
     downloaded_url: Optional[StrictStr] = Field(default=None, description="An external resource to track the version of the software downloaded.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = None
     name: Optional[StrictStr] = Field(default=None, description="A unique identifier for a software version.")
     __properties: ClassVar[List[str]] = []
 

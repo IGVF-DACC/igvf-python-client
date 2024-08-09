@@ -129,6 +129,7 @@ Class | Method | HTTP request | Description
  - [ConfigurationFileResults](docs/ConfigurationFileResults.md)
  - [ConstructLibrarySet](docs/ConstructLibrarySet.md)
  - [ConstructLibrarySetResults](docs/ConstructLibrarySetResults.md)
+ - [ContentType](docs/ContentType.md)
  - [CrisprModification](docs/CrisprModification.md)
  - [CrisprModificationResults](docs/CrisprModificationResults.md)
  - [CuratedSet](docs/CuratedSet.md)

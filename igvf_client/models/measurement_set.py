@@ -29,7 +29,6 @@ class MeasurementSet(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -51,7 +50,6 @@ class MeasurementSet(BaseModel):
     donors: Optional[List[StrictStr]] = Field(default=None, description="The donors of the samples associated with this measurement set.")
     file_set_type: Optional[StrictStr] = Field(default=None, description="The category that best describes this measurement set.")
     assay_term: Optional[StrictStr] = Field(default=None, description="The assay used to produce data in this measurement set.")
-    library_construction_platform: Optional[StrictStr] = Field(default=None, description="The platform used to construct the library sequenced in this measurement set.")
     protocols: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Links to the protocol(s) for conducting the assay on Protocols.io.")
     preferred_assay_title: Optional[StrictStr] = Field(default=None, description="The custom lab preferred label for the experiment performed in this measurement set.")
     multiome_size: Optional[Annotated[int, Field(strict=True, ge=2)]] = Field(default=None, description="The number of datasets included in the multiome experiment this measurement set is a part of.")
@@ -68,7 +66,7 @@ class MeasurementSet(BaseModel):
     submitted_files_timestamp: Optional[StrictStr] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets that use this file set as an input.")
     related_multiome_datasets: Optional[List[StrictStr]] = Field(default=None, description="Related datasets included in the multiome experiment this measurement set is a part of.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "assay_term", "library_construction_platform", "protocols", "preferred_assay_title", "multiome_size", "control_file_sets", "sequencing_library_types", "auxiliary_sets", "external_image_url", "targeted_genes", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "related_multiome_datasets"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "assay_term", "protocols", "preferred_assay_title", "multiome_size", "control_file_sets", "sequencing_library_types", "auxiliary_sets", "external_image_url", "targeted_genes", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "related_multiome_datasets"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -157,8 +155,8 @@ class MeasurementSet(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['10x multiome', '10x multiome with MULTI-seq', 'AAV-MPRA', 'ATAC-seq', 'CERES-seq', 'Cell painting', 'CRISPR FlowFISH', 'DOGMA-seq', 'Histone ChIP-seq', 'Hi-C', 'lentiMPRA', 'MERFISH', 'MIAA', 'mN2H', 'MPRA', 'MPRA (scQer)', 'MULTI-seq', 'Parse SPLiT-seq', 'Perturb-seq', 'RNA-seq', 'SGE', 'scATAC-seq', 'scNT-seq', 'scNT-seq2', 'scRNA-seq', 'semi-qY2H', 'SHARE-seq', 'smFISH', 'snATAC-seq', 'snmC-Seq2', 'snMCT-seq', 'snM3C-seq', 'snRNA-seq', 'SUPERSTARR', 'TAP-seq', 'TF ChIP-seq', 'VAMP-seq', 'Variant FlowFISH', 'Variant painting', 'Y2H', 'yN2H']):
-            raise ValueError("must be one of enum values ('10x multiome', '10x multiome with MULTI-seq', 'AAV-MPRA', 'ATAC-seq', 'CERES-seq', 'Cell painting', 'CRISPR FlowFISH', 'DOGMA-seq', 'Histone ChIP-seq', 'Hi-C', 'lentiMPRA', 'MERFISH', 'MIAA', 'mN2H', 'MPRA', 'MPRA (scQer)', 'MULTI-seq', 'Parse SPLiT-seq', 'Perturb-seq', 'RNA-seq', 'SGE', 'scATAC-seq', 'scNT-seq', 'scNT-seq2', 'scRNA-seq', 'semi-qY2H', 'SHARE-seq', 'smFISH', 'snATAC-seq', 'snmC-Seq2', 'snMCT-seq', 'snM3C-seq', 'snRNA-seq', 'SUPERSTARR', 'TAP-seq', 'TF ChIP-seq', 'VAMP-seq', 'Variant FlowFISH', 'Variant painting', 'Y2H', 'yN2H')")
+        if value not in set(['10x multiome', '10x multiome with MULTI-seq', 'AAV-MPRA', 'ATAC-seq', 'CERES-seq', 'Cell painting', 'CRISPR FlowFISH', 'DOGMA-seq', 'Histone ChIP-seq', 'Hi-C', 'HT-recruit', 'lentiMPRA', 'MERFISH', 'MIAA', 'mN2H', 'MPRA', 'MPRA (scQer)', 'MULTI-seq', 'Parse SPLiT-seq', 'Perturb-seq', 'RNA-seq', 'SGE', 'scATAC-seq', 'scNT-seq', 'scNT-seq2', 'scRNA-seq', 'semi-qY2H', 'SHARE-seq', 'smFISH', 'snATAC-seq', 'snmC-Seq2', 'snMCT-seq', 'snM3C-seq', 'snRNA-seq', 'Spatial transcriptomics', 'SUPERSTARR', 'TAP-seq', 'TF ChIP-seq', 'VAMP-seq', 'Variant FlowFISH', 'Variant painting', 'Y2H', 'yN2H']):
+            raise ValueError("must be one of enum values ('10x multiome', '10x multiome with MULTI-seq', 'AAV-MPRA', 'ATAC-seq', 'CERES-seq', 'Cell painting', 'CRISPR FlowFISH', 'DOGMA-seq', 'Histone ChIP-seq', 'Hi-C', 'HT-recruit', 'lentiMPRA', 'MERFISH', 'MIAA', 'mN2H', 'MPRA', 'MPRA (scQer)', 'MULTI-seq', 'Parse SPLiT-seq', 'Perturb-seq', 'RNA-seq', 'SGE', 'scATAC-seq', 'scNT-seq', 'scNT-seq2', 'scRNA-seq', 'semi-qY2H', 'SHARE-seq', 'smFISH', 'snATAC-seq', 'snmC-Seq2', 'snMCT-seq', 'snM3C-seq', 'snRNA-seq', 'Spatial transcriptomics', 'SUPERSTARR', 'TAP-seq', 'TF ChIP-seq', 'VAMP-seq', 'Variant FlowFISH', 'Variant painting', 'Y2H', 'yN2H')")
         return value
 
     @field_validator('sequencing_library_types')
@@ -235,7 +233,6 @@ class MeasurementSet(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publications": obj.get("publications"),
-            "publication_identifiers": obj.get("publication_identifiers"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
@@ -257,7 +254,6 @@ class MeasurementSet(BaseModel):
             "donors": obj.get("donors"),
             "file_set_type": obj.get("file_set_type"),
             "assay_term": obj.get("assay_term"),
-            "library_construction_platform": obj.get("library_construction_platform"),
             "protocols": obj.get("protocols"),
             "preferred_assay_title": obj.get("preferred_assay_title"),
             "multiome_size": obj.get("multiome_size"),

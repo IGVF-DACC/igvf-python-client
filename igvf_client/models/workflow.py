@@ -29,7 +29,6 @@ class Workflow(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -55,7 +54,7 @@ class Workflow(BaseModel):
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     analysis_steps: Optional[List[StrictStr]] = Field(default=None, description="The analysis steps which are part of this workflow.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "source_url", "workflow_repositories", "standards_page", "workflow_version", "@id", "@type", "summary", "analysis_steps"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "source_url", "workflow_repositories", "standards_page", "workflow_version", "@id", "@type", "summary", "analysis_steps"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -201,7 +200,6 @@ class Workflow(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publications": obj.get("publications"),
-            "publication_identifiers": obj.get("publication_identifiers"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),

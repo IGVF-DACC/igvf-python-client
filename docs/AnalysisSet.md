@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **input_file_sets** | **List[str]** | The file set(s) required for this analysis. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
-**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 

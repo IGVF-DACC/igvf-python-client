@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **version_number** | **str** | Current ENSEMBL GeneID version number of the gene. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **geneid_with_version** | **str** | The ENSEMBL GeneID concatenated with its version number. | [optional] 
 

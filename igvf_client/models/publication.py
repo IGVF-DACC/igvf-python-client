@@ -29,7 +29,6 @@ class Publication(BaseModel):
     A publication related to IGVF.
     """ # noqa: E501
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -51,6 +50,7 @@ class Publication(BaseModel):
     page: Optional[StrictStr] = Field(default=None, description="Pagination of the reference")
     volume: Optional[StrictStr] = Field(default=None, description="The volume of the publication.")
     journal: Optional[StrictStr] = Field(default=None, description="The journal of the publication.")
+    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers associated with this publication object.")
     published_by: Optional[List[StrictStr]] = Field(default=None, description="The affiliation of the lab with a larger organization, such as IGVF.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
@@ -63,7 +63,7 @@ class Publication(BaseModel):
     software: Optional[List[StrictStr]] = Field(default=None, description="The software associated with this publication.")
     software_versions: Optional[List[StrictStr]] = Field(default=None, description="The software versions associated with this publication.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "status", "lab", "award", "attachment", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "title", "abstract", "authors", "date_published", "date_revised", "issue", "page", "volume", "journal", "published_by", "@id", "@type", "summary", "publication_year", "samples", "donors", "file_sets", "workflows", "software", "software_versions"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "attachment", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "title", "abstract", "authors", "date_published", "date_revised", "issue", "page", "volume", "journal", "publication_identifiers", "published_by", "@id", "@type", "summary", "publication_year", "samples", "donors", "file_sets", "workflows", "software", "software_versions"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -188,7 +188,6 @@ class Publication(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "publication_identifiers": obj.get("publication_identifiers"),
             "status": obj.get("status"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
@@ -210,6 +209,7 @@ class Publication(BaseModel):
             "page": obj.get("page"),
             "volume": obj.get("volume"),
             "journal": obj.get("journal"),
+            "publication_identifiers": obj.get("publication_identifiers"),
             "published_by": obj.get("published_by"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),

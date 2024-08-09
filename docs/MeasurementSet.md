@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
-**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 
@@ -30,7 +29,6 @@ Name | Type | Description | Notes
 **donors** | **List[str]** | The donors of the samples associated with this measurement set. | [optional] 
 **file_set_type** | **str** | The category that best describes this measurement set. | [optional] 
 **assay_term** | **str** | The assay used to produce data in this measurement set. | [optional] 
-**library_construction_platform** | **str** | The platform used to construct the library sequenced in this measurement set. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for conducting the assay on Protocols.io. | [optional] 
 **preferred_assay_title** | **str** | The custom lab preferred label for the experiment performed in this measurement set. | [optional] 
 **multiome_size** | **int** | The number of datasets included in the multiome experiment this measurement set is a part of. | [optional] 

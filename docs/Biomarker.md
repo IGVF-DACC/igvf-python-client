@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **gene** | **str** | Biomarker gene. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** |  | [optional] 
 **name_quantification** | **str** | A concatenation of the name and quantification of the biomarker. | [optional] 
 **biomarker_for** | **List[str]** | The samples which have been confirmed to have this biomarker. | [optional] 
 

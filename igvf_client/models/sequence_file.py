@@ -70,6 +70,7 @@ class SequenceFile(BaseModel):
     sequencing_run: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="An ordinal number indicating which sequencing run of the associated library that the file belongs to.")
     illumina_read_type: Optional[StrictStr] = Field(default=None, description="The read type of the file. Relevant only for files produced using an Illumina sequencing platform.")
     index: Optional[StrictStr] = Field(default=None, description="An Illumina index associated with the file.")
+    base_modifications: Optional[List[StrictStr]] = Field(default=None, description="The chemical modifications to bases in a DNA sequence that are detected in this file.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the sequence file.")
@@ -81,7 +82,7 @@ class SequenceFile(BaseModel):
     s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
     upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
     seqspecs: Optional[List[StrictStr]] = Field(default=None, description="Link(s) to the associated seqspec YAML configuration file(s).")
-    __properties: ClassVar[List[str]] = ["controlled_access", "anvil_url", "release_timestamp", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "flowcell_id", "lane", "read_count", "minimum_read_length", "maximum_read_length", "mean_read_length", "sequencing_platform", "sequencing_kit", "sequencing_run", "illumina_read_type", "index", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials", "seqspecs"]
+    __properties: ClassVar[List[str]] = ["controlled_access", "anvil_url", "release_timestamp", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "flowcell_id", "lane", "read_count", "minimum_read_length", "maximum_read_length", "mean_read_length", "sequencing_platform", "sequencing_kit", "sequencing_run", "illumina_read_type", "index", "base_modifications", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials", "seqspecs"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -210,8 +211,8 @@ class SequenceFile(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['HiSeq SBS Kit v4', 'HiSeq SR Cluster Kit v4-cBot-HS', 'HiSeq PE Cluster Kit v4-cBot-HS', 'HiSeq SR Rapid Cluster Kit v2', 'HiSeq PE Rapid Cluster Kit v2', 'HiSeq Rapid SBS Kit v2', 'HiSeq 3000/4000 SBS Kit', 'HiSeq 3000/4000 SR Cluster Kit', 'HiSeq 3000/4000 PE Cluster Kit', 'MiSeq Reagent Kit v2', 'NextSeq 500 Mid Output Kit', 'NextSeq 500 High Output Kit', 'NextSeq 500 Mid Output v2 Kit', 'NextSeq 500 High Output v2 Kit', 'NextSeq 500/550 Mid-Output v2.5 Kit', 'NextSeq 500/550 High-Output v2.5 Kit', 'TG NextSeq 500/550 Mid-Output Kit v2.5', 'TG NextSeq 500/550 High-Output Kit v2.5', 'NextSeq 1000/2000 P1 Reagent Kit', 'NextSeq 1000/2000 P2 Reagent Kit', 'NextSeq 1000/2000 P3 Reagent Kit', 'NextSeq 1000/2000 P1 XLEAP-SBS Reagent Kit', 'NextSeq 1000/2000 P2 XLEAP-SBS Reagent Kit', 'NextSeq 2000 P3 XLEAP-SBS Reagent Kit', 'NextSeq 2000 P4 XLEAP-SBS Reagent Kit', 'NovaSeq 6000 SP Reagent Kit v1.5', 'NovaSeq 6000 S1 Reagent Kit v1.5', 'NovaSeq 6000 S2 Reagent Kit v1.5', 'NovaSeq 6000 S4 Reagent Kit v1.5', 'NovaSeq X Series 10B Reagent Kit', 'ONT Ligation Sequencing Kit V14', 'Sequel sequencing kit 3.0', 'Sequel II sequencing kit 2.0']):
-            raise ValueError("must be one of enum values ('HiSeq SBS Kit v4', 'HiSeq SR Cluster Kit v4-cBot-HS', 'HiSeq PE Cluster Kit v4-cBot-HS', 'HiSeq SR Rapid Cluster Kit v2', 'HiSeq PE Rapid Cluster Kit v2', 'HiSeq Rapid SBS Kit v2', 'HiSeq 3000/4000 SBS Kit', 'HiSeq 3000/4000 SR Cluster Kit', 'HiSeq 3000/4000 PE Cluster Kit', 'MiSeq Reagent Kit v2', 'NextSeq 500 Mid Output Kit', 'NextSeq 500 High Output Kit', 'NextSeq 500 Mid Output v2 Kit', 'NextSeq 500 High Output v2 Kit', 'NextSeq 500/550 Mid-Output v2.5 Kit', 'NextSeq 500/550 High-Output v2.5 Kit', 'TG NextSeq 500/550 Mid-Output Kit v2.5', 'TG NextSeq 500/550 High-Output Kit v2.5', 'NextSeq 1000/2000 P1 Reagent Kit', 'NextSeq 1000/2000 P2 Reagent Kit', 'NextSeq 1000/2000 P3 Reagent Kit', 'NextSeq 1000/2000 P1 XLEAP-SBS Reagent Kit', 'NextSeq 1000/2000 P2 XLEAP-SBS Reagent Kit', 'NextSeq 2000 P3 XLEAP-SBS Reagent Kit', 'NextSeq 2000 P4 XLEAP-SBS Reagent Kit', 'NovaSeq 6000 SP Reagent Kit v1.5', 'NovaSeq 6000 S1 Reagent Kit v1.5', 'NovaSeq 6000 S2 Reagent Kit v1.5', 'NovaSeq 6000 S4 Reagent Kit v1.5', 'NovaSeq X Series 10B Reagent Kit', 'ONT Ligation Sequencing Kit V14', 'Sequel sequencing kit 3.0', 'Sequel II sequencing kit 2.0')")
+        if value not in set(['HiSeq SBS Kit v4', 'HiSeq SR Cluster Kit v4-cBot-HS', 'HiSeq PE Cluster Kit v4-cBot-HS', 'HiSeq SR Rapid Cluster Kit v2', 'HiSeq PE Rapid Cluster Kit v2', 'HiSeq Rapid SBS Kit v2', 'HiSeq 3000/4000 SBS Kit', 'HiSeq 3000/4000 SR Cluster Kit', 'HiSeq 3000/4000 PE Cluster Kit', 'MiSeq Reagent Kit v2', 'NextSeq 500 Mid Output Kit', 'NextSeq 500 High Output Kit', 'NextSeq 500 Mid Output v2 Kit', 'NextSeq 500 High Output v2 Kit', 'NextSeq 500/550 Mid-Output v2.5 Kit', 'NextSeq 500/550 High-Output v2.5 Kit', 'TG NextSeq 500/550 Mid-Output Kit v2.5', 'TG NextSeq 500/550 High-Output Kit v2.5', 'NextSeq 1000/2000 P1 Reagent Kit', 'NextSeq 1000/2000 P2 Reagent Kit', 'NextSeq 1000/2000 P3 Reagent Kit', 'NextSeq 1000/2000 P1 XLEAP-SBS Reagent Kit', 'NextSeq 1000/2000 P2 XLEAP-SBS Reagent Kit', 'NextSeq 2000 P3 XLEAP-SBS Reagent Kit', 'NextSeq 2000 P4 XLEAP-SBS Reagent Kit', 'NovaSeq 6000 SP Reagent Kit v1.5', 'NovaSeq 6000 S1 Reagent Kit v1.5', 'NovaSeq 6000 S2 Reagent Kit v1.5', 'NovaSeq 6000 S4 Reagent Kit v1.5', 'NovaSeq X Series 1.5B Reagent Kit', 'NovaSeq X Series 10B Reagent Kit', 'NovaSeq X Series 25B Reagent Kit', 'ONT Ligation Sequencing Kit V14', 'Sequel sequencing kit 3.0', 'Sequel II sequencing kit 2.0']):
+            raise ValueError("must be one of enum values ('HiSeq SBS Kit v4', 'HiSeq SR Cluster Kit v4-cBot-HS', 'HiSeq PE Cluster Kit v4-cBot-HS', 'HiSeq SR Rapid Cluster Kit v2', 'HiSeq PE Rapid Cluster Kit v2', 'HiSeq Rapid SBS Kit v2', 'HiSeq 3000/4000 SBS Kit', 'HiSeq 3000/4000 SR Cluster Kit', 'HiSeq 3000/4000 PE Cluster Kit', 'MiSeq Reagent Kit v2', 'NextSeq 500 Mid Output Kit', 'NextSeq 500 High Output Kit', 'NextSeq 500 Mid Output v2 Kit', 'NextSeq 500 High Output v2 Kit', 'NextSeq 500/550 Mid-Output v2.5 Kit', 'NextSeq 500/550 High-Output v2.5 Kit', 'TG NextSeq 500/550 Mid-Output Kit v2.5', 'TG NextSeq 500/550 High-Output Kit v2.5', 'NextSeq 1000/2000 P1 Reagent Kit', 'NextSeq 1000/2000 P2 Reagent Kit', 'NextSeq 1000/2000 P3 Reagent Kit', 'NextSeq 1000/2000 P1 XLEAP-SBS Reagent Kit', 'NextSeq 1000/2000 P2 XLEAP-SBS Reagent Kit', 'NextSeq 2000 P3 XLEAP-SBS Reagent Kit', 'NextSeq 2000 P4 XLEAP-SBS Reagent Kit', 'NovaSeq 6000 SP Reagent Kit v1.5', 'NovaSeq 6000 S1 Reagent Kit v1.5', 'NovaSeq 6000 S2 Reagent Kit v1.5', 'NovaSeq 6000 S4 Reagent Kit v1.5', 'NovaSeq X Series 1.5B Reagent Kit', 'NovaSeq X Series 10B Reagent Kit', 'NovaSeq X Series 25B Reagent Kit', 'ONT Ligation Sequencing Kit V14', 'Sequel sequencing kit 3.0', 'Sequel II sequencing kit 2.0')")
         return value
 
     @field_validator('illumina_read_type')
@@ -222,6 +223,17 @@ class SequenceFile(BaseModel):
 
         if value not in set(['R1', 'R2', 'R3', 'I1', 'I2']):
             raise ValueError("must be one of enum values ('R1', 'R2', 'R3', 'I1', 'I2')")
+        return value
+
+    @field_validator('base_modifications')
+    def base_modifications_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        for i in value:
+            if i not in set(['4mC', '5hmC', '5mC', '6mA']):
+                raise ValueError("each list item must be one of ('4mC', '5hmC', '5mC', '6mA')")
         return value
 
     model_config = ConfigDict(
@@ -318,6 +330,7 @@ class SequenceFile(BaseModel):
             "sequencing_run": obj.get("sequencing_run"),
             "illumina_read_type": obj.get("illumina_read_type"),
             "index": obj.get("index"),
+            "base_modifications": obj.get("base_modifications"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

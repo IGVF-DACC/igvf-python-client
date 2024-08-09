@@ -46,7 +46,7 @@ class Biomarker(BaseModel):
     gene: Optional[StrictStr] = Field(default=None, description="Biomarker gene.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = None
     name_quantification: Optional[StrictStr] = Field(default=None, description="A concatenation of the name and quantification of the biomarker.")
     biomarker_for: Optional[List[StrictStr]] = Field(default=None, description="The samples which have been confirmed to have this biomarker.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "classification", "quantification", "synonyms", "gene", "@id", "@type", "summary", "name_quantification", "biomarker_for"]

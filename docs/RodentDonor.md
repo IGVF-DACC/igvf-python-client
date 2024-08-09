@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
-**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 

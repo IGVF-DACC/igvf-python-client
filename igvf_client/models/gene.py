@@ -49,7 +49,7 @@ class Gene(BaseModel):
     version_number: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Current ENSEMBL GeneID version number of the gene.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     geneid_with_version: Optional[StrictStr] = Field(default=None, description="The ENSEMBL GeneID concatenated with its version number.")
     additional_properties: Dict[str, Any] = {}

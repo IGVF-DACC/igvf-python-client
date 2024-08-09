@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
-**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 
@@ -30,7 +29,6 @@ Name | Type | Description | Notes
 **samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
 **donors** | **List[str]** | The donors of the samples associated with this auxiliary set. | [optional] 
 **file_set_type** | **str** | The category that best describes this auxiliary file set. | [optional] 
-**library_construction_platform** | **str** | The platform used to construct the library sequenced in this auxiliary set. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 

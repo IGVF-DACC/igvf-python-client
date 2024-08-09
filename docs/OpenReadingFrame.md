@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **pct_coverage_orf** | **float** | The percentage of Ensembl protein covered by ORF. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** |  | [optional] 
 
 ## Example
 
