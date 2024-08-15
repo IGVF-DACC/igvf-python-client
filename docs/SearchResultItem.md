@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 **classification** | **str** | Sample specific biomarker. | [optional] 
 **quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | [optional] 
 **synonyms** | **List[str]** | Synonyms for the term that have been recorded in an ontology. | [optional] 
-**gene** | **List[str]** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | [optional] 
+**gene** | **str** | Biomarker gene. | [optional] 
 **name_quantification** | **str** | A concatenation of the name and quantification of the biomarker. | [optional] 
 **biomarker_for** | **List[str]** | The samples which have been confirmed to have this biomarker. | [optional] 
 **attachment** | [**Attachment**](Attachment.md) |  | [optional] 
@@ -127,6 +127,7 @@ Name | Type | Description | Notes
 **samples** | **List[str]** | The samples associated with this publication. | 
 **donors** | **List[str]** | Donor(s) the sample was derived from. | 
 **file_set_type** | **str** | The category that best describes this prediction set. | 
+**external_image_data_url** | **str** | Links to the external site where images and related data produced by this analysis are stored. | [optional] 
 **files** | **List[str]** | The files associated with this file set. | [optional] 
 **control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
@@ -214,6 +215,7 @@ Name | Type | Description | Notes
 **developmental_slims** | **List[str]** | Developmental stages associated with the sample term. | [optional] 
 **system_slims** | **List[str]** | Organ systems associated with the sample term. | [optional] 
 **orf_id** | **str** | Open reading frame ID. | [optional] 
+**genes** | **List[str]** | ENSEMBL GeneIDs of official nomenclature approved genes. The GeneIDs do not include the current version number suffix. | [optional] 
 **protein_id** | **str** | ENSEMBL ProteinID of official nomenclature approved protein. The ProteinID does not include the current version number suffix. | [optional] 
 **pct_identical_protein** | **float** | The percentage of identical matches to Ensembl protein. | [optional] 
 **pct_coverage_protein** | **float** | The percentage of ORF covered by Ensembl protein. | [optional] 

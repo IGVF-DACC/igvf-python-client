@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assembly** | **str** | The genome assembly to which coordinates relate (e.g., GRCh38). | 
-**chromosome** | **str** | The number (or letter) designation for the chromosome, e.g. chr1 or chrX | 
 **start** | **int** | The 1-based, closed (inclusive) starting coordinate. | 
 **end** | **int** | The 1-based, closed (inclusive) ending coordinate. | 
+**chromosome** | **str** | The number (or letter) designation for the chromosome, e.g. chr1 or chrX | 
+**assembly** | **str** | The genome assembly to which coordinates relate (e.g., GRCh38). | 
 
 ## Example
 

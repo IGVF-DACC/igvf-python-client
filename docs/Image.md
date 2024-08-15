@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **caption** | **str** | The caption of the image. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** |  | [optional] 
 **thumb_nail** | **str** | Image url | [optional] 
 **download_url** | **str** | Download Url | [optional] 
 
