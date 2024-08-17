@@ -23,7 +23,7 @@
 #!docs/README.md
 
 
-tests/
+test/
 requirements.txt
 test-requirements.txt
 .github/
