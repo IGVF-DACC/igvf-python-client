@@ -64,3 +64,18 @@ def test_endpoints_test_schemas():
 
     user_schema = api.schema_for_item_type('User')
     assert schemas['User'] == user_schema
+
+
+def test_endpoints_test_user_collection():
+    from igvf_client import IgvfApi
+    api = IgvfApi()
+    users = api.users(title=['Indexing Service'])
+    assert users.total == 1
+    assert users.id == '/users/@@listing?title=Indexing%20Service&frame=object'
+    assert users.graph[0].id == '/users/1ac5c055-d3e8-4290-a4bb-d5e2f508e54a/'
+    assert users.graph[0].uuid == '1ac5c055-d3e8-4290-a4bb-d5e2f508e54a'
+    assert users.graph[0].lab == '/labs/j-michael-cherry/'
+    assert users.graph[0].title == 'Indexing Service'
+    assert users.graph[0].type == ['User', 'Item']
+    user = api.get_by_id(users.graph[0].uuid)
+    assert user.actual_instance == users.graph[0]
