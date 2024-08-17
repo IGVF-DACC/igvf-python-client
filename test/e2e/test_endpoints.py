@@ -87,3 +87,28 @@ def test_endpoints_test_report():
     assert 'Title' in r
     assert 'Lab' in r
     assert 'Status' in r
+
+
+def test_endpoints_test_curated_set_collection():
+    from igvf_client import IgvfApi
+    api = IgvfApi()
+    curated_sets = api.curated_sets(files_file_format=['tsv'])
+    assert curated_sets.total > 10
+
+
+def test_endpoints_test_download_tsv_file():
+    from igvf_client import IgvfApi
+    api = IgvfApi()
+    r = api.search(field_filters={'file_format': 'tsv'})
+    raw_tsv = api.download(r.graph[0].uuid)
+    assert isinstance(raw_tsv, bytes)
+    assert len(raw_tsv) > 1
+
+
+def test_endpoints_test_search_facets():
+    from igvf_client import IgvfApi
+    api = IgvfApi()
+    actual_types = [x['key'] for x in api.search(field_filters={'files.file_format': 'tsv'}).facets[0].terms]
+    expected_types = ['FileSet', 'AuxiliarySet', 'CuratedSet']
+    for type_ in expected_types:
+        assert type_ in actual_types
