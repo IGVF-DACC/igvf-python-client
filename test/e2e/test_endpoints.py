@@ -41,12 +41,10 @@ def test_endpoints_test_search_filters():
 def test_endpoints_test_collections():
     from igvf_client import IgvfApi
     api = IgvfApi()
-
     file_id = '/sequence-files/IGVFFI1297OKBA/'
     files = api.measurement_sets(files_id=[file_id]).graph[0].files
     assert len(files) >= 1
     assert file_id in files
-
     users = api.users(lab=['/labs/j-michael-cherry/'])
     assert users.total > 10
     assert users.graph[0].lab == '/labs/j-michael-cherry/'
@@ -55,13 +53,10 @@ def test_endpoints_test_collections():
 def test_endpoints_test_schemas():
     from igvf_client import IgvfApi
     api = IgvfApi()
-
     schemas = api.schemas()
     assert len(schemas) > 50
-
     assert 'AccessKey' in schemas
     assert 'User' in schemas
-
     user_schema = api.schema_for_item_type('User')
     assert schemas['User'] == user_schema
 
