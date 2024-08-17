@@ -1,4 +1,3 @@
-.github/workflows/python.yml
 .gitignore
 .gitlab-ci.yml
 .travis.yml
@@ -266,9 +265,7 @@ igvf_client/models/workflow_results.py
 igvf_client/py.typed
 igvf_client/rest.py
 pyproject.toml
-requirements.txt
 setup.cfg
 setup.py
-test-requirements.txt
 test/__init__.py
 tox.ini
