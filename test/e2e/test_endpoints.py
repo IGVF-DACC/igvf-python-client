@@ -74,3 +74,16 @@ def test_endpoints_test_user_collection():
     assert users.graph[0].type == ['User', 'Item']
     user = api.get_by_id(users.graph[0].uuid)
     assert user.actual_instance == users.graph[0]
+
+
+def test_endpoints_test_report():
+    from igvf_client import IgvfApi
+    api = IgvfApi()
+    r = api.report(type=['User'], field_filters={'lab': '/labs/j-michael-cherry/'})
+    assert 'Indexing Service' in r
+    assert 'J. Michael Cherry' in r
+    assert 'ID' in r
+    assert 'UUID' in r
+    assert 'Title' in r
+    assert 'Lab' in r
+    assert 'Status' in r
