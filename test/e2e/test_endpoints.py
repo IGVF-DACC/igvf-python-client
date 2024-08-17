@@ -64,4 +64,3 @@ def test_endpoints_test_schemas():
 
     user_schema = api.schema_for_item_type('User')
     assert schemas['User'] == user_schema
-    assert False
