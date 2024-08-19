@@ -5,7 +5,7 @@ description = "IGVF Project API"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"
 readme = "README.md"
-repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+repository = "https://github.com/IGVF-DACC/igvf-python-client"
 keywords = ["OpenAPI", "OpenAPI-Generator", "IGVF Project API"]
 include = ["igvf_client/py.typed"]
 
