@@ -12,6 +12,9 @@ jobs:
       url: https://pypi.org/project/igvf-client/
     permissions:
       id-token: write
+      actions: read
+      contents: read
+      pages: write
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
