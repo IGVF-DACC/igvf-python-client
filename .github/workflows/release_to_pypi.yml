@@ -1,10 +1,8 @@
-name: Publish Python Package
-
+name: publish-to-pypi
 on:
   push:
     tags:
       - 'v*'
-
 jobs:
   deploy:
     runs-on: ubuntu-latest

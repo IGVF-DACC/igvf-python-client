@@ -2,8 +2,7 @@
 # URL: https://openapi-generator.tech
 #
 # ref: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: igvf_client Python package
+name: Test igvf_client
 
 on: [push, pull_request]
 
