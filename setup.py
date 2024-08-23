@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "igvf-client"
-VERSION = "46.1.0"
+VERSION = "46.1.0-beta"
 PYTHON_REQUIRES = ">=3.9"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 2.1.0",
