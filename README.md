@@ -49,7 +49,7 @@ print(r.total)
 print(r.graph)
 
 # Pull first item, unwrap to underlying Software item with `actual_instance`.
-software_item <- r.graph[0].actual_instance
+software_item = r.graph[0].actual_instance
 
 # Print Software item and specific fields.
 print(software_item)
@@ -57,7 +57,7 @@ print(software_item.id)
 print(software_item.description)
 
 # Get the Lab item based on the lab @id in the Software item.
-lab <- api$get_by_id(software_item.lab)
+lab = api.get_by_id(software_item.lab)
 
 # Print lab and specific field.
 print(lab)
