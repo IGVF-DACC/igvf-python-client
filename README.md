@@ -18,19 +18,20 @@ Python 3.9+
 Pip install:
 
 ```sh
-pip install igvf-client
+$ pip install igvf-client
 ```
 
 Or clone the repo and and install:
 ```sh
-git clone https://github.com/IGVF-DACC/igvf-python-client
-cd igvf-python-client
-pip install -e .
+$ git clone https://github.com/IGVF-DACC/igvf-python-client
+$ cd igvf-python-client
+$ pip install -e .
 ```
 
 Then import the package:
 ```python
-import igvf_client
+$ python
+>>> import igvf_client
 ```
 
 ### Examples
