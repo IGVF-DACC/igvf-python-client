@@ -41,7 +41,7 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-# Search for Software that matches query "abc".
+# Search for Software that matches query `abc`.
 r = api.search(query='abc', type=['Software'])
 
 # Print total number of results and list of results in `@graph`.
