@@ -74,6 +74,13 @@ All URIs are relative to *https://api.data.igvf.org*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project.
+*IgvfApi* | [**schemas**](docs/IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
+*IgvfApi* | [**schema_for_item_type**](docs/IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
+*IgvfApi* | [**report**](docs/IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
+*IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
+*IgvfApi* | [**download**](docs/IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
+*IgvfApi* | [**batch_download**](docs/IgvfApi.md#batch_download) | **GET** /batch-download | List files to download based on search query. All results are returned.
 *IgvfApi* | [**access_keys**](docs/IgvfApi.md#access_keys) | **GET** /access-keys/@@listing | List items in the AccessKey collection.
 *IgvfApi* | [**alignment_files**](docs/IgvfApi.md#alignment_files) | **GET** /alignment-files/@@listing | List items in the AlignmentFile collection.
 *IgvfApi* | [**analysis_sets**](docs/IgvfApi.md#analysis_sets) | **GET** /analysis-sets/@@listing | List items in the AnalysisSet collection.
@@ -82,7 +89,6 @@ Class | Method | HTTP request | Description
 *IgvfApi* | [**assay_terms**](docs/IgvfApi.md#assay_terms) | **GET** /assay-terms/@@listing | List items in the AssayTerm collection.
 *IgvfApi* | [**auxiliary_sets**](docs/IgvfApi.md#auxiliary_sets) | **GET** /auxiliary-sets/@@listing | List items in the AuxiliarySet collection.
 *IgvfApi* | [**awards**](docs/IgvfApi.md#awards) | **GET** /awards/@@listing | List items in the Award collection.
-*IgvfApi* | [**batch_download**](docs/IgvfApi.md#batch_download) | **GET** /batch-download | List files to download based on search query. All results are returned.
 *IgvfApi* | [**biomarkers**](docs/IgvfApi.md#biomarkers) | **GET** /biomarkers/@@listing | List items in the Biomarker collection.
 *IgvfApi* | [**configuration_files**](docs/IgvfApi.md#configuration_files) | **GET** /configuration-files/@@listing | List items in the ConfigurationFile collection.
 *IgvfApi* | [**construct_library_sets**](docs/IgvfApi.md#construct_library_sets) | **GET** /construct-library-sets/@@listing | List items in the ConstructLibrarySet collection.
@@ -90,10 +96,8 @@ Class | Method | HTTP request | Description
 *IgvfApi* | [**curated_sets**](docs/IgvfApi.md#curated_sets) | **GET** /curated-sets/@@listing | List items in the CuratedSet collection.
 *IgvfApi* | [**degron_modifications**](docs/IgvfApi.md#degron_modifications) | **GET** /degron-modifications/@@listing | List items in the DegronModification collection.
 *IgvfApi* | [**documents**](docs/IgvfApi.md#documents) | **GET** /documents/@@listing | List items in the Document collection.
-*IgvfApi* | [**download**](docs/IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 *IgvfApi* | [**genes**](docs/IgvfApi.md#genes) | **GET** /genes/@@listing | List items in the Gene collection.
 *IgvfApi* | [**genome_browser_annotation_files**](docs/IgvfApi.md#genome_browser_annotation_files) | **GET** /genome-browser-annotation-files/@@listing | List items in the GenomeBrowserAnnotationFile collection.
-*IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 *IgvfApi* | [**human_donors**](docs/IgvfApi.md#human_donors) | **GET** /human-donors/@@listing | List items in the HumanDonor collection.
 *IgvfApi* | [**image_files**](docs/IgvfApi.md#image_files) | **GET** /image-files/@@listing | List items in the ImageFile collection.
 *IgvfApi* | [**images**](docs/IgvfApi.md#images) | **GET** /images/@@listing | List items in the Image collection.
@@ -114,12 +118,8 @@ Class | Method | HTTP request | Description
 *IgvfApi* | [**primary_cells**](docs/IgvfApi.md#primary_cells) | **GET** /primary-cells/@@listing | List items in the PrimaryCell collection.
 *IgvfApi* | [**publications**](docs/IgvfApi.md#publications) | **GET** /publications/@@listing | List items in the Publication collection.
 *IgvfApi* | [**reference_files**](docs/IgvfApi.md#reference_files) | **GET** /reference-files/@@listing | List items in the ReferenceFile collection.
-*IgvfApi* | [**report**](docs/IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
 *IgvfApi* | [**rodent_donors**](docs/IgvfApi.md#rodent_donors) | **GET** /rodent-donors/@@listing | List items in the RodentDonor collection.
 *IgvfApi* | [**sample_terms**](docs/IgvfApi.md#sample_terms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
-*IgvfApi* | [**schema_for_item_type**](docs/IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
-*IgvfApi* | [**schemas**](docs/IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
-*IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project.
 *IgvfApi* | [**sequence_files**](docs/IgvfApi.md#sequence_files) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
 *IgvfApi* | [**signal_files**](docs/IgvfApi.md#signal_files) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
 *IgvfApi* | [**software**](docs/IgvfApi.md#software) | **GET** /software/@@listing | List items in the Software collection.
