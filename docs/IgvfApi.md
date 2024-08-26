@@ -44,12 +44,12 @@ Method | HTTP request | Description
 [**primary_cells**](IgvfApi.md#primary_cells) | **GET** /primary-cells/@@listing | List items in the PrimaryCell collection.
 [**publications**](IgvfApi.md#publications) | **GET** /publications/@@listing | List items in the Publication collection.
 [**reference_files**](IgvfApi.md#reference_files) | **GET** /reference-files/@@listing | List items in the ReferenceFile collection.
-[**report**](IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
+[**report**](IgvfApi.md#report) | **GET** /multireport.tsv | Generate a TSV file report based on search query. All results are returned.
 [**rodent_donors**](IgvfApi.md#rodent_donors) | **GET** /rodent-donors/@@listing | List items in the RodentDonor collection.
 [**sample_terms**](IgvfApi.md#sample_terms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
 [**schema_for_item_type**](IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
 [**schemas**](IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
-[**search**](IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project.
+[**search**](IgvfApi.md#search) | **GET** /search | Search for items on the IGVF Data Portal.
 [**sequence_files**](IgvfApi.md#sequence_files) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
 [**signal_files**](IgvfApi.md#signal_files) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
 [**software**](IgvfApi.md#software) | **GET** /software/@@listing | List items in the Software collection.
@@ -69,7 +69,7 @@ Method | HTTP request | Description
 
 List items in the AccessKey collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate AccessKey items. Supports filtering on fields within AccessKey items.
+Collection endpoint that accepts various query parameters to filter and sort AccessKey items. Supports filtering on fields within AccessKey items.
 
 ### Example
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 List items in the AlignmentFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate AlignmentFile items. Supports filtering on fields within AlignmentFile items.
+Collection endpoint that accepts various query parameters to filter and sort AlignmentFile items. Supports filtering on fields within AlignmentFile items.
 
 ### Example
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 List items in the AnalysisSet collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate AnalysisSet items. Supports filtering on fields within AnalysisSet items.
+Collection endpoint that accepts various query parameters to filter and sort AnalysisSet items. Supports filtering on fields within AnalysisSet items.
 
 ### Example
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 List items in the AnalysisStepVersion collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate AnalysisStepVersion items. Supports filtering on fields within AnalysisStepVersion items.
+Collection endpoint that accepts various query parameters to filter and sort AnalysisStepVersion items. Supports filtering on fields within AnalysisStepVersion items.
 
 ### Example
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 List items in the AnalysisStep collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate AnalysisStep items. Supports filtering on fields within AnalysisStep items.
+Collection endpoint that accepts various query parameters to filter and sort AnalysisStep items. Supports filtering on fields within AnalysisStep items.
 
 ### Example
 
@@ -514,7 +514,7 @@ Name | Type | Description  | Notes
 
 List items in the AssayTerm collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate AssayTerm items. Supports filtering on fields within AssayTerm items.
+Collection endpoint that accepts various query parameters to filter and sort AssayTerm items. Supports filtering on fields within AssayTerm items.
 
 ### Example
 
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 List items in the AuxiliarySet collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate AuxiliarySet items. Supports filtering on fields within AuxiliarySet items.
+Collection endpoint that accepts various query parameters to filter and sort AuxiliarySet items. Supports filtering on fields within AuxiliarySet items.
 
 ### Example
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 List items in the Award collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Award items. Supports filtering on fields within Award items.
+Collection endpoint that accepts various query parameters to filter and sort Award items. Supports filtering on fields within Award items.
 
 ### Example
 
@@ -843,7 +843,7 @@ Name | Type | Description  | Notes
 
 List items in the Biomarker collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Biomarker items. Supports filtering on fields within Biomarker items.
+Collection endpoint that accepts various query parameters to filter and sort Biomarker items. Supports filtering on fields within Biomarker items.
 
 ### Example
 
@@ -919,7 +919,7 @@ Name | Type | Description  | Notes
 
 List items in the ConfigurationFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate ConfigurationFile items. Supports filtering on fields within ConfigurationFile items.
+Collection endpoint that accepts various query parameters to filter and sort ConfigurationFile items. Supports filtering on fields within ConfigurationFile items.
 
 ### Example
 
@@ -1012,7 +1012,7 @@ Name | Type | Description  | Notes
 
 List items in the ConstructLibrarySet collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate ConstructLibrarySet items. Supports filtering on fields within ConstructLibrarySet items.
+Collection endpoint that accepts various query parameters to filter and sort ConstructLibrarySet items. Supports filtering on fields within ConstructLibrarySet items.
 
 ### Example
 
@@ -1155,7 +1155,7 @@ Name | Type | Description  | Notes
 
 List items in the CrisprModification collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate CrisprModification items. Supports filtering on fields within CrisprModification items.
+Collection endpoint that accepts various query parameters to filter and sort CrisprModification items. Supports filtering on fields within CrisprModification items.
 
 ### Example
 
@@ -1236,7 +1236,7 @@ Name | Type | Description  | Notes
 
 List items in the CuratedSet collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate CuratedSet items. Supports filtering on fields within CuratedSet items.
+Collection endpoint that accepts various query parameters to filter and sort CuratedSet items. Supports filtering on fields within CuratedSet items.
 
 ### Example
 
@@ -1363,7 +1363,7 @@ Name | Type | Description  | Notes
 
 List items in the DegronModification collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate DegronModification items. Supports filtering on fields within DegronModification items.
+Collection endpoint that accepts various query parameters to filter and sort DegronModification items. Supports filtering on fields within DegronModification items.
 
 ### Example
 
@@ -1442,7 +1442,7 @@ Name | Type | Description  | Notes
 
 List items in the Document collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Document items. Supports filtering on fields within Document items.
+Collection endpoint that accepts various query parameters to filter and sort Document items. Supports filtering on fields within Document items.
 
 ### Example
 
@@ -1562,7 +1562,7 @@ Name | Type | Description  | Notes
 
 List items in the Gene collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Gene items. Supports filtering on fields within Gene items.
+Collection endpoint that accepts various query parameters to filter and sort Gene items. Supports filtering on fields within Gene items.
 
 ### Example
 
@@ -1637,7 +1637,7 @@ Name | Type | Description  | Notes
 
 List items in the GenomeBrowserAnnotationFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate GenomeBrowserAnnotationFile items. Supports filtering on fields within GenomeBrowserAnnotationFile items.
+Collection endpoint that accepts various query parameters to filter and sort GenomeBrowserAnnotationFile items. Supports filtering on fields within GenomeBrowserAnnotationFile items.
 
 ### Example
 
@@ -1780,7 +1780,7 @@ Name | Type | Description  | Notes
 
 List items in the HumanDonor collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate HumanDonor items. Supports filtering on fields within HumanDonor items.
+Collection endpoint that accepts various query parameters to filter and sort HumanDonor items. Supports filtering on fields within HumanDonor items.
 
 ### Example
 
@@ -1870,7 +1870,7 @@ Name | Type | Description  | Notes
 
 List items in the ImageFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate ImageFile items. Supports filtering on fields within ImageFile items.
+Collection endpoint that accepts various query parameters to filter and sort ImageFile items. Supports filtering on fields within ImageFile items.
 
 ### Example
 
@@ -1962,7 +1962,7 @@ Name | Type | Description  | Notes
 
 List items in the Image collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Image items. Supports filtering on fields within Image items.
+Collection endpoint that accepts various query parameters to filter and sort Image items. Supports filtering on fields within Image items.
 
 ### Example
 
@@ -2029,7 +2029,7 @@ Name | Type | Description  | Notes
 
 List items in the InVitroSystem collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate InVitroSystem items. Supports filtering on fields within InVitroSystem items.
+Collection endpoint that accepts various query parameters to filter and sort InVitroSystem items. Supports filtering on fields within InVitroSystem items.
 
 ### Example
 
@@ -2179,7 +2179,7 @@ Name | Type | Description  | Notes
 
 List items in the InstitutionalCertificate collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate InstitutionalCertificate items. Supports filtering on fields within InstitutionalCertificate items.
+Collection endpoint that accepts various query parameters to filter and sort InstitutionalCertificate items. Supports filtering on fields within InstitutionalCertificate items.
 
 ### Example
 
@@ -2253,7 +2253,7 @@ Name | Type | Description  | Notes
 
 List items in the Lab collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Lab items. Supports filtering on fields within Lab items.
+Collection endpoint that accepts various query parameters to filter and sort Lab items. Supports filtering on fields within Lab items.
 
 ### Example
 
@@ -2324,7 +2324,7 @@ Name | Type | Description  | Notes
 
 List items in the MatrixFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate MatrixFile items. Supports filtering on fields within MatrixFile items.
+Collection endpoint that accepts various query parameters to filter and sort MatrixFile items. Supports filtering on fields within MatrixFile items.
 
 ### Example
 
@@ -2420,7 +2420,7 @@ Name | Type | Description  | Notes
 
 List items in the MeasurementSet collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate MeasurementSet items. Supports filtering on fields within MeasurementSet items.
+Collection endpoint that accepts various query parameters to filter and sort MeasurementSet items. Supports filtering on fields within MeasurementSet items.
 
 ### Example
 
@@ -2579,7 +2579,7 @@ Name | Type | Description  | Notes
 
 List items in the ModelFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate ModelFile items. Supports filtering on fields within ModelFile items.
+Collection endpoint that accepts various query parameters to filter and sort ModelFile items. Supports filtering on fields within ModelFile items.
 
 ### Example
 
@@ -2673,7 +2673,7 @@ Name | Type | Description  | Notes
 
 List items in the ModelSet collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate ModelSet items. Supports filtering on fields within ModelSet items.
+Collection endpoint that accepts various query parameters to filter and sort ModelSet items. Supports filtering on fields within ModelSet items.
 
 ### Example
 
@@ -2806,7 +2806,7 @@ Name | Type | Description  | Notes
 
 List items in the MultiplexedSample collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate MultiplexedSample items. Supports filtering on fields within MultiplexedSample items.
+Collection endpoint that accepts various query parameters to filter and sort MultiplexedSample items. Supports filtering on fields within MultiplexedSample items.
 
 ### Example
 
@@ -2938,7 +2938,7 @@ Name | Type | Description  | Notes
 
 List items in the OpenReadingFrame collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate OpenReadingFrame items. Supports filtering on fields within OpenReadingFrame items.
+Collection endpoint that accepts various query parameters to filter and sort OpenReadingFrame items. Supports filtering on fields within OpenReadingFrame items.
 
 ### Example
 
@@ -3012,7 +3012,7 @@ Name | Type | Description  | Notes
 
 List items in the Page collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Page items. Supports filtering on fields within Page items.
+Collection endpoint that accepts various query parameters to filter and sort Page items. Supports filtering on fields within Page items.
 
 ### Example
 
@@ -3082,7 +3082,7 @@ Name | Type | Description  | Notes
 
 List items in the PhenotypeTerm collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate PhenotypeTerm items. Supports filtering on fields within PhenotypeTerm items.
+Collection endpoint that accepts various query parameters to filter and sort PhenotypeTerm items. Supports filtering on fields within PhenotypeTerm items.
 
 ### Example
 
@@ -3154,7 +3154,7 @@ Name | Type | Description  | Notes
 
 List items in the PhenotypicFeature collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate PhenotypicFeature items. Supports filtering on fields within PhenotypicFeature items.
+Collection endpoint that accepts various query parameters to filter and sort PhenotypicFeature items. Supports filtering on fields within PhenotypicFeature items.
 
 ### Example
 
@@ -3228,7 +3228,7 @@ Name | Type | Description  | Notes
 
 List items in the PlatformTerm collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate PlatformTerm items. Supports filtering on fields within PlatformTerm items.
+Collection endpoint that accepts various query parameters to filter and sort PlatformTerm items. Supports filtering on fields within PlatformTerm items.
 
 ### Example
 
@@ -3302,7 +3302,7 @@ Name | Type | Description  | Notes
 
 List items in the PredictionSet collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate PredictionSet items. Supports filtering on fields within PredictionSet items.
+Collection endpoint that accepts various query parameters to filter and sort PredictionSet items. Supports filtering on fields within PredictionSet items.
 
 ### Example
 
@@ -3443,7 +3443,7 @@ Name | Type | Description  | Notes
 
 List items in the PrimaryCell collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate PrimaryCell items. Supports filtering on fields within PrimaryCell items.
+Collection endpoint that accepts various query parameters to filter and sort PrimaryCell items. Supports filtering on fields within PrimaryCell items.
 
 ### Example
 
@@ -3580,7 +3580,7 @@ Name | Type | Description  | Notes
 
 List items in the Publication collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Publication items. Supports filtering on fields within Publication items.
+Collection endpoint that accepts various query parameters to filter and sort Publication items. Supports filtering on fields within Publication items.
 
 ### Example
 
@@ -3666,7 +3666,7 @@ Name | Type | Description  | Notes
 
 List items in the ReferenceFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate ReferenceFile items. Supports filtering on fields within ReferenceFile items.
+Collection endpoint that accepts various query parameters to filter and sort ReferenceFile items. Supports filtering on fields within ReferenceFile items.
 
 ### Example
 
@@ -3765,7 +3765,7 @@ Name | Type | Description  | Notes
 # **report**
 > str report(query=query, type=type, limit=limit, sort=sort, field_filters=field_filters, include_fields=include_fields, frame=frame)
 
-Generate a report based on search query. All results are returned.
+Generate a TSV file report based on search query. All results are returned.
 
 Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
@@ -3776,7 +3776,7 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.report(**parameters) # Generate a report based on search query. All results are returned. 
+api.report(**parameters) # Generate a TSV file report based on search query. All results are returned. 
 ```
 
 
@@ -3823,7 +3823,7 @@ Name | Type | Description  | Notes
 
 List items in the RodentDonor collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate RodentDonor items. Supports filtering on fields within RodentDonor items.
+Collection endpoint that accepts various query parameters to filter and sort RodentDonor items. Supports filtering on fields within RodentDonor items.
 
 ### Example
 
@@ -3917,7 +3917,7 @@ Name | Type | Description  | Notes
 
 List items in the SampleTerm collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate SampleTerm items. Supports filtering on fields within SampleTerm items.
+Collection endpoint that accepts various query parameters to filter and sort SampleTerm items. Supports filtering on fields within SampleTerm items.
 
 ### Example
 
@@ -4083,9 +4083,9 @@ This endpoint does not need any parameter.
 # **search**
 > SearchResults search(query=query, type=type, limit=limit, sort=sort, field_filters=field_filters)
 
-Search for items in the IGVF Project.
+Search for items on the IGVF Data Portal.
 
-Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
+Search endpoint that accepts various query parameters to filter and sort results. Supports complex filtering on item types and fields within items.
 
 ### Example
 
@@ -4094,7 +4094,7 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.search(**parameters) # Search for items in the IGVF Project. 
+api.search(**parameters) # Search for items on the IGVF Data Portal. 
 ```
 
 
@@ -4137,7 +4137,7 @@ Name | Type | Description  | Notes
 
 List items in the SequenceFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate SequenceFile items. Supports filtering on fields within SequenceFile items.
+Collection endpoint that accepts various query parameters to filter and sort SequenceFile items. Supports filtering on fields within SequenceFile items.
 
 ### Example
 
@@ -4244,7 +4244,7 @@ Name | Type | Description  | Notes
 
 List items in the SignalFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate SignalFile items. Supports filtering on fields within SignalFile items.
+Collection endpoint that accepts various query parameters to filter and sort SignalFile items. Supports filtering on fields within SignalFile items.
 
 ### Example
 
@@ -4344,7 +4344,7 @@ Name | Type | Description  | Notes
 
 List items in the Software collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Software items. Supports filtering on fields within Software items.
+Collection endpoint that accepts various query parameters to filter and sort Software items. Supports filtering on fields within Software items.
 
 ### Example
 
@@ -4419,7 +4419,7 @@ Name | Type | Description  | Notes
 
 List items in the SoftwareVersion collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate SoftwareVersion items. Supports filtering on fields within SoftwareVersion items.
+Collection endpoint that accepts various query parameters to filter and sort SoftwareVersion items. Supports filtering on fields within SoftwareVersion items.
 
 ### Example
 
@@ -4495,7 +4495,7 @@ Name | Type | Description  | Notes
 
 List items in the Source collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Source items. Supports filtering on fields within Source items.
+Collection endpoint that accepts various query parameters to filter and sort Source items. Supports filtering on fields within Source items.
 
 ### Example
 
@@ -4562,7 +4562,7 @@ Name | Type | Description  | Notes
 
 List items in the TabularFile collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate TabularFile items. Supports filtering on fields within TabularFile items.
+Collection endpoint that accepts various query parameters to filter and sort TabularFile items. Supports filtering on fields within TabularFile items.
 
 ### Example
 
@@ -4659,7 +4659,7 @@ Name | Type | Description  | Notes
 
 List items in the TechnicalSample collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate TechnicalSample items. Supports filtering on fields within TechnicalSample items.
+Collection endpoint that accepts various query parameters to filter and sort TechnicalSample items. Supports filtering on fields within TechnicalSample items.
 
 ### Example
 
@@ -4769,7 +4769,7 @@ Name | Type | Description  | Notes
 
 List items in the Tissue collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Tissue items. Supports filtering on fields within Tissue items.
+Collection endpoint that accepts various query parameters to filter and sort Tissue items. Supports filtering on fields within Tissue items.
 
 ### Example
 
@@ -4909,7 +4909,7 @@ Name | Type | Description  | Notes
 
 List items in the Treatment collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Treatment items. Supports filtering on fields within Treatment items.
+Collection endpoint that accepts various query parameters to filter and sort Treatment items. Supports filtering on fields within Treatment items.
 
 ### Example
 
@@ -4996,7 +4996,7 @@ Name | Type | Description  | Notes
 
 List items in the User collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate User items. Supports filtering on fields within User items.
+Collection endpoint that accepts various query parameters to filter and sort User items. Supports filtering on fields within User items.
 
 ### Example
 
@@ -5068,7 +5068,7 @@ Name | Type | Description  | Notes
 
 List items in the WholeOrganism collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate WholeOrganism items. Supports filtering on fields within WholeOrganism items.
+Collection endpoint that accepts various query parameters to filter and sort WholeOrganism items. Supports filtering on fields within WholeOrganism items.
 
 ### Example
 
@@ -5204,7 +5204,7 @@ Name | Type | Description  | Notes
 
 List items in the Workflow collection.
 
-Collection endpoint that accepts various query parameters to filter, sort, and paginate Workflow items. Supports filtering on fields within Workflow items.
+Collection endpoint that accepts various query parameters to filter and sort Workflow items. Supports filtering on fields within Workflow items.
 
 ### Example
 
