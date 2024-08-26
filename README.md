@@ -70,17 +70,26 @@ Refer to the documentation for a full specification of endpoint inputs and outpu
 
 ## Documentation for API Endpoints
 
+**General Endpoints**
+
 All URIs are relative to *https://api.data.igvf.org*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 *IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project.
 *IgvfApi* | [**schemas**](docs/IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 *IgvfApi* | [**schema_for_item_type**](docs/IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
 *IgvfApi* | [**report**](docs/IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
-*IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 *IgvfApi* | [**download**](docs/IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 *IgvfApi* | [**batch_download**](docs/IgvfApi.md#batch_download) | **GET** /batch-download | List files to download based on search query. All results are returned.
+
+**Collection Endpoints**
+
+All URIs are relative to *https://api.data.igvf.org*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
 *IgvfApi* | [**access_keys**](docs/IgvfApi.md#access_keys) | **GET** /access-keys/@@listing | List items in the AccessKey collection.
 *IgvfApi* | [**alignment_files**](docs/IgvfApi.md#alignment_files) | **GET** /alignment-files/@@listing | List items in the AlignmentFile collection.
 *IgvfApi* | [**analysis_sets**](docs/IgvfApi.md#analysis_sets) | **GET** /analysis-sets/@@listing | List items in the AnalysisSet collection.
@@ -132,7 +141,6 @@ Class | Method | HTTP request | Description
 *IgvfApi* | [**users**](docs/IgvfApi.md#users) | **GET** /users/@@listing | List items in the User collection.
 *IgvfApi* | [**whole_organisms**](docs/IgvfApi.md#whole_organisms) | **GET** /whole-organisms/@@listing | List items in the WholeOrganism collection.
 *IgvfApi* | [**workflows**](docs/IgvfApi.md#workflows) | **GET** /workflows/@@listing | List items in the Workflow collection.
-
 
 ## Documentation For Models
 
