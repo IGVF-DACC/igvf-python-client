@@ -70,7 +70,7 @@ Refer to the documentation for a full specification of endpoint inputs and outpu
 
 ## Documentation for API Endpoints
 
-**General Endpoints**
+### **General Endpoints**
 
 All URIs are relative to *https://api.data.igvf.org*
 
@@ -84,7 +84,7 @@ Class | Method | HTTP request | Description
 *IgvfApi* | [**download**](docs/IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 *IgvfApi* | [**batch_download**](docs/IgvfApi.md#batch_download) | **GET** /batch-download | List files to download based on search query. All results are returned.
 
-**Collection Endpoints**
+### **Collection Endpoints**
 
 All URIs are relative to *https://api.data.igvf.org*
 
