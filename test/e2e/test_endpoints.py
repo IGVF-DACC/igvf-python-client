@@ -112,3 +112,12 @@ def test_endpoints_test_search_facets():
     expected_types = ['FileSet', 'AuxiliarySet', 'CuratedSet']
     for type_ in expected_types:
         assert type_ in actual_types
+
+
+def test_endpoints_test_search_field_filters():
+    from igvf_client import IgvfApi
+    api = IgvfApi()
+    r = api.search(type=['Item'], field_filters={'status': 'current'})
+    assert r.total > 100
+    r2 = api.search(type=['Item'], field_filters={'status': ['current', 'released']})
+    assert r2.total > r.total

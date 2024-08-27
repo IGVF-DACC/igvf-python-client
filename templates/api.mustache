@@ -139,8 +139,12 @@ class {{classname}}:
                 _query_params.append(('{{baseName}}', {{paramName}}))
             {{/isDate}}
             {{#isFreeFormObject}}
-            for k, v in {{paramName}}.items():
-                _query_params.append((k, v))
+             for k, v in {{paramName}}.items():
+                if isinstance(v, list):
+                    for item in v:
+                        _query_params.append((k, item))
+                else:
+                    _query_params.append((k, v))
 	    {{/isFreeFormObject}}
             {{^isDateTime}}{{^isDate}}{{^isFreeFormObject}}
             _query_params.append(('{{baseName}}', {{paramName}}{{#isEnumRef}}.value{{/isEnumRef}}))

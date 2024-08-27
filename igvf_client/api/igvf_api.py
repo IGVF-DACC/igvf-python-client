@@ -8315,8 +8315,12 @@ class IgvfApi:
             _query_params.append(('query', query))
             
         if field_filters is not None:
-            for k, v in field_filters.items():
-                _query_params.append((k, v))
+             for k, v in field_filters.items():
+                if isinstance(v, list):
+                    for item in v:
+                        _query_params.append((k, item))
+                else:
+                    _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters
@@ -41825,8 +41829,12 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if field_filters is not None:
-            for k, v in field_filters.items():
-                _query_params.append((k, v))
+             for k, v in field_filters.items():
+                if isinstance(v, list):
+                    for item in v:
+                        _query_params.append((k, item))
+                else:
+                    _query_params.append((k, v))
             
         if include_fields is not None:
             
@@ -44486,8 +44494,12 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if field_filters is not None:
-            for k, v in field_filters.items():
-                _query_params.append((k, v))
+             for k, v in field_filters.items():
+                if isinstance(v, list):
+                    for item in v:
+                        _query_params.append((k, item))
+                else:
+                    _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters
