@@ -64,7 +64,7 @@ print(lab)
 print(lab.title)
 ```
 
-### Optional authorization
+## Optional authorization
 ```python
 from igvf_client import Configuration
 from igvf_client import ApiClient
@@ -81,6 +81,8 @@ api = IgvfApi(client)
 
 api.sequence_files(status=['in progress']).total # 8878
 ```
+
+## More examples
 
 See other examples in [examples.ipynb](examples.ipynb) and [test_endpoints.py](test/e2e/test_endpoints.py)
 
