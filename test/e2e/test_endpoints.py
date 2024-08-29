@@ -41,7 +41,7 @@ def test_endpoints_test_search_filters():
 def test_endpoints_test_collections():
     from igvf_client import IgvfApi
     api = IgvfApi()
-    file_id = '/sequence-files/IGVFFI1297OKBA/'
+    file_id = '/sequence-files/IGVFFI4531KBUU/'
     files = api.measurement_sets(files_id=[file_id]).graph[0].files
     assert len(files) >= 1
     assert file_id in files
