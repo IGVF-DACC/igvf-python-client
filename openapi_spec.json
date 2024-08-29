@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "46.1.6"
+    "version": "47.0.0"
   },
   "servers": [
     {
@@ -7269,6 +7269,36 @@
             "explode": true
           },
           {
+            "name": "cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by cell_type_annotation.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -12249,7 +12279,8 @@
                   "NovaSeq X Series 25B Reagent Kit",
                   "ONT Ligation Sequencing Kit V14",
                   "Sequel sequencing kit 3.0",
-                  "Sequel II sequencing kit 2.0"
+                  "Sequel II sequencing kit 2.0",
+                  "Singular G4 F2 Reagent Kit"
                 ],
                 "description": "A reagent kit used with a library to prepare it for sequencing."
               }
@@ -12710,6 +12741,36 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -13667,6 +13728,36 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -29464,7 +29555,8 @@
                   "NovaSeq X Series 25B Reagent Kit",
                   "ONT Ligation Sequencing Kit V14",
                   "Sequel sequencing kit 3.0",
-                  "Sequel II sequencing kit 2.0"
+                  "Sequel II sequencing kit 2.0",
+                  "Singular G4 F2 Reagent Kit"
                 ],
                 "description": "A reagent kit used with a library to prepare it for sequencing."
               },
@@ -46834,6 +46926,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "cell_type_annotation": {
+            "title": "Cell Type Annotation",
+            "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
+            "type": "string"
+          },
           "assembly": {
             "title": "Genome Assembly",
             "description": "Genome assembly applicable for the annotation data.",
@@ -48899,7 +48996,8 @@
               "NovaSeq X Series 25B Reagent Kit",
               "ONT Ligation Sequencing Kit V14",
               "Sequel sequencing kit 3.0",
-              "Sequel II sequencing kit 2.0"
+              "Sequel II sequencing kit 2.0",
+              "Singular G4 F2 Reagent Kit"
             ]
           },
           "sequencing_run": {
@@ -49031,6 +49129,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "cell_type_annotation": {
+            "title": "Cell Type Annotation",
+            "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
+            "type": "string"
+          },
           "transcriptome_annotation": {
             "title": "Transcriptome Annotation",
             "description": "The annotation and version of the reference resource.",
@@ -49408,6 +49511,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "cell_type_annotation": {
+            "title": "Cell Type Annotation",
+            "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
+            "type": "string"
+          },
           "controlled_access": {
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
@@ -53769,7 +53877,8 @@
                 "NovaSeq X Series 25B Reagent Kit",
                 "ONT Ligation Sequencing Kit V14",
                 "Sequel sequencing kit 3.0",
-                "Sequel II sequencing kit 2.0"
+                "Sequel II sequencing kit 2.0",
+                "Singular G4 F2 Reagent Kit"
               ]
             }
           },

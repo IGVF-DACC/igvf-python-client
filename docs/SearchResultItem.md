@@ -101,6 +101,7 @@ Name | Type | Description | Notes
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 
 **content_summary** | **str** | A summary of the data in the signal file. | [optional] 
 **seqspec_of** | **List[str]** | Sequence files this file is a seqspec of. | [optional] 
+**cell_type_annotation** | **str** | The inferred cell type this file is associated with based on single-cell expression profiling. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 
 **dimension1** | **str** | First dimension of the matrix. | [optional] 
 **dimension2** | **str** | Second dimension of the matrix. | [optional] 

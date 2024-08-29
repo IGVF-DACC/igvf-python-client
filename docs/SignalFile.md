@@ -6,6 +6,7 @@ A file containing analyzed sequencing data in signal form using a bigwig format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cell_type_annotation** | **str** | The inferred cell type this file is associated with based on single-cell expression profiling. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **assembly** | **str** | Genome assembly applicable for the annotation data. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
