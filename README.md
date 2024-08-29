@@ -64,6 +64,24 @@ print(lab)
 print(lab.title)
 ```
 
+### Optional authorization
+```python
+from igvf_client import Configuration
+from igvf_client import ApiClient
+from igvf_client import IgvfApi
+
+config = Configuration(
+    access_key = os.environ["IGVF_ACCESS_KEY"],
+    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
+)
+
+client = ApiClient(config)
+
+api = IgvfApi(client)
+
+api.sequence_files(status=['in progress']).total # 8878
+```
+
 See other examples in [examples.ipynb](examples.ipynb) and [test_endpoints.py](test/e2e/test_endpoints.py)
 
 Refer to the documentation for a full specification of endpoint inputs and outputs and model fields.
@@ -269,21 +287,3 @@ Class | Method | HTTP request | Description
  - [WholeOrganismResults](docs/WholeOrganismResults.md)
  - [Workflow](docs/Workflow.md)
  - [WorkflowResults](docs/WorkflowResults.md)
-
-
-
-## Optional authorization
-```python
-from igvf_client import Configuration
-from igvf_client import ApiClient
-from igvf_client import IgvfApi
-
-config = Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-client = ApiClient(config)
-
-api = IgvfApi(client)
-```

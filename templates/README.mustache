@@ -70,14 +70,7 @@ print(lab)
 print(lab.title)
 ```
 
-See other examples in [examples.ipynb](examples.ipynb) and [test_endpoints.py](test/e2e/test_endpoints.py)
-
-Refer to the documentation for a full specification of endpoint inputs and outputs and model fields.
-
-{{> common_README }}
-
-
-## Optional authorization
+### Optional authorization
 ```python
 from igvf_client import Configuration
 from igvf_client import ApiClient
@@ -91,4 +84,12 @@ config = Configuration(
 client = ApiClient(config)
 
 api = IgvfApi(client)
+
+api.sequence_files(status=['in progress']).total # 8878
 ```
+
+See other examples in [examples.ipynb](examples.ipynb) and [test_endpoints.py](test/e2e/test_endpoints.py)
+
+Refer to the documentation for a full specification of endpoint inputs and outputs and model fields.
+
+{{> common_README }}
