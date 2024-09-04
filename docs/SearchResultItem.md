@@ -125,6 +125,7 @@ Name | Type | Description | Notes
 **normalized** | **bool** | Indicates if the signal file is normalized. | [optional] 
 **start_view_position** | **str** | The 0-based coordinate for the default starting position when viewing the signal in a genome browser. | [optional] 
 **input_file_sets** | **List[str]** | The file set(s) required for this prediction set. | [optional] 
+**control_type** | **str** | The type of control this file set represents. | [optional] 
 **samples** | **List[str]** | The samples associated with this publication. | 
 **donors** | **List[str]** | Donor(s) the sample was derived from. | 
 **file_set_type** | **str** | The category that best describes this prediction set. | 
@@ -227,6 +228,7 @@ Name | Type | Description | Notes
 **feature** | **str** | The phenotypic feature observed for the donor. | [optional] 
 **quantity** | **float** | A quantity associated with the phenotypic feature, if applicable. | [optional] 
 **quantity_units** | **str** | The unit of measurement for a quantity associated with the phenotypic feature. | [optional] 
+**quality** | **str** | A quality assessment associated with the phenotypic feature, such as a categorical description. | [optional] 
 **observation_date** | **str** | The date the feature was observed or measured. | [optional] 
 **abstract** | **str** | Abstract of the publication or communication. | [optional] 
 **authors** | **str** | The authors of the publication. | [optional] 

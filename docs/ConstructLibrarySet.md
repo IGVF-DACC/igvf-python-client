@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **file_set_type** | **str** | The type or category of this construct library set. | [optional] 
+**control_type** | **str** | The type of control this file set represents. | [optional] 
 **scope** | **str** | The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties. | [optional] 
 **selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | [optional] 
 **integrated_content_files** | **List[str]** | The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library. | [optional] 

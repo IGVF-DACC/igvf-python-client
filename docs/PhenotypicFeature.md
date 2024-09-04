@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **feature** | **str** | The phenotypic feature observed for the donor. | [optional] 
 **quantity** | **float** | A quantity associated with the phenotypic feature, if applicable. | [optional] 
 **quantity_units** | **str** | The unit of measurement for a quantity associated with the phenotypic feature. | [optional] 
+**quality** | **str** | A quality assessment associated with the phenotypic feature, such as a categorical description. | [optional] 
 **observation_date** | **str** | The date the feature was observed or measured. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

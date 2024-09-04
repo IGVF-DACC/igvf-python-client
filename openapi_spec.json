@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "47.0.0"
+    "version": "48.0.0"
   },
   "servers": [
     {
@@ -14754,6 +14754,22 @@
             "explode": true
           },
           {
+            "name": "control_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Control Type",
+                "enum": [],
+                "description": "The type of control this file set represents."
+              }
+            },
+            "description": "Filter by control_type",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -16105,6 +16121,22 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by control_for.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "control_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Control Type",
+                "enum": [],
+                "description": "The type of control this file set represents."
+              }
+            },
+            "description": "Filter by control_type",
             "style": "form",
             "explode": true
           },
@@ -17738,6 +17770,22 @@
             "explode": true
           },
           {
+            "name": "control_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Control Type",
+                "enum": [],
+                "description": "The type of control this file set represents."
+              }
+            },
+            "description": "Filter by control_type",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -19134,6 +19182,22 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by control_for.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "control_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Control Type",
+                "enum": [],
+                "description": "The type of control this file set represents."
+              }
+            },
+            "description": "Filter by control_type",
             "style": "form",
             "explode": true
           },
@@ -20611,6 +20675,27 @@
             "explode": true
           },
           {
+            "name": "control_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Control Type",
+                "enum": [
+                  "low FACS signal",
+                  "pre-selection",
+                  "unsorted FACS input",
+                  "untransfected"
+                ],
+                "description": "The type of control this file set represents."
+              }
+            },
+            "description": "Filter by control_type",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -21085,49 +21170,55 @@
                 "type": "string",
                 "title": "Preferred Assay Title",
                 "enum": [
-                  "10x multiome",
-                  "10x multiome with MULTI-seq",
-                  "AAV-MPRA",
-                  "ATAC-seq",
-                  "CERES-seq",
-                  "Cell painting",
-                  "CRISPR FlowFISH",
-                  "DOGMA-seq",
-                  "Histone ChIP-seq",
-                  "Hi-C",
-                  "HT-recruit",
-                  "lentiMPRA",
-                  "MERFISH",
-                  "MIAA",
-                  "mN2H",
-                  "MPRA",
-                  "MPRA (scQer)",
-                  "MULTI-seq",
-                  "Parse SPLiT-seq",
-                  "Perturb-seq",
                   "RNA-seq",
-                  "SGE",
-                  "scATAC-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
                   "scNT-seq",
                   "scNT-seq2",
-                  "scRNA-seq",
-                  "semi-qY2H",
-                  "SHARE-seq",
-                  "smFISH",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "scATAC-seq",
                   "snATAC-seq",
+                  "DOGMA-seq",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "SUPERSTARR",
+                  "Cell painting",
+                  "Variant painting",
+                  "smFISH",
+                  "MERFISH",
+                  "Proliferation CRISPR screen",
+                  "Growth CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Perturb-seq",
+                  "CERES-seq",
+                  "TAP-seq",
+                  "Variant FlowFISH",
+                  "SGE",
+                  "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
                   "snM3C-seq",
-                  "snRNA-seq",
-                  "Spatial transcriptomics",
-                  "SUPERSTARR",
-                  "TAP-seq",
-                  "TF ChIP-seq",
-                  "VAMP-seq",
-                  "Variant FlowFISH",
-                  "Variant painting",
+                  "mN2H",
+                  "semi-qY2H",
                   "Y2H",
-                  "yN2H"
+                  "yN2H",
+                  "VAMP-seq",
+                  "Hi-C",
+                  "Spatial transcriptomics",
+                  "HT-recruit"
                 ],
                 "description": "The custom lab preferred label for the experiment performed in this measurement set."
               }
@@ -22349,6 +22440,22 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by control_for.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "control_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Control Type",
+                "enum": [],
+                "description": "The type of control this file set represents."
+              }
+            },
+            "description": "Filter by control_type",
             "style": "form",
             "explode": true
           },
@@ -23794,6 +23901,22 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by control_for.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "control_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Control Type",
+                "enum": [],
+                "description": "The type of control this file set represents."
+              }
+            },
+            "description": "Filter by control_type",
             "style": "form",
             "explode": true
           },
@@ -28492,49 +28615,55 @@
                 "type": "string",
                 "title": "Preferred Assay Title",
                 "enum": [
-                  "10x multiome",
-                  "10x multiome with MULTI-seq",
-                  "AAV-MPRA",
-                  "ATAC-seq",
-                  "CERES-seq",
-                  "Cell painting",
-                  "CRISPR FlowFISH",
-                  "DOGMA-seq",
-                  "Histone ChIP-seq",
-                  "Hi-C",
-                  "HT-recruit",
-                  "lentiMPRA",
-                  "MERFISH",
-                  "MIAA",
-                  "mN2H",
-                  "MPRA",
-                  "MPRA (scQer)",
-                  "MULTI-seq",
-                  "Parse SPLiT-seq",
-                  "Perturb-seq",
                   "RNA-seq",
-                  "SGE",
-                  "scATAC-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
                   "scNT-seq",
                   "scNT-seq2",
-                  "scRNA-seq",
-                  "semi-qY2H",
-                  "SHARE-seq",
-                  "smFISH",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "scATAC-seq",
                   "snATAC-seq",
+                  "DOGMA-seq",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "SUPERSTARR",
+                  "Cell painting",
+                  "Variant painting",
+                  "smFISH",
+                  "MERFISH",
+                  "Proliferation CRISPR screen",
+                  "Growth CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Perturb-seq",
+                  "CERES-seq",
+                  "TAP-seq",
+                  "Variant FlowFISH",
+                  "SGE",
+                  "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
                   "snM3C-seq",
-                  "snRNA-seq",
-                  "Spatial transcriptomics",
-                  "SUPERSTARR",
-                  "TAP-seq",
-                  "TF ChIP-seq",
-                  "VAMP-seq",
-                  "Variant FlowFISH",
-                  "Variant painting",
+                  "mN2H",
+                  "semi-qY2H",
                   "Y2H",
-                  "yN2H"
+                  "yN2H",
+                  "VAMP-seq",
+                  "Hi-C",
+                  "Spatial transcriptomics",
+                  "HT-recruit"
                 ],
                 "description": "The custom lab preferred label for the experiment performed in this measurement set."
               },
@@ -29376,7 +29505,8 @@
                   "Oxford Nanopore Technologies",
                   "Pacific Biosciences",
                   "Parse Biosciences",
-                  "Roche"
+                  "Roche",
+                  "Singular Genomics"
                 ],
                 "description": "The company that developed and sells the instrument."
               }
@@ -31520,6 +31650,40 @@
               }
             },
             "description": "Filter by observation_date",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Quality",
+                "enum": [
+                  "none",
+                  "sparse",
+                  "moderate",
+                  "frequent",
+                  "unknown",
+                  "I",
+                  "II",
+                  "III",
+                  "IV",
+                  "V",
+                  "VI",
+                  "2/2",
+                  "2/3",
+                  "2/4",
+                  "3/3",
+                  "3/4",
+                  "4/4"
+                ],
+                "description": "A quality assessment associated with the phenotypic feature, such as a categorical description."
+              }
+            },
+            "description": "Filter by quality",
             "style": "form",
             "explode": true
           },
@@ -50049,6 +50213,12 @@
               "pattern": "^GEO:GSE\\d+$"
             }
           },
+          "control_type": {
+            "title": "Control Type",
+            "description": "The type of control this file set represents.",
+            "type": "string",
+            "enum": []
+          },
           "samples": {
             "title": "Samples",
             "description": "The sample(s) associated with this file set.",
@@ -50315,6 +50485,12 @@
               "type": "string",
               "pattern": "^GEO:GSE\\d+$"
             }
+          },
+          "control_type": {
+            "title": "Control Type",
+            "description": "The type of control this file set represents.",
+            "type": "string",
+            "enum": []
           },
           "samples": {
             "title": "Samples",
@@ -50663,6 +50839,12 @@
               "expression vector library",
               "editing template library"
             ]
+          },
+          "control_type": {
+            "title": "Control Type",
+            "description": "The type of control this file set represents.",
+            "type": "string",
+            "enum": []
           },
           "scope": {
             "title": "Library Construct Scope",
@@ -51062,6 +51244,12 @@
               "pattern": "^GEO:GSE\\d+$"
             }
           },
+          "control_type": {
+            "title": "Control Type",
+            "description": "The type of control this file set represents.",
+            "type": "string",
+            "enum": []
+          },
           "samples": {
             "title": "Samples",
             "description": "The sample(s) associated with this file set.",
@@ -51334,6 +51522,17 @@
               "pattern": "^GEO:GSE\\d+$"
             }
           },
+          "control_type": {
+            "title": "Control Type",
+            "description": "The type of control this file set represents.",
+            "type": "string",
+            "enum": [
+              "low FACS signal",
+              "pre-selection",
+              "unsorted FACS input",
+              "untransfected"
+            ]
+          },
           "samples": {
             "title": "Samples",
             "description": "The sample(s) associated with this file set.",
@@ -51385,49 +51584,55 @@
             "description": "The custom lab preferred label for the experiment performed in this measurement set.",
             "type": "string",
             "enum": [
-              "10x multiome",
-              "10x multiome with MULTI-seq",
-              "AAV-MPRA",
-              "ATAC-seq",
-              "CERES-seq",
-              "Cell painting",
-              "CRISPR FlowFISH",
-              "DOGMA-seq",
-              "Histone ChIP-seq",
-              "Hi-C",
-              "HT-recruit",
-              "lentiMPRA",
-              "MERFISH",
-              "MIAA",
-              "mN2H",
-              "MPRA",
-              "MPRA (scQer)",
-              "MULTI-seq",
-              "Parse SPLiT-seq",
-              "Perturb-seq",
               "RNA-seq",
-              "SGE",
-              "scATAC-seq",
+              "scRNA-seq",
+              "snRNA-seq",
               "scNT-seq",
               "scNT-seq2",
-              "scRNA-seq",
-              "semi-qY2H",
-              "SHARE-seq",
-              "smFISH",
+              "Parse SPLiT-seq",
+              "ATAC-seq",
+              "scATAC-seq",
               "snATAC-seq",
+              "DOGMA-seq",
+              "10x multiome",
+              "10x multiome with MULTI-seq",
+              "MULTI-seq",
+              "SHARE-seq",
+              "Histone ChIP-seq",
+              "TF ChIP-seq",
+              "MPRA",
+              "MPRA (scQer)",
+              "AAV-MPRA",
+              "lentiMPRA",
+              "SUPERSTARR",
+              "Cell painting",
+              "Variant painting",
+              "smFISH",
+              "MERFISH",
+              "Proliferation CRISPR screen",
+              "Growth CRISPR screen",
+              "Migration CRISPR screen",
+              "CRISPR FlowFISH screen",
+              "CRISPR FACS screen",
+              "CRISPR mCherry screen",
+              "HCR-FlowFISH screen",
+              "Perturb-seq",
+              "CERES-seq",
+              "TAP-seq",
+              "Variant FlowFISH",
+              "SGE",
+              "MIAA",
               "snmC-Seq2",
               "snMCT-seq",
               "snM3C-seq",
-              "snRNA-seq",
-              "Spatial transcriptomics",
-              "SUPERSTARR",
-              "TAP-seq",
-              "TF ChIP-seq",
-              "VAMP-seq",
-              "Variant FlowFISH",
-              "Variant painting",
+              "mN2H",
+              "semi-qY2H",
               "Y2H",
-              "yN2H"
+              "yN2H",
+              "VAMP-seq",
+              "Hi-C",
+              "Spatial transcriptomics",
+              "HT-recruit"
             ]
           },
           "multiome_size": {
@@ -51746,6 +51951,12 @@
               "type": "string",
               "pattern": "^GEO:GSE\\d+$"
             }
+          },
+          "control_type": {
+            "title": "Control Type",
+            "description": "The type of control this file set represents.",
+            "type": "string",
+            "enum": []
           },
           "samples": {
             "title": "Samples",
@@ -52145,6 +52356,12 @@
               "type": "string",
               "pattern": "^GEO:GSE\\d+$"
             }
+          },
+          "control_type": {
+            "title": "Control Type",
+            "description": "The type of control this file set represents.",
+            "type": "string",
+            "enum": []
           },
           "samples": {
             "title": "Samples",
@@ -53440,49 +53657,55 @@
               "description": "The custom lab preferred label for the experiment performed in this measurement set.",
               "type": "string",
               "enum": [
-                "10x multiome",
-                "10x multiome with MULTI-seq",
-                "AAV-MPRA",
-                "ATAC-seq",
-                "CERES-seq",
-                "Cell painting",
-                "CRISPR FlowFISH",
-                "DOGMA-seq",
-                "Histone ChIP-seq",
-                "Hi-C",
-                "HT-recruit",
-                "lentiMPRA",
-                "MERFISH",
-                "MIAA",
-                "mN2H",
-                "MPRA",
-                "MPRA (scQer)",
-                "MULTI-seq",
-                "Parse SPLiT-seq",
-                "Perturb-seq",
                 "RNA-seq",
-                "SGE",
-                "scATAC-seq",
+                "scRNA-seq",
+                "snRNA-seq",
                 "scNT-seq",
                 "scNT-seq2",
-                "scRNA-seq",
-                "semi-qY2H",
-                "SHARE-seq",
-                "smFISH",
+                "Parse SPLiT-seq",
+                "ATAC-seq",
+                "scATAC-seq",
                 "snATAC-seq",
+                "DOGMA-seq",
+                "10x multiome",
+                "10x multiome with MULTI-seq",
+                "MULTI-seq",
+                "SHARE-seq",
+                "Histone ChIP-seq",
+                "TF ChIP-seq",
+                "MPRA",
+                "MPRA (scQer)",
+                "AAV-MPRA",
+                "lentiMPRA",
+                "SUPERSTARR",
+                "Cell painting",
+                "Variant painting",
+                "smFISH",
+                "MERFISH",
+                "Proliferation CRISPR screen",
+                "Growth CRISPR screen",
+                "Migration CRISPR screen",
+                "CRISPR FlowFISH screen",
+                "CRISPR FACS screen",
+                "CRISPR mCherry screen",
+                "HCR-FlowFISH screen",
+                "Perturb-seq",
+                "CERES-seq",
+                "TAP-seq",
+                "Variant FlowFISH",
+                "SGE",
+                "MIAA",
                 "snmC-Seq2",
                 "snMCT-seq",
                 "snM3C-seq",
-                "snRNA-seq",
-                "Spatial transcriptomics",
-                "SUPERSTARR",
-                "TAP-seq",
-                "TF ChIP-seq",
-                "VAMP-seq",
-                "Variant FlowFISH",
-                "Variant painting",
+                "mN2H",
+                "semi-qY2H",
                 "Y2H",
-                "yN2H"
+                "yN2H",
+                "VAMP-seq",
+                "Hi-C",
+                "Spatial transcriptomics",
+                "HT-recruit"
               ]
             }
           },
@@ -53829,7 +54052,8 @@
               "Oxford Nanopore Technologies",
               "Pacific Biosciences",
               "Parse Biosciences",
-              "Roche"
+              "Roche",
+              "Singular Genomics"
             ],
             "description": "The company that developed and sells the instrument."
           },
@@ -54553,6 +54777,30 @@
               "picogram per milliliter",
               "nanogram per milliliter",
               "milligram per deciliter"
+            ]
+          },
+          "quality": {
+            "title": "Quality",
+            "description": "A quality assessment associated with the phenotypic feature, such as a categorical description.",
+            "type": "string",
+            "enum": [
+              "none",
+              "sparse",
+              "moderate",
+              "frequent",
+              "unknown",
+              "I",
+              "II",
+              "III",
+              "IV",
+              "V",
+              "VI",
+              "2/2",
+              "2/3",
+              "2/4",
+              "3/3",
+              "3/4",
+              "4/4"
             ]
           },
           "observation_date": {
