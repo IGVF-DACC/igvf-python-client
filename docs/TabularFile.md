@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **href** | **str** | The download path to obtain file. | [optional] 
 **s3_uri** | **str** | The S3 URI of public file object. | [optional] 
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 
+**barcode_map_for** | **List[str]** | Link(s) to the Multiplexed samples using this file as barcode map. | [optional] 
 
 ## Example
 
