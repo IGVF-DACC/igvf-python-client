@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "49.0.1"
+    "version": "50.0.0"
   },
   "servers": [
     {
@@ -5487,6 +5487,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "assembly",
             "in": "query",
             "schema": {
@@ -5733,24 +5750,243 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -5833,18 +6069,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -6408,6 +6745,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -6606,24 +6960,243 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -6691,18 +7264,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -7222,6 +7896,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "assembly",
             "in": "query",
             "schema": {
@@ -7469,7 +8160,7 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
@@ -7502,17 +8193,236 @@
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -7580,18 +8490,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -8123,6 +9134,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -8321,24 +9349,243 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -8406,18 +9653,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -8921,6 +10269,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -9185,24 +10550,243 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -9270,18 +10854,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -9817,6 +11502,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -10032,24 +11734,243 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -10117,18 +12038,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -10647,6 +12669,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "assembly",
             "in": "query",
             "schema": {
@@ -10924,7 +12963,7 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
@@ -10957,17 +12996,236 @@
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -11035,18 +13293,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -11625,6 +13984,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -11862,24 +14238,243 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -12000,18 +14595,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -12698,6 +15394,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "assembly",
             "in": "query",
             "schema": {
@@ -12959,24 +15672,243 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -13059,18 +15991,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -13685,6 +16718,23 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "assembly",
             "in": "query",
             "schema": {
@@ -13967,7 +17017,7 @@
                 "type": "string",
                 "title": "File Format Specifications Document"
               },
-              "description": "Document that further explains the file format."
+              "description": "Documents that describe the file format and fields of this file."
             },
             "description": "Filter by file_format_specifications",
             "style": "form",
@@ -14000,17 +17050,236 @@
             "explode": true
           },
           {
-            "name": "file_set",
+            "name": "file_set.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Set",
-                "description": "The file set that this file belongs to."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_set",
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
             "style": "form",
             "explode": true
           },
@@ -14078,18 +17347,119 @@
             "explode": true
           },
           {
-            "name": "integrated_in",
+            "name": "integrated_in.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Integrated In",
               "items": {
                 "type": "string",
-                "title": "Integrated In"
-              },
-              "description": "Construct library set(s) that this file was used for in insert design."
+                "title": "ID"
+              }
             },
-            "description": "Filter by integrated_in",
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
             "style": "form",
             "explode": true
           },
@@ -21224,6 +24594,7 @@
                   "MPRA (scQer)",
                   "AAV-MPRA",
                   "lentiMPRA",
+                  "STARR-seq",
                   "SUPERSTARR",
                   "Cell painting",
                   "Variant painting",
@@ -23525,8 +26896,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary",
-                "description": "A summary of the object."
+                "title": "Summary"
               }
             },
             "description": "Filter by summary",
@@ -28670,6 +32040,7 @@
                   "MPRA (scQer)",
                   "AAV-MPRA",
                   "lentiMPRA",
+                  "STARR-seq",
                   "SUPERSTARR",
                   "Cell painting",
                   "Variant painting",
@@ -32854,6 +36225,26 @@
             "explode": true
           },
           {
+            "name": "biosample_qualifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Biosample Qualifiers",
+              "items": {
+                "type": "string",
+                "title": "Biosample Qualifiers",
+                "enum": [
+                  "exhausted"
+                ],
+                "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
+              },
+              "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
+            },
+            "description": "Filter by biosample_qualifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "cell_fate_change_protocol",
             "in": "query",
             "schema": {
@@ -33299,7 +36690,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Summary",
+                "description": "A summary of the prediction set."
               }
             },
             "description": "Filter by file_sets.summary",
@@ -34864,7 +38256,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Summary",
+                "description": "A summary of the prediction set."
               }
             },
             "description": "Filter by file_sets.summary",
@@ -35980,6 +39373,26 @@
             "explode": true
           },
           {
+            "name": "biosample_qualifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Biosample Qualifiers",
+              "items": {
+                "type": "string",
+                "title": "Biosample Qualifiers",
+                "enum": [
+                  "exhausted"
+                ],
+                "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
+              },
+              "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
+            },
+            "description": "Filter by biosample_qualifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "cellular_sub_pool",
             "in": "query",
             "schema": {
@@ -36296,7 +39709,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Summary",
+                "description": "A summary of the prediction set."
               }
             },
             "description": "Filter by file_sets.summary",
@@ -37669,7 +41083,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Summary",
+                "description": "A summary of the prediction set."
               }
             },
             "description": "Filter by file_sets.summary",
@@ -38906,7 +42321,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Summary",
+                "description": "A summary of the prediction set."
               }
             },
             "description": "Filter by file_sets.summary",
@@ -40454,7 +43870,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Summary",
+                "description": "A summary of the prediction set."
               }
             },
             "description": "Filter by file_sets.summary",
@@ -46667,7 +50084,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -46777,6 +50194,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -46991,7 +50419,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -47101,6 +50529,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -47358,7 +50797,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -47458,6 +50897,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -47667,7 +51117,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -47767,6 +51217,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -47990,7 +51451,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -48118,6 +51579,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -48344,7 +51816,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -48444,6 +51916,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -48721,7 +52204,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -48847,6 +52330,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -49067,7 +52561,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -49294,6 +52788,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -49555,7 +53060,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -49681,6 +53186,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -49957,7 +53473,7 @@
           },
           "file_format_specifications": {
             "title": "File Format Specifications Documents",
-            "description": "Document that further explains the file format.",
+            "description": "Documents that describe the file format and fields of this file.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -50057,6 +53573,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -51662,6 +55189,7 @@
               "MPRA (scQer)",
               "AAV-MPRA",
               "lentiMPRA",
+              "STARR-seq",
               "SUPERSTARR",
               "Cell painting",
               "Variant painting",
@@ -52114,8 +55642,7 @@
           },
           "summary": {
             "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
+            "type": "string"
           },
           "files": {
             "title": "Files",
@@ -53736,6 +57263,7 @@
                 "MPRA (scQer)",
                 "AAV-MPRA",
                 "lentiMPRA",
+                "STARR-seq",
                 "SUPERSTARR",
                 "Cell painting",
                 "Variant painting",
@@ -55666,6 +59194,20 @@
               "SMBM without serum"
             ]
           },
+          "biosample_qualifiers": {
+            "title": "Biosample Qualifiers",
+            "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Biosample Qualifiers",
+              "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
+              "type": "string",
+              "enum": [
+                "exhausted"
+              ]
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -56667,6 +60209,20 @@
             "description": "Number of passages including the passages from the source.",
             "type": "integer",
             "minimum": 0
+          },
+          "biosample_qualifiers": {
+            "title": "Biosample Qualifiers",
+            "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Biosample Qualifiers",
+              "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
+              "type": "string",
+              "enum": [
+                "exhausted"
+              ]
+            }
           },
           "@id": {
             "title": "ID",

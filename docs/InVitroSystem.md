@@ -65,6 +65,7 @@ Name | Type | Description | Notes
 **passage_number** | **int** | Number of passages including the passages from the source. | [optional] 
 **targeted_sample_term** | **str** | Ontology term identifying the targeted endpoint biosample resulting from differentation or reprogramming. | [optional] 
 **growth_medium** | **str** | A growth medium of the in vitro system. | [optional] 
+**biosample_qualifiers** | **List[str]** | An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the sample. | [optional] 

@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **alignment_files**
-> AlignmentFileResults alignment_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, assembly=assembly, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_summary=content_summary, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, filtered=filtered, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, redacted=redacted, reference_files=reference_files, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> AlignmentFileResults alignment_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, assay_titles=assay_titles, assembly=assembly, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_summary=content_summary, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, filtered=filtered, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, redacted=redacted, reference_files=reference_files, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the AlignmentFile collection.
 
@@ -163,6 +163,7 @@ Name | Type | Description  | Notes
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
  **anvil_url** | **List[str]**| Filter by anvil_url | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **assembly** | **List[str]**| Filter by assembly | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
@@ -178,13 +179,34 @@ Name | Type | Description  | Notes
  **documents** | **List[str]**| Filter by documents | [optional] 
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **filtered** | **List[bool]**| Filter by filtered | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
@@ -918,7 +940,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **configuration_files**
-> ConfigurationFileResults configuration_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, seqspec_of=seqspec_of, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> ConfigurationFileResults configuration_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, assay_titles=assay_titles, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, seqspec_of=seqspec_of, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the ConfigurationFile collection.
 
@@ -949,6 +971,7 @@ Name | Type | Description  | Notes
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **collections** | **List[str]**| Filter by collections | [optional] 
@@ -961,12 +984,33 @@ Name | Type | Description  | Notes
  **documents** | **List[str]**| Filter by documents | [optional] 
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
@@ -1638,7 +1682,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **genome_browser_annotation_files**
-> GenomeBrowserAnnotationFileResults genome_browser_annotation_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, assembly=assembly, award_id=award_id, award_component=award_component, cell_type_annotation_id=cell_type_annotation_id, cell_type_annotation_term_name=cell_type_annotation_term_name, collections=collections, content_md5sum=content_md5sum, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_format_type=file_format_type, file_set=file_set, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> GenomeBrowserAnnotationFileResults genome_browser_annotation_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, assay_titles=assay_titles, assembly=assembly, award_id=award_id, award_component=award_component, cell_type_annotation_id=cell_type_annotation_id, cell_type_annotation_term_name=cell_type_annotation_term_name, collections=collections, content_md5sum=content_md5sum, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_format_type=file_format_type, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the GenomeBrowserAnnotationFile collection.
 
@@ -1669,6 +1713,7 @@ Name | Type | Description  | Notes
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **assembly** | **List[str]**| Filter by assembly | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
@@ -1685,12 +1730,33 @@ Name | Type | Description  | Notes
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
  **file_format_type** | **List[str]**| Filter by file_format_type | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
@@ -1873,7 +1939,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **image_files**
-> ImageFileResults image_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> ImageFileResults image_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, assay_titles=assay_titles, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the ImageFile collection.
 
@@ -1904,6 +1970,7 @@ Name | Type | Description  | Notes
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **collections** | **List[str]**| Filter by collections | [optional] 
@@ -1916,12 +1983,33 @@ Name | Type | Description  | Notes
  **documents** | **List[str]**| Filter by documents | [optional] 
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
@@ -2032,7 +2120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **in_vitro_systems**
-> InVitroSystemResults in_vitro_systems(query=query, limit=limit, sort=sort, id=id, accession=accession, age=age, age_units=age_units, aliases=aliases, alternate_accessions=alternate_accessions, award_id=award_id, award_component=award_component, biomarkers=biomarkers, cell_fate_change_protocol=cell_fate_change_protocol, cell_fate_change_treatments_id=cell_fate_change_treatments_id, cell_fate_change_treatments_purpose=cell_fate_change_treatments_purpose, cell_fate_change_treatments_status=cell_fate_change_treatments_status, cell_fate_change_treatments_summary=cell_fate_change_treatments_summary, cell_fate_change_treatments_treatment_type=cell_fate_change_treatments_treatment_type, cellular_sub_pool=cellular_sub_pool, classifications=classifications, collections=collections, construct_library_sets=construct_library_sets, creation_timestamp=creation_timestamp, date_obtained=date_obtained, dbxrefs=dbxrefs, demultiplexed_from=demultiplexed_from, demultiplexed_to=demultiplexed_to, description=description, disease_terms_id=disease_terms_id, disease_terms_term_name=disease_terms_term_name, documents=documents, donors=donors, embryonic=embryonic, file_sets_id=file_sets_id, file_sets_accession=file_sets_accession, file_sets_aliases=file_sets_aliases, file_sets_assay_term_term_name=file_sets_assay_term_term_name, file_sets_lab_title=file_sets_lab_title, file_sets_status=file_sets_status, file_sets_summary=file_sets_summary, growth_medium=growth_medium, institutional_certificates_id=institutional_certificates_id, institutional_certificates_certificate_identifier=institutional_certificates_certificate_identifier, lab_id=lab_id, lab_title=lab_title, lot_id=lot_id, lower_bound_age=lower_bound_age, lower_bound_age_in_hours=lower_bound_age_in_hours, modifications_id=modifications_id, modifications_status=modifications_status, modifications_summary=modifications_summary, moi=moi, multiplexed_in_id=multiplexed_in_id, multiplexed_in_accession=multiplexed_in_accession, notes=notes, nucleic_acid_delivery=nucleic_acid_delivery, origin_of=origin_of, originated_from_id=originated_from_id, originated_from_accession=originated_from_accession, part_of=part_of, parts=parts, passage_number=passage_number, pooled_from=pooled_from, pooled_in=pooled_in, product_id=product_id, protocols=protocols, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, release_timestamp=release_timestamp, revoke_detail=revoke_detail, sample_terms_id=sample_terms_id, sample_terms_term_name=sample_terms_term_name, sex=sex, sorted_fractions=sorted_fractions, sorted_from_id=sorted_from_id, sorted_from_accession=sorted_from_accession, sorted_from_detail=sorted_from_detail, sources_id=sources_id, starting_amount=starting_amount, starting_amount_units=starting_amount_units, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, targeted_sample_term=targeted_sample_term, taxa=taxa, time_post_change=time_post_change, time_post_change_units=time_post_change_units, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, treatments_id=treatments_id, treatments_purpose=treatments_purpose, treatments_status=treatments_status, treatments_summary=treatments_summary, treatments_treatment_type=treatments_treatment_type, upper_bound_age=upper_bound_age, upper_bound_age_in_hours=upper_bound_age_in_hours, url=url, uuid=uuid, virtual=virtual)
+> InVitroSystemResults in_vitro_systems(query=query, limit=limit, sort=sort, id=id, accession=accession, age=age, age_units=age_units, aliases=aliases, alternate_accessions=alternate_accessions, award_id=award_id, award_component=award_component, biomarkers=biomarkers, biosample_qualifiers=biosample_qualifiers, cell_fate_change_protocol=cell_fate_change_protocol, cell_fate_change_treatments_id=cell_fate_change_treatments_id, cell_fate_change_treatments_purpose=cell_fate_change_treatments_purpose, cell_fate_change_treatments_status=cell_fate_change_treatments_status, cell_fate_change_treatments_summary=cell_fate_change_treatments_summary, cell_fate_change_treatments_treatment_type=cell_fate_change_treatments_treatment_type, cellular_sub_pool=cellular_sub_pool, classifications=classifications, collections=collections, construct_library_sets=construct_library_sets, creation_timestamp=creation_timestamp, date_obtained=date_obtained, dbxrefs=dbxrefs, demultiplexed_from=demultiplexed_from, demultiplexed_to=demultiplexed_to, description=description, disease_terms_id=disease_terms_id, disease_terms_term_name=disease_terms_term_name, documents=documents, donors=donors, embryonic=embryonic, file_sets_id=file_sets_id, file_sets_accession=file_sets_accession, file_sets_aliases=file_sets_aliases, file_sets_assay_term_term_name=file_sets_assay_term_term_name, file_sets_lab_title=file_sets_lab_title, file_sets_status=file_sets_status, file_sets_summary=file_sets_summary, growth_medium=growth_medium, institutional_certificates_id=institutional_certificates_id, institutional_certificates_certificate_identifier=institutional_certificates_certificate_identifier, lab_id=lab_id, lab_title=lab_title, lot_id=lot_id, lower_bound_age=lower_bound_age, lower_bound_age_in_hours=lower_bound_age_in_hours, modifications_id=modifications_id, modifications_status=modifications_status, modifications_summary=modifications_summary, moi=moi, multiplexed_in_id=multiplexed_in_id, multiplexed_in_accession=multiplexed_in_accession, notes=notes, nucleic_acid_delivery=nucleic_acid_delivery, origin_of=origin_of, originated_from_id=originated_from_id, originated_from_accession=originated_from_accession, part_of=part_of, parts=parts, passage_number=passage_number, pooled_from=pooled_from, pooled_in=pooled_in, product_id=product_id, protocols=protocols, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, release_timestamp=release_timestamp, revoke_detail=revoke_detail, sample_terms_id=sample_terms_id, sample_terms_term_name=sample_terms_term_name, sex=sex, sorted_fractions=sorted_fractions, sorted_from_id=sorted_from_id, sorted_from_accession=sorted_from_accession, sorted_from_detail=sorted_from_detail, sources_id=sources_id, starting_amount=starting_amount, starting_amount_units=starting_amount_units, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, targeted_sample_term=targeted_sample_term, taxa=taxa, time_post_change=time_post_change, time_post_change_units=time_post_change_units, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, treatments_id=treatments_id, treatments_purpose=treatments_purpose, treatments_status=treatments_status, treatments_summary=treatments_summary, treatments_treatment_type=treatments_treatment_type, upper_bound_age=upper_bound_age, upper_bound_age_in_hours=upper_bound_age_in_hours, url=url, uuid=uuid, virtual=virtual)
 
 List items in the InVitroSystem collection.
 
@@ -2067,6 +2155,7 @@ Name | Type | Description  | Notes
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **biomarkers** | **List[str]**| Filter by biomarkers | [optional] 
+ **biosample_qualifiers** | **List[str]**| Filter by biosample_qualifiers | [optional] 
  **cell_fate_change_protocol** | **List[str]**| Filter by cell_fate_change_protocol | [optional] 
  **cell_fate_change_treatments_id** | **List[str]**| Filter by cell_fate_change_treatments.@id | [optional] 
  **cell_fate_change_treatments_purpose** | **List[str]**| Filter by cell_fate_change_treatments.purpose | [optional] 
@@ -2327,7 +2416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **matrix_files**
-> MatrixFileResults matrix_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_summary=content_summary, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, dimension1=dimension1, dimension2=dimension2, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, reference_files=reference_files, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> MatrixFileResults matrix_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, assay_titles=assay_titles, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_summary=content_summary, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, dimension1=dimension1, dimension2=dimension2, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, reference_files=reference_files, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the MatrixFile collection.
 
@@ -2358,6 +2447,7 @@ Name | Type | Description  | Notes
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **collections** | **List[str]**| Filter by collections | [optional] 
@@ -2373,12 +2463,33 @@ Name | Type | Description  | Notes
  **documents** | **List[str]**| Filter by documents | [optional] 
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
@@ -2583,7 +2694,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **model_files**
-> ModelFileResults model_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> ModelFileResults model_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, assay_titles=assay_titles, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the ModelFile collection.
 
@@ -2615,6 +2726,7 @@ Name | Type | Description  | Notes
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
  **anvil_url** | **List[str]**| Filter by anvil_url | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **collections** | **List[str]**| Filter by collections | [optional] 
@@ -2628,12 +2740,33 @@ Name | Type | Description  | Notes
  **documents** | **List[str]**| Filter by documents | [optional] 
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
@@ -3450,7 +3583,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **primary_cells**
-> PrimaryCellResults primary_cells(query=query, limit=limit, sort=sort, id=id, accession=accession, age=age, age_units=age_units, aliases=aliases, alternate_accessions=alternate_accessions, award_id=award_id, award_component=award_component, biomarkers=biomarkers, cellular_sub_pool=cellular_sub_pool, classifications=classifications, collections=collections, construct_library_sets=construct_library_sets, creation_timestamp=creation_timestamp, date_obtained=date_obtained, dbxrefs=dbxrefs, description=description, disease_terms_id=disease_terms_id, disease_terms_term_name=disease_terms_term_name, documents=documents, donors=donors, embryonic=embryonic, file_sets_id=file_sets_id, file_sets_accession=file_sets_accession, file_sets_aliases=file_sets_aliases, file_sets_assay_term_term_name=file_sets_assay_term_term_name, file_sets_lab_title=file_sets_lab_title, file_sets_status=file_sets_status, file_sets_summary=file_sets_summary, institutional_certificates_id=institutional_certificates_id, institutional_certificates_certificate_identifier=institutional_certificates_certificate_identifier, lab_id=lab_id, lab_title=lab_title, lot_id=lot_id, lower_bound_age=lower_bound_age, lower_bound_age_in_hours=lower_bound_age_in_hours, modifications_id=modifications_id, modifications_status=modifications_status, modifications_summary=modifications_summary, moi=moi, multiplexed_in_id=multiplexed_in_id, multiplexed_in_accession=multiplexed_in_accession, notes=notes, nucleic_acid_delivery=nucleic_acid_delivery, origin_of=origin_of, originated_from=originated_from, part_of=part_of, parts=parts, passage_number=passage_number, pooled_from=pooled_from, pooled_in=pooled_in, product_id=product_id, protocols=protocols, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, release_timestamp=release_timestamp, revoke_detail=revoke_detail, sample_terms_id=sample_terms_id, sample_terms_term_name=sample_terms_term_name, sex=sex, sorted_fractions=sorted_fractions, sorted_from_id=sorted_from_id, sorted_from_accession=sorted_from_accession, sorted_from_detail=sorted_from_detail, sources_id=sources_id, starting_amount=starting_amount, starting_amount_units=starting_amount_units, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, taxa=taxa, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, treatments_id=treatments_id, treatments_purpose=treatments_purpose, treatments_status=treatments_status, treatments_summary=treatments_summary, treatments_treatment_type=treatments_treatment_type, upper_bound_age=upper_bound_age, upper_bound_age_in_hours=upper_bound_age_in_hours, url=url, uuid=uuid, virtual=virtual)
+> PrimaryCellResults primary_cells(query=query, limit=limit, sort=sort, id=id, accession=accession, age=age, age_units=age_units, aliases=aliases, alternate_accessions=alternate_accessions, award_id=award_id, award_component=award_component, biomarkers=biomarkers, biosample_qualifiers=biosample_qualifiers, cellular_sub_pool=cellular_sub_pool, classifications=classifications, collections=collections, construct_library_sets=construct_library_sets, creation_timestamp=creation_timestamp, date_obtained=date_obtained, dbxrefs=dbxrefs, description=description, disease_terms_id=disease_terms_id, disease_terms_term_name=disease_terms_term_name, documents=documents, donors=donors, embryonic=embryonic, file_sets_id=file_sets_id, file_sets_accession=file_sets_accession, file_sets_aliases=file_sets_aliases, file_sets_assay_term_term_name=file_sets_assay_term_term_name, file_sets_lab_title=file_sets_lab_title, file_sets_status=file_sets_status, file_sets_summary=file_sets_summary, institutional_certificates_id=institutional_certificates_id, institutional_certificates_certificate_identifier=institutional_certificates_certificate_identifier, lab_id=lab_id, lab_title=lab_title, lot_id=lot_id, lower_bound_age=lower_bound_age, lower_bound_age_in_hours=lower_bound_age_in_hours, modifications_id=modifications_id, modifications_status=modifications_status, modifications_summary=modifications_summary, moi=moi, multiplexed_in_id=multiplexed_in_id, multiplexed_in_accession=multiplexed_in_accession, notes=notes, nucleic_acid_delivery=nucleic_acid_delivery, origin_of=origin_of, originated_from=originated_from, part_of=part_of, parts=parts, passage_number=passage_number, pooled_from=pooled_from, pooled_in=pooled_in, product_id=product_id, protocols=protocols, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, release_timestamp=release_timestamp, revoke_detail=revoke_detail, sample_terms_id=sample_terms_id, sample_terms_term_name=sample_terms_term_name, sex=sex, sorted_fractions=sorted_fractions, sorted_from_id=sorted_from_id, sorted_from_accession=sorted_from_accession, sorted_from_detail=sorted_from_detail, sources_id=sources_id, starting_amount=starting_amount, starting_amount_units=starting_amount_units, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, taxa=taxa, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, treatments_id=treatments_id, treatments_purpose=treatments_purpose, treatments_status=treatments_status, treatments_summary=treatments_summary, treatments_treatment_type=treatments_treatment_type, upper_bound_age=upper_bound_age, upper_bound_age_in_hours=upper_bound_age_in_hours, url=url, uuid=uuid, virtual=virtual)
 
 List items in the PrimaryCell collection.
 
@@ -3485,6 +3618,7 @@ Name | Type | Description  | Notes
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **biomarkers** | **List[str]**| Filter by biomarkers | [optional] 
+ **biosample_qualifiers** | **List[str]**| Filter by biosample_qualifiers | [optional] 
  **cellular_sub_pool** | **List[str]**| Filter by cellular_sub_pool | [optional] 
  **classifications** | **List[str]**| Filter by classifications | [optional] 
  **collections** | **List[str]**| Filter by collections | [optional] 
@@ -3673,7 +3807,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reference_files**
-> ReferenceFileResults reference_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, assembly=assembly, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, external=external, external_id=external_id, file_format=file_format, file_format_specifications=file_format_specifications, file_format_type=file_format_type, file_set=file_set, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, source_url=source_url, sources=sources, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> ReferenceFileResults reference_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, assay_titles=assay_titles, assembly=assembly, award_id=award_id, award_component=award_component, collections=collections, content_md5sum=content_md5sum, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, external=external, external_id=external_id, file_format=file_format, file_format_specifications=file_format_specifications, file_format_type=file_format_type, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, source_url=source_url, sources=sources, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the ReferenceFile collection.
 
@@ -3705,6 +3839,7 @@ Name | Type | Description  | Notes
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
  **anvil_url** | **List[str]**| Filter by anvil_url | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **assembly** | **List[str]**| Filter by assembly | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
@@ -3722,12 +3857,33 @@ Name | Type | Description  | Notes
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
  **file_format_type** | **List[str]**| Filter by file_format_type | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
@@ -4144,7 +4300,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sequence_files**
-> SequenceFileResults sequence_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, award_id=award_id, award_component=award_component, base_modifications=base_modifications, collections=collections, content_md5sum=content_md5sum, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, flowcell_id=flowcell_id, gene_list_for=gene_list_for, href=href, illumina_read_type=illumina_read_type, index=index, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, lane=lane, loci_list_for=loci_list_for, maximum_read_length=maximum_read_length, md5sum=md5sum, mean_read_length=mean_read_length, minimum_read_length=minimum_read_length, notes=notes, read_count=read_count, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, seqspecs=seqspecs, sequencing_kit=sequencing_kit, sequencing_platform=sequencing_platform, sequencing_run=sequencing_run, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> SequenceFileResults sequence_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, assay_titles=assay_titles, award_id=award_id, award_component=award_component, base_modifications=base_modifications, collections=collections, content_md5sum=content_md5sum, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, flowcell_id=flowcell_id, gene_list_for=gene_list_for, href=href, illumina_read_type=illumina_read_type, index=index, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, lane=lane, loci_list_for=loci_list_for, maximum_read_length=maximum_read_length, md5sum=md5sum, mean_read_length=mean_read_length, minimum_read_length=minimum_read_length, notes=notes, read_count=read_count, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, seqspecs=seqspecs, sequencing_kit=sequencing_kit, sequencing_platform=sequencing_platform, sequencing_run=sequencing_run, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the SequenceFile collection.
 
@@ -4176,6 +4332,7 @@ Name | Type | Description  | Notes
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
  **anvil_url** | **List[str]**| Filter by anvil_url | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **base_modifications** | **List[str]**| Filter by base_modifications | [optional] 
@@ -4190,7 +4347,21 @@ Name | Type | Description  | Notes
  **documents** | **List[str]**| Filter by documents | [optional] 
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **flowcell_id** | **List[str]**| Filter by flowcell_id | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
@@ -4198,7 +4369,14 @@ Name | Type | Description  | Notes
  **illumina_read_type** | **List[str]**| Filter by illumina_read_type | [optional] 
  **index** | **List[str]**| Filter by index | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **lane** | **List[int]**| Filter by lane | [optional] 
@@ -4251,7 +4429,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **signal_files**
-> SignalFileResults signal_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, assembly=assembly, award_id=award_id, award_component=award_component, cell_type_annotation_id=cell_type_annotation_id, cell_type_annotation_term_name=cell_type_annotation_term_name, collections=collections, content_md5sum=content_md5sum, content_summary=content_summary, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, filtered=filtered, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, normalized=normalized, notes=notes, reference_files=reference_files, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, start_view_position=start_view_position, status=status, strand_specificity=strand_specificity, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> SignalFileResults signal_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, assay_titles=assay_titles, assembly=assembly, award_id=award_id, award_component=award_component, cell_type_annotation_id=cell_type_annotation_id, cell_type_annotation_term_name=cell_type_annotation_term_name, collections=collections, content_md5sum=content_md5sum, content_summary=content_summary, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, filtered=filtered, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, normalized=normalized, notes=notes, reference_files=reference_files, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, start_view_position=start_view_position, status=status, strand_specificity=strand_specificity, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the SignalFile collection.
 
@@ -4282,6 +4460,7 @@ Name | Type | Description  | Notes
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **assembly** | **List[str]**| Filter by assembly | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
@@ -4298,13 +4477,34 @@ Name | Type | Description  | Notes
  **documents** | **List[str]**| Filter by documents | [optional] 
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **filtered** | **List[bool]**| Filter by filtered | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
@@ -4571,7 +4771,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tabular_files**
-> TabularFileResults tabular_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, assembly=assembly, award_id=award_id, award_component=award_component, barcode_map_for=barcode_map_for, cell_type_annotation_id=cell_type_annotation_id, cell_type_annotation_term_name=cell_type_annotation_term_name, collections=collections, content_md5sum=content_md5sum, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_format_type=file_format_type, file_set=file_set, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in=integrated_in, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
+> TabularFileResults tabular_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, anvil_url=anvil_url, assay_titles=assay_titles, assembly=assembly, award_id=award_id, award_component=award_component, barcode_map_for=barcode_map_for, cell_type_annotation_id=cell_type_annotation_id, cell_type_annotation_term_name=cell_type_annotation_term_name, collections=collections, content_md5sum=content_md5sum, content_type=content_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, description=description, documents=documents, file_format=file_format, file_format_specifications=file_format_specifications, file_format_type=file_format_type, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_summary=file_set_samples_summary, file_set_samples_taxa=file_set_samples_taxa, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail)
 
 List items in the TabularFile collection.
 
@@ -4603,6 +4803,7 @@ Name | Type | Description  | Notes
  **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
  **anvil_url** | **List[str]**| Filter by anvil_url | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
  **assembly** | **List[str]**| Filter by assembly | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
@@ -4621,12 +4822,33 @@ Name | Type | Description  | Notes
  **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
  **file_format_type** | **List[str]**| Filter by file_format_type | [optional] 
- **file_set** | **List[str]**| Filter by file_set | [optional] 
+ **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
+ **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
+ **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
+ **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
+ **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
+ **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
+ **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
+ **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
+ **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
+ **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
+ **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
+ **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
+ **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
+ **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
+ **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
  **file_size** | **List[int]**| Filter by file_size | [optional] 
  **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
  **href** | **List[str]**| Filter by href | [optional] 
  **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in** | **List[str]**| Filter by integrated_in | [optional] 
+ **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
+ **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
+ **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
+ **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
+ **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
+ **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
+ **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
+ **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
