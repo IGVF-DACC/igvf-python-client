@@ -40,6 +40,8 @@ Name | Type | Description | Notes
 **input_file_set_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 **assay_titles** | **List[str]** | Title(s) of assays that produced data analyzed in the analysis set. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for conducting the assay on Protocols.io. | [optional] 
+**sample_summary** | **str** | A summary of the samples associated with input file sets of this analysis set. | [optional] 
+**functional_assay_mechanisms** | **List[str]** | The biological processes measured by the functional assays. | [optional] 
 
 ## Example
 
