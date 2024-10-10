@@ -1,6 +1,6 @@
 # ConfigurationFile
 
-A file containing configuration settings or information defining the structure of other data files' content.
+A file containing configuration settings or information defining the structure of other data files' content or input parameters of prediction models.
 
 ## Properties
 

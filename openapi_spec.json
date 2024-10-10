@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "51.0.1"
+    "version": "52.0.0"
   },
   "servers": [
     {
@@ -1313,6 +1313,7 @@
                 "enum": [
                   "alignment",
                   "barcode mapping generation",
+                  "counts normalization",
                   "file format conversion",
                   "filtering",
                   "interaction calling",
@@ -3887,6 +3888,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -4672,6 +4674,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -5570,6 +5573,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -6810,6 +6814,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -6943,7 +6948,8 @@
                 "title": "File Format",
                 "enum": [
                   "yaml",
-                  "json"
+                  "json",
+                  "tsv"
                 ],
                 "description": "The file format or extension of the file."
               }
@@ -8011,6 +8017,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -9201,6 +9208,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -10336,6 +10344,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -11573,6 +11582,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -12762,6 +12772,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -14080,6 +14091,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -15532,6 +15544,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -16874,6 +16887,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -18113,6 +18127,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -19545,6 +19560,21 @@
             "explode": true
           },
           {
+            "name": "barcode_map",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Link to barcode map tabular file",
+                "description": "The link to the barcode mapping tabular file."
+              }
+            },
+            "description": "Filter by barcode_map",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -19562,6 +19592,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -21208,6 +21239,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -22624,6 +22656,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -24066,6 +24099,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -25932,6 +25966,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -26159,6 +26194,21 @@
               }
             },
             "description": "Filter by donors.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "external_input_data",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "External Input Data",
+                "description": "A tabular file with links to external data utilized for this model."
+              }
+            },
+            "description": "Filter by external_input_data",
             "style": "form",
             "explode": true
           },
@@ -27392,6 +27442,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -36535,6 +36586,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -38135,6 +38187,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -38417,7 +38470,7 @@
                 "type": "string",
                 "title": "Institutional Certificate"
               },
-              "description": "The institutional certificates under which use of this sample is approved."
+              "description": "The institutional certificates of the samples included in this multiplexed sample."
             },
             "description": "Filter by institutional_certificates",
             "style": "form",
@@ -39606,6 +39659,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -41042,6 +41096,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -42218,6 +42273,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -43767,6 +43823,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -47273,7 +47330,7 @@
               "items": {
                 "type": "string",
                 "title": "Email",
-                "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                "pattern": "^[^A-Z\\s@]+@[^A-Z\\s@]+\\.[^A-Z\\s@]+$",
                 "description": "The email associated with the user's account."
               }
             },
@@ -47813,6 +47870,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "MaveDB",
                   "MPRAbase",
+                  "VarChAMP",
                   "Vista"
                 ]
               },
@@ -48703,6 +48761,7 @@
               "enum": [
                 "alignment",
                 "barcode mapping generation",
+                "counts normalization",
                 "file format conversion",
                 "filtering",
                 "interaction calling",
@@ -49511,6 +49570,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -49844,6 +49904,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -50127,6 +50188,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -50398,7 +50460,7 @@
       },
       "ConfigurationFile": {
         "title": "Configuration File",
-        "description": "A file containing configuration settings or information defining the structure of other data files' content.",
+        "description": "A file containing configuration settings or information defining the structure of other data files' content or input parameters of prediction models.",
         "additionalProperties": false,
         "type": "object",
         "properties": {
@@ -50461,6 +50523,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -50580,7 +50643,8 @@
             "type": "string",
             "enum": [
               "yaml",
-              "json"
+              "json",
+              "tsv"
             ]
           },
           "file_format_specifications": {
@@ -50841,6 +50905,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -51161,6 +51226,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -51492,6 +51558,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -51866,6 +51933,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -52245,6 +52313,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -52614,6 +52683,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -53117,6 +53187,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -53527,6 +53598,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -53883,6 +53955,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -54177,6 +54250,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -54310,6 +54384,11 @@
               "quantification DNA barcode sequencing",
               "variant sequencing"
             ]
+          },
+          "barcode_map": {
+            "title": "Link to barcode map tabular file",
+            "description": "The link to the barcode mapping tabular file.",
+            "type": "string"
           },
           "@id": {
             "title": "ID",
@@ -54538,6 +54617,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -54936,6 +55016,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -55219,6 +55300,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -55658,6 +55740,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -55838,6 +55921,11 @@
               "title": "Gene",
               "type": "string"
             }
+          },
+          "external_input_data": {
+            "title": "External Input Data",
+            "description": "A tabular file with links to external data utilized for this model.",
+            "type": "string"
           },
           "@id": {
             "title": "ID",
@@ -56062,6 +56150,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -59030,6 +59119,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -59656,6 +59746,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -59932,7 +60023,7 @@
           "institutional_certificates": {
             "title": "Institutional Certificates",
             "type": "array",
-            "description": "The institutional certificates under which use of this sample is approved.",
+            "description": "The institutional certificates of the samples included in this multiplexed sample.",
             "uniqueItems": true,
             "items": {
               "title": "Institutional Certificate",
@@ -60134,6 +60225,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -60681,6 +60773,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -61082,6 +61175,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -61664,6 +61758,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }
@@ -62837,7 +62932,7 @@
             "title": "Email",
             "type": "string",
             "description": "The email associated with the user's account.",
-            "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+            "pattern": "^[^A-Z\\s@]+@[^A-Z\\s@]+\\.[^A-Z\\s@]+$"
           },
           "first_name": {
             "title": "First Name",
@@ -63011,6 +63106,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "MaveDB",
                 "MPRAbase",
+                "VarChAMP",
                 "Vista"
               ]
             }

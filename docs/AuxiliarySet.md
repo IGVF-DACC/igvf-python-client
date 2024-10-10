@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
 **donors** | **List[str]** | The donors of the samples associated with this auxiliary set. | [optional] 
 **file_set_type** | **str** | The category that best describes this auxiliary file set. | [optional] 
+**barcode_map** | **str** | The link to the barcode mapping tabular file. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
