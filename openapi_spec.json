@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "52.0.0"
+    "version": "52.0.2"
   },
   "servers": [
     {
@@ -55643,20 +55643,6 @@
         "title": "Model Set",
         "description": "A file set grouping files that represent trained predictive models. Model file sets contain data files that could be used by predictive modeling software to generate predictions or annotations of genomic features such as genomic variants.",
         "type": "object",
-        "not": {
-          "anyOf": [
-            {
-              "required": [
-                "samples"
-              ]
-            },
-            {
-              "required": [
-                "donors"
-              ]
-            }
-          ]
-        },
         "additionalProperties": false,
         "properties": {
           "input_file_sets": {
@@ -59640,35 +59626,6 @@
         "title": "Multiplexed Sample",
         "description": "A sample that is made by multiplexing multiple distinct samples.",
         "type": "object",
-        "not": {
-          "anyOf": [
-            {
-              "required": [
-                "construct_library_sets"
-              ]
-            },
-            {
-              "required": [
-                "moi"
-              ]
-            },
-            {
-              "required": [
-                "nucleic_acid_delivery"
-              ]
-            },
-            {
-              "required": [
-                "time_post_library_delivery"
-              ]
-            },
-            {
-              "required": [
-                "time_post_library_delivery_units"
-              ]
-            }
-          ]
-        },
         "additionalProperties": false,
         "properties": {
           "release_timestamp": {
@@ -61635,20 +61592,6 @@
         "title": "Whole Organism",
         "description": "A biosample that is a whole model organism. For example, a mouse embryo.",
         "type": "object",
-        "not": {
-          "anyOf": [
-            {
-              "required": [
-                "part_of"
-              ]
-            },
-            {
-              "required": [
-                "pooled_from"
-              ]
-            }
-          ]
-        },
         "additionalProperties": false,
         "properties": {
           "release_timestamp": {
