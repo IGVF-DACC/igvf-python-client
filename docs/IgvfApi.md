@@ -4848,7 +4848,7 @@ Name | Type | Description  | Notes
  **derived_manually** | **List[bool]**| Filter by derived_manually | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
  **documents** | **List[str]**| Filter by documents | [optional] 
- **file_format** | **List[FileFormat]**| Filter by file_format | [optional] 
+ **file_format** | **List[str]**| Filter by file_format | [optional] 
  **file_format_specifications** | **List[str]**| Filter by file_format_specifications | [optional] 
  **file_format_type** | **List[str]**| Filter by file_format_type | [optional] 
  **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 

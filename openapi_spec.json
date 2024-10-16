@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "53.0.0"
+    "version": "53.0.1"
   },
   "servers": [
     {
@@ -17192,23 +17192,6 @@
               "items": {
                 "type": "string",
                 "title": "File Format",
-                "oneOf": [
-                  {
-                    "enum": [
-                      "bed",
-                      "csv",
-                      "gtf",
-                      "tsv",
-                      "vcf"
-                    ]
-                  },
-                  {
-                    "enum": [
-                      "txt"
-                    ],
-                    "permission": "admin_only"
-                  }
-                ],
                 "description": "The file format or extension of the file."
               }
             },
