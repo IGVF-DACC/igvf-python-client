@@ -23,11 +23,17 @@ from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ImageFile(BaseModel):
+class TabularFile(BaseModel):
     """
-    A file containing image data.
+    A file containing textual data with a tabular structure.
     """ # noqa: E501
+    cell_type_annotation: Optional[StrictStr] = Field(default=None, description="The inferred cell type this file is associated with based on single-cell expression profiling.")
+    controlled_access: Optional[StrictBool] = Field(default=None, description="Boolean value, indicating the file being controlled access, if true.")
+    anvil_url: Optional[StrictStr] = Field(default=None, description="URL linking to the controlled access file that has been deposited at AnVIL workspace.")
+    assembly: Optional[StrictStr] = Field(default=None, description="Genome assembly applicable for the tabular data.")
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
+    file_format_type: Optional[StrictStr] = Field(default=None, description="The subtype of bed files.")
+    transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -60,7 +66,7 @@ class ImageFile(BaseModel):
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the image file.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the tabular file.")
     integrated_in: Optional[List[StrictStr]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
     input_file_for: Optional[List[StrictStr]] = Field(default=None, description="The files which are derived from this file.")
     gene_list_for: Optional[List[StrictStr]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
@@ -69,7 +75,38 @@ class ImageFile(BaseModel):
     href: Optional[StrictStr] = Field(default=None, description="The download path to obtain file.")
     s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
     upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "derived_manually", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "assay_titles", "href", "s3_uri", "upload_credentials"]
+    barcode_map_for: Optional[List[StrictStr]] = Field(default=None, description="Link(s) to the Multiplexed samples using this file as barcode map.")
+    __properties: ClassVar[List[str]] = ["cell_type_annotation", "controlled_access", "anvil_url", "assembly", "release_timestamp", "file_format_type", "transcriptome_annotation", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "derived_manually", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "assay_titles", "href", "s3_uri", "upload_credentials", "barcode_map_for"]
+
+    @field_validator('assembly')
+    def assembly_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['Cast - GRCm39', 'GRCh38', 'GRCm39']):
+            raise ValueError("must be one of enum values ('Cast - GRCm39', 'GRCh38', 'GRCm39')")
+        return value
+
+    @field_validator('file_format_type')
+    def file_format_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['bed12', 'bed3', 'bed3+', 'bed5', 'bed6', 'bed6+', 'bed9', 'bed9+', 'mpra_starr']):
+            raise ValueError("must be one of enum values ('bed12', 'bed3', 'bed3+', 'bed5', 'bed6', 'bed6+', 'bed9', 'bed9+', 'mpra_starr')")
+        return value
+
+    @field_validator('transcriptome_annotation')
+    def transcriptome_annotation_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE Cast - M32', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34']):
+            raise ValueError("must be one of enum values ('GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE Cast - M32', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34')")
+        return value
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -158,8 +195,8 @@ class ImageFile(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['jpg', 'png']):
-            raise ValueError("must be one of enum values ('jpg', 'png')")
+        if value not in set(['bed', 'csv', 'gtf', 'tsv', 'txt', 'vcf']):
+            raise ValueError("must be one of enum values ('bed', 'csv', 'gtf', 'tsv', 'txt', 'vcf')")
         return value
 
     @field_validator('md5sum')
@@ -200,7 +237,7 @@ class ImageFile(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ImageFile from a JSON string"""
+        """Create an instance of TabularFile from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -225,7 +262,7 @@ class ImageFile(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ImageFile from a dict"""
+        """Create an instance of TabularFile from a dict"""
         if obj is None:
             return None
 
@@ -233,7 +270,13 @@ class ImageFile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "cell_type_annotation": obj.get("cell_type_annotation"),
+            "controlled_access": obj.get("controlled_access"),
+            "anvil_url": obj.get("anvil_url"),
+            "assembly": obj.get("assembly"),
             "release_timestamp": obj.get("release_timestamp"),
+            "file_format_type": obj.get("file_format_type"),
+            "transcriptome_annotation": obj.get("transcriptome_annotation"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
@@ -274,7 +317,8 @@ class ImageFile(BaseModel):
             "assay_titles": obj.get("assay_titles"),
             "href": obj.get("href"),
             "s3_uri": obj.get("s3_uri"),
-            "upload_credentials": obj.get("upload_credentials")
+            "upload_credentials": obj.get("upload_credentials"),
+            "barcode_map_for": obj.get("barcode_map_for")
         })
         return _obj
 

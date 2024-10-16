@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "53.0.4"
+    "version": "53.0.5"
   },
   "servers": [
     {
@@ -17193,11 +17193,11 @@
                 "type": "string",
                 "title": "File Format",
                 "enum": [
-                  "tsv",
                   "bed",
                   "csv",
-                  "txt",
                   "gtf",
+                  "tsv",
+                  "txt",
                   "vcf"
                 ],
                 "description": "The file format or extension of the file."
@@ -54062,22 +54062,13 @@
             "title": "File Format",
             "description": "The file format or extension of the file.",
             "type": "string",
-            "oneOf": [
-              {
-                "enum": [
-                  "bed",
-                  "csv",
-                  "gtf",
-                  "tsv",
-                  "vcf"
-                ]
-              },
-              {
-                "enum": [
-                  "txt"
-                ],
-                "permission": "admin_only"
-              }
+            "enum": [
+              "bed",
+              "csv",
+              "gtf",
+              "tsv",
+              "txt",
+              "vcf"
             ]
           },
           "file_format_specifications": {
@@ -56328,24 +56319,6 @@
         "title": "Prediction Set",
         "description": "A file set of computational predictions. Prediction sets contain results of analyses to predict functions or traits of genomic features.",
         "type": "object",
-        "oneOf": [
-          {
-            "required": [
-              "lab",
-              "award",
-              "file_set_type",
-              "samples"
-            ]
-          },
-          {
-            "required": [
-              "lab",
-              "award",
-              "file_set_type",
-              "donors"
-            ]
-          }
-        ],
         "additionalProperties": false,
         "properties": {
           "input_file_sets": {

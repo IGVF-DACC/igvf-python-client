@@ -34,7 +34,6 @@ docs/DegronModification.md
 docs/DegronModificationResults.md
 docs/Document.md
 docs/DocumentResults.md
-docs/FileFormat.md
 docs/Gene.md
 docs/GeneLocation.md
 docs/GeneLocation1.md
@@ -170,7 +169,6 @@ igvf_client/models/degron_modification.py
 igvf_client/models/degron_modification_results.py
 igvf_client/models/document.py
 igvf_client/models/document_results.py
-igvf_client/models/file_format.py
 igvf_client/models/gene.py
 igvf_client/models/gene_location.py
 igvf_client/models/gene_location1.py
