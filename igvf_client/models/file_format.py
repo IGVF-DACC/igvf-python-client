@@ -15,24 +15,24 @@
 from __future__ import annotations
 import json
 import pprint
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 import logging
-LIMIT_ONE_OF_SCHEMAS = ["int", "str"]
+FILEFORMAT_ONE_OF_SCHEMAS = ["str"]
 
-class Limit(BaseModel):
+class FileFormat(BaseModel):
     """
-    Limit
+    The file format or extension of the file.
     """
     # data type: str
     oneof_schema_1_validator: Optional[StrictStr] = None
-    # data type: int
-    oneof_schema_2_validator: Optional[StrictInt] = None
-    actual_instance: Optional[Union[int, str]] = None
-    one_of_schemas: Set[str] = { "int", "str" }
+    # data type: str
+    oneof_schema_2_validator: Optional[StrictStr] = None
+    actual_instance: Optional[Union[str]] = None
+    one_of_schemas: Set[str] = { "str" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -52,7 +52,7 @@ class Limit(BaseModel):
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_oneof(cls, v):
-        instance = Limit.model_construct()
+        instance = FileFormat.model_construct()
         error_messages = []
         match = 0
         # validate data type: str
@@ -61,7 +61,7 @@ class Limit(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # validate data type: int
+        # validate data type: str
         try:
             instance.oneof_schema_2_validator = v
             match += 1
@@ -69,10 +69,10 @@ class Limit(BaseModel):
             error_messages.append(str(e))
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in Limit with oneOf schemas: int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in FileFormat with oneOf schemas: str. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in Limit with oneOf schemas: int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in FileFormat with oneOf schemas: str. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,7 +96,7 @@ class Limit(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into int
+        # deserialize data into str
         try:
             # validation
             instance.oneof_schema_2_validator = json.loads(json_str)
@@ -108,10 +108,10 @@ class Limit(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into Limit with oneOf schemas: int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into FileFormat with oneOf schemas: str. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into Limit with oneOf schemas: int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into FileFormat with oneOf schemas: str. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -125,7 +125,7 @@ class Limit(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], int, str]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], str]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

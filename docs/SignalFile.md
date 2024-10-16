@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **content_type** | **str** | The type of content in the file. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects. | [optional] 
 **derived_from** | **List[str]** | The files participating as inputs into software to produce this output file. | [optional] 
+**derived_manually** | **bool** | A boolean indicating whether the file has been dervided manually without automated computational methods. | [optional] 
 **file_format** | **str** | The file format or extension of the file. | [optional] 
 **file_format_specifications** | **List[str]** | Documents that describe the file format and fields of this file. | [optional] 
 **file_set** | **str** | The file set that this file belongs to. | [optional] 

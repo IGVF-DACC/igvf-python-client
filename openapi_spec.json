@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "52.0.2"
+    "version": "53.0.0"
   },
   "servers": [
     {
@@ -2465,7 +2465,8 @@
                 "enum": [
                   "community",
                   "ENCODE",
-                  "IGVF"
+                  "IGVF",
+                  "IGVF affiliate"
                 ],
                 "description": "The collection of biological data related to a single initiative, originating from a consortium."
               }
@@ -5106,6 +5107,13 @@
                 "title": "Strain Background",
                 "enum": [
                   "A/J (AJ)",
+                  "B6129S1F1/J",
+                  "B6AF1/J",
+                  "B6CASTF1/J",
+                  "B6NODF1/J",
+                  "B6NZOF1/J",
+                  "B6PWKF1/J",
+                  "B6WSBF1/J",
                   "C57BL/6J (B6)",
                   "129S1/SvImJ (129)",
                   "NOD/ShiLtJ (NOD)",
@@ -5691,6 +5699,21 @@
               "description": "The files participating as inputs into software to produce this output file."
             },
             "description": "Filter by derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
             "style": "form",
             "explode": true
           },
@@ -6906,6 +6929,21 @@
             "explode": true
           },
           {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "description",
             "in": "query",
             "schema": {
@@ -8109,6 +8147,21 @@
             "explode": true
           },
           {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "description",
             "in": "query",
             "schema": {
@@ -9300,6 +9353,21 @@
             "explode": true
           },
           {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "description",
             "in": "query",
             "schema": {
@@ -10447,6 +10515,21 @@
               "description": "The files participating as inputs into software to produce this output file."
             },
             "description": "Filter by derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
             "style": "form",
             "explode": true
           },
@@ -11689,6 +11772,21 @@
             "explode": true
           },
           {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "description",
             "in": "query",
             "schema": {
@@ -12875,6 +12973,21 @@
               "description": "The files participating as inputs into software to produce this output file."
             },
             "description": "Filter by derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
             "style": "form",
             "explode": true
           },
@@ -14194,6 +14307,21 @@
               "description": "The files participating as inputs into software to produce this output file."
             },
             "description": "Filter by derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
             "style": "form",
             "explode": true
           },
@@ -15651,6 +15779,21 @@
             "explode": true
           },
           {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "description",
             "in": "query",
             "schema": {
@@ -16994,6 +17137,21 @@
             "explode": true
           },
           {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "description",
             "in": "query",
             "schema": {
@@ -17034,13 +17192,22 @@
               "items": {
                 "type": "string",
                 "title": "File Format",
-                "enum": [
-                  "bed",
-                  "csv",
-                  "gtf",
-                  "tsv",
-                  "txt",
-                  "vcf"
+                "oneOf": [
+                  {
+                    "enum": [
+                      "bed",
+                      "csv",
+                      "gtf",
+                      "tsv",
+                      "vcf"
+                    ]
+                  },
+                  {
+                    "enum": [
+                      "txt"
+                    ],
+                    "permission": "admin_only"
+                  }
                 ],
                 "description": "The file format or extension of the file."
               }
@@ -18386,7 +18553,7 @@
                   "intermediate analysis",
                   "principal analysis"
                 ],
-                "description": "The level of this analysis set. An intermediate analysis cannot be interpreted on its own and is part of a principal analysis. A principal analysis is the core analysis for an experimental design, the results of which can be interpretable on their own."
+                "description": "The level of this analysis set."
               }
             },
             "description": "Filter by file_set_type",
@@ -24796,8 +24963,12 @@
                   "VAMP-seq",
                   "VAMP-seq (MultiSTEP)",
                   "Hi-C",
+                  "HiCAR",
                   "Spatial transcriptomics",
-                  "HT-recruit"
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS"
                 ],
                 "description": "The custom lab preferred label for the experiment performed in this measurement set."
               }
@@ -25859,18 +26030,79 @@
             "explode": true
           },
           {
-            "name": "assessed_genes",
+            "name": "assessed_genes.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assessed Genes",
               "items": {
                 "type": "string",
-                "title": "Gene"
-              },
-              "description": "A list of genes assessed in this model set."
+                "title": "ID"
+              }
             },
-            "description": "Filter by assessed_genes",
+            "description": "Filter by assessed_genes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assessed_genes.geneid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
+                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
+              }
+            },
+            "description": "Filter by assessed_genes.geneid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assessed_genes.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "The full gene name preferably approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by assessed_genes.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assessed_genes.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by assessed_genes.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assessed_genes.synonyms",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Synonyms",
+              "items": {
+                "type": "string",
+                "title": "Synonym",
+                "description": "An alternative symbol/name referring to the gene."
+              },
+              "description": "Alternative symbols that have been used to refer to the gene."
+            },
+            "description": "Filter by assessed_genes.synonyms",
             "style": "form",
             "explode": true
           },
@@ -26221,9 +26453,9 @@
                 "type": "string",
                 "title": "File Set Type",
                 "enum": [
+                  "decision tree",
                   "neural network",
                   "random forest",
-                  "decision tree",
                   "support vector machine",
                   "variant binding effect"
                 ],
@@ -27335,18 +27567,79 @@
             "explode": true
           },
           {
-            "name": "assessed_genes",
+            "name": "assessed_genes.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assessed Genes",
               "items": {
                 "type": "string",
-                "title": "Gene"
-              },
-              "description": "A list of gene(s) assessed in this prediction set. This property is used to describe the gene(s) being investigated, especially how the input variables in the prediction set affect some critical functionality of the gene(s). For example, the effect could be predicted from genetic variants on the binding affinity of a transcription factor encoded by a gene (assessed_genes). It differs from small_scale_gene_list and large_scale_gene_list, as these are used when the input variables of the prediction set are genes."
+                "title": "ID"
+              }
             },
-            "description": "Filter by assessed_genes",
+            "description": "Filter by assessed_genes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assessed_genes.geneid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
+                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
+              }
+            },
+            "description": "Filter by assessed_genes.geneid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assessed_genes.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "The full gene name preferably approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by assessed_genes.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assessed_genes.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by assessed_genes.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assessed_genes.synonyms",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Synonyms",
+              "items": {
+                "type": "string",
+                "title": "Synonym",
+                "description": "An alternative symbol/name referring to the gene."
+              },
+              "description": "Alternative symbols that have been used to refer to the gene."
+            },
+            "description": "Filter by assessed_genes.synonyms",
             "style": "form",
             "explode": true
           },
@@ -27682,11 +27975,11 @@
                 "type": "string",
                 "title": "File Set Type",
                 "enum": [
-                  "pathogenicity",
-                  "functional effect",
-                  "protein stability",
                   "activity level",
-                  "binding effect"
+                  "binding effect",
+                  "functional effect",
+                  "pathogenicity",
+                  "protein stability"
                 ],
                 "description": "The category that best describes this prediction set."
               }
@@ -32263,8 +32556,12 @@
                   "VAMP-seq",
                   "VAMP-seq (MultiSTEP)",
                   "Hi-C",
+                  "HiCAR",
                   "Spatial transcriptomics",
-                  "HT-recruit"
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS"
                 ],
                 "description": "The custom lab preferred label for the experiment performed in this measurement set."
               },
@@ -49082,7 +49379,8 @@
             "enum": [
               "community",
               "ENCODE",
-              "IGVF"
+              "IGVF",
+              "IGVF affiliate"
             ]
           },
           "viewing_group": {
@@ -50023,6 +50321,13 @@
             "type": "string",
             "enum": [
               "A/J (AJ)",
+              "B6129S1F1/J",
+              "B6AF1/J",
+              "B6CASTF1/J",
+              "B6NODF1/J",
+              "B6NZOF1/J",
+              "B6PWKF1/J",
+              "B6WSBF1/J",
               "C57BL/6J (B6)",
               "129S1/SvImJ (129)",
               "NOD/ShiLtJ (NOD)",
@@ -50301,6 +50606,11 @@
               "title": "File Derived From",
               "type": "string"
             }
+          },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
           },
           "file_format": {
             "title": "File Format",
@@ -50636,6 +50946,11 @@
               "title": "File Derived From",
               "type": "string"
             }
+          },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
           },
           "file_format": {
             "title": "File Format",
@@ -51019,6 +51334,11 @@
               "type": "string"
             }
           },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
+          },
           "file_format": {
             "title": "File Format",
             "description": "The file format or extension of the file.",
@@ -51339,6 +51659,11 @@
               "title": "File Derived From",
               "type": "string"
             }
+          },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
           },
           "file_format": {
             "title": "File Format",
@@ -51671,6 +51996,11 @@
               "title": "File Derived From",
               "type": "string"
             }
+          },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
           },
           "file_format": {
             "title": "File Format",
@@ -52046,6 +52376,11 @@
               "title": "File Derived From",
               "type": "string"
             }
+          },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
           },
           "file_format": {
             "title": "File Format",
@@ -52427,6 +52762,11 @@
               "type": "string"
             }
           },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
+          },
           "file_format": {
             "title": "File Format",
             "description": "The file format or extension of the file.",
@@ -52796,6 +53136,11 @@
               "title": "File Derived From",
               "type": "string"
             }
+          },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
           },
           "file_format": {
             "title": "File Format",
@@ -53301,6 +53646,11 @@
               "type": "string"
             }
           },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
+          },
           "file_format": {
             "title": "File Format",
             "description": "The file format or extension of the file.",
@@ -53712,17 +54062,31 @@
               "type": "string"
             }
           },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
+          },
           "file_format": {
             "title": "File Format",
             "description": "The file format or extension of the file.",
             "type": "string",
-            "enum": [
-              "bed",
-              "csv",
-              "gtf",
-              "tsv",
-              "txt",
-              "vcf"
+            "oneOf": [
+              {
+                "enum": [
+                  "bed",
+                  "csv",
+                  "gtf",
+                  "tsv",
+                  "vcf"
+                ]
+              },
+              {
+                "enum": [
+                  "txt"
+                ],
+                "permission": "admin_only"
+              }
             ]
           },
           "file_format_specifications": {
@@ -54072,7 +54436,7 @@
           },
           "file_set_type": {
             "title": "File Set Type",
-            "description": "The level of this analysis set. An intermediate analysis cannot be interpreted on its own and is part of a principal analysis. A principal analysis is the core analysis for an experimental design, the results of which can be interpretable on their own.",
+            "description": "The level of this analysis set.",
             "type": "string",
             "enum": [
               "intermediate analysis",
@@ -55500,8 +55864,12 @@
               "VAMP-seq",
               "VAMP-seq (MultiSTEP)",
               "Hi-C",
+              "HiCAR",
               "Spatial transcriptomics",
-              "HT-recruit"
+              "HT-recruit",
+              "ONT dRNA",
+              "ONT Fiber-seq",
+              "ONT direct WGS"
             ]
           },
           "multiome_size": {
@@ -55851,9 +56219,9 @@
             "description": "The category that best describes this predictive model set.",
             "type": "string",
             "enum": [
+              "decision tree",
               "neural network",
               "random forest",
-              "decision tree",
               "support vector machine",
               "variant binding effect"
             ]
@@ -56261,11 +56629,11 @@
             "description": "The category that best describes this prediction set.",
             "type": "string",
             "enum": [
-              "pathogenicity",
-              "functional effect",
-              "protein stability",
               "activity level",
-              "binding effect"
+              "binding effect",
+              "functional effect",
+              "pathogenicity",
+              "protein stability"
             ]
           },
           "scope": {
@@ -57581,8 +57949,12 @@
                 "VAMP-seq",
                 "VAMP-seq (MultiSTEP)",
                 "Hi-C",
+                "HiCAR",
                 "Spatial transcriptomics",
-                "HT-recruit"
+                "HT-recruit",
+                "ONT dRNA",
+                "ONT Fiber-seq",
+                "ONT direct WGS"
               ]
             }
           },

@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **control_type** | **str** | The type of control this file set represents. | [optional] 
 **samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
 **donors** | **List[str]** | The donors of the samples associated with this analysis set. | [optional] 
-**file_set_type** | **str** | The level of this analysis set. An intermediate analysis cannot be interpreted on its own and is part of a principal analysis. A principal analysis is the core analysis for an experimental design, the results of which can be interpretable on their own. | [optional] 
+**file_set_type** | **str** | The level of this analysis set. | [optional] 
 **external_image_data_url** | **str** | Links to the external site where images and related data produced by this analysis are stored. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
