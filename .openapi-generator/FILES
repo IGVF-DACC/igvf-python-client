@@ -77,8 +77,6 @@ docs/NoResultsResponseFiltersInner.md
 docs/NoResultsResponseSortValue.md
 docs/OpenReadingFrame.md
 docs/OpenReadingFrameResults.md
-docs/OutputContentType.md
-docs/OutputContentTypeAnyOf.md
 docs/Page.md
 docs/PageLayout.md
 docs/PageLayoutComponents.md
@@ -213,8 +211,6 @@ igvf_client/models/no_results_response_filters_inner.py
 igvf_client/models/no_results_response_sort_value.py
 igvf_client/models/open_reading_frame.py
 igvf_client/models/open_reading_frame_results.py
-igvf_client/models/output_content_type.py
-igvf_client/models/output_content_type_any_of.py
 igvf_client/models/page.py
 igvf_client/models/page_layout.py
 igvf_client/models/page_layout_components.py

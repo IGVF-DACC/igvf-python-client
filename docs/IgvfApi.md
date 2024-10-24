@@ -5511,7 +5511,7 @@ Name | Type | Description  | Notes
  **analysis_steps_analysis_step_versions_software_versions_software_id** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.software.@id | [optional] 
  **analysis_steps_analysis_step_versions_software_versions_software_name** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.software.name | [optional] 
  **analysis_steps_name** | **List[str]**| Filter by analysis_steps.name | [optional] 
- **analysis_steps_output_content_types** | **List[OutputContentType]**| Filter by analysis_steps.output_content_types | [optional] 
+ **analysis_steps_output_content_types** | **List[str]**| Filter by analysis_steps.output_content_types | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **collections** | **List[str]**| Filter by collections | [optional] 
