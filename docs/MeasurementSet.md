@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
 **input_file_set_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 **related_multiome_datasets** | **List[str]** | Related datasets included in the multiome experiment this measurement set is a part of. | [optional] 
+**externally_hosted** | **bool** |  | [optional] 
 
 ## Example
 

@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
 **name** | **str** | Full name of the analysis step. | [optional] 
+**analysis_step_versions** | **List[str]** | The analysis step versions associated with this analysis step. | [optional] 
 
 ## Example
 

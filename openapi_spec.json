@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "53.0.5"
+    "version": "54.0.0"
   },
   "servers": [
     {
@@ -1313,6 +1313,7 @@
                 "enum": [
                   "alignment",
                   "barcode mapping generation",
+                  "base calling",
                   "counts normalization",
                   "file format conversion",
                   "filtering",
@@ -1329,6 +1330,22 @@
               "description": "The classification of the software."
             },
             "description": "Filter by analysis_step_types",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Analysis Step Versions",
+              "items": {
+                "type": "string",
+                "title": "Analysis Step Version"
+              },
+              "description": "The analysis step versions associated with this analysis step."
+            },
+            "description": "Filter by analysis_step_versions",
             "style": "form",
             "explode": true
           },
@@ -6287,6 +6304,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "read_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Read Count",
+                "minimum": 0,
+                "description": "Number of reads in a bam file. Including both mapped, unmapped, and multi-mapped read counts."
+              }
+            },
+            "description": "Filter by read_count",
             "style": "form",
             "explode": true
           },
@@ -11820,6 +11853,36 @@
             "explode": true
           },
           {
+            "name": "external_host_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "External Host URL",
+                "description": "A link to the resource where the file is externally hosted."
+              }
+            },
+            "description": "Filter by external_host_url",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "externally_hosted",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Externally Hosted",
+                "description": "Indicates whether the file is externally hosted and not stored on portal."
+              }
+            },
+            "description": "Filter by externally_hosted",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_format",
             "in": "query",
             "schema": {
@@ -13672,7 +13735,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Source Url",
+                "title": "Source URL",
                 "description": "Link to external resource, such as NCBI or GENCODE, where the reference data was obtained."
               }
             },
@@ -14355,6 +14418,36 @@
               "description": "Documents that provide additional information (not data file)."
             },
             "description": "Filter by documents",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "external_host_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "External Host URL",
+                "description": "A link to the resource where the file is externally hosted."
+              }
+            },
+            "description": "Filter by external_host_url",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "externally_hosted",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Externally Hosted",
+                "description": "Indicates whether the file is externally hosted and not stored on portal."
+              }
+            },
+            "description": "Filter by externally_hosted",
             "style": "form",
             "explode": true
           },
@@ -17197,7 +17290,6 @@
                   "csv",
                   "gtf",
                   "tsv",
-                  "txt",
                   "vcf"
                 ],
                 "description": "The file format or extension of the file."
@@ -21730,36 +21822,6 @@
             "explode": true
           },
           {
-            "name": "integrated_content_files.content_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Content Type",
-                "description": "The type of content in the file."
-              }
-            },
-            "description": "Filter by integrated_content_files.content_type",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_content_files.file_format",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "File Format",
-                "description": "The file format or extension of the file."
-              }
-            },
-            "description": "Filter by integrated_content_files.file_format",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_content_files.upload_status",
             "in": "query",
             "schema": {
@@ -24557,6 +24619,20 @@
             "explode": true
           },
           {
+            "name": "externally_hosted",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Externally Hosted"
+              }
+            },
+            "description": "Filter by externally_hosted",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set_type",
             "in": "query",
             "schema": {
@@ -26432,6 +26508,20 @@
               }
             },
             "description": "Filter by external_input_data",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "externally_hosted",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Externally Hosted"
+              }
+            },
+            "description": "Filter by externally_hosted",
             "style": "form",
             "explode": true
           },
@@ -46024,21 +46114,6 @@
             "explode": true
           },
           {
-            "name": "downloaded_url",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Download URL",
-                "description": "An external resource to track the version of the software downloaded."
-              }
-            },
-            "description": "Filter by downloaded_url",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -46175,6 +46250,21 @@
             "explode": true
           },
           {
+            "name": "source_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Source URL",
+                "description": "An external resource to track the version of the software download."
+              }
+            },
+            "description": "Filter by source_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "status",
             "in": "query",
             "schema": {
@@ -46277,7 +46367,7 @@
               "items": {
                 "type": "string",
                 "title": "Version",
-                "pattern": "^v(?!0\\.0\\.0$)[0-9]+\\.[0-9]+\\.[0-9]+$",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
                 "description": "The version of a particular software."
               }
             },
@@ -48096,18 +48186,483 @@
             "explode": true
           },
           {
-            "name": "analysis_steps",
+            "name": "analysis_steps.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Analysis Steps",
               "items": {
                 "type": "string",
-                "title": "Analysis Step"
-              },
-              "description": "The analysis steps which are part of this workflow."
+                "title": "ID"
+              }
             },
-            "description": "Filter by analysis_steps",
+            "description": "Filter by analysis_steps.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.analysis_step_types",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Analysis Step Types",
+              "items": {
+                "type": "string",
+                "title": "Type",
+                "enum": [
+                  "alignment",
+                  "barcode mapping generation",
+                  "base calling",
+                  "counts normalization",
+                  "file format conversion",
+                  "filtering",
+                  "interaction calling",
+                  "merging",
+                  "peak calling",
+                  "quantification",
+                  "signal generation",
+                  "signal normalization",
+                  "spatial feature detection",
+                  "variant annotation"
+                ]
+              },
+              "description": "The classification of the software."
+            },
+            "description": "Filter by analysis_steps.analysis_step_types",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.analysis_step_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_steps.analysis_step_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.analysis_step_versions.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.analysis_step_versions.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.analysis_step_versions.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.analysis_step_versions.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[a-z0-9\\-\\_]+",
+                "description": "Unique name of the software package; a lowercase version of the title."
+              }
+            },
+            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "Full name of the analysis step."
+              }
+            },
+            "description": "Filter by analysis_steps.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.output_content_types",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Output Content Types",
+              "items": {
+                "type": "string",
+                "title": "Output Content Type",
+                "description": "A content type produced as output by the analysis step.",
+                "anyOf": [
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "alignments",
+                      "transcriptome alignments"
+                    ],
+                    "enum_descriptions": {
+                      "alignments": "The mapping locations of input reads with respect to a genome.",
+                      "transcriptome alignments": "The mapping locations of input reads with respect to a transcriptome."
+                    },
+                    "submissionExample": {
+                      "appscript": "alignments",
+                      "igvf_utils": "alignments"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "seqspec",
+                      "scale factors",
+                      "model parameters"
+                    ],
+                    "enum_descriptions": {
+                      "seqspec": "A machine-readable specification for libraries produced by genomics assays that facilitates standardization of preprocessing and enables tracking and comparison of genomics assays.",
+                      "scale factors": "Normalization coefficients applied to raw data to adjust for technical variability and ensure comparability across different samples or regions.",
+                      "model parameters": "Parameters needed for running computational models to make predictions, or hyperparameters utilized during the training of computational models."
+                    },
+                    "submissionExample": {
+                      "appscript": "seqspec",
+                      "igvf_utils": "seqspec"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "peaks"
+                    ],
+                    "enum_descriptions": {
+                      "peaks": "Detected genomic regions of relative enrichment in coverage data, such as peaks in ChIP-seq or ATAC-seq indicating protein binding sites or chromatin accessibility."
+                    },
+                    "submissionExample": {
+                      "appscript": "peaks",
+                      "igvf_utils": "peaks"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "detected tissue",
+                      "low resolution tissue",
+                      "high resolution tissue",
+                      "fiducial alignment"
+                    ],
+                    "enum_descriptions": {
+                      "low resolution tissue": "A representation of tissue sections at a lower spatial resolution, typically used for initial alignment and quality control purposes in spatial transcriptomics.",
+                      "high resolution tissue": "A detailed representation of tissue sections at a higher spatial resolution, used for precise mapping and analysis of gene expression patterns within the tissue.",
+                      "detected tissue": "The portion of the tissue section that has been identified and analyzed for gene expression, based on the spatial transcriptomics data captured by the Space Ranger pipeline.",
+                      "fiducial alignment": "The alignment of tissue sections using fiducial markers which are reference points embedded in the slide that help to accurately map spatial transcriptomics data to the physical location of the tissue on the slide."
+                    },
+                    "submissionExample": {
+                      "appscript": "detected tissue",
+                      "igvf_utils": "detected tissue"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "contact matrix",
+                      "filtered feature barcode matrix",
+                      "raw feature barcode matrix",
+                      "sparse gene count matrix",
+                      "sparse peak count matrix",
+                      "sparse transcript count matrix",
+                      "transcriptome annotations"
+                    ],
+                    "enum_descriptions": {
+                      "contact matrix": "A matrix used in genomic assays, particularly in chromosome conformation capture techniques like Hi-C, to represent the frequency of physical interactions between different regions of the genome.",
+                      "filtered feature barcode matrix": "A matrix output from Cell Ranger, where rows represent features and columns represent barcoded spots or cells. It contains counts of sequencing reads after filtering out low-quality or low-abundance features.",
+                      "raw feature barcode matrix": "A matrix output from Cell Ranger, where rows represent features and columns represent barcoded spots or cells. It contains raw counts of sequencing reads before any filtering or normalization.",
+                      "sparse gene count matrix": "A matrix where rows represent genes and columns represent samples or cells, containing counts of sequencing reads that map to each gene.",
+                      "sparse peak count matrix": "A matrix used in assays like ATAC-seq or ChIP-seq, where rows represent genomic regions (peaks) and columns represent samples or cells.",
+                      "sparse transcript count matrix": "A matrix where rows represent transcripts and columns represent samples or cells, containing counts of sequencing reads that map to each transcript.",
+                      "transcriptome annotations": "Detailed information about the transcripts detected in a genomic assay, including their genomic coordinates, gene names, and other relevant annotations."
+                    },
+                    "submissionExample": {
+                      "appscript": "contact matrix",
+                      "igvf_utils": "contact matrix"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "edge weights",
+                      "graph structure",
+                      "position weight matrix",
+                      "SNP effect matrix"
+                    ],
+                    "enum_descriptions": {
+                      "edge weights": "A representation of the weights assigned to the edges in a graph or network model.",
+                      "graph structure": "A description of the overall layout and connections within a graph or network.",
+                      "position weight matrix": "A matrix comprising the probability of each nucleotide occurring at each position in a sequence motif.",
+                      "SNP effect matrix": "A matrix for estimation of consequence of each single nucleotide mutation in a transcription factor binding site motif."
+                    },
+                    "submissionExample": {
+                      "appscript": "edge weights",
+                      "igvf_utils": "edge weights"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "oneOf": [
+                      {
+                        "enum": [
+                          "genome reference",
+                          "elements reference",
+                          "exclusion list",
+                          "inclusion list",
+                          "spike-ins",
+                          "transcriptome reference"
+                        ]
+                      },
+                      {
+                        "enum": [
+                          "biological_context",
+                          "coding_variants",
+                          "complexes",
+                          "complexes_complexes",
+                          "complexes_proteins",
+                          "complexes_terms",
+                          "diseases_genes",
+                          "documentation (readme)",
+                          "drugs",
+                          "elements_genes",
+                          "genes",
+                          "genes_genes",
+                          "genes_pathways",
+                          "genes_terms",
+                          "genes_transcripts",
+                          "go_terms_proteins",
+                          "guide RNA sequences",
+                          "motifs",
+                          "motifs_proteins",
+                          "ontology_terms",
+                          "ontology_terms_ontology_terms",
+                          "pathways",
+                          "pathways_pathways",
+                          "proteins",
+                          "proteins_proteins",
+                          "regulatory_regions",
+                          "regulatory_regions_genes",
+                          "regulatory_regions_genes_biosamples",
+                          "regulatory_regions_genes_biosamples_donors",
+                          "regulatory_regions_genes_biosamples_treatments_chebi",
+                          "regulatory_regions_genes_biosamples_treatments_proteins",
+                          "regulatory_regions_regulatory_regions",
+                          "sequence barcodes",
+                          "studies",
+                          "studies_variants",
+                          "studies_variants_phenotypes",
+                          "transcripts",
+                          "transcripts_proteins",
+                          "variants",
+                          "variants_coding_variants",
+                          "variants_diseases",
+                          "variants_diseases_genes",
+                          "variants_drugs",
+                          "variants_drugs_genes",
+                          "variants_genes",
+                          "variants_genes_terms",
+                          "variants_phenotypes",
+                          "variants_phenotypes_studies",
+                          "variants_proteins",
+                          "variants_proteins_terms",
+                          "variants_proteins_biosamples",
+                          "variants_proteins_phenotypes",
+                          "variants_regulatory_regions",
+                          "variants_variants",
+                          "vector sequences"
+                        ],
+                        "permission": "admin_only"
+                      }
+                    ],
+                    "enum_descriptions": {
+                      "genome reference": "A sequence file assembled to represent the reference genome for a specific species.",
+                      "elements reference": "References for the genomic elements studied, including details like genomic coordinates or identifiers.",
+                      "exclusion list": "An exclusion list file contains a set of genomic regions or specific sequences that should be ignored or excluded during data analysis.",
+                      "inclusion list": "An inclusion list file contains a set of specific genomic regions or sequences that should be included or focused on during data analysis.",
+                      "spike-ins": "Nucleic acid fragments of known sequence and quantity used for calibration in high-throughput sequencing.",
+                      "transcriptome_reference": "A reference file consisting of all known transcripts or coding regions of the genome."
+                    },
+                    "submissionExample": {
+                      "appscript": "variants",
+                      "igvf_utils": "variants"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "Nanopore reads",
+                      "PacBio subreads",
+                      "reads"
+                    ],
+                    "enum_descriptions": {
+                      "Nanopore reads": "Signal measured from DNA or RNA fragments generated by Nanopore sequencing technology stored in pod5 file format.",
+                      "PacBio subreads": "Individual sequences of bases corresponding to DNA or RNA fragments generated by PacBio (Pacific Biosciences) sequencing technology stored in BAM file format.",
+                      "reads": "Individual sequences of bases corresponding to DNA or RNA fragments stored in FASTQ file format."
+                    },
+                    "submissionExample": {
+                      "appscript": "reads",
+                      "igvf_utils": "reads"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "signal",
+                      "signal of all reads",
+                      "signal of unique reads",
+                      "signal p-value",
+                      "raw signal",
+                      "read-depth signal",
+                      "control signal",
+                      "fold change over control"
+                    ],
+                    "enum_descriptions": {
+                      "signal": "A signal coverage track representing the density or intensity of sequencing reads across the genome.",
+                      "signal of all reads": "A signal coverage track that includes the combined coverage from all reads, both unique and multimapping, across the genome.",
+                      "signal of unique reads": "A signal coverage track that represents the coverage specifically from unique reads, excluding multimapping reads.",
+                      "signal p-value": "Nucleotide resolution signal coverage track, expressed as a p-value to reject the null hypothesis that the signal at that location is present in the control.",
+                      "raw signal": "The initial signal coverage track representing the unprocessed read counts across the genome before any normalization or statistical adjustments.",
+                      "read-depth signal": "A signal coverage track that has been normalized by read depth, providing coverage values adjusted to account for variations in sequencing depth across samples or regions.",
+                      "control signal": "A signal coverage track used as a control, representing read coverage from a baseline or reference sample for comparison purposes.",
+                      "fold change over control": "A nucleotide-resolution signal coverage track showing the fold change in signal intensity compared to a control at each position."
+                    },
+                    "submissionExample": {
+                      "appscript": "signal",
+                      "igvf_utils": "signal"
+                    }
+                  },
+                  {
+                    "comment": "Content Type describes the content of the file.",
+                    "enum": [
+                      "barcode to element mapping",
+                      "barcode to hashtag mapping",
+                      "barcode to sample mapping",
+                      "barcode to variant mapping",
+                      "barcode to TF overexpression mapping",
+                      "coding variant effects",
+                      "differential element quantifications",
+                      "differential gene expression quantifications",
+                      "differential transcript expression quantifications",
+                      "editing templates",
+                      "element quantifications",
+                      "elements reference",
+                      "external source data",
+                      "fold change over control",
+                      "fragments",
+                      "genes",
+                      "gene quantifications",
+                      "guide quantifications",
+                      "guide RNA sequences",
+                      "loci",
+                      "MPRA sequence designs",
+                      "peaks",
+                      "peak quantifications",
+                      "prime editing guide RNA sequences",
+                      "protein to protein interaction score",
+                      "reporter elements",
+                      "reporter experiment",
+                      "reporter variants",
+                      "reporter genomic element effects",
+                      "reporter genomic variant effects",
+                      "sample sort parameters",
+                      "sequence barcodes",
+                      "tissue positions",
+                      "transcript quantifications",
+                      "variants",
+                      "variant binding effects",
+                      "variant effects",
+                      "variant localization impacts",
+                      "variant to element mapping"
+                    ],
+                    "enum_descriptions": {
+                      "barcode to element mapping": "A file describing the mapping of barcodes to genomic elements.",
+                      "barcode to hashtag mapping": "A file describing the mapping of barcodes to hashtags.",
+                      "barcode to sample mapping": "A file describing the mapping of barcodes to biological sample.",
+                      "barcode to variant mapping": "A file describing the mapping of barcodes to variants.",
+                      "barcode to TF overexpression mapping": "A file describing the mapping of barcodes to TF overexpression.",
+                      "coding variant effects": "A file predicting effects of amino acid changes at each position of a given protein.",
+                      "differential element quantifications": "A file that details the change in effect sizes for a specific non-coding element between two experimental conditions.",
+                      "differential gene expression quantifications": "The quantified changes in gene expression levels between different conditions or groups.",
+                      "differential transcript expression quantifications": "The quantified changes in expression levels of transcripts between conditions or groups.",
+                      "editing templates": "The homology-directed DNA repair (HDR) templates containing SNVs in the library of saturation genome editing assays.",
+                      "element quantifications": "The quantified levels of specific genomic elements. Formatting should follow https://github.com/IGVF-DACC/checkfiles/blob/dev/src/schemas/table_schemas/element_quant.json.",
+                      "elements reference": "References for the genomic elements studied, including details like genomic coordinates or identifiers.",
+                      "fold change over control": "The ratio of expression levels or other measurements in an experimental condition relative to a control.",
+                      "fragments": "The quantified levels of ATAC-seq fragments.",
+                      "genes": "A table listing genes.",
+                      "gene quantifications": "The quantified levels of genes.",
+                      "guide quantifications": "Information and sequencing read counts for each gRNA in a pooled CRISPR screen experiment.",
+                      "guide RNA sequences": "The sequences of guide RNAs designed for genome editing using CRISPR. Formatting should follow https://github.com/IGVF-DACC/checkfiles/blob/dev/src/schemas/table_schemas/guide_rna_sequences.json.",
+                      "loci": "A table listing genomic loci.",
+                      "external source data": "File containing a list of urls used as a source.",
+                      "MPRA sequence designs": "Sequences designed for an MPRA experiment. Formatting should follow https://github.com/IGVF-DACC/checkfiles/blob/dev/src/schemas/table_schemas/mpra_sequence_designs.json.",
+                      "peaks": "Detected genomic regions of relative enrichment in coverage data, such as peaks in ChIP-seq or ATAC-seq indicating protein binding sites or chromatin accessibility.",
+                      "peak quantifications": "The quantified levels of peaks detected in ChIP-seq or ATAC-seq assays.",
+                      "prime editing guide RNA sequences": "The sequences of guide RNAs designed for prime editing CRISPR experiments. Formatting should follow https://github.com/IGVF-DACC/checkfiles/blob/dev/src/schemas/table_schemas/prime_editing_guide_rna_sequences.json.",
+                      "protein to protein interaction score": "Scores or metrics for interactions between proteins.",
+                      "reporter elements": "Stores the raw format statistical activity analysis for elements associated with a reporter assay.",
+                      "reporter experiment": "Stores the complete raw measurements from a reporter assay.",
+                      "reporter variants": "Stores the raw format statistical activity analysis for variants associated with a reporter assay.",
+                      "reporter genomic element effects": "Defines the activity of an element/region within a genome associated with a reporter assay.",
+                      "reporter genomic variant effects": "Defines the activity of a variant within a genome associated with a reporter assay.",
+                      "sample sort parameters": "The parameters/quantifications used for sorting biological samples, such as those in flow cytometry.",
+                      "sequence barcodes": "The barcodes associated with different sequences, used for sample identification and multiplexing.",
+                      "tissue positions": "The spatial coordinates or positions of tissue samples or sections in experiments.",
+                      "transcript quantifications": "The quantified levels of transcripts.",
+                      "variants": "A table listing genetic variants.",
+                      "variant binding effects": "The genetic variant effects on transcription factor binding affinity.",
+                      "variant effects": "The genetic variant effects on gene expression.",
+                      "variant localization impacts": "Output of a variant painting experiement describing the measured impact of variants.",
+                      "variant to element mapping": "A file describing the mapping of genetic variants to genomic elements."
+                    },
+                    "submissionExample": {
+                      "appscript": "guide RNA sequences",
+                      "igvf_utils": "guide RNA sequences"
+                    }
+                  }
+                ]
+              },
+              "description": "The content types produced as output by the analysis step."
+            },
+            "description": "Filter by analysis_steps.output_content_types",
             "style": "form",
             "explode": true
           },
@@ -48464,6 +49019,21 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by uniform_pipeline",
             "style": "form",
             "explode": true
           },
@@ -49049,6 +49619,7 @@
               "enum": [
                 "alignment",
                 "barcode mapping generation",
+                "base calling",
                 "counts normalization",
                 "file format conversion",
                 "filtering",
@@ -49133,6 +49704,16 @@
             "title": "Name",
             "type": "string",
             "description": "Full name of the analysis step."
+          },
+          "analysis_step_versions": {
+            "title": "Analysis Step Versions",
+            "description": "The analysis step versions associated with this analysis step.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Analysis Step Version",
+              "type": "string"
+            }
           }
         }
       },
@@ -50660,6 +51241,12 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
+          "read_count": {
+            "title": "Read Count",
+            "description": "Number of reads in a bam file. Including both mapped, unmapped, and multi-mapped read counts.",
+            "type": "integer",
+            "minimum": 0
+          },
           "redacted": {
             "title": "Redacted",
             "description": "Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information.",
@@ -52185,6 +52772,16 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "externally_hosted": {
+            "title": "Externally Hosted",
+            "description": "Indicates whether the file is externally hosted and not stored on portal.",
+            "type": "boolean"
+          },
+          "external_host_url": {
+            "title": "External Host URL",
+            "description": "A link to the resource where the file is externally hosted.",
+            "type": "string"
+          },
           "controlled_access": {
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
@@ -52523,6 +53120,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "source_url": {
+            "title": "Source URL",
+            "description": "Link to external resource, such as NCBI or GENCODE, where the reference data was obtained.",
+            "type": "string"
+          },
           "controlled_access": {
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
@@ -52829,11 +53431,6 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
-          "source_url": {
-            "title": "Source Url",
-            "description": "Link to external resource, such as NCBI or GENCODE, where the reference data was obtained.",
-            "type": "string"
-          },
           "sources": {
             "title": "Sources",
             "description": "The originating lab(s) or vendor(s).",
@@ -52945,6 +53542,16 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "externally_hosted": {
+            "title": "Externally Hosted",
+            "description": "Indicates whether the file is externally hosted and not stored on portal.",
+            "type": "boolean"
+          },
+          "external_host_url": {
+            "title": "External Host URL",
+            "description": "A link to the resource where the file is externally hosted.",
+            "type": "string"
+          },
           "controlled_access": {
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
@@ -54067,7 +54674,6 @@
               "csv",
               "gtf",
               "tsv",
-              "txt",
               "vcf"
             ]
           },
@@ -55986,6 +56592,10 @@
               "description": "Related dataset included in the multiome experiment this measurement set is a part of.",
               "type": "string"
             }
+          },
+          "externally_hosted": {
+            "title": "Externally Hosted",
+            "type": "boolean"
           }
         }
       },
@@ -56312,6 +56922,10 @@
               "title": "Input File Set For",
               "type": "string"
             }
+          },
+          "externally_hosted": {
+            "title": "Externally Hosted",
+            "type": "boolean"
           }
         }
       },
@@ -62468,6 +63082,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "source_url": {
+            "title": "Source URL",
+            "description": "An external resource to the codebase.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -62568,11 +63187,6 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
-          "source_url": {
-            "title": "Source URL",
-            "description": "An external resource to the codebase.",
-            "type": "string"
-          },
           "used_by": {
             "title": "Used by",
             "type": "array",
@@ -62635,12 +63249,17 @@
               "award",
               "software",
               "version",
-              "downloaded_url"
+              "source_url"
             ]
           }
         ],
         "additionalProperties": false,
         "properties": {
+          "source_url": {
+            "title": "Source URL",
+            "description": "An external resource to track the version of the software download.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -62738,16 +63357,11 @@
             "title": "Version",
             "description": "The version of a particular software.",
             "type": "string",
-            "pattern": "^v(?!0\\.0\\.0$)[0-9]+\\.[0-9]+\\.[0-9]+$"
+            "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$"
           },
           "download_id": {
             "title": "Download ID",
             "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used.",
-            "type": "string"
-          },
-          "downloaded_url": {
-            "title": "Download URL",
-            "description": "An external resource to track the version of the software downloaded.",
             "type": "string"
           },
           "@id": {
@@ -63315,6 +63929,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "source_url": {
+            "title": "Source URL",
+            "description": "An external resource to the code base of the workflow in github.",
+            "type": "string",
+            "pattern": "^https?://github\\.com/(\\S+)$"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -63466,12 +64086,6 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
-          "source_url": {
-            "title": "Source URL",
-            "description": "An external resource to the code base of the workflow in github.",
-            "type": "string",
-            "pattern": "^https?://github\\.com/(\\S+)$"
-          },
           "workflow_repositories": {
             "title": "Workflow Repositories",
             "description": "Resources hosting the workflow.",
@@ -63493,6 +64107,11 @@
             "description": "The version of this workflow.",
             "type": "integer",
             "minimum": 1
+          },
+          "uniform_pipeline": {
+            "title": "Uniform Pipeline",
+            "description": "Indicates whether the pipeline is developed by the IGVF consortium.",
+            "type": "boolean"
           },
           "@id": {
             "title": "ID",

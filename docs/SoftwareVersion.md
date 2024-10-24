@@ -6,6 +6,7 @@ A specific version of a software used for computational analysis. For example, B
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**source_url** | **str** | An external resource to track the version of the software download. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
@@ -22,7 +23,6 @@ Name | Type | Description | Notes
 **software** | **str** | Unique name of the software package. | [optional] 
 **version** | **str** | The version of a particular software. | [optional] 
 **download_id** | **str** | The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used. | [optional] 
-**downloaded_url** | **str** | An external resource to track the version of the software downloaded. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 

@@ -6,6 +6,8 @@ A file containing sequencing results in bam, fastq, or pod5 formats.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**externally_hosted** | **bool** | Indicates whether the file is externally hosted and not stored on portal. | [optional] 
+**external_host_url** | **str** | A link to the resource where the file is externally hosted. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
 **anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 

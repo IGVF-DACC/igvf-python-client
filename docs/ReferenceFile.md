@@ -6,6 +6,7 @@ A file containing diverse reference related information.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**source_url** | **str** | Link to external resource, such as NCBI or GENCODE, where the reference data was obtained. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
 **anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **assembly** | **str** | Genome assembly applicable for the reference data. | [optional] 
@@ -42,7 +43,6 @@ Name | Type | Description | Notes
 **submitted_file_name** | **str** | Original name of the file. | [optional] 
 **upload_status** | **str** | The upload/validation status of the file. | [optional] 
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
-**source_url** | **str** | Link to external resource, such as NCBI or GENCODE, where the reference data was obtained. | [optional] 
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **external** | **bool** | Indicates whether the file was obtained from an external, non-IGVF source. | [optional] 
 **external_id** | **str** | A unique identifier for the file at its original source. | [optional] 
