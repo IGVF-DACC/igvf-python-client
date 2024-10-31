@@ -27,10 +27,11 @@ Name | Type | Description | Notes
 **description** | **str** | A plain text description of the object. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets. | [optional] 
 **control_type** | **str** | The type of control this file set represents. | [optional] 
-**samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
+**samples** | **List[str]** | Samples associated with this analysis set. | [optional] 
 **donors** | **List[str]** | The donors of the samples associated with this analysis set. | [optional] 
 **file_set_type** | **str** | The level of this analysis set. | [optional] 
 **external_image_data_url** | **str** | Links to the external site where images and related data produced by this analysis are stored. | [optional] 
+**demultiplexed_sample** | **str** | The sample associated with this analysis set inferred through demultiplexing. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
@@ -42,6 +43,7 @@ Name | Type | Description | Notes
 **protocols** | **List[str]** | Links to the protocol(s) for conducting the assay on Protocols.io. | [optional] 
 **sample_summary** | **str** | A summary of the samples associated with input file sets of this analysis set. | [optional] 
 **functional_assay_mechanisms** | **List[str]** | The biological processes measured by the functional assays. | [optional] 
+**workflows** | **List[str]** | A workflow for computational analysis of genomic data. A workflow is made up of analysis steps. | [optional] 
 
 ## Example
 

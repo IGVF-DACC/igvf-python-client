@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
 **institutional_certificates** | **List[str]** | The institutional certificates of the samples included in this multiplexed sample. | [optional] 
 **sample_terms** | **List[str]** | The sample terms of the samples included in this multiplexed sample. | [optional] 
+**taxa** | **str** | The species of the organism. | [optional] 
 **disease_terms** | **List[str]** | The disease terms of the samples included in this multiplexed sample. | [optional] 
 **treatments** | **List[str]** | The treatments of the samples included in this multiplexed sample. | [optional] 
 **modifications** | **List[str]** | The modifications of the samples included in this multiplexed sample. | [optional] 

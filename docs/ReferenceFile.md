@@ -45,7 +45,6 @@ Name | Type | Description | Notes
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **external** | **bool** | Indicates whether the file was obtained from an external, non-IGVF source. | [optional] 
-**external_id** | **str** | A unique identifier for the file at its original source. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the reference file. | [optional] 

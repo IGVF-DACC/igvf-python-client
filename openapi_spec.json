@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "54.0.1"
+    "version": "55.0.0"
   },
   "servers": [
     {
@@ -1429,6 +1429,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "bin paired count",
                   "biological_context",
                   "coding variant effects",
                   "coding_variants",
@@ -1632,6 +1633,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "bin paired count",
                   "biological_context",
                   "coding variant effects",
                   "coding_variants",
@@ -5796,7 +5798,8 @@
                 "enum": [
                   "Cast - GRCm39",
                   "GRCh38",
-                  "GRCm39"
+                  "GRCm39",
+                  "custom"
                 ],
                 "description": "Genome assembly applicable for the annotation data."
               }
@@ -8256,7 +8259,8 @@
                 "enum": [
                   "Cast - GRCm39",
                   "GRCh38",
-                  "GRCm39"
+                  "GRCm39",
+                  "custom"
                 ],
                 "description": "Genome assembly applicable for the annotation data."
               }
@@ -10866,7 +10870,9 @@
                   "hdf5",
                   "mtx",
                   "tar",
-                  "hic"
+                  "hic",
+                  "cool",
+                  "mcool"
                 ],
                 "description": "The file format or extension of the file."
               }
@@ -12032,8 +12038,8 @@
               "title": "External Resources",
               "items": {
                 "type": "string",
-                "title": "External Identifier",
-                "pattern": "(?!)",
+                "title": "External identifier",
+                "pattern": "^(Kipoi):.+$",
                 "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file objects."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects."
@@ -13131,7 +13137,8 @@
                   "hg19",
                   "Cast - GRCm39",
                   "GRCm39",
-                  "mm10"
+                  "mm10",
+                  "custom"
                 ],
                 "description": "Genome assembly applicable for the reference data."
               }
@@ -13268,7 +13275,7 @@
               "items": {
                 "type": "string",
                 "title": "External identifier",
-                "pattern": "^(GENCODE|GRC|ENSEMBL):.+$",
+                "pattern": "^(GENCODE|GRC|ENSEMBL|ENCODE):.+$",
                 "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file objects."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects."
@@ -13353,21 +13360,6 @@
               }
             },
             "description": "Filter by external",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "external_id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "External Identifier",
-                "description": "A unique identifier for the file at its original source."
-              }
-            },
-            "description": "Filter by external_id",
             "style": "form",
             "explode": true
           },
@@ -15933,7 +15925,8 @@
                 "enum": [
                   "Cast - GRCm39",
                   "GRCh38",
-                  "GRCm39"
+                  "GRCm39",
+                  "custom"
                 ],
                 "description": "Genome assembly applicable for the annotation data."
               }
@@ -17275,7 +17268,8 @@
                 "enum": [
                   "Cast - GRCm39",
                   "GRCh38",
-                  "GRCm39"
+                  "GRCm39",
+                  "custom"
                 ],
                 "description": "Genome assembly applicable for the tabular data."
               }
@@ -18738,6 +18732,21 @@
             "explode": true
           },
           {
+            "name": "demultiplexed_sample",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Demultiplexed Sample",
+                "description": "The sample associated with this analysis set inferred through demultiplexing."
+              }
+            },
+            "description": "Filter by demultiplexed_sample",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "description",
             "in": "query",
             "schema": {
@@ -18945,6 +18954,20 @@
             "explode": true
           },
           {
+            "name": "files.assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly"
+              }
+            },
+            "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.content_type",
             "in": "query",
             "schema": {
@@ -19062,6 +19085,21 @@
               }
             },
             "description": "Filter by files.submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by files.transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -19776,6 +19814,66 @@
             "description": "Filter by uuid",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "workflows.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflows.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -20400,6 +20498,20 @@
             "explode": true
           },
           {
+            "name": "files.assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly"
+              }
+            },
+            "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.content_type",
             "in": "query",
             "schema": {
@@ -20517,6 +20629,21 @@
               }
             },
             "description": "Filter by files.submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by files.transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -23435,6 +23562,20 @@
             "explode": true
           },
           {
+            "name": "files.assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly"
+              }
+            },
+            "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.content_type",
             "in": "query",
             "schema": {
@@ -23552,6 +23693,21 @@
               }
             },
             "description": "Filter by files.submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by files.transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -24952,6 +25108,20 @@
             "explode": true
           },
           {
+            "name": "files.assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly"
+              }
+            },
+            "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.content_type",
             "in": "query",
             "schema": {
@@ -25084,6 +25254,21 @@
               }
             },
             "description": "Filter by files.submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by files.transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -26849,6 +27034,20 @@
             "explode": true
           },
           {
+            "name": "files.assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly"
+              }
+            },
+            "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.content_type",
             "in": "query",
             "schema": {
@@ -26966,6 +27165,21 @@
               }
             },
             "description": "Filter by files.submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by files.transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -28371,6 +28585,20 @@
             "explode": true
           },
           {
+            "name": "files.assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly"
+              }
+            },
+            "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.content_type",
             "in": "query",
             "schema": {
@@ -28488,6 +28716,21 @@
               }
             },
             "description": "Filter by files.submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by files.transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -29666,7 +29909,8 @@
                     "enum": [
                       "Cast - GRCm39",
                       "GRCh38",
-                      "GRCm39"
+                      "GRCm39",
+                      "custom"
                     ],
                     "description": "The genome assembly to which coordinates relate. e.g. GRCh38."
                   }
@@ -39770,6 +40014,27 @@
             "explode": true
           },
           {
+            "name": "taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "enum": [
+                  "Homo sapiens",
+                  "Mus musculus",
+                  "Mixed species",
+                  "Saccharomyces cerevisiae"
+                ],
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "time_post_library_delivery",
             "in": "query",
             "schema": {
@@ -48593,6 +48858,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "bin paired count",
                   "biological_context",
                   "coding variant effects",
                   "coding_variants",
@@ -49733,6 +49999,7 @@
                 "barcode to hashtag mapping",
                 "barcode to sample mapping",
                 "barcode to variant mapping",
+                "bin paired count",
                 "biological_context",
                 "coding variant effects",
                 "coding_variants",
@@ -49871,6 +50138,7 @@
                 "barcode to hashtag mapping",
                 "barcode to sample mapping",
                 "barcode to variant mapping",
+                "bin paired count",
                 "biological_context",
                 "coding variant effects",
                 "coding_variants",
@@ -51297,7 +51565,8 @@
             "enum": [
               "Cast - GRCm39",
               "GRCh38",
-              "GRCm39"
+              "GRCm39",
+              "custom"
             ]
           },
           "release_timestamp": {
@@ -52006,7 +52275,8 @@
             "enum": [
               "Cast - GRCm39",
               "GRCh38",
-              "GRCm39"
+              "GRCm39",
+              "custom"
             ]
           },
           "release_timestamp": {
@@ -52894,7 +53164,9 @@
               "hdf5",
               "mtx",
               "tar",
-              "hic"
+              "hic",
+              "cool",
+              "mcool"
             ]
           },
           "file_format_specifications": {
@@ -53254,10 +53526,10 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "External Identifier",
+              "title": "External identifier",
               "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file objects.",
               "type": "string",
-              "pattern": "(?!)"
+              "pattern": "^(Kipoi):.+$"
             }
           },
           "derived_from": {
@@ -53449,7 +53721,8 @@
               "hg19",
               "Cast - GRCm39",
               "GRCm39",
-              "mm10"
+              "mm10",
+              "custom"
             ]
           },
           "release_timestamp": {
@@ -53647,7 +53920,7 @@
               "title": "External identifier",
               "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file objects.",
               "type": "string",
-              "pattern": "^(GENCODE|GRC|ENSEMBL):.+$"
+              "pattern": "^(GENCODE|GRC|ENSEMBL|ENCODE):.+$"
             }
           },
           "derived_from": {
@@ -53751,11 +54024,6 @@
             "title": "External",
             "description": "Indicates whether the file was obtained from an external, non-IGVF source.",
             "type": "boolean"
-          },
-          "external_id": {
-            "title": "External Identifier",
-            "description": "A unique identifier for the file at its original source.",
-            "type": "string"
           },
           "@id": {
             "title": "ID",
@@ -54362,7 +54630,8 @@
             "enum": [
               "Cast - GRCm39",
               "GRCh38",
-              "GRCm39"
+              "GRCm39",
+              "custom"
             ]
           },
           "release_timestamp": {
@@ -54754,7 +55023,8 @@
             "enum": [
               "Cast - GRCm39",
               "GRCh38",
-              "GRCm39"
+              "GRCm39",
+              "custom"
             ]
           },
           "release_timestamp": {
@@ -55307,12 +55577,12 @@
           },
           "samples": {
             "title": "Samples",
-            "description": "The sample(s) associated with this file set.",
+            "description": "Samples associated with this analysis set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
               "title": "Sample",
-              "description": "A sample associated with this file set.",
+              "description": "Sample associated with this analysis set.",
               "type": "string"
             }
           },
@@ -55341,6 +55611,11 @@
             "description": "Links to the external site where images and related data produced by this analysis are stored.",
             "type": "string",
             "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$"
+          },
+          "demultiplexed_sample": {
+            "title": "Demultiplexed Sample",
+            "description": "The sample associated with this analysis set inferred through demultiplexing.",
+            "type": "string"
           },
           "@id": {
             "title": "ID",
@@ -55426,6 +55701,15 @@
             "uniqueItems": true,
             "items": {
               "title": "Phenotype Term",
+              "type": "string"
+            }
+          },
+          "workflows": {
+            "title": "Workflows",
+            "description": "A workflow for computational analysis of genomic data. A workflow is made up of analysis steps.",
+            "type": "array",
+            "items": {
+              "title": "Workflow",
               "type": "string"
             }
           }
@@ -57756,7 +58040,8 @@
                   "enum": [
                     "Cast - GRCm39",
                     "GRCh38",
-                    "GRCm39"
+                    "GRCm39",
+                    "custom"
                   ]
                 },
                 "chromosome": {
@@ -61251,6 +61536,17 @@
               "title": "Sample Term",
               "type": "string"
             }
+          },
+          "taxa": {
+            "title": "Taxa",
+            "type": "string",
+            "description": "The species of the organism.",
+            "enum": [
+              "Homo sapiens",
+              "Mus musculus",
+              "Mixed species",
+              "Saccharomyces cerevisiae"
+            ]
           },
           "disease_terms": {
             "title": "Disease Terms",
