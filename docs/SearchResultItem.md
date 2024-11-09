@@ -139,7 +139,7 @@ Name | Type | Description | Notes
 **files** | **List[str]** | The files associated with this file set. | [optional] 
 **control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
+**input_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
 **sample_summary** | **str** | A summary of the samples associated with input file sets of this analysis set. | [optional] 
 **functional_assay_mechanisms** | **List[str]** | The biological processes measured by this functional assay. For example, a VAMP-seq (MultiSTEP) assay measures the effects of variants on protein carboxylation and secretion processes. | [optional] 

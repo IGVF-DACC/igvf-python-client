@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "55.0.0"
+    "version": "56.0.1"
   },
   "servers": [
     {
@@ -1440,6 +1440,7 @@
                   "contact matrix",
                   "control signal",
                   "detected tissue",
+                  "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential transcript expression quantifications",
@@ -1526,6 +1527,7 @@
                   "transcripts_proteins",
                   "variant binding effects",
                   "variant effects",
+                  "variant functional predictions",
                   "variant localization impacts",
                   "variant to element mapping",
                   "variants",
@@ -1644,6 +1646,7 @@
                   "contact matrix",
                   "control signal",
                   "detected tissue",
+                  "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential transcript expression quantifications",
@@ -1730,6 +1733,7 @@
                   "transcripts_proteins",
                   "variant binding effects",
                   "variant effects",
+                  "variant functional predictions",
                   "variant localization impacts",
                   "variant to element mapping",
                   "variants",
@@ -19165,22 +19169,6 @@
             "explode": true
           },
           {
-            "name": "input_file_set_for",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Input File Set For",
-              "items": {
-                "type": "string",
-                "title": "Input File Set For"
-              },
-              "description": "The file sets that use this file set as an input."
-            },
-            "description": "Filter by input_file_set_for",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "input_file_sets.@id",
             "in": "query",
             "schema": {
@@ -19239,6 +19227,22 @@
               }
             },
             "description": "Filter by input_file_sets.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Input For",
+              "items": {
+                "type": "string",
+                "title": "Input For"
+              },
+              "description": "The file sets that use this file set as an input."
+            },
+            "description": "Filter by input_for",
             "style": "form",
             "explode": true
           },
@@ -20663,18 +20667,18 @@
             "explode": true
           },
           {
-            "name": "input_file_set_for",
+            "name": "input_for",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Input File Set For",
+              "title": "Input For",
               "items": {
                 "type": "string",
-                "title": "Input File Set For"
+                "title": "Input For"
               },
               "description": "The file sets that use this file set as an input."
             },
-            "description": "Filter by input_file_set_for",
+            "description": "Filter by input_for",
             "style": "form",
             "explode": true
           },
@@ -22140,18 +22144,18 @@
             "explode": true
           },
           {
-            "name": "input_file_set_for",
+            "name": "input_for",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Input File Set For",
+              "title": "Input For",
               "items": {
                 "type": "string",
-                "title": "Input File Set For"
+                "title": "Input For"
               },
               "description": "The file sets that use this file set as an input."
             },
-            "description": "Filter by input_file_set_for",
+            "description": "Filter by input_for",
             "style": "form",
             "explode": true
           },
@@ -23727,18 +23731,18 @@
             "explode": true
           },
           {
-            "name": "input_file_set_for",
+            "name": "input_for",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Input File Set For",
+              "title": "Input For",
               "items": {
                 "type": "string",
-                "title": "Input File Set For"
+                "title": "Input For"
               },
               "description": "The file sets that use this file set as an input."
             },
-            "description": "Filter by input_file_set_for",
+            "description": "Filter by input_for",
             "style": "form",
             "explode": true
           },
@@ -25334,18 +25338,18 @@
             "explode": true
           },
           {
-            "name": "input_file_set_for",
+            "name": "input_for",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Input File Set For",
+              "title": "Input For",
               "items": {
                 "type": "string",
-                "title": "Input File Set For"
+                "title": "Input For"
               },
               "description": "The file sets that use this file set as an input."
             },
-            "description": "Filter by input_file_set_for",
+            "description": "Filter by input_for",
             "style": "form",
             "explode": true
           },
@@ -27199,22 +27203,6 @@
             "explode": true
           },
           {
-            "name": "input_file_set_for",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Input File Set For",
-              "items": {
-                "type": "string",
-                "title": "Input File Set For"
-              },
-              "description": "The file sets that use this file set as an input."
-            },
-            "description": "Filter by input_file_set_for",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "input_file_sets.@id",
             "in": "query",
             "schema": {
@@ -27258,6 +27246,22 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by input_file_sets.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Input For",
+              "items": {
+                "type": "string",
+                "title": "Input For"
+              },
+              "description": "The file sets that use this file set as an input."
+            },
+            "description": "Filter by input_for",
             "style": "form",
             "explode": true
           },
@@ -28750,22 +28754,6 @@
             "explode": true
           },
           {
-            "name": "input_file_set_for",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Input File Set For",
-              "items": {
-                "type": "string",
-                "title": "Input File Set For"
-              },
-              "description": "The file sets that use this file set as an input."
-            },
-            "description": "Filter by input_file_set_for",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "input_file_sets",
             "in": "query",
             "schema": {
@@ -28779,6 +28767,22 @@
               "description": "The file set(s) required for this prediction set."
             },
             "description": "Filter by input_file_sets",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Input For",
+              "items": {
+                "type": "string",
+                "title": "Input For"
+              },
+              "description": "The file sets that use this file set as an input."
+            },
+            "description": "Filter by input_for",
             "style": "form",
             "explode": true
           },
@@ -48869,6 +48873,7 @@
                   "contact matrix",
                   "control signal",
                   "detected tissue",
+                  "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential transcript expression quantifications",
@@ -48955,6 +48960,7 @@
                   "transcripts_proteins",
                   "variant binding effects",
                   "variant effects",
+                  "variant functional predictions",
                   "variant localization impacts",
                   "variant to element mapping",
                   "variants",
@@ -50010,6 +50016,7 @@
                 "contact matrix",
                 "control signal",
                 "detected tissue",
+                "differential chromatin contact quantifications",
                 "differential element quantifications",
                 "differential gene expression quantifications",
                 "differential transcript expression quantifications",
@@ -50096,6 +50103,7 @@
                 "transcripts_proteins",
                 "variant binding effects",
                 "variant effects",
+                "variant functional predictions",
                 "variant localization impacts",
                 "variant to element mapping",
                 "variants",
@@ -50149,6 +50157,7 @@
                 "contact matrix",
                 "control signal",
                 "detected tissue",
+                "differential chromatin contact quantifications",
                 "differential element quantifications",
                 "differential gene expression quantifications",
                 "differential transcript expression quantifications",
@@ -50235,6 +50244,7 @@
                 "transcripts_proteins",
                 "variant binding effects",
                 "variant effects",
+                "variant functional predictions",
                 "variant localization impacts",
                 "variant to element mapping",
                 "variants",
@@ -55657,13 +55667,13 @@
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
             "type": "string"
           },
-          "input_file_set_for": {
-            "title": "Input File Set For",
+          "input_for": {
+            "title": "Input For",
             "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For",
+              "title": "Input For",
               "type": "string"
             }
           },
@@ -55971,13 +55981,13 @@
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
             "type": "string"
           },
-          "input_file_set_for": {
-            "title": "Input File Set For",
+          "input_for": {
+            "title": "Input For",
             "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For",
+              "title": "Input For",
               "type": "string"
             }
           },
@@ -56450,13 +56460,13 @@
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
             "type": "string"
           },
-          "input_file_set_for": {
-            "title": "Input File Set For",
+          "input_for": {
+            "title": "Input For",
             "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For",
+              "title": "Input For",
               "type": "string"
             }
           },
@@ -56733,13 +56743,13 @@
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
             "type": "string"
           },
-          "input_file_set_for": {
-            "title": "Input File Set For",
+          "input_for": {
+            "title": "Input For",
             "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For",
+              "title": "Input For",
               "type": "string"
             }
           },
@@ -57161,13 +57171,13 @@
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
             "type": "string"
           },
-          "input_file_set_for": {
-            "title": "Input File Set For",
+          "input_for": {
+            "title": "Input For",
             "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For",
+              "title": "Input For",
               "type": "string"
             }
           },
@@ -57502,13 +57512,13 @@
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
             "type": "string"
           },
-          "input_file_set_for": {
-            "title": "Input File Set For",
+          "input_for": {
+            "title": "Input For",
             "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For",
+              "title": "Input For",
               "type": "string"
             }
           },
@@ -57864,13 +57874,13 @@
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
             "type": "string"
           },
-          "input_file_set_for": {
-            "title": "Input File Set For",
+          "input_for": {
+            "title": "Input For",
             "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For",
+              "title": "Input For",
               "type": "string"
             }
           }
