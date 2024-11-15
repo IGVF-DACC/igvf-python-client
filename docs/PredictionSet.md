@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
 **donors** | **List[str]** | The donor(s) associated with this file set. | [optional] 
 **file_set_type** | **str** | The category that best describes this prediction set. | [optional] 
-**scope** | **str** | The scope or scale that this prediction set is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. | [optional] 
+**scope** | **str** | The scope or scale that this prediction set is designed to target. | [optional] 
 **assessed_genes** | **List[str]** | A list of gene(s) assessed in this prediction set. This property is used to describe the gene(s) being investigated, especially how the input variables in the prediction set affect some critical functionality of the gene(s). For example, the effect could be predicted from genetic variants on the binding affinity of a transcription factor encoded by a gene (assessed_genes). It differs from small_scale_gene_list and large_scale_gene_list, as these are used when the input variables of the prediction set are genes. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

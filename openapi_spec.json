@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "56.0.1"
+    "version": "57.0.4"
   },
   "servers": [
     {
@@ -6037,6 +6037,7 @@
                 "type": "string",
                 "title": "File Format",
                 "enum": [
+                  "bai",
                   "bam"
                 ],
                 "description": "The file format or extension of the file."
@@ -6769,6 +6770,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
                   "GENCODE 42",
@@ -9194,6 +9196,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
                   "GENCODE 42",
@@ -14117,6 +14120,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
                   "GENCODE 42",
@@ -14489,7 +14493,9 @@
                   "4mC",
                   "5hmC",
                   "5mC",
-                  "6mA"
+                  "6mA",
+                  "inosine",
+                  "pseudouridine"
                 ],
                 "description": "The chemical modification to bases in a DNA sequence that is detected in this file."
               },
@@ -16931,6 +16937,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
                   "GENCODE 42",
@@ -18237,6 +18244,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
                   "GENCODE 42",
@@ -22579,7 +22587,7 @@
                   "alleles",
                   "targeton"
                 ],
-                "description": "The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties."
+                "description": "The scope or scale that this construct library is designed to target."
               }
             },
             "description": "Filter by scope",
@@ -25665,7 +25673,7 @@
               "items": {
                 "type": "string",
                 "title": "Purpose",
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by samples.cell_fate_change_treatments.purpose",
@@ -25694,7 +25702,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by samples.cell_fate_change_treatments.treatment_type",
@@ -25904,6 +25912,21 @@
             "explode": true
           },
           {
+            "name": "samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -26078,7 +26101,7 @@
               "items": {
                 "type": "string",
                 "title": "Purpose",
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by samples.treatments.purpose",
@@ -26107,7 +26130,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by samples.treatments.treatment_type",
@@ -29349,7 +29372,7 @@
                   "loci",
                   "genome-wide"
                 ],
-                "description": "The scope or scale that this prediction set is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property."
+                "description": "The scope or scale that this prediction set is designed to target."
               }
             },
             "description": "Filter by scope",
@@ -30128,6 +30151,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
                   "GENCODE 42",
@@ -32122,17 +32146,18 @@
             "explode": true
           },
           {
-            "name": "tagged_protein",
+            "name": "tagged_proteins",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "Tagged Proteins",
               "items": {
                 "type": "string",
-                "title": "Tagged Protein",
-                "description": "The tagged protein in modifications in which the Cas nuclease is fused to an antibody."
-              }
+                "title": "Gene"
+              },
+              "description": "The tagged proteins in which the Cas nuclease is fused to an antibody."
             },
-            "description": "Filter by tagged_protein",
+            "description": "Filter by tagged_proteins",
             "style": "form",
             "explode": true
           },
@@ -37282,19 +37307,75 @@
             "explode": true
           },
           {
-            "name": "biomarkers",
+            "name": "biomarkers.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biomarkers",
               "items": {
                 "type": "string",
-                "title": "Biomarker",
-                "description": "Associated biomarker."
-              },
-              "description": "Biological markers that are associated with this sample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by biomarkers",
+            "description": "Filter by biomarkers.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.classification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "description": "Sample specific biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.classification",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by biomarkers.gene.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by biomarkers.gene.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.name_quantification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name and Quantification",
+                "description": "A concatenation of the name and quantification of the biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.name_quantification",
             "style": "form",
             "explode": true
           },
@@ -37355,7 +37436,7 @@
               "items": {
                 "type": "string",
                 "title": "Purpose",
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by cell_fate_change_treatments.purpose",
@@ -37399,7 +37480,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by cell_fate_change_treatments.treatment_type",
@@ -37477,18 +37558,76 @@
             "explode": true
           },
           {
-            "name": "construct_library_sets",
+            "name": "construct_library_sets.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Construct Library Sets",
               "items": {
                 "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
+                "title": "ID"
+              }
             },
-            "description": "Filter by construct_library_sets",
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -37714,18 +37853,17 @@
             "explode": true
           },
           {
-            "name": "file_sets.assay_term.term_name",
+            "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
               }
             },
-            "description": "Filter by file_sets.assay_term.term_name",
+            "description": "Filter by file_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -37740,6 +37878,21 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Title",
+                "description": "The custom lab preferred label for the experiment performed in this measurement set."
+              }
+            },
+            "description": "Filter by file_sets.preferred_assay_title",
             "style": "form",
             "explode": true
           },
@@ -37913,6 +38066,66 @@
             "explode": true
           },
           {
+            "name": "modifications.cas_species",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas species",
+                "description": "The originating species of the Cas nuclease."
+              }
+            },
+            "description": "Filter by modifications.cas_species",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.degron_system",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Degron System",
+                "description": "The type of degron system implemented."
+              }
+            },
+            "description": "Filter by modifications.degron_system",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.fused_domain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Fused Domain",
+                "description": "The name of the molecule fused to a Cas protein."
+              }
+            },
+            "description": "Filter by modifications.fused_domain",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "modifications.status",
             "in": "query",
             "schema": {
@@ -37938,6 +38151,64 @@
               }
             },
             "description": "Filter by modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.symbol",
             "style": "form",
             "explode": true
           },
@@ -38490,17 +38761,32 @@
             "explode": true
           },
           {
-            "name": "targeted_sample_term",
+            "name": "targeted_sample_term.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Targeted Sample Term",
-                "description": "Ontology term identifying the targeted endpoint biosample resulting from differentation or reprogramming."
+                "title": "ID"
               }
             },
-            "description": "Filter by targeted_sample_term",
+            "description": "Filter by targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by targeted_sample_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -38612,6 +38898,21 @@
             "explode": true
           },
           {
+            "name": "treatments.depletion",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Depletion",
+                "description": "Treatment is depleted."
+              }
+            },
+            "description": "Filter by treatments.depletion",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "treatments.purpose",
             "in": "query",
             "schema": {
@@ -38619,7 +38920,7 @@
               "items": {
                 "type": "string",
                 "title": "Purpose",
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by treatments.purpose",
@@ -38642,16 +38943,17 @@
             "explode": true
           },
           {
-            "name": "treatments.summary",
+            "name": "treatments.treatment_term_name",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
               }
             },
-            "description": "Filter by treatments.summary",
+            "description": "Filter by treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -38663,7 +38965,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by treatments.treatment_type",
@@ -39002,18 +39304,75 @@
             "explode": true
           },
           {
-            "name": "biomarkers",
+            "name": "biomarkers.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biomarkers",
               "items": {
                 "type": "string",
-                "title": "Biomarker"
-              },
-              "description": "The biomarkers of the samples included in this multiplexed sample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by biomarkers",
+            "description": "Filter by biomarkers.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.classification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "description": "Sample specific biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.classification",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by biomarkers.gene.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by biomarkers.gene.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.name_quantification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name and Quantification",
+                "description": "A concatenation of the name and quantification of the biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.name_quantification",
             "style": "form",
             "explode": true
           },
@@ -39103,6 +39462,51 @@
               }
             },
             "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -39281,18 +39685,17 @@
             "explode": true
           },
           {
-            "name": "file_sets.assay_term.term_name",
+            "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
               }
             },
-            "description": "Filter by file_sets.assay_term.term_name",
+            "description": "Filter by file_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -39307,6 +39710,21 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Title",
+                "description": "The custom lab preferred label for the experiment performed in this measurement set."
+              }
+            },
+            "description": "Filter by file_sets.preferred_assay_title",
             "style": "form",
             "explode": true
           },
@@ -39341,18 +39759,32 @@
             "explode": true
           },
           {
-            "name": "institutional_certificates",
+            "name": "institutional_certificates.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Institutional Certificates",
               "items": {
                 "type": "string",
-                "title": "Institutional Certificate"
-              },
-              "description": "The institutional certificates of the samples included in this multiplexed sample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by institutional_certificates",
+            "description": "Filter by institutional_certificates.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.certificate_identifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Certificate Identifier",
+                "pattern": "^IP\\d{3}-\\d{2}$",
+                "description": "A unique identifier for the certificate."
+              }
+            },
+            "description": "Filter by institutional_certificates.certificate_identifier",
             "style": "form",
             "explode": true
           },
@@ -39395,6 +39827,51 @@
               }
             },
             "description": "Filter by modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.cas_species",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas species",
+                "description": "The originating species of the Cas nuclease."
+              }
+            },
+            "description": "Filter by modifications.cas_species",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.degron_system",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Degron System",
+                "description": "The type of degron system implemented."
+              }
+            },
+            "description": "Filter by modifications.degron_system",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.fused_domain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Fused Domain",
+                "description": "The name of the molecule fused to a Cas protein."
+              }
+            },
+            "description": "Filter by modifications.fused_domain",
             "style": "form",
             "explode": true
           },
@@ -40090,6 +40567,21 @@
             "explode": true
           },
           {
+            "name": "treatments.depletion",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Depletion",
+                "description": "Treatment is depleted."
+              }
+            },
+            "description": "Filter by treatments.depletion",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "treatments.purpose",
             "in": "query",
             "schema": {
@@ -40097,7 +40589,7 @@
               "items": {
                 "type": "string",
                 "title": "Purpose",
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by treatments.purpose",
@@ -40120,16 +40612,17 @@
             "explode": true
           },
           {
-            "name": "treatments.summary",
+            "name": "treatments.treatment_term_name",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
               }
             },
-            "description": "Filter by treatments.summary",
+            "description": "Filter by treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -40141,7 +40634,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by treatments.treatment_type",
@@ -40474,19 +40967,75 @@
             "explode": true
           },
           {
-            "name": "biomarkers",
+            "name": "biomarkers.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biomarkers",
               "items": {
                 "type": "string",
-                "title": "Biomarker",
-                "description": "Associated biomarker."
-              },
-              "description": "Biological markers that are associated with this sample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by biomarkers",
+            "description": "Filter by biomarkers.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.classification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "description": "Sample specific biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.classification",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by biomarkers.gene.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by biomarkers.gene.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.name_quantification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name and Quantification",
+                "description": "A concatenation of the name and quantification of the biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.name_quantification",
             "style": "form",
             "explode": true
           },
@@ -40571,18 +41120,76 @@
             "explode": true
           },
           {
-            "name": "construct_library_sets",
+            "name": "construct_library_sets.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Construct Library Sets",
               "items": {
                 "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
+                "title": "ID"
+              }
             },
-            "description": "Filter by construct_library_sets",
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -40777,18 +41384,17 @@
             "explode": true
           },
           {
-            "name": "file_sets.assay_term.term_name",
+            "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
               }
             },
-            "description": "Filter by file_sets.assay_term.term_name",
+            "description": "Filter by file_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -40803,6 +41409,21 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Title",
+                "description": "The custom lab preferred label for the experiment performed in this measurement set."
+              }
+            },
+            "description": "Filter by file_sets.preferred_assay_title",
             "style": "form",
             "explode": true
           },
@@ -40955,6 +41576,66 @@
             "explode": true
           },
           {
+            "name": "modifications.cas_species",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas species",
+                "description": "The originating species of the Cas nuclease."
+              }
+            },
+            "description": "Filter by modifications.cas_species",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.degron_system",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Degron System",
+                "description": "The type of degron system implemented."
+              }
+            },
+            "description": "Filter by modifications.degron_system",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.fused_domain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Fused Domain",
+                "description": "The name of the molecule fused to a Cas protein."
+              }
+            },
+            "description": "Filter by modifications.fused_domain",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "modifications.status",
             "in": "query",
             "schema": {
@@ -40980,6 +41661,64 @@
               }
             },
             "description": "Filter by modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.symbol",
             "style": "form",
             "explode": true
           },
@@ -41589,6 +42328,21 @@
             "explode": true
           },
           {
+            "name": "treatments.depletion",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Depletion",
+                "description": "Treatment is depleted."
+              }
+            },
+            "description": "Filter by treatments.depletion",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "treatments.purpose",
             "in": "query",
             "schema": {
@@ -41596,7 +42350,7 @@
               "items": {
                 "type": "string",
                 "title": "Purpose",
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by treatments.purpose",
@@ -41619,16 +42373,17 @@
             "explode": true
           },
           {
-            "name": "treatments.summary",
+            "name": "treatments.treatment_term_name",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
               }
             },
-            "description": "Filter by treatments.summary",
+            "description": "Filter by treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -41640,7 +42395,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by treatments.treatment_type",
@@ -42008,18 +42763,76 @@
             "explode": true
           },
           {
-            "name": "construct_library_sets",
+            "name": "construct_library_sets.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Construct Library Sets",
               "items": {
                 "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
+                "title": "ID"
+              }
             },
-            "description": "Filter by construct_library_sets",
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -42152,18 +42965,17 @@
             "explode": true
           },
           {
-            "name": "file_sets.assay_term.term_name",
+            "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
               }
             },
-            "description": "Filter by file_sets.assay_term.term_name",
+            "description": "Filter by file_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -42178,6 +42990,21 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Title",
+                "description": "The custom lab preferred label for the experiment performed in this measurement set."
+              }
+            },
+            "description": "Filter by file_sets.preferred_assay_title",
             "style": "form",
             "explode": true
           },
@@ -42288,31 +43115,18 @@
             "explode": true
           },
           {
-            "name": "multiplexed_in.@id",
+            "name": "multiplexed_in",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "Multiplexed In",
               "items": {
                 "type": "string",
-                "title": "ID"
-              }
+                "title": "Multiplexed In"
+              },
+              "description": "The multiplexed samples in which this sample is included."
             },
-            "description": "Filter by multiplexed_in.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "multiplexed_in.accession",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Accession",
-                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
-              }
-            },
-            "description": "Filter by multiplexed_in.accession",
+            "description": "Filter by multiplexed_in",
             "style": "form",
             "explode": true
           },
@@ -43093,19 +43907,75 @@
             "explode": true
           },
           {
-            "name": "biomarkers",
+            "name": "biomarkers.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biomarkers",
               "items": {
                 "type": "string",
-                "title": "Biomarker",
-                "description": "Associated biomarker."
-              },
-              "description": "Biological markers that are associated with this sample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by biomarkers",
+            "description": "Filter by biomarkers.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.classification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "description": "Sample specific biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.classification",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by biomarkers.gene.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by biomarkers.gene.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.name_quantification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name and Quantification",
+                "description": "A concatenation of the name and quantification of the biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.name_quantification",
             "style": "form",
             "explode": true
           },
@@ -43185,18 +44055,76 @@
             "explode": true
           },
           {
-            "name": "construct_library_sets",
+            "name": "construct_library_sets.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Construct Library Sets",
               "items": {
                 "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
+                "title": "ID"
+              }
             },
-            "description": "Filter by construct_library_sets",
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -43391,18 +44319,17 @@
             "explode": true
           },
           {
-            "name": "file_sets.assay_term.term_name",
+            "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
               }
             },
-            "description": "Filter by file_sets.assay_term.term_name",
+            "description": "Filter by file_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -43417,6 +44344,21 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Title",
+                "description": "The custom lab preferred label for the experiment performed in this measurement set."
+              }
+            },
+            "description": "Filter by file_sets.preferred_assay_title",
             "style": "form",
             "explode": true
           },
@@ -43569,6 +44511,66 @@
             "explode": true
           },
           {
+            "name": "modifications.cas_species",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas species",
+                "description": "The originating species of the Cas nuclease."
+              }
+            },
+            "description": "Filter by modifications.cas_species",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.degron_system",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Degron System",
+                "description": "The type of degron system implemented."
+              }
+            },
+            "description": "Filter by modifications.degron_system",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.fused_domain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Fused Domain",
+                "description": "The name of the molecule fused to a Cas protein."
+              }
+            },
+            "description": "Filter by modifications.fused_domain",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "modifications.status",
             "in": "query",
             "schema": {
@@ -43594,6 +44596,64 @@
               }
             },
             "description": "Filter by modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.symbol",
             "style": "form",
             "explode": true
           },
@@ -44244,6 +45304,21 @@
             "explode": true
           },
           {
+            "name": "treatments.depletion",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Depletion",
+                "description": "Treatment is depleted."
+              }
+            },
+            "description": "Filter by treatments.depletion",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "treatments.purpose",
             "in": "query",
             "schema": {
@@ -44251,7 +45326,7 @@
               "items": {
                 "type": "string",
                 "title": "Purpose",
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by treatments.purpose",
@@ -44274,16 +45349,17 @@
             "explode": true
           },
           {
-            "name": "treatments.summary",
+            "name": "treatments.treatment_term_name",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
               }
             },
-            "description": "Filter by treatments.summary",
+            "description": "Filter by treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -44295,7 +45371,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by treatments.treatment_type",
@@ -44658,19 +45734,75 @@
             "explode": true
           },
           {
-            "name": "biomarkers",
+            "name": "biomarkers.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biomarkers",
               "items": {
                 "type": "string",
-                "title": "Biomarker",
-                "description": "Associated biomarker."
-              },
-              "description": "Biological markers that are associated with this sample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by biomarkers",
+            "description": "Filter by biomarkers.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.classification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "description": "Sample specific biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.classification",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by biomarkers.gene.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.gene.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by biomarkers.gene.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "biomarkers.name_quantification",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name and Quantification",
+                "description": "A concatenation of the name and quantification of the biomarker."
+              }
+            },
+            "description": "Filter by biomarkers.name_quantification",
             "style": "form",
             "explode": true
           },
@@ -44735,18 +45867,76 @@
             "explode": true
           },
           {
-            "name": "construct_library_sets",
+            "name": "construct_library_sets.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Construct Library Sets",
               "items": {
                 "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
+                "title": "ID"
+              }
             },
-            "description": "Filter by construct_library_sets",
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -44941,18 +46131,17 @@
             "explode": true
           },
           {
-            "name": "file_sets.assay_term.term_name",
+            "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
               }
             },
-            "description": "Filter by file_sets.assay_term.term_name",
+            "description": "Filter by file_sets.file_set_type",
             "style": "form",
             "explode": true
           },
@@ -44967,6 +46156,21 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Title",
+                "description": "The custom lab preferred label for the experiment performed in this measurement set."
+              }
+            },
+            "description": "Filter by file_sets.preferred_assay_title",
             "style": "form",
             "explode": true
           },
@@ -45119,6 +46323,66 @@
             "explode": true
           },
           {
+            "name": "modifications.cas_species",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas species",
+                "description": "The originating species of the Cas nuclease."
+              }
+            },
+            "description": "Filter by modifications.cas_species",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.degron_system",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Degron System",
+                "description": "The type of degron system implemented."
+              }
+            },
+            "description": "Filter by modifications.degron_system",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.fused_domain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Fused Domain",
+                "description": "The name of the molecule fused to a Cas protein."
+              }
+            },
+            "description": "Filter by modifications.fused_domain",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "modifications.status",
             "in": "query",
             "schema": {
@@ -45144,6 +46408,64 @@
               }
             },
             "description": "Filter by modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.tagged_proteins.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by modifications.tagged_proteins.symbol",
             "style": "form",
             "explode": true
           },
@@ -45738,6 +47060,21 @@
             "explode": true
           },
           {
+            "name": "treatments.depletion",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Depletion",
+                "description": "Treatment is depleted."
+              }
+            },
+            "description": "Filter by treatments.depletion",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "treatments.purpose",
             "in": "query",
             "schema": {
@@ -45745,7 +47082,7 @@
               "items": {
                 "type": "string",
                 "title": "Purpose",
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by treatments.purpose",
@@ -45768,16 +47105,17 @@
             "explode": true
           },
           {
-            "name": "treatments.summary",
+            "name": "treatments.treatment_term_name",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary"
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
               }
             },
-            "description": "Filter by treatments.summary",
+            "description": "Filter by treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -45789,7 +47127,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by treatments.treatment_type",
@@ -47797,7 +49135,7 @@
                   "selection",
                   "stimulation"
                 ],
-                "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+                "description": "The intended purpose for treating the samples."
               }
             },
             "description": "Filter by purpose",
@@ -47990,7 +49328,7 @@
                   "protein",
                   "environmental"
                 ],
-                "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
             },
             "description": "Filter by treatment_type",
@@ -51554,6 +52892,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
               "GENCODE 42",
@@ -51773,6 +53112,7 @@
             "description": "The file format or extension of the file.",
             "type": "string",
             "enum": [
+              "bai",
               "bam"
             ]
           },
@@ -52315,6 +53655,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
               "GENCODE 42",
@@ -53761,6 +55102,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
               "GENCODE 42",
@@ -54505,7 +55847,9 @@
                 "4mC",
                 "5hmC",
                 "5mC",
-                "6mA"
+                "6mA",
+                "inosine",
+                "pseudouridine"
               ]
             }
           },
@@ -54619,6 +55963,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
               "GENCODE 42",
@@ -55063,6 +56408,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
               "GENCODE 42",
@@ -56005,7 +57351,7 @@
       },
       "ConstructLibrarySet": {
         "title": "Construct Library Set",
-        "description": "Construct library set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of a library prior to its delivery into the samples being investigated. For example sequencing results of guide RNAs after cloning them but prior to their delivery to the actual samples under investigation. The results thus represent the sequencing output of the guides that are then introduced into cells, but may not always correspond to what exact guides ended up being delivered or expressed. Not all construct library sets will end up having FASTQs or any other files in them. For example if the lab chooses not to sequence their guide library prior to delivery, no FASTQs will be required in that case. Construct library sets should not be associated with any samples because they are designed to capture the library prior to its delivery and hence, has no relation to the ample that will get the plasmids eventually.",
+        "description": "Construct library set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of a library prior to its delivery into the samples being investigated. For example sequencing results of guide RNAs after cloning them but prior to their delivery to the actual samples under investigation. The results thus represent the sequencing output of the guides that are then introduced into cells, but may not always correspond to what exact guides ended up being delivered or expressed. Not all construct library sets will end up having FASTQs or any other files in them. For example if the lab chooses not to sequence their guide library prior to delivery, no FASTQs will be required in that case. Construct library sets should not be associated with any samples because they are designed to capture the library prior to its delivery and hence, has no relation to the sample that will get the plasmids eventually.",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -56262,7 +57608,7 @@
           },
           "scope": {
             "title": "Library Construct Scope",
-            "description": "The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties.",
+            "description": "The scope or scale that this construct library is designed to target.",
             "type": "string",
             "enum": [
               "tile",
@@ -57815,7 +59161,7 @@
           },
           "scope": {
             "title": "Prediction Scope",
-            "description": "The scope or scale that this prediction set is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property.",
+            "description": "The scope or scale that this prediction set is designed to target.",
             "type": "string",
             "enum": [
               "genes",
@@ -57902,6 +59248,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
               "GENCODE 42",
@@ -58687,6 +60034,16 @@
               "prime editing"
             ]
           },
+          "tagged_proteins": {
+            "title": "Tagged Proteins",
+            "description": "The tagged proteins in which the Cas nuclease is fused to an antibody.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Gene",
+              "type": "string"
+            }
+          },
           "cas": {
             "title": "Cas",
             "description": "The name of the CRISPR associated protein used in the modification.",
@@ -58727,11 +60084,6 @@
               "VP64-p65-Rta (VPR)",
               "ZIM3-KRAB"
             ]
-          },
-          "tagged_protein": {
-            "title": "Tagged Protein",
-            "description": "The tagged protein in modifications in which the Cas nuclease is fused to an antibody.",
-            "type": "string"
           },
           "cas_species": {
             "title": "Cas species",
@@ -58912,16 +60264,6 @@
               "degradation"
             ]
           },
-          "degron_system": {
-            "title": "Degron System",
-            "description": "The type of degron system implemented.",
-            "type": "string",
-            "enum": [
-              "AID",
-              "AlissAid",
-              "ssAID"
-            ]
-          },
           "tagged_proteins": {
             "title": "Tagged Proteins",
             "description": "The tagged proteins which are targeted for degradation.",
@@ -58931,6 +60273,16 @@
               "title": "Gene",
               "type": "string"
             }
+          },
+          "degron_system": {
+            "title": "Degron System",
+            "description": "The type of degron system implemented.",
+            "type": "string",
+            "enum": [
+              "AID",
+              "AlissAid",
+              "ssAID"
+            ]
           },
           "@id": {
             "title": "ID",
@@ -64249,6 +65601,7 @@
           "purpose": {
             "title": "Purpose",
             "type": "string",
+            "description": "The intended purpose for treating the samples.",
             "enum": [
               "activation",
               "agonist",
@@ -64259,8 +65612,7 @@
               "perturbation",
               "selection",
               "stimulation"
-            ],
-            "description": "The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway."
+            ]
           },
           "post_treatment_time": {
             "title": "Post-treatment Time",
@@ -64295,12 +65647,12 @@
           "treatment_type": {
             "title": "Treatment Type",
             "type": "string",
+            "description": "The classification of treatment agent that specifies its exact molecular nature. ",
             "enum": [
               "chemical",
               "protein",
               "environmental"
-            ],
-            "description": "The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness."
+            ]
           },
           "treatment_term_id": {
             "title": "Treatment Term ID",
