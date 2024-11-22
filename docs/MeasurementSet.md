@@ -6,6 +6,7 @@ Measurement set is a file set that hosts raw data files (e.g. FASTQs) resulting 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this file set. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
@@ -33,7 +34,6 @@ Name | Type | Description | Notes
 **protocols** | **List[str]** | Links to the protocol(s) for conducting the assay on Protocols.io. | [optional] 
 **preferred_assay_title** | **str** | The custom lab preferred label for the experiment performed in this measurement set. | [optional] 
 **multiome_size** | **int** | The number of datasets included in the multiome experiment this measurement set is a part of. | [optional] 
-**control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this measurement_set. | [optional] 
 **sequencing_library_types** | **List[str]** | Description of the libraries sequenced in this measurement set. | [optional] 
 **auxiliary_sets** | **List[str]** | The auxiliary sets of files produced alongside raw data from this measurement set. | [optional] 
 **external_image_url** | **str** | Links to the external site where images produced by this measurement are stored. | [optional] 

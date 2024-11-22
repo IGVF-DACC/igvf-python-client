@@ -6,6 +6,7 @@ Construct library set is a file set that hosts raw data files (e.g. FASTQs) resu
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this file set. | [optional] 
 **small_scale_loci_list** | [**List[Locus1]**](Locus1.md) | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions. | [optional] 
 **small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression. | [optional] 

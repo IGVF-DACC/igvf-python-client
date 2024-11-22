@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "57.0.4"
+    "version": "58.0.1"
   },
   "servers": [
     {
@@ -95,6 +95,9 @@
                     },
                     {
                       "$ref": "#/components/schemas/ImageFile"
+                    },
+                    {
+                      "$ref": "#/components/schemas/IndexFile"
                     },
                     {
                       "$ref": "#/components/schemas/MatrixFile"
@@ -359,6 +362,9 @@
                           },
                           {
                             "$ref": "#/components/schemas/ImageFile"
+                          },
+                          {
+                            "$ref": "#/components/schemas/IndexFile"
                           },
                           {
                             "$ref": "#/components/schemas/MatrixFile"
@@ -6037,7 +6043,6 @@
                 "type": "string",
                 "title": "File Format",
                 "enum": [
-                  "bai",
                   "bam"
                 ],
                 "description": "The file format or extension of the file."
@@ -6208,6 +6213,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -6253,6 +6301,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -6264,6 +6342,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -7453,6 +7589,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -7498,6 +7677,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -7509,6 +7718,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -8500,8 +8767,7 @@
                 "type": "string",
                 "title": "File Format",
                 "enum": [
-                  "bigBed",
-                  "tabix"
+                  "bigBed"
                 ],
                 "description": "The file format or extension of the file."
               }
@@ -8697,6 +8963,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -8742,6 +9051,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -8753,6 +9092,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -9878,6 +10275,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -9923,6 +10363,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -9934,6 +10404,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -10433,6 +10961,1378 @@
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/ImageFile"
+                      }
+                    },
+                    "@id": {
+                      "type": "string"
+                    },
+                    "@type": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "facets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "title": "SearchFacet",
+                        "properties": {
+                          "field": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "terms": {
+                            "type": "array",
+                            "items": {
+                              "title": "SearchFacetTermValue",
+                              "type": "object"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoResultsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/index-files/@@listing": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List items in the IndexFile collection.",
+        "description": "Collection endpoint that accepts various query parameters to filter and sort IndexFile items. Supports filtering on fields within IndexFile items.",
+        "operationId": "index_files",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
+          },
+          {
+            "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Limit"
+            },
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
+          },
+          {
+            "name": "@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by @id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "alternate_accessions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Alternate Accessions",
+              "items": {
+                "type": "string",
+                "title": "Alternate Accession",
+                "description": "An accession previously assigned to an object that has been merged with this object."
+              },
+              "description": "Accessions previously assigned to objects that have been merged with this object."
+            },
+            "description": "Filter by alternate_accessions",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Analysis Step Version",
+                "description": "The analysis step version of the file."
+              }
+            },
+            "description": "Filter by analysis_step_version",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Title of assay from the file set this file belongs to."
+              },
+              "description": "Title(s) of assay from the file set this file belongs to."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly",
+                "description": "The assembly associated with the index file."
+              }
+            },
+            "description": "Filter by assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by award.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.component",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project Component",
+                "description": "The project component the award is associated with."
+              }
+            },
+            "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "collections",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Collections",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "ClinGen",
+                  "ENCODE",
+                  "GREGoR",
+                  "IGVF_catalog_beta_v0.1",
+                  "IGVF_catalog_beta_v0.2",
+                  "IGVF_catalog_beta_v0.3",
+                  "IGVF_catalog_beta_v0.4",
+                  "MaveDB",
+                  "MPRAbase",
+                  "VarChAMP",
+                  "Vista"
+                ]
+              },
+              "description": "Some samples are part of particular data collections."
+            },
+            "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "content_md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Content MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The MD5sum of the uncompressed file."
+              }
+            },
+            "description": "Filter by content_md5sum",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "content_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Content Type",
+                "description": "The type of content in the file."
+              }
+            },
+            "description": "Filter by content_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Boolean value, indicating the file being controlled access, if true."
+              }
+            },
+            "description": "Filter by controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "creation_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Creation Timestamp",
+                "description": "The date the object was created."
+              }
+            },
+            "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "dbxrefs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "External Resources",
+              "items": {
+                "type": "string",
+                "title": "External Identifier",
+                "pattern": "(?!)",
+                "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file objects."
+              },
+              "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects."
+            },
+            "description": "Filter by dbxrefs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "derived_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Derived From",
+              "items": {
+                "type": "string",
+                "title": "File Derived From"
+              },
+              "description": "The files participating as inputs into software to produce this output file."
+            },
+            "description": "Filter by derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "derived_manually",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Derived Manually",
+                "description": "A boolean indicating whether the file has been dervided manually without automated computational methods."
+              }
+            },
+            "description": "Filter by derived_manually",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "documents",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Documents",
+              "items": {
+                "type": "string",
+                "title": "Document",
+                "description": "A document that provides additional information (not data file)."
+              },
+              "description": "Documents that provide additional information (not data file)."
+            },
+            "description": "Filter by documents",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format",
+                "enum": [
+                  "bai",
+                  "tbi"
+                ],
+                "description": "The file format or extension of the file."
+              }
+            },
+            "description": "Filter by file_format",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "File Format Specifications Documents",
+              "items": {
+                "type": "string",
+                "title": "File Format Specifications Document"
+              },
+              "description": "Documents that describe the file format and fields of this file."
+            },
+            "description": "Filter by file_format_specifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by file_set.samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by file_set.samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by file_set.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by file_set.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_size",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "File Size",
+                "minimum": 0,
+                "description": "File size specified in bytes."
+              }
+            },
+            "description": "Filter by file_size",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "filtered",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Filtered",
+                "description": "Indicates whether reads that did not pass a filtering step, such as PCR duplicates, have been removed from the file."
+              }
+            },
+            "description": "Filter by filtered",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "gene_list_for",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Gene List For",
+              "items": {
+                "type": "string",
+                "title": "Gene List For"
+              },
+              "description": "File Set(s) that this file is a gene list for."
+            },
+            "description": "Filter by gene_list_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "href",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Download URL",
+                "description": "The download path to obtain file."
+              }
+            },
+            "description": "Filter by href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_file_for",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Input File For",
+              "items": {
+                "type": "string",
+                "title": "Input File For"
+              },
+              "description": "The files which are derived from this file."
+            },
+            "description": "Filter by input_file_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The type or category of this construct library set."
+              }
+            },
+            "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by integrated_in.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by integrated_in.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "loci_list_for",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Loci List For",
+              "items": {
+                "type": "string",
+                "title": "Loci List For"
+              },
+              "description": "File Set(s) that this file is a loci list for."
+            },
+            "description": "Filter by loci_list_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The md5sum of the file being transferred."
+              }
+            },
+            "description": "Filter by md5sum",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC internal notes."
+              }
+            },
+            "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "redacted",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Redacted",
+                "description": "Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information."
+              }
+            },
+            "description": "Filter by redacted",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "release_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Release Timestamp",
+                "description": "The date the object was released."
+              }
+            },
+            "description": "Filter by release_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "revoke_detail",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Revoke Detail",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "Explanation of why an object was transitioned to the revoked status."
+              }
+            },
+            "description": "Filter by revoke_detail",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "s3_uri",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "S3 URI",
+                "description": "The S3 URI of public file object."
+              }
+            },
+            "description": "Filter by s3_uri",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "enum": [
+                  "in progress",
+                  "released",
+                  "deleted",
+                  "replaced",
+                  "revoked",
+                  "archived"
+                ],
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by submitted_by.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "description": "The full name of the user."
+              }
+            },
+            "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_file_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted File Name",
+                "description": "Original name of the file."
+              }
+            },
+            "description": "Filter by submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitter_comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitter Comment",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "Additional information specified by the submitter to be displayed as a comment on the portal."
+              }
+            },
+            "description": "Filter by submitter_comment",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the index file."
+              }
+            },
+            "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by transcriptome_annotation",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "upload_status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Upload Status",
+                "enum": [
+                  "pending",
+                  "file not found",
+                  "invalidated",
+                  "validated"
+                ],
+                "description": "The upload/validation status of the file."
+              }
+            },
+            "description": "Filter by upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "UUID",
+                "description": "The unique identifier associated with every object."
+              }
+            },
+            "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "validation_error_detail",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Validation Error Detail",
+                "description": "Explanation of why the file failed the automated content checks."
+              }
+            },
+            "description": "Filter by validation_error_detail",
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "IndexFileResults",
+                  "properties": {
+                    "@graph": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/IndexFile"
                       }
                     },
                     "@id": {
@@ -11049,6 +12949,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -11094,6 +13037,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -11105,6 +13078,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -12331,6 +14362,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -12376,6 +14450,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -12387,6 +14491,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -13589,6 +15751,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -13634,6 +15839,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -13645,6 +15880,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -14888,6 +17181,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -14933,6 +17269,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -14944,6 +17310,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -15367,6 +17791,28 @@
               }
             },
             "description": "Filter by read_count",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "read_names",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Read Names",
+              "items": {
+                "type": "string",
+                "title": "Read Name",
+                "enum": [
+                  "Read 1",
+                  "Read 2",
+                  "Barcode index"
+                ],
+                "description": "The read name of a sequence file based on how it will be used by uniform pipelines."
+              },
+              "description": "The read names of a sequence file based on how it will be used by uniform pipelines."
+            },
+            "description": "Filter by read_names",
             "style": "form",
             "explode": true
           },
@@ -16355,6 +18801,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -16400,6 +18889,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -16411,6 +18930,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -17745,6 +20322,49 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -17790,6 +20410,36 @@
             "explode": true
           },
           {
+            "name": "file_set.samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.taxa",
             "in": "query",
             "schema": {
@@ -17801,6 +20451,64 @@
               }
             },
             "description": "Filter by file_set.samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by file_set.samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -18972,7 +21680,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly"
+                "title": "Genome Assembly",
+                "description": "Genome assembly applicable for the tabular data."
               }
             },
             "description": "Filter by files.assembly",
@@ -19530,19 +22239,31 @@
             "explode": true
           },
           {
-            "name": "samples.modifications",
+            "name": "samples.modifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Modifications",
               "items": {
                 "type": "string",
-                "title": "Modification",
-                "description": "Link to a modification applied to this biosample."
-              },
-              "description": "Links to modifications applied to this biosample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.modifications",
+            "description": "Filter by samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by samples.modifications.modality",
             "style": "form",
             "explode": true
           },
@@ -19700,18 +22421,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments",
+            "name": "samples.treatments.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Treatments",
               "items": {
                 "type": "string",
-                "title": "Treatment"
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of perturbation."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.treatments",
+            "description": "Filter by samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -20516,7 +23250,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly"
+                "title": "Genome Assembly",
+                "description": "Genome assembly applicable for the tabular data."
               }
             },
             "description": "Filter by files.assembly",
@@ -20996,19 +23731,31 @@
             "explode": true
           },
           {
-            "name": "samples.modifications",
+            "name": "samples.modifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Modifications",
               "items": {
                 "type": "string",
-                "title": "Modification",
-                "description": "Link to a modification applied to this biosample."
-              },
-              "description": "Links to modifications applied to this biosample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.modifications",
+            "description": "Filter by samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by samples.modifications.modality",
             "style": "form",
             "explode": true
           },
@@ -21166,18 +23913,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments",
+            "name": "samples.treatments.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Treatments",
               "items": {
                 "type": "string",
-                "title": "Treatment"
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of perturbation."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.treatments",
+            "description": "Filter by samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -21653,6 +24413,49 @@
             "explode": true
           },
           {
+            "name": "applied_to_samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by applied_to_samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "applied_to_samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by applied_to_samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "applied_to_samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by applied_to_samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "applied_to_samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -21754,6 +24557,49 @@
               }
             },
             "description": "Filter by applied_to_samples.taxa",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "applied_to_samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by applied_to_samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "applied_to_samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by applied_to_samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "applied_to_samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by applied_to_samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -21893,6 +24739,23 @@
             "explode": true
           },
           {
+            "name": "control_file_sets",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Controls",
+              "items": {
+                "type": "string",
+                "title": "Control",
+                "description": "File sets that can serve as scientific controls for this file set."
+              },
+              "description": "File sets that can serve as scientific controls for this file set."
+            },
+            "description": "Filter by control_file_sets",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "control_for.@id",
             "in": "query",
             "schema": {
@@ -21947,7 +24810,9 @@
               "items": {
                 "type": "string",
                 "title": "Control Type",
-                "enum": [],
+                "enum": [
+                  "control transduction"
+                ],
                 "description": "The type of control this file set represents."
               }
             },
@@ -22585,7 +25450,8 @@
                   "genome-wide",
                   "interactors",
                   "alleles",
-                  "targeton"
+                  "targeton",
+                  "control"
                 ],
                 "description": "The scope or scale that this construct library is designed to target."
               }
@@ -23580,7 +26446,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly"
+                "title": "Genome Assembly",
+                "description": "Genome assembly applicable for the tabular data."
               }
             },
             "description": "Filter by files.assembly",
@@ -23998,19 +26865,31 @@
             "explode": true
           },
           {
-            "name": "samples.modifications",
+            "name": "samples.modifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Modifications",
               "items": {
                 "type": "string",
-                "title": "Modification",
-                "description": "Link to a modification applied to this biosample."
-              },
-              "description": "Links to modifications applied to this biosample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.modifications",
+            "description": "Filter by samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by samples.modifications.modality",
             "style": "form",
             "explode": true
           },
@@ -24168,18 +27047,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments",
+            "name": "samples.treatments.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Treatments",
               "items": {
                 "type": "string",
-                "title": "Treatment"
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of perturbation."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.treatments",
+            "description": "Filter by samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -24854,6 +27746,7 @@
                 "type": "string",
                 "title": "Control Type",
                 "enum": [
+                  "control transduction",
                   "low FACS signal",
                   "pre-selection",
                   "unsorted FACS input",
@@ -25126,7 +28019,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly"
+                "title": "Genome Assembly",
+                "description": "Genome assembly applicable for the tabular data."
               }
             },
             "description": "Filter by files.assembly",
@@ -26123,6 +29017,21 @@
             "explode": true
           },
           {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.treatments.treatment_type",
             "in": "query",
             "schema": {
@@ -27067,7 +29976,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly"
+                "title": "Genome Assembly",
+                "description": "Genome assembly applicable for the tabular data."
               }
             },
             "description": "Filter by files.assembly",
@@ -27603,19 +30513,31 @@
             "explode": true
           },
           {
-            "name": "samples.modifications",
+            "name": "samples.modifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Modifications",
               "items": {
                 "type": "string",
-                "title": "Modification",
-                "description": "Link to a modification applied to this biosample."
-              },
-              "description": "Links to modifications applied to this biosample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.modifications",
+            "description": "Filter by samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by samples.modifications.modality",
             "style": "form",
             "explode": true
           },
@@ -27773,18 +30695,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments",
+            "name": "samples.treatments.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Treatments",
               "items": {
                 "type": "string",
-                "title": "Treatment"
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of perturbation."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.treatments",
+            "description": "Filter by samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -28618,7 +31553,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly"
+                "title": "Genome Assembly",
+                "description": "Genome assembly applicable for the tabular data."
               }
             },
             "description": "Filter by files.assembly",
@@ -29174,19 +32110,31 @@
             "explode": true
           },
           {
-            "name": "samples.modifications",
+            "name": "samples.modifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Modifications",
               "items": {
                 "type": "string",
-                "title": "Modification",
-                "description": "Link to a modification applied to this biosample."
-              },
-              "description": "Links to modifications applied to this biosample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.modifications",
+            "description": "Filter by samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by samples.modifications.modality",
             "style": "form",
             "explode": true
           },
@@ -29344,18 +32292,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments",
+            "name": "samples.treatments.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Treatments",
               "items": {
                 "type": "string",
-                "title": "Treatment"
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of perturbation."
+                "title": "ID"
+              }
             },
-            "description": "Filter by samples.treatments",
+            "description": "Filter by samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -50845,6 +53806,7 @@
           "ConfigurationFile",
           "GenomeBrowserAnnotationFile",
           "ImageFile",
+          "IndexFile",
           "MatrixFile",
           "ModelFile",
           "ReferenceFile",
@@ -50898,6 +53860,7 @@
           "ConfigurationFile",
           "GenomeBrowserAnnotationFile",
           "ImageFile",
+          "IndexFile",
           "MatrixFile",
           "ModelFile",
           "ReferenceFile",
@@ -53112,7 +56075,6 @@
             "description": "The file format or extension of the file.",
             "type": "string",
             "enum": [
-              "bai",
               "bam"
             ]
           },
@@ -53848,8 +56810,7 @@
             "description": "The file format or extension of the file.",
             "type": "string",
             "enum": [
-              "bigBed",
-              "tabix"
+              "bigBed"
             ]
           },
           "file_format_specifications": {
@@ -54308,6 +57269,362 @@
             "title": "Upload Credentials",
             "description": "The upload credentials for S3 to submit the file content.",
             "type": "object"
+          }
+        }
+      },
+      "IndexFile": {
+        "title": "Index File",
+        "description": "A binary file which is indexed.",
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "release_timestamp": {
+            "title": "Release Timestamp",
+            "description": "The date the object was released.",
+            "type": "string"
+          },
+          "controlled_access": {
+            "title": "Controlled Access",
+            "description": "Boolean value, indicating the file being controlled access, if true.",
+            "type": "boolean"
+          },
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
+          "documents": {
+            "title": "Documents",
+            "description": "Documents that provide additional information (not data file).",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Document",
+              "description": "A document that provides additional information (not data file).",
+              "type": "string"
+            }
+          },
+          "lab": {
+            "title": "Lab",
+            "description": "Lab associated with the submission.",
+            "type": "string"
+          },
+          "award": {
+            "title": "Award",
+            "description": "Grant associated with the submission.",
+            "type": "string"
+          },
+          "accession": {
+            "title": "Accession",
+            "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+            "type": "string"
+          },
+          "alternate_accessions": {
+            "title": "Alternate Accessions",
+            "description": "Accessions previously assigned to objects that have been merged with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Alternate Accession",
+              "description": "An accession previously assigned to an object that has been merged with this object.",
+              "type": "string"
+            }
+          },
+          "collections": {
+            "title": "Collections",
+            "description": "Some samples are part of particular data collections.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "ClinGen",
+                "ENCODE",
+                "GREGoR",
+                "IGVF_catalog_beta_v0.1",
+                "IGVF_catalog_beta_v0.2",
+                "IGVF_catalog_beta_v0.3",
+                "IGVF_catalog_beta_v0.4",
+                "MaveDB",
+                "MPRAbase",
+                "VarChAMP",
+                "Vista"
+              ]
+            }
+          },
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "description": "The status of the metadata object.",
+            "enum": [
+              "in progress",
+              "released",
+              "deleted",
+              "replaced",
+              "revoked",
+              "archived"
+            ]
+          },
+          "revoke_detail": {
+            "title": "Revoke Detail",
+            "type": "string",
+            "description": "Explanation of why an object was transitioned to the revoked status.",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "description": "The version of the JSON schema that the server uses to validate the object.",
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d+)*$"
+          },
+          "uuid": {
+            "title": "UUID",
+            "description": "The unique identifier associated with every object.",
+            "type": "string"
+          },
+          "notes": {
+            "title": "Notes",
+            "description": "DACC internal notes.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "aliases": {
+            "title": "Aliases",
+            "description": "Lab specific identifiers to reference an object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Lab Alias",
+              "description": "A lab specific identifier to reference an object.",
+              "type": "string",
+              "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$"
+            }
+          },
+          "creation_timestamp": {
+            "title": "Creation Timestamp",
+            "description": "The date the object was created.",
+            "type": "string"
+          },
+          "submitted_by": {
+            "title": "Submitted By",
+            "description": "The user who submitted the object.",
+            "type": "string"
+          },
+          "submitter_comment": {
+            "title": "Submitter Comment",
+            "description": "Additional information specified by the submitter to be displayed as a comment on the portal.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A plain text description of the object.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
+          "content_md5sum": {
+            "title": "Content MD5sum",
+            "description": "The MD5sum of the uncompressed file.",
+            "type": "string",
+            "maxLength": 32,
+            "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
+          },
+          "content_type": {
+            "title": "Content Type",
+            "description": "The type of content in the file.",
+            "type": "string"
+          },
+          "dbxrefs": {
+            "title": "External Resources",
+            "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "External Identifier",
+              "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file objects.",
+              "type": "string",
+              "pattern": "(?!)"
+            }
+          },
+          "derived_from": {
+            "title": "Derived From",
+            "description": "The files participating as inputs into software to produce this output file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "File Derived From",
+              "type": "string"
+            }
+          },
+          "derived_manually": {
+            "title": "Derived Manually",
+            "description": "A boolean indicating whether the file has been dervided manually without automated computational methods.",
+            "type": "boolean"
+          },
+          "file_format": {
+            "title": "File Format",
+            "description": "The file format or extension of the file.",
+            "type": "string",
+            "enum": [
+              "bai",
+              "tbi"
+            ]
+          },
+          "file_format_specifications": {
+            "title": "File Format Specifications Documents",
+            "description": "Documents that describe the file format and fields of this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "File Format Specifications Document",
+              "type": "string"
+            }
+          },
+          "file_set": {
+            "title": "File Set",
+            "description": "The file set that this file belongs to.",
+            "type": "string"
+          },
+          "file_size": {
+            "title": "File Size",
+            "description": "File size specified in bytes.",
+            "type": "integer",
+            "minimum": 0
+          },
+          "md5sum": {
+            "title": "MD5sum",
+            "description": "The md5sum of the file being transferred.",
+            "type": "string",
+            "maxLength": 32,
+            "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
+          },
+          "submitted_file_name": {
+            "title": "Submitted File Name",
+            "description": "Original name of the file.",
+            "type": "string"
+          },
+          "upload_status": {
+            "title": "Upload Status",
+            "description": "The upload/validation status of the file.",
+            "type": "string",
+            "enum": [
+              "pending",
+              "file not found",
+              "invalidated",
+              "validated"
+            ]
+          },
+          "validation_error_detail": {
+            "title": "Validation Error Detail",
+            "description": "Explanation of why the file failed the automated content checks.",
+            "type": "string"
+          },
+          "@id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "@type": {
+            "title": "Type",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string",
+            "description": "A summary of the index file."
+          },
+          "integrated_in": {
+            "title": "Integrated In",
+            "description": "Construct library set(s) that this file was used for in insert design.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Integrated In",
+              "type": "string"
+            }
+          },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For",
+              "type": "string"
+            }
+          },
+          "gene_list_for": {
+            "title": "Gene List For",
+            "description": "File Set(s) that this file is a gene list for.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Gene List For",
+              "type": "string"
+            }
+          },
+          "loci_list_for": {
+            "title": "Loci List For",
+            "description": "File Set(s) that this file is a loci list for.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "Title(s) of assay from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "href": {
+            "title": "Download URL",
+            "description": "The download path to obtain file.",
+            "type": "string"
+          },
+          "s3_uri": {
+            "title": "S3 URI",
+            "description": "The S3 URI of public file object.",
+            "type": "string"
+          },
+          "upload_credentials": {
+            "title": "Upload Credentials",
+            "description": "The upload credentials for S3 to submit the file content.",
+            "type": "object"
+          },
+          "assembly": {
+            "title": "Genome Assembly",
+            "type": "string",
+            "description": "The assembly associated with the index file."
+          },
+          "transcriptome_annotation": {
+            "title": "Transcriptome Annotation",
+            "type": "string",
+            "description": "The annotation and version of the reference resource."
+          },
+          "filtered": {
+            "title": "Filtered",
+            "type": "boolean",
+            "description": "Indicates whether reads that did not pass a filtering step, such as PCR duplicates, have been removed from the file."
+          },
+          "redacted": {
+            "title": "Redacted",
+            "type": "boolean",
+            "description": "Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information."
           }
         }
       },
@@ -55853,6 +59170,22 @@
               ]
             }
           },
+          "read_names": {
+            "title": "Read Names",
+            "description": "The read names of a sequence file based on how it will be used by uniform pipelines.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Read Name",
+              "description": "The read name of a sequence file based on how it will be used by uniform pipelines.",
+              "type": "string",
+              "enum": [
+                "Read 1",
+                "Read 2",
+                "Barcode index"
+              ]
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -57355,6 +60688,17 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "control_file_sets": {
+            "title": "Controls",
+            "description": "File sets that can serve as scientific controls for this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Control",
+              "description": "File sets that can serve as scientific controls for this file set.",
+              "type": "string"
+            }
+          },
           "small_scale_loci_list": {
             "title": "Small Scale Loci List",
             "description": "A small scale (<=100) list of specific chromosomal region(s).",
@@ -57604,7 +60948,9 @@
             "title": "Control Type",
             "description": "The type of control this file set represents.",
             "type": "string",
-            "enum": []
+            "enum": [
+              "control transduction"
+            ]
           },
           "scope": {
             "title": "Library Construct Scope",
@@ -57618,7 +60964,8 @@
               "genome-wide",
               "interactors",
               "alleles",
-              "targeton"
+              "targeton",
+              "control"
             ]
           },
           "selection_criteria": {
@@ -58127,6 +61474,17 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "control_file_sets": {
+            "title": "Controls",
+            "description": "File sets that can serve as scientific controls for this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Control",
+              "description": "File sets that can serve as scientific controls for this file set.",
+              "type": "string"
+            }
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -58289,6 +61647,7 @@
             "description": "The type of control this file set represents.",
             "type": "string",
             "enum": [
+              "control transduction",
               "low FACS signal",
               "pre-selection",
               "unsorted FACS input",
@@ -58410,17 +61769,6 @@
             "description": "The number of datasets included in the multiome experiment this measurement set is a part of.",
             "type": "integer",
             "minimum": 2
-          },
-          "control_file_sets": {
-            "title": "Controls",
-            "description": "File sets that can serve as scientific controls for this measurement_set.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Control",
-              "description": "File sets that can serve as scientific controls for this measurement_set.",
-              "type": "string"
-            }
           },
           "sequencing_library_types": {
             "title": "Sequencing Library Types",

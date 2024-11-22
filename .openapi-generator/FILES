@@ -49,6 +49,8 @@ docs/ImageFileResults.md
 docs/ImageResults.md
 docs/InVitroSystem.md
 docs/InVitroSystemResults.md
+docs/IndexFile.md
+docs/IndexFileResults.md
 docs/InstitutionalCertificate.md
 docs/InstitutionalCertificateResults.md
 docs/Item.md
@@ -183,6 +185,8 @@ igvf_client/models/image_file_results.py
 igvf_client/models/image_results.py
 igvf_client/models/in_vitro_system.py
 igvf_client/models/in_vitro_system_results.py
+igvf_client/models/index_file.py
+igvf_client/models/index_file_results.py
 igvf_client/models/institutional_certificate.py
 igvf_client/models/institutional_certificate_results.py
 igvf_client/models/item.py

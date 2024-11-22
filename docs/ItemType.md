@@ -14,6 +14,7 @@
     ConfigurationFile = 'ConfigurationFile'
     GenomeBrowserAnnotationFile = 'GenomeBrowserAnnotationFile'
     ImageFile = 'ImageFile'
+    IndexFile = 'IndexFile'
     MatrixFile = 'MatrixFile'
     ModelFile = 'ModelFile'
     ReferenceFile = 'ReferenceFile'

@@ -23,15 +23,13 @@ from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class GenomeBrowserAnnotationFile(BaseModel):
+class IndexFile(BaseModel):
     """
-    A binary file containing genome annotations which are indexed and can be visualized on a genome browser.
+    A binary file which is indexed.
     """ # noqa: E501
-    cell_type_annotation: Optional[StrictStr] = Field(default=None, description="The inferred cell type this file is associated with based on single-cell expression profiling.")
-    assembly: Optional[StrictStr] = Field(default=None, description="Genome assembly applicable for the annotation data.")
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
-    file_format_type: Optional[StrictStr] = Field(default=None, description="The subtype of bed files.")
-    transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
+    controlled_access: Optional[StrictBool] = Field(default=None, description="Boolean value, indicating the file being controlled access, if true.")
+    anvil_url: Optional[StrictStr] = Field(default=None, description="URL linking to the controlled access file that has been deposited at AnVIL workspace.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -64,7 +62,7 @@ class GenomeBrowserAnnotationFile(BaseModel):
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the genome browser annotation file.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the index file.")
     integrated_in: Optional[List[StrictStr]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
     input_file_for: Optional[List[StrictStr]] = Field(default=None, description="The files which are derived from this file.")
     gene_list_for: Optional[List[StrictStr]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
@@ -73,37 +71,11 @@ class GenomeBrowserAnnotationFile(BaseModel):
     href: Optional[StrictStr] = Field(default=None, description="The download path to obtain file.")
     s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
     upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
-    __properties: ClassVar[List[str]] = ["cell_type_annotation", "assembly", "release_timestamp", "file_format_type", "transcriptome_annotation", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "derived_manually", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "assay_titles", "href", "s3_uri", "upload_credentials"]
-
-    @field_validator('assembly')
-    def assembly_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Cast - GRCm39', 'GRCh38', 'GRCm39', 'custom']):
-            raise ValueError("must be one of enum values ('Cast - GRCm39', 'GRCh38', 'GRCm39', 'custom')")
-        return value
-
-    @field_validator('file_format_type')
-    def file_format_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['bed12', 'bed3', 'bed3+', 'bed5', 'bed6', 'bed6+', 'bed9', 'bed9+', 'mpra_starr']):
-            raise ValueError("must be one of enum values ('bed12', 'bed3', 'bed3+', 'bed5', 'bed6', 'bed6+', 'bed9', 'bed9+', 'mpra_starr')")
-        return value
-
-    @field_validator('transcriptome_annotation')
-    def transcriptome_annotation_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['GENCODE 32', 'GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE Cast - M32', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34']):
-            raise ValueError("must be one of enum values ('GENCODE 32', 'GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE Cast - M32', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34')")
-        return value
+    assembly: Optional[StrictStr] = Field(default=None, description="The assembly associated with the index file.")
+    transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
+    filtered: Optional[StrictBool] = Field(default=None, description="Indicates whether reads that did not pass a filtering step, such as PCR duplicates, have been removed from the file.")
+    redacted: Optional[StrictBool] = Field(default=None, description="Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information.")
+    __properties: ClassVar[List[str]] = ["release_timestamp", "controlled_access", "anvil_url", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "derived_manually", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "assay_titles", "href", "s3_uri", "upload_credentials", "assembly", "transcriptome_annotation", "filtered", "redacted"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -192,8 +164,8 @@ class GenomeBrowserAnnotationFile(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['bigBed']):
-            raise ValueError("must be one of enum values ('bigBed')")
+        if value not in set(['bai', 'tbi']):
+            raise ValueError("must be one of enum values ('bai', 'tbi')")
         return value
 
     @field_validator('md5sum')
@@ -234,7 +206,7 @@ class GenomeBrowserAnnotationFile(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of GenomeBrowserAnnotationFile from a JSON string"""
+        """Create an instance of IndexFile from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -259,7 +231,7 @@ class GenomeBrowserAnnotationFile(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of GenomeBrowserAnnotationFile from a dict"""
+        """Create an instance of IndexFile from a dict"""
         if obj is None:
             return None
 
@@ -267,11 +239,9 @@ class GenomeBrowserAnnotationFile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cell_type_annotation": obj.get("cell_type_annotation"),
-            "assembly": obj.get("assembly"),
             "release_timestamp": obj.get("release_timestamp"),
-            "file_format_type": obj.get("file_format_type"),
-            "transcriptome_annotation": obj.get("transcriptome_annotation"),
+            "controlled_access": obj.get("controlled_access"),
+            "anvil_url": obj.get("anvil_url"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
@@ -312,7 +282,11 @@ class GenomeBrowserAnnotationFile(BaseModel):
             "assay_titles": obj.get("assay_titles"),
             "href": obj.get("href"),
             "s3_uri": obj.get("s3_uri"),
-            "upload_credentials": obj.get("upload_credentials")
+            "upload_credentials": obj.get("upload_credentials"),
+            "assembly": obj.get("assembly"),
+            "transcriptome_annotation": obj.get("transcriptome_annotation"),
+            "filtered": obj.get("filtered"),
+            "redacted": obj.get("redacted")
         })
         return _obj
 

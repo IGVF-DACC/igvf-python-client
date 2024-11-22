@@ -19,16 +19,16 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from igvf_client.models.model_set import ModelSet
+from igvf_client.models.index_file import IndexFile
 from igvf_client.models.search_facet import SearchFacet
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ModelSetResults(BaseModel):
+class IndexFileResults(BaseModel):
     """
-    ModelSetResults
+    IndexFileResults
     """ # noqa: E501
-    graph: Optional[List[ModelSet]] = Field(default=None, alias="@graph")
+    graph: Optional[List[IndexFile]] = Field(default=None, alias="@graph")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     total: Optional[StrictInt] = None
@@ -53,7 +53,7 @@ class ModelSetResults(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelSetResults from a JSON string"""
+        """Create an instance of IndexFileResults from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -92,7 +92,7 @@ class ModelSetResults(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelSetResults from a dict"""
+        """Create an instance of IndexFileResults from a dict"""
         if obj is None:
             return None
 
@@ -100,7 +100,7 @@ class ModelSetResults(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "@graph": [ModelSet.from_dict(_item) for _item in obj["@graph"]] if obj.get("@graph") is not None else None,
+            "@graph": [IndexFile.from_dict(_item) for _item in obj["@graph"]] if obj.get("@graph") is not None else None,
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "total": obj.get("total"),

@@ -1,16 +1,14 @@
-# SequenceFile
+# IndexFile
 
-A file containing sequencing results in bam, fastq, or pod5 formats.
+A binary file which is indexed.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**externally_hosted** | **bool** | Indicates whether the file is externally hosted and not stored on portal. | [optional] 
-**external_host_url** | **str** | A link to the resource where the file is externally hosted. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
 **anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
-**release_timestamp** | **str** | The date the object was released. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 
@@ -41,22 +39,9 @@ Name | Type | Description | Notes
 **submitted_file_name** | **str** | Original name of the file. | [optional] 
 **upload_status** | **str** | The upload/validation status of the file. | [optional] 
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
-**flowcell_id** | **str** | The alphanumeric identifier for the flowcell of a sequencing machine. | [optional] 
-**lane** | **int** | An integer identifying the lane of a sequencing machine. | [optional] 
-**read_count** | **int** | Number of reads in a fastq file. | [optional] 
-**minimum_read_length** | **int** | For high-throughput sequencing, the minimum number of contiguous nucleotides determined by sequencing. | [optional] 
-**maximum_read_length** | **int** | For high-throughput sequencing, the maximum number of contiguous nucleotides determined by sequencing. | [optional] 
-**mean_read_length** | **float** | For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing. | [optional] 
-**sequencing_platform** | **str** | The measurement device used to produce sequencing data. | [optional] 
-**sequencing_kit** | **str** | A reagent kit used with a library to prepare it for sequencing. | [optional] 
-**sequencing_run** | **int** | An ordinal number indicating which sequencing run of the associated library that the file belongs to. | [optional] 
-**illumina_read_type** | **str** | The read type of the file. Relevant only for files produced using an Illumina sequencing platform. | [optional] 
-**index** | **str** | An Illumina index associated with the file. | [optional] 
-**base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
-**read_names** | **List[str]** | The read names of a sequence file based on how it will be used by uniform pipelines. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the sequence file. | [optional] 
+**summary** | **str** | A summary of the index file. | [optional] 
 **integrated_in** | **List[str]** | Construct library set(s) that this file was used for in insert design. | [optional] 
 **input_file_for** | **List[str]** | The files which are derived from this file. | [optional] 
 **gene_list_for** | **List[str]** | File Set(s) that this file is a gene list for. | [optional] 
@@ -65,24 +50,27 @@ Name | Type | Description | Notes
 **href** | **str** | The download path to obtain file. | [optional] 
 **s3_uri** | **str** | The S3 URI of public file object. | [optional] 
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 
-**seqspecs** | **List[str]** | Link(s) to the associated seqspec YAML configuration file(s). | [optional] 
+**assembly** | **str** | The assembly associated with the index file. | [optional] 
+**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
+**filtered** | **bool** | Indicates whether reads that did not pass a filtering step, such as PCR duplicates, have been removed from the file. | [optional] 
+**redacted** | **bool** | Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information. | [optional] 
 
 ## Example
 
 ```python
-from igvf_client.models.sequence_file import SequenceFile
+from igvf_client.models.index_file import IndexFile
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of SequenceFile from a JSON string
-sequence_file_instance = SequenceFile.from_json(json)
+# create an instance of IndexFile from a JSON string
+index_file_instance = IndexFile.from_json(json)
 # print the JSON string representation of the object
-print(SequenceFile.to_json())
+print(IndexFile.to_json())
 
 # convert the object into a dict
-sequence_file_dict = sequence_file_instance.to_dict()
-# create an instance of SequenceFile from a dict
-sequence_file_from_dict = SequenceFile.from_dict(sequence_file_dict)
+index_file_dict = index_file_instance.to_dict()
+# create an instance of IndexFile from a dict
+index_file_from_dict = IndexFile.from_dict(index_file_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
