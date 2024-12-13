@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "60.0.0"
+    "version": "61.0.1"
   },
   "servers": [
     {
@@ -1318,9 +1318,13 @@
                 "title": "Type",
                 "enum": [
                   "alignment",
+                  "barcode counting",
                   "barcode mapping generation",
                   "base calling",
+                  "cell to feature barcode mapping",
                   "counts normalization",
+                  "demultiplexing",
+                  "differential expression analysis",
                   "file format conversion",
                   "filtering",
                   "interaction calling",
@@ -1330,6 +1334,7 @@
                   "signal generation",
                   "signal normalization",
                   "spatial feature detection",
+                  "UMI quantification",
                   "variant annotation"
                 ]
               },
@@ -1438,6 +1443,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -1532,6 +1538,8 @@
                   "transcriptome reference",
                   "transcripts",
                   "transcripts_proteins",
+                  "unfiltered global differential expression",
+                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant effects",
                   "variant functional predictions",
@@ -1645,6 +1653,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -1739,6 +1748,8 @@
                   "transcriptome reference",
                   "transcripts",
                   "transcripts_proteins",
+                  "unfiltered global differential expression",
+                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant effects",
                   "variant functional predictions",
@@ -4271,9 +4282,9 @@
               "title": "External Resources",
               "items": {
                 "type": "string",
-                "title": "External Identifier",
-                "pattern": "(^GEO:SAMN\\d+$)|(^ENCODE:ENCDO\\d{3}[A-Z]{3}$)",
-                "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF donors."
+                "title": "External identifier",
+                "pattern": "(^GEO:SAMN\\d+$)|(^ENCODE:ENCDO\\d{3}[A-Z]{3}$)|^(IGSR):.+$",
+                "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file objects."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors."
             },
@@ -13709,6 +13720,7 @@
                   "h5ad",
                   "hdf5",
                   "mtx",
+                  "pkl",
                   "tar",
                   "hic",
                   "cool",
@@ -14616,6 +14628,7 @@
                   "peak",
                   "time",
                   "treatment",
+                  "UMI count",
                   "variant"
                 ]
               },
@@ -19427,6 +19440,7 @@
                 "type": "string",
                 "title": "Sequencing Kit",
                 "enum": [
+                  "AVITI 2x75 Sequencing Kit Cloudbreak High Output",
                   "AVITI 2x150 Sequencing Kit Cloudbreak High Output",
                   "HiSeq SBS Kit v4",
                   "HiSeq SR Cluster Kit v4-cBot-HS",
@@ -25259,8 +25273,7 @@
                   "gRNA sequencing",
                   "lipid-conjugated oligo sequencing",
                   "MORF barcode sequencing",
-                  "quantification DNA barcode sequencing",
-                  "variant sequencing"
+                  "quantification DNA barcode sequencing"
                 ],
                 "description": "The category that best describes this auxiliary file set."
               }
@@ -31009,6 +31022,7 @@
                   "scNT-seq2",
                   "Parse SPLiT-seq",
                   "ATAC-seq",
+                  "varACCESS",
                   "scATAC-seq",
                   "snATAC-seq",
                   "DOGMA-seq",
@@ -39262,6 +39276,7 @@
                   "scNT-seq2",
                   "Parse SPLiT-seq",
                   "ATAC-seq",
+                  "varACCESS",
                   "scATAC-seq",
                   "snATAC-seq",
                   "DOGMA-seq",
@@ -40301,6 +40316,7 @@
                 "type": "string",
                 "title": "Sequencing Kit",
                 "enum": [
+                  "AVITI 2x75 Sequencing Kit Cloudbreak High Output",
                   "AVITI 2x150 Sequencing Kit Cloudbreak High Output",
                   "HiSeq SBS Kit v4",
                   "HiSeq SR Cluster Kit v4-cBot-HS",
@@ -57207,9 +57223,13 @@
                 "title": "Type",
                 "enum": [
                   "alignment",
+                  "barcode counting",
                   "barcode mapping generation",
                   "base calling",
+                  "cell to feature barcode mapping",
                   "counts normalization",
+                  "demultiplexing",
+                  "differential expression analysis",
                   "file format conversion",
                   "filtering",
                   "interaction calling",
@@ -57219,6 +57239,7 @@
                   "signal generation",
                   "signal normalization",
                   "spatial feature detection",
+                  "UMI quantification",
                   "variant annotation"
                 ]
               },
@@ -57384,6 +57405,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -57478,6 +57500,8 @@
                   "transcriptome reference",
                   "transcripts",
                   "transcripts_proteins",
+                  "unfiltered global differential expression",
+                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant effects",
                   "variant functional predictions",
@@ -58510,9 +58534,13 @@
               "type": "string",
               "enum": [
                 "alignment",
+                "barcode counting",
                 "barcode mapping generation",
                 "base calling",
+                "cell to feature barcode mapping",
                 "counts normalization",
+                "demultiplexing",
+                "differential expression analysis",
                 "file format conversion",
                 "filtering",
                 "interaction calling",
@@ -58522,6 +58550,7 @@
                 "signal generation",
                 "signal normalization",
                 "spatial feature detection",
+                "UMI quantification",
                 "variant annotation"
               ]
             }
@@ -58577,6 +58606,7 @@
                 "barcode to variant mapping",
                 "bin paired count",
                 "biological_context",
+                "cell hashing barcodes",
                 "coding variant effects",
                 "coding_variants",
                 "complexes",
@@ -58671,6 +58701,8 @@
                 "transcriptome reference",
                 "transcripts",
                 "transcripts_proteins",
+                "unfiltered global differential expression",
+                "unfiltered local differential expression",
                 "variant binding effects",
                 "variant effects",
                 "variant functional predictions",
@@ -58719,6 +58751,7 @@
                 "barcode to variant mapping",
                 "bin paired count",
                 "biological_context",
+                "cell hashing barcodes",
                 "coding variant effects",
                 "coding_variants",
                 "complexes",
@@ -58813,6 +58846,8 @@
                 "transcriptome reference",
                 "transcripts",
                 "transcripts_proteins",
+                "unfiltered global differential expression",
+                "unfiltered local differential expression",
                 "variant binding effects",
                 "variant effects",
                 "variant functional predictions",
@@ -59679,10 +59714,10 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "External Identifier",
-              "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF donors.",
+              "title": "External identifier",
+              "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file objects.",
               "type": "string",
-              "pattern": "(^GEO:SAMN\\d+$)|(^ENCODE:ENCDO\\d{3}[A-Z]{3}$)"
+              "pattern": "(^GEO:SAMN\\d+$)|(^ENCODE:ENCDO\\d{3}[A-Z]{3}$)|^(IGSR):.+$"
             }
           },
           "sex": {
@@ -62117,6 +62152,7 @@
               "h5ad",
               "hdf5",
               "mtx",
+              "pkl",
               "tar",
               "hic",
               "cool",
@@ -62206,6 +62242,7 @@
                 "peak",
                 "time",
                 "treatment",
+                "UMI count",
                 "variant"
               ]
             }
@@ -63384,6 +63421,7 @@
             "description": "A reagent kit used with a library to prepare it for sequencing.",
             "type": "string",
             "enum": [
+              "AVITI 2x75 Sequencing Kit Cloudbreak High Output",
               "AVITI 2x150 Sequencing Kit Cloudbreak High Output",
               "HiSeq SBS Kit v4",
               "HiSeq SR Cluster Kit v4-cBot-HS",
@@ -64912,8 +64950,7 @@
               "gRNA sequencing",
               "lipid-conjugated oligo sequencing",
               "MORF barcode sequencing",
-              "quantification DNA barcode sequencing",
-              "variant sequencing"
+              "quantification DNA barcode sequencing"
             ]
           },
           "barcode_map": {
@@ -66018,6 +66055,7 @@
               "scNT-seq2",
               "Parse SPLiT-seq",
               "ATAC-seq",
+              "varACCESS",
               "scATAC-seq",
               "snATAC-seq",
               "DOGMA-seq",
@@ -68097,6 +68135,7 @@
                 "scNT-seq2",
                 "Parse SPLiT-seq",
                 "ATAC-seq",
+                "varACCESS",
                 "scATAC-seq",
                 "snATAC-seq",
                 "DOGMA-seq",
@@ -68510,6 +68549,7 @@
               "description": "A reagent kit used with a library to prepare it for sequencing.",
               "type": "string",
               "enum": [
+                "AVITI 2x75 Sequencing Kit Cloudbreak High Output",
                 "AVITI 2x150 Sequencing Kit Cloudbreak High Output",
                 "HiSeq SBS Kit v4",
                 "HiSeq SR Cluster Kit v4-cBot-HS",
