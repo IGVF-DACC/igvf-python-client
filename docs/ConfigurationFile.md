@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **submitted_file_name** | **str** | Original name of the file. | [optional] 
 **upload_status** | **str** | The upload/validation status of the file. | [optional] 
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
+**checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **seqspec_of** | **List[str]** | Sequence files this file is a seqspec of. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

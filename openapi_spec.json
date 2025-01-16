@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "61.1.0"
+    "version": "62.0.0"
   },
   "servers": [
     {
@@ -1325,15 +1325,20 @@
                   "counts normalization",
                   "demultiplexing",
                   "differential expression analysis",
+                  "fastq concatenation",
                   "file format conversion",
                   "filtering",
+                  "fragment generation",
                   "interaction calling",
+                  "matrix generation",
                   "merging",
                   "peak calling",
+                  "read trimming",
                   "quantification",
                   "signal generation",
                   "signal normalization",
                   "spatial feature detection",
+                  "UMI deduplication",
                   "UMI quantification",
                   "variant annotation"
                 ]
@@ -1430,10 +1435,12 @@
                 "type": "string",
                 "title": "Input Content Type",
                 "enum": [
+                  "DNA footprint scores",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
+                  "TF binding scores",
                   "alignments",
                   "barcode onlist",
                   "barcode to TF overexpression mapping",
@@ -1513,12 +1520,14 @@
                   "regulatory_regions_regulatory_regions",
                   "reporter elements",
                   "reporter experiment",
+                  "reporter experiment barcode",
                   "reporter genomic element effects",
                   "reporter genomic variant effects",
                   "reporter variants",
                   "sample sort parameters",
                   "scale factors",
                   "seqspec",
+                  "sequence attributes",
                   "sequence barcodes",
                   "signal",
                   "signal of all reads",
@@ -1640,10 +1649,12 @@
                 "type": "string",
                 "title": "Output Content Type",
                 "enum": [
+                  "DNA footprint scores",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
+                  "TF binding scores",
                   "alignments",
                   "barcode onlist",
                   "barcode to TF overexpression mapping",
@@ -1723,12 +1734,14 @@
                   "regulatory_regions_regulatory_regions",
                   "reporter elements",
                   "reporter experiment",
+                  "reporter experiment barcode",
                   "reporter genomic element effects",
                   "reporter genomic variant effects",
                   "reporter variants",
                   "sample sort parameters",
                   "scale factors",
                   "seqspec",
+                  "sequence attributes",
                   "sequence barcodes",
                   "signal",
                   "signal of all reads",
@@ -4247,6 +4260,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -5079,6 +5093,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -6017,6 +6032,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -6032,6 +6062,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -7573,6 +7604,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -7588,6 +7634,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -9090,6 +9137,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -9105,6 +9167,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -10579,6 +10642,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -10594,6 +10672,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -12043,6 +12122,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -12058,6 +12152,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -13537,6 +13632,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -13552,6 +13662,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -15078,6 +15189,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -15093,6 +15219,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -15290,6 +15417,7 @@
                 "enum": [
                   "hdf5",
                   "json",
+                  "pt",
                   "tar",
                   "tsv"
                 ],
@@ -16597,6 +16725,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -16612,6 +16755,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -18202,6 +18346,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -18217,6 +18376,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -19359,7 +19519,10 @@
                 "enum": [
                   "Read 1",
                   "Read 2",
-                  "Barcode index"
+                  "Barcode index",
+                  "Barcode forward",
+                  "UMI",
+                  "Barcode reverse"
                 ],
                 "description": "The read name of a sequence file based on how it will be used by uniform pipelines."
               },
@@ -20038,6 +20201,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -20053,6 +20231,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -20218,7 +20397,8 @@
                 "type": "string",
                 "title": "File Format",
                 "enum": [
-                  "bigWig"
+                  "bigWig",
+                  "npz"
                 ],
                 "description": "The file format or extension of the file."
               }
@@ -21696,6 +21876,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Version",
+                "description": "The Checkfiles GitHub version release the file was validated with."
+              }
+            },
+            "description": "Filter by checkfiles_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "collections",
             "in": "query",
             "schema": {
@@ -21711,6 +21906,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -23249,6 +23445,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -25010,6 +25207,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -27038,6 +27236,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -27912,6 +28111,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "random selections",
                   "sequence variants",
                   "synthetic elements",
                   "transcription start sites",
@@ -28583,6 +28783,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -30232,6 +30433,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -31034,6 +31236,7 @@
                   "TF ChIP-seq",
                   "MPRA",
                   "MPRA (scQer)",
+                  "electroporated MPRA",
                   "AAV-MPRA",
                   "lentiMPRA",
                   "STARR-seq",
@@ -32496,6 +32699,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -34253,6 +34457,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -39288,6 +39493,7 @@
                   "TF ChIP-seq",
                   "MPRA",
                   "MPRA (scQer)",
+                  "electroporated MPRA",
                   "AAV-MPRA",
                   "lentiMPRA",
                   "STARR-seq",
@@ -40165,6 +40371,7 @@
                 "title": "Company",
                 "enum": [
                   "10X Genomics",
+                  "Element Biosciences",
                   "Illumina",
                   "Life Technologies",
                   "Oxford Nanopore Technologies",
@@ -43616,6 +43823,7 @@
                 "type": "string",
                 "title": "Biosample Qualifiers",
                 "enum": [
+                  "calcified",
                   "exhausted"
                 ],
                 "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
@@ -43772,6 +43980,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -45832,6 +46041,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -47653,6 +47863,7 @@
                 "type": "string",
                 "title": "Biosample Qualifiers",
                 "enum": [
+                  "calcified",
                   "exhausted"
                 ],
                 "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
@@ -47711,6 +47922,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -49475,6 +49687,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -50873,6 +51086,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -52836,6 +53050,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -57230,15 +57445,20 @@
                   "counts normalization",
                   "demultiplexing",
                   "differential expression analysis",
+                  "fastq concatenation",
                   "file format conversion",
                   "filtering",
+                  "fragment generation",
                   "interaction calling",
+                  "matrix generation",
                   "merging",
                   "peak calling",
+                  "read trimming",
                   "quantification",
                   "signal generation",
                   "signal normalization",
                   "spatial feature detection",
+                  "UMI deduplication",
                   "UMI quantification",
                   "variant annotation"
                 ]
@@ -57392,10 +57612,12 @@
                 "type": "string",
                 "title": "Output Content Type",
                 "enum": [
+                  "DNA footprint scores",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
+                  "TF binding scores",
                   "alignments",
                   "barcode onlist",
                   "barcode to TF overexpression mapping",
@@ -57475,12 +57697,14 @@
                   "regulatory_regions_regulatory_regions",
                   "reporter elements",
                   "reporter experiment",
+                  "reporter experiment barcode",
                   "reporter genomic element effects",
                   "reporter genomic variant effects",
                   "reporter variants",
                   "sample sort parameters",
                   "scale factors",
                   "seqspec",
+                  "sequence attributes",
                   "sequence barcodes",
                   "signal",
                   "signal of all reads",
@@ -57593,6 +57817,7 @@
                   "IGVF_catalog_beta_v0.2",
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
                   "MaveDB",
                   "MPRAbase",
                   "VarChAMP",
@@ -58541,15 +58766,20 @@
                 "counts normalization",
                 "demultiplexing",
                 "differential expression analysis",
+                "fastq concatenation",
                 "file format conversion",
                 "filtering",
+                "fragment generation",
                 "interaction calling",
+                "matrix generation",
                 "merging",
                 "peak calling",
+                "read trimming",
                 "quantification",
                 "signal generation",
                 "signal normalization",
                 "spatial feature detection",
+                "UMI deduplication",
                 "UMI quantification",
                 "variant annotation"
               ]
@@ -58593,10 +58823,12 @@
               "description": "A content type used as input for the analysis step.",
               "type": "string",
               "enum": [
+                "DNA footprint scores",
                 "MPRA sequence designs",
                 "Nanopore reads",
                 "PacBio subreads",
                 "SNP effect matrix",
+                "TF binding scores",
                 "alignments",
                 "barcode onlist",
                 "barcode to TF overexpression mapping",
@@ -58676,12 +58908,14 @@
                 "regulatory_regions_regulatory_regions",
                 "reporter elements",
                 "reporter experiment",
+                "reporter experiment barcode",
                 "reporter genomic element effects",
                 "reporter genomic variant effects",
                 "reporter variants",
                 "sample sort parameters",
                 "scale factors",
                 "seqspec",
+                "sequence attributes",
                 "sequence barcodes",
                 "signal",
                 "signal of all reads",
@@ -58738,10 +58972,12 @@
               "description": "A content type produced as output by the analysis step.",
               "type": "string",
               "enum": [
+                "DNA footprint scores",
                 "MPRA sequence designs",
                 "Nanopore reads",
                 "PacBio subreads",
                 "SNP effect matrix",
+                "TF binding scores",
                 "alignments",
                 "barcode onlist",
                 "barcode to TF overexpression mapping",
@@ -58821,12 +59057,14 @@
                 "regulatory_regions_regulatory_regions",
                 "reporter elements",
                 "reporter experiment",
+                "reporter experiment barcode",
                 "reporter genomic element effects",
                 "reporter genomic variant effects",
                 "reporter variants",
                 "sample sort parameters",
                 "scale factors",
                 "seqspec",
+                "sequence attributes",
                 "sequence barcodes",
                 "signal",
                 "signal of all reads",
@@ -59630,6 +59868,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -59965,6 +60204,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -60259,6 +60499,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -60439,6 +60680,11 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
           "read_count": {
             "title": "Read Count",
             "description": "Number of reads in a bam file. Including both mapped, unmapped, and multi-mapped read counts.",
@@ -60607,6 +60853,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -60787,6 +61034,11 @@
           "validation_error_detail": {
             "title": "Validation Error Detail",
             "description": "Explanation of why the file failed the automated content checks.",
+            "type": "string"
+          },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
           "seqspec_of": {
@@ -60998,6 +61250,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -61178,6 +61431,11 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -61325,6 +61583,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -61506,6 +61765,11 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -61663,6 +61927,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -61844,6 +62109,11 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -62022,6 +62292,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -62207,6 +62478,11 @@
           "validation_error_detail": {
             "title": "Validation Error Detail",
             "description": "Explanation of why the file failed the automated content checks.",
+            "type": "string"
+          },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
           "principal_dimension": {
@@ -62419,6 +62695,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -62548,6 +62825,7 @@
             "enum": [
               "hdf5",
               "json",
+              "pt",
               "tar",
               "tsv"
             ]
@@ -62600,6 +62878,11 @@
           "validation_error_detail": {
             "title": "Validation Error Detail",
             "description": "Explanation of why the file failed the automated content checks.",
+            "type": "string"
+          },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
           "@id": {
@@ -62813,6 +63096,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -63007,6 +63291,11 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
           "sources": {
             "title": "Sources",
             "description": "The originating lab(s) or vendor(s).",
@@ -63190,6 +63479,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -63372,6 +63662,11 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
           "flowcell_id": {
             "title": "Flowcell ID",
             "description": "The alphanumeric identifier for the flowcell of a sequencing machine.",
@@ -63515,7 +63810,10 @@
               "enum": [
                 "Read 1",
                 "Read 2",
-                "Barcode index"
+                "Barcode index",
+                "Barcode forward",
+                "UMI",
+                "Barcode reverse"
               ]
             }
           },
@@ -63615,7 +63913,7 @@
       },
       "SignalFile": {
         "title": "Signal File",
-        "description": "A file containing analyzed sequencing data in signal form using a bigwig format.",
+        "description": "A file containing analyzed sequencing data in signal form using a bigwig or npz format.",
         "additionalProperties": false,
         "type": "object",
         "properties": {
@@ -63723,6 +64021,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -63850,7 +64149,8 @@
             "description": "The file format or extension of the file.",
             "type": "string",
             "enum": [
-              "bigWig"
+              "bigWig",
+              "npz"
             ]
           },
           "file_format_specifications": {
@@ -63901,6 +64201,11 @@
           "validation_error_detail": {
             "title": "Validation Error Detail",
             "description": "Explanation of why the file failed the automated content checks.",
+            "type": "string"
+          },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
           "strand_specificity": {
@@ -64143,6 +64448,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -64327,6 +64633,11 @@
             "description": "Explanation of why the file failed the automated content checks.",
             "type": "string"
           },
+          "checkfiles_version": {
+            "title": "Checkfiles Version",
+            "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -64506,6 +64817,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -64816,6 +65128,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -65194,6 +65507,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -65327,6 +65641,7 @@
                 "genes",
                 "histone modifications",
                 "protein interactors",
+                "random selections",
                 "sequence variants",
                 "synthetic elements",
                 "transcription start sites",
@@ -65599,6 +65914,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -65895,6 +66211,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -66067,6 +66384,7 @@
               "TF ChIP-seq",
               "MPRA",
               "MPRA (scQer)",
+              "electroporated MPRA",
               "AAV-MPRA",
               "lentiMPRA",
               "STARR-seq",
@@ -66321,6 +66639,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -66718,6 +67037,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -68147,6 +68467,7 @@
                 "TF ChIP-seq",
                 "MPRA",
                 "MPRA (scQer)",
+                "electroporated MPRA",
                 "AAV-MPRA",
                 "lentiMPRA",
                 "STARR-seq",
@@ -68529,6 +68850,7 @@
             "type": "string",
             "enum": [
               "10X Genomics",
+              "Element Biosciences",
               "Illumina",
               "Life Technologies",
               "Oxford Nanopore Technologies",
@@ -69715,6 +70037,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -70107,6 +70430,7 @@
               "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
               "type": "string",
               "enum": [
+                "calcified",
                 "exhausted"
               ]
             }
@@ -70314,6 +70638,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -70805,6 +71130,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -71124,6 +71450,7 @@
               "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
               "type": "string",
               "enum": [
+                "calcified",
                 "exhausted"
               ]
             }
@@ -71354,6 +71681,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -71757,6 +72085,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -72327,6 +72656,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",
@@ -73666,6 +73996,7 @@
                 "IGVF_catalog_beta_v0.2",
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
                 "MaveDB",
                 "MPRAbase",
                 "VarChAMP",

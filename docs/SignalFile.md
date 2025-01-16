@@ -1,6 +1,6 @@
 # SignalFile
 
-A file containing analyzed sequencing data in signal form using a bigwig format.
+A file containing analyzed sequencing data in signal form using a bigwig or npz format.
 
 ## Properties
 
@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **submitted_file_name** | **str** | Original name of the file. | [optional] 
 **upload_status** | **str** | The upload/validation status of the file. | [optional] 
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
+**checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **strand_specificity** | **str** | The strandedness of the signal file: plus, minus, or unstranded. | [optional] 
 **filtered** | **bool** | Indicates if the signal file is filtered. | [optional] 
 **normalized** | **bool** | Indicates if the signal file is normalized. | [optional] 
