@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "62.0.0"
+    "version": "63.0.0"
   },
   "servers": [
     {
@@ -1350,18 +1350,45 @@
             "explode": true
           },
           {
-            "name": "analysis_step_versions",
+            "name": "analysis_step_versions.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Analysis Step Versions",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version"
-              },
-              "description": "The analysis step versions associated with this analysis step."
+                "title": "ID"
+              }
             },
-            "description": "Filter by analysis_step_versions",
+            "description": "Filter by analysis_step_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.name",
             "style": "form",
             "explode": true
           },
@@ -1496,6 +1523,7 @@
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
+                  "neural network architecture",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -1710,6 +1738,7 @@
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
+                  "neural network architecture",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -31209,6 +31238,42 @@
             "explode": true
           },
           {
+            "name": "onlist_files",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Onlist Files",
+              "items": {
+                "type": "string",
+                "title": "Onlist File"
+              },
+              "description": "The barcode region onlist files listed in associated seqspec yaml files."
+            },
+            "description": "Filter by onlist_files",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "onlist_method",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Onlist Method",
+                "enum": [
+                  "no combination",
+                  "product",
+                  "multi"
+                ],
+                "description": "The method by which the onlist files will be combined by the seqspec onlist tool to generate the final barcode inclusion list for the single cell uniform pipeline."
+              }
+            },
+            "description": "Filter by onlist_method",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preferred_assay_title",
             "in": "query",
             "schema": {
@@ -44255,19 +44320,103 @@
             "explode": true
           },
           {
-            "name": "donors",
+            "name": "donors.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Donors",
               "items": {
                 "type": "string",
-                "title": "Donor",
-                "description": "Donor."
-              },
-              "description": "Donor(s) the sample was derived from."
+                "title": "ID"
+              }
             },
-            "description": "Filter by donors",
+            "description": "Filter by donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.ethnicities",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Ethnicity",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "African American",
+                  "African Caribbean",
+                  "Arab",
+                  "Asian",
+                  "Black",
+                  "Black African",
+                  "Chinese",
+                  "Colombian",
+                  "Dai Chinese",
+                  "Esan",
+                  "Eskimo",
+                  "European",
+                  "Gambian",
+                  "Han Chinese",
+                  "Hispanic",
+                  "Indian",
+                  "Japanese",
+                  "Kinh Vietnamese",
+                  "Luhya",
+                  "Maasai",
+                  "Mende",
+                  "Native Hawaiian",
+                  "Pacific Islander",
+                  "Puerto Rican",
+                  "Yoruba"
+                ]
+              },
+              "description": "Ethnicity of the donor."
+            },
+            "description": "Filter by donors.ethnicities",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Name",
+                "description": "The specific strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain",
             "style": "form",
             "explode": true
           },
@@ -46285,18 +46434,103 @@
             "explode": true
           },
           {
-            "name": "donors",
+            "name": "donors.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Donors",
               "items": {
                 "type": "string",
-                "title": "Donor"
-              },
-              "description": "The donors of the samples included in this multiplexed sample."
+                "title": "ID"
+              }
             },
-            "description": "Filter by donors",
+            "description": "Filter by donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.ethnicities",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Ethnicity",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "African American",
+                  "African Caribbean",
+                  "Arab",
+                  "Asian",
+                  "Black",
+                  "Black African",
+                  "Chinese",
+                  "Colombian",
+                  "Dai Chinese",
+                  "Esan",
+                  "Eskimo",
+                  "European",
+                  "Gambian",
+                  "Han Chinese",
+                  "Hispanic",
+                  "Indian",
+                  "Japanese",
+                  "Kinh Vietnamese",
+                  "Luhya",
+                  "Maasai",
+                  "Mende",
+                  "Native Hawaiian",
+                  "Pacific Islander",
+                  "Puerto Rican",
+                  "Yoruba"
+                ]
+              },
+              "description": "Ethnicity of the donor."
+            },
+            "description": "Filter by donors.ethnicities",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Name",
+                "description": "The specific strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain",
             "style": "form",
             "explode": true
           },
@@ -48166,19 +48400,103 @@
             "explode": true
           },
           {
-            "name": "donors",
+            "name": "donors.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Donors",
               "items": {
                 "type": "string",
-                "title": "Donor",
-                "description": "Donor."
-              },
-              "description": "Donor(s) the sample was derived from."
+                "title": "ID"
+              }
             },
-            "description": "Filter by donors",
+            "description": "Filter by donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.ethnicities",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Ethnicity",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "African American",
+                  "African Caribbean",
+                  "Arab",
+                  "Asian",
+                  "Black",
+                  "Black African",
+                  "Chinese",
+                  "Colombian",
+                  "Dai Chinese",
+                  "Esan",
+                  "Eskimo",
+                  "European",
+                  "Gambian",
+                  "Han Chinese",
+                  "Hispanic",
+                  "Indian",
+                  "Japanese",
+                  "Kinh Vietnamese",
+                  "Luhya",
+                  "Maasai",
+                  "Mende",
+                  "Native Hawaiian",
+                  "Pacific Islander",
+                  "Puerto Rican",
+                  "Yoruba"
+                ]
+              },
+              "description": "Ethnicity of the donor."
+            },
+            "description": "Filter by donors.ethnicities",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Name",
+                "description": "The specific strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain",
             "style": "form",
             "explode": true
           },
@@ -51330,19 +51648,103 @@
             "explode": true
           },
           {
-            "name": "donors",
+            "name": "donors.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Donors",
               "items": {
                 "type": "string",
-                "title": "Donor",
-                "description": "Donor."
-              },
-              "description": "Donor(s) the sample was derived from."
+                "title": "ID"
+              }
             },
-            "description": "Filter by donors",
+            "description": "Filter by donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.ethnicities",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Ethnicity",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "African American",
+                  "African Caribbean",
+                  "Arab",
+                  "Asian",
+                  "Black",
+                  "Black African",
+                  "Chinese",
+                  "Colombian",
+                  "Dai Chinese",
+                  "Esan",
+                  "Eskimo",
+                  "European",
+                  "Gambian",
+                  "Han Chinese",
+                  "Hispanic",
+                  "Indian",
+                  "Japanese",
+                  "Kinh Vietnamese",
+                  "Luhya",
+                  "Maasai",
+                  "Mende",
+                  "Native Hawaiian",
+                  "Pacific Islander",
+                  "Puerto Rican",
+                  "Yoruba"
+                ]
+              },
+              "description": "Ethnicity of the donor."
+            },
+            "description": "Filter by donors.ethnicities",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Name",
+                "description": "The specific strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain",
             "style": "form",
             "explode": true
           },
@@ -53294,19 +53696,103 @@
             "explode": true
           },
           {
-            "name": "donors",
+            "name": "donors.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Donors",
               "items": {
                 "type": "string",
-                "title": "Donor",
-                "description": "Donor."
-              },
-              "description": "Donor(s) the sample was derived from."
+                "title": "ID"
+              }
             },
-            "description": "Filter by donors",
+            "description": "Filter by donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.ethnicities",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Ethnicity",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "African American",
+                  "African Caribbean",
+                  "Arab",
+                  "Asian",
+                  "Black",
+                  "Black African",
+                  "Chinese",
+                  "Colombian",
+                  "Dai Chinese",
+                  "Esan",
+                  "Eskimo",
+                  "European",
+                  "Gambian",
+                  "Han Chinese",
+                  "Hispanic",
+                  "Indian",
+                  "Japanese",
+                  "Kinh Vietnamese",
+                  "Luhya",
+                  "Maasai",
+                  "Mende",
+                  "Native Hawaiian",
+                  "Pacific Islander",
+                  "Puerto Rican",
+                  "Yoruba"
+                ]
+              },
+              "description": "Ethnicity of the donor."
+            },
+            "description": "Filter by donors.ethnicities",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Name",
+                "description": "The specific strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain",
             "style": "form",
             "explode": true
           },
@@ -57588,6 +58074,162 @@
             "explode": true
           },
           {
+            "name": "analysis_steps.input_content_types",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Input Content Types",
+              "items": {
+                "type": "string",
+                "title": "Input Content Type",
+                "enum": [
+                  "DNA footprint scores",
+                  "MPRA sequence designs",
+                  "Nanopore reads",
+                  "PacBio subreads",
+                  "SNP effect matrix",
+                  "TF binding scores",
+                  "alignments",
+                  "barcode onlist",
+                  "barcode to TF overexpression mapping",
+                  "barcode to element mapping",
+                  "barcode to hashtag mapping",
+                  "barcode to sample mapping",
+                  "barcode to variant mapping",
+                  "bin paired count",
+                  "biological_context",
+                  "cell hashing barcodes",
+                  "coding variant effects",
+                  "coding_variants",
+                  "complexes",
+                  "complexes_complexes",
+                  "complexes_proteins",
+                  "complexes_terms",
+                  "contact matrix",
+                  "control signal",
+                  "detected tissue",
+                  "differential chromatin contact quantifications",
+                  "differential element quantifications",
+                  "differential gene expression quantifications",
+                  "differential transcript expression quantifications",
+                  "diseases_genes",
+                  "documentation (readme)",
+                  "drugs",
+                  "edge weights",
+                  "editing templates",
+                  "element quantifications",
+                  "elements reference",
+                  "elements_genes",
+                  "exclusion list",
+                  "external source data",
+                  "fiducial alignment",
+                  "filtered feature barcode matrix",
+                  "fold change over control",
+                  "fragments",
+                  "gene quantifications",
+                  "genes",
+                  "genes_genes",
+                  "genes_pathways",
+                  "genes_terms",
+                  "genes_transcripts",
+                  "genome reference",
+                  "go_terms_proteins",
+                  "graph structure",
+                  "guide RNA sequences",
+                  "guide quantifications",
+                  "high resolution tissue",
+                  "inclusion list",
+                  "loci",
+                  "low resolution tissue",
+                  "model parameters",
+                  "motifs",
+                  "motifs_proteins",
+                  "neural network architecture",
+                  "ontology_terms",
+                  "ontology_terms_ontology_terms",
+                  "pathways",
+                  "pathways_pathways",
+                  "peak quantifications",
+                  "peaks",
+                  "position weight matrix",
+                  "prime editing guide RNA sequences",
+                  "protein to protein interaction score",
+                  "proteins",
+                  "proteins_proteins",
+                  "raw feature barcode matrix",
+                  "raw signal",
+                  "read-depth signal",
+                  "reads",
+                  "regulatory_regions",
+                  "regulatory_regions_genes",
+                  "regulatory_regions_genes_biosamples",
+                  "regulatory_regions_genes_biosamples_donors",
+                  "regulatory_regions_genes_biosamples_treatments_chebi",
+                  "regulatory_regions_genes_biosamples_treatments_proteins",
+                  "regulatory_regions_regulatory_regions",
+                  "reporter elements",
+                  "reporter experiment",
+                  "reporter experiment barcode",
+                  "reporter genomic element effects",
+                  "reporter genomic variant effects",
+                  "reporter variants",
+                  "sample sort parameters",
+                  "scale factors",
+                  "seqspec",
+                  "sequence attributes",
+                  "sequence barcodes",
+                  "signal",
+                  "signal of all reads",
+                  "signal of unique reads",
+                  "signal p-value",
+                  "sparse gene count matrix",
+                  "sparse peak count matrix",
+                  "sparse transcript count matrix",
+                  "spike-ins",
+                  "studies",
+                  "studies_variants",
+                  "studies_variants_phenotypes",
+                  "tissue positions",
+                  "transcript quantifications",
+                  "transcriptome alignments",
+                  "transcriptome annotations",
+                  "transcriptome reference",
+                  "transcripts",
+                  "transcripts_proteins",
+                  "unfiltered global differential expression",
+                  "unfiltered local differential expression",
+                  "variant binding effects",
+                  "variant effects",
+                  "variant functional predictions",
+                  "variant localization impacts",
+                  "variant to element mapping",
+                  "variants",
+                  "variants_coding_variants",
+                  "variants_diseases",
+                  "variants_diseases_genes",
+                  "variants_drugs",
+                  "variants_drugs_genes",
+                  "variants_genes",
+                  "variants_genes_terms",
+                  "variants_phenotypes",
+                  "variants_phenotypes_studies",
+                  "variants_proteins",
+                  "variants_proteins_biosamples",
+                  "variants_proteins_phenotypes",
+                  "variants_proteins_terms",
+                  "variants_regulatory_regions",
+                  "variants_variants",
+                  "vector sequences"
+                ],
+                "description": "A content type used as input for the analysis step."
+              },
+              "description": "The content types used as input for the analysis step."
+            },
+            "description": "Filter by analysis_steps.input_content_types",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_steps.name",
             "in": "query",
             "schema": {
@@ -57673,6 +58315,7 @@
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
+                  "neural network architecture",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -58884,6 +59527,7 @@
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
+                "neural network architecture",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
                 "pathways",
@@ -59033,6 +59677,7 @@
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
+                "neural network architecture",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
                 "pathways",
@@ -66484,6 +67129,26 @@
             "uniqueItems": true,
             "items": {
               "title": "Phenotype Term",
+              "type": "string"
+            }
+          },
+          "onlist_method": {
+            "title": "Onlist Method",
+            "description": "The method by which the onlist files will be combined by the seqspec onlist tool to generate the final barcode inclusion list for the single cell uniform pipeline.",
+            "type": "string",
+            "enum": [
+              "no combination",
+              "product",
+              "multi"
+            ]
+          },
+          "onlist_files": {
+            "title": "Onlist Files",
+            "description": "The barcode region onlist files listed in associated seqspec yaml files.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Onlist File",
               "type": "string"
             }
           },
