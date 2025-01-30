@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "63.0.0"
+    "version": "64.0.0"
   },
   "servers": [
     {
@@ -1552,6 +1552,7 @@
                   "reporter genomic element effects",
                   "reporter genomic variant effects",
                   "reporter variants",
+                  "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
                   "seqspec",
@@ -1767,6 +1768,7 @@
                   "reporter genomic element effects",
                   "reporter genomic variant effects",
                   "reporter variants",
+                  "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
                   "seqspec",
@@ -7358,6 +7360,51 @@
             "description": "Filter by validation_error_detail",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -8823,6 +8870,51 @@
               }
             },
             "description": "Filter by validation_error_detail",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
             "style": "form",
             "explode": true
           }
@@ -10396,6 +10488,51 @@
             "description": "Filter by validation_error_detail",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -11844,6 +11981,51 @@
               }
             },
             "description": "Filter by validation_error_detail",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
             "style": "form",
             "explode": true
           }
@@ -13386,6 +13568,51 @@
             "description": "Filter by validation_error_detail",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -14759,6 +14986,7 @@
                 "title": "Secondary Dimensions",
                 "enum": [
                   "antibody capture",
+                  "barcode count",
                   "cell",
                   "CRISPR guide capture",
                   "fragment",
@@ -14926,6 +15154,51 @@
               }
             },
             "description": "Filter by validation_error_detail",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
             "style": "form",
             "explode": true
           }
@@ -16439,6 +16712,51 @@
               }
             },
             "description": "Filter by validation_error_detail",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
             "style": "form",
             "explode": true
           }
@@ -18058,6 +18376,51 @@
               }
             },
             "description": "Filter by validation_error_detail",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
             "style": "form",
             "explode": true
           }
@@ -19889,6 +20252,51 @@
             "description": "Filter by validation_error_detail",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -21533,6 +21941,51 @@
             "description": "Filter by validation_error_detail",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -23152,6 +23605,51 @@
               }
             },
             "description": "Filter by validation_error_detail",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflow.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflow.uniform_pipeline",
             "style": "form",
             "explode": true
           }
@@ -58173,6 +58671,7 @@
                   "reporter genomic element effects",
                   "reporter genomic variant effects",
                   "reporter variants",
+                  "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
                   "seqspec",
@@ -58344,6 +58843,7 @@
                   "reporter genomic element effects",
                   "reporter genomic variant effects",
                   "reporter variants",
+                  "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
                   "seqspec",
@@ -59556,6 +60056,7 @@
                 "reporter genomic element effects",
                 "reporter genomic variant effects",
                 "reporter variants",
+                "sample barcode count matrix",
                 "sample sort parameters",
                 "scale factors",
                 "seqspec",
@@ -59706,6 +60207,7 @@
                 "reporter genomic element effects",
                 "reporter genomic variant effects",
                 "reporter variants",
+                "sample barcode count matrix",
                 "sample sort parameters",
                 "scale factors",
                 "seqspec",
@@ -61413,6 +61915,11 @@
               "type": "string"
             }
           },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
+          },
           "href": {
             "title": "Download URL",
             "description": "The download path to obtain file.",
@@ -61762,6 +62269,11 @@
               "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
+          },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
           },
           "href": {
             "title": "Download URL",
@@ -62148,6 +62660,11 @@
               "type": "string"
             }
           },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
+          },
           "href": {
             "title": "Download URL",
             "description": "The download path to obtain file.",
@@ -62481,6 +62998,11 @@
               "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
+          },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
           },
           "href": {
             "title": "Download URL",
@@ -62826,6 +63348,11 @@
               "type": "string"
             }
           },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
+          },
           "href": {
             "title": "Download URL",
             "description": "The download path to obtain file.",
@@ -63154,6 +63681,7 @@
               "type": "string",
               "enum": [
                 "antibody capture",
+                "barcode count",
                 "cell",
                 "CRISPR guide capture",
                 "fragment",
@@ -63234,6 +63762,11 @@
               "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
+          },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
           },
           "href": {
             "title": "Download URL",
@@ -63596,6 +64129,11 @@
               "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
+          },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
           },
           "href": {
             "title": "Download URL",
@@ -64023,6 +64561,11 @@
               "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
+          },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
           },
           "href": {
             "title": "Download URL",
@@ -64529,6 +65072,11 @@
               "type": "string"
             }
           },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
+          },
           "href": {
             "title": "Download URL",
             "description": "The download path to obtain file.",
@@ -64946,6 +65494,11 @@
               "type": "string"
             }
           },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
+          },
           "href": {
             "title": "Download URL",
             "description": "The download path to obtain file.",
@@ -65349,6 +65902,11 @@
               "description": "Title of assay from the file set this file belongs to.",
               "type": "string"
             }
+          },
+          "workflow": {
+            "title": "Workflow",
+            "description": "The workflow used to produce this file.",
+            "type": "string"
           },
           "href": {
             "title": "Download URL",
@@ -70593,7 +71151,7 @@
       },
       "InVitroSystem": {
         "title": "In Vitro System",
-        "description": "A biosample that is cultured, such as immortalized cell lines, organoids, or samples that have been differentiated or reprogrammed.",
+        "description": "A biosample that is cultured, such as immortalized cell lines, organoids, gastruloids or samples that have been differentiated or reprogrammed.",
         "type": "object",
         "additionalProperties": false,
         "properties": {
