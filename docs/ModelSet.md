@@ -35,7 +35,6 @@ Name | Type | Description | Notes
 **model_version** | **str** | The semantic version number for this predictive model set. | [optional] 
 **prediction_objects** | **List[str]** | The objects this predictive model set is targeting. | [optional] 
 **model_zoo_location** | **str** | The link to the model on the Kipoi repository. | [optional] 
-**software_version** | **str** | Version of software used for the derivation of this model set. | [optional] 
 **assessed_genes** | **List[str]** | A list of genes assessed in this model set. | [optional] 
 **external_input_data** | **str** | A tabular file with links to external data utilized for this model. | [optional] 
 **id** | **str** |  | [optional] 
@@ -46,6 +45,7 @@ Name | Type | Description | Notes
 **submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
 **input_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 **externally_hosted** | **bool** |  | [optional] 
+**software_versions** | **List[str]** | The software versions used to produce this predictive model. | [optional] 
 
 ## Example
 

@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "64.0.0"
+    "version": "65.0.0"
   },
   "servers": [
     {
@@ -1322,6 +1322,8 @@
                   "barcode mapping generation",
                   "base calling",
                   "cell to feature barcode mapping",
+                  "computational model prediction",
+                  "computational model training",
                   "counts normalization",
                   "demultiplexing",
                   "differential expression analysis",
@@ -1329,6 +1331,7 @@
                   "file format conversion",
                   "filtering",
                   "fragment generation",
+                  "genome index generation",
                   "interaction calling",
                   "matrix generation",
                   "merging",
@@ -1338,6 +1341,7 @@
                   "signal generation",
                   "signal normalization",
                   "spatial feature detection",
+                  "transcriptome index generation",
                   "UMI deduplication",
                   "UMI quantification",
                   "variant annotation"
@@ -1511,6 +1515,7 @@
                   "genes_pathways",
                   "genes_terms",
                   "genes_transcripts",
+                  "genome index",
                   "genome reference",
                   "go_terms_proteins",
                   "graph structure",
@@ -1523,6 +1528,7 @@
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
+                  "nascent transcriptome index",
                   "neural network architecture",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
@@ -1573,6 +1579,7 @@
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome annotations",
+                  "transcriptome index",
                   "transcriptome reference",
                   "transcripts",
                   "transcripts_proteins",
@@ -1727,6 +1734,7 @@
                   "genes_pathways",
                   "genes_terms",
                   "genes_transcripts",
+                  "genome index",
                   "genome reference",
                   "go_terms_proteins",
                   "graph structure",
@@ -1739,6 +1747,7 @@
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
+                  "nascent transcriptome index",
                   "neural network architecture",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
@@ -1789,6 +1798,7 @@
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome annotations",
+                  "transcriptome index",
                   "transcriptome reference",
                   "transcripts",
                   "transcripts_proteins",
@@ -6793,7 +6803,7 @@
               "items": {
                 "type": "boolean",
                 "title": "Filtered",
-                "description": "Indicates whether reads that did not pass a filtering step, such as PCR duplicates, have been removed from the file."
+                "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling."
               }
             },
             "description": "Filter by filtered",
@@ -7295,12 +7305,14 @@
                   "GENCODE 43",
                   "GENCODE 44",
                   "GENCODE 45",
+                  "GENCODE 47",
                   "GENCODE Cast - M32",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
-                  "GENCODE M34"
+                  "GENCODE M34",
+                  "GENCODE M36"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -10423,12 +10435,14 @@
                   "GENCODE 43",
                   "GENCODE 44",
                   "GENCODE 45",
+                  "GENCODE 47",
                   "GENCODE Cast - M32",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
-                  "GENCODE M34"
+                  "GENCODE M34",
+                  "GENCODE M36"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -14088,6 +14102,7 @@
                   "hdf5",
                   "mtx",
                   "pkl",
+                  "Robj",
                   "tar",
                   "hic",
                   "cool",
@@ -14603,6 +14618,21 @@
             "explode": true
           },
           {
+            "name": "filtered",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Filtered",
+                "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling."
+              }
+            },
+            "description": "Filter by filtered",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "gene_list_for",
             "in": "query",
             "schema": {
@@ -14903,7 +14933,8 @@
                   "time",
                   "treatment",
                   "variant",
-                  "genomic position"
+                  "genomic position",
+                  "spot barcode"
                 ],
                 "description": "The principal dimension of the matrix."
               }
@@ -18313,12 +18344,14 @@
                   "GENCODE 43",
                   "GENCODE 44",
                   "GENCODE 45",
+                  "GENCODE 47",
                   "GENCODE Cast - M32",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
-                  "GENCODE M34"
+                  "GENCODE M34",
+                  "GENCODE M36"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -21354,7 +21387,7 @@
               "items": {
                 "type": "boolean",
                 "title": "Filtered",
-                "description": "Indicates if the signal file is filtered."
+                "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling."
               }
             },
             "description": "Filter by filtered",
@@ -21876,12 +21909,14 @@
                   "GENCODE 43",
                   "GENCODE 44",
                   "GENCODE 45",
+                  "GENCODE 47",
                   "GENCODE Cast - M32",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
-                  "GENCODE M34"
+                  "GENCODE M34",
+                  "GENCODE M36"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -23096,6 +23131,21 @@
             "explode": true
           },
           {
+            "name": "filtered",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Filtered",
+                "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling."
+              }
+            },
+            "description": "Filter by filtered",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "gene_list_for",
             "in": "query",
             "schema": {
@@ -23542,12 +23592,14 @@
                   "GENCODE 43",
                   "GENCODE 44",
                   "GENCODE 45",
+                  "GENCODE 47",
                   "GENCODE Cast - M32",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
-                  "GENCODE M34"
+                  "GENCODE M34",
+                  "GENCODE M36"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -24883,6 +24935,22 @@
               "description": "A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming."
             },
             "description": "Filter by samples.cell_fate_change_treatments",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.cellular_sub_pool",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cellular Sub Pool",
+                "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$",
+                "description": "Cellular sub-pool fraction of the sample. Also known as PKR and sub-library."
+              }
+            },
+            "description": "Filter by samples.cellular_sub_pool",
             "style": "form",
             "explode": true
           },
@@ -26526,6 +26594,22 @@
               "description": "A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming."
             },
             "description": "Filter by samples.cell_fate_change_treatments",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.cellular_sub_pool",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cellular Sub Pool",
+                "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$",
+                "description": "Cellular sub-pool fraction of the sample. Also known as PKR and sub-library."
+              }
+            },
+            "description": "Filter by samples.cellular_sub_pool",
             "style": "form",
             "explode": true
           },
@@ -30031,6 +30115,22 @@
             "explode": true
           },
           {
+            "name": "samples.cellular_sub_pool",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cellular Sub Pool",
+                "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$",
+                "description": "Cellular sub-pool fraction of the sample. Also known as PKR and sub-library."
+              }
+            },
+            "description": "Filter by samples.cellular_sub_pool",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.classifications",
             "in": "query",
             "schema": {
@@ -31790,6 +31890,7 @@
                   "varACCESS",
                   "scATAC-seq",
                   "snATAC-seq",
+                  "scMito-seq",
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -31814,6 +31915,7 @@
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
                   "CRISPR FACS screen",
+                  "CRISPR MACS screen",
                   "CRISPR mCherry screen",
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
@@ -31838,7 +31940,8 @@
                   "HT-recruit",
                   "ONT dRNA",
                   "ONT Fiber-seq",
-                  "ONT direct WGS"
+                  "ONT direct WGS",
+                  "WGS"
                 ],
                 "description": "The custom lab preferred label for the experiment performed in this measurement set."
               }
@@ -32103,6 +32206,22 @@
               }
             },
             "description": "Filter by samples.cell_fate_change_treatments.treatment_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.cellular_sub_pool",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cellular Sub Pool",
+                "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$",
+                "description": "Cellular sub-pool fraction of the sample. Also known as PKR and sub-library."
+              }
+            },
+            "description": "Filter by samples.cellular_sub_pool",
             "style": "form",
             "explode": true
           },
@@ -34141,6 +34260,22 @@
             "explode": true
           },
           {
+            "name": "samples.cellular_sub_pool",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cellular Sub Pool",
+                "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$",
+                "description": "Cellular sub-pool fraction of the sample. Also known as PKR and sub-library."
+              }
+            },
+            "description": "Filter by samples.cellular_sub_pool",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.classifications",
             "in": "query",
             "schema": {
@@ -34484,17 +34619,149 @@
             "explode": true
           },
           {
-            "name": "software_version",
+            "name": "software_versions.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Software Version",
-                "description": "Version of software used for the derivation of this model set."
+                "title": "ID"
               }
             },
-            "description": "Filter by software_version",
+            "description": "Filter by software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.download_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Download ID",
+                "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used."
+              }
+            },
+            "description": "Filter by software_versions.download_id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.source_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Source URL",
+                "description": "An external resource to the codebase."
+              }
+            },
+            "description": "Filter by software_versions.software.source_url",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by software_versions.software.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by software_versions.software.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.source_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Source URL",
+                "description": "An external resource to track the version of the software download."
+              }
+            },
+            "description": "Filter by software_versions.source_url",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by software_versions.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by software_versions.summary",
             "style": "form",
             "explode": true
           },
@@ -35878,6 +36145,22 @@
             "explode": true
           },
           {
+            "name": "samples.cellular_sub_pool",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cellular Sub Pool",
+                "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$",
+                "description": "Cellular sub-pool fraction of the sample. Also known as PKR and sub-library."
+              }
+            },
+            "description": "Filter by samples.cellular_sub_pool",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.classifications",
             "in": "query",
             "schema": {
@@ -37078,12 +37361,14 @@
                   "GENCODE 43",
                   "GENCODE 44",
                   "GENCODE 45",
+                  "GENCODE 47",
                   "GENCODE Cast - M32",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
-                  "GENCODE M34"
+                  "GENCODE M34",
+                  "GENCODE M36"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -40047,6 +40332,7 @@
                   "varACCESS",
                   "scATAC-seq",
                   "snATAC-seq",
+                  "scMito-seq",
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -40071,6 +40357,7 @@
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
                   "CRISPR FACS screen",
+                  "CRISPR MACS screen",
                   "CRISPR mCherry screen",
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
@@ -40095,7 +40382,8 @@
                   "HT-recruit",
                   "ONT dRNA",
                   "ONT Fiber-seq",
-                  "ONT direct WGS"
+                  "ONT direct WGS",
+                  "WGS"
                 ],
                 "description": "The custom lab preferred label for the experiment performed in this measurement set."
               },
@@ -58426,6 +58714,8 @@
                   "barcode mapping generation",
                   "base calling",
                   "cell to feature barcode mapping",
+                  "computational model prediction",
+                  "computational model training",
                   "counts normalization",
                   "demultiplexing",
                   "differential expression analysis",
@@ -58433,6 +58723,7 @@
                   "file format conversion",
                   "filtering",
                   "fragment generation",
+                  "genome index generation",
                   "interaction calling",
                   "matrix generation",
                   "merging",
@@ -58442,6 +58733,7 @@
                   "signal generation",
                   "signal normalization",
                   "spatial feature detection",
+                  "transcriptome index generation",
                   "UMI deduplication",
                   "UMI quantification",
                   "variant annotation"
@@ -58482,21 +58774,6 @@
             "explode": true
           },
           {
-            "name": "analysis_steps.analysis_step_versions.software_versions.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "description": "A unique identifier for a software version."
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.name",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "analysis_steps.analysis_step_versions.software_versions.software.@id",
             "in": "query",
             "schema": {
@@ -58507,22 +58784,6 @@
               }
             },
             "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.software_versions.software.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "pattern": "^[a-z0-9\\-\\_]+",
-                "description": "Unique name of the software package; a lowercase version of the title."
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.name",
             "style": "form",
             "explode": true
           },
@@ -58538,6 +58799,22 @@
               }
             },
             "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.analysis_step_versions.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.title",
             "style": "form",
             "explode": true
           },
@@ -58630,6 +58907,7 @@
                   "genes_pathways",
                   "genes_terms",
                   "genes_transcripts",
+                  "genome index",
                   "genome reference",
                   "go_terms_proteins",
                   "graph structure",
@@ -58642,6 +58920,7 @@
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
+                  "nascent transcriptome index",
                   "neural network architecture",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
@@ -58692,6 +58971,7 @@
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome annotations",
+                  "transcriptome index",
                   "transcriptome reference",
                   "transcripts",
                   "transcripts_proteins",
@@ -58725,21 +59005,6 @@
               "description": "The content types used as input for the analysis step."
             },
             "description": "Filter by analysis_steps.input_content_types",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "description": "Full name of the analysis step."
-              }
-            },
-            "description": "Filter by analysis_steps.name",
             "style": "form",
             "explode": true
           },
@@ -58802,6 +59067,7 @@
                   "genes_pathways",
                   "genes_terms",
                   "genes_transcripts",
+                  "genome index",
                   "genome reference",
                   "go_terms_proteins",
                   "graph structure",
@@ -58814,6 +59080,7 @@
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
+                  "nascent transcriptome index",
                   "neural network architecture",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
@@ -58864,6 +59131,7 @@
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome annotations",
+                  "transcriptome index",
                   "transcriptome reference",
                   "transcripts",
                   "transcripts_proteins",
@@ -58912,6 +59180,22 @@
               }
             },
             "description": "Filter by analysis_steps.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^[a-zA-Z\\d_().,-]+(?:\\s[a-zA-Z\\d_().,-]+)*[step|Step]$",
+                "description": "The preferred viewable name of the analysis step, likely the same as the step label."
+              }
+            },
+            "description": "Filter by analysis_steps.title",
             "style": "form",
             "explode": true
           },
@@ -59906,6 +60190,8 @@
                 "barcode mapping generation",
                 "base calling",
                 "cell to feature barcode mapping",
+                "computational model prediction",
+                "computational model training",
                 "counts normalization",
                 "demultiplexing",
                 "differential expression analysis",
@@ -59913,6 +60199,7 @@
                 "file format conversion",
                 "filtering",
                 "fragment generation",
+                "genome index generation",
                 "interaction calling",
                 "matrix generation",
                 "merging",
@@ -59922,6 +60209,7 @@
                 "signal generation",
                 "signal normalization",
                 "spatial feature detection",
+                "transcriptome index generation",
                 "UMI deduplication",
                 "UMI quantification",
                 "variant annotation"
@@ -60015,6 +60303,7 @@
                 "genes_pathways",
                 "genes_terms",
                 "genes_transcripts",
+                "genome index",
                 "genome reference",
                 "go_terms_proteins",
                 "graph structure",
@@ -60027,6 +60316,7 @@
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
+                "nascent transcriptome index",
                 "neural network architecture",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
@@ -60077,6 +60367,7 @@
                 "transcript quantifications",
                 "transcriptome alignments",
                 "transcriptome annotations",
+                "transcriptome index",
                 "transcriptome reference",
                 "transcripts",
                 "transcripts_proteins",
@@ -60166,6 +60457,7 @@
                 "genes_pathways",
                 "genes_terms",
                 "genes_transcripts",
+                "genome index",
                 "genome reference",
                 "go_terms_proteins",
                 "graph structure",
@@ -60178,6 +60470,7 @@
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
+                "nascent transcriptome index",
                 "neural network architecture",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
@@ -60228,6 +60521,7 @@
                 "transcript quantifications",
                 "transcriptome alignments",
                 "transcriptome annotations",
+                "transcriptome index",
                 "transcriptome reference",
                 "transcripts",
                 "transcripts_proteins",
@@ -61559,12 +61853,14 @@
               "GENCODE 43",
               "GENCODE 44",
               "GENCODE 45",
+              "GENCODE 47",
               "GENCODE Cast - M32",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
-              "GENCODE M34"
+              "GENCODE M34",
+              "GENCODE M36"
             ]
           },
           "assembly": {
@@ -61593,6 +61889,11 @@
               "type": "string",
               "description": "Link to a reference file used to generate this file."
             }
+          },
+          "filtered": {
+            "title": "Filtered",
+            "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling.",
+            "type": "boolean"
           },
           "documents": {
             "title": "Documents",
@@ -61841,11 +62142,6 @@
           "redacted": {
             "title": "Redacted",
             "description": "Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information.",
-            "type": "boolean"
-          },
-          "filtered": {
-            "title": "Filtered",
-            "description": "Indicates whether reads that did not pass a filtering step, such as PCR duplicates, have been removed from the file.",
             "type": "boolean"
           },
           "@id": {
@@ -62347,12 +62643,14 @@
               "GENCODE 43",
               "GENCODE 44",
               "GENCODE 45",
+              "GENCODE 47",
               "GENCODE Cast - M32",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
-              "GENCODE M34"
+              "GENCODE M34",
+              "GENCODE M36"
             ]
           },
           "documents": {
@@ -63412,6 +63710,11 @@
               "description": "Link to a reference file used to generate this file."
             }
           },
+          "filtered": {
+            "title": "Filtered",
+            "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling.",
+            "type": "boolean"
+          },
           "documents": {
             "title": "Documents",
             "description": "Documents that provide additional information (not data file).",
@@ -63596,6 +63899,7 @@
               "hdf5",
               "mtx",
               "pkl",
+              "Robj",
               "tar",
               "hic",
               "cool",
@@ -63668,7 +63972,8 @@
               "time",
               "treatment",
               "variant",
-              "genomic position"
+              "genomic position",
+              "spot barcode"
             ]
           },
           "secondary_dimensions": {
@@ -64219,12 +64524,14 @@
               "GENCODE 43",
               "GENCODE 44",
               "GENCODE 45",
+              "GENCODE 47",
               "GENCODE Cast - M32",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
-              "GENCODE M34"
+              "GENCODE M34",
+              "GENCODE M36"
             ]
           },
           "documents": {
@@ -65127,12 +65434,14 @@
               "GENCODE 43",
               "GENCODE 44",
               "GENCODE 45",
+              "GENCODE 47",
               "GENCODE Cast - M32",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
-              "GENCODE M34"
+              "GENCODE M34",
+              "GENCODE M36"
             ]
           },
           "assembly": {
@@ -65161,6 +65470,11 @@
               "type": "string",
               "description": "Link to a reference file used to generate this file."
             }
+          },
+          "filtered": {
+            "title": "Filtered",
+            "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling.",
+            "type": "boolean"
           },
           "documents": {
             "title": "Documents",
@@ -65411,11 +65725,6 @@
               "unstranded"
             ]
           },
-          "filtered": {
-            "title": "Filtered",
-            "description": "Indicates if the signal file is filtered.",
-            "type": "boolean"
-          },
           "normalized": {
             "title": "Normalized",
             "description": "Indicates if the signal file is normalized.",
@@ -65586,13 +65895,20 @@
               "GENCODE 43",
               "GENCODE 44",
               "GENCODE 45",
+              "GENCODE 47",
               "GENCODE Cast - M32",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
-              "GENCODE M34"
+              "GENCODE M34",
+              "GENCODE M36"
             ]
+          },
+          "filtered": {
+            "title": "Filtered",
+            "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling.",
+            "type": "boolean"
           },
           "documents": {
             "title": "Documents",
@@ -67578,6 +67894,7 @@
               "varACCESS",
               "scATAC-seq",
               "snATAC-seq",
+              "scMito-seq",
               "DOGMA-seq",
               "10x multiome",
               "10x multiome with MULTI-seq",
@@ -67602,6 +67919,7 @@
               "Migration CRISPR screen",
               "CRISPR FlowFISH screen",
               "CRISPR FACS screen",
+              "CRISPR MACS screen",
               "CRISPR mCherry screen",
               "HCR-FlowFISH screen",
               "scCRISPR screen",
@@ -67626,7 +67944,8 @@
               "HT-recruit",
               "ONT dRNA",
               "ONT Fiber-seq",
-              "ONT direct WGS"
+              "ONT direct WGS",
+              "WGS"
             ]
           },
           "multiome_size": {
@@ -68033,11 +68352,6 @@
             "type": "string",
             "pattern": "^https?://kipoi\\.org/models/(\\S+)$"
           },
-          "software_version": {
-            "title": "Software Version",
-            "description": "Version of software used for the derivation of this model set.",
-            "type": "string"
-          },
           "assessed_genes": {
             "title": "Assessed Genes",
             "description": "A list of genes assessed in this model set.",
@@ -68106,6 +68420,17 @@
           "externally_hosted": {
             "title": "Externally Hosted",
             "type": "boolean"
+          },
+          "software_versions": {
+            "title": "Software Versions",
+            "description": "The software versions used to produce this predictive model.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Software Version",
+              "description": "A software version used to produce this predictive model.",
+              "type": "string"
+            }
           }
         }
       },
@@ -68492,12 +68817,14 @@
               "GENCODE 43",
               "GENCODE 44",
               "GENCODE 45",
+              "GENCODE 47",
               "GENCODE Cast - M32",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
-              "GENCODE M34"
+              "GENCODE M34",
+              "GENCODE M36"
             ]
           },
           "taxa": {
@@ -69681,6 +70008,7 @@
                 "varACCESS",
                 "scATAC-seq",
                 "snATAC-seq",
+                "scMito-seq",
                 "DOGMA-seq",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
@@ -69705,6 +70033,7 @@
                 "Migration CRISPR screen",
                 "CRISPR FlowFISH screen",
                 "CRISPR FACS screen",
+                "CRISPR MACS screen",
                 "CRISPR mCherry screen",
                 "HCR-FlowFISH screen",
                 "scCRISPR screen",
@@ -69729,7 +70058,8 @@
                 "HT-recruit",
                 "ONT dRNA",
                 "ONT Fiber-seq",
-                "ONT direct WGS"
+                "ONT direct WGS",
+                "WGS"
               ]
             }
           },

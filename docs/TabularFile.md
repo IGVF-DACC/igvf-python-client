@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
+**filtered** | **bool** | Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 
