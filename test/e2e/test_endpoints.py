@@ -121,3 +121,9 @@ def test_endpoints_test_search_field_filters():
     assert r.total > 100
     r2 = api.search(type=['Item'], field_filters={'status': ['current', 'released']})
     assert r2.total > r.total
+
+
+def test_endpoints_test_sequence_file_int_coercion():
+    from igvf_client import IgvfApi
+    api = IgvfApi()
+    api.sequence_files()
