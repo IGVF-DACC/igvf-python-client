@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "65.0.0"
+    "version": "66.0.0"
   },
   "servers": [
     {
@@ -179,6 +179,21 @@
                     },
                     {
                       "$ref": "#/components/schemas/Publication"
+                    },
+                    {
+                      "$ref": "#/components/schemas/MpraQualityMetric"
+                    },
+                    {
+                      "$ref": "#/components/schemas/PerturbSeqQualityMetric"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SingleCellAtacSeqQualityMetric"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SingleCellRnaSeqQualityMetric"
+                    },
+                    {
+                      "$ref": "#/components/schemas/StarrSeqQualityMetric"
                     },
                     {
                       "$ref": "#/components/schemas/InVitroSystem"
@@ -446,6 +461,21 @@
                           },
                           {
                             "$ref": "#/components/schemas/Publication"
+                          },
+                          {
+                            "$ref": "#/components/schemas/MpraQualityMetric"
+                          },
+                          {
+                            "$ref": "#/components/schemas/PerturbSeqQualityMetric"
+                          },
+                          {
+                            "$ref": "#/components/schemas/SingleCellAtacSeqQualityMetric"
+                          },
+                          {
+                            "$ref": "#/components/schemas/SingleCellRnaSeqQualityMetric"
+                          },
+                          {
+                            "$ref": "#/components/schemas/StarrSeqQualityMetric"
                           },
                           {
                             "$ref": "#/components/schemas/InVitroSystem"
@@ -7097,6 +7127,22 @@
             "explode": true
           },
           {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "read_count",
             "in": "query",
             "schema": {
@@ -8669,6 +8715,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
             "style": "form",
             "explode": true
           },
@@ -10275,6 +10337,22 @@
             "explode": true
           },
           {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "release_timestamp",
             "in": "query",
             "schema": {
@@ -11798,6 +11876,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
             "style": "form",
             "explode": true
           },
@@ -13353,6 +13447,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
             "style": "form",
             "explode": true
           },
@@ -14940,6 +15050,22 @@
               }
             },
             "description": "Filter by principal_dimension",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
             "style": "form",
             "explode": true
           },
@@ -16550,6 +16676,22 @@
             "explode": true
           },
           {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "release_timestamp",
             "in": "query",
             "schema": {
@@ -18148,6 +18290,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
             "style": "form",
             "explode": true
           },
@@ -19913,6 +20071,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
             "style": "form",
             "explode": true
           },
@@ -21696,6 +21870,22 @@
             "explode": true
           },
           {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "reference_files",
             "in": "query",
             "schema": {
@@ -23428,6 +23618,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metrics",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metrics",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric"
+              },
+              "description": "The quality metrics that are associated with this file."
+            },
+            "description": "Filter by quality_metrics",
             "style": "form",
             "explode": true
           },
@@ -44362,6 +44568,3091 @@
         }
       }
     },
+    "/mpra-quality-metrics/@@listing": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List items in the MpraQualityMetric collection.",
+        "description": "Collection endpoint that accepts various query parameters to filter and sort MpraQualityMetric items. Supports filtering on fields within MpraQualityMetric items.",
+        "operationId": "mpra_quality_metrics",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
+          },
+          {
+            "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Limit"
+            },
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
+          },
+          {
+            "name": "@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by @id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Analysis Step Version",
+                "description": "The analysis step version of the quality metric."
+              }
+            },
+            "description": "Filter by analysis_step_version",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by award.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.component",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project Component",
+                "description": "The project component the award is associated with."
+              }
+            },
+            "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "creation_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Creation Timestamp",
+                "description": "The date the object was created."
+              }
+            },
+            "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "fraction_assigned_oligos",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Fraction Of Assigned Oligos",
+                "description": "Fraction of assigned tested sequences in mapping to determine if the library during the mapping step was sufficiently recovered."
+              }
+            },
+            "description": "Filter by fraction_assigned_oligos",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "median_assigned_barocdes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Median Number Of Assigned Barcodes",
+                "description": "Median number of barcodes assigned to tested sequences in mapping as a quality control measure for the mapping step, whether there is sufficient barcode to oligo coverage."
+              }
+            },
+            "description": "Filter by median_assigned_barocdes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "median_barcodes_passing_filtering",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Median Barcodes Passing Filtering",
+                "description": "Median number of barcodes across tested sequences that passed filtering to determine if there was sufficient barcode to oligo coverage."
+              }
+            },
+            "description": "Filter by median_barcodes_passing_filtering",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "median_rna_read_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Median RNA Read Count",
+                "description": "Median of RNA read count for oligos that passed filtering to determine sufficient coverage in terms of read count."
+              }
+            },
+            "description": "Filter by median_rna_read_count",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC internal notes."
+              }
+            },
+            "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "pct_oligos_passing",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Percent Of Oligos Passing Filters",
+                "description": "Percent of tested sequences that passed filtering of the mappable sequences to determine if the designed library was sufficiently recovered."
+              }
+            },
+            "description": "Filter by pct_oligos_passing",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "pearson_correlation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Pearson Correlation",
+                "description": "The correlation of log2 RNA/DNA ratios across tested sequences as a measure of replicable activity signal."
+              }
+            },
+            "description": "Filter by pearson_correlation",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metric_of",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metric Of",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric Of"
+              },
+              "description": "The file(s) to which this quality metric applies."
+            },
+            "description": "Filter by quality_metric_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "release_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Release Timestamp",
+                "description": "The date the object was released."
+              }
+            },
+            "description": "Filter by release_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "enum": [
+                  "archived",
+                  "deleted",
+                  "in progress",
+                  "preview",
+                  "released"
+                ],
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted By",
+                "description": "The user who submitted the object."
+              }
+            },
+            "description": "Filter by submitted_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitter_comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitter Comment",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "Additional information specified by the submitter to be displayed as a comment on the portal."
+              }
+            },
+            "description": "Filter by submitter_comment",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the quality metric."
+              }
+            },
+            "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "UUID",
+                "description": "The unique identifier associated with every object."
+              }
+            },
+            "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MpraQualityMetricResults",
+                  "properties": {
+                    "@graph": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/MpraQualityMetric"
+                      }
+                    },
+                    "@id": {
+                      "type": "string"
+                    },
+                    "@type": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "facets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "title": "SearchFacet",
+                        "properties": {
+                          "field": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "terms": {
+                            "type": "array",
+                            "items": {
+                              "title": "SearchFacetTermValue",
+                              "type": "object"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoResultsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/perturb-seq-quality-metrics/@@listing": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List items in the PerturbSeqQualityMetric collection.",
+        "description": "Collection endpoint that accepts various query parameters to filter and sort PerturbSeqQualityMetric items. Supports filtering on fields within PerturbSeqQualityMetric items.",
+        "operationId": "perturb_seq_quality_metrics",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
+          },
+          {
+            "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Limit"
+            },
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
+          },
+          {
+            "name": "@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by @id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "alignment_percentage",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Alignment Percentage",
+                "description": "Alignment percentage (p_pseudoaligned) reported by Kallisto."
+              }
+            },
+            "description": "Filter by alignment_percentage",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Analysis Step Version",
+                "description": "The analysis step version of the quality metric."
+              }
+            },
+            "description": "Filter by analysis_step_version",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "avg_cells_per_target",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Average Cells Per Target",
+                "description": "Average Cells Per Target"
+              }
+            },
+            "description": "Filter by avg_cells_per_target",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "avg_umis_per_cell",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Average UMIs Per Cell",
+                "description": "Average UMIs Per Cell"
+              }
+            },
+            "description": "Filter by avg_umis_per_cell",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by award.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.component",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project Component",
+                "description": "The project component the award is associated with."
+              }
+            },
+            "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "creation_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Creation Timestamp",
+                "description": "The date the object was created."
+              }
+            },
+            "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "guide_diversity",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Guide Diversity",
+                "description": "Guide diversity (Gini index)"
+              }
+            },
+            "description": "Filter by guide_diversity",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "mean_mitochondrial_reads",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Mitochondrial Reads",
+                "description": "Mean mitochondrial reads."
+              }
+            },
+            "description": "Filter by mean_mitochondrial_reads",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "moi",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Multiplicity Of Infection",
+                "description": "Multiplicity Of Infection"
+              }
+            },
+            "description": "Filter by moi",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC internal notes."
+              }
+            },
+            "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "paired_reads_mapped",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Paired Reads Mapped",
+                "description": "Paired reads mapped (n_pseudoaligned) reported by Kallisto."
+              }
+            },
+            "description": "Filter by paired_reads_mapped",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "pct_cells_assigned_guide",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Percent Cells Assigned Guide",
+                "description": "Percent Cells Assigned Guide"
+              }
+            },
+            "description": "Filter by pct_cells_assigned_guide",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metric_of",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metric Of",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric Of"
+              },
+              "description": "The file(s) to which this quality metric applies."
+            },
+            "description": "Filter by quality_metric_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "release_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Release Timestamp",
+                "description": "The date the object was released."
+              }
+            },
+            "description": "Filter by release_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "enum": [
+                  "archived",
+                  "deleted",
+                  "in progress",
+                  "preview",
+                  "released"
+                ],
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted By",
+                "description": "The user who submitted the object."
+              }
+            },
+            "description": "Filter by submitted_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitter_comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitter Comment",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "Additional information specified by the submitter to be displayed as a comment on the portal."
+              }
+            },
+            "description": "Filter by submitter_comment",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the quality metric."
+              }
+            },
+            "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "total_cells_passing_filters",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Total Cells Passing Filters",
+                "description": "Total Cells Passing Filters"
+              }
+            },
+            "description": "Filter by total_cells_passing_filters",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "total_detected_scrna_barcodes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Total Detected scRNA Barcodes",
+                "description": "Unfiltered total detected scRNA barcodes (numBarcodes) reported by Kallisto."
+              }
+            },
+            "description": "Filter by total_detected_scrna_barcodes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "total_guides",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Total Guides",
+                "description": "Total Guides"
+              }
+            },
+            "description": "Filter by total_guides",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "total_reads",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Total Reads",
+                "description": "Total reads (n_processed) reported by Kallisto."
+              }
+            },
+            "description": "Filter by total_reads",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "total_targets",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Total Targets",
+                "description": "Total Targets"
+              }
+            },
+            "description": "Filter by total_targets",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "UUID",
+                "description": "The unique identifier associated with every object."
+              }
+            },
+            "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "PerturbSeqQualityMetricResults",
+                  "properties": {
+                    "@graph": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PerturbSeqQualityMetric"
+                      }
+                    },
+                    "@id": {
+                      "type": "string"
+                    },
+                    "@type": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "facets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "title": "SearchFacet",
+                        "properties": {
+                          "field": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "terms": {
+                            "type": "array",
+                            "items": {
+                              "title": "SearchFacetTermValue",
+                              "type": "object"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoResultsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/single-cell-atac-seq-quality-metrics/@@listing": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List items in the SingleCellAtacSeqQualityMetric collection.",
+        "description": "Collection endpoint that accepts various query parameters to filter and sort SingleCellAtacSeqQualityMetric items. Supports filtering on fields within SingleCellAtacSeqQualityMetric items.",
+        "operationId": "single_cell_atac_seq_quality_metrics",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
+          },
+          {
+            "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Limit"
+            },
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
+          },
+          {
+            "name": "@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by @id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Analysis Step Version",
+                "description": "The analysis step version of the quality metric."
+              }
+            },
+            "description": "Filter by analysis_step_version",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by award.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.component",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project Component",
+                "description": "The project component the award is associated with."
+              }
+            },
+            "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "creation_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Creation Timestamp",
+                "description": "The date the object was created."
+              }
+            },
+            "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "duplicate",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Duplicate Number",
+                "description": ""
+              }
+            },
+            "description": "Filter by duplicate",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "frac_dup",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Duplicate Fraction",
+                "description": ""
+              }
+            },
+            "description": "Filter by frac_dup",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "frac_mito",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mitochondrial Fraction",
+                "description": ""
+              }
+            },
+            "description": "Filter by frac_mito",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "joint_barcodes_passing",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Joint Barcodes Passing",
+                "description": ""
+              }
+            },
+            "description": "Filter by joint_barcodes_passing",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lowmapq",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Low Mapping Quality",
+                "description": ""
+              }
+            },
+            "description": "Filter by lowmapq",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_barcodes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Barcodes",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_barcodes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_barcodes_on_onlist",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Barcodes On Onlist",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_barcodes_on_onlist",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_candidates",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Candidates",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_candidates",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_corrected_barcodes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Corrected Barcodes",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_corrected_barcodes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_fragment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Fragments",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_fragment",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_fragments",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Fragments",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_fragments",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_mapped_reads",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Mapped Reads",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_mapped_reads",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_mappings",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Mappings",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_mappings",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_multi_mappings",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Multi-Mappings",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_multi_mappings",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_output_mappings",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Output Mappings",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_output_mappings",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_reads",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Reads",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_reads",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_reads_with_multi_mappings",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Reads With Multi-Mappings",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_reads_with_multi_mappings",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_uni_mappings",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Uni-Mappings",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_uni_mappings",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_uniquely_mapped_reads",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Uniquely Mapped Reads",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_uniquely_mapped_reads",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC internal notes."
+              }
+            },
+            "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "pct_duplicates",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Percent Duplicates",
+                "description": ""
+              }
+            },
+            "description": "Filter by pct_duplicates",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metric_of",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metric Of",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric Of"
+              },
+              "description": "The file(s) to which this quality metric applies."
+            },
+            "description": "Filter by quality_metric_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "release_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Release Timestamp",
+                "description": "The date the object was released."
+              }
+            },
+            "description": "Filter by release_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "enum": [
+                  "archived",
+                  "deleted",
+                  "in progress",
+                  "preview",
+                  "released"
+                ],
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted By",
+                "description": "The user who submitted the object."
+              }
+            },
+            "description": "Filter by submitted_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitter_comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitter Comment",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "Additional information specified by the submitter to be displayed as a comment on the portal."
+              }
+            },
+            "description": "Filter by submitter_comment",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the quality metric."
+              }
+            },
+            "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "total",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Total Number",
+                "description": ""
+              }
+            },
+            "description": "Filter by total",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "tsse",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Transcription Start Site Enrichment",
+                "description": ""
+              }
+            },
+            "description": "Filter by tsse",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "unmapped",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Unmapped Number",
+                "description": ""
+              }
+            },
+            "description": "Filter by unmapped",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "UUID",
+                "description": "The unique identifier associated with every object."
+              }
+            },
+            "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "SingleCellAtacSeqQualityMetricResults",
+                  "properties": {
+                    "@graph": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SingleCellAtacSeqQualityMetric"
+                      }
+                    },
+                    "@id": {
+                      "type": "string"
+                    },
+                    "@type": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "facets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "title": "SearchFacet",
+                        "properties": {
+                          "field": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "terms": {
+                            "type": "array",
+                            "items": {
+                              "title": "SearchFacetTermValue",
+                              "type": "object"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoResultsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/single-cell-rna-seq-quality-metrics/@@listing": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List items in the SingleCellRnaSeqQualityMetric collection.",
+        "description": "Collection endpoint that accepts various query parameters to filter and sort SingleCellRnaSeqQualityMetric items. Supports filtering on fields within SingleCellRnaSeqQualityMetric items.",
+        "operationId": "single_cell_rna_seq_quality_metrics",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
+          },
+          {
+            "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Limit"
+            },
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
+          },
+          {
+            "name": "@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by @id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Analysis Step Version",
+                "description": "The analysis step version of the quality metric."
+              }
+            },
+            "description": "Filter by analysis_step_version",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by award.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.component",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project Component",
+                "description": "The project component the award is associated with."
+              }
+            },
+            "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "creation_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Creation Timestamp",
+                "description": "The date the object was created."
+              }
+            },
+            "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "frac_dup",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Duplicate Fraction",
+                "description": ""
+              }
+            },
+            "description": "Filter by frac_dup",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "frac_mito",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mitochondrial Fraction",
+                "description": ""
+              }
+            },
+            "description": "Filter by frac_mito",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "frac_mito_genes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mitochondrial Genes Fraction",
+                "description": ""
+              }
+            },
+            "description": "Filter by frac_mito_genes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "frac_reads_in_genes_barcode",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Fraction Of Reads In Genes Barcode",
+                "description": ""
+              }
+            },
+            "description": "Filter by frac_reads_in_genes_barcode",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "frac_reads_in_genes_library",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Fraction Of Reads In Genes Library",
+                "description": ""
+              }
+            },
+            "description": "Filter by frac_reads_in_genes_library",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "gt_records",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "GtRecords",
+                "description": ""
+              }
+            },
+            "description": "Filter by gt_records",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "joint_barcodes_passing",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Joint Barcodes Passing",
+                "description": ""
+              }
+            },
+            "description": "Filter by joint_barcodes_passing",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "mean_reads_per_barcode",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Reads Per Barcode",
+                "description": ""
+              }
+            },
+            "description": "Filter by mean_reads_per_barcode",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "mean_umis_per_barcode",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean UMIs Per Barcode",
+                "description": ""
+              }
+            },
+            "description": "Filter by mean_umis_per_barcode",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "median_genes_per_barcode",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Median Genes Per Barcode",
+                "description": ""
+              }
+            },
+            "description": "Filter by median_genes_per_barcode",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "median_reads_per_barcode",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Median Reads Per Barcode",
+                "description": ""
+              }
+            },
+            "description": "Filter by median_reads_per_barcode",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "median_umis_per_barcode",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Median UMIs Per Barcode",
+                "description": ""
+              }
+            },
+            "description": "Filter by median_umis_per_barcode",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_barcode_umis",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Barcode UMIs",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_barcode_umis",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_barcodes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Barcodes",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_barcodes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_genes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Genes",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_genes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_reads",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Reads",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_reads",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_records",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Records",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_records",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC internal notes."
+              }
+            },
+            "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "numBarcodesOnOnlist",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Barcodes On Onlist",
+                "description": ""
+              }
+            },
+            "description": "Filter by numBarcodesOnOnlist",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "numReadsOnOnlist",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Reads On Onlist",
+                "description": ""
+              }
+            },
+            "description": "Filter by numReadsOnOnlist",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "pct_duplicates",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Percent Duplicates",
+                "description": ""
+              }
+            },
+            "description": "Filter by pct_duplicates",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "percentageBarcodesOnOnlist",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Percentage Of Barcodes On Onlist",
+                "description": ""
+              }
+            },
+            "description": "Filter by percentageBarcodesOnOnlist",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "percentageReadsOnOnlist",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Percentage Of Reads On Onlist",
+                "description": ""
+              }
+            },
+            "description": "Filter by percentageReadsOnOnlist",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metric_of",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metric Of",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric Of"
+              },
+              "description": "The file(s) to which this quality metric applies."
+            },
+            "description": "Filter by quality_metric_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "release_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Release Timestamp",
+                "description": "The date the object was released."
+              }
+            },
+            "description": "Filter by release_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "enum": [
+                  "archived",
+                  "deleted",
+                  "in progress",
+                  "preview",
+                  "released"
+                ],
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted By",
+                "description": "The user who submitted the object."
+              }
+            },
+            "description": "Filter by submitted_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitter_comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitter Comment",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "Additional information specified by the submitter to be displayed as a comment on the portal."
+              }
+            },
+            "description": "Filter by submitter_comment",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the quality metric."
+              }
+            },
+            "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "total_umis",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Total UMIs",
+                "description": ""
+              }
+            },
+            "description": "Filter by total_umis",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "UUID",
+                "description": "The unique identifier associated with every object."
+              }
+            },
+            "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "SingleCellRnaSeqQualityMetricResults",
+                  "properties": {
+                    "@graph": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SingleCellRnaSeqQualityMetric"
+                      }
+                    },
+                    "@id": {
+                      "type": "string"
+                    },
+                    "@type": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "facets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "title": "SearchFacet",
+                        "properties": {
+                          "field": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "terms": {
+                            "type": "array",
+                            "items": {
+                              "title": "SearchFacetTermValue",
+                              "type": "object"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoResultsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/starr-seq-quality-metrics/@@listing": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List items in the StarrSeqQualityMetric collection.",
+        "description": "Collection endpoint that accepts various query parameters to filter and sort StarrSeqQualityMetric items. Supports filtering on fields within StarrSeqQualityMetric items.",
+        "operationId": "starr_seq_quality_metrics",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
+          },
+          {
+            "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Limit"
+            },
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
+          },
+          {
+            "name": "@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by @id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Analysis Step Version",
+                "description": "The analysis step version of the quality metric."
+              }
+            },
+            "description": "Filter by analysis_step_version",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by award.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.component",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project Component",
+                "description": "The project component the award is associated with."
+              }
+            },
+            "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "coverage",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Coverage",
+                "description": "Coverage of the library."
+              }
+            },
+            "description": "Filter by coverage",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "coverage_per_basepair",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Coverage Per Basepair",
+                "description": "Coverage at basepair level."
+              }
+            },
+            "description": "Filter by coverage_per_basepair",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "creation_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Creation Timestamp",
+                "description": "The date the object was created."
+              }
+            },
+            "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC internal notes."
+              }
+            },
+            "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "quality_metric_of",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Quality Metric Of",
+              "items": {
+                "type": "string",
+                "title": "Quality Metric Of"
+              },
+              "description": "The file(s) to which this quality metric applies."
+            },
+            "description": "Filter by quality_metric_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "release_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Release Timestamp",
+                "description": "The date the object was released."
+              }
+            },
+            "description": "Filter by release_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "rna_correlation_in_peaks",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Correlation Of RNA In Peaks",
+                "description": "Correlation of RNA only over regions called as peaks in DNA."
+              }
+            },
+            "description": "Filter by rna_correlation_in_peaks",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "enum": [
+                  "archived",
+                  "deleted",
+                  "in progress",
+                  "preview",
+                  "released"
+                ],
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted By",
+                "description": "The user who submitted the object."
+              }
+            },
+            "description": "Filter by submitted_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitter_comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitter Comment",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "Additional information specified by the submitter to be displayed as a comment on the portal."
+              }
+            },
+            "description": "Filter by submitter_comment",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the quality metric."
+              }
+            },
+            "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "UUID",
+                "description": "The unique identifier associated with every object."
+              }
+            },
+            "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "StarrSeqQualityMetricResults",
+                  "properties": {
+                    "@graph": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/StarrSeqQualityMetric"
+                      }
+                    },
+                    "@id": {
+                      "type": "string"
+                    },
+                    "@type": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "facets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "title": "SearchFacet",
+                        "properties": {
+                          "field": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "terms": {
+                            "type": "array",
+                            "items": {
+                              "title": "SearchFacetTermValue",
+                              "type": "object"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoResultsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
     "/in-vitro-systems/@@listing": {
       "get": {
         "tags": [
@@ -44674,7 +47965,8 @@
                 "type": "string",
                 "title": "Biosample Qualifiers",
                 "enum": [
-                  "calcified",
+                  "6 days calcified",
+                  "10 days calcified",
                   "exhausted"
                 ],
                 "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
@@ -45728,9 +49020,11 @@
                 "type": "string",
                 "title": "Nucleic Acid Delivery",
                 "enum": [
-                  "transfection",
                   "adenoviral transduction",
-                  "lentiviral transduction"
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -47917,9 +51211,11 @@
                 "type": "string",
                 "title": "Nucleic Acid Delivery",
                 "enum": [
-                  "transfection",
                   "adenoviral transduction",
-                  "lentiviral transduction"
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -48883,7 +52179,8 @@
                 "type": "string",
                 "title": "Biosample Qualifiers",
                 "enum": [
-                  "calcified",
+                  "6 days calcified",
+                  "10 days calcified",
                   "exhausted"
                 ],
                 "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
@@ -49787,9 +53084,11 @@
                 "type": "string",
                 "title": "Nucleic Acid Delivery",
                 "enum": [
-                  "transfection",
                   "adenoviral transduction",
-                  "lentiviral transduction"
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -51227,9 +54526,11 @@
                 "type": "string",
                 "title": "Nucleic Acid Delivery",
                 "enum": [
-                  "transfection",
                   "adenoviral transduction",
-                  "lentiviral transduction"
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -53035,9 +56336,11 @@
                 "type": "string",
                 "title": "Nucleic Acid Delivery",
                 "enum": [
-                  "transfection",
                   "adenoviral transduction",
-                  "lentiviral transduction"
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -55083,9 +58386,11 @@
                 "type": "string",
                 "title": "Nucleic Acid Delivery",
                 "enum": [
-                  "transfection",
                   "adenoviral transduction",
-                  "lentiviral transduction"
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -59777,6 +63082,11 @@
           "Page",
           "PhenotypicFeature",
           "Publication",
+          "MpraQualityMetric",
+          "PerturbSeqQualityMetric",
+          "SingleCellAtacSeqQualityMetric",
+          "SingleCellRnaSeqQualityMetric",
+          "StarrSeqQualityMetric",
           "InVitroSystem",
           "MultiplexedSample",
           "PrimaryCell",
@@ -59831,6 +63141,11 @@
           "Page",
           "PhenotypicFeature",
           "Publication",
+          "MpraQualityMetric",
+          "PerturbSeqQualityMetric",
+          "SingleCellAtacSeqQualityMetric",
+          "SingleCellRnaSeqQualityMetric",
+          "StarrSeqQualityMetric",
           "InVitroSystem",
           "MultiplexedSample",
           "PrimaryCell",
@@ -62200,6 +65515,16 @@
               "type": "string"
             }
           },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
+              "type": "string"
+            }
+          },
           "assay_titles": {
             "title": "Assay Titles",
             "description": "Title(s) of assay from the file set this file belongs to.",
@@ -62552,6 +65877,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
               "type": "string"
             }
           },
@@ -62947,6 +66282,16 @@
               "type": "string"
             }
           },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
+              "type": "string"
+            }
+          },
           "assay_titles": {
             "title": "Assay Titles",
             "description": "Title(s) of assay from the file set this file belongs to.",
@@ -63283,6 +66628,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
               "type": "string"
             }
           },
@@ -63632,6 +66987,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
               "type": "string"
             }
           },
@@ -64057,6 +67422,16 @@
               "type": "string"
             }
           },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
+              "type": "string"
+            }
+          },
           "assay_titles": {
             "title": "Assay Titles",
             "description": "Title(s) of assay from the file set this file belongs to.",
@@ -64421,6 +67796,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
               "type": "string"
             }
           },
@@ -64855,6 +68240,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
               "type": "string"
             }
           },
@@ -65368,6 +68763,16 @@
               "type": "string"
             }
           },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
+              "type": "string"
+            }
+          },
           "assay_titles": {
             "title": "Assay Titles",
             "description": "Title(s) of assay from the file set this file belongs to.",
@@ -65792,6 +69197,16 @@
               "type": "string"
             }
           },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
+              "type": "string"
+            }
+          },
           "assay_titles": {
             "title": "Assay Titles",
             "description": "Title(s) of assay from the file set this file belongs to.",
@@ -66205,6 +69620,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Loci List For",
+              "type": "string"
+            }
+          },
+          "quality_metrics": {
+            "title": "Quality Metrics",
+            "description": "The quality metrics that are associated with this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric",
               "type": "string"
             }
           },
@@ -71479,6 +74904,1191 @@
           }
         }
       },
+      "MpraQualityMetric": {
+        "title": "MPRA Quality Metric",
+        "description": "Schema for submission of a MPRA uniform pipeline quality metric.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "description": "The status of the metadata object.",
+            "enum": [
+              "archived",
+              "deleted",
+              "in progress",
+              "preview",
+              "released"
+            ]
+          },
+          "release_timestamp": {
+            "title": "Release Timestamp",
+            "description": "The date the object was released.",
+            "type": "string"
+          },
+          "attachment": {
+            "title": "Attachment",
+            "type": "object",
+            "description": "The attached content.",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "title": "Hypertext REFerence",
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "application/json",
+                  "application/pdf",
+                  "image/gif",
+                  "image/jpeg",
+                  "image/png",
+                  "image/svs",
+                  "image/tiff",
+                  "text/autosql",
+                  "text/html",
+                  "text/plain",
+                  "text/tab-separated-values"
+                ]
+              },
+              "md5sum": {
+                "title": "MD5sum",
+                "type": "string"
+              },
+              "size": {
+                "title": "File Size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "width": {
+                "title": "Image Width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image Height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "lab": {
+            "title": "Lab",
+            "description": "Lab associated with the submission.",
+            "type": "string"
+          },
+          "award": {
+            "title": "Award",
+            "description": "Grant associated with the submission.",
+            "type": "string"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "description": "The version of the JSON schema that the server uses to validate the object.",
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d+)*$"
+          },
+          "uuid": {
+            "title": "UUID",
+            "description": "The unique identifier associated with every object.",
+            "type": "string"
+          },
+          "notes": {
+            "title": "Notes",
+            "description": "DACC internal notes.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "aliases": {
+            "title": "Aliases",
+            "description": "Lab specific identifiers to reference an object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Lab Alias",
+              "description": "A lab specific identifier to reference an object.",
+              "type": "string",
+              "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$"
+            }
+          },
+          "creation_timestamp": {
+            "title": "Creation Timestamp",
+            "description": "The date the object was created.",
+            "type": "string"
+          },
+          "submitted_by": {
+            "title": "Submitted By",
+            "description": "The user who submitted the object.",
+            "type": "string"
+          },
+          "submitter_comment": {
+            "title": "Submitter Comment",
+            "description": "Additional information specified by the submitter to be displayed as a comment on the portal.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A plain text description of the object.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "quality_metric_of": {
+            "title": "Quality Metric Of",
+            "description": "The file(s) to which this quality metric applies.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric Of",
+              "type": "string"
+            }
+          },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the quality metric.",
+            "type": "string"
+          },
+          "pearson_correlation": {
+            "title": "Pearson Correlation",
+            "description": "The correlation of log2 RNA/DNA ratios across tested sequences as a measure of replicable activity signal.",
+            "type": "number"
+          },
+          "median_barcodes_passing_filtering": {
+            "title": "Median Barcodes Passing Filtering",
+            "description": "Median number of barcodes across tested sequences that passed filtering to determine if there was sufficient barcode to oligo coverage.",
+            "type": "number"
+          },
+          "median_rna_read_count": {
+            "title": "Median RNA Read Count",
+            "description": "Median of RNA read count for oligos that passed filtering to determine sufficient coverage in terms of read count.",
+            "type": "number"
+          },
+          "pct_oligos_passing": {
+            "title": "Percent Of Oligos Passing Filters",
+            "description": "Percent of tested sequences that passed filtering of the mappable sequences to determine if the designed library was sufficiently recovered.",
+            "type": "number"
+          },
+          "median_assigned_barocdes": {
+            "title": "Median Number Of Assigned Barcodes",
+            "description": "Median number of barcodes assigned to tested sequences in mapping as a quality control measure for the mapping step, whether there is sufficient barcode to oligo coverage.",
+            "type": "number"
+          },
+          "fraction_assigned_oligos": {
+            "title": "Fraction Of Assigned Oligos",
+            "description": "Fraction of assigned tested sequences in mapping to determine if the library during the mapping step was sufficiently recovered.",
+            "type": "number"
+          },
+          "@id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "@type": {
+            "title": "Type",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string",
+            "description": "A summary of the quality metric."
+          }
+        }
+      },
+      "PerturbSeqQualityMetric": {
+        "title": "Perturb-seq Quality Metric",
+        "description": "Schema for submission of a Perturb-seq uniform pipeline quality metric.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "description": "The status of the metadata object.",
+            "enum": [
+              "archived",
+              "deleted",
+              "in progress",
+              "preview",
+              "released"
+            ]
+          },
+          "release_timestamp": {
+            "title": "Release Timestamp",
+            "description": "The date the object was released.",
+            "type": "string"
+          },
+          "attachment": {
+            "title": "Attachment",
+            "type": "object",
+            "description": "The attached content.",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "title": "Hypertext REFerence",
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "application/json",
+                  "application/pdf",
+                  "image/gif",
+                  "image/jpeg",
+                  "image/png",
+                  "image/svs",
+                  "image/tiff",
+                  "text/autosql",
+                  "text/html",
+                  "text/plain",
+                  "text/tab-separated-values"
+                ]
+              },
+              "md5sum": {
+                "title": "MD5sum",
+                "type": "string"
+              },
+              "size": {
+                "title": "File Size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "width": {
+                "title": "Image Width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image Height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "lab": {
+            "title": "Lab",
+            "description": "Lab associated with the submission.",
+            "type": "string"
+          },
+          "award": {
+            "title": "Award",
+            "description": "Grant associated with the submission.",
+            "type": "string"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "description": "The version of the JSON schema that the server uses to validate the object.",
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d+)*$"
+          },
+          "uuid": {
+            "title": "UUID",
+            "description": "The unique identifier associated with every object.",
+            "type": "string"
+          },
+          "notes": {
+            "title": "Notes",
+            "description": "DACC internal notes.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "aliases": {
+            "title": "Aliases",
+            "description": "Lab specific identifiers to reference an object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Lab Alias",
+              "description": "A lab specific identifier to reference an object.",
+              "type": "string",
+              "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$"
+            }
+          },
+          "creation_timestamp": {
+            "title": "Creation Timestamp",
+            "description": "The date the object was created.",
+            "type": "string"
+          },
+          "submitted_by": {
+            "title": "Submitted By",
+            "description": "The user who submitted the object.",
+            "type": "string"
+          },
+          "submitter_comment": {
+            "title": "Submitter Comment",
+            "description": "Additional information specified by the submitter to be displayed as a comment on the portal.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A plain text description of the object.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "quality_metric_of": {
+            "title": "Quality Metric Of",
+            "description": "The file(s) to which this quality metric applies.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric Of",
+              "type": "string"
+            }
+          },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the quality metric.",
+            "type": "string"
+          },
+          "total_cells_passing_filters": {
+            "title": "Total Cells Passing Filters",
+            "description": "Total Cells Passing Filters",
+            "type": "number"
+          },
+          "pct_cells_assigned_guide": {
+            "title": "Percent Cells Assigned Guide",
+            "description": "Percent Cells Assigned Guide",
+            "type": "number"
+          },
+          "avg_cells_per_target": {
+            "title": "Average Cells Per Target",
+            "description": "Average Cells Per Target",
+            "type": "number"
+          },
+          "moi": {
+            "title": "Multiplicity Of Infection",
+            "description": "Multiplicity Of Infection",
+            "type": "number"
+          },
+          "avg_umis_per_cell": {
+            "title": "Average UMIs Per Cell",
+            "description": "Average UMIs Per Cell",
+            "type": "number"
+          },
+          "total_guides": {
+            "title": "Total Guides",
+            "description": "Total Guides",
+            "type": "number"
+          },
+          "total_targets": {
+            "title": "Total Targets",
+            "description": "Total Targets",
+            "type": "number"
+          },
+          "guide_diversity": {
+            "title": "Guide Diversity",
+            "description": "Guide diversity (Gini index)",
+            "type": "number"
+          },
+          "mean_mitochondrial_reads": {
+            "title": "Mean Mitochondrial Reads",
+            "description": "Mean mitochondrial reads.",
+            "type": "number"
+          },
+          "total_reads": {
+            "title": "Total Reads",
+            "description": "Total reads (n_processed) reported by Kallisto.",
+            "type": "number"
+          },
+          "paired_reads_mapped": {
+            "title": "Paired Reads Mapped",
+            "description": "Paired reads mapped (n_pseudoaligned) reported by Kallisto.",
+            "type": "number"
+          },
+          "alignment_percentage": {
+            "title": "Alignment Percentage",
+            "description": "Alignment percentage (p_pseudoaligned) reported by Kallisto.",
+            "type": "number"
+          },
+          "total_detected_scrna_barcodes": {
+            "title": "Total Detected scRNA Barcodes",
+            "description": "Unfiltered total detected scRNA barcodes (numBarcodes) reported by Kallisto.",
+            "type": "number"
+          },
+          "@id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "@type": {
+            "title": "Type",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string",
+            "description": "A summary of the quality metric."
+          }
+        }
+      },
+      "SingleCellAtacSeqQualityMetric": {
+        "title": "Single Cell ATAC-seq Quality Metric",
+        "description": "Schema for submission of a scATAC-seq uniform pipeline quality metric.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "description": "The status of the metadata object.",
+            "enum": [
+              "archived",
+              "deleted",
+              "in progress",
+              "preview",
+              "released"
+            ]
+          },
+          "release_timestamp": {
+            "title": "Release Timestamp",
+            "description": "The date the object was released.",
+            "type": "string"
+          },
+          "attachment": {
+            "title": "Attachment",
+            "type": "object",
+            "description": "The attached content.",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "title": "Hypertext REFerence",
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "application/json",
+                  "application/pdf",
+                  "image/gif",
+                  "image/jpeg",
+                  "image/png",
+                  "image/svs",
+                  "image/tiff",
+                  "text/autosql",
+                  "text/html",
+                  "text/plain",
+                  "text/tab-separated-values"
+                ]
+              },
+              "md5sum": {
+                "title": "MD5sum",
+                "type": "string"
+              },
+              "size": {
+                "title": "File Size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "width": {
+                "title": "Image Width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image Height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "lab": {
+            "title": "Lab",
+            "description": "Lab associated with the submission.",
+            "type": "string"
+          },
+          "award": {
+            "title": "Award",
+            "description": "Grant associated with the submission.",
+            "type": "string"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "description": "The version of the JSON schema that the server uses to validate the object.",
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d+)*$"
+          },
+          "uuid": {
+            "title": "UUID",
+            "description": "The unique identifier associated with every object.",
+            "type": "string"
+          },
+          "notes": {
+            "title": "Notes",
+            "description": "DACC internal notes.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "aliases": {
+            "title": "Aliases",
+            "description": "Lab specific identifiers to reference an object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Lab Alias",
+              "description": "A lab specific identifier to reference an object.",
+              "type": "string",
+              "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$"
+            }
+          },
+          "creation_timestamp": {
+            "title": "Creation Timestamp",
+            "description": "The date the object was created.",
+            "type": "string"
+          },
+          "submitted_by": {
+            "title": "Submitted By",
+            "description": "The user who submitted the object.",
+            "type": "string"
+          },
+          "submitter_comment": {
+            "title": "Submitter Comment",
+            "description": "Additional information specified by the submitter to be displayed as a comment on the portal.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A plain text description of the object.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "quality_metric_of": {
+            "title": "Quality Metric Of",
+            "description": "The file(s) to which this quality metric applies.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric Of",
+              "type": "string"
+            }
+          },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the quality metric.",
+            "type": "string"
+          },
+          "tsse": {
+            "title": "Transcription Start Site Enrichment",
+            "description": "",
+            "type": "number"
+          },
+          "n_fragments": {
+            "title": "Number Of Fragments",
+            "description": "",
+            "type": "number"
+          },
+          "n_barcodes": {
+            "title": "Number Of Barcodes",
+            "description": "",
+            "type": "number"
+          },
+          "pct_duplicates": {
+            "title": "Percent Duplicates",
+            "description": "",
+            "type": "number"
+          },
+          "n_fragment": {
+            "title": "Number Of Fragments",
+            "description": "",
+            "type": "number"
+          },
+          "frac_dup": {
+            "title": "Duplicate Fraction",
+            "description": "",
+            "type": "number"
+          },
+          "frac_mito": {
+            "title": "Mitochondrial Fraction",
+            "description": "",
+            "type": "number"
+          },
+          "total": {
+            "title": "Total Number",
+            "description": "",
+            "type": "number"
+          },
+          "duplicate": {
+            "title": "Duplicate Number",
+            "description": "",
+            "type": "number"
+          },
+          "unmapped": {
+            "title": "Unmapped Number",
+            "description": "",
+            "type": "number"
+          },
+          "lowmapq": {
+            "title": "Low Mapping Quality",
+            "description": "",
+            "type": "number"
+          },
+          "joint_barcodes_passing": {
+            "title": "Joint Barcodes Passing",
+            "description": "",
+            "type": "number"
+          },
+          "n_reads": {
+            "title": "Number Of Reads",
+            "description": "",
+            "type": "number"
+          },
+          "n_mapped_reads": {
+            "title": "Number Of Mapped Reads",
+            "description": "",
+            "type": "number"
+          },
+          "n_uniquely_mapped_reads": {
+            "title": "Number Of Uniquely Mapped Reads",
+            "description": "",
+            "type": "number"
+          },
+          "n_reads_with_multi_mappings": {
+            "title": "Number Of Reads With Multi-Mappings",
+            "description": "",
+            "type": "number"
+          },
+          "n_candidates": {
+            "title": "Number Of Candidates",
+            "description": "",
+            "type": "number"
+          },
+          "n_mappings": {
+            "title": "Number Of Mappings",
+            "description": "",
+            "type": "number"
+          },
+          "n_uni_mappings": {
+            "title": "Number Of Uni-Mappings",
+            "description": "",
+            "type": "number"
+          },
+          "n_multi_mappings": {
+            "title": "Number Of Multi-Mappings",
+            "description": "",
+            "type": "number"
+          },
+          "n_barcodes_on_onlist": {
+            "title": "Number Of Barcodes On Onlist",
+            "description": "",
+            "type": "number"
+          },
+          "n_corrected_barcodes": {
+            "title": "Number Of Corrected Barcodes",
+            "description": "",
+            "type": "number"
+          },
+          "n_output_mappings": {
+            "title": "Number Of Output Mappings",
+            "description": "",
+            "type": "number"
+          },
+          "@id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "@type": {
+            "title": "Type",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string",
+            "description": "A summary of the quality metric."
+          }
+        }
+      },
+      "SingleCellRnaSeqQualityMetric": {
+        "title": "Single Cell RNA-seq Quality Metric",
+        "description": "Schema for submission of a scRNA-seq uniform pipeline quality metric.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "description": "The status of the metadata object.",
+            "enum": [
+              "archived",
+              "deleted",
+              "in progress",
+              "preview",
+              "released"
+            ]
+          },
+          "release_timestamp": {
+            "title": "Release Timestamp",
+            "description": "The date the object was released.",
+            "type": "string"
+          },
+          "attachment": {
+            "title": "Attachment",
+            "type": "object",
+            "description": "The attached content.",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "title": "Hypertext REFerence",
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "application/json",
+                  "application/pdf",
+                  "image/gif",
+                  "image/jpeg",
+                  "image/png",
+                  "image/svs",
+                  "image/tiff",
+                  "text/autosql",
+                  "text/html",
+                  "text/plain",
+                  "text/tab-separated-values"
+                ]
+              },
+              "md5sum": {
+                "title": "MD5sum",
+                "type": "string"
+              },
+              "size": {
+                "title": "File Size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "width": {
+                "title": "Image Width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image Height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "lab": {
+            "title": "Lab",
+            "description": "Lab associated with the submission.",
+            "type": "string"
+          },
+          "award": {
+            "title": "Award",
+            "description": "Grant associated with the submission.",
+            "type": "string"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "description": "The version of the JSON schema that the server uses to validate the object.",
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d+)*$"
+          },
+          "uuid": {
+            "title": "UUID",
+            "description": "The unique identifier associated with every object.",
+            "type": "string"
+          },
+          "notes": {
+            "title": "Notes",
+            "description": "DACC internal notes.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "aliases": {
+            "title": "Aliases",
+            "description": "Lab specific identifiers to reference an object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Lab Alias",
+              "description": "A lab specific identifier to reference an object.",
+              "type": "string",
+              "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$"
+            }
+          },
+          "creation_timestamp": {
+            "title": "Creation Timestamp",
+            "description": "The date the object was created.",
+            "type": "string"
+          },
+          "submitted_by": {
+            "title": "Submitted By",
+            "description": "The user who submitted the object.",
+            "type": "string"
+          },
+          "submitter_comment": {
+            "title": "Submitter Comment",
+            "description": "Additional information specified by the submitter to be displayed as a comment on the portal.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A plain text description of the object.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "quality_metric_of": {
+            "title": "Quality Metric Of",
+            "description": "The file(s) to which this quality metric applies.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric Of",
+              "type": "string"
+            }
+          },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the quality metric.",
+            "type": "string"
+          },
+          "n_records": {
+            "title": "Number Of Records",
+            "description": "",
+            "type": "number"
+          },
+          "n_reads": {
+            "title": "Number Of Reads",
+            "description": "",
+            "type": "number"
+          },
+          "n_barcodes": {
+            "title": "Number Of Barcodes",
+            "description": "",
+            "type": "number"
+          },
+          "frac_reads_in_genes_library": {
+            "title": "Fraction Of Reads In Genes Library",
+            "description": "",
+            "type": "number"
+          },
+          "total_umis": {
+            "title": "Total UMIs",
+            "description": "",
+            "type": "number"
+          },
+          "n_barcode_umis": {
+            "title": "Number Of Barcode UMIs",
+            "description": "",
+            "type": "number"
+          },
+          "median_reads_per_barcode": {
+            "title": "Median Reads Per Barcode",
+            "description": "",
+            "type": "number"
+          },
+          "mean_reads_per_barcode": {
+            "title": "Mean Reads Per Barcode",
+            "description": "",
+            "type": "number"
+          },
+          "median_genes_per_barcode": {
+            "title": "Median Genes Per Barcode",
+            "description": "",
+            "type": "number"
+          },
+          "median_umis_per_barcode": {
+            "title": "Median UMIs Per Barcode",
+            "description": "",
+            "type": "number"
+          },
+          "mean_umis_per_barcode": {
+            "title": "Mean UMIs Per Barcode",
+            "description": "",
+            "type": "number"
+          },
+          "pct_duplicates": {
+            "title": "Percent Duplicates",
+            "description": "",
+            "type": "number"
+          },
+          "n_genes": {
+            "title": "Number Of Genes",
+            "description": "",
+            "type": "number"
+          },
+          "frac_dup": {
+            "title": "Duplicate Fraction",
+            "description": "",
+            "type": "number"
+          },
+          "frac_mito": {
+            "title": "Mitochondrial Fraction",
+            "description": "",
+            "type": "number"
+          },
+          "frac_mito_genes": {
+            "title": "Mitochondrial Genes Fraction",
+            "description": "",
+            "type": "number"
+          },
+          "frac_reads_in_genes_barcode": {
+            "title": "Fraction Of Reads In Genes Barcode",
+            "description": "",
+            "type": "number"
+          },
+          "joint_barcodes_passing": {
+            "title": "Joint Barcodes Passing",
+            "description": "",
+            "type": "number"
+          },
+          "gt_records": {
+            "title": "GtRecords",
+            "description": "",
+            "type": "number"
+          },
+          "numBarcodesOnOnlist": {
+            "title": "Number Of Barcodes On Onlist",
+            "description": "",
+            "type": "number"
+          },
+          "percentageBarcodesOnOnlist": {
+            "title": "Percentage Of Barcodes On Onlist",
+            "description": "",
+            "type": "number"
+          },
+          "numReadsOnOnlist": {
+            "title": "Number Of Reads On Onlist",
+            "description": "",
+            "type": "number"
+          },
+          "percentageReadsOnOnlist": {
+            "title": "Percentage Of Reads On Onlist",
+            "description": "",
+            "type": "number"
+          },
+          "@id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "@type": {
+            "title": "Type",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string",
+            "description": "A summary of the quality metric."
+          }
+        }
+      },
+      "StarrSeqQualityMetric": {
+        "title": "STARR-seq Quality Metric",
+        "description": "Schema for submission of a STARR-seq uniform pipeline quality metric.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "description": "The status of the metadata object.",
+            "enum": [
+              "archived",
+              "deleted",
+              "in progress",
+              "preview",
+              "released"
+            ]
+          },
+          "release_timestamp": {
+            "title": "Release Timestamp",
+            "description": "The date the object was released.",
+            "type": "string"
+          },
+          "attachment": {
+            "title": "Attachment",
+            "type": "object",
+            "description": "The attached content.",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "title": "Hypertext REFerence",
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "application/json",
+                  "application/pdf",
+                  "image/gif",
+                  "image/jpeg",
+                  "image/png",
+                  "image/svs",
+                  "image/tiff",
+                  "text/autosql",
+                  "text/html",
+                  "text/plain",
+                  "text/tab-separated-values"
+                ]
+              },
+              "md5sum": {
+                "title": "MD5sum",
+                "type": "string"
+              },
+              "size": {
+                "title": "File Size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "width": {
+                "title": "Image Width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image Height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "lab": {
+            "title": "Lab",
+            "description": "Lab associated with the submission.",
+            "type": "string"
+          },
+          "award": {
+            "title": "Award",
+            "description": "Grant associated with the submission.",
+            "type": "string"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "description": "The version of the JSON schema that the server uses to validate the object.",
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d+)*$"
+          },
+          "uuid": {
+            "title": "UUID",
+            "description": "The unique identifier associated with every object.",
+            "type": "string"
+          },
+          "notes": {
+            "title": "Notes",
+            "description": "DACC internal notes.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "aliases": {
+            "title": "Aliases",
+            "description": "Lab specific identifiers to reference an object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Lab Alias",
+              "description": "A lab specific identifier to reference an object.",
+              "type": "string",
+              "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$"
+            }
+          },
+          "creation_timestamp": {
+            "title": "Creation Timestamp",
+            "description": "The date the object was created.",
+            "type": "string"
+          },
+          "submitted_by": {
+            "title": "Submitted By",
+            "description": "The user who submitted the object.",
+            "type": "string"
+          },
+          "submitter_comment": {
+            "title": "Submitter Comment",
+            "description": "Additional information specified by the submitter to be displayed as a comment on the portal.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A plain text description of the object.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "quality_metric_of": {
+            "title": "Quality Metric Of",
+            "description": "The file(s) to which this quality metric applies.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Quality Metric Of",
+              "type": "string"
+            }
+          },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the quality metric.",
+            "type": "string"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "description": "Coverage of the library.",
+            "type": "number"
+          },
+          "coverage_per_basepair": {
+            "title": "Coverage Per Basepair",
+            "description": "Coverage at basepair level.",
+            "type": "number"
+          },
+          "rna_correlation_in_peaks": {
+            "title": "Correlation Of RNA In Peaks",
+            "description": "Correlation of RNA only over regions called as peaks in DNA.",
+            "type": "number"
+          },
+          "@id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "@type": {
+            "title": "Type",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string",
+            "description": "A summary of the quality metric."
+          }
+        }
+      },
       "InVitroSystem": {
         "title": "In Vitro System",
         "description": "A biosample that is cultured, such as immortalized cell lines, organoids, gastruloids or samples that have been differentiated or reprogrammed.",
@@ -71860,9 +76470,11 @@
             "description": "Method of introduction of nucleic acid into the cell.",
             "type": "string",
             "enum": [
-              "transfection",
               "adenoviral transduction",
-              "lentiviral transduction"
+              "lipofectamine",
+              "electroporation",
+              "lentiviral transduction",
+              "transfection"
             ]
           },
           "time_post_library_delivery": {
@@ -71983,7 +76595,8 @@
               "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
               "type": "string",
               "enum": [
-                "calcified",
+                "6 days calcified",
+                "10 days calcified",
                 "exhausted"
               ]
             }
@@ -72344,9 +76957,11 @@
             "description": "Method of introduction of nucleic acid into the cell.",
             "type": "string",
             "enum": [
-              "transfection",
               "adenoviral transduction",
-              "lentiviral transduction"
+              "lipofectamine",
+              "electroporation",
+              "lentiviral transduction",
+              "transfection"
             ]
           },
           "time_post_library_delivery": {
@@ -72954,9 +77569,11 @@
             "description": "Method of introduction of nucleic acid into the cell.",
             "type": "string",
             "enum": [
-              "transfection",
               "adenoviral transduction",
-              "lentiviral transduction"
+              "lipofectamine",
+              "electroporation",
+              "lentiviral transduction",
+              "transfection"
             ]
           },
           "time_post_library_delivery": {
@@ -73003,7 +77620,8 @@
               "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
               "type": "string",
               "enum": [
-                "calcified",
+                "6 days calcified",
+                "10 days calcified",
                 "exhausted"
               ]
             }
@@ -73387,9 +78005,11 @@
             "description": "Method of introduction of nucleic acid into the cell.",
             "type": "string",
             "enum": [
-              "transfection",
               "adenoviral transduction",
-              "lentiviral transduction"
+              "lipofectamine",
+              "electroporation",
+              "lentiviral transduction",
+              "transfection"
             ]
           },
           "time_post_library_delivery": {
@@ -73909,9 +78529,11 @@
             "description": "Method of introduction of nucleic acid into the cell.",
             "type": "string",
             "enum": [
-              "transfection",
               "adenoviral transduction",
-              "lentiviral transduction"
+              "lipofectamine",
+              "electroporation",
+              "lentiviral transduction",
+              "transfection"
             ]
           },
           "time_post_library_delivery": {
@@ -74481,9 +79103,11 @@
             "description": "Method of introduction of nucleic acid into the cell.",
             "type": "string",
             "enum": [
-              "transfection",
               "adenoviral transduction",
-              "lentiviral transduction"
+              "lipofectamine",
+              "electroporation",
+              "lentiviral transduction",
+              "transfection"
             ]
           },
           "time_post_library_delivery": {

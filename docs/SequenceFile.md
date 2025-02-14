@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **input_file_for** | **List[str]** | The files which are derived from this file. | [optional] 
 **gene_list_for** | **List[str]** | File Set(s) that this file is a gene list for. | [optional] 
 **loci_list_for** | **List[str]** | File Set(s) that this file is a loci list for. | [optional] 
+**quality_metrics** | **List[str]** | The quality metrics that are associated with this file. | [optional] 
 **assay_titles** | **List[str]** | Title(s) of assay from the file set this file belongs to. | [optional] 
 **workflow** | **str** | The workflow used to produce this file. | [optional] 
 **href** | **str** | The download path to obtain file. | [optional] 
