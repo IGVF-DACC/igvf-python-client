@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "66.0.0"
+    "version": "66.0.1"
   },
   "servers": [
     {
