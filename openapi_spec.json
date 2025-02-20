@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "66.0.1"
+    "version": "67.0.0"
   },
   "servers": [
     {
@@ -1568,6 +1568,7 @@
                   "peaks",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
+                  "protein language model",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -1787,6 +1788,7 @@
                   "peaks",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
+                  "protein language model",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -4324,6 +4326,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -4332,10 +4335,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -5157,6 +5165,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -5165,10 +5174,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -6126,6 +6140,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -6134,10 +6149,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -7761,6 +7781,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -7769,10 +7790,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -9355,6 +9381,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -9363,10 +9390,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -10923,6 +10955,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -10931,10 +10964,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -12464,6 +12502,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -12472,10 +12511,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -14035,6 +14079,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -14043,10 +14088,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -15671,6 +15721,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -15679,10 +15730,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -17268,6 +17324,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -17276,10 +17333,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -18952,6 +19014,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -18960,10 +19023,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -20868,6 +20936,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -20876,10 +20945,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -22606,6 +22680,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -22614,10 +22689,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -24223,6 +24303,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -24231,15 +24312,138 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
             },
             "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -25187,22 +25391,6 @@
             "explode": true
           },
           {
-            "name": "samples.construct_library_sets",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Construct Library Sets",
-              "items": {
-                "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
-            },
-            "description": "Filter by samples.construct_library_sets",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.disease_terms.@id",
             "in": "query",
             "schema": {
@@ -25474,6 +25662,21 @@
             "explode": true
           },
           {
+            "name": "samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.treatments.status",
             "in": "query",
             "schema": {
@@ -25489,17 +25692,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments.treatment_term_name",
+            "name": "samples.treatments.summary",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Treatment Term Name",
-                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+                "title": "Summary"
               }
             },
-            "description": "Filter by samples.treatments.treatment_term_name",
+            "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Type",
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_type",
             "style": "form",
             "explode": true
           },
@@ -26001,6 +26218,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -26009,15 +26227,138 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
             },
             "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -26846,22 +27187,6 @@
             "explode": true
           },
           {
-            "name": "samples.construct_library_sets",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Construct Library Sets",
-              "items": {
-                "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
-            },
-            "description": "Filter by samples.construct_library_sets",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.disease_terms.@id",
             "in": "query",
             "schema": {
@@ -27133,6 +27458,21 @@
             "explode": true
           },
           {
+            "name": "samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.treatments.status",
             "in": "query",
             "schema": {
@@ -27148,17 +27488,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments.treatment_term_name",
+            "name": "samples.treatments.summary",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Treatment Term Name",
-                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+                "title": "Summary"
               }
             },
-            "description": "Filter by samples.treatments.treatment_term_name",
+            "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Type",
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_type",
             "style": "form",
             "explode": true
           },
@@ -27723,6 +28077,21 @@
             "explode": true
           },
           {
+            "name": "applied_to_samples.nucleic_acid_delivery",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Nucleic Acid Delivery",
+                "description": "Method of introduction of nucleic acid into the cell."
+              }
+            },
+            "description": "Filter by applied_to_samples.nucleic_acid_delivery",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "applied_to_samples.sample_terms.@id",
             "in": "query",
             "schema": {
@@ -28046,6 +28415,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -28054,15 +28424,37 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
             },
             "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Construct Library Sets",
+              "items": {
+                "type": "string",
+                "title": "Construct Library Set",
+                "description": "A construct library set associated with a sample of this file set."
+              },
+              "description": "The construct library sets associated with the samples of this file set."
+            },
+            "description": "Filter by construct_library_sets",
             "style": "form",
             "explode": true
           },
@@ -29593,6 +29985,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -29601,15 +29994,138 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
             },
             "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -29865,6 +30381,7 @@
                   "genome",
                   "genes",
                   "guide RNAs",
+                  "training data for predictive models",
                   "transcriptome",
                   "variants"
                 ],
@@ -30363,22 +30880,6 @@
             "explode": true
           },
           {
-            "name": "samples.construct_library_sets",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Construct Library Sets",
-              "items": {
-                "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
-            },
-            "description": "Filter by samples.construct_library_sets",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.disease_terms.@id",
             "in": "query",
             "schema": {
@@ -30650,6 +31151,21 @@
             "explode": true
           },
           {
+            "name": "samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.treatments.status",
             "in": "query",
             "schema": {
@@ -30665,17 +31181,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments.treatment_term_name",
+            "name": "samples.treatments.summary",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Treatment Term Name",
-                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+                "title": "Summary"
               }
             },
-            "description": "Filter by samples.treatments.treatment_term_name",
+            "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Type",
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_type",
             "style": "form",
             "explode": true
           },
@@ -31259,6 +31789,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -31267,15 +31798,227 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
             },
             "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.geneid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
+                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.geneid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "The full gene name preferably approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -32094,7 +32837,9 @@
                   "Parse SPLiT-seq",
                   "ATAC-seq",
                   "varACCESS",
+                  "ACCESS-ATAC",
                   "scATAC-seq",
+                  "scACCESS-ATAC",
                   "snATAC-seq",
                   "scMito-seq",
                   "DOGMA-seq",
@@ -32458,168 +33203,6 @@
             "explode": true
           },
           {
-            "name": "samples.construct_library_sets.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.accession",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Accession",
-                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.accession",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.file_set_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "File Set Type",
-                "description": "The type or category of this construct library set."
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.file_set_type",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.small_scale_gene_list.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.small_scale_gene_list.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.small_scale_gene_list.geneid",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ENSEMBL GeneID",
-                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
-                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.small_scale_gene_list.geneid",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.small_scale_gene_list.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "description": "The full gene name preferably approved by the official nomenclature."
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.small_scale_gene_list.name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.small_scale_gene_list.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.small_scale_gene_list.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.small_scale_gene_list.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary"
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.small_scale_gene_list.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.small_scale_gene_list.symbol",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Gene Symbol",
-                "description": "Gene symbol approved by the official nomenclature."
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.small_scale_gene_list.symbol",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_library_sets.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary"
-              }
-            },
-            "description": "Filter by samples.construct_library_sets.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.disease_terms.@id",
             "in": "query",
             "schema": {
@@ -32931,21 +33514,6 @@
               }
             },
             "description": "Filter by samples.treatments.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.treatments.treatment_term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Treatment Term Name",
-                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
-              }
-            },
-            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -33580,6 +34148,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -33588,15 +34157,138 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
             },
             "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -34508,22 +35200,6 @@
             "explode": true
           },
           {
-            "name": "samples.construct_library_sets",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Construct Library Sets",
-              "items": {
-                "type": "string",
-                "title": "Construct Library Set"
-              },
-              "description": "The construct library sets of vectors introduced to this sample prior to performing an assay."
-            },
-            "description": "Filter by samples.construct_library_sets",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.disease_terms.@id",
             "in": "query",
             "schema": {
@@ -34795,6 +35471,21 @@
             "explode": true
           },
           {
+            "name": "samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.treatments.status",
             "in": "query",
             "schema": {
@@ -34810,17 +35501,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments.treatment_term_name",
+            "name": "samples.treatments.summary",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Treatment Term Name",
-                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+                "title": "Summary"
               }
             },
-            "description": "Filter by samples.treatments.treatment_term_name",
+            "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Type",
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_type",
             "style": "form",
             "explode": true
           },
@@ -35486,6 +36191,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -35494,15 +36200,138 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
             },
             "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The category that best describes this prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.integrated_content_files.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the prediction set."
+              }
+            },
+            "description": "Filter by construct_library_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -36722,6 +37551,21 @@
             "explode": true
           },
           {
+            "name": "samples.treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by samples.treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.treatments.status",
             "in": "query",
             "schema": {
@@ -36737,17 +37581,31 @@
             "explode": true
           },
           {
-            "name": "samples.treatments.treatment_term_name",
+            "name": "samples.treatments.summary",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Treatment Term Name",
-                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+                "title": "Summary"
               }
             },
-            "description": "Filter by samples.treatments.treatment_term_name",
+            "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Type",
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_type",
             "style": "form",
             "explode": true
           },
@@ -37225,6 +38083,41 @@
             "explode": true
           },
           {
+            "name": "collections",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Collections",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "ACMG73",
+                  "ClinGen",
+                  "ENCODE",
+                  "GREGoR",
+                  "IGVF_catalog_beta_v0.1",
+                  "IGVF_catalog_beta_v0.2",
+                  "IGVF_catalog_beta_v0.3",
+                  "IGVF_catalog_beta_v0.4",
+                  "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
+                  "MaveDB",
+                  "Morphic",
+                  "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
+                  "VarChAMP",
+                  "Vista",
+                  "Williams Syndrome Research"
+                ]
+              },
+              "description": "Some samples are part of particular data collections."
+            },
+            "description": "Filter by collections",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -37424,6 +38317,24 @@
               }
             },
             "description": "Filter by status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "study_sets",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Study Sets",
+              "items": {
+                "type": "string",
+                "title": "Study Set",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The study of IGVF that this gene was a part of."
+              },
+              "description": "The studies of IGVF that this gene was a part of."
+            },
+            "description": "Filter by study_sets",
             "style": "form",
             "explode": true
           },
@@ -40536,7 +41447,9 @@
                   "Parse SPLiT-seq",
                   "ATAC-seq",
                   "varACCESS",
+                  "ACCESS-ATAC",
                   "scATAC-seq",
+                  "scACCESS-ATAC",
                   "snATAC-seq",
                   "scMito-seq",
                   "DOGMA-seq",
@@ -48116,6 +49029,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -48124,10 +49038,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -50263,6 +51182,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -50271,10 +51191,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -52232,6 +53157,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -52240,10 +53166,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -54083,6 +55014,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -54091,10 +55023,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -55484,6 +56421,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -55492,10 +56430,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -57534,6 +58477,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -57542,10 +58486,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -62235,6 +63184,7 @@
                   "peaks",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
+                  "protein language model",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -62395,6 +63345,7 @@
                   "peaks",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
+                  "protein language model",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -62542,6 +63493,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "ACMG73",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -62550,10 +63502,15 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF phase 1",
                   "MaveDB",
+                  "Morphic",
                   "MPRAbase",
+                  "StanfordFCC",
+                  "TOPMED Freeze 8",
                   "VarChAMP",
-                  "Vista"
+                  "Vista",
+                  "Williams Syndrome Research"
                 ]
               },
               "description": "Some samples are part of particular data collections."
@@ -63641,6 +64598,7 @@
                 "peaks",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
+                "protein language model",
                 "protein to protein interaction score",
                 "proteins",
                 "proteins_proteins",
@@ -63795,6 +64753,7 @@
                 "peaks",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
+                "protein language model",
                 "protein to protein interaction score",
                 "proteins",
                 "proteins_proteins",
@@ -64617,6 +65576,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -64625,10 +65585,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -64953,6 +65918,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -64961,10 +65927,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -65255,6 +66226,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -65263,10 +66235,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -65619,6 +66596,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -65627,10 +66605,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -66033,6 +67016,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -66041,10 +67025,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -66381,6 +67370,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -66389,10 +67379,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -66740,6 +67735,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -66748,10 +67744,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -67125,6 +68126,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -67133,10 +68135,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -67546,6 +68553,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -67554,10 +68562,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -67964,6 +68977,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -67972,10 +68986,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -68362,6 +69381,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -68370,10 +69390,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -68926,6 +69951,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -68934,10 +69960,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -69370,6 +70401,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -69378,10 +70410,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -69754,6 +70791,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -69762,10 +70800,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -69950,6 +70993,17 @@
               "type": "string"
             }
           },
+          "construct_library_sets": {
+            "title": "Construct Library Sets",
+            "description": "The construct library sets associated with the samples of this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Construct Library Set",
+              "description": "A construct library set associated with a sample of this file set.",
+              "type": "string"
+            }
+          },
           "assay_titles": {
             "title": "Assay Titles",
             "description": "Title(s) of assays that produced data analyzed in the analysis set.",
@@ -70065,6 +71119,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -70073,10 +71128,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -70265,6 +71325,17 @@
               "type": "string"
             }
           },
+          "construct_library_sets": {
+            "title": "Construct Library Sets",
+            "description": "The construct library sets associated with the samples of this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Construct Library Set",
+              "description": "A construct library set associated with a sample of this file set.",
+              "type": "string"
+            }
+          },
           "measurement_sets": {
             "title": "Measurement Sets",
             "description": "The measurement sets that link to this auxiliary set.",
@@ -70444,6 +71515,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -70452,10 +71524,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -70763,6 +71840,17 @@
               "type": "string"
             }
           },
+          "construct_library_sets": {
+            "title": "Construct Library Sets",
+            "description": "The construct library sets associated with the samples of this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Construct Library Set",
+              "description": "A construct library set associated with a sample of this file set.",
+              "type": "string"
+            }
+          },
           "applied_to_samples": {
             "title": "Applied to Samples",
             "description": "The samples that link to this construct library set.",
@@ -70851,6 +71939,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -70859,10 +71948,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -70994,6 +72088,7 @@
               "genome",
               "genes",
               "guide RNAs",
+              "training data for predictive models",
               "transcriptome",
               "variants"
             ]
@@ -71045,6 +72140,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Input For",
+              "type": "string"
+            }
+          },
+          "construct_library_sets": {
+            "title": "Construct Library Sets",
+            "description": "The construct library sets associated with the samples of this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Construct Library Set",
+              "description": "A construct library set associated with a sample of this file set.",
               "type": "string"
             }
           },
@@ -71148,6 +72254,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -71156,10 +72263,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -71317,7 +72429,9 @@
               "Parse SPLiT-seq",
               "ATAC-seq",
               "varACCESS",
+              "ACCESS-ATAC",
               "scATAC-seq",
+              "scACCESS-ATAC",
               "snATAC-seq",
               "scMito-seq",
               "DOGMA-seq",
@@ -71504,6 +72618,17 @@
               "type": "string"
             }
           },
+          "construct_library_sets": {
+            "title": "Construct Library Sets",
+            "description": "The construct library sets associated with the samples of this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Construct Library Set",
+              "description": "A construct library set associated with a sample of this file set.",
+              "type": "string"
+            }
+          },
           "related_multiome_datasets": {
             "title": "Related Multiome Datasets",
             "description": "Related datasets included in the multiome experiment this measurement set is a part of.",
@@ -71599,6 +72724,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -71607,10 +72733,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -71842,6 +72973,17 @@
               "type": "string"
             }
           },
+          "construct_library_sets": {
+            "title": "Construct Library Sets",
+            "description": "The construct library sets associated with the samples of this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Construct Library Set",
+              "description": "A construct library set associated with a sample of this file set.",
+              "type": "string"
+            }
+          },
           "externally_hosted": {
             "title": "Externally Hosted",
             "type": "boolean"
@@ -72003,6 +73145,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -72011,10 +73154,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -72216,6 +73364,17 @@
               "title": "Input For",
               "type": "string"
             }
+          },
+          "construct_library_sets": {
+            "title": "Construct Library Sets",
+            "description": "The construct library sets associated with the samples of this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Construct Library Set",
+              "description": "A construct library set associated with a sample of this file set.",
+              "type": "string"
+            }
           }
         }
       },
@@ -72324,6 +73483,35 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "collections": {
+            "title": "Collections",
+            "description": "Some samples are part of particular data collections.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "ACMG73",
+                "ClinGen",
+                "ENCODE",
+                "GREGoR",
+                "IGVF_catalog_beta_v0.1",
+                "IGVF_catalog_beta_v0.2",
+                "IGVF_catalog_beta_v0.3",
+                "IGVF_catalog_beta_v0.4",
+                "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
+                "MaveDB",
+                "Morphic",
+                "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
+                "VarChAMP",
+                "Vista",
+                "Williams Syndrome Research"
+              ]
+            }
+          },
           "geneid": {
             "title": "ENSEMBL GeneID",
             "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.",
@@ -72349,6 +73537,18 @@
               "title": "Synonym",
               "description": "An alternative symbol/name referring to the gene.",
               "type": "string"
+            }
+          },
+          "study_sets": {
+            "title": "Study Sets",
+            "description": "The studies of IGVF that this gene was a part of.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Study Set",
+              "description": "The study of IGVF that this gene was a part of.",
+              "type": "string",
+              "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
             }
           },
           "dbxrefs": {
@@ -73431,7 +74631,9 @@
                 "Parse SPLiT-seq",
                 "ATAC-seq",
                 "varACCESS",
+                "ACCESS-ATAC",
                 "scATAC-seq",
+                "scACCESS-ATAC",
                 "snATAC-seq",
                 "scMito-seq",
                 "DOGMA-seq",
@@ -76193,6 +77395,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -76201,10 +77404,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -76797,6 +78005,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -76805,10 +78014,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -77291,6 +78505,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -77299,10 +78514,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -77845,6 +79065,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -77853,10 +79074,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -78251,6 +79477,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -78259,10 +79486,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -78824,6 +80056,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -78832,10 +80065,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },
@@ -80166,6 +81404,7 @@
             "items": {
               "type": "string",
               "enum": [
+                "ACMG73",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -80174,10 +81413,15 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF phase 1",
                 "MaveDB",
+                "Morphic",
                 "MPRAbase",
+                "StanfordFCC",
+                "TOPMED Freeze 8",
                 "VarChAMP",
-                "Vista"
+                "Vista",
+                "Williams Syndrome Research"
               ]
             }
           },

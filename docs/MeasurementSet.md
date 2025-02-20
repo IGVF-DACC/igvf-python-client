@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
 **input_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
+**construct_library_sets** | **List[str]** | The construct library sets associated with the samples of this file set. | [optional] 
 **related_multiome_datasets** | **List[str]** | Related datasets included in the multiome experiment this measurement set is a part of. | [optional] 
 **externally_hosted** | **bool** |  | [optional] 
 
