@@ -217,6 +217,8 @@ Name | Type | Description | Notes
 **degron_system** | **str** | The type of degron system implemented. | [optional] 
 **term_id** | **str** | An ontology identifier describing a biological sample | [optional] 
 **term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | [optional] 
+**definition** | **str** | Defintion of the term. | [optional] 
+**comment** | **str** | A comment about the term. | [optional] 
 **deprecated_ntr_terms** | **List[str]** | A list of deprecated NTR terms previously associated with this ontology term. | [optional] 
 **is_a** | **List[str]** | A list of ontology terms which are the nearest ancestor to this ontology term. | [optional] 
 **preferred_assay_titles** | **List[str]** | The custom lab preferred labels that this assay term may be associated with. | [optional] 

@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "67.0.0"
+    "version": "68.0.0"
   },
   "servers": [
     {
@@ -1524,6 +1524,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
                   "documentation (readme)",
@@ -1547,6 +1548,13 @@
                   "genes_transcripts",
                   "genome index",
                   "genome reference",
+                  "genomic_elements",
+                  "genomic_elements_genes",
+                  "genomic_elements_genes_biosamples",
+                  "genomic_elements_genes_biosamples_donors",
+                  "genomic_elements_genes_biosamples_treatments_chebi",
+                  "genomic_elements_genes_biosamples_treatments_proteins",
+                  "genomic_elements_genomic_elements",
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
@@ -1576,13 +1584,6 @@
                   "raw signal",
                   "read-depth signal",
                   "reads",
-                  "regulatory_regions",
-                  "regulatory_regions_genes",
-                  "regulatory_regions_genes_biosamples",
-                  "regulatory_regions_genes_biosamples_donors",
-                  "regulatory_regions_genes_biosamples_treatments_chebi",
-                  "regulatory_regions_genes_biosamples_treatments_proteins",
-                  "regulatory_regions_regulatory_regions",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -1629,13 +1630,13 @@
                   "variants_drugs_genes",
                   "variants_genes",
                   "variants_genes_terms",
+                  "variants_genomic_elements",
                   "variants_phenotypes",
                   "variants_phenotypes_studies",
                   "variants_proteins",
                   "variants_proteins_biosamples",
                   "variants_proteins_phenotypes",
                   "variants_proteins_terms",
-                  "variants_regulatory_regions",
                   "variants_variants",
                   "vector sequences"
                 ],
@@ -1744,6 +1745,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
                   "documentation (readme)",
@@ -1767,6 +1769,13 @@
                   "genes_transcripts",
                   "genome index",
                   "genome reference",
+                  "genomic_elements",
+                  "genomic_elements_genes",
+                  "genomic_elements_genes_biosamples",
+                  "genomic_elements_genes_biosamples_donors",
+                  "genomic_elements_genes_biosamples_treatments_chebi",
+                  "genomic_elements_genes_biosamples_treatments_proteins",
+                  "genomic_elements_genomic_elements",
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
@@ -1796,13 +1805,6 @@
                   "raw signal",
                   "read-depth signal",
                   "reads",
-                  "regulatory_regions",
-                  "regulatory_regions_genes",
-                  "regulatory_regions_genes_biosamples",
-                  "regulatory_regions_genes_biosamples_donors",
-                  "regulatory_regions_genes_biosamples_treatments_chebi",
-                  "regulatory_regions_genes_biosamples_treatments_proteins",
-                  "regulatory_regions_regulatory_regions",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -1849,13 +1851,13 @@
                   "variants_drugs_genes",
                   "variants_genes",
                   "variants_genes_terms",
+                  "variants_genomic_elements",
                   "variants_phenotypes",
                   "variants_phenotypes_studies",
                   "variants_proteins",
                   "variants_proteins_biosamples",
                   "variants_proteins_phenotypes",
                   "variants_proteins_terms",
-                  "variants_regulatory_regions",
                   "variants_variants",
                   "vector sequences"
                 ],
@@ -4443,6 +4445,7 @@
                   "Han Chinese",
                   "Hispanic",
                   "Indian",
+                  "Indigenous in North America",
                   "Japanese",
                   "Kinh Vietnamese",
                   "Luhya",
@@ -7364,6 +7367,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 22",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -10538,6 +10542,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 22",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -18557,6 +18562,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 22",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -22166,6 +22172,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 22",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -23871,6 +23878,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 22",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -38228,7 +38236,7 @@
                   "chromosome": {
                     "type": "string",
                     "title": "Chromosome",
-                    "pattern": "^(chr[0-9A-Za-z]+)$",
+                    "pattern": "^(chr[0-9A-Za-z_]+)$",
                     "description": "The number (or letter) designation for the chromosome, e.g. chr1 or chrX"
                   },
                   "assembly": {
@@ -38471,6 +38479,7 @@
                 "type": "string",
                 "title": "Transcriptome Annotation",
                 "enum": [
+                  "GENCODE 22",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -41304,6 +41313,22 @@
             "explode": true
           },
           {
+            "name": "comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Comment",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "A comment about the term."
+              }
+            },
+            "description": "Filter by comment",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -41315,6 +41340,22 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "definition",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Definition",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Defintion of the term."
+              }
+            },
+            "description": "Filter by definition",
             "style": "form",
             "explode": true
           },
@@ -41867,6 +41908,22 @@
             "explode": true
           },
           {
+            "name": "comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Comment",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "A comment about the term."
+              }
+            },
+            "description": "Filter by comment",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -41878,6 +41935,22 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "definition",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Definition",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Defintion of the term."
+              }
+            },
+            "description": "Filter by definition",
             "style": "form",
             "explode": true
           },
@@ -42332,6 +42405,22 @@
             "explode": true
           },
           {
+            "name": "comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Comment",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "A comment about the term."
+              }
+            },
+            "description": "Filter by comment",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "company",
             "in": "query",
             "schema": {
@@ -42369,6 +42458,22 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "definition",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Definition",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Defintion of the term."
+              }
+            },
+            "description": "Filter by definition",
             "style": "form",
             "explode": true
           },
@@ -42895,6 +43000,22 @@
             "explode": true
           },
           {
+            "name": "comment",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Comment",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "A comment about the term."
+              }
+            },
+            "description": "Filter by comment",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -42924,6 +43045,22 @@
               "description": "Sample identifiers from external resources, such as Cellosaurus."
             },
             "description": "Filter by dbxrefs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "definition",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Definition",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Defintion of the term."
+              }
+            },
+            "description": "Filter by definition",
             "style": "form",
             "explode": true
           },
@@ -44599,7 +44736,9 @@
                   "milli-International Unit per milliliter",
                   "picogram per milliliter",
                   "nanogram per milliliter",
-                  "milligram per deciliter"
+                  "milligram per deciliter",
+                  "UPDRS",
+                  "MMSE"
                 ],
                 "description": "The unit of measurement for a quantity associated with the phenotypic feature."
               }
@@ -49370,6 +49509,7 @@
                   "Han Chinese",
                   "Hispanic",
                   "Indian",
+                  "Indigenous in North America",
                   "Japanese",
                   "Kinh Vietnamese",
                   "Luhya",
@@ -49943,7 +50083,8 @@
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
-                  "transfection"
+                  "transfection",
+                  "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -51492,6 +51633,7 @@
                   "Han Chinese",
                   "Hispanic",
                   "Indian",
+                  "Indigenous in North America",
                   "Japanese",
                   "Kinh Vietnamese",
                   "Luhya",
@@ -52140,7 +52282,8 @@
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
-                  "transfection"
+                  "transfection",
+                  "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -53467,6 +53610,7 @@
                   "Han Chinese",
                   "Hispanic",
                   "Indian",
+                  "Indigenous in North America",
                   "Japanese",
                   "Kinh Vietnamese",
                   "Luhya",
@@ -54019,7 +54163,8 @@
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
-                  "transfection"
+                  "transfection",
+                  "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -55467,7 +55612,8 @@
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
-                  "transfection"
+                  "transfection",
+                  "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -56731,6 +56877,7 @@
                   "Han Chinese",
                   "Hispanic",
                   "Indian",
+                  "Indigenous in North America",
                   "Japanese",
                   "Kinh Vietnamese",
                   "Luhya",
@@ -57283,7 +57430,8 @@
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
-                  "transfection"
+                  "transfection",
+                  "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -58787,6 +58935,7 @@
                   "Han Chinese",
                   "Hispanic",
                   "Indian",
+                  "Indigenous in North America",
                   "Japanese",
                   "Kinh Vietnamese",
                   "Luhya",
@@ -59339,7 +59488,8 @@
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
-                  "transfection"
+                  "transfection",
+                  "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
               }
@@ -63140,6 +63290,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
                   "documentation (readme)",
@@ -63163,6 +63314,13 @@
                   "genes_transcripts",
                   "genome index",
                   "genome reference",
+                  "genomic_elements",
+                  "genomic_elements_genes",
+                  "genomic_elements_genes_biosamples",
+                  "genomic_elements_genes_biosamples_donors",
+                  "genomic_elements_genes_biosamples_treatments_chebi",
+                  "genomic_elements_genes_biosamples_treatments_proteins",
+                  "genomic_elements_genomic_elements",
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
@@ -63192,13 +63350,6 @@
                   "raw signal",
                   "read-depth signal",
                   "reads",
-                  "regulatory_regions",
-                  "regulatory_regions_genes",
-                  "regulatory_regions_genes_biosamples",
-                  "regulatory_regions_genes_biosamples_donors",
-                  "regulatory_regions_genes_biosamples_treatments_chebi",
-                  "regulatory_regions_genes_biosamples_treatments_proteins",
-                  "regulatory_regions_regulatory_regions",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -63245,13 +63396,13 @@
                   "variants_drugs_genes",
                   "variants_genes",
                   "variants_genes_terms",
+                  "variants_genomic_elements",
                   "variants_phenotypes",
                   "variants_phenotypes_studies",
                   "variants_proteins",
                   "variants_proteins_biosamples",
                   "variants_proteins_phenotypes",
                   "variants_proteins_terms",
-                  "variants_regulatory_regions",
                   "variants_variants",
                   "vector sequences"
                 ],
@@ -63301,6 +63452,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
                   "documentation (readme)",
@@ -63324,6 +63476,13 @@
                   "genes_transcripts",
                   "genome index",
                   "genome reference",
+                  "genomic_elements",
+                  "genomic_elements_genes",
+                  "genomic_elements_genes_biosamples",
+                  "genomic_elements_genes_biosamples_donors",
+                  "genomic_elements_genes_biosamples_treatments_chebi",
+                  "genomic_elements_genes_biosamples_treatments_proteins",
+                  "genomic_elements_genomic_elements",
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
@@ -63353,13 +63512,6 @@
                   "raw signal",
                   "read-depth signal",
                   "reads",
-                  "regulatory_regions",
-                  "regulatory_regions_genes",
-                  "regulatory_regions_genes_biosamples",
-                  "regulatory_regions_genes_biosamples_donors",
-                  "regulatory_regions_genes_biosamples_treatments_chebi",
-                  "regulatory_regions_genes_biosamples_treatments_proteins",
-                  "regulatory_regions_regulatory_regions",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -63406,13 +63558,13 @@
                   "variants_drugs_genes",
                   "variants_genes",
                   "variants_genes_terms",
+                  "variants_genomic_elements",
                   "variants_phenotypes",
                   "variants_phenotypes_studies",
                   "variants_proteins",
                   "variants_proteins_biosamples",
                   "variants_proteins_phenotypes",
                   "variants_proteins_terms",
-                  "variants_regulatory_regions",
                   "variants_variants",
                   "vector sequences"
                 ],
@@ -64554,6 +64706,7 @@
                 "differential chromatin contact quantifications",
                 "differential element quantifications",
                 "differential gene expression quantifications",
+                "differential peak quantifications",
                 "differential transcript expression quantifications",
                 "diseases_genes",
                 "documentation (readme)",
@@ -64577,6 +64730,13 @@
                 "genes_transcripts",
                 "genome index",
                 "genome reference",
+                "genomic_elements",
+                "genomic_elements_genes",
+                "genomic_elements_genes_biosamples",
+                "genomic_elements_genes_biosamples_donors",
+                "genomic_elements_genes_biosamples_treatments_chebi",
+                "genomic_elements_genes_biosamples_treatments_proteins",
+                "genomic_elements_genomic_elements",
                 "go_terms_proteins",
                 "graph structure",
                 "guide RNA sequences",
@@ -64606,13 +64766,6 @@
                 "raw signal",
                 "read-depth signal",
                 "reads",
-                "regulatory_regions",
-                "regulatory_regions_genes",
-                "regulatory_regions_genes_biosamples",
-                "regulatory_regions_genes_biosamples_donors",
-                "regulatory_regions_genes_biosamples_treatments_chebi",
-                "regulatory_regions_genes_biosamples_treatments_proteins",
-                "regulatory_regions_regulatory_regions",
                 "reporter elements",
                 "reporter experiment",
                 "reporter experiment barcode",
@@ -64659,13 +64812,13 @@
                 "variants_drugs_genes",
                 "variants_genes",
                 "variants_genes_terms",
+                "variants_genomic_elements",
                 "variants_phenotypes",
                 "variants_phenotypes_studies",
                 "variants_proteins",
                 "variants_proteins_biosamples",
                 "variants_proteins_phenotypes",
                 "variants_proteins_terms",
-                "variants_regulatory_regions",
                 "variants_variants",
                 "vector sequences"
               ]
@@ -64709,6 +64862,7 @@
                 "differential chromatin contact quantifications",
                 "differential element quantifications",
                 "differential gene expression quantifications",
+                "differential peak quantifications",
                 "differential transcript expression quantifications",
                 "diseases_genes",
                 "documentation (readme)",
@@ -64732,6 +64886,13 @@
                 "genes_transcripts",
                 "genome index",
                 "genome reference",
+                "genomic_elements",
+                "genomic_elements_genes",
+                "genomic_elements_genes_biosamples",
+                "genomic_elements_genes_biosamples_donors",
+                "genomic_elements_genes_biosamples_treatments_chebi",
+                "genomic_elements_genes_biosamples_treatments_proteins",
+                "genomic_elements_genomic_elements",
                 "go_terms_proteins",
                 "graph structure",
                 "guide RNA sequences",
@@ -64761,13 +64922,6 @@
                 "raw signal",
                 "read-depth signal",
                 "reads",
-                "regulatory_regions",
-                "regulatory_regions_genes",
-                "regulatory_regions_genes_biosamples",
-                "regulatory_regions_genes_biosamples_donors",
-                "regulatory_regions_genes_biosamples_treatments_chebi",
-                "regulatory_regions_genes_biosamples_treatments_proteins",
-                "regulatory_regions_regulatory_regions",
                 "reporter elements",
                 "reporter experiment",
                 "reporter experiment barcode",
@@ -64814,13 +64968,13 @@
                 "variants_drugs_genes",
                 "variants_genes",
                 "variants_genes_terms",
+                "variants_genomic_elements",
                 "variants_phenotypes",
                 "variants_phenotypes_studies",
                 "variants_proteins",
                 "variants_proteins_biosamples",
                 "variants_proteins_phenotypes",
                 "variants_proteins_terms",
-                "variants_regulatory_regions",
                 "variants_variants",
                 "vector sequences"
               ]
@@ -65774,6 +65928,7 @@
                 "Han Chinese",
                 "Hispanic",
                 "Indian",
+                "Indigenous in North America",
                 "Japanese",
                 "Kinh Vietnamese",
                 "Luhya",
@@ -66132,6 +66287,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 22",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -66954,6 +67110,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 22",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -68915,6 +69072,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 22",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -69857,6 +70015,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 22",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -70334,6 +70493,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 22",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -73394,6 +73554,7 @@
             "description": "The annotation and version of the reference resource.",
             "type": "string",
             "enum": [
+              "GENCODE 22",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -73595,7 +73756,7 @@
                   "title": "Chromosome",
                   "description": "The number (or letter) designation for the chromosome, e.g. chr1 or chrX",
                   "type": "string",
-                  "pattern": "^(chr[0-9A-Za-z]+)$"
+                  "pattern": "^(chr[0-9A-Za-z_]+)$"
                 },
                 "start": {
                   "title": "Start",
@@ -74591,6 +74752,18 @@
             "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
             "type": "string"
           },
+          "definition": {
+            "title": "Definition",
+            "description": "Defintion of the term.",
+            "type": "string",
+            "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$"
+          },
+          "comment": {
+            "title": "Comment",
+            "description": "A comment about the term.",
+            "type": "string",
+            "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$"
+          },
           "deprecated_ntr_terms": {
             "title": "Deprecated NTR terms",
             "description": "A list of deprecated NTR terms previously associated with this ontology term.",
@@ -74849,6 +75022,18 @@
             "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
             "type": "string"
           },
+          "definition": {
+            "title": "Definition",
+            "description": "Defintion of the term.",
+            "type": "string",
+            "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$"
+          },
+          "comment": {
+            "title": "Comment",
+            "description": "A comment about the term.",
+            "type": "string",
+            "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$"
+          },
           "deprecated_ntr_terms": {
             "title": "Deprecated NTR terms",
             "description": "A list of deprecated NTR terms previously associated with this ontology term.",
@@ -75002,6 +75187,18 @@
             "description": "Ontology term describing a biological sample, assay, trait, or disease.",
             "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
             "type": "string"
+          },
+          "definition": {
+            "title": "Definition",
+            "description": "Defintion of the term.",
+            "type": "string",
+            "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$"
+          },
+          "comment": {
+            "title": "Comment",
+            "description": "A comment about the term.",
+            "type": "string",
+            "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$"
           },
           "deprecated_ntr_terms": {
             "title": "Deprecated NTR terms",
@@ -75223,6 +75420,18 @@
             "description": "Ontology term describing a biological sample, assay, trait, or disease.",
             "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
             "type": "string"
+          },
+          "definition": {
+            "title": "Definition",
+            "description": "Defintion of the term.",
+            "type": "string",
+            "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$"
+          },
+          "comment": {
+            "title": "Comment",
+            "description": "A comment about the term.",
+            "type": "string",
+            "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$"
           },
           "deprecated_ntr_terms": {
             "title": "Deprecated NTR terms",
@@ -75766,7 +75975,9 @@
               "milli-International Unit per milliliter",
               "picogram per milliliter",
               "nanogram per milliliter",
-              "milligram per deciliter"
+              "milligram per deciliter",
+              "UPDRS",
+              "MMSE"
             ]
           },
           "quality": {
@@ -77682,7 +77893,8 @@
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
-              "transfection"
+              "transfection",
+              "nucleofection"
             ]
           },
           "time_post_library_delivery": {
@@ -78175,7 +78387,8 @@
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
-              "transfection"
+              "transfection",
+              "nucleofection"
             ]
           },
           "time_post_library_delivery": {
@@ -78793,7 +79006,8 @@
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
-              "transfection"
+              "transfection",
+              "nucleofection"
             ]
           },
           "time_post_library_delivery": {
@@ -79235,7 +79449,8 @@
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
-              "transfection"
+              "transfection",
+              "nucleofection"
             ]
           },
           "time_post_library_delivery": {
@@ -79765,7 +79980,8 @@
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
-              "transfection"
+              "transfection",
+              "nucleofection"
             ]
           },
           "time_post_library_delivery": {
@@ -80345,7 +80561,8 @@
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
-              "transfection"
+              "transfection",
+              "nucleofection"
             ]
           },
           "time_post_library_delivery": {

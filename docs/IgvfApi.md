@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assay_terms**
-> AssayTermResults assay_terms(query=query, limit=limit, sort=sort, id=id, aliases=aliases, ancestors=ancestors, assay_slims=assay_slims, category_slims=category_slims, creation_timestamp=creation_timestamp, deprecated_ntr_terms=deprecated_ntr_terms, description=description, is_a=is_a, name=name, notes=notes, objective_slims=objective_slims, ontology=ontology, preferred_assay_titles=preferred_assay_titles, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, synonyms=synonyms, term_id=term_id, term_name=term_name, uuid=uuid)
+> AssayTermResults assay_terms(query=query, limit=limit, sort=sort, id=id, aliases=aliases, ancestors=ancestors, assay_slims=assay_slims, category_slims=category_slims, comment=comment, creation_timestamp=creation_timestamp, definition=definition, deprecated_ntr_terms=deprecated_ntr_terms, description=description, is_a=is_a, name=name, notes=notes, objective_slims=objective_slims, ontology=ontology, preferred_assay_titles=preferred_assay_titles, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, synonyms=synonyms, term_id=term_id, term_name=term_name, uuid=uuid)
 
 List items in the AssayTerm collection.
 
@@ -638,7 +638,9 @@ Name | Type | Description  | Notes
  **ancestors** | **List[str]**| Filter by ancestors | [optional] 
  **assay_slims** | **List[str]**| Filter by assay_slims | [optional] 
  **category_slims** | **List[str]**| Filter by category_slims | [optional] 
+ **comment** | **List[str]**| Filter by comment | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
+ **definition** | **List[str]**| Filter by definition | [optional] 
  **deprecated_ntr_terms** | **List[str]**| Filter by deprecated_ntr_terms | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
  **is_a** | **List[str]**| Filter by is_a | [optional] 
@@ -3936,7 +3938,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **phenotype_terms**
-> PhenotypeTermResults phenotype_terms(query=query, limit=limit, sort=sort, id=id, aliases=aliases, ancestors=ancestors, creation_timestamp=creation_timestamp, deprecated_ntr_terms=deprecated_ntr_terms, description=description, is_a=is_a, name=name, notes=notes, ontology=ontology, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, synonyms=synonyms, term_id=term_id, term_name=term_name, uuid=uuid)
+> PhenotypeTermResults phenotype_terms(query=query, limit=limit, sort=sort, id=id, aliases=aliases, ancestors=ancestors, comment=comment, creation_timestamp=creation_timestamp, definition=definition, deprecated_ntr_terms=deprecated_ntr_terms, description=description, is_a=is_a, name=name, notes=notes, ontology=ontology, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, synonyms=synonyms, term_id=term_id, term_name=term_name, uuid=uuid)
 
 List items in the PhenotypeTerm collection.
 
@@ -3965,7 +3967,9 @@ Name | Type | Description  | Notes
  **id** | **List[str]**| Filter by @id | [optional] 
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **ancestors** | **List[str]**| Filter by ancestors | [optional] 
+ **comment** | **List[str]**| Filter by comment | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
+ **definition** | **List[str]**| Filter by definition | [optional] 
  **deprecated_ntr_terms** | **List[str]**| Filter by deprecated_ntr_terms | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
  **is_a** | **List[str]**| Filter by is_a | [optional] 
@@ -4084,7 +4088,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **platform_terms**
-> PlatformTermResults platform_terms(query=query, limit=limit, sort=sort, id=id, aliases=aliases, ancestors=ancestors, company=company, creation_timestamp=creation_timestamp, deprecated_ntr_terms=deprecated_ntr_terms, description=description, is_a=is_a, name=name, notes=notes, ontology=ontology, release_timestamp=release_timestamp, sequencing_kits=sequencing_kits, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, synonyms=synonyms, term_id=term_id, term_name=term_name, uuid=uuid)
+> PlatformTermResults platform_terms(query=query, limit=limit, sort=sort, id=id, aliases=aliases, ancestors=ancestors, comment=comment, company=company, creation_timestamp=creation_timestamp, definition=definition, deprecated_ntr_terms=deprecated_ntr_terms, description=description, is_a=is_a, name=name, notes=notes, ontology=ontology, release_timestamp=release_timestamp, sequencing_kits=sequencing_kits, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, synonyms=synonyms, term_id=term_id, term_name=term_name, uuid=uuid)
 
 List items in the PlatformTerm collection.
 
@@ -4113,8 +4117,10 @@ Name | Type | Description  | Notes
  **id** | **List[str]**| Filter by @id | [optional] 
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **ancestors** | **List[str]**| Filter by ancestors | [optional] 
+ **comment** | **List[str]**| Filter by comment | [optional] 
  **company** | **List[str]**| Filter by company | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
+ **definition** | **List[str]**| Filter by definition | [optional] 
  **deprecated_ntr_terms** | **List[str]**| Filter by deprecated_ntr_terms | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
  **is_a** | **List[str]**| Filter by is_a | [optional] 
@@ -4888,7 +4894,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sample_terms**
-> SampleTermResults sample_terms(query=query, limit=limit, sort=sort, id=id, aliases=aliases, ancestors=ancestors, cell_slims=cell_slims, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, deprecated_ntr_terms=deprecated_ntr_terms, description=description, developmental_slims=developmental_slims, is_a=is_a, name=name, notes=notes, ontology=ontology, organ_slims=organ_slims, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, synonyms=synonyms, system_slims=system_slims, term_id=term_id, term_name=term_name, uuid=uuid)
+> SampleTermResults sample_terms(query=query, limit=limit, sort=sort, id=id, aliases=aliases, ancestors=ancestors, cell_slims=cell_slims, comment=comment, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, definition=definition, deprecated_ntr_terms=deprecated_ntr_terms, description=description, developmental_slims=developmental_slims, is_a=is_a, name=name, notes=notes, ontology=ontology, organ_slims=organ_slims, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, synonyms=synonyms, system_slims=system_slims, term_id=term_id, term_name=term_name, uuid=uuid)
 
 List items in the SampleTerm collection.
 
@@ -4918,8 +4924,10 @@ Name | Type | Description  | Notes
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **ancestors** | **List[str]**| Filter by ancestors | [optional] 
  **cell_slims** | **List[str]**| Filter by cell_slims | [optional] 
+ **comment** | **List[str]**| Filter by comment | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
  **dbxrefs** | **List[str]**| Filter by dbxrefs | [optional] 
+ **definition** | **List[str]**| Filter by definition | [optional] 
  **deprecated_ntr_terms** | **List[str]**| Filter by deprecated_ntr_terms | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
  **developmental_slims** | **List[str]**| Filter by developmental_slims | [optional] 

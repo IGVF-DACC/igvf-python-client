@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **description** | **str** | A plain text description of the object. | [optional] 
 **term_id** | **str** | An ontology term identifier describing a platform. | [optional] 
 **term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | [optional] 
+**definition** | **str** | Defintion of the term. | [optional] 
+**comment** | **str** | A comment about the term. | [optional] 
 **deprecated_ntr_terms** | **List[str]** | A list of deprecated NTR terms previously associated with this ontology term. | [optional] 
 **is_a** | **List[str]** | A list of ontology terms which are the nearest ancestor to this ontology term. | [optional] 
 **company** | **str** | The company that developed and sells the instrument. | [optional] 
