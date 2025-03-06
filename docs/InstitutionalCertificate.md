@@ -24,9 +24,12 @@ Name | Type | Description | Notes
 **data_use_limitation_modifiers** | **List[str]** | Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community. | [optional] 
 **samples** | **List[str]** | Samples covered by this institutional certificate. | [optional] 
 **urls** | **List[str]** | Link to the institutional certification form. | [optional] 
+**partner_labs** | **List[str]** | Labs which belong to same institution as the signing PI and can share this institutional certificate. | [optional] 
+**partner_awards** | **List[str]** | Awards granted to at least one lab that belongs to same institution as the signing PI and can share this institutional certificate. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
+**data_use_limitation_summary** | **str** | A combination of the data use limitation and its modifiers | [optional] 
 
 ## Example
 

@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **upload_status** | **str** | The upload/validation status of the file. | [optional] 
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
+**catalog_adapters** | **List[str]** | IGVF Catalog Adapters that ingests this file | [optional] 
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **external** | **bool** | Indicates whether the file was obtained from an external, non-IGVF source. | [optional] 
 **id** | **str** |  | [optional] 

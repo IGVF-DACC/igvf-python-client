@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **upload_status** | **str** | The upload/validation status of the file. | [optional] 
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
+**catalog_adapters** | **List[str]** | IGVF Catalog Adapters that ingests this file | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the tabular file. | [optional] 

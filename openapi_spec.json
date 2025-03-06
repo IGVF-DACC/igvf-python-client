@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "68.0.0"
+    "version": "69.0.0"
   },
   "servers": [
     {
@@ -1561,6 +1561,7 @@
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
+                  "index",
                   "loci",
                   "low resolution tissue",
                   "model parameters",
@@ -1782,6 +1783,7 @@
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
+                  "index",
                   "loci",
                   "low resolution tissue",
                   "model parameters",
@@ -6078,9 +6080,12 @@
                 "type": "string",
                 "title": "Genome Assembly",
                 "enum": [
-                  "Cast - GRCm39",
                   "GRCh38",
+                  "hg19",
+                  "Cast - GRCm39",
                   "GRCm39",
+                  "mm10",
+                  "GRCh38, mm10",
                   "custom"
                 ],
                 "description": "Genome assembly applicable for the annotation data."
@@ -7368,6 +7373,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -7377,12 +7383,15 @@
                   "GENCODE 45",
                   "GENCODE 47",
                   "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
                   "GENCODE M34",
-                  "GENCODE M36"
+                  "GENCODE M36",
+                  "GENCODE 28, GENCODE M17"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -9275,9 +9284,12 @@
                 "type": "string",
                 "title": "Genome Assembly",
                 "enum": [
-                  "Cast - GRCm39",
                   "GRCh38",
+                  "hg19",
+                  "Cast - GRCm39",
                   "GRCm39",
+                  "mm10",
+                  "GRCh38, mm10",
                   "custom"
                 ],
                 "description": "Genome assembly applicable for the annotation data."
@@ -10543,6 +10555,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -10552,12 +10565,15 @@
                   "GENCODE 45",
                   "GENCODE 47",
                   "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
                   "GENCODE M34",
-                  "GENCODE M36"
+                  "GENCODE M36",
+                  "GENCODE 28, GENCODE M17"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -15703,6 +15719,24 @@
             "explode": true
           },
           {
+            "name": "catalog_adapters",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "IGVF Catalog Adapters",
+              "items": {
+                "type": "string",
+                "title": "IGVF Catalog Adapter",
+                "pattern": "https:\\/\\/github\\.com\\/IGVF-DACC\\/igvf-catalog\\/blob\\/dev\\/data\\/adapters\\/(.)*\\.py",
+                "description": "Identifier pointing to a Github link of the IGVF Catalog adapter that processes this file."
+              },
+              "description": "IGVF Catalog Adapters that ingests this file"
+            },
+            "description": "Filter by catalog_adapters",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -17267,6 +17301,7 @@
                   "Cast - GRCm39",
                   "GRCm39",
                   "mm10",
+                  "GRCh38, mm10",
                   "custom"
                 ],
                 "description": "Genome assembly applicable for the reference data."
@@ -17302,6 +17337,24 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_adapters",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "IGVF Catalog Adapters",
+              "items": {
+                "type": "string",
+                "title": "IGVF Catalog Adapter",
+                "pattern": "https:\\/\\/github\\.com\\/IGVF-DACC\\/igvf-catalog\\/blob\\/dev\\/data\\/adapters\\/(.)*\\.py",
+                "description": "Identifier pointing to a Github link of the IGVF Catalog adapter that processes this file."
+              },
+              "description": "IGVF Catalog Adapters that ingests this file"
+            },
+            "description": "Filter by catalog_adapters",
             "style": "form",
             "explode": true
           },
@@ -18563,6 +18616,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -18572,12 +18626,15 @@
                   "GENCODE 45",
                   "GENCODE 47",
                   "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
                   "GENCODE M34",
-                  "GENCODE M36"
+                  "GENCODE M36",
+                  "GENCODE 28, GENCODE M17"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -20832,9 +20889,12 @@
                 "type": "string",
                 "title": "Genome Assembly",
                 "enum": [
-                  "Cast - GRCm39",
                   "GRCh38",
+                  "hg19",
+                  "Cast - GRCm39",
                   "GRCm39",
+                  "mm10",
+                  "GRCh38, mm10",
                   "custom"
                 ],
                 "description": "Genome assembly applicable for the annotation data."
@@ -22173,6 +22233,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -22182,12 +22243,15 @@
                   "GENCODE 45",
                   "GENCODE 47",
                   "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
                   "GENCODE M34",
-                  "GENCODE M36"
+                  "GENCODE M36",
+                  "GENCODE 28, GENCODE M17"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -22561,9 +22625,12 @@
                 "type": "string",
                 "title": "Genome Assembly",
                 "enum": [
-                  "Cast - GRCm39",
                   "GRCh38",
+                  "hg19",
+                  "Cast - GRCm39",
                   "GRCm39",
+                  "mm10",
+                  "GRCh38, mm10",
                   "custom"
                 ],
                 "description": "Genome assembly applicable for the tabular data."
@@ -22615,6 +22682,24 @@
               "description": "Link(s) to the Multiplexed samples using this file as barcode map."
             },
             "description": "Filter by barcode_map_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_adapters",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "IGVF Catalog Adapters",
+              "items": {
+                "type": "string",
+                "title": "IGVF Catalog Adapter",
+                "pattern": "https:\\/\\/github\\.com\\/IGVF-DACC\\/igvf-catalog\\/blob\\/dev\\/data\\/adapters\\/(.)*\\.py",
+                "description": "Identifier pointing to a Github link of the IGVF Catalog adapter that processes this file."
+              },
+              "description": "IGVF Catalog Adapters that ingests this file"
+            },
+            "description": "Filter by catalog_adapters",
             "style": "form",
             "explode": true
           },
@@ -23879,6 +23964,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -23888,12 +23974,15 @@
                   "GENCODE 45",
                   "GENCODE 47",
                   "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
                   "GENCODE M34",
-                  "GENCODE M36"
+                  "GENCODE M36",
+                  "GENCODE 28, GENCODE M17"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -32165,9 +32254,11 @@
                 "enum": [
                   "control transduction",
                   "low FACS signal",
+                  "non-targeting",
                   "pre-selection",
                   "unsorted FACS input",
-                  "untransfected"
+                  "untransfected",
+                  "untreated"
                 ],
                 "description": "The type of control this file set represents."
               }
@@ -32849,7 +32940,7 @@
                   "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
-                  "scMito-seq",
+                  "10x multiome with scMito-seq",
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -38243,9 +38334,12 @@
                     "type": "string",
                     "title": "Mapping Assembly",
                     "enum": [
-                      "Cast - GRCm39",
                       "GRCh38",
+                      "hg19",
+                      "Cast - GRCm39",
                       "GRCm39",
+                      "mm10",
+                      "GRCh38, mm10",
                       "custom"
                     ],
                     "description": "The genome assembly to which coordinates relate. e.g. GRCh38."
@@ -38480,6 +38574,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
                   "GENCODE 41",
@@ -38489,12 +38584,15 @@
                   "GENCODE 45",
                   "GENCODE 47",
                   "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
                   "GENCODE M30",
                   "GENCODE M31",
                   "GENCODE M32",
                   "GENCODE M33",
                   "GENCODE M34",
-                  "GENCODE M36"
+                  "GENCODE M36",
+                  "GENCODE 28, GENCODE M17"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -39218,6 +39316,21 @@
             "explode": true
           },
           {
+            "name": "data_use_limitation_summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers"
+              }
+            },
+            "description": "Filter by data_use_limitation_summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "description",
             "in": "query",
             "schema": {
@@ -39274,6 +39387,38 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "partner_awards",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Partner Awards",
+              "items": {
+                "type": "string",
+                "title": "Partner Award"
+              },
+              "description": "Awards granted to at least one lab that belongs to same institution as the signing PI and can share this institutional certificate."
+            },
+            "description": "Filter by partner_awards",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "partner_labs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Partner Labs",
+              "items": {
+                "type": "string",
+                "title": "Partner Lab"
+              },
+              "description": "Labs which belong to same institution as the signing PI and can share this institutional certificate."
+            },
+            "description": "Filter by partner_labs",
             "style": "form",
             "explode": true
           },
@@ -41492,7 +41637,7 @@
                   "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
-                  "scMito-seq",
+                  "10x multiome with scMito-seq",
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -47009,6 +47154,21 @@
             "explode": true
           },
           {
+            "name": "multi_mappings",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Multi-Mappings",
+                "description": "Number of fragments mappig in multiple locations in the genome."
+              }
+            },
+            "description": "Filter by multi_mappings",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "n_barcodes",
             "in": "query",
             "schema": {
@@ -47031,7 +47191,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Barcodes On Onlist",
-                "description": ""
+                "description": "Barcodes matching the expected list of valid barcodes."
               }
             },
             "description": "Filter by n_barcodes_on_onlist",
@@ -47046,7 +47206,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Candidates",
-                "description": ""
+                "description": "Potential mapping locations considered during alignment."
               }
             },
             "description": "Filter by n_candidates",
@@ -47061,7 +47221,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Corrected Barcodes",
-                "description": ""
+                "description": "Barcodes adjusted to match valid entries in the onlist."
               }
             },
             "description": "Filter by n_corrected_barcodes",
@@ -47106,7 +47266,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Mapped Reads",
-                "description": ""
+                "description": "Reads successfully aligned to the reference genome."
               }
             },
             "description": "Filter by n_mapped_reads",
@@ -47121,7 +47281,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Mappings",
-                "description": ""
+                "description": "Total successful alignments, including multiple mappings per read."
               }
             },
             "description": "Filter by n_mappings",
@@ -47136,7 +47296,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Multi-Mappings",
-                "description": ""
+                "description": "Total alignments where reads map to multiple locations."
               }
             },
             "description": "Filter by n_multi_mappings",
@@ -47151,7 +47311,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Output Mappings",
-                "description": ""
+                "description": "Final count of fragments after deduplication and filtering."
               }
             },
             "description": "Filter by n_output_mappings",
@@ -47166,7 +47326,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Reads",
-                "description": ""
+                "description": "Total count of sequencing reads processed."
               }
             },
             "description": "Filter by n_reads",
@@ -47181,7 +47341,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Reads With Multi-Mappings",
-                "description": ""
+                "description": "Reads aligned to multiple locations in the genome."
               }
             },
             "description": "Filter by n_reads_with_multi_mappings",
@@ -47196,7 +47356,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Uni-Mappings",
-                "description": ""
+                "description": "Total alignments where reads map to a single location."
               }
             },
             "description": "Filter by n_uni_mappings",
@@ -47211,7 +47371,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Uniquely Mapped Reads",
-                "description": ""
+                "description": "Reads aligned to a single location in the genome."
               }
             },
             "description": "Filter by n_uniquely_mapped_reads",
@@ -47355,8 +47515,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "Total Number",
-                "description": ""
+                "title": "Total",
+                "description": "Sum of uni-mappings and multi-mappings."
               }
             },
             "description": "Filter by total",
@@ -47375,6 +47535,21 @@
               }
             },
             "description": "Filter by tsse",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "uni_mappings",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Uni-Mappings",
+                "description": "Number of fragments mapping to single location in the genome."
+              }
+            },
+            "description": "Filter by uni_mappings",
             "style": "form",
             "explode": true
           },
@@ -60479,7 +60654,7 @@
               "items": {
                 "type": "string",
                 "title": "Name",
-                "pattern": "^[a-z0-9\\-\\_]+",
+                "pattern": "^[a-z0-9\\-_]+",
                 "description": "Unique name of the software package; a lowercase version of the title."
               }
             },
@@ -63327,6 +63502,7 @@
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
+                  "index",
                   "loci",
                   "low resolution tissue",
                   "model parameters",
@@ -63489,6 +63665,7 @@
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
+                  "index",
                   "loci",
                   "low resolution tissue",
                   "model parameters",
@@ -64743,6 +64920,7 @@
                 "guide quantifications",
                 "high resolution tissue",
                 "inclusion list",
+                "index",
                 "loci",
                 "low resolution tissue",
                 "model parameters",
@@ -64899,6 +65077,7 @@
                 "guide quantifications",
                 "high resolution tissue",
                 "inclusion list",
+                "index",
                 "loci",
                 "low resolution tissue",
                 "model parameters",
@@ -66288,6 +66467,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -66297,12 +66477,15 @@
               "GENCODE 45",
               "GENCODE 47",
               "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
               "GENCODE M34",
-              "GENCODE M36"
+              "GENCODE M36",
+              "GENCODE 28, GENCODE M17"
             ]
           },
           "assembly": {
@@ -66310,9 +66493,12 @@
             "description": "Genome assembly applicable for the annotation data.",
             "type": "string",
             "enum": [
-              "Cast - GRCm39",
               "GRCh38",
+              "hg19",
+              "Cast - GRCm39",
               "GRCm39",
+              "mm10",
+              "GRCh38, mm10",
               "custom"
             ]
           },
@@ -67078,9 +67264,12 @@
             "description": "Genome assembly applicable for the annotation data.",
             "type": "string",
             "enum": [
-              "Cast - GRCm39",
               "GRCh38",
+              "hg19",
+              "Cast - GRCm39",
               "GRCm39",
+              "mm10",
+              "GRCh38, mm10",
               "custom"
             ]
           },
@@ -67111,6 +67300,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -67120,12 +67310,15 @@
               "GENCODE 45",
               "GENCODE 47",
               "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
               "GENCODE M34",
-              "GENCODE M36"
+              "GENCODE M36",
+              "GENCODE 28, GENCODE M17"
             ]
           },
           "documents": {
@@ -68913,6 +69106,18 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "catalog_adapters": {
+            "title": "IGVF Catalog Adapters",
+            "description": "IGVF Catalog Adapters that ingests this file",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "IGVF Catalog Adapter",
+              "description": "Identifier pointing to a Github link of the IGVF Catalog adapter that processes this file.",
+              "type": "string",
+              "pattern": "https:\\/\\/github\\.com\\/IGVF-DACC\\/igvf-catalog\\/blob\\/dev\\/data\\/adapters\\/(.)*\\.py"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -69043,6 +69248,7 @@
               "Cast - GRCm39",
               "GRCm39",
               "mm10",
+              "GRCh38, mm10",
               "custom"
             ]
           },
@@ -69073,6 +69279,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -69082,12 +69289,15 @@
               "GENCODE 45",
               "GENCODE 47",
               "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
               "GENCODE M34",
-              "GENCODE M36"
+              "GENCODE M36",
+              "GENCODE 28, GENCODE M17"
             ]
           },
           "documents": {
@@ -69347,6 +69557,18 @@
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
+          },
+          "catalog_adapters": {
+            "title": "IGVF Catalog Adapters",
+            "description": "IGVF Catalog Adapters that ingests this file",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "IGVF Catalog Adapter",
+              "description": "Identifier pointing to a Github link of the IGVF Catalog adapter that processes this file.",
+              "type": "string",
+              "pattern": "https:\\/\\/github\\.com\\/IGVF-DACC\\/igvf-catalog\\/blob\\/dev\\/data\\/adapters\\/(.)*\\.py"
+            }
           },
           "sources": {
             "title": "Sources",
@@ -70016,6 +70238,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -70025,12 +70248,15 @@
               "GENCODE 45",
               "GENCODE 47",
               "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
               "GENCODE M34",
-              "GENCODE M36"
+              "GENCODE M36",
+              "GENCODE 28, GENCODE M17"
             ]
           },
           "assembly": {
@@ -70038,9 +70264,12 @@
             "description": "Genome assembly applicable for the annotation data.",
             "type": "string",
             "enum": [
-              "Cast - GRCm39",
               "GRCh38",
+              "hg19",
+              "Cast - GRCm39",
               "GRCm39",
+              "mm10",
+              "GRCh38, mm10",
               "custom"
             ]
           },
@@ -70461,9 +70690,12 @@
             "description": "Genome assembly applicable for the tabular data.",
             "type": "string",
             "enum": [
-              "Cast - GRCm39",
               "GRCh38",
+              "hg19",
+              "Cast - GRCm39",
               "GRCm39",
+              "mm10",
+              "GRCh38, mm10",
               "custom"
             ]
           },
@@ -70494,6 +70726,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -70503,12 +70736,15 @@
               "GENCODE 45",
               "GENCODE 47",
               "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
               "GENCODE M34",
-              "GENCODE M36"
+              "GENCODE M36",
+              "GENCODE 28, GENCODE M17"
             ]
           },
           "filtered": {
@@ -70763,6 +70999,18 @@
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
+          },
+          "catalog_adapters": {
+            "title": "IGVF Catalog Adapters",
+            "description": "IGVF Catalog Adapters that ingests this file",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "IGVF Catalog Adapter",
+              "description": "Identifier pointing to a Github link of the IGVF Catalog adapter that processes this file.",
+              "type": "string",
+              "pattern": "https:\\/\\/github\\.com\\/IGVF-DACC\\/igvf-catalog\\/blob\\/dev\\/data\\/adapters\\/(.)*\\.py"
+            }
           },
           "@id": {
             "title": "ID",
@@ -72525,9 +72773,11 @@
             "enum": [
               "control transduction",
               "low FACS signal",
+              "non-targeting",
               "pre-selection",
               "unsorted FACS input",
-              "untransfected"
+              "untransfected",
+              "untreated"
             ]
           },
           "samples": {
@@ -72593,7 +72843,7 @@
               "scATAC-seq",
               "scACCESS-ATAC",
               "snATAC-seq",
-              "scMito-seq",
+              "10x multiome with scMito-seq",
               "DOGMA-seq",
               "10x multiome",
               "10x multiome with MULTI-seq",
@@ -73555,6 +73805,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
               "GENCODE 41",
@@ -73564,12 +73815,15 @@
               "GENCODE 45",
               "GENCODE 47",
               "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
               "GENCODE M30",
               "GENCODE M31",
               "GENCODE M32",
               "GENCODE M33",
               "GENCODE M34",
-              "GENCODE M36"
+              "GENCODE M36",
+              "GENCODE 28, GENCODE M17"
             ]
           },
           "taxa": {
@@ -73746,9 +74000,12 @@
                   "description": "The genome assembly to which coordinates relate. e.g. GRCh38.",
                   "type": "string",
                   "enum": [
-                    "Cast - GRCm39",
                     "GRCh38",
+                    "hg19",
+                    "Cast - GRCm39",
                     "GRCm39",
+                    "mm10",
+                    "GRCh38, mm10",
                     "custom"
                   ]
                 },
@@ -74100,6 +74357,26 @@
               "type": "string"
             }
           },
+          "partner_labs": {
+            "title": "Partner Labs",
+            "description": "Labs which belong to same institution as the signing PI and can share this institutional certificate.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Partner Lab",
+              "type": "string"
+            }
+          },
+          "partner_awards": {
+            "title": "Partner Awards",
+            "description": "Awards granted to at least one lab that belongs to same institution as the signing PI and can share this institutional certificate.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Partner Award",
+              "type": "string"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -74115,6 +74392,11 @@
             "title": "Summary",
             "type": "string",
             "description": "A summary of the object."
+          },
+          "data_use_limitation_summary": {
+            "title": "Data Use Limitation Summary",
+            "type": "string",
+            "description": "A combination of the data use limitation and its modifiers"
           }
         }
       },
@@ -74808,7 +75090,7 @@
                 "scATAC-seq",
                 "scACCESS-ATAC",
                 "snATAC-seq",
-                "scMito-seq",
+                "10x multiome with scMito-seq",
                 "DOGMA-seq",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
@@ -76936,11 +77218,6 @@
             "description": "",
             "type": "number"
           },
-          "total": {
-            "title": "Total Number",
-            "description": "",
-            "type": "number"
-          },
           "duplicate": {
             "title": "Duplicate Number",
             "description": "",
@@ -76963,57 +77240,72 @@
           },
           "n_reads": {
             "title": "Number Of Reads",
-            "description": "",
+            "description": "Total count of sequencing reads processed.",
             "type": "number"
           },
           "n_mapped_reads": {
             "title": "Number Of Mapped Reads",
-            "description": "",
+            "description": "Reads successfully aligned to the reference genome.",
             "type": "number"
           },
           "n_uniquely_mapped_reads": {
             "title": "Number Of Uniquely Mapped Reads",
-            "description": "",
+            "description": "Reads aligned to a single location in the genome.",
             "type": "number"
           },
           "n_reads_with_multi_mappings": {
             "title": "Number Of Reads With Multi-Mappings",
-            "description": "",
+            "description": "Reads aligned to multiple locations in the genome.",
             "type": "number"
           },
           "n_candidates": {
             "title": "Number Of Candidates",
-            "description": "",
+            "description": "Potential mapping locations considered during alignment.",
             "type": "number"
           },
           "n_mappings": {
             "title": "Number Of Mappings",
-            "description": "",
+            "description": "Total successful alignments, including multiple mappings per read.",
             "type": "number"
           },
           "n_uni_mappings": {
             "title": "Number Of Uni-Mappings",
-            "description": "",
+            "description": "Total alignments where reads map to a single location.",
             "type": "number"
           },
           "n_multi_mappings": {
             "title": "Number Of Multi-Mappings",
-            "description": "",
+            "description": "Total alignments where reads map to multiple locations.",
             "type": "number"
           },
           "n_barcodes_on_onlist": {
             "title": "Number Of Barcodes On Onlist",
-            "description": "",
+            "description": "Barcodes matching the expected list of valid barcodes.",
             "type": "number"
           },
           "n_corrected_barcodes": {
             "title": "Number Of Corrected Barcodes",
-            "description": "",
+            "description": "Barcodes adjusted to match valid entries in the onlist.",
             "type": "number"
           },
           "n_output_mappings": {
             "title": "Number Of Output Mappings",
-            "description": "",
+            "description": "Final count of fragments after deduplication and filtering.",
+            "type": "number"
+          },
+          "uni_mappings": {
+            "title": "Uni-Mappings",
+            "description": "Number of fragments mapping to single location in the genome.",
+            "type": "number"
+          },
+          "multi_mappings": {
+            "title": "Multi-Mappings",
+            "description": "Number of fragments mappig in multiple locations in the genome.",
+            "type": "number"
+          },
+          "total": {
+            "title": "Total",
+            "description": "Sum of uni-mappings and multi-mappings.",
             "type": "number"
           },
           "@id": {
@@ -80821,7 +81113,7 @@
             "title": "Name",
             "description": "Unique name of the software package; a lowercase version of the title.",
             "type": "string",
-            "pattern": "^[a-z0-9\\-\\_]+"
+            "pattern": "^[a-z0-9\\-_]+"
           },
           "title": {
             "title": "Title",
