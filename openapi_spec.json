@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "69.0.0"
+    "version": "70.0.0"
   },
   "servers": [
     {
@@ -1577,6 +1577,7 @@
                   "peaks",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
+                  "primer sequences",
                   "protein language model",
                   "protein to protein interaction score",
                   "proteins",
@@ -1799,6 +1800,7 @@
                   "peaks",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
+                  "primer sequences",
                   "protein language model",
                   "protein to protein interaction score",
                   "proteins",
@@ -8968,6 +8970,21 @@
               }
             },
             "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "validate_onlist_files",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Validate Onlist Files",
+                "description": "Whether checkfiles will validate the onlist files."
+              }
+            },
+            "description": "Filter by validate_onlist_files",
             "style": "form",
             "explode": true
           },
@@ -25533,6 +25550,90 @@
             "explode": true
           },
           {
+            "name": "samples.institutional_certificates.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.certificate_identifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Certificate Identifier",
+                "pattern": "^IP\\d{3}-\\d{2}$",
+                "description": "A unique identifier for the certificate."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.certificate_identifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.modifications.@id",
             "in": "query",
             "schema": {
@@ -27325,6 +27426,90 @@
               }
             },
             "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.certificate_identifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Certificate Identifier",
+                "pattern": "^IP\\d{3}-\\d{2}$",
+                "description": "A unique identifier for the certificate."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.certificate_identifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.status",
             "style": "form",
             "explode": true
           },
@@ -31022,6 +31207,90 @@
             "explode": true
           },
           {
+            "name": "samples.institutional_certificates.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.certificate_identifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Certificate Identifier",
+                "pattern": "^IP\\d{3}-\\d{2}$",
+                "description": "A unique identifier for the certificate."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.certificate_identifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.modifications.@id",
             "in": "query",
             "schema": {
@@ -31692,6 +31961,21 @@
               }
             },
             "description": "Filter by assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by assay_term.assay_slims",
             "style": "form",
             "explode": true
           },
@@ -32961,7 +33245,6 @@
                   "smFISH",
                   "MERFISH",
                   "Proliferation CRISPR screen",
-                  "Growth CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
                   "CRISPR FACS screen",
@@ -33343,6 +33626,90 @@
               }
             },
             "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.certificate_identifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Certificate Identifier",
+                "pattern": "^IP\\d{3}-\\d{2}$",
+                "description": "A unique identifier for the certificate."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.certificate_identifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.status",
             "style": "form",
             "explode": true
           },
@@ -35340,6 +35707,90 @@
               }
             },
             "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.certificate_identifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Certificate Identifier",
+                "pattern": "^IP\\d{3}-\\d{2}$",
+                "description": "A unique identifier for the certificate."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.certificate_identifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.status",
             "style": "form",
             "explode": true
           },
@@ -37420,6 +37871,90 @@
               }
             },
             "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.certificate_identifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Certificate Identifier",
+                "pattern": "^IP\\d{3}-\\d{2}$",
+                "description": "A unique identifier for the certificate."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.certificate_identifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.status",
             "style": "form",
             "explode": true
           },
@@ -41658,7 +42193,6 @@
                   "smFISH",
                   "MERFISH",
                   "Proliferation CRISPR screen",
-                  "Growth CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
                   "CRISPR FACS screen",
@@ -49920,6 +50454,45 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.status",
             "in": "query",
             "schema": {
@@ -52008,6 +52581,45 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.status",
             "in": "query",
             "schema": {
@@ -53996,6 +54608,45 @@
               }
             },
             "description": "Filter by institutional_certificates.certificate_identifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
             "explode": true
           },
@@ -57267,6 +57918,45 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.status",
             "in": "query",
             "schema": {
@@ -59321,6 +60011,45 @@
               }
             },
             "description": "Filter by institutional_certificates.certificate_identifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Indicator of whether the samples are under controlled access."
+              }
+            },
+            "description": "Filter by institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.data_use_limitation_modifiers",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Modifiers",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Modifier",
+                "enum": [
+                  "COL",
+                  "GSO",
+                  "IRB",
+                  "MDS",
+                  "NPU",
+                  "PUB"
+                ]
+              },
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
             "explode": true
           },
@@ -63518,6 +64247,7 @@
                   "peaks",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
+                  "primer sequences",
                   "protein language model",
                   "protein to protein interaction score",
                   "proteins",
@@ -63681,6 +64411,7 @@
                   "peaks",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
+                  "primer sequences",
                   "protein language model",
                   "protein to protein interaction score",
                   "proteins",
@@ -64936,6 +65667,7 @@
                 "peaks",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
+                "primer sequences",
                 "protein language model",
                 "protein to protein interaction score",
                 "proteins",
@@ -65093,6 +65825,7 @@
                 "peaks",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
+                "primer sequences",
                 "protein language model",
                 "protein to protein interaction score",
                 "proteins",
@@ -67245,6 +67978,11 @@
             "title": "Upload Credentials",
             "description": "The upload credentials for S3 to submit the file content.",
             "type": "object"
+          },
+          "validate_onlist_files": {
+            "title": "Validate Onlist Files",
+            "type": "boolean",
+            "description": "Whether checkfiles will validate the onlist files."
           }
         }
       },
@@ -72864,7 +73602,6 @@
               "smFISH",
               "MERFISH",
               "Proliferation CRISPR screen",
-              "Growth CRISPR screen",
               "Migration CRISPR screen",
               "CRISPR FlowFISH screen",
               "CRISPR FACS screen",
@@ -75111,7 +75848,6 @@
                 "smFISH",
                 "MERFISH",
                 "Proliferation CRISPR screen",
-                "Growth CRISPR screen",
                 "Migration CRISPR screen",
                 "CRISPR FlowFISH screen",
                 "CRISPR FACS screen",
