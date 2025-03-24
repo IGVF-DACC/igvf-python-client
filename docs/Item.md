@@ -130,7 +130,7 @@ Name | Type | Description | Notes
 **base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **read_names** | **List[str]** | The read names of a sequence file based on how it will be used by uniform pipelines. | [optional] 
 **seqspecs** | **List[str]** | Link(s) to the associated seqspec YAML configuration file(s). | [optional] 
-**strand_specificity** | **str** | The strandedness of the signal file: plus, minus, or unstranded. | [optional] 
+**strand_specificity** | **str** | The strand-specificity of the sequencing results within Perturb-seq, scCRISPR screen, TAP-seq, and CERES-seq assays. | [optional] 
 **normalized** | **bool** | Indicates if the signal file is normalized. | [optional] 
 **start_view_position** | **str** | The 0-based coordinate for the default starting position when viewing the signal in a genome browser. | [optional] 
 **barcode_map_for** | **List[str]** | Link(s) to the Multiplexed samples using this file as barcode map. | [optional] 

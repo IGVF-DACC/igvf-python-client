@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "70.0.0"
+    "version": "71.0.1"
   },
   "servers": [
     {
@@ -7393,7 +7393,7 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 28, GENCODE M17"
+                  "GENCODE 32, GENCODE M23"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -10590,7 +10590,7 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 28, GENCODE M17"
+                  "GENCODE 32, GENCODE M23"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -18651,7 +18651,7 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 28, GENCODE M17"
+                  "GENCODE 32, GENCODE M23"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -22268,7 +22268,7 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 28, GENCODE M17"
+                  "GENCODE 32, GENCODE M23"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -23999,7 +23999,7 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 28, GENCODE M17"
+                  "GENCODE 32, GENCODE M23"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -34047,6 +34047,26 @@
             "explode": true
           },
           {
+            "name": "strand_specificity",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strand Specificity",
+                "enum": [
+                  "5' to 3'",
+                  "3' to 5'",
+                  "unstranded"
+                ],
+                "description": "The strand-specificity of the sequencing results within Perturb-seq, scCRISPR screen, TAP-seq, and CERES-seq assays."
+              }
+            },
+            "description": "Filter by strand_specificity",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
@@ -39127,7 +39147,7 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 28, GENCODE M17"
+                  "GENCODE 32, GENCODE M23"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -67218,7 +67238,7 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 28, GENCODE M17"
+              "GENCODE 32, GENCODE M23"
             ]
           },
           "assembly": {
@@ -68056,7 +68076,7 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 28, GENCODE M17"
+              "GENCODE 32, GENCODE M23"
             ]
           },
           "documents": {
@@ -70035,7 +70055,7 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 28, GENCODE M17"
+              "GENCODE 32, GENCODE M23"
             ]
           },
           "documents": {
@@ -70994,7 +71014,7 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 28, GENCODE M17"
+              "GENCODE 32, GENCODE M23"
             ]
           },
           "assembly": {
@@ -71482,7 +71502,7 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 28, GENCODE M17"
+              "GENCODE 32, GENCODE M23"
             ]
           },
           "filtered": {
@@ -73658,6 +73678,16 @@
               ]
             }
           },
+          "strand_specificity": {
+            "title": "Strand Specificity",
+            "description": "The strand-specificity of the sequencing results within Perturb-seq, scCRISPR screen, TAP-seq, and CERES-seq assays.",
+            "type": "string",
+            "enum": [
+              "5' to 3'",
+              "3' to 5'",
+              "unstranded"
+            ]
+          },
           "auxiliary_sets": {
             "title": "Auxiliary Sets",
             "description": "The auxiliary sets of files produced alongside raw data from this measurement set.",
@@ -74560,7 +74590,7 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 28, GENCODE M17"
+              "GENCODE 32, GENCODE M23"
             ]
           },
           "taxa": {
