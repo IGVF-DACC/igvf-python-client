@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "71.0.1"
+    "version": "72.0.0"
   },
   "servers": [
     {
@@ -1532,10 +1532,12 @@
                   "edge weights",
                   "editing templates",
                   "element quantifications",
+                  "element to gene predictions",
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
                   "external source data",
+                  "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
                   "fold change over control",
@@ -1564,6 +1566,7 @@
                   "index",
                   "loci",
                   "low resolution tissue",
+                  "machine learning model features",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -1597,7 +1600,6 @@
                   "scale factors",
                   "seqspec",
                   "sequence attributes",
-                  "sequence barcodes",
                   "signal",
                   "signal of all reads",
                   "signal of unique reads",
@@ -1755,10 +1757,12 @@
                   "edge weights",
                   "editing templates",
                   "element quantifications",
+                  "element to gene predictions",
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
                   "external source data",
+                  "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
                   "fold change over control",
@@ -1787,6 +1791,7 @@
                   "index",
                   "loci",
                   "low resolution tissue",
+                  "machine learning model features",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -1820,7 +1825,6 @@
                   "scale factors",
                   "seqspec",
                   "sequence attributes",
-                  "sequence barcodes",
                   "signal",
                   "signal of all reads",
                   "signal of unique reads",
@@ -6344,7 +6348,8 @@
                 "type": "string",
                 "title": "File Format",
                 "enum": [
-                  "bam"
+                  "bam",
+                  "cram"
                 ],
                 "description": "The file format or extension of the file."
               }
@@ -6395,6 +6400,36 @@
               }
             },
             "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -8013,6 +8048,36 @@
               }
             },
             "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -9659,6 +9724,36 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -11213,6 +11308,36 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -12720,6 +12845,7 @@
                 "title": "File Format",
                 "enum": [
                   "bai",
+                  "crai",
                   "tbi"
                 ],
                 "description": "The file format or extension of the file."
@@ -12771,6 +12897,36 @@
               }
             },
             "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -14355,6 +14511,36 @@
               }
             },
             "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -15988,6 +16174,7 @@
                 "enum": [
                   "hdf5",
                   "json",
+                  "pkl",
                   "pt",
                   "tar",
                   "tsv"
@@ -16041,6 +16228,36 @@
               }
             },
             "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -17684,6 +17901,36 @@
               }
             },
             "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -19356,6 +19603,36 @@
               }
             },
             "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -21254,6 +21531,36 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -22969,6 +23276,7 @@
                 "title": "File Format",
                 "enum": [
                   "bed",
+                  "bedpe",
                   "csv",
                   "gtf",
                   "tsv",
@@ -23049,6 +23357,36 @@
               }
             },
             "description": "Filter by file_set.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -24640,6 +24978,21 @@
             "explode": true
           },
           {
+            "name": "controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+              }
+            },
+            "description": "Filter by controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -24651,6 +25004,23 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "data_use_limitation_summaries",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Summaries",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers."
+              },
+              "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+            },
+            "description": "Filter by data_use_limitation_summaries",
             "style": "form",
             "explode": true
           },
@@ -24794,6 +25164,21 @@
               }
             },
             "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain_background",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Background",
+                "description": "The specific parent strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain_background",
             "style": "form",
             "explode": true
           },
@@ -25612,7 +25997,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -26639,6 +27024,21 @@
             "explode": true
           },
           {
+            "name": "controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+              }
+            },
+            "description": "Filter by controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -26650,6 +27050,23 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "data_use_limitation_summaries",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Summaries",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers."
+              },
+              "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+            },
+            "description": "Filter by data_use_limitation_summaries",
             "style": "form",
             "explode": true
           },
@@ -26778,6 +27195,21 @@
               }
             },
             "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain_background",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Background",
+                "description": "The specific parent strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain_background",
             "style": "form",
             "explode": true
           },
@@ -27492,7 +27924,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -28839,6 +29271,21 @@
             "explode": true
           },
           {
+            "name": "controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+              }
+            },
+            "description": "Filter by controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -28850,6 +29297,23 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "data_use_limitation_summaries",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Summaries",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers."
+              },
+              "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+            },
+            "description": "Filter by data_use_limitation_summaries",
             "style": "form",
             "explode": true
           },
@@ -30490,6 +30954,21 @@
             "explode": true
           },
           {
+            "name": "controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+              }
+            },
+            "description": "Filter by controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -30501,6 +30980,23 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "data_use_limitation_summaries",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Summaries",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers."
+              },
+              "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+            },
+            "description": "Filter by data_use_limitation_summaries",
             "style": "form",
             "explode": true
           },
@@ -30629,6 +31125,21 @@
               }
             },
             "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain_background",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Background",
+                "description": "The specific parent strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain_background",
             "style": "form",
             "explode": true
           },
@@ -31269,7 +31780,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -32552,6 +33063,21 @@
             "explode": true
           },
           {
+            "name": "controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+              }
+            },
+            "description": "Filter by controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -32563,6 +33089,23 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "data_use_limitation_summaries",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Summaries",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers."
+              },
+              "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+            },
+            "description": "Filter by data_use_limitation_summaries",
             "style": "form",
             "explode": true
           },
@@ -32691,6 +33234,21 @@
               }
             },
             "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain_background",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Background",
+                "description": "The specific parent strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain_background",
             "style": "form",
             "explode": true
           },
@@ -33692,7 +34250,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -34857,6 +35415,21 @@
             "explode": true
           },
           {
+            "name": "controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+              }
+            },
+            "description": "Filter by controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -34868,6 +35441,23 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "data_use_limitation_summaries",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Summaries",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers."
+              },
+              "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+            },
+            "description": "Filter by data_use_limitation_summaries",
             "style": "form",
             "explode": true
           },
@@ -35000,6 +35590,21 @@
             "explode": true
           },
           {
+            "name": "donors.strain_background",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Background",
+                "description": "The specific parent strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain_background",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "donors.taxa",
             "in": "query",
             "schema": {
@@ -35053,6 +35658,7 @@
                 "title": "File Set Type",
                 "enum": [
                   "decision tree",
+                  "logistic regression",
                   "neural network",
                   "random forest",
                   "support vector machine",
@@ -35793,7 +36399,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -36984,6 +37590,21 @@
             "explode": true
           },
           {
+            "name": "controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+              }
+            },
+            "description": "Filter by controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -36995,6 +37616,23 @@
               }
             },
             "description": "Filter by creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "data_use_limitation_summaries",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Data Use Limitation Summaries",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers."
+              },
+              "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set."
+            },
+            "description": "Filter by data_use_limitation_summaries",
             "style": "form",
             "explode": true
           },
@@ -37123,6 +37761,21 @@
               }
             },
             "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.strain_background",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Strain Background",
+                "description": "The specific parent strain designation of a non-human donor."
+              }
+            },
+            "description": "Filter by donors.strain_background",
             "style": "form",
             "explode": true
           },
@@ -37957,7 +38610,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -39839,7 +40492,7 @@
                   "HMB",
                   "other"
                 ],
-                "description": "Code indicating the limitations on data use for data generated from the applicable samples. GRU (General research use): Use of the data is limited only by the terms of the Data Use Certification: these data will be added to the dbGaP Collection. HMB (Health/medical/biomedical): Use of the data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry. DS (Disease specific): Use of the data must be related to the specified disease. Other: any other customized limitation."
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
               }
             },
             "description": "Filter by data_use_limitation",
@@ -39864,7 +40517,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by data_use_limitation_modifiers",
             "style": "form",
@@ -40083,7 +40736,7 @@
               "items": {
                 "type": "string",
                 "title": "Summary",
-                "description": "A summary of the object."
+                "description": "A summary of the institutional certificate."
               }
             },
             "description": "Filter by summary",
@@ -46501,10 +47154,25 @@
               "items": {
                 "type": "number",
                 "title": "Fraction Of Assigned Oligos",
-                "description": "Fraction of assigned tested sequences in mapping to determine if the library during the mapping step was sufficiently recovered."
+                "description": "Fraction of assigned tested sequences in mapping to determine if the library during the assignment step was sufficiently recovered."
               }
             },
             "description": "Filter by fraction_assigned_oligos",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "fraction_oligos_passing",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Fraction Of Oligos Passing Filters",
+                "description": "Fraction of tested sequences that passed filtering of the mappable sequences to determine if the designed library was sufficiently recovered. Value is the median of all replicates."
+              }
+            },
+            "description": "Filter by fraction_oligos_passing",
             "style": "form",
             "explode": true
           },
@@ -46537,17 +47205,17 @@
             "explode": true
           },
           {
-            "name": "median_assigned_barocdes",
+            "name": "median_assigned_barcodes",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "number",
                 "title": "Median Number Of Assigned Barcodes",
-                "description": "Median number of barcodes assigned to tested sequences in mapping as a quality control measure for the mapping step, whether there is sufficient barcode to oligo coverage."
+                "description": "Median number of barcodes assigned to tested sequences in mapping as a quality control measure for the assignment step, whether there is sufficient barcode to oligo coverage."
               }
             },
-            "description": "Filter by median_assigned_barocdes",
+            "description": "Filter by median_assigned_barcodes",
             "style": "form",
             "explode": true
           },
@@ -46559,7 +47227,7 @@
               "items": {
                 "type": "number",
                 "title": "Median Barcodes Passing Filtering",
-                "description": "Median number of barcodes across tested sequences that passed filtering to determine if there was sufficient barcode to oligo coverage."
+                "description": "Median number of barcodes across tested sequences that passed filtering to determine if there was sufficient barcode to oligo coverage. Value is the median of all replicates."
               }
             },
             "description": "Filter by median_barcodes_passing_filtering",
@@ -46574,7 +47242,7 @@
               "items": {
                 "type": "number",
                 "title": "Median RNA Read Count",
-                "description": "Median of RNA read count for oligos that passed filtering to determine sufficient coverage in terms of read count."
+                "description": "Median of RNA read count for oligos that passed filtering to determine sufficient coverage in terms of read count. Value is the median of all replicates."
               }
             },
             "description": "Filter by median_rna_read_count",
@@ -46598,21 +47266,6 @@
             "explode": true
           },
           {
-            "name": "pct_oligos_passing",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Percent Of Oligos Passing Filters",
-                "description": "Percent of tested sequences that passed filtering of the mappable sequences to determine if the designed library was sufficiently recovered."
-              }
-            },
-            "description": "Filter by pct_oligos_passing",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "pearson_correlation",
             "in": "query",
             "schema": {
@@ -46620,7 +47273,7 @@
               "items": {
                 "type": "number",
                 "title": "Pearson Correlation",
-                "description": "The correlation of log2 RNA/DNA ratios across tested sequences as a measure of replicable activity signal."
+                "description": "The correlation of log2 RNA/DNA ratios across tested sequences as a measure of replicable activity signal. Value is the median of replicate comparisons using only oligos with >= 10 barcodes."
               }
             },
             "description": "Filter by pearson_correlation",
@@ -50506,7 +51159,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -52633,7 +53286,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -54664,7 +55317,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -57970,7 +58623,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -60067,7 +60720,7 @@
                   "PUB"
                 ]
               },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community."
+              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
             "style": "form",
@@ -64222,10 +64875,12 @@
                   "edge weights",
                   "editing templates",
                   "element quantifications",
+                  "element to gene predictions",
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
                   "external source data",
+                  "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
                   "fold change over control",
@@ -64254,6 +64909,7 @@
                   "index",
                   "loci",
                   "low resolution tissue",
+                  "machine learning model features",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -64287,7 +64943,6 @@
                   "scale factors",
                   "seqspec",
                   "sequence attributes",
-                  "sequence barcodes",
                   "signal",
                   "signal of all reads",
                   "signal of unique reads",
@@ -64386,10 +65041,12 @@
                   "edge weights",
                   "editing templates",
                   "element quantifications",
+                  "element to gene predictions",
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
                   "external source data",
+                  "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
                   "fold change over control",
@@ -64418,6 +65075,7 @@
                   "index",
                   "loci",
                   "low resolution tissue",
+                  "machine learning model features",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -64451,7 +65109,6 @@
                   "scale factors",
                   "seqspec",
                   "sequence attributes",
-                  "sequence barcodes",
                   "signal",
                   "signal of all reads",
                   "signal of unique reads",
@@ -65642,10 +66299,12 @@
                 "edge weights",
                 "editing templates",
                 "element quantifications",
+                "element to gene predictions",
                 "elements reference",
                 "elements_genes",
                 "exclusion list",
                 "external source data",
+                "feature weights",
                 "fiducial alignment",
                 "filtered feature barcode matrix",
                 "fold change over control",
@@ -65674,6 +66333,7 @@
                 "index",
                 "loci",
                 "low resolution tissue",
+                "machine learning model features",
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
@@ -65707,7 +66367,6 @@
                 "scale factors",
                 "seqspec",
                 "sequence attributes",
-                "sequence barcodes",
                 "signal",
                 "signal of all reads",
                 "signal of unique reads",
@@ -65800,10 +66459,12 @@
                 "edge weights",
                 "editing templates",
                 "element quantifications",
+                "element to gene predictions",
                 "elements reference",
                 "elements_genes",
                 "exclusion list",
                 "external source data",
+                "feature weights",
                 "fiducial alignment",
                 "filtered feature barcode matrix",
                 "fold change over control",
@@ -65832,6 +66493,7 @@
                 "index",
                 "loci",
                 "low resolution tissue",
+                "machine learning model features",
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
@@ -65865,7 +66527,6 @@
                 "scale factors",
                 "seqspec",
                 "sequence attributes",
-                "sequence barcodes",
                 "signal",
                 "signal of all reads",
                 "signal of unique reads",
@@ -67200,7 +67861,7 @@
       },
       "AlignmentFile": {
         "title": "Alignment File",
-        "description": "A file containing alignment data in bam format.",
+        "description": "A file containing alignment data in bam or cram format.",
         "additionalProperties": false,
         "type": "object",
         "properties": {
@@ -67462,7 +68123,8 @@
             "description": "The file format or extension of the file.",
             "type": "string",
             "enum": [
-              "bam"
+              "bam",
+              "cram"
             ]
           },
           "file_format_specifications": {
@@ -68985,6 +69647,7 @@
             "type": "string",
             "enum": [
               "bai",
+              "crai",
               "tbi"
             ]
           },
@@ -69804,6 +70467,7 @@
             "enum": [
               "hdf5",
               "json",
+              "pkl",
               "pt",
               "tar",
               "tsv"
@@ -71697,6 +72361,7 @@
             "type": "string",
             "enum": [
               "bed",
+              "bedpe",
               "csv",
               "gtf",
               "tsv",
@@ -72170,6 +72835,22 @@
               "type": "string"
             }
           },
+          "data_use_limitation_summaries": {
+            "title": "Data Use Limitation Summaries",
+            "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Data Use Limitation Summary",
+              "description": "A combination of the data use limitation and its modifiers.",
+              "type": "string"
+            }
+          },
+          "controlled_access": {
+            "title": "Controlled Access",
+            "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
+          },
           "assay_titles": {
             "title": "Assay Titles",
             "description": "Title(s) of assays that produced data analyzed in the analysis set.",
@@ -72501,6 +73182,22 @@
               "description": "A construct library set associated with a sample of this file set.",
               "type": "string"
             }
+          },
+          "data_use_limitation_summaries": {
+            "title": "Data Use Limitation Summaries",
+            "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Data Use Limitation Summary",
+              "description": "A combination of the data use limitation and its modifiers.",
+              "type": "string"
+            }
+          },
+          "controlled_access": {
+            "title": "Controlled Access",
+            "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
           },
           "measurement_sets": {
             "title": "Measurement Sets",
@@ -73017,6 +73714,22 @@
               "type": "string"
             }
           },
+          "data_use_limitation_summaries": {
+            "title": "Data Use Limitation Summaries",
+            "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Data Use Limitation Summary",
+              "description": "A combination of the data use limitation and its modifiers.",
+              "type": "string"
+            }
+          },
+          "controlled_access": {
+            "title": "Controlled Access",
+            "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
+          },
           "applied_to_samples": {
             "title": "Applied to Samples",
             "description": "The samples that link to this construct library set.",
@@ -73319,6 +74032,22 @@
               "description": "A construct library set associated with a sample of this file set.",
               "type": "string"
             }
+          },
+          "data_use_limitation_summaries": {
+            "title": "Data Use Limitation Summaries",
+            "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Data Use Limitation Summary",
+              "description": "A combination of the data use limitation and its modifiers.",
+              "type": "string"
+            }
+          },
+          "controlled_access": {
+            "title": "Controlled Access",
+            "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
           },
           "assemblies": {
             "title": "Assemblies",
@@ -73806,6 +74535,22 @@
               "type": "string"
             }
           },
+          "data_use_limitation_summaries": {
+            "title": "Data Use Limitation Summaries",
+            "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Data Use Limitation Summary",
+              "description": "A combination of the data use limitation and its modifiers.",
+              "type": "string"
+            }
+          },
+          "controlled_access": {
+            "title": "Controlled Access",
+            "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
+          },
           "related_multiome_datasets": {
             "title": "Related Multiome Datasets",
             "description": "Related datasets included in the multiome experiment this measurement set is a part of.",
@@ -74044,6 +74789,7 @@
             "type": "string",
             "enum": [
               "decision tree",
+              "logistic regression",
               "neural network",
               "random forest",
               "support vector machine",
@@ -74160,6 +74906,22 @@
               "description": "A construct library set associated with a sample of this file set.",
               "type": "string"
             }
+          },
+          "data_use_limitation_summaries": {
+            "title": "Data Use Limitation Summaries",
+            "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Data Use Limitation Summary",
+              "description": "A combination of the data use limitation and its modifiers.",
+              "type": "string"
+            }
+          },
+          "controlled_access": {
+            "title": "Controlled Access",
+            "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
           },
           "externally_hosted": {
             "title": "Externally Hosted",
@@ -74552,6 +75314,22 @@
               "description": "A construct library set associated with a sample of this file set.",
               "type": "string"
             }
+          },
+          "data_use_limitation_summaries": {
+            "title": "Data Use Limitation Summaries",
+            "description": "The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Data Use Limitation Summary",
+              "description": "A combination of the data use limitation and its modifiers.",
+              "type": "string"
+            }
+          },
+          "controlled_access": {
+            "title": "Controlled Access",
+            "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
           }
         }
       },
@@ -75076,7 +75854,7 @@
           },
           "data_use_limitation": {
             "title": "Data Use Limitation",
-            "description": "Code indicating the limitations on data use for data generated from the applicable samples. GRU (General research use): Use of the data is limited only by the terms of the Data Use Certification: these data will be added to the dbGaP Collection. HMB (Health/medical/biomedical): Use of the data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry. DS (Disease specific): Use of the data must be related to the specified disease. Other: any other customized limitation.",
+            "description": "Code indicating the limitations on data use for data generated from the applicable samples.",
             "type": "string",
             "enum": [
               "DS",
@@ -75087,7 +75865,7 @@
           },
           "data_use_limitation_modifiers": {
             "title": "Data Use Limitation Modifiers",
-            "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community.",
+            "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -75158,7 +75936,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the institutional certificate."
           },
           "data_use_limitation_summary": {
             "title": "Data Use Limitation Summary",
@@ -77518,32 +78296,32 @@
           },
           "pearson_correlation": {
             "title": "Pearson Correlation",
-            "description": "The correlation of log2 RNA/DNA ratios across tested sequences as a measure of replicable activity signal.",
+            "description": "The correlation of log2 RNA/DNA ratios across tested sequences as a measure of replicable activity signal. Value is the median of replicate comparisons using only oligos with >= 10 barcodes.",
             "type": "number"
           },
           "median_barcodes_passing_filtering": {
             "title": "Median Barcodes Passing Filtering",
-            "description": "Median number of barcodes across tested sequences that passed filtering to determine if there was sufficient barcode to oligo coverage.",
+            "description": "Median number of barcodes across tested sequences that passed filtering to determine if there was sufficient barcode to oligo coverage. Value is the median of all replicates.",
             "type": "number"
           },
           "median_rna_read_count": {
             "title": "Median RNA Read Count",
-            "description": "Median of RNA read count for oligos that passed filtering to determine sufficient coverage in terms of read count.",
+            "description": "Median of RNA read count for oligos that passed filtering to determine sufficient coverage in terms of read count. Value is the median of all replicates.",
             "type": "number"
           },
-          "pct_oligos_passing": {
-            "title": "Percent Of Oligos Passing Filters",
-            "description": "Percent of tested sequences that passed filtering of the mappable sequences to determine if the designed library was sufficiently recovered.",
+          "fraction_oligos_passing": {
+            "title": "Fraction Of Oligos Passing Filters",
+            "description": "Fraction of tested sequences that passed filtering of the mappable sequences to determine if the designed library was sufficiently recovered. Value is the median of all replicates.",
             "type": "number"
           },
-          "median_assigned_barocdes": {
+          "median_assigned_barcodes": {
             "title": "Median Number Of Assigned Barcodes",
-            "description": "Median number of barcodes assigned to tested sequences in mapping as a quality control measure for the mapping step, whether there is sufficient barcode to oligo coverage.",
+            "description": "Median number of barcodes assigned to tested sequences in mapping as a quality control measure for the assignment step, whether there is sufficient barcode to oligo coverage.",
             "type": "number"
           },
           "fraction_assigned_oligos": {
             "title": "Fraction Of Assigned Oligos",
-            "description": "Fraction of assigned tested sequences in mapping to determine if the library during the mapping step was sufficiently recovered.",
+            "description": "Fraction of assigned tested sequences in mapping to determine if the library during the assignment step was sufficiently recovered.",
             "type": "number"
           },
           "@id": {

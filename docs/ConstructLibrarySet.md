@@ -58,6 +58,8 @@ Name | Type | Description | Notes
 **submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
 **input_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 **construct_library_sets** | **List[str]** | The construct library sets associated with the samples of this file set. | [optional] 
+**data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
+**controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **applied_to_samples** | **List[str]** | The samples that link to this construct library set. | [optional] 
 
 ## Example

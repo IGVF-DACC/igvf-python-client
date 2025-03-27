@@ -20,15 +20,15 @@ Name | Type | Description | Notes
 **description** | **str** | A plain text description of the object. | [optional] 
 **certificate_identifier** | **str** | A unique identifier for the certificate. | [optional] 
 **controlled_access** | **bool** | Indicator of whether the samples are under controlled access. | [optional] 
-**data_use_limitation** | **str** | Code indicating the limitations on data use for data generated from the applicable samples. GRU (General research use): Use of the data is limited only by the terms of the Data Use Certification: these data will be added to the dbGaP Collection. HMB (Health/medical/biomedical): Use of the data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry. DS (Disease specific): Use of the data must be related to the specified disease. Other: any other customized limitation. | [optional] 
-**data_use_limitation_modifiers** | **List[str]** | Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community. | [optional] 
+**data_use_limitation** | **str** | Code indicating the limitations on data use for data generated from the applicable samples. | [optional] 
+**data_use_limitation_modifiers** | **List[str]** | Code indicating a modifier on the limitations on data use for data generated from the applicable samples. | [optional] 
 **samples** | **List[str]** | Samples covered by this institutional certificate. | [optional] 
 **urls** | **List[str]** | Link to the institutional certification form. | [optional] 
 **partner_labs** | **List[str]** | Labs which belong to same institution as the signing PI and can share this institutional certificate. | [optional] 
 **partner_awards** | **List[str]** | Awards granted to at least one lab that belongs to same institution as the signing PI and can share this institutional certificate. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the institutional certificate. | [optional] 
 **data_use_limitation_summary** | **str** | A combination of the data use limitation and its modifiers | [optional] 
 
 ## Example

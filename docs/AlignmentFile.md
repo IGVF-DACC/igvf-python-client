@@ -1,6 +1,6 @@
 # AlignmentFile
 
-A file containing alignment data in bam format.
+A file containing alignment data in bam or cram format.
 
 ## Properties
 
