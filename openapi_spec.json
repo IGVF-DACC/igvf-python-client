@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "72.0.0"
+    "version": "73.0.0"
   },
   "servers": [
     {
@@ -1348,6 +1348,7 @@
                 "title": "Type",
                 "enum": [
                   "alignment",
+                  "barcode correction",
                   "barcode counting",
                   "barcode mapping generation",
                   "base calling",
@@ -2096,6 +2097,22 @@
             "explode": true
           },
           {
+            "name": "workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "workflow.status",
             "in": "query",
             "schema": {
@@ -2331,6 +2348,82 @@
               }
             },
             "description": "Filter by analysis_step.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^[a-zA-Z\\d_().,-]+(?:\\s[a-zA-Z\\d_().,-]+)*[step|Step]$",
+                "description": "The preferred viewable name of the analysis step, likely the same as the step label."
+              }
+            },
+            "description": "Filter by analysis_step.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step.workflow.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step.workflow.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step.workflow.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by analysis_step.workflow.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step.workflow.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by analysis_step.workflow.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step.workflow.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by analysis_step.workflow.status",
             "style": "form",
             "explode": true
           },
@@ -25775,7 +25868,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Sample Summary",
+                "title": "Simplified Sample Summary",
                 "description": "A summary of the samples associated with input file sets of this analysis set."
               }
             },
@@ -29461,6 +29554,21 @@
               }
             },
             "description": "Filter by files.file_format",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.href",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Download URL",
+                "description": "The download path to obtain file."
+              }
+            },
+            "description": "Filter by files.href",
             "style": "form",
             "explode": true
           },
@@ -33786,6 +33894,8 @@
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
+                  "10X ATAC with Scale pre-indexing",
+                  "10X RNA with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -34613,8 +34723,8 @@
                 "type": "string",
                 "title": "Strand Specificity",
                 "enum": [
-                  "5' to 3'",
-                  "3' to 5'",
+                  "5 prime to 3 prime",
+                  "3 prime to 5 prime",
                   "unstranded"
                 ],
                 "description": "The strand-specificity of the sequencing results within Perturb-seq, scCRISPR screen, TAP-seq, and CERES-seq assays."
@@ -42849,6 +42959,8 @@
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
+                  "10X ATAC with Scale pre-indexing",
+                  "10X RNA with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -44897,17 +45009,31 @@
             "explode": true
           },
           {
-            "name": "award",
+            "name": "award.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Award",
-                "description": "Grant associated with the submission."
+                "title": "ID"
               }
             },
-            "description": "Filter by award",
+            "description": "Filter by award.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.component",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project Component",
+                "description": "The project component the award is associated with."
+              }
+            },
+            "description": "Filter by award.component",
             "style": "form",
             "explode": true
           },
@@ -45021,17 +45147,30 @@
             "explode": true
           },
           {
-            "name": "lab",
+            "name": "lab.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Lab",
-                "description": "Lab associated with the submission."
+                "title": "ID"
               }
             },
-            "description": "Filter by lab",
+            "description": "Filter by lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by lab.title",
             "style": "form",
             "explode": true
           },
@@ -45172,17 +45311,31 @@
             "explode": true
           },
           {
-            "name": "submitted_by",
+            "name": "submitted_by.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Submitted By",
-                "description": "The user who submitted the object."
+                "title": "ID"
               }
             },
-            "description": "Filter by submitted_by",
+            "description": "Filter by submitted_by.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "description": "The full name of the user."
+              }
+            },
+            "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
           },
@@ -47334,17 +47487,31 @@
             "explode": true
           },
           {
-            "name": "submitted_by",
+            "name": "submitted_by.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Submitted By",
-                "description": "The user who submitted the object."
+                "title": "ID"
               }
             },
-            "description": "Filter by submitted_by",
+            "description": "Filter by submitted_by.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "description": "The full name of the user."
+              }
+            },
+            "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
           },
@@ -47867,17 +48034,31 @@
             "explode": true
           },
           {
-            "name": "submitted_by",
+            "name": "submitted_by.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Submitted By",
-                "description": "The user who submitted the object."
+                "title": "ID"
               }
             },
-            "description": "Filter by submitted_by",
+            "description": "Filter by submitted_by.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "description": "The full name of the user."
+              }
+            },
+            "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
           },
@@ -48670,17 +48851,31 @@
             "explode": true
           },
           {
-            "name": "submitted_by",
+            "name": "submitted_by.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Submitted By",
-                "description": "The user who submitted the object."
+                "title": "ID"
               }
             },
-            "description": "Filter by submitted_by",
+            "description": "Filter by submitted_by.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "description": "The full name of the user."
+              }
+            },
+            "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
           },
@@ -49136,6 +49331,21 @@
             "explode": true
           },
           {
+            "name": "index_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by index_version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "joint_barcodes_passing",
             "in": "query",
             "schema": {
@@ -49147,6 +49357,21 @@
               }
             },
             "description": "Filter by joint_barcodes_passing",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "k-mer length",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by k-mer length",
             "style": "form",
             "explode": true
           },
@@ -49284,6 +49509,21 @@
             "explode": true
           },
           {
+            "name": "n_bootstraps",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_bootstraps",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "n_genes",
             "in": "query",
             "schema": {
@@ -49295,6 +49535,36 @@
               }
             },
             "description": "Filter by n_genes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_processed",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_processed",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_pseudoaligned",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_pseudoaligned",
             "style": "form",
             "explode": true
           },
@@ -49325,6 +49595,36 @@
               }
             },
             "description": "Filter by n_records",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_targets",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_targets",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_unique",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by n_unique",
             "style": "form",
             "explode": true
           },
@@ -49371,6 +49671,36 @@
               }
             },
             "description": "Filter by numReadsOnOnlist",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "p_pseudoaligned",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by p_pseudoaligned",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "p_unique",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "",
+                "description": ""
+              }
+            },
+            "description": "Filter by p_unique",
             "style": "form",
             "explode": true
           },
@@ -49473,17 +49803,31 @@
             "explode": true
           },
           {
-            "name": "submitted_by",
+            "name": "submitted_by.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Submitted By",
-                "description": "The user who submitted the object."
+                "title": "ID"
               }
             },
-            "description": "Filter by submitted_by",
+            "description": "Filter by submitted_by.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "description": "The full name of the user."
+              }
+            },
+            "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
           },
@@ -49946,17 +50290,31 @@
             "explode": true
           },
           {
-            "name": "submitted_by",
+            "name": "submitted_by.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Submitted By",
-                "description": "The user who submitted the object."
+                "title": "ID"
               }
             },
-            "description": "Filter by submitted_by",
+            "description": "Filter by submitted_by.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_by.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "description": "The full name of the user."
+              }
+            },
+            "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
           },
@@ -64691,6 +65049,7 @@
                 "title": "Type",
                 "enum": [
                   "alignment",
+                  "barcode correction",
                   "barcode counting",
                   "barcode mapping generation",
                   "base calling",
@@ -64755,6 +65114,21 @@
             "explode": true
           },
           {
+            "name": "analysis_steps.analysis_step_versions.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_steps.analysis_step_versions.software_versions.software.@id",
             "in": "query",
             "schema": {
@@ -64765,6 +65139,22 @@
               }
             },
             "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.analysis_step_versions.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[a-z0-9\\-_]+",
+                "description": "Unique name of the software package; a lowercase version of the title."
+              }
+            },
+            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.name",
             "style": "form",
             "explode": true
           },
@@ -64992,6 +65382,21 @@
               "description": "The content types used as input for the analysis step."
             },
             "description": "Filter by analysis_steps.input_content_types",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_steps.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "Full name of the analysis step."
+              }
+            },
+            "description": "Filter by analysis_steps.name",
             "style": "form",
             "explode": true
           },
@@ -66195,6 +66600,7 @@
               "type": "string",
               "enum": [
                 "alignment",
+                "barcode correction",
                 "barcode counting",
                 "barcode mapping generation",
                 "base calling",
@@ -72874,7 +73280,7 @@
             }
           },
           "sample_summary": {
-            "title": "Sample Summary",
+            "title": "Simplified Sample Summary",
             "description": "A summary of the samples associated with input file sets of this analysis set.",
             "type": "string"
           },
@@ -74334,6 +74740,8 @@
               "DOGMA-seq",
               "10x multiome",
               "10x multiome with MULTI-seq",
+              "10X ATAC with Scale pre-indexing",
+              "10X RNA with Scale pre-indexing",
               "MULTI-seq",
               "SHARE-seq",
               "Histone ChIP-seq",
@@ -74412,8 +74820,8 @@
             "description": "The strand-specificity of the sequencing results within Perturb-seq, scCRISPR screen, TAP-seq, and CERES-seq assays.",
             "type": "string",
             "enum": [
-              "5' to 3'",
-              "3' to 5'",
+              "5 prime to 3 prime",
+              "3 prime to 5 prime",
               "unstranded"
             ]
           },
@@ -76639,6 +77047,8 @@
                 "DOGMA-seq",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
+                "10X ATAC with Scale pre-indexing",
+                "10X RNA with Scale pre-indexing",
                 "MULTI-seq",
                 "SHARE-seq",
                 "Histone ChIP-seq",
@@ -78852,6 +79262,131 @@
             "description": "Sum of uni-mappings and multi-mappings.",
             "type": "number"
           },
+          "atac_fragments_alignment_stats": {
+            "title": "ATAC Fragments Alignment Stats",
+            "description": "",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "text/plain"
+                ]
+              },
+              "size": {
+                "title": "File size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "md5sum": {
+                "type": "string",
+                "title": "MD5sum"
+              },
+              "width": {
+                "title": "Image width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "atac_bam_summary_stats": {
+            "title": "ATAC Bam Summary Stats",
+            "description": "",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "text/csv",
+                  "text/tab-separated-values"
+                ]
+              },
+              "size": {
+                "title": "File size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "md5sum": {
+                "type": "string",
+                "title": "MD5sum"
+              },
+              "width": {
+                "title": "Image width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "atac_fragment_summary_stats": {
+            "title": "ATAC Fragment Summary Stats",
+            "description": "",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "text/csv",
+                  "text/tab-separated-values"
+                ]
+              },
+              "size": {
+                "title": "File size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "md5sum": {
+                "type": "string",
+                "title": "MD5sum"
+              },
+              "width": {
+                "title": "Image width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -79133,6 +79668,92 @@
           },
           "percentageReadsOnOnlist": {
             "title": "Percentage Of Reads On Onlist",
+            "description": "",
+            "type": "number"
+          },
+          "rnaseq_kb_info": {
+            "title": "RNA-seq KB Info",
+            "description": "",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "title": "File Name",
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "title": "MIME type",
+                "type": "string",
+                "enum": [
+                  "application/json"
+                ]
+              },
+              "size": {
+                "title": "File size",
+                "type": "integer",
+                "minimum": 0
+              },
+              "md5sum": {
+                "type": "string",
+                "title": "MD5sum"
+              },
+              "width": {
+                "title": "Image width",
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "title": "Image height",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "n_targets": {
+            "title": "",
+            "description": "",
+            "type": "number"
+          },
+          "n_bootstraps": {
+            "title": "",
+            "description": "",
+            "type": "number"
+          },
+          "n_processed": {
+            "title": "",
+            "description": "",
+            "type": "number"
+          },
+          "n_pseudoaligned": {
+            "title": "",
+            "description": "",
+            "type": "number"
+          },
+          "n_unique": {
+            "title": "",
+            "description": "",
+            "type": "number"
+          },
+          "p_pseudoaligned": {
+            "title": "",
+            "description": "",
+            "type": "number"
+          },
+          "p_unique": {
+            "title": "",
+            "description": "",
+            "type": "number"
+          },
+          "index_version": {
+            "title": "",
+            "description": "",
+            "type": "number"
+          },
+          "k-mer length": {
+            "title": "",
             "description": "",
             "type": "number"
           },

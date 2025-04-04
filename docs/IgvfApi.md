@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **analysis_step_versions**
-> AnalysisStepVersionResults analysis_step_versions(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_id=analysis_step_id, analysis_step_name=analysis_step_name, analysis_step_status=analysis_step_status, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, lab_id=lab_id, lab_title=lab_title, notes=notes, release_timestamp=release_timestamp, software_versions_id=software_versions_id, software_versions_name=software_versions_name, software_versions_status=software_versions_status, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, uuid=uuid)
+> AnalysisStepVersionResults analysis_step_versions(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_id=analysis_step_id, analysis_step_name=analysis_step_name, analysis_step_status=analysis_step_status, analysis_step_title=analysis_step_title, analysis_step_workflow_id=analysis_step_workflow_id, analysis_step_workflow_accession=analysis_step_workflow_accession, analysis_step_workflow_name=analysis_step_workflow_name, analysis_step_workflow_status=analysis_step_workflow_status, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, lab_id=lab_id, lab_title=lab_title, notes=notes, release_timestamp=release_timestamp, software_versions_id=software_versions_id, software_versions_name=software_versions_name, software_versions_status=software_versions_status, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, uuid=uuid)
 
 List items in the AnalysisStepVersion collection.
 
@@ -491,6 +491,11 @@ Name | Type | Description  | Notes
  **analysis_step_id** | **List[str]**| Filter by analysis_step.@id | [optional] 
  **analysis_step_name** | **List[str]**| Filter by analysis_step.name | [optional] 
  **analysis_step_status** | **List[str]**| Filter by analysis_step.status | [optional] 
+ **analysis_step_title** | **List[str]**| Filter by analysis_step.title | [optional] 
+ **analysis_step_workflow_id** | **List[str]**| Filter by analysis_step.workflow.@id | [optional] 
+ **analysis_step_workflow_accession** | **List[str]**| Filter by analysis_step.workflow.accession | [optional] 
+ **analysis_step_workflow_name** | **List[str]**| Filter by analysis_step.workflow.name | [optional] 
+ **analysis_step_workflow_status** | **List[str]**| Filter by analysis_step.workflow.status | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
@@ -534,7 +539,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **analysis_steps**
-> AnalysisStepResults analysis_steps(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_types=analysis_step_types, analysis_step_versions_id=analysis_step_versions_id, analysis_step_versions_software_versions_id=analysis_step_versions_software_versions_id, analysis_step_versions_software_versions_name=analysis_step_versions_software_versions_name, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, input_content_types=input_content_types, lab_id=lab_id, lab_title=lab_title, name=name, notes=notes, output_content_types=output_content_types, parents_id=parents_id, parents_status=parents_status, parents_title=parents_title, release_timestamp=release_timestamp, status=status, step_label=step_label, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, title=title, uuid=uuid, workflow_id=workflow_id, workflow_accession=workflow_accession, workflow_status=workflow_status)
+> AnalysisStepResults analysis_steps(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_types=analysis_step_types, analysis_step_versions_id=analysis_step_versions_id, analysis_step_versions_software_versions_id=analysis_step_versions_software_versions_id, analysis_step_versions_software_versions_name=analysis_step_versions_software_versions_name, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, input_content_types=input_content_types, lab_id=lab_id, lab_title=lab_title, name=name, notes=notes, output_content_types=output_content_types, parents_id=parents_id, parents_status=parents_status, parents_title=parents_title, release_timestamp=release_timestamp, status=status, step_label=step_label, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, title=title, uuid=uuid, workflow_id=workflow_id, workflow_accession=workflow_accession, workflow_name=workflow_name, workflow_status=workflow_status)
 
 List items in the AnalysisStep collection.
 
@@ -590,6 +595,7 @@ Name | Type | Description  | Notes
  **uuid** | **List[str]**| Filter by uuid | [optional] 
  **workflow_id** | **List[str]**| Filter by workflow.@id | [optional] 
  **workflow_accession** | **List[str]**| Filter by workflow.accession | [optional] 
+ **workflow_name** | **List[str]**| Filter by workflow.name | [optional] 
  **workflow_status** | **List[str]**| Filter by workflow.status | [optional] 
 
 ### Return type
@@ -1200,7 +1206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **construct_library_sets**
-> ConstructLibrarySetResults construct_library_sets(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, applied_to_samples_id=applied_to_samples_id, applied_to_samples_accession=applied_to_samples_accession, applied_to_samples_aliases=applied_to_samples_aliases, applied_to_samples_classifications=applied_to_samples_classifications, applied_to_samples_disease_terms_id=applied_to_samples_disease_terms_id, applied_to_samples_disease_terms_status=applied_to_samples_disease_terms_status, applied_to_samples_disease_terms_term_name=applied_to_samples_disease_terms_term_name, applied_to_samples_donors_id=applied_to_samples_donors_id, applied_to_samples_donors_status=applied_to_samples_donors_status, applied_to_samples_donors_taxa=applied_to_samples_donors_taxa, applied_to_samples_modifications_id=applied_to_samples_modifications_id, applied_to_samples_modifications_modality=applied_to_samples_modifications_modality, applied_to_samples_modifications_status=applied_to_samples_modifications_status, applied_to_samples_modifications_summary=applied_to_samples_modifications_summary, applied_to_samples_nucleic_acid_delivery=applied_to_samples_nucleic_acid_delivery, applied_to_samples_sample_terms_id=applied_to_samples_sample_terms_id, applied_to_samples_sample_terms_status=applied_to_samples_sample_terms_status, applied_to_samples_sample_terms_term_name=applied_to_samples_sample_terms_term_name, applied_to_samples_status=applied_to_samples_status, applied_to_samples_summary=applied_to_samples_summary, applied_to_samples_targeted_sample_term_id=applied_to_samples_targeted_sample_term_id, applied_to_samples_targeted_sample_term_status=applied_to_samples_targeted_sample_term_status, applied_to_samples_targeted_sample_term_term_name=applied_to_samples_targeted_sample_term_term_name, applied_to_samples_taxa=applied_to_samples_taxa, applied_to_samples_treatments_id=applied_to_samples_treatments_id, applied_to_samples_treatments_status=applied_to_samples_treatments_status, applied_to_samples_treatments_summary=applied_to_samples_treatments_summary, applied_to_samples_treatments_treatment_term_name=applied_to_samples_treatments_treatment_term_name, associated_phenotypes_id=associated_phenotypes_id, associated_phenotypes_status=associated_phenotypes_status, associated_phenotypes_term_id=associated_phenotypes_term_id, associated_phenotypes_term_name=associated_phenotypes_term_name, average_guide_coverage=average_guide_coverage, average_insert_size=average_insert_size, award_id=award_id, award_component=award_component, collections=collections, construct_library_sets=construct_library_sets, control_file_sets=control_file_sets, control_for_id=control_for_id, control_for_accession=control_for_accession, control_for_aliases=control_for_aliases, control_for_status=control_for_status, control_type=control_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, data_use_limitation_summaries=data_use_limitation_summaries, description=description, documents=documents, exon=exon, file_set_type=file_set_type, files_id=files_id, files_accession=files_accession, files_aliases=files_aliases, files_content_type=files_content_type, files_file_format=files_file_format, files_status=files_status, files_upload_status=files_upload_status, guide_type=guide_type, input_for=input_for, integrated_content_files_id=integrated_content_files_id, integrated_content_files_accession=integrated_content_files_accession, integrated_content_files_aliases=integrated_content_files_aliases, integrated_content_files_status=integrated_content_files_status, integrated_content_files_upload_status=integrated_content_files_upload_status, lab_id=lab_id, lab_title=lab_title, large_scale_gene_list_id=large_scale_gene_list_id, large_scale_gene_list_accession=large_scale_gene_list_accession, large_scale_gene_list_aliases=large_scale_gene_list_aliases, large_scale_gene_list_status=large_scale_gene_list_status, large_scale_loci_list_id=large_scale_loci_list_id, large_scale_loci_list_accession=large_scale_loci_list_accession, large_scale_loci_list_aliases=large_scale_loci_list_aliases, large_scale_loci_list_status=large_scale_loci_list_status, lot_id=lot_id, lower_bound_guide_coverage=lower_bound_guide_coverage, lower_bound_insert_size=lower_bound_insert_size, notes=notes, orf_list_id=orf_list_id, orf_list_aliases=orf_list_aliases, orf_list_genes_id=orf_list_genes_id, orf_list_genes_status=orf_list_genes_status, orf_list_genes_symbol=orf_list_genes_symbol, orf_list_orf_id=orf_list_orf_id, orf_list_status=orf_list_status, product_id=product_id, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, publications_status=publications_status, release_timestamp=release_timestamp, revoke_detail=revoke_detail, scope=scope, selection_criteria=selection_criteria, small_scale_gene_list_id=small_scale_gene_list_id, small_scale_gene_list_geneid=small_scale_gene_list_geneid, small_scale_gene_list_name=small_scale_gene_list_name, small_scale_gene_list_status=small_scale_gene_list_status, small_scale_gene_list_symbol=small_scale_gene_list_symbol, small_scale_gene_list_synonyms=small_scale_gene_list_synonyms, small_scale_loci_list=small_scale_loci_list, sources=sources, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_files_timestamp=submitted_files_timestamp, submitter_comment=submitter_comment, summary=summary, targeton=targeton, tiling_modality=tiling_modality, upper_bound_guide_coverage=upper_bound_guide_coverage, upper_bound_insert_size=upper_bound_insert_size, uuid=uuid)
+> ConstructLibrarySetResults construct_library_sets(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, applied_to_samples_id=applied_to_samples_id, applied_to_samples_accession=applied_to_samples_accession, applied_to_samples_aliases=applied_to_samples_aliases, applied_to_samples_classifications=applied_to_samples_classifications, applied_to_samples_disease_terms_id=applied_to_samples_disease_terms_id, applied_to_samples_disease_terms_status=applied_to_samples_disease_terms_status, applied_to_samples_disease_terms_term_name=applied_to_samples_disease_terms_term_name, applied_to_samples_donors_id=applied_to_samples_donors_id, applied_to_samples_donors_status=applied_to_samples_donors_status, applied_to_samples_donors_taxa=applied_to_samples_donors_taxa, applied_to_samples_modifications_id=applied_to_samples_modifications_id, applied_to_samples_modifications_modality=applied_to_samples_modifications_modality, applied_to_samples_modifications_status=applied_to_samples_modifications_status, applied_to_samples_modifications_summary=applied_to_samples_modifications_summary, applied_to_samples_nucleic_acid_delivery=applied_to_samples_nucleic_acid_delivery, applied_to_samples_sample_terms_id=applied_to_samples_sample_terms_id, applied_to_samples_sample_terms_status=applied_to_samples_sample_terms_status, applied_to_samples_sample_terms_term_name=applied_to_samples_sample_terms_term_name, applied_to_samples_status=applied_to_samples_status, applied_to_samples_summary=applied_to_samples_summary, applied_to_samples_targeted_sample_term_id=applied_to_samples_targeted_sample_term_id, applied_to_samples_targeted_sample_term_status=applied_to_samples_targeted_sample_term_status, applied_to_samples_targeted_sample_term_term_name=applied_to_samples_targeted_sample_term_term_name, applied_to_samples_taxa=applied_to_samples_taxa, applied_to_samples_treatments_id=applied_to_samples_treatments_id, applied_to_samples_treatments_status=applied_to_samples_treatments_status, applied_to_samples_treatments_summary=applied_to_samples_treatments_summary, applied_to_samples_treatments_treatment_term_name=applied_to_samples_treatments_treatment_term_name, associated_phenotypes_id=associated_phenotypes_id, associated_phenotypes_status=associated_phenotypes_status, associated_phenotypes_term_id=associated_phenotypes_term_id, associated_phenotypes_term_name=associated_phenotypes_term_name, average_guide_coverage=average_guide_coverage, average_insert_size=average_insert_size, award_id=award_id, award_component=award_component, collections=collections, construct_library_sets=construct_library_sets, control_file_sets=control_file_sets, control_for_id=control_for_id, control_for_accession=control_for_accession, control_for_aliases=control_for_aliases, control_for_status=control_for_status, control_type=control_type, controlled_access=controlled_access, creation_timestamp=creation_timestamp, data_use_limitation_summaries=data_use_limitation_summaries, description=description, documents=documents, exon=exon, file_set_type=file_set_type, files_id=files_id, files_accession=files_accession, files_aliases=files_aliases, files_content_type=files_content_type, files_file_format=files_file_format, files_href=files_href, files_status=files_status, files_upload_status=files_upload_status, guide_type=guide_type, input_for=input_for, integrated_content_files_id=integrated_content_files_id, integrated_content_files_accession=integrated_content_files_accession, integrated_content_files_aliases=integrated_content_files_aliases, integrated_content_files_status=integrated_content_files_status, integrated_content_files_upload_status=integrated_content_files_upload_status, lab_id=lab_id, lab_title=lab_title, large_scale_gene_list_id=large_scale_gene_list_id, large_scale_gene_list_accession=large_scale_gene_list_accession, large_scale_gene_list_aliases=large_scale_gene_list_aliases, large_scale_gene_list_status=large_scale_gene_list_status, large_scale_loci_list_id=large_scale_loci_list_id, large_scale_loci_list_accession=large_scale_loci_list_accession, large_scale_loci_list_aliases=large_scale_loci_list_aliases, large_scale_loci_list_status=large_scale_loci_list_status, lot_id=lot_id, lower_bound_guide_coverage=lower_bound_guide_coverage, lower_bound_insert_size=lower_bound_insert_size, notes=notes, orf_list_id=orf_list_id, orf_list_aliases=orf_list_aliases, orf_list_genes_id=orf_list_genes_id, orf_list_genes_status=orf_list_genes_status, orf_list_genes_symbol=orf_list_genes_symbol, orf_list_orf_id=orf_list_orf_id, orf_list_status=orf_list_status, product_id=product_id, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, publications_status=publications_status, release_timestamp=release_timestamp, revoke_detail=revoke_detail, scope=scope, selection_criteria=selection_criteria, small_scale_gene_list_id=small_scale_gene_list_id, small_scale_gene_list_geneid=small_scale_gene_list_geneid, small_scale_gene_list_name=small_scale_gene_list_name, small_scale_gene_list_status=small_scale_gene_list_status, small_scale_gene_list_symbol=small_scale_gene_list_symbol, small_scale_gene_list_synonyms=small_scale_gene_list_synonyms, small_scale_loci_list=small_scale_loci_list, sources=sources, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_files_timestamp=submitted_files_timestamp, submitter_comment=submitter_comment, summary=summary, targeton=targeton, tiling_modality=tiling_modality, upper_bound_guide_coverage=upper_bound_guide_coverage, upper_bound_insert_size=upper_bound_insert_size, uuid=uuid)
 
 List items in the ConstructLibrarySet collection.
 
@@ -1286,6 +1292,7 @@ Name | Type | Description  | Notes
  **files_aliases** | **List[str]**| Filter by files.aliases | [optional] 
  **files_content_type** | **List[str]**| Filter by files.content_type | [optional] 
  **files_file_format** | **List[str]**| Filter by files.file_format | [optional] 
+ **files_href** | **List[str]**| Filter by files.href | [optional] 
  **files_status** | **List[str]**| Filter by files.status | [optional] 
  **files_upload_status** | **List[str]**| Filter by files.upload_status | [optional] 
  **guide_type** | **List[str]**| Filter by guide_type | [optional] 
@@ -3537,7 +3544,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mpra_quality_metrics**
-> MpraQualityMetricResults mpra_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, fraction_assigned_oligos=fraction_assigned_oligos, fraction_oligos_passing=fraction_oligos_passing, lab_id=lab_id, lab_title=lab_title, median_assigned_barcodes=median_assigned_barcodes, median_barcodes_passing_filtering=median_barcodes_passing_filtering, median_rna_read_count=median_rna_read_count, notes=notes, pearson_correlation=pearson_correlation, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by=submitted_by, submitter_comment=submitter_comment, summary=summary, uuid=uuid)
+> MpraQualityMetricResults mpra_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, fraction_assigned_oligos=fraction_assigned_oligos, fraction_oligos_passing=fraction_oligos_passing, lab_id=lab_id, lab_title=lab_title, median_assigned_barcodes=median_assigned_barcodes, median_barcodes_passing_filtering=median_barcodes_passing_filtering, median_rna_read_count=median_rna_read_count, notes=notes, pearson_correlation=pearson_correlation, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, uuid=uuid)
 
 List items in the MpraQualityMetric collection.
 
@@ -3582,7 +3589,8 @@ Name | Type | Description  | Notes
  **quality_metric_of** | **List[str]**| Filter by quality_metric_of | [optional] 
  **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
  **status** | **List[str]**| Filter by status | [optional] 
- **submitted_by** | **List[str]**| Filter by submitted_by | [optional] 
+ **submitted_by_id** | **List[str]**| Filter by submitted_by.@id | [optional] 
+ **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
  **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
  **summary** | **List[str]**| Filter by summary | [optional] 
  **uuid** | **List[str]**| Filter by uuid | [optional] 
@@ -3778,7 +3786,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **open_reading_frames**
-> OpenReadingFrameResults open_reading_frames(query=query, limit=limit, sort=sort, id=id, aliases=aliases, award=award, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, description=description, genes_id=genes_id, genes_geneid=genes_geneid, genes_status=genes_status, genes_symbol=genes_symbol, lab=lab, notes=notes, orf_id=orf_id, pct_coverage_orf=pct_coverage_orf, pct_coverage_protein=pct_coverage_protein, pct_identical_protein=pct_identical_protein, protein_id=protein_id, release_timestamp=release_timestamp, status=status, submitted_by=submitted_by, submitter_comment=submitter_comment, summary=summary, uuid=uuid)
+> OpenReadingFrameResults open_reading_frames(query=query, limit=limit, sort=sort, id=id, aliases=aliases, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, description=description, genes_id=genes_id, genes_geneid=genes_geneid, genes_status=genes_status, genes_symbol=genes_symbol, lab_id=lab_id, lab_title=lab_title, notes=notes, orf_id=orf_id, pct_coverage_orf=pct_coverage_orf, pct_coverage_protein=pct_coverage_protein, pct_identical_protein=pct_identical_protein, protein_id=protein_id, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, uuid=uuid)
 
 List items in the OpenReadingFrame collection.
 
@@ -3806,7 +3814,8 @@ Name | Type | Description  | Notes
  **sort** | **List[str]**| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **id** | **List[str]**| Filter by @id | [optional] 
  **aliases** | **List[str]**| Filter by aliases | [optional] 
- **award** | **List[str]**| Filter by award | [optional] 
+ **award_id** | **List[str]**| Filter by award.@id | [optional] 
+ **award_component** | **List[str]**| Filter by award.component | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
  **dbxrefs** | **List[str]**| Filter by dbxrefs | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
@@ -3814,7 +3823,8 @@ Name | Type | Description  | Notes
  **genes_geneid** | **List[str]**| Filter by genes.geneid | [optional] 
  **genes_status** | **List[str]**| Filter by genes.status | [optional] 
  **genes_symbol** | **List[str]**| Filter by genes.symbol | [optional] 
- **lab** | **List[str]**| Filter by lab | [optional] 
+ **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
+ **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **notes** | **List[str]**| Filter by notes | [optional] 
  **orf_id** | **List[str]**| Filter by orf_id | [optional] 
  **pct_coverage_orf** | **List[float]**| Filter by pct_coverage_orf | [optional] 
@@ -3823,7 +3833,8 @@ Name | Type | Description  | Notes
  **protein_id** | **List[str]**| Filter by protein_id | [optional] 
  **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
  **status** | **List[str]**| Filter by status | [optional] 
- **submitted_by** | **List[str]**| Filter by submitted_by | [optional] 
+ **submitted_by_id** | **List[str]**| Filter by submitted_by.@id | [optional] 
+ **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
  **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
  **summary** | **List[str]**| Filter by summary | [optional] 
  **uuid** | **List[str]**| Filter by uuid | [optional] 
@@ -3923,7 +3934,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **perturb_seq_quality_metrics**
-> PerturbSeqQualityMetricResults perturb_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, alignment_percentage=alignment_percentage, analysis_step_version=analysis_step_version, avg_cells_per_target=avg_cells_per_target, avg_umis_per_cell=avg_umis_per_cell, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, guide_diversity=guide_diversity, lab_id=lab_id, lab_title=lab_title, mean_mitochondrial_reads=mean_mitochondrial_reads, moi=moi, notes=notes, paired_reads_mapped=paired_reads_mapped, pct_cells_assigned_guide=pct_cells_assigned_guide, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by=submitted_by, submitter_comment=submitter_comment, summary=summary, total_cells_passing_filters=total_cells_passing_filters, total_detected_scrna_barcodes=total_detected_scrna_barcodes, total_guides=total_guides, total_reads=total_reads, total_targets=total_targets, uuid=uuid)
+> PerturbSeqQualityMetricResults perturb_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, alignment_percentage=alignment_percentage, analysis_step_version=analysis_step_version, avg_cells_per_target=avg_cells_per_target, avg_umis_per_cell=avg_umis_per_cell, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, guide_diversity=guide_diversity, lab_id=lab_id, lab_title=lab_title, mean_mitochondrial_reads=mean_mitochondrial_reads, moi=moi, notes=notes, paired_reads_mapped=paired_reads_mapped, pct_cells_assigned_guide=pct_cells_assigned_guide, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total_cells_passing_filters=total_cells_passing_filters, total_detected_scrna_barcodes=total_detected_scrna_barcodes, total_guides=total_guides, total_reads=total_reads, total_targets=total_targets, uuid=uuid)
 
 List items in the PerturbSeqQualityMetric collection.
 
@@ -3970,7 +3981,8 @@ Name | Type | Description  | Notes
  **quality_metric_of** | **List[str]**| Filter by quality_metric_of | [optional] 
  **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
  **status** | **List[str]**| Filter by status | [optional] 
- **submitted_by** | **List[str]**| Filter by submitted_by | [optional] 
+ **submitted_by_id** | **List[str]**| Filter by submitted_by.@id | [optional] 
+ **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
  **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
  **summary** | **List[str]**| Filter by summary | [optional] 
  **total_cells_passing_filters** | **List[float]**| Filter by total_cells_passing_filters | [optional] 
@@ -5509,7 +5521,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **single_cell_atac_seq_quality_metrics**
-> SingleCellAtacSeqQualityMetricResults single_cell_atac_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, duplicate=duplicate, frac_dup=frac_dup, frac_mito=frac_mito, joint_barcodes_passing=joint_barcodes_passing, lab_id=lab_id, lab_title=lab_title, lowmapq=lowmapq, multi_mappings=multi_mappings, n_barcodes=n_barcodes, n_barcodes_on_onlist=n_barcodes_on_onlist, n_candidates=n_candidates, n_corrected_barcodes=n_corrected_barcodes, n_fragment=n_fragment, n_fragments=n_fragments, n_mapped_reads=n_mapped_reads, n_mappings=n_mappings, n_multi_mappings=n_multi_mappings, n_output_mappings=n_output_mappings, n_reads=n_reads, n_reads_with_multi_mappings=n_reads_with_multi_mappings, n_uni_mappings=n_uni_mappings, n_uniquely_mapped_reads=n_uniquely_mapped_reads, notes=notes, pct_duplicates=pct_duplicates, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by=submitted_by, submitter_comment=submitter_comment, summary=summary, total=total, tsse=tsse, uni_mappings=uni_mappings, unmapped=unmapped, uuid=uuid)
+> SingleCellAtacSeqQualityMetricResults single_cell_atac_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, duplicate=duplicate, frac_dup=frac_dup, frac_mito=frac_mito, joint_barcodes_passing=joint_barcodes_passing, lab_id=lab_id, lab_title=lab_title, lowmapq=lowmapq, multi_mappings=multi_mappings, n_barcodes=n_barcodes, n_barcodes_on_onlist=n_barcodes_on_onlist, n_candidates=n_candidates, n_corrected_barcodes=n_corrected_barcodes, n_fragment=n_fragment, n_fragments=n_fragments, n_mapped_reads=n_mapped_reads, n_mappings=n_mappings, n_multi_mappings=n_multi_mappings, n_output_mappings=n_output_mappings, n_reads=n_reads, n_reads_with_multi_mappings=n_reads_with_multi_mappings, n_uni_mappings=n_uni_mappings, n_uniquely_mapped_reads=n_uniquely_mapped_reads, notes=notes, pct_duplicates=pct_duplicates, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total=total, tsse=tsse, uni_mappings=uni_mappings, unmapped=unmapped, uuid=uuid)
 
 List items in the SingleCellAtacSeqQualityMetric collection.
 
@@ -5569,7 +5581,8 @@ Name | Type | Description  | Notes
  **quality_metric_of** | **List[str]**| Filter by quality_metric_of | [optional] 
  **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
  **status** | **List[str]**| Filter by status | [optional] 
- **submitted_by** | **List[str]**| Filter by submitted_by | [optional] 
+ **submitted_by_id** | **List[str]**| Filter by submitted_by.@id | [optional] 
+ **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
  **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
  **summary** | **List[str]**| Filter by summary | [optional] 
  **total** | **List[float]**| Filter by total | [optional] 
@@ -5603,7 +5616,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **single_cell_rna_seq_quality_metrics**
-> SingleCellRnaSeqQualityMetricResults single_cell_rna_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, frac_dup=frac_dup, frac_mito=frac_mito, frac_mito_genes=frac_mito_genes, frac_reads_in_genes_barcode=frac_reads_in_genes_barcode, frac_reads_in_genes_library=frac_reads_in_genes_library, gt_records=gt_records, joint_barcodes_passing=joint_barcodes_passing, lab_id=lab_id, lab_title=lab_title, mean_reads_per_barcode=mean_reads_per_barcode, mean_umis_per_barcode=mean_umis_per_barcode, median_genes_per_barcode=median_genes_per_barcode, median_reads_per_barcode=median_reads_per_barcode, median_umis_per_barcode=median_umis_per_barcode, n_barcode_umis=n_barcode_umis, n_barcodes=n_barcodes, n_genes=n_genes, n_reads=n_reads, n_records=n_records, notes=notes, num_barcodes_on_onlist=num_barcodes_on_onlist, num_reads_on_onlist=num_reads_on_onlist, pct_duplicates=pct_duplicates, percentage_barcodes_on_onlist=percentage_barcodes_on_onlist, percentage_reads_on_onlist=percentage_reads_on_onlist, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by=submitted_by, submitter_comment=submitter_comment, summary=summary, total_umis=total_umis, uuid=uuid)
+> SingleCellRnaSeqQualityMetricResults single_cell_rna_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, frac_dup=frac_dup, frac_mito=frac_mito, frac_mito_genes=frac_mito_genes, frac_reads_in_genes_barcode=frac_reads_in_genes_barcode, frac_reads_in_genes_library=frac_reads_in_genes_library, gt_records=gt_records, index_version=index_version, joint_barcodes_passing=joint_barcodes_passing, k_mer_length=k_mer_length, lab_id=lab_id, lab_title=lab_title, mean_reads_per_barcode=mean_reads_per_barcode, mean_umis_per_barcode=mean_umis_per_barcode, median_genes_per_barcode=median_genes_per_barcode, median_reads_per_barcode=median_reads_per_barcode, median_umis_per_barcode=median_umis_per_barcode, n_barcode_umis=n_barcode_umis, n_barcodes=n_barcodes, n_bootstraps=n_bootstraps, n_genes=n_genes, n_processed=n_processed, n_pseudoaligned=n_pseudoaligned, n_reads=n_reads, n_records=n_records, n_targets=n_targets, n_unique=n_unique, notes=notes, num_barcodes_on_onlist=num_barcodes_on_onlist, num_reads_on_onlist=num_reads_on_onlist, p_pseudoaligned=p_pseudoaligned, p_unique=p_unique, pct_duplicates=pct_duplicates, percentage_barcodes_on_onlist=percentage_barcodes_on_onlist, percentage_reads_on_onlist=percentage_reads_on_onlist, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total_umis=total_umis, uuid=uuid)
 
 List items in the SingleCellRnaSeqQualityMetric collection.
 
@@ -5642,7 +5655,9 @@ Name | Type | Description  | Notes
  **frac_reads_in_genes_barcode** | **List[float]**| Filter by frac_reads_in_genes_barcode | [optional] 
  **frac_reads_in_genes_library** | **List[float]**| Filter by frac_reads_in_genes_library | [optional] 
  **gt_records** | **List[float]**| Filter by gt_records | [optional] 
+ **index_version** | **List[float]**| Filter by index_version | [optional] 
  **joint_barcodes_passing** | **List[float]**| Filter by joint_barcodes_passing | [optional] 
+ **k_mer_length** | **List[float]**| Filter by k-mer length | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **mean_reads_per_barcode** | **List[float]**| Filter by mean_reads_per_barcode | [optional] 
@@ -5652,19 +5667,27 @@ Name | Type | Description  | Notes
  **median_umis_per_barcode** | **List[float]**| Filter by median_umis_per_barcode | [optional] 
  **n_barcode_umis** | **List[float]**| Filter by n_barcode_umis | [optional] 
  **n_barcodes** | **List[float]**| Filter by n_barcodes | [optional] 
+ **n_bootstraps** | **List[float]**| Filter by n_bootstraps | [optional] 
  **n_genes** | **List[float]**| Filter by n_genes | [optional] 
+ **n_processed** | **List[float]**| Filter by n_processed | [optional] 
+ **n_pseudoaligned** | **List[float]**| Filter by n_pseudoaligned | [optional] 
  **n_reads** | **List[float]**| Filter by n_reads | [optional] 
  **n_records** | **List[float]**| Filter by n_records | [optional] 
+ **n_targets** | **List[float]**| Filter by n_targets | [optional] 
+ **n_unique** | **List[float]**| Filter by n_unique | [optional] 
  **notes** | **List[str]**| Filter by notes | [optional] 
  **num_barcodes_on_onlist** | **List[float]**| Filter by numBarcodesOnOnlist | [optional] 
  **num_reads_on_onlist** | **List[float]**| Filter by numReadsOnOnlist | [optional] 
+ **p_pseudoaligned** | **List[float]**| Filter by p_pseudoaligned | [optional] 
+ **p_unique** | **List[float]**| Filter by p_unique | [optional] 
  **pct_duplicates** | **List[float]**| Filter by pct_duplicates | [optional] 
  **percentage_barcodes_on_onlist** | **List[float]**| Filter by percentageBarcodesOnOnlist | [optional] 
  **percentage_reads_on_onlist** | **List[float]**| Filter by percentageReadsOnOnlist | [optional] 
  **quality_metric_of** | **List[str]**| Filter by quality_metric_of | [optional] 
  **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
  **status** | **List[str]**| Filter by status | [optional] 
- **submitted_by** | **List[str]**| Filter by submitted_by | [optional] 
+ **submitted_by_id** | **List[str]**| Filter by submitted_by.@id | [optional] 
+ **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
  **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
  **summary** | **List[str]**| Filter by summary | [optional] 
  **total_umis** | **List[float]**| Filter by total_umis | [optional] 
@@ -5916,7 +5939,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **starr_seq_quality_metrics**
-> StarrSeqQualityMetricResults starr_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, coverage=coverage, coverage_per_basepair=coverage_per_basepair, creation_timestamp=creation_timestamp, description=description, lab_id=lab_id, lab_title=lab_title, notes=notes, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, rna_correlation_in_peaks=rna_correlation_in_peaks, status=status, submitted_by=submitted_by, submitter_comment=submitter_comment, summary=summary, uuid=uuid)
+> StarrSeqQualityMetricResults starr_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, coverage=coverage, coverage_per_basepair=coverage_per_basepair, creation_timestamp=creation_timestamp, description=description, lab_id=lab_id, lab_title=lab_title, notes=notes, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, rna_correlation_in_peaks=rna_correlation_in_peaks, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, uuid=uuid)
 
 List items in the StarrSeqQualityMetric collection.
 
@@ -5958,7 +5981,8 @@ Name | Type | Description  | Notes
  **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
  **rna_correlation_in_peaks** | **List[float]**| Filter by rna_correlation_in_peaks | [optional] 
  **status** | **List[str]**| Filter by status | [optional] 
- **submitted_by** | **List[str]**| Filter by submitted_by | [optional] 
+ **submitted_by_id** | **List[str]**| Filter by submitted_by.@id | [optional] 
+ **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
  **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
  **summary** | **List[str]**| Filter by summary | [optional] 
  **uuid** | **List[str]**| Filter by uuid | [optional] 
@@ -6762,7 +6786,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **workflows**
-> WorkflowResults workflows(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_steps_id=analysis_steps_id, analysis_steps_analysis_step_types=analysis_steps_analysis_step_types, analysis_steps_analysis_step_versions_id=analysis_steps_analysis_step_versions_id, analysis_steps_analysis_step_versions_software_versions_id=analysis_steps_analysis_step_versions_software_versions_id, analysis_steps_analysis_step_versions_software_versions_software_id=analysis_steps_analysis_step_versions_software_versions_software_id, analysis_steps_analysis_step_versions_software_versions_software_status=analysis_steps_analysis_step_versions_software_versions_software_status, analysis_steps_analysis_step_versions_software_versions_software_title=analysis_steps_analysis_step_versions_software_versions_software_title, analysis_steps_analysis_step_versions_software_versions_status=analysis_steps_analysis_step_versions_software_versions_status, analysis_steps_analysis_step_versions_status=analysis_steps_analysis_step_versions_status, analysis_steps_input_content_types=analysis_steps_input_content_types, analysis_steps_output_content_types=analysis_steps_output_content_types, analysis_steps_status=analysis_steps_status, analysis_steps_title=analysis_steps_title, award_id=award_id, award_component=award_component, collections=collections, creation_timestamp=creation_timestamp, description=description, documents=documents, lab_id=lab_id, lab_title=lab_title, name=name, notes=notes, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, publications_status=publications_status, release_timestamp=release_timestamp, revoke_detail=revoke_detail, source_url=source_url, standards_page_id=standards_page_id, standards_page_status=standards_page_status, standards_page_title=standards_page_title, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, uniform_pipeline=uniform_pipeline, uuid=uuid, workflow_repositories=workflow_repositories, workflow_version=workflow_version)
+> WorkflowResults workflows(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_steps_id=analysis_steps_id, analysis_steps_analysis_step_types=analysis_steps_analysis_step_types, analysis_steps_analysis_step_versions_id=analysis_steps_analysis_step_versions_id, analysis_steps_analysis_step_versions_software_versions_id=analysis_steps_analysis_step_versions_software_versions_id, analysis_steps_analysis_step_versions_software_versions_name=analysis_steps_analysis_step_versions_software_versions_name, analysis_steps_analysis_step_versions_software_versions_software_id=analysis_steps_analysis_step_versions_software_versions_software_id, analysis_steps_analysis_step_versions_software_versions_software_name=analysis_steps_analysis_step_versions_software_versions_software_name, analysis_steps_analysis_step_versions_software_versions_software_status=analysis_steps_analysis_step_versions_software_versions_software_status, analysis_steps_analysis_step_versions_software_versions_software_title=analysis_steps_analysis_step_versions_software_versions_software_title, analysis_steps_analysis_step_versions_software_versions_status=analysis_steps_analysis_step_versions_software_versions_status, analysis_steps_analysis_step_versions_status=analysis_steps_analysis_step_versions_status, analysis_steps_input_content_types=analysis_steps_input_content_types, analysis_steps_name=analysis_steps_name, analysis_steps_output_content_types=analysis_steps_output_content_types, analysis_steps_status=analysis_steps_status, analysis_steps_title=analysis_steps_title, award_id=award_id, award_component=award_component, collections=collections, creation_timestamp=creation_timestamp, description=description, documents=documents, lab_id=lab_id, lab_title=lab_title, name=name, notes=notes, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, publications_status=publications_status, release_timestamp=release_timestamp, revoke_detail=revoke_detail, source_url=source_url, standards_page_id=standards_page_id, standards_page_status=standards_page_status, standards_page_title=standards_page_title, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, uniform_pipeline=uniform_pipeline, uuid=uuid, workflow_repositories=workflow_repositories, workflow_version=workflow_version)
 
 List items in the Workflow collection.
 
@@ -6796,12 +6820,15 @@ Name | Type | Description  | Notes
  **analysis_steps_analysis_step_types** | **List[str]**| Filter by analysis_steps.analysis_step_types | [optional] 
  **analysis_steps_analysis_step_versions_id** | **List[str]**| Filter by analysis_steps.analysis_step_versions.@id | [optional] 
  **analysis_steps_analysis_step_versions_software_versions_id** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.@id | [optional] 
+ **analysis_steps_analysis_step_versions_software_versions_name** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.name | [optional] 
  **analysis_steps_analysis_step_versions_software_versions_software_id** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.software.@id | [optional] 
+ **analysis_steps_analysis_step_versions_software_versions_software_name** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.software.name | [optional] 
  **analysis_steps_analysis_step_versions_software_versions_software_status** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.software.status | [optional] 
  **analysis_steps_analysis_step_versions_software_versions_software_title** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.software.title | [optional] 
  **analysis_steps_analysis_step_versions_software_versions_status** | **List[str]**| Filter by analysis_steps.analysis_step_versions.software_versions.status | [optional] 
  **analysis_steps_analysis_step_versions_status** | **List[str]**| Filter by analysis_steps.analysis_step_versions.status | [optional] 
  **analysis_steps_input_content_types** | **List[str]**| Filter by analysis_steps.input_content_types | [optional] 
+ **analysis_steps_name** | **List[str]**| Filter by analysis_steps.name | [optional] 
  **analysis_steps_output_content_types** | **List[str]**| Filter by analysis_steps.output_content_types | [optional] 
  **analysis_steps_status** | **List[str]**| Filter by analysis_steps.status | [optional] 
  **analysis_steps_title** | **List[str]**| Filter by analysis_steps.title | [optional] 

@@ -2,6 +2,9 @@
 .gitlab-ci.yml
 .travis.yml
 README.md
+docs/ATACBamSummaryStats.md
+docs/ATACFragmentSummaryStats.md
+docs/ATACFragmentsAlignmentStats.md
 docs/AccessKey.md
 docs/AccessKeyResults.md
 docs/AlignmentFile.md
@@ -99,6 +102,7 @@ docs/PrimaryCell.md
 docs/PrimaryCellResults.md
 docs/Publication.md
 docs/PublicationResults.md
+docs/RNASeqKBInfo.md
 docs/ReferenceFile.md
 docs/ReferenceFileResults.md
 docs/RelatedDonor.md
@@ -161,6 +165,9 @@ igvf_client/models/analysis_step_version.py
 igvf_client/models/analysis_step_version_results.py
 igvf_client/models/assay_term.py
 igvf_client/models/assay_term_results.py
+igvf_client/models/atac_bam_summary_stats.py
+igvf_client/models/atac_fragment_summary_stats.py
+igvf_client/models/atac_fragments_alignment_stats.py
 igvf_client/models/attachment.py
 igvf_client/models/attachment1.py
 igvf_client/models/auxiliary_set.py
@@ -248,6 +255,7 @@ igvf_client/models/publication_results.py
 igvf_client/models/reference_file.py
 igvf_client/models/reference_file_results.py
 igvf_client/models/related_donor.py
+igvf_client/models/rna_seq_kb_info.py
 igvf_client/models/rodent_donor.py
 igvf_client/models/rodent_donor_results.py
 igvf_client/models/sample_term.py
