@@ -23,7 +23,7 @@ jobs:
         python-version: '3.11'
     - name: Install and build
       run: |
-        python -m pip install --upgrade pip build twine pkginfo
+        python -m pip install --upgrade pip build twine pkginfo packaging
         python -m build
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@v1.9.0
