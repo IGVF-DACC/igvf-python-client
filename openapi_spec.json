@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "73.0.0"
+    "version": "74.0.1"
   },
   "servers": [
     {
@@ -1519,6 +1519,7 @@
                   "complexes_complexes",
                   "complexes_proteins",
                   "complexes_terms",
+                  "comprehensive gene count matrix",
                   "contact matrix",
                   "control signal",
                   "detected tissue",
@@ -1744,6 +1745,7 @@
                   "complexes_complexes",
                   "complexes_proteins",
                   "complexes_terms",
+                  "comprehensive gene count matrix",
                   "contact matrix",
                   "control signal",
                   "detected tissue",
@@ -48439,51 +48441,6 @@
             "explode": true
           },
           {
-            "name": "duplicate",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Duplicate Number",
-                "description": ""
-              }
-            },
-            "description": "Filter by duplicate",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "frac_dup",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Duplicate Fraction",
-                "description": ""
-              }
-            },
-            "description": "Filter by frac_dup",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "frac_mito",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Mitochondrial Fraction",
-                "description": ""
-              }
-            },
-            "description": "Filter by frac_mito",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "joint_barcodes_passing",
             "in": "query",
             "schema": {
@@ -48523,21 +48480,6 @@
               }
             },
             "description": "Filter by lab.title",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "lowmapq",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Low Mapping Quality",
-                "description": ""
-              }
-            },
-            "description": "Filter by lowmapq",
             "style": "form",
             "explode": true
           },
@@ -48613,21 +48555,6 @@
               }
             },
             "description": "Filter by n_corrected_barcodes",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "n_fragment",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Number Of Fragments",
-                "description": ""
-              }
-            },
-            "description": "Filter by n_fragment",
             "style": "form",
             "explode": true
           },
@@ -48926,21 +48853,6 @@
             "explode": true
           },
           {
-            "name": "tsse",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Transcription Start Site Enrichment",
-                "description": ""
-              }
-            },
-            "description": "Filter by tsse",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "uni_mappings",
             "in": "query",
             "schema": {
@@ -48952,21 +48864,6 @@
               }
             },
             "description": "Filter by uni_mappings",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "unmapped",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Unmapped Number",
-                "description": ""
-              }
-            },
-            "description": "Filter by unmapped",
             "style": "form",
             "explode": true
           },
@@ -50612,6 +50509,21 @@
               "description": "Accessions previously assigned to objects that have been merged with this object."
             },
             "description": "Filter by alternate_accessions",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "annotated_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Annotated From",
+                "description": "Links to the sample that was used as a reference for annotating this sample."
+              }
+            },
+            "description": "Filter by annotated_from",
             "style": "form",
             "explode": true
           },
@@ -54924,6 +54836,21 @@
             "explode": true
           },
           {
+            "name": "annotated_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Annotated From",
+                "description": "Links to the sample that was used as a reference for annotating this sample."
+              }
+            },
+            "description": "Filter by annotated_from",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -58237,6 +58164,21 @@
             "explode": true
           },
           {
+            "name": "annotated_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Annotated From",
+                "description": "Links to the sample that was used as a reference for annotating this sample."
+              }
+            },
+            "description": "Filter by annotated_from",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -60345,6 +60287,21 @@
               "description": "Accessions previously assigned to objects that have been merged with this object."
             },
             "description": "Filter by alternate_accessions",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "annotated_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Annotated From",
+                "description": "Links to the sample that was used as a reference for annotating this sample."
+              }
+            },
+            "description": "Filter by annotated_from",
             "style": "form",
             "explode": true
           },
@@ -65251,6 +65208,7 @@
                   "complexes_complexes",
                   "complexes_proteins",
                   "complexes_terms",
+                  "comprehensive gene count matrix",
                   "contact matrix",
                   "control signal",
                   "detected tissue",
@@ -65432,6 +65390,7 @@
                   "complexes_complexes",
                   "complexes_proteins",
                   "complexes_terms",
+                  "comprehensive gene count matrix",
                   "contact matrix",
                   "control signal",
                   "detected tissue",
@@ -66691,6 +66650,7 @@
                 "complexes_complexes",
                 "complexes_proteins",
                 "complexes_terms",
+                "comprehensive gene count matrix",
                 "contact matrix",
                 "control signal",
                 "detected tissue",
@@ -66851,6 +66811,7 @@
                 "complexes_complexes",
                 "complexes_proteins",
                 "complexes_terms",
+                "comprehensive gene count matrix",
                 "contact matrix",
                 "control signal",
                 "detected tissue",
@@ -79137,11 +79098,6 @@
             "description": "The analysis step version of the quality metric.",
             "type": "string"
           },
-          "tsse": {
-            "title": "Transcription Start Site Enrichment",
-            "description": "",
-            "type": "number"
-          },
           "n_fragments": {
             "title": "Number Of Fragments",
             "description": "",
@@ -79154,36 +79110,6 @@
           },
           "pct_duplicates": {
             "title": "Percent Duplicates",
-            "description": "",
-            "type": "number"
-          },
-          "n_fragment": {
-            "title": "Number Of Fragments",
-            "description": "",
-            "type": "number"
-          },
-          "frac_dup": {
-            "title": "Duplicate Fraction",
-            "description": "",
-            "type": "number"
-          },
-          "frac_mito": {
-            "title": "Mitochondrial Fraction",
-            "description": "",
-            "type": "number"
-          },
-          "duplicate": {
-            "title": "Duplicate Number",
-            "description": "",
-            "type": "number"
-          },
-          "unmapped": {
-            "title": "Unmapped Number",
-            "description": "",
-            "type": "number"
-          },
-          "lowmapq": {
-            "title": "Low Mapping Quality",
             "description": "",
             "type": "number"
           },
@@ -80154,6 +80080,11 @@
             "description": "A plain text description of the object.",
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "annotated_from": {
+            "title": "Annotated From",
+            "description": "Links to the sample that was used as a reference for annotating this sample.",
+            "type": "string"
           },
           "lower_bound_age": {
             "title": "Lower Bound Age",
@@ -81267,6 +81198,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "annotated_from": {
+            "title": "Annotated From",
+            "description": "Links to the sample that was used as a reference for annotating this sample.",
+            "type": "string"
+          },
           "lower_bound_age": {
             "title": "Lower Bound Age",
             "description": "Lower bound of age of the organism at the time of collection of the sample.",
@@ -82241,6 +82177,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "annotated_from": {
+            "title": "Annotated From",
+            "description": "Links to the sample that was used as a reference for annotating this sample.",
+            "type": "string"
+          },
           "lower_bound_age": {
             "title": "Lower Bound Age",
             "description": "Lower bound of age of the organism at the time of collection of the sample.",
@@ -82820,6 +82761,11 @@
             "description": "A plain text description of the object.",
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "annotated_from": {
+            "title": "Annotated From",
+            "description": "Links to the sample that was used as a reference for annotating this sample.",
+            "type": "string"
           },
           "lower_bound_age": {
             "title": "Lower Bound Age",

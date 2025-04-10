@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
+**annotated_from** | **str** | Links to the sample that was used as a reference for annotating this sample. | [optional] 
 **lower_bound_age** | **float** | Lower bound of age of the organism at the time of collection of the sample. | [optional] 
 **upper_bound_age** | **float** | Upper bound of age of the organism at the time of collection of the sample. | [optional] 
 **age_units** | **str** | The units of time associated with age of the biosample. | [optional] 
