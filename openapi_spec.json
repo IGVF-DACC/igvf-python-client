@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "74.0.1"
+    "version": "75.0.1"
   },
   "servers": [
     {
@@ -1356,6 +1356,7 @@
                   "computational model prediction",
                   "computational model training",
                   "counts normalization",
+                  "custom genome assembly",
                   "demultiplexing",
                   "differential expression analysis",
                   "fastq concatenation",
@@ -1569,6 +1570,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "methylated reads",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -1795,6 +1797,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "methylated reads",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -25435,6 +25438,22 @@
             "explode": true
           },
           {
+            "name": "files.derived_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Derived From",
+              "items": {
+                "type": "string",
+                "title": "File Derived From"
+              },
+              "description": "The files participating as inputs into software to produce this output file."
+            },
+            "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format",
             "in": "query",
             "schema": {
@@ -25477,6 +25496,23 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The md5sum of the file being transferred."
+              }
+            },
+            "description": "Filter by files.md5sum",
             "style": "form",
             "explode": true
           },
@@ -25926,23 +25962,6 @@
             "explode": true
           },
           {
-            "name": "samples.cell_fate_change_treatments",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Cell Fate Change Treatments",
-              "items": {
-                "type": "string",
-                "title": "Treatment",
-                "description": "A treatment applied to the biosample."
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming."
-            },
-            "description": "Filter by samples.cell_fate_change_treatments",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.cellular_sub_pool",
             "in": "query",
             "schema": {
@@ -26380,6 +26399,21 @@
               }
             },
             "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -27455,6 +27489,22 @@
             "explode": true
           },
           {
+            "name": "files.derived_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Derived From",
+              "items": {
+                "type": "string",
+                "title": "File Derived From"
+              },
+              "description": "The files participating as inputs into software to produce this output file."
+            },
+            "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format",
             "in": "query",
             "schema": {
@@ -27497,6 +27547,23 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The md5sum of the file being transferred."
+              }
+            },
+            "description": "Filter by files.md5sum",
             "style": "form",
             "explode": true
           },
@@ -27849,23 +27916,6 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by samples.aliases",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.cell_fate_change_treatments",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Cell Fate Change Treatments",
-              "items": {
-                "type": "string",
-                "title": "Treatment",
-                "description": "A treatment applied to the biosample."
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming."
-            },
-            "description": "Filter by samples.cell_fate_change_treatments",
             "style": "form",
             "explode": true
           },
@@ -28307,6 +28357,21 @@
               }
             },
             "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -31403,6 +31468,22 @@
             "explode": true
           },
           {
+            "name": "files.derived_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Derived From",
+              "items": {
+                "type": "string",
+                "title": "File Derived From"
+              },
+              "description": "The files participating as inputs into software to produce this output file."
+            },
+            "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format",
             "in": "query",
             "schema": {
@@ -31445,6 +31526,23 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The md5sum of the file being transferred."
+              }
+            },
+            "description": "Filter by files.md5sum",
             "style": "form",
             "explode": true
           },
@@ -31720,23 +31818,6 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by samples.aliases",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.cell_fate_change_treatments",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Cell Fate Change Treatments",
-              "items": {
-                "type": "string",
-                "title": "Treatment",
-                "description": "A treatment applied to the biosample."
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming."
-            },
-            "description": "Filter by samples.cell_fate_change_treatments",
             "style": "form",
             "explode": true
           },
@@ -32178,6 +32259,21 @@
               }
             },
             "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -33533,6 +33629,22 @@
             "explode": true
           },
           {
+            "name": "files.derived_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Derived From",
+              "items": {
+                "type": "string",
+                "title": "File Derived From"
+              },
+              "description": "The files participating as inputs into software to produce this output file."
+            },
+            "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format",
             "in": "query",
             "schema": {
@@ -33575,6 +33687,23 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The md5sum of the file being transferred."
+              }
+            },
+            "description": "Filter by files.md5sum",
             "style": "form",
             "explode": true
           },
@@ -34140,79 +34269,6 @@
             "explode": true
           },
           {
-            "name": "samples.cell_fate_change_treatments.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.cell_fate_change_treatments.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.cell_fate_change_treatments.purpose",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Purpose",
-                "description": "The intended purpose for treating the samples."
-              }
-            },
-            "description": "Filter by samples.cell_fate_change_treatments.purpose",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.cell_fate_change_treatments.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.cell_fate_change_treatments.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.cell_fate_change_treatments.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary"
-              }
-            },
-            "description": "Filter by samples.cell_fate_change_treatments.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.cell_fate_change_treatments.treatment_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. "
-              }
-            },
-            "description": "Filter by samples.cell_fate_change_treatments.treatment_type",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.cellular_sub_pool",
             "in": "query",
             "schema": {
@@ -34650,6 +34706,21 @@
               }
             },
             "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -35891,6 +35962,22 @@
             "explode": true
           },
           {
+            "name": "files.derived_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Derived From",
+              "items": {
+                "type": "string",
+                "title": "File Derived From"
+              },
+              "description": "The files participating as inputs into software to produce this output file."
+            },
+            "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format",
             "in": "query",
             "schema": {
@@ -35933,6 +36020,23 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The md5sum of the file being transferred."
+              }
+            },
+            "description": "Filter by files.md5sum",
             "style": "form",
             "explode": true
           },
@@ -36341,23 +36445,6 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by samples.aliases",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.cell_fate_change_treatments",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Cell Fate Change Treatments",
-              "items": {
-                "type": "string",
-                "title": "Treatment",
-                "description": "A treatment applied to the biosample."
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming."
-            },
-            "description": "Filter by samples.cell_fate_change_treatments",
             "style": "form",
             "explode": true
           },
@@ -36799,6 +36886,21 @@
               }
             },
             "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -38036,6 +38138,22 @@
             "explode": true
           },
           {
+            "name": "files.derived_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Derived From",
+              "items": {
+                "type": "string",
+                "title": "File Derived From"
+              },
+              "description": "The files participating as inputs into software to produce this output file."
+            },
+            "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format",
             "in": "query",
             "schema": {
@@ -38078,6 +38196,23 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The md5sum of the file being transferred."
+              }
+            },
+            "description": "Filter by files.md5sum",
             "style": "form",
             "explode": true
           },
@@ -38494,23 +38629,6 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by samples.aliases",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.cell_fate_change_treatments",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Cell Fate Change Treatments",
-              "items": {
-                "type": "string",
-                "title": "Treatment",
-                "description": "A treatment applied to the biosample."
-              },
-              "description": "A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming."
-            },
-            "description": "Filter by samples.cell_fate_change_treatments",
             "style": "form",
             "explode": true
           },
@@ -39010,6 +39128,21 @@
               }
             },
             "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -40302,21 +40435,6 @@
               }
             },
             "description": "Filter by summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "thumb_nail",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Thumb Nail",
-                "description": "Image url"
-              }
-            },
-            "description": "Filter by thumb_nail",
             "style": "form",
             "explode": true
           },
@@ -50697,79 +50815,6 @@
             "explode": true
           },
           {
-            "name": "cell_fate_change_treatments.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by cell_fate_change_treatments.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "cell_fate_change_treatments.purpose",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Purpose",
-                "description": "The intended purpose for treating the samples."
-              }
-            },
-            "description": "Filter by cell_fate_change_treatments.purpose",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "cell_fate_change_treatments.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by cell_fate_change_treatments.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "cell_fate_change_treatments.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary"
-              }
-            },
-            "description": "Filter by cell_fate_change_treatments.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "cell_fate_change_treatments.treatment_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. "
-              }
-            },
-            "description": "Filter by cell_fate_change_treatments.treatment_type",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "cellular_sub_pool",
             "in": "query",
             "schema": {
@@ -51432,6 +51477,21 @@
               "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.data_use_limitation_summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers"
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_summary",
             "style": "form",
             "explode": true
           },
@@ -53563,6 +53623,21 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.data_use_limitation_summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers"
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.status",
             "in": "query",
             "schema": {
@@ -55605,6 +55680,21 @@
               "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
             },
             "description": "Filter by institutional_certificates.data_use_limitation_modifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "institutional_certificates.data_use_limitation_summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers"
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_summary",
             "style": "form",
             "explode": true
           },
@@ -58930,6 +59020,21 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.data_use_limitation_summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers"
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.status",
             "in": "query",
             "schema": {
@@ -61042,6 +61147,21 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.data_use_limitation_summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation Summary",
+                "description": "A combination of the data use limitation and its modifiers"
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation_summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.status",
             "in": "query",
             "schema": {
@@ -62301,6 +62421,32 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "categories",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Categories",
+              "items": {
+                "type": "string",
+                "title": "Category",
+                "enum": [
+                  "CRISPR Screens",
+                  "General Bioinformatic Utilities",
+                  "Genomic Annotations",
+                  "Networks",
+                  "Predictions",
+                  "Reporter Assays",
+                  "Single Cell Multiome"
+                ],
+                "description": "The main category describing the primary use of this software."
+              },
+              "description": "The general categories of this software."
+            },
+            "description": "Filter by categories",
             "style": "form",
             "explode": true
           },
@@ -65014,6 +65160,7 @@
                   "computational model prediction",
                   "computational model training",
                   "counts normalization",
+                  "custom genome assembly",
                   "demultiplexing",
                   "differential expression analysis",
                   "fastq concatenation",
@@ -65258,6 +65405,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "methylated reads",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -65440,6 +65588,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "methylated reads",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -66567,6 +66716,7 @@
                 "computational model prediction",
                 "computational model training",
                 "counts normalization",
+                "custom genome assembly",
                 "demultiplexing",
                 "differential expression analysis",
                 "fastq concatenation",
@@ -66700,6 +66850,7 @@
                 "loci",
                 "low resolution tissue",
                 "machine learning model features",
+                "methylated reads",
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
@@ -66861,6 +67012,7 @@
                 "loci",
                 "low resolution tissue",
                 "machine learning model features",
+                "methylated reads",
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
@@ -76114,11 +76266,6 @@
             "title": "Summary",
             "type": "string"
           },
-          "thumb_nail": {
-            "title": "Thumb Nail",
-            "description": "Image url",
-            "type": "string"
-          },
           "download_url": {
             "title": "Download Url",
             "description": "Download Url",
@@ -80350,17 +80497,6 @@
               "month"
             ]
           },
-          "cell_fate_change_treatments": {
-            "title": "Cell Fate Change Treatments",
-            "description": "A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Treatment",
-              "description": "A treatment applied to the biosample.",
-              "type": "string"
-            }
-          },
           "cell_fate_change_protocol": {
             "title": "Cell Fate Change Protocol",
             "description": "A protocol applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming.",
@@ -83244,6 +83380,26 @@
                 "consortium analysis",
                 "DACC",
                 "processing pipelines"
+              ]
+            }
+          },
+          "categories": {
+            "title": "Categories",
+            "description": "The general categories of this software.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Category",
+              "description": "The main category describing the primary use of this software.",
+              "type": "string",
+              "enum": [
+                "CRISPR Screens",
+                "General Bioinformatic Utilities",
+                "Genomic Annotations",
+                "Networks",
+                "Predictions",
+                "Reporter Assays",
+                "Single Cell Multiome"
               ]
             }
           },

@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **name** | **str** | Unique name of the software package; a lowercase version of the title. | [optional] 
 **title** | **str** | The preferred viewable name of the software. | [optional] 
 **used_by** | **List[str]** | The component(s) of the IGVF consortium that utilize this software. | [optional] 
+**categories** | **List[str]** | The general categories of this software. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 

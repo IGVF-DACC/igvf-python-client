@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
-**thumb_nail** | **str** | Image url | [optional] 
 **download_url** | **str** | Download Url | [optional] 
 
 ## Example

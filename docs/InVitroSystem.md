@@ -60,7 +60,6 @@ Name | Type | Description | Notes
 **classifications** | **List[str]** | The general category of this type of in vitro system. | [optional] 
 **time_post_change** | **float** | The time that elapsed past the time-point when the cell fate change treatments were introduced. | [optional] 
 **time_post_change_units** | **str** | The units of time that elapsed past the point when the cell fate change treatments were introduced. | [optional] 
-**cell_fate_change_treatments** | **List[str]** | A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming. | [optional] 
 **cell_fate_change_protocol** | **str** | A protocol applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming. | [optional] 
 **demultiplexed_from** | **str** | The biosample this in vitro system sample was demultiplexed from using computational methods. | [optional] 
 **passage_number** | **int** | Number of passages including the passages from the source. | [optional] 
