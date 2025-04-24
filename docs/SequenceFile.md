@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **minimum_read_length** | **int** | For high-throughput sequencing, the minimum number of contiguous nucleotides determined by sequencing. | [optional] 
 **maximum_read_length** | **int** | For high-throughput sequencing, the maximum number of contiguous nucleotides determined by sequencing. | [optional] 
 **mean_read_length** | **float** | For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing. | [optional] 
+**seqspec_document** | **str** | A seqspec document describing the library and read structure. | [optional] 
 **sequencing_platform** | **str** | The measurement device used to produce sequencing data. | [optional] 
 **sequencing_kit** | **str** | A reagent kit used with a library to prepare it for sequencing. | [optional] 
 **sequencing_run** | **int** | An ordinal number indicating which sequencing run of the associated library that the file belongs to. | [optional] 

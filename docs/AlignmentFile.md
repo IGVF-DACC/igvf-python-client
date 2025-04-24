@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **read_count** | **int** | Number of reads in a bam file. Including both mapped, unmapped, and multi-mapped read counts. | [optional] 
 **redacted** | **bool** | Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information. | [optional] 
+**base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the alignment file. | [optional] 
