@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **document_type** | **str** | The category that best describes the document. | [optional] 
 **characterization_method** | **str** | The method used for the characterization. | [optional] 
 **urls** | **List[str]** | Link to the institutional certification form. | [optional] 
+**standardized_file_format** | **bool** | Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 

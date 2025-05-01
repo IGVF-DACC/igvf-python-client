@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **document_type** | **str** | The category that best describes the document. | [optional] 
 **characterization_method** | **str** | The method used for the characterization. | [optional] 
 **urls** | **List[str]** | External resources with additional information to the document. | [optional] 
+**standardized_file_format** | **bool** | Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the document. | [optional] 

@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "76.0.0"
+    "version": "77.0.1"
   },
   "servers": [
     {
@@ -1586,6 +1586,8 @@
                   "position weight matrix",
                   "prime editing guide RNA sequences",
                   "primer sequences",
+                  "primers table",
+                  "primers track",
                   "protein language model",
                   "protein to protein interaction score",
                   "proteins",
@@ -1616,6 +1618,7 @@
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
+                  "target transcripts",
                   "tissue positions",
                   "transcript quantifications",
                   "transcriptome alignments",
@@ -1814,6 +1817,8 @@
                   "position weight matrix",
                   "prime editing guide RNA sequences",
                   "primer sequences",
+                  "primers table",
+                  "primers track",
                   "protein language model",
                   "protein to protein interaction score",
                   "proteins",
@@ -1844,6 +1849,7 @@
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
+                  "target transcripts",
                   "tissue positions",
                   "transcript quantifications",
                   "transcriptome alignments",
@@ -4070,6 +4076,21 @@
               }
             },
             "description": "Filter by release_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -6466,37 +6487,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "bam",
-                  "cram"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -8219,38 +8250,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "yaml",
-                  "json",
-                  "tsv"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -9973,36 +10013,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "bigBed"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -11688,37 +11739,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "jpg",
-                  "png"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -13386,38 +13447,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "bai",
-                  "crai",
-                  "tbi"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -15100,44 +15170,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "h5ad",
-                  "hdf5",
-                  "mtx",
-                  "pkl",
-                  "Robj",
-                  "tar",
-                  "hic",
-                  "cool",
-                  "mcool"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -16926,41 +16999,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "hdf5",
-                  "json",
-                  "pkl",
-                  "pt",
-                  "tar",
-                  "tsv"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -18670,50 +18749,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "bed",
-                  "csv",
-                  "dat",
-                  "fasta",
-                  "gaf",
-                  "gds",
-                  "gtf",
-                  "obo",
-                  "owl",
-                  "PWM",
-                  "tar",
-                  "tsv",
-                  "txt",
-                  "vcf",
-                  "xml"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -20516,38 +20592,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "bam",
-                  "fastq",
-                  "pod5"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -22562,37 +22647,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "bigWig",
-                  "npz"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -24468,41 +24563,47 @@
             "explode": true
           },
           {
-            "name": "file_format",
+            "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "enum": [
-                  "bed",
-                  "bedpe",
-                  "csv",
-                  "gtf",
-                  "tsv",
-                  "vcf"
-                ],
-                "description": "The file format or extension of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by file_format",
+            "description": "Filter by file_format_specifications.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "file_format_specifications",
+            "name": "file_format_specifications.description",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "File Format Specifications Documents",
               "items": {
                 "type": "string",
-                "title": "File Format Specifications Document"
-              },
-              "description": "Documents that describe the file format and fields of this file."
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
             },
-            "description": "Filter by file_format_specifications",
+            "description": "Filter by file_format_specifications.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_format_specifications.standardized_file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Standardized File Format",
+                "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline."
+              }
+            },
+            "description": "Filter by file_format_specifications.standardized_file_format",
             "style": "form",
             "explode": true
           },
@@ -66674,6 +66775,8 @@
                   "position weight matrix",
                   "prime editing guide RNA sequences",
                   "primer sequences",
+                  "primers table",
+                  "primers track",
                   "protein language model",
                   "protein to protein interaction score",
                   "proteins",
@@ -66704,6 +66807,7 @@
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
+                  "target transcripts",
                   "tissue positions",
                   "transcript quantifications",
                   "transcriptome alignments",
@@ -66858,6 +66962,8 @@
                   "position weight matrix",
                   "prime editing guide RNA sequences",
                   "primer sequences",
+                  "primers table",
+                  "primers track",
                   "protein language model",
                   "protein to protein interaction score",
                   "proteins",
@@ -66888,6 +66994,7 @@
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
+                  "target transcripts",
                   "tissue positions",
                   "transcript quantifications",
                   "transcriptome alignments",
@@ -68121,6 +68228,8 @@
                 "position weight matrix",
                 "prime editing guide RNA sequences",
                 "primer sequences",
+                "primers table",
+                "primers track",
                 "protein language model",
                 "protein to protein interaction score",
                 "proteins",
@@ -68151,6 +68260,7 @@
                 "studies",
                 "studies_variants",
                 "studies_variants_phenotypes",
+                "target transcripts",
                 "tissue positions",
                 "transcript quantifications",
                 "transcriptome alignments",
@@ -68284,6 +68394,8 @@
                 "position weight matrix",
                 "prime editing guide RNA sequences",
                 "primer sequences",
+                "primers table",
+                "primers track",
                 "protein language model",
                 "protein to protein interaction score",
                 "proteins",
@@ -68314,6 +68426,7 @@
                 "studies",
                 "studies_variants",
                 "studies_variants_phenotypes",
+                "target transcripts",
                 "tissue positions",
                 "transcript quantifications",
                 "transcriptome alignments",
@@ -69001,6 +69114,11 @@
               "description": "An external resource with additional information to the document.",
               "type": "string"
             }
+          },
+          "standardized_file_format": {
+            "title": "Standardized File Format",
+            "description": "Specifies whether this format is an IGVF-standardized file format defined by Focus Groups or produced by a uniform pipeline.",
+            "type": "boolean"
           },
           "@id": {
             "title": "ID",
