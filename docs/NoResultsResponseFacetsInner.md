@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_field** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**terms** | [**List[NoResultsResponseFacetsInnerTermsInner]**](NoResultsResponseFacetsInnerTermsInner.md) |  | [optional] 
+**terms** | **object** |  | [optional] 
 **total** | **int** |  | [optional] 
 **type** | **str** |  | [optional] 
 **appended** | **bool** |  | [optional] 

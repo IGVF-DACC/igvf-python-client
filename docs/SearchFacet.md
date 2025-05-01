@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_field** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**terms** | **List[object]** |  | [optional] 
+**total** | **int** |  | [optional] 
+**type** | **str** |  | [optional] 
+**terms** | **object** |  | [optional] 
 
 ## Example
 

@@ -79,7 +79,6 @@ docs/NoResultsResponse.md
 docs/NoResultsResponseColumnsValue.md
 docs/NoResultsResponseFacetGroupsInner.md
 docs/NoResultsResponseFacetsInner.md
-docs/NoResultsResponseFacetsInnerTermsInner.md
 docs/NoResultsResponseFiltersInner.md
 docs/NoResultsResponseSortValue.md
 docs/OpenReadingFrame.md
@@ -229,7 +228,6 @@ igvf_client/models/no_results_response.py
 igvf_client/models/no_results_response_columns_value.py
 igvf_client/models/no_results_response_facet_groups_inner.py
 igvf_client/models/no_results_response_facets_inner.py
-igvf_client/models/no_results_response_facets_inner_terms_inner.py
 igvf_client/models/no_results_response_filters_inner.py
 igvf_client/models/no_results_response_sort_value.py
 igvf_client/models/open_reading_frame.py

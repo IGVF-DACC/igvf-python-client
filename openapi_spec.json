@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "77.0.1"
+    "version": "77.0.2"
   },
   "servers": [
     {
@@ -544,12 +544,14 @@
                           "title": {
                             "type": "string"
                           },
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
                           "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
+                            "description": "Usually array of objects but can also just be object."
                           }
                         }
                       }
@@ -1197,13 +1199,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -2180,13 +2182,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -2740,13 +2742,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -3235,13 +3237,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -3764,13 +3766,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -4248,13 +4250,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -5088,13 +5090,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -5980,13 +5982,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -7837,13 +7839,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -9531,13 +9533,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -11326,13 +11328,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -12989,13 +12991,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -14742,13 +14744,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -16508,13 +16510,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -18249,13 +18251,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -20094,13 +20096,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -22150,13 +22152,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -24017,13 +24019,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -25907,13 +25909,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -27986,13 +27988,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -29884,13 +29886,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -31961,13 +31963,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -33822,13 +33824,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -36387,13 +36389,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -38593,13 +38595,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -40853,13 +40855,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -41484,13 +41486,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -41852,13 +41854,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -42404,13 +42406,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -42847,13 +42849,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -43494,13 +43496,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -44071,13 +44073,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -44696,13 +44698,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -45191,13 +45193,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -45769,13 +45771,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -46342,13 +46344,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -46898,13 +46900,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -47327,13 +47329,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -47877,13 +47879,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -48558,13 +48560,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -49075,13 +49077,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -49697,13 +49699,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -50394,13 +50396,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -51301,13 +51303,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -51773,13 +51775,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -54068,13 +54070,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -56053,13 +56055,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -58161,13 +58163,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -59396,13 +59398,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -61538,13 +61540,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -63609,13 +63611,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -64161,13 +64163,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -64709,13 +64711,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -65095,13 +65097,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -65825,13 +65827,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -66309,13 +66311,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -67564,13 +67566,13 @@
                           "title": {
                             "type": "string"
                           },
-                          "terms": {
-                            "type": "array",
-                            "items": {
-                              "title": "SearchFacetTermValue",
-                              "type": "object"
-                            }
-                          }
+                          "total": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "terms": {}
                         }
                       }
                     }
@@ -67808,20 +67810,7 @@
                 "title": {
                   "type": "string"
                 },
-                "terms": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "key": {
-                        "type": "string"
-                      },
-                      "doc_count": {
-                        "type": "integer"
-                      }
-                    }
-                  }
-                },
+                "terms": {},
                 "total": {
                   "type": "integer"
                 },
