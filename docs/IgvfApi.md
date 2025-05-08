@@ -5613,7 +5613,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **single_cell_atac_seq_quality_metrics**
-> SingleCellAtacSeqQualityMetricResults single_cell_atac_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, joint_barcodes_passing=joint_barcodes_passing, lab_id=lab_id, lab_title=lab_title, multi_mappings=multi_mappings, n_barcodes=n_barcodes, n_barcodes_on_onlist=n_barcodes_on_onlist, n_candidates=n_candidates, n_corrected_barcodes=n_corrected_barcodes, n_fragments=n_fragments, n_mapped_reads=n_mapped_reads, n_mappings=n_mappings, n_multi_mappings=n_multi_mappings, n_output_mappings=n_output_mappings, n_reads=n_reads, n_reads_with_multi_mappings=n_reads_with_multi_mappings, n_uni_mappings=n_uni_mappings, n_uniquely_mapped_reads=n_uniquely_mapped_reads, notes=notes, pct_duplicates=pct_duplicates, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total=total, uni_mappings=uni_mappings, uuid=uuid)
+> SingleCellAtacSeqQualityMetricResults single_cell_atac_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, lab_id=lab_id, lab_title=lab_title, multi_mappings=multi_mappings, n_barcodes_on_onlist=n_barcodes_on_onlist, n_candidates=n_candidates, n_corrected_barcodes=n_corrected_barcodes, n_mapped_reads=n_mapped_reads, n_mappings=n_mappings, n_multi_mappings=n_multi_mappings, n_output_mappings=n_output_mappings, n_reads=n_reads, n_reads_with_multi_mappings=n_reads_with_multi_mappings, n_uni_mappings=n_uni_mappings, n_uniquely_mapped_reads=n_uniquely_mapped_reads, notes=notes, pct_duplicates=pct_duplicates, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total=total, uni_mappings=uni_mappings, uuid=uuid)
 
 List items in the SingleCellAtacSeqQualityMetric collection.
 
@@ -5646,15 +5646,12 @@ Name | Type | Description  | Notes
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
- **joint_barcodes_passing** | **List[float]**| Filter by joint_barcodes_passing | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **multi_mappings** | **List[float]**| Filter by multi_mappings | [optional] 
- **n_barcodes** | **List[float]**| Filter by n_barcodes | [optional] 
  **n_barcodes_on_onlist** | **List[float]**| Filter by n_barcodes_on_onlist | [optional] 
  **n_candidates** | **List[float]**| Filter by n_candidates | [optional] 
  **n_corrected_barcodes** | **List[float]**| Filter by n_corrected_barcodes | [optional] 
- **n_fragments** | **List[float]**| Filter by n_fragments | [optional] 
  **n_mapped_reads** | **List[float]**| Filter by n_mapped_reads | [optional] 
  **n_mappings** | **List[float]**| Filter by n_mappings | [optional] 
  **n_multi_mappings** | **List[float]**| Filter by n_multi_mappings | [optional] 
@@ -5701,7 +5698,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **single_cell_rna_seq_quality_metrics**
-> SingleCellRnaSeqQualityMetricResults single_cell_rna_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, frac_dup=frac_dup, frac_mito=frac_mito, frac_mito_genes=frac_mito_genes, frac_reads_in_genes_barcode=frac_reads_in_genes_barcode, frac_reads_in_genes_library=frac_reads_in_genes_library, gt_records=gt_records, index_version=index_version, joint_barcodes_passing=joint_barcodes_passing, k_mer_length=k_mer_length, lab_id=lab_id, lab_title=lab_title, mean_reads_per_barcode=mean_reads_per_barcode, mean_umis_per_barcode=mean_umis_per_barcode, median_genes_per_barcode=median_genes_per_barcode, median_reads_per_barcode=median_reads_per_barcode, median_umis_per_barcode=median_umis_per_barcode, n_barcode_umis=n_barcode_umis, n_barcodes=n_barcodes, n_bootstraps=n_bootstraps, n_genes=n_genes, n_processed=n_processed, n_pseudoaligned=n_pseudoaligned, n_reads=n_reads, n_records=n_records, n_targets=n_targets, n_unique=n_unique, notes=notes, num_barcodes_on_onlist=num_barcodes_on_onlist, num_reads_on_onlist=num_reads_on_onlist, p_pseudoaligned=p_pseudoaligned, p_unique=p_unique, pct_duplicates=pct_duplicates, percentage_barcodes_on_onlist=percentage_barcodes_on_onlist, percentage_reads_on_onlist=percentage_reads_on_onlist, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total_umis=total_umis, uuid=uuid)
+> SingleCellRnaSeqQualityMetricResults single_cell_rna_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, analysis_step_version=analysis_step_version, award_id=award_id, award_component=award_component, creation_timestamp=creation_timestamp, description=description, gt_records=gt_records, index_version=index_version, kmer_length=kmer_length, lab_id=lab_id, lab_title=lab_title, mean_reads_per_barcode=mean_reads_per_barcode, mean_umis_per_barcode=mean_umis_per_barcode, median_reads_per_barcode=median_reads_per_barcode, median_umis_per_barcode=median_umis_per_barcode, n_barcode_umis=n_barcode_umis, n_barcodes=n_barcodes, n_bootstraps=n_bootstraps, n_processed=n_processed, n_pseudoaligned=n_pseudoaligned, n_reads=n_reads, n_records=n_records, n_targets=n_targets, n_unique=n_unique, notes=notes, num_barcodes_on_onlist=num_barcodes_on_onlist, num_reads_on_onlist=num_reads_on_onlist, p_pseudoaligned=p_pseudoaligned, p_unique=p_unique, percentage_barcodes_on_onlist=percentage_barcodes_on_onlist, percentage_reads_on_onlist=percentage_reads_on_onlist, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total_umis=total_umis, uuid=uuid)
 
 List items in the SingleCellRnaSeqQualityMetric collection.
 
@@ -5734,26 +5731,18 @@ Name | Type | Description  | Notes
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
- **frac_dup** | **List[float]**| Filter by frac_dup | [optional] 
- **frac_mito** | **List[float]**| Filter by frac_mito | [optional] 
- **frac_mito_genes** | **List[float]**| Filter by frac_mito_genes | [optional] 
- **frac_reads_in_genes_barcode** | **List[float]**| Filter by frac_reads_in_genes_barcode | [optional] 
- **frac_reads_in_genes_library** | **List[float]**| Filter by frac_reads_in_genes_library | [optional] 
  **gt_records** | **List[float]**| Filter by gt_records | [optional] 
  **index_version** | **List[float]**| Filter by index_version | [optional] 
- **joint_barcodes_passing** | **List[float]**| Filter by joint_barcodes_passing | [optional] 
- **k_mer_length** | **List[float]**| Filter by k-mer length | [optional] 
+ **kmer_length** | **List[float]**| Filter by kmer_length | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
  **mean_reads_per_barcode** | **List[float]**| Filter by mean_reads_per_barcode | [optional] 
  **mean_umis_per_barcode** | **List[float]**| Filter by mean_umis_per_barcode | [optional] 
- **median_genes_per_barcode** | **List[float]**| Filter by median_genes_per_barcode | [optional] 
  **median_reads_per_barcode** | **List[float]**| Filter by median_reads_per_barcode | [optional] 
  **median_umis_per_barcode** | **List[float]**| Filter by median_umis_per_barcode | [optional] 
  **n_barcode_umis** | **List[float]**| Filter by n_barcode_umis | [optional] 
  **n_barcodes** | **List[float]**| Filter by n_barcodes | [optional] 
  **n_bootstraps** | **List[float]**| Filter by n_bootstraps | [optional] 
- **n_genes** | **List[float]**| Filter by n_genes | [optional] 
  **n_processed** | **List[float]**| Filter by n_processed | [optional] 
  **n_pseudoaligned** | **List[float]**| Filter by n_pseudoaligned | [optional] 
  **n_reads** | **List[float]**| Filter by n_reads | [optional] 
@@ -5761,13 +5750,12 @@ Name | Type | Description  | Notes
  **n_targets** | **List[float]**| Filter by n_targets | [optional] 
  **n_unique** | **List[float]**| Filter by n_unique | [optional] 
  **notes** | **List[str]**| Filter by notes | [optional] 
- **num_barcodes_on_onlist** | **List[float]**| Filter by numBarcodesOnOnlist | [optional] 
- **num_reads_on_onlist** | **List[float]**| Filter by numReadsOnOnlist | [optional] 
+ **num_barcodes_on_onlist** | **List[float]**| Filter by num_barcodes_on_onlist | [optional] 
+ **num_reads_on_onlist** | **List[float]**| Filter by num_reads_on_onlist | [optional] 
  **p_pseudoaligned** | **List[float]**| Filter by p_pseudoaligned | [optional] 
  **p_unique** | **List[float]**| Filter by p_unique | [optional] 
- **pct_duplicates** | **List[float]**| Filter by pct_duplicates | [optional] 
- **percentage_barcodes_on_onlist** | **List[float]**| Filter by percentageBarcodesOnOnlist | [optional] 
- **percentage_reads_on_onlist** | **List[float]**| Filter by percentageReadsOnOnlist | [optional] 
+ **percentage_barcodes_on_onlist** | **List[float]**| Filter by percentage_barcodes_on_onlist | [optional] 
+ **percentage_reads_on_onlist** | **List[float]**| Filter by percentage_reads_on_onlist | [optional] 
  **quality_metric_of** | **List[str]**| Filter by quality_metric_of | [optional] 
  **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
  **status** | **List[str]**| Filter by status | [optional] 

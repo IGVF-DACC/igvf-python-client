@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "77.0.2"
+    "version": "78.0.0"
   },
   "servers": [
     {
@@ -34597,6 +34597,7 @@
                 "type": "string",
                 "title": "Control Type",
                 "enum": [
+                  "baseline",
                   "control transduction",
                   "low FACS signal",
                   "non-targeting",
@@ -49915,21 +49916,6 @@
             "explode": true
           },
           {
-            "name": "joint_barcodes_passing",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Joint Barcodes Passing",
-                "description": ""
-              }
-            },
-            "description": "Filter by joint_barcodes_passing",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -49969,21 +49955,6 @@
               }
             },
             "description": "Filter by multi_mappings",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "n_barcodes",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Number Of Barcodes",
-                "description": ""
-              }
-            },
-            "description": "Filter by n_barcodes",
             "style": "form",
             "explode": true
           },
@@ -50029,21 +50000,6 @@
               }
             },
             "description": "Filter by n_corrected_barcodes",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "n_fragments",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Number Of Fragments",
-                "description": ""
-              }
-            },
-            "description": "Filter by n_fragments",
             "style": "form",
             "explode": true
           },
@@ -50612,81 +50568,6 @@
             "explode": true
           },
           {
-            "name": "frac_dup",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Duplicate Fraction",
-                "description": ""
-              }
-            },
-            "description": "Filter by frac_dup",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "frac_mito",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Mitochondrial Fraction",
-                "description": ""
-              }
-            },
-            "description": "Filter by frac_mito",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "frac_mito_genes",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Mitochondrial Genes Fraction",
-                "description": ""
-              }
-            },
-            "description": "Filter by frac_mito_genes",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "frac_reads_in_genes_barcode",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Fraction Of Reads In Genes Barcode",
-                "description": ""
-              }
-            },
-            "description": "Filter by frac_reads_in_genes_barcode",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "frac_reads_in_genes_library",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Fraction Of Reads In Genes Library",
-                "description": ""
-              }
-            },
-            "description": "Filter by frac_reads_in_genes_library",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "gt_records",
             "in": "query",
             "schema": {
@@ -50717,22 +50598,7 @@
             "explode": true
           },
           {
-            "name": "joint_barcodes_passing",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Joint Barcodes Passing",
-                "description": ""
-              }
-            },
-            "description": "Filter by joint_barcodes_passing",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "k-mer length",
+            "name": "kmer_length",
             "in": "query",
             "schema": {
               "type": "array",
@@ -50742,7 +50608,7 @@
                 "description": ""
               }
             },
-            "description": "Filter by k-mer length",
+            "description": "Filter by kmer_length",
             "style": "form",
             "explode": true
           },
@@ -50801,21 +50667,6 @@
               }
             },
             "description": "Filter by mean_umis_per_barcode",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "median_genes_per_barcode",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Median Genes Per Barcode",
-                "description": ""
-              }
-            },
-            "description": "Filter by median_genes_per_barcode",
             "style": "form",
             "explode": true
           },
@@ -50891,21 +50742,6 @@
               }
             },
             "description": "Filter by n_bootstraps",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "n_genes",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Number Of Genes",
-                "description": ""
-              }
-            },
-            "description": "Filter by n_genes",
             "style": "form",
             "explode": true
           },
@@ -51016,7 +50852,7 @@
             "explode": true
           },
           {
-            "name": "numBarcodesOnOnlist",
+            "name": "num_barcodes_on_onlist",
             "in": "query",
             "schema": {
               "type": "array",
@@ -51026,12 +50862,12 @@
                 "description": ""
               }
             },
-            "description": "Filter by numBarcodesOnOnlist",
+            "description": "Filter by num_barcodes_on_onlist",
             "style": "form",
             "explode": true
           },
           {
-            "name": "numReadsOnOnlist",
+            "name": "num_reads_on_onlist",
             "in": "query",
             "schema": {
               "type": "array",
@@ -51041,7 +50877,7 @@
                 "description": ""
               }
             },
-            "description": "Filter by numReadsOnOnlist",
+            "description": "Filter by num_reads_on_onlist",
             "style": "form",
             "explode": true
           },
@@ -51076,22 +50912,7 @@
             "explode": true
           },
           {
-            "name": "pct_duplicates",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Percent Duplicates",
-                "description": ""
-              }
-            },
-            "description": "Filter by pct_duplicates",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "percentageBarcodesOnOnlist",
+            "name": "percentage_barcodes_on_onlist",
             "in": "query",
             "schema": {
               "type": "array",
@@ -51101,12 +50922,12 @@
                 "description": ""
               }
             },
-            "description": "Filter by percentageBarcodesOnOnlist",
+            "description": "Filter by percentage_barcodes_on_onlist",
             "style": "form",
             "explode": true
           },
           {
-            "name": "percentageReadsOnOnlist",
+            "name": "percentage_reads_on_onlist",
             "in": "query",
             "schema": {
               "type": "array",
@@ -51116,7 +50937,7 @@
                 "description": ""
               }
             },
-            "description": "Filter by percentageReadsOnOnlist",
+            "description": "Filter by percentage_reads_on_onlist",
             "style": "form",
             "explode": true
           },
@@ -76177,6 +75998,7 @@
             "description": "The type of control this file set represents.",
             "type": "string",
             "enum": [
+              "baseline",
               "control transduction",
               "low FACS signal",
               "non-targeting",
@@ -80672,23 +80494,8 @@
             "description": "The analysis step version of the quality metric.",
             "type": "string"
           },
-          "n_fragments": {
-            "title": "Number Of Fragments",
-            "description": "",
-            "type": "number"
-          },
-          "n_barcodes": {
-            "title": "Number Of Barcodes",
-            "description": "",
-            "type": "number"
-          },
           "pct_duplicates": {
             "title": "Percent Duplicates",
-            "description": "",
-            "type": "number"
-          },
-          "joint_barcodes_passing": {
-            "title": "Joint Barcodes Passing",
             "description": "",
             "type": "number"
           },
@@ -81071,11 +80878,6 @@
             "description": "",
             "type": "number"
           },
-          "frac_reads_in_genes_library": {
-            "title": "Fraction Of Reads In Genes Library",
-            "description": "",
-            "type": "number"
-          },
           "total_umis": {
             "title": "Total UMIs",
             "description": "",
@@ -81096,11 +80898,6 @@
             "description": "",
             "type": "number"
           },
-          "median_genes_per_barcode": {
-            "title": "Median Genes Per Barcode",
-            "description": "",
-            "type": "number"
-          },
           "median_umis_per_barcode": {
             "title": "Median UMIs Per Barcode",
             "description": "",
@@ -81111,62 +80908,27 @@
             "description": "",
             "type": "number"
           },
-          "pct_duplicates": {
-            "title": "Percent Duplicates",
-            "description": "",
-            "type": "number"
-          },
-          "n_genes": {
-            "title": "Number Of Genes",
-            "description": "",
-            "type": "number"
-          },
-          "frac_dup": {
-            "title": "Duplicate Fraction",
-            "description": "",
-            "type": "number"
-          },
-          "frac_mito": {
-            "title": "Mitochondrial Fraction",
-            "description": "",
-            "type": "number"
-          },
-          "frac_mito_genes": {
-            "title": "Mitochondrial Genes Fraction",
-            "description": "",
-            "type": "number"
-          },
-          "frac_reads_in_genes_barcode": {
-            "title": "Fraction Of Reads In Genes Barcode",
-            "description": "",
-            "type": "number"
-          },
-          "joint_barcodes_passing": {
-            "title": "Joint Barcodes Passing",
-            "description": "",
-            "type": "number"
-          },
           "gt_records": {
             "title": "GtRecords",
             "description": "",
             "type": "number"
           },
-          "numBarcodesOnOnlist": {
+          "num_barcodes_on_onlist": {
             "title": "Number Of Barcodes On Onlist",
             "description": "",
             "type": "number"
           },
-          "percentageBarcodesOnOnlist": {
+          "percentage_barcodes_on_onlist": {
             "title": "Percentage Of Barcodes On Onlist",
             "description": "",
             "type": "number"
           },
-          "numReadsOnOnlist": {
+          "num_reads_on_onlist": {
             "title": "Number Of Reads On Onlist",
             "description": "",
             "type": "number"
           },
-          "percentageReadsOnOnlist": {
+          "percentage_reads_on_onlist": {
             "title": "Percentage Of Reads On Onlist",
             "description": "",
             "type": "number"
@@ -81252,7 +81014,7 @@
             "description": "",
             "type": "number"
           },
-          "k-mer length": {
+          "kmer_length": {
             "title": "",
             "description": "",
             "type": "number"
