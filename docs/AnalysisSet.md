@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **donors** | **List[str]** | The donors of the samples associated with this analysis set. | [optional] 
 **file_set_type** | **str** | The level of this analysis set. | [optional] 
 **external_image_data_url** | **str** | Links to the external site where images and related data produced by this analysis are stored. | [optional] 
-**demultiplexed_sample** | **str** | The sample associated with this analysis set inferred through demultiplexing. | [optional] 
+**demultiplexed_samples** | **List[str]** | The sample(s) associated with this analysis set inferred through demultiplexing. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 

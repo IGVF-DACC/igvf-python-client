@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "78.0.0"
+    "version": "79.0.0"
   },
   "servers": [
     {
@@ -1523,7 +1523,6 @@
                   "complexes_complexes",
                   "complexes_proteins",
                   "complexes_terms",
-                  "comprehensive gene count matrix",
                   "contact matrix",
                   "control signal",
                   "detected tissue",
@@ -1570,6 +1569,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
@@ -1754,7 +1754,6 @@
                   "complexes_complexes",
                   "complexes_proteins",
                   "complexes_terms",
-                  "comprehensive gene count matrix",
                   "contact matrix",
                   "control signal",
                   "detected tissue",
@@ -1801,6 +1800,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
@@ -26469,17 +26469,18 @@
             "explode": true
           },
           {
-            "name": "demultiplexed_sample",
+            "name": "demultiplexed_samples",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "Demultiplexed Samples",
               "items": {
                 "type": "string",
-                "title": "Demultiplexed Sample",
-                "description": "The sample associated with this analysis set inferred through demultiplexing."
-              }
+                "title": "Demultiplexed Sample"
+              },
+              "description": "The sample(s) associated with this analysis set inferred through demultiplexing."
             },
-            "description": "Filter by demultiplexed_sample",
+            "description": "Filter by demultiplexed_samples",
             "style": "form",
             "explode": true
           },
@@ -50574,8 +50575,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "GtRecords",
-                "description": ""
+                "title": "Good-Toulmin Estimation Records",
+                "description": "Number of BUS records for Good-Toulmin estimation."
               }
             },
             "description": "Filter by gt_records",
@@ -50589,8 +50590,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "Kallisto Index Version",
+                "description": "Version of Kallisto index command used for building the transcriptome index."
               }
             },
             "description": "Filter by index_version",
@@ -50604,8 +50605,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "K-mer Length",
+                "description": "Length of k-mers used for building the transcriptome index."
               }
             },
             "description": "Filter by kmer_length",
@@ -50648,7 +50649,7 @@
               "items": {
                 "type": "number",
                 "title": "Mean Reads Per Barcode",
-                "description": ""
+                "description": "Mean number of reads per cell barcode."
               }
             },
             "description": "Filter by mean_reads_per_barcode",
@@ -50663,7 +50664,7 @@
               "items": {
                 "type": "number",
                 "title": "Mean UMIs Per Barcode",
-                "description": ""
+                "description": "Mean number of UMIs per cell barcode."
               }
             },
             "description": "Filter by mean_umis_per_barcode",
@@ -50678,7 +50679,7 @@
               "items": {
                 "type": "number",
                 "title": "Median Reads Per Barcode",
-                "description": ""
+                "description": "Median number of reads per cell barcode."
               }
             },
             "description": "Filter by median_reads_per_barcode",
@@ -50693,7 +50694,7 @@
               "items": {
                 "type": "number",
                 "title": "Median UMIs Per Barcode",
-                "description": ""
+                "description": "Median number of UMIs per cell barcode."
               }
             },
             "description": "Filter by median_umis_per_barcode",
@@ -50708,7 +50709,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Barcode UMIs",
-                "description": ""
+                "description": "Total number of UMIs associated with cell barcodes."
               }
             },
             "description": "Filter by n_barcode_umis",
@@ -50723,7 +50724,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Barcodes",
-                "description": ""
+                "description": "Total number of valid cell barcodes detected."
               }
             },
             "description": "Filter by n_barcodes",
@@ -50737,8 +50738,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "Number Of Bootstrap Iterations",
+                "description": "Number of bootstrap iterations used to estimate expression uncertainty."
               }
             },
             "description": "Filter by n_bootstraps",
@@ -50752,8 +50753,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "Number Of Reads Processed",
+                "description": "Number of valid reads processed by Kallisto."
               }
             },
             "description": "Filter by n_processed",
@@ -50767,8 +50768,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "Number Of Reads Pseudoaligned",
+                "description": "Number of reads that could be pseudoaligned to the transcriptome index."
               }
             },
             "description": "Filter by n_pseudoaligned",
@@ -50783,7 +50784,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Reads",
-                "description": ""
+                "description": "Total number of input reads."
               }
             },
             "description": "Filter by n_reads",
@@ -50798,7 +50799,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Records",
-                "description": ""
+                "description": "Number of records in BUS file."
               }
             },
             "description": "Filter by n_records",
@@ -50812,8 +50813,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "Number Of Target Sequences",
+                "description": "Total number of target sequences (e.g., transcripts) in the index."
               }
             },
             "description": "Filter by n_targets",
@@ -50827,8 +50828,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "Number Of Reads Uniquely Pseudoaligned",
+                "description": "Number of reads that could be pseudoaligned to a unique target sequence."
               }
             },
             "description": "Filter by n_unique",
@@ -50859,7 +50860,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Barcodes On Onlist",
-                "description": ""
+                "description": "Number of cell barcodes matching an expected list of barcodes (onlist)."
               }
             },
             "description": "Filter by num_barcodes_on_onlist",
@@ -50874,7 +50875,7 @@
               "items": {
                 "type": "number",
                 "title": "Number Of Reads On Onlist",
-                "description": ""
+                "description": "Number of reads associated with barcodes on the onlist."
               }
             },
             "description": "Filter by num_reads_on_onlist",
@@ -50888,8 +50889,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "Percentage Of Reads Pseudoaligned",
+                "description": "Percentage of reads that could be pseudoaligned to the transcriptome index."
               }
             },
             "description": "Filter by p_pseudoaligned",
@@ -50903,8 +50904,8 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "",
-                "description": ""
+                "title": "Percentage Of Reads Uniquely Pseudoaligned",
+                "description": "Percentage of reads that could be pseudoaligned to a unique target sequence."
               }
             },
             "description": "Filter by p_unique",
@@ -50919,7 +50920,7 @@
               "items": {
                 "type": "number",
                 "title": "Percentage Of Barcodes On Onlist",
-                "description": ""
+                "description": "Percentage of cell barcodes matching an expected list of barcodes (onlist)."
               }
             },
             "description": "Filter by percentage_barcodes_on_onlist",
@@ -50934,7 +50935,7 @@
               "items": {
                 "type": "number",
                 "title": "Percentage Of Reads On Onlist",
-                "description": ""
+                "description": "Percentage of reads associated with barcodes on the onlist."
               }
             },
             "description": "Filter by percentage_reads_on_onlist",
@@ -51062,7 +51063,7 @@
               "items": {
                 "type": "number",
                 "title": "Total UMIs",
-                "description": ""
+                "description": "Total number of UMIs detected."
               }
             },
             "description": "Filter by total_umis",
@@ -66533,7 +66534,6 @@
                   "complexes_complexes",
                   "complexes_proteins",
                   "complexes_terms",
-                  "comprehensive gene count matrix",
                   "contact matrix",
                   "control signal",
                   "detected tissue",
@@ -66580,6 +66580,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
@@ -66720,7 +66721,6 @@
                   "complexes_complexes",
                   "complexes_proteins",
                   "complexes_terms",
-                  "comprehensive gene count matrix",
                   "contact matrix",
                   "control signal",
                   "detected tissue",
@@ -66767,6 +66767,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
@@ -67973,7 +67974,6 @@
                 "complexes_complexes",
                 "complexes_proteins",
                 "complexes_terms",
-                "comprehensive gene count matrix",
                 "contact matrix",
                 "control signal",
                 "detected tissue",
@@ -68020,6 +68020,7 @@
                 "high resolution tissue",
                 "inclusion list",
                 "index",
+                "kallisto single cell RNAseq output",
                 "loci",
                 "low resolution tissue",
                 "machine learning model features",
@@ -68139,7 +68140,6 @@
                 "complexes_complexes",
                 "complexes_proteins",
                 "complexes_terms",
-                "comprehensive gene count matrix",
                 "contact matrix",
                 "control signal",
                 "detected tissue",
@@ -68186,6 +68186,7 @@
                 "high resolution tissue",
                 "inclusion list",
                 "index",
+                "kallisto single cell RNAseq output",
                 "loci",
                 "low resolution tissue",
                 "machine learning model features",
@@ -74508,10 +74509,15 @@
             "type": "string",
             "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$"
           },
-          "demultiplexed_sample": {
-            "title": "Demultiplexed Sample",
-            "description": "The sample associated with this analysis set inferred through demultiplexing.",
-            "type": "string"
+          "demultiplexed_samples": {
+            "title": "Demultiplexed Samples",
+            "description": "The sample(s) associated with this analysis set inferred through demultiplexing.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Demultiplexed Sample",
+              "type": "string"
+            }
           },
           "@id": {
             "title": "ID",
@@ -75283,7 +75289,7 @@
             }
           },
           "associated_phenotypes": {
-            "title": "Associated Phenotypes",
+            "title": "Associated Phenotype Terms",
             "description": "Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library.",
             "type": "array",
             "uniqueItems": true,
@@ -80865,77 +80871,77 @@
           },
           "n_records": {
             "title": "Number Of Records",
-            "description": "",
+            "description": "Number of records in BUS file.",
             "type": "number"
           },
           "n_reads": {
             "title": "Number Of Reads",
-            "description": "",
+            "description": "Total number of input reads.",
             "type": "number"
           },
           "n_barcodes": {
             "title": "Number Of Barcodes",
-            "description": "",
+            "description": "Total number of valid cell barcodes detected.",
             "type": "number"
           },
           "total_umis": {
             "title": "Total UMIs",
-            "description": "",
+            "description": "Total number of UMIs detected.",
             "type": "number"
           },
           "n_barcode_umis": {
             "title": "Number Of Barcode UMIs",
-            "description": "",
+            "description": "Total number of UMIs associated with cell barcodes.",
             "type": "number"
           },
           "median_reads_per_barcode": {
             "title": "Median Reads Per Barcode",
-            "description": "",
+            "description": "Median number of reads per cell barcode.",
             "type": "number"
           },
           "mean_reads_per_barcode": {
             "title": "Mean Reads Per Barcode",
-            "description": "",
+            "description": "Mean number of reads per cell barcode.",
             "type": "number"
           },
           "median_umis_per_barcode": {
             "title": "Median UMIs Per Barcode",
-            "description": "",
+            "description": "Median number of UMIs per cell barcode.",
             "type": "number"
           },
           "mean_umis_per_barcode": {
             "title": "Mean UMIs Per Barcode",
-            "description": "",
+            "description": "Mean number of UMIs per cell barcode.",
             "type": "number"
           },
           "gt_records": {
-            "title": "GtRecords",
-            "description": "",
+            "title": "Good-Toulmin Estimation Records",
+            "description": "Number of BUS records for Good-Toulmin estimation.",
             "type": "number"
           },
           "num_barcodes_on_onlist": {
             "title": "Number Of Barcodes On Onlist",
-            "description": "",
+            "description": "Number of cell barcodes matching an expected list of barcodes (onlist).",
             "type": "number"
           },
           "percentage_barcodes_on_onlist": {
             "title": "Percentage Of Barcodes On Onlist",
-            "description": "",
+            "description": "Percentage of cell barcodes matching an expected list of barcodes (onlist).",
             "type": "number"
           },
           "num_reads_on_onlist": {
             "title": "Number Of Reads On Onlist",
-            "description": "",
+            "description": "Number of reads associated with barcodes on the onlist.",
             "type": "number"
           },
           "percentage_reads_on_onlist": {
             "title": "Percentage Of Reads On Onlist",
-            "description": "",
+            "description": "Percentage of reads associated with barcodes on the onlist.",
             "type": "number"
           },
           "rnaseq_kb_info": {
             "title": "RNA-seq KB Info",
-            "description": "",
+            "description": "The content of the kb-python RNAseq kb_info.json file.",
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -80975,48 +80981,48 @@
             }
           },
           "n_targets": {
-            "title": "",
-            "description": "",
+            "title": "Number Of Target Sequences",
+            "description": "Total number of target sequences (e.g., transcripts) in the index.",
             "type": "number"
           },
           "n_bootstraps": {
-            "title": "",
-            "description": "",
+            "title": "Number Of Bootstrap Iterations",
+            "description": "Number of bootstrap iterations used to estimate expression uncertainty.",
             "type": "number"
           },
           "n_processed": {
-            "title": "",
-            "description": "",
+            "title": "Number Of Reads Processed",
+            "description": "Number of valid reads processed by Kallisto.",
             "type": "number"
           },
           "n_pseudoaligned": {
-            "title": "",
-            "description": "",
+            "title": "Number Of Reads Pseudoaligned",
+            "description": "Number of reads that could be pseudoaligned to the transcriptome index.",
             "type": "number"
           },
           "n_unique": {
-            "title": "",
-            "description": "",
+            "title": "Number Of Reads Uniquely Pseudoaligned",
+            "description": "Number of reads that could be pseudoaligned to a unique target sequence.",
             "type": "number"
           },
           "p_pseudoaligned": {
-            "title": "",
-            "description": "",
+            "title": "Percentage Of Reads Pseudoaligned",
+            "description": "Percentage of reads that could be pseudoaligned to the transcriptome index.",
             "type": "number"
           },
           "p_unique": {
-            "title": "",
-            "description": "",
+            "title": "Percentage Of Reads Uniquely Pseudoaligned",
+            "description": "Percentage of reads that could be pseudoaligned to a unique target sequence.",
             "type": "number"
           },
           "index_version": {
-            "title": "",
-            "description": "",
+            "title": "Kallisto Index Version",
+            "description": "Version of Kallisto index command used for building the transcriptome index.",
             "type": "number"
           },
           "kmer_length": {
-            "title": "",
-            "description": "",
+            "title": "K-mer Length",
+            "description": "Length of k-mers used for building the transcriptome index.",
             "type": "number"
           },
           "@id": {
