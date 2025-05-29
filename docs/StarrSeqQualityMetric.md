@@ -6,6 +6,7 @@ Schema for submission of a STARR-seq uniform pipeline quality metric.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **attachment** | [**Attachment**](Attachment.md) |  | [optional] 

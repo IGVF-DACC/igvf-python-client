@@ -6,6 +6,7 @@ A specific version of a software used for computational analysis. For example, B
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **source_url** | **str** | An external resource to track the version of the software download. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 

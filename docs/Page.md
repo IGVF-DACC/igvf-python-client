@@ -6,6 +6,7 @@ A page on the IGVF portal.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 

@@ -6,6 +6,7 @@ Auxiliary set is a file set that hosts raw data files (e.g. FASTQs) resulting fr
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 

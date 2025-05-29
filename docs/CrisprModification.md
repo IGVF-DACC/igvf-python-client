@@ -6,6 +6,7 @@ A CRISPR modification altering sample genomic material. For example, CRISPRi dCa
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 

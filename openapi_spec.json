@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "79.0.0"
+    "version": "81.0.0"
   },
   "servers": [
     {
@@ -1369,6 +1369,8 @@
                   "interaction calling",
                   "matrix generation",
                   "merging",
+                  "modification calling",
+                  "modification site annotation",
                   "peak calling",
                   "read trimming",
                   "quantification",
@@ -1507,6 +1509,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "alignments",
+                  "alignments with modifications",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -1574,6 +1577,7 @@
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "minus strand modification state",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -1585,6 +1589,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
                   "primer sequences",
@@ -1635,6 +1640,7 @@
                   "variant effects",
                   "variant functional predictions",
                   "variant localization impacts",
+                  "variant pathogenicity",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -1738,6 +1744,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "alignments",
+                  "alignments with modifications",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -1805,6 +1812,7 @@
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "minus strand modification state",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -1816,6 +1824,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
                   "primer sequences",
@@ -1866,6 +1875,7 @@
                   "variant effects",
                   "variant functional predictions",
                   "variant localization impacts",
+                  "variant pathogenicity",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -1935,6 +1945,21 @@
               }
             },
             "description": "Filter by parents.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -2547,6 +2572,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "release_timestamp",
             "in": "query",
             "schema": {
@@ -2699,6 +2739,22 @@
               }
             },
             "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Workflows",
+              "items": {
+                "type": "string",
+                "title": "Workflow"
+              },
+              "description": "The workflows that this analysis step version is a part of."
+            },
+            "description": "Filter by workflows",
             "style": "form",
             "explode": true
           }
@@ -3578,6 +3634,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "quantification",
             "in": "query",
             "schema": {
@@ -4063,6 +4134,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -4773,6 +4859,21 @@
               }
             },
             "description": "Filter by phenotypic_features.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -5603,6 +5704,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "product_id",
             "in": "query",
             "schema": {
@@ -6269,6 +6385,8 @@
                   "5mC",
                   "6mA",
                   "inosine",
+                  "m5C",
+                  "m6A",
                   "pseudouridine"
                 ],
                 "description": "The chemical modification to bases in a DNA sequence that is detected in this file."
@@ -7453,6 +7571,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -9205,6 +9338,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "quality_metrics",
             "in": "query",
             "schema": {
@@ -10076,7 +10224,9 @@
                   "bed6+",
                   "bed9",
                   "bed9+",
-                  "mpra_starr"
+                  "mpra_starr",
+                  "mpra_element",
+                  "mpra_variant"
                 ],
                 "description": "The subtype of bed files."
               }
@@ -10990,6 +11140,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -12690,6 +12855,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -14417,6 +14597,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "quality_metrics",
             "in": "query",
             "schema": {
@@ -16136,6 +16331,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -17954,6 +18164,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "quality_metrics",
             "in": "query",
             "schema": {
@@ -18812,7 +19037,9 @@
                   "bed6+",
                   "bed9",
                   "bed9+",
-                  "mpra_starr"
+                  "mpra_starr",
+                  "mpra_element",
+                  "mpra_variant"
                 ],
                 "description": "The subtype of bed files."
               }
@@ -19730,6 +19957,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "quality_metrics",
             "in": "query",
             "schema": {
@@ -20359,6 +20601,8 @@
                   "5mC",
                   "6mA",
                   "inosine",
+                  "m5C",
+                  "m6A",
                   "pseudouridine"
                 ],
                 "description": "The chemical modification to bases in a DNA sequence that is detected in this file."
@@ -21663,6 +21907,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -23632,6 +23891,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "quality_metrics",
             "in": "query",
             "schema": {
@@ -24308,6 +24582,33 @@
             "explode": true
           },
           {
+            "name": "base_modifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Base Modifications",
+              "items": {
+                "type": "string",
+                "title": "Base Modification",
+                "enum": [
+                  "4mC",
+                  "5hmC",
+                  "5mC",
+                  "6mA",
+                  "inosine",
+                  "m5C",
+                  "m6A",
+                  "pseudouridine"
+                ],
+                "description": "The chemical modification to bases in a DNA sequence that is detected in this file."
+              },
+              "description": "The chemical modifications to bases in a DNA sequence that are detected in this file."
+            },
+            "description": "Filter by base_modifications",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_adapters",
             "in": "query",
             "schema": {
@@ -24626,7 +24927,9 @@
                   "bed6+",
                   "bed9",
                   "bed9+",
-                  "mpra_starr"
+                  "mpra_starr",
+                  "mpra_element",
+                  "mpra_variant"
                 ],
                 "description": "The subtype of bed files."
               }
@@ -25555,6 +25858,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -27130,6 +27448,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -29124,6 +29457,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "publications.@id",
             "in": "query",
             "schema": {
@@ -30488,6 +30836,22 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title"
+              },
+              "description": "The assay titles of the file sets that used this construct library set."
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -30749,7 +31113,7 @@
                 "type": "string",
                 "title": "Control Type",
                 "enum": [
-                  "control transduction",
+                  "reference transduction",
                   "non-targeting"
                 ],
                 "description": "The type of control this file set represents."
@@ -30873,6 +31237,22 @@
               }
             },
             "description": "Filter by file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "File Sets",
+              "items": {
+                "type": "string",
+                "title": "File Set"
+              },
+              "description": "The file sets that used this construct library set."
+            },
+            "description": "Filter by file_sets",
             "style": "form",
             "explode": true
           },
@@ -31428,6 +31808,21 @@
               }
             },
             "description": "Filter by orf_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -33027,6 +33422,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "publications.@id",
             "in": "query",
             "schema": {
@@ -34599,7 +35009,7 @@
                 "title": "Control Type",
                 "enum": [
                   "baseline",
-                  "control transduction",
+                  "reference transduction",
                   "low FACS signal",
                   "non-targeting",
                   "pre-selection",
@@ -35368,7 +35778,7 @@
                   "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
-                  "10x multiome with scMito-seq",
+                  "mtscMultiome",
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -35384,7 +35794,6 @@
                   "AAV-MPRA",
                   "lentiMPRA",
                   "STARR-seq",
-                  "SUPERSTARR",
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
@@ -35426,6 +35835,21 @@
               }
             },
             "description": "Filter by preferred_assay_title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -37687,6 +38111,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "publications.@id",
             "in": "query",
             "schema": {
@@ -39871,6 +40310,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "publications.@id",
             "in": "query",
             "schema": {
@@ -41202,6 +41656,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "release_timestamp",
             "in": "query",
             "schema": {
@@ -41702,6 +42171,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -42220,6 +42704,21 @@
               "description": "Labs which belong to same institution as the signing PI and can share this institutional certificate."
             },
             "description": "Filter by partner_labs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -43299,6 +43798,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "product_id",
             "in": "query",
             "schema": {
@@ -43876,6 +44390,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "product_id",
             "in": "query",
             "schema": {
@@ -44439,7 +44968,7 @@
                   "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
-                  "10x multiome with scMito-seq",
+                  "mtscMultiome",
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -44455,7 +44984,6 @@
                   "AAV-MPRA",
                   "lentiMPRA",
                   "STARR-seq",
-                  "SUPERSTARR",
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
@@ -44498,6 +45026,21 @@
               "description": "The custom lab preferred labels that this assay term may be associated with."
             },
             "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -44993,6 +45536,21 @@
               }
             },
             "description": "Filter by ontology",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -45514,6 +46072,21 @@
               }
             },
             "description": "Filter by ontology",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -46133,6 +46706,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "release_timestamp",
             "in": "query",
             "schema": {
@@ -46736,6 +47324,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "protein_id",
             "in": "query",
             "schema": {
@@ -47162,6 +47765,21 @@
               }
             },
             "description": "Filter by parent",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -47648,6 +48266,21 @@
               }
             },
             "description": "Filter by observation_date",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -48259,6 +48892,21 @@
               }
             },
             "description": "Filter by page",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -48912,6 +49560,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "quality_metric_of",
             "in": "query",
             "schema": {
@@ -49455,6 +50118,21 @@
               }
             },
             "description": "Filter by pct_cells_assigned_guide",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -50152,6 +50830,21 @@
               }
             },
             "description": "Filter by pct_duplicates",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -50943,6 +51636,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "quality_metric_of",
             "in": "query",
             "schema": {
@@ -51411,6 +52119,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -53157,6 +53880,21 @@
               "description": "The pooled samples in which this sample is included."
             },
             "description": "Filter by pooled_in",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -55292,6 +56030,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "protocols",
             "in": "query",
             "schema": {
@@ -57336,6 +58089,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "product_id",
             "in": "query",
             "schema": {
@@ -58687,6 +59455,21 @@
               "description": "The samples which originate from this sample, such as through a process of cell differentiation."
             },
             "description": "Filter by origin_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -60709,6 +61492,21 @@
               }
             },
             "description": "Filter by preservation_method",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -62784,6 +63582,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "product_id",
             "in": "query",
             "schema": {
@@ -63720,6 +64533,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "publications.@id",
             "in": "query",
             "schema": {
@@ -64260,6 +65088,21 @@
             "explode": true
           },
           {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "publications.@id",
             "in": "query",
             "schema": {
@@ -64733,6 +65576,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -65355,6 +66213,21 @@
               }
             },
             "description": "Filter by post_treatment_time_units",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -66306,6 +67179,22 @@
             "explode": true
           },
           {
+            "name": "analysis_step_versions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Analysis Step Versions",
+              "items": {
+                "type": "string",
+                "title": "Analysis Step Version"
+              },
+              "description": "The available versions of the analysis steps linked to this workflow."
+            },
+            "description": "Filter by analysis_step_versions",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_steps.@id",
             "in": "query",
             "schema": {
@@ -66349,6 +67238,8 @@
                   "interaction calling",
                   "matrix generation",
                   "merging",
+                  "modification calling",
+                  "modification site annotation",
                   "peak calling",
                   "read trimming",
                   "quantification",
@@ -66518,6 +67409,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "alignments",
+                  "alignments with modifications",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -66585,6 +67477,7 @@
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "minus strand modification state",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -66596,6 +67489,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
                   "primer sequences",
@@ -66646,6 +67540,7 @@
                   "variant effects",
                   "variant functional predictions",
                   "variant localization impacts",
+                  "variant pathogenicity",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -66705,6 +67600,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "alignments",
+                  "alignments with modifications",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -66772,6 +67668,7 @@
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "minus strand modification state",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -66783,6 +67680,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
                   "primer sequences",
@@ -66833,6 +67731,7 @@
                   "variant effects",
                   "variant functional predictions",
                   "variant localization impacts",
+                  "variant pathogenicity",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -67060,6 +67959,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preview_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Preview Timestamp",
+                "description": "The date the object was previewed."
+              }
+            },
+            "description": "Filter by preview_timestamp",
             "style": "form",
             "explode": true
           },
@@ -67338,9 +68252,9 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "integer",
+                "type": "string",
                 "title": "Workflow Version",
-                "minimum": 1,
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
                 "description": "The version of this workflow."
               }
             },
@@ -67793,6 +68707,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -67900,6 +68819,8 @@
                 "interaction calling",
                 "matrix generation",
                 "merging",
+                "modification calling",
+                "modification site annotation",
                 "peak calling",
                 "read trimming",
                 "quantification",
@@ -67958,6 +68879,7 @@
                 "SNP effect matrix",
                 "TF binding scores",
                 "alignments",
+                "alignments with modifications",
                 "barcode onlist",
                 "barcode replacement",
                 "barcode to TF overexpression mapping",
@@ -68025,6 +68947,7 @@
                 "low resolution tissue",
                 "machine learning model features",
                 "methylated reads",
+                "minus strand modification state",
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
@@ -68036,6 +68959,7 @@
                 "pathways_pathways",
                 "peak quantifications",
                 "peaks",
+                "plus strand modification state",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
                 "primer sequences",
@@ -68086,6 +69010,7 @@
                 "variant effects",
                 "variant functional predictions",
                 "variant localization impacts",
+                "variant pathogenicity",
                 "variant to element mapping",
                 "variants",
                 "variants_coding_variants",
@@ -68124,6 +69049,7 @@
                 "SNP effect matrix",
                 "TF binding scores",
                 "alignments",
+                "alignments with modifications",
                 "barcode onlist",
                 "barcode replacement",
                 "barcode to TF overexpression mapping",
@@ -68191,6 +69117,7 @@
                 "low resolution tissue",
                 "machine learning model features",
                 "methylated reads",
+                "minus strand modification state",
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
@@ -68202,6 +69129,7 @@
                 "pathways_pathways",
                 "peak quantifications",
                 "peaks",
+                "plus strand modification state",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
                 "primer sequences",
@@ -68252,6 +69180,7 @@
                 "variant effects",
                 "variant functional predictions",
                 "variant localization impacts",
+                "variant pathogenicity",
                 "variant to element mapping",
                 "variants",
                 "variants_coding_variants",
@@ -68312,6 +69241,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -68421,6 +69355,16 @@
             "title": "Summary",
             "type": "string",
             "description": "A summary of the object."
+          },
+          "workflows": {
+            "title": "Workflows",
+            "type": "array",
+            "description": "The workflows that this analysis step version is a part of.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Workflow",
+              "type": "string"
+            }
           }
         }
       },
@@ -68592,6 +69536,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -68749,6 +69698,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -68955,6 +69909,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -69275,6 +70234,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -69571,6 +70535,32 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "base_modifications": {
+            "title": "Base Modifications",
+            "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Base Modification",
+              "description": "The chemical modification to bases in a DNA sequence that is detected in this file.",
+              "type": "string",
+              "enum": [
+                "4mC",
+                "5hmC",
+                "5mC",
+                "6mA",
+                "inosine",
+                "m5C",
+                "m6A",
+                "pseudouridine"
+              ]
+            }
+          },
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "controlled_access": {
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
@@ -69899,25 +70889,6 @@
             "description": "Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information.",
             "type": "boolean"
           },
-          "base_modifications": {
-            "title": "Base Modifications",
-            "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Base Modification",
-              "description": "The chemical modification to bases in a DNA sequence that is detected in this file.",
-              "type": "string",
-              "enum": [
-                "4mC",
-                "5hmC",
-                "5mC",
-                "6mA",
-                "inosine",
-                "pseudouridine"
-              ]
-            }
-          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -70028,6 +70999,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -70399,6 +71375,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "cell_type_annotation": {
             "title": "Cell Type Annotation",
             "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
@@ -70436,7 +71417,9 @@
               "bed6+",
               "bed9",
               "bed9+",
-              "mpra_starr"
+              "mpra_starr",
+              "mpra_element",
+              "mpra_variant"
             ]
           },
           "transcriptome_annotation": {
@@ -70815,6 +71798,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -71170,6 +72158,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -71556,6 +72549,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -71979,6 +72977,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "externally_hosted": {
             "title": "Externally Hosted",
             "description": "Indicates whether the file is externally hosted and not stored on portal.",
@@ -72370,6 +73373,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "source_url": {
             "title": "Source URL",
             "description": "Link to external resource, such as NCBI or GENCODE, where the reference data was obtained.",
@@ -72417,7 +73425,9 @@
               "bed6+",
               "bed9",
               "bed9+",
-              "mpra_starr"
+              "mpra_starr",
+              "mpra_element",
+              "mpra_variant"
             ]
           },
           "transcriptome_annotation": {
@@ -72838,6 +73848,32 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "base_modifications": {
+            "title": "Base Modifications",
+            "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Base Modification",
+              "description": "The chemical modification to bases in a DNA sequence that is detected in this file.",
+              "type": "string",
+              "enum": [
+                "4mC",
+                "5hmC",
+                "5mC",
+                "6mA",
+                "inosine",
+                "m5C",
+                "m6A",
+                "pseudouridine"
+              ]
+            }
+          },
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "externally_hosted": {
             "title": "Externally Hosted",
             "description": "Indicates whether the file is externally hosted and not stored on portal.",
@@ -73226,25 +74262,6 @@
             "description": "An Illumina index associated with the file.",
             "type": "string"
           },
-          "base_modifications": {
-            "title": "Base Modifications",
-            "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Base Modification",
-              "description": "The chemical modification to bases in a DNA sequence that is detected in this file.",
-              "type": "string",
-              "enum": [
-                "4mC",
-                "5hmC",
-                "5mC",
-                "6mA",
-                "inosine",
-                "pseudouridine"
-              ]
-            }
-          },
           "read_names": {
             "title": "Read Names",
             "description": "The read names of a sequence file based on how it will be used by uniform pipelines.",
@@ -73379,6 +74396,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "cell_type_annotation": {
             "title": "Cell Type Annotation",
             "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
@@ -73822,6 +74844,32 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "base_modifications": {
+            "title": "Base Modifications",
+            "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Base Modification",
+              "description": "The chemical modification to bases in a DNA sequence that is detected in this file.",
+              "type": "string",
+              "enum": [
+                "4mC",
+                "5hmC",
+                "5mC",
+                "6mA",
+                "inosine",
+                "m5C",
+                "m6A",
+                "pseudouridine"
+              ]
+            }
+          },
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "cell_type_annotation": {
             "title": "Cell Type Annotation",
             "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
@@ -73869,7 +74917,9 @@
               "bed6+",
               "bed9",
               "bed9+",
-              "mpra_starr"
+              "mpra_starr",
+              "mpra_element",
+              "mpra_variant"
             ]
           },
           "transcriptome_annotation": {
@@ -74290,6 +75340,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "input_file_sets": {
             "title": "Input File Sets",
             "description": "The file set(s) required for this analysis.",
@@ -74650,6 +75705,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -74962,6 +76022,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "control_file_sets": {
             "title": "Controls",
             "description": "File sets that can serve as scientific controls for this file set.",
@@ -75231,7 +76296,7 @@
             "description": "The type of control this file set represents.",
             "type": "string",
             "enum": [
-              "control transduction",
+              "reference transduction",
               "non-targeting"
             ]
           },
@@ -75484,6 +76549,26 @@
               "title": "Applied to Sample",
               "type": "string"
             }
+          },
+          "file_sets": {
+            "title": "File Sets",
+            "description": "The file sets that used this construct library set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "File Set",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Titles",
+            "description": "The assay titles of the file sets that used this construct library set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "type": "string"
+            }
           }
         }
       },
@@ -75493,6 +76578,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -75823,6 +76913,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "control_file_sets": {
             "title": "Controls",
             "description": "File sets that can serve as scientific controls for this file set.",
@@ -76005,7 +77100,7 @@
             "type": "string",
             "enum": [
               "baseline",
-              "control transduction",
+              "reference transduction",
               "low FACS signal",
               "non-targeting",
               "pre-selection",
@@ -76078,7 +77173,7 @@
               "scATAC-seq",
               "scACCESS-ATAC",
               "snATAC-seq",
-              "10x multiome with scMito-seq",
+              "mtscMultiome",
               "DOGMA-seq",
               "10x multiome",
               "10x multiome with MULTI-seq",
@@ -76094,7 +77189,6 @@
               "AAV-MPRA",
               "lentiMPRA",
               "STARR-seq",
-              "SUPERSTARR",
               "Cell painting",
               "Variant painting via fluorescence",
               "Variant painting via immunostaining",
@@ -76339,6 +77433,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "input_file_sets": {
             "title": "Input File Sets",
             "description": "The file set(s) that served as inputs for the derivation of this model set.",
@@ -76711,6 +77810,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "input_file_sets": {
             "title": "Input File Sets",
             "description": "The file set(s) required for this prediction set.",
@@ -77104,6 +78208,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -77378,6 +78487,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -77523,6 +78637,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -77833,6 +78952,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -78072,6 +79196,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -78261,6 +79390,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -78386,7 +79520,7 @@
                 "scATAC-seq",
                 "scACCESS-ATAC",
                 "snATAC-seq",
-                "10x multiome with scMito-seq",
+                "mtscMultiome",
                 "DOGMA-seq",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
@@ -78402,7 +79536,6 @@
                 "AAV-MPRA",
                 "lentiMPRA",
                 "STARR-seq",
-                "SUPERSTARR",
                 "Cell painting",
                 "Variant painting via fluorescence",
                 "Variant painting via immunostaining",
@@ -78535,6 +79668,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -78703,6 +79841,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -78938,6 +80081,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -79154,6 +80302,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -79311,6 +80464,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -79471,6 +80629,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -79631,6 +80794,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -79922,6 +81090,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "status": {
             "title": "Status",
             "type": "string",
@@ -80121,6 +81294,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "status": {
             "title": "Status",
             "type": "string",
@@ -80355,6 +81533,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "status": {
             "title": "Status",
             "type": "string",
@@ -80724,6 +81907,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "status": {
             "title": "Status",
             "type": "string",
@@ -81049,6 +82237,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "status": {
             "title": "Status",
             "type": "string",
@@ -81233,6 +82426,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -81870,6 +83068,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -82339,6 +83542,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -82914,6 +84122,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -83318,6 +84531,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -83903,6 +85121,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -84457,6 +85680,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "source_url": {
             "title": "Source URL",
             "description": "An external resource to the codebase.",
@@ -84631,6 +85859,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "source_url": {
             "title": "Source URL",
             "description": "An external resource to track the version of the software download.",
@@ -84769,6 +86002,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -84878,6 +86116,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -85308,6 +86551,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preview_timestamp": {
+            "title": "Preview Timestamp",
+            "description": "The date the object was previewed.",
+            "type": "string"
+          },
           "source_url": {
             "title": "Source URL",
             "description": "An external resource to the code base of the workflow in github.",
@@ -85492,13 +86740,23 @@
           "workflow_version": {
             "title": "Workflow Version",
             "description": "The version of this workflow.",
-            "type": "integer",
-            "minimum": 1
+            "type": "string",
+            "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$"
           },
           "uniform_pipeline": {
             "title": "Uniform Pipeline",
             "description": "Indicates whether the pipeline is developed by the IGVF consortium.",
             "type": "boolean"
+          },
+          "analysis_step_versions": {
+            "title": "Analysis Step Versions",
+            "description": "The available versions of the analysis steps linked to this workflow.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Analysis Step Version",
+              "type": "string"
+            }
           },
           "@id": {
             "title": "ID",

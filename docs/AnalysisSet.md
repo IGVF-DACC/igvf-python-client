@@ -6,6 +6,7 @@ A file set for analyses. Analysis sets represent the results of a computational 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **input_file_sets** | **List[str]** | The file set(s) required for this analysis. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 

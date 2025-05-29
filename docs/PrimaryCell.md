@@ -6,6 +6,7 @@ A biosample that is directly harvested from a donor as cells, such as fibroblast
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 

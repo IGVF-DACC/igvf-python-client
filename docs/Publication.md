@@ -6,6 +6,7 @@ A publication related to IGVF.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 

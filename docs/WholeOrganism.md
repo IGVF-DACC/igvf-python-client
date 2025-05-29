@@ -6,6 +6,7 @@ A biosample that is a whole model organism. For example, a mouse embryo.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 

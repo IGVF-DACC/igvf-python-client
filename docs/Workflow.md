@@ -6,6 +6,7 @@ A workflow for computational analysis of genomic data. A workflow is made up of 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **source_url** | **str** | An external resource to the code base of the workflow in github. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
@@ -28,8 +29,9 @@ Name | Type | Description | Notes
 **name** | **str** | The preferred viewable name of the workflow. | [optional] 
 **workflow_repositories** | **List[str]** | Resources hosting the workflow. | [optional] 
 **standards_page** | **str** | A link to a page describing the standards for this workflow. | [optional] 
-**workflow_version** | **int** | The version of this workflow. | [optional] 
+**workflow_version** | **str** | The version of this workflow. | [optional] 
 **uniform_pipeline** | **bool** | Indicates whether the pipeline is developed by the IGVF consortium. | [optional] 
+**analysis_step_versions** | **List[str]** | The available versions of the analysis steps linked to this workflow. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 

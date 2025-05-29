@@ -6,6 +6,7 @@ Measurement set is a file set that hosts raw data files (e.g. FASTQs) resulting 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this file set. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 

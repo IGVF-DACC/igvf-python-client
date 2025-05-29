@@ -6,6 +6,7 @@ An image to be displayed on an IGVF portal page. This is not a data object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] 
 **attachment** | [**Attachment1**](Attachment1.md) |  | [optional] 

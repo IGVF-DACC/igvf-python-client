@@ -6,6 +6,7 @@ A gene in the human or mouse genomes. The genes objects in IGVF are imported fro
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 

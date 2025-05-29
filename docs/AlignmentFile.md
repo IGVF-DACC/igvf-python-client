@@ -6,6 +6,8 @@ A file containing alignment data in bam or cram format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
 **anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
@@ -46,7 +48,6 @@ Name | Type | Description | Notes
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **read_count** | **int** | Number of reads in a bam file. Including both mapped, unmapped, and multi-mapped read counts. | [optional] 
 **redacted** | **bool** | Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information. | [optional] 
-**base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the alignment file. | [optional] 

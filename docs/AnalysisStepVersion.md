@@ -6,6 +6,7 @@ A step version in a computational analysis workflow.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
+**workflows** | **List[str]** | The workflows that this analysis step version is a part of. | [optional] 
 
 ## Example
 

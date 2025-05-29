@@ -6,6 +6,7 @@ A file set grouping files that represent trained predictive models. Model file s
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **input_file_sets** | **List[str]** | The file set(s) that served as inputs for the derivation of this model set. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 

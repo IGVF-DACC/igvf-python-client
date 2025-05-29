@@ -6,6 +6,7 @@ An ontology term from Experimental Factor Ontology (EFO), Human Disease Ontology
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] 

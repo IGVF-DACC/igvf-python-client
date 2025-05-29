@@ -6,6 +6,7 @@ A sample that is made by multiplexing multiple distinct samples.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 

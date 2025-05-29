@@ -6,6 +6,7 @@ A binary file containing genome annotations which are indexed and can be visuali
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **cell_type_annotation** | **str** | The inferred cell type this file is associated with based on single-cell expression profiling. | [optional] 
 **assembly** | **str** | Genome assembly applicable for the annotation data. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 

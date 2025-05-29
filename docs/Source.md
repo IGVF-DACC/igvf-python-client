@@ -6,6 +6,7 @@ A vendor or a lab that provides samples for study.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 

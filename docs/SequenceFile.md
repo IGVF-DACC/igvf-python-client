@@ -6,6 +6,8 @@ A file containing sequencing results in bam, fastq, or pod5 formats.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
+**preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **externally_hosted** | **bool** | Indicates whether the file is externally hosted and not stored on portal. | [optional] 
 **external_host_url** | **str** | A link to the resource where the file is externally hosted. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
@@ -54,7 +56,6 @@ Name | Type | Description | Notes
 **sequencing_run** | **int** | An ordinal number indicating which sequencing run of the associated library that the file belongs to. | [optional] 
 **illumina_read_type** | **str** | The read type of the file. Relevant only for files produced using an Illumina sequencing platform. | [optional] 
 **index** | **str** | An Illumina index associated with the file. | [optional] 
-**base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **read_names** | **List[str]** | The read names of a sequence file based on how it will be used by uniform pipelines. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
