@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "81.0.0"
+    "version": "81.1.0"
   },
   "servers": [
     {
@@ -1589,6 +1589,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "pipeline inputs",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -1824,6 +1825,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "pipeline inputs",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -4080,6 +4082,7 @@
                   "image",
                   "library structure seqspec",
                   "model source data",
+                  "pipeline parameters",
                   "plate map",
                   "plasmid map",
                   "plasmid sequence",
@@ -7808,6 +7811,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 24",
                   "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
@@ -11329,6 +11333,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 24",
                   "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
@@ -20174,6 +20179,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 24",
                   "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
@@ -24129,6 +24135,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 24",
                   "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
@@ -26063,6 +26070,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 24",
                   "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
@@ -35808,6 +35816,7 @@
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
                   "Perturb-seq",
+                  "Parse Perturb-seq",
                   "CERES-seq",
                   "TAP-seq",
                   "Variant-EFFECTS",
@@ -41859,6 +41868,7 @@
                 "title": "Transcriptome Annotation",
                 "enum": [
                   "GENCODE 22",
+                  "GENCODE 24",
                   "GENCODE 28",
                   "GENCODE 32",
                   "GENCODE 40",
@@ -44998,6 +45008,7 @@
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
                   "Perturb-seq",
+                  "Parse Perturb-seq",
                   "CERES-seq",
                   "TAP-seq",
                   "Variant-EFFECTS",
@@ -67489,6 +67500,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "pipeline inputs",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -67680,6 +67692,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "pipeline inputs",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -68959,6 +68972,7 @@
                 "pathways_pathways",
                 "peak quantifications",
                 "peaks",
+                "pipeline inputs",
                 "plus strand modification state",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
@@ -69129,6 +69143,7 @@
                 "pathways_pathways",
                 "peak quantifications",
                 "peaks",
+                "pipeline inputs",
                 "plus strand modification state",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
@@ -69846,6 +69861,7 @@
               "image",
               "library structure seqspec",
               "model source data",
+              "pipeline parameters",
               "plate map",
               "plasmid map",
               "plasmid sequence",
@@ -70577,6 +70593,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 24",
               "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
@@ -71428,6 +71445,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 24",
               "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
@@ -73436,6 +73454,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 24",
               "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
@@ -74412,6 +74431,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 24",
               "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
@@ -74928,6 +74948,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 24",
               "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
@@ -75144,6 +75165,7 @@
               "bedpe",
               "csv",
               "gtf",
+              "tar",
               "tsv",
               "vcf"
             ]
@@ -77203,6 +77225,7 @@
               "HCR-FlowFISH screen",
               "scCRISPR screen",
               "Perturb-seq",
+              "Parse Perturb-seq",
               "CERES-seq",
               "TAP-seq",
               "Variant-EFFECTS",
@@ -78224,6 +78247,7 @@
             "type": "string",
             "enum": [
               "GENCODE 22",
+              "GENCODE 24",
               "GENCODE 28",
               "GENCODE 32",
               "GENCODE 40",
@@ -79550,6 +79574,7 @@
                 "HCR-FlowFISH screen",
                 "scCRISPR screen",
                 "Perturb-seq",
+                "Parse Perturb-seq",
                 "CERES-seq",
                 "TAP-seq",
                 "Variant-EFFECTS",
