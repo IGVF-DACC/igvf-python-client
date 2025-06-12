@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "81.1.0"
+    "version": "82.0.0"
   },
   "servers": [
     {
@@ -1528,6 +1528,7 @@
                   "complexes_terms",
                   "contact matrix",
                   "control signal",
+                  "derived barcode mapping",
                   "detected tissue",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
@@ -1550,6 +1551,8 @@
                   "filtered feature barcode matrix",
                   "fold change over control",
                   "fragments",
+                  "gene program regulators",
+                  "gene programs",
                   "gene quantifications",
                   "genes",
                   "genes_genes",
@@ -1764,6 +1767,7 @@
                   "complexes_terms",
                   "contact matrix",
                   "control signal",
+                  "derived barcode mapping",
                   "detected tissue",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
@@ -1786,6 +1790,8 @@
                   "filtered feature barcode matrix",
                   "fold change over control",
                   "fragments",
+                  "gene program regulators",
+                  "gene programs",
                   "gene quantifications",
                   "genes",
                   "genes_genes",
@@ -6390,6 +6396,7 @@
                   "inosine",
                   "m5C",
                   "m6A",
+                  "Nm",
                   "pseudouridine"
                 ],
                 "description": "The chemical modification to bases in a DNA sequence that is detected in this file."
@@ -20609,6 +20616,7 @@
                   "inosine",
                   "m5C",
                   "m6A",
+                  "Nm",
                   "pseudouridine"
                 ],
                 "description": "The chemical modification to bases in a DNA sequence that is detected in this file."
@@ -24605,6 +24613,7 @@
                   "inosine",
                   "m5C",
                   "m6A",
+                  "Nm",
                   "pseudouridine"
                 ],
                 "description": "The chemical modification to bases in a DNA sequence that is detected in this file."
@@ -35805,6 +35814,17 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
+                  "Arrayed Y2H v1",
+                  "Arrayed Y2H v2",
+                  "Arrayed Y2H v3",
+                  "Pooled Y2H v1",
+                  "Pooled Y2H v2",
+                  "Pooled Y2H v3",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
                   "Proliferation CRISPR screen",
@@ -35817,7 +35837,6 @@
                   "scCRISPR screen",
                   "Perturb-seq",
                   "Parse Perturb-seq",
-                  "CERES-seq",
                   "TAP-seq",
                   "Variant-EFFECTS",
                   "SGE",
@@ -35825,10 +35844,6 @@
                   "snmC-Seq2",
                   "snMCT-seq",
                   "snM3C-seq",
-                  "mN2H",
-                  "semi-qY2H",
-                  "Y2H",
-                  "yN2H",
                   "VAMP-seq",
                   "VAMP-seq (MultiSTEP)",
                   "Hi-C",
@@ -39306,6 +39321,67 @@
               "description": "Alternative symbols that have been used to refer to the gene."
             },
             "description": "Filter by assessed_genes.synonyms",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "associated_phenotypes.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by associated_phenotypes.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "associated_phenotypes.term_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Phenotype Term ID",
+                "pattern": "^(DOID|EFO|HP|MONDO|OBA|NTR|GO):[0-9]{2,8}|OBA:VT[0-9]{2,8}|NCIT:C[0-9]{2,8}$",
+                "description": "An ontology term identifier describing a phenotype."
+              }
+            },
+            "description": "Filter by associated_phenotypes.term_id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by associated_phenotypes.term_name",
             "style": "form",
             "explode": true
           },
@@ -44997,6 +45073,17 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
+                  "Arrayed Y2H v1",
+                  "Arrayed Y2H v2",
+                  "Arrayed Y2H v3",
+                  "Pooled Y2H v1",
+                  "Pooled Y2H v2",
+                  "Pooled Y2H v3",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
                   "Proliferation CRISPR screen",
@@ -45009,7 +45096,6 @@
                   "scCRISPR screen",
                   "Perturb-seq",
                   "Parse Perturb-seq",
-                  "CERES-seq",
                   "TAP-seq",
                   "Variant-EFFECTS",
                   "SGE",
@@ -45017,10 +45103,6 @@
                   "snmC-Seq2",
                   "snMCT-seq",
                   "snM3C-seq",
-                  "mN2H",
-                  "semi-qY2H",
-                  "Y2H",
-                  "yN2H",
                   "VAMP-seq",
                   "VAMP-seq (MultiSTEP)",
                   "Hi-C",
@@ -60380,7 +60462,7 @@
               "items": {
                 "type": "string",
                 "title": "Common Coordinate Framework Identifier",
-                "description": "HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen."
+                "description": "HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen within an organ."
               }
             },
             "description": "Filter by ccf_id",
@@ -61463,7 +61545,7 @@
               "title": "Biosamples Pooled From",
               "items": {
                 "type": "string",
-                "title": "Tissue Pooled From"
+                "title": "Tissue/Organ Pooled From"
               },
               "description": "The biosamples this biosample is pooled from."
             },
@@ -61499,7 +61581,7 @@
                   "cryopreservation",
                   "flash-freezing"
                 ],
-                "description": "The method by which the tissue was preserved: cryopreservation (slow-freeze) or flash-freezing."
+                "description": "The method by which the tissue/organ was preserved: cryopreservation (slow-freeze) or flash-freezing."
               }
             },
             "description": "Filter by preservation_method",
@@ -67439,6 +67521,7 @@
                   "complexes_terms",
                   "contact matrix",
                   "control signal",
+                  "derived barcode mapping",
                   "detected tissue",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
@@ -67461,6 +67544,8 @@
                   "filtered feature barcode matrix",
                   "fold change over control",
                   "fragments",
+                  "gene program regulators",
+                  "gene programs",
                   "gene quantifications",
                   "genes",
                   "genes_genes",
@@ -67631,6 +67716,7 @@
                   "complexes_terms",
                   "contact matrix",
                   "control signal",
+                  "derived barcode mapping",
                   "detected tissue",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
@@ -67653,6 +67739,8 @@
                   "filtered feature barcode matrix",
                   "fold change over control",
                   "fragments",
+                  "gene program regulators",
+                  "gene programs",
                   "gene quantifications",
                   "genes",
                   "genes_genes",
@@ -68911,6 +68999,7 @@
                 "complexes_terms",
                 "contact matrix",
                 "control signal",
+                "derived barcode mapping",
                 "detected tissue",
                 "differential chromatin contact quantifications",
                 "differential element quantifications",
@@ -68933,6 +69022,8 @@
                 "filtered feature barcode matrix",
                 "fold change over control",
                 "fragments",
+                "gene program regulators",
+                "gene programs",
                 "gene quantifications",
                 "genes",
                 "genes_genes",
@@ -69082,6 +69173,7 @@
                 "complexes_terms",
                 "contact matrix",
                 "control signal",
+                "derived barcode mapping",
                 "detected tissue",
                 "differential chromatin contact quantifications",
                 "differential element quantifications",
@@ -69104,6 +69196,8 @@
                 "filtered feature barcode matrix",
                 "fold change over control",
                 "fragments",
+                "gene program regulators",
+                "gene programs",
                 "gene quantifications",
                 "genes",
                 "genes_genes",
@@ -70568,6 +70662,7 @@
                 "inosine",
                 "m5C",
                 "m6A",
+                "Nm",
                 "pseudouridine"
               ]
             }
@@ -73884,6 +73979,7 @@
                 "inosine",
                 "m5C",
                 "m6A",
+                "Nm",
                 "pseudouridine"
               ]
             }
@@ -74881,6 +74977,7 @@
                 "inosine",
                 "m5C",
                 "m6A",
+                "Nm",
                 "pseudouridine"
               ]
             }
@@ -77214,6 +77311,17 @@
               "Cell painting",
               "Variant painting via fluorescence",
               "Variant painting via immunostaining",
+              "Arrayed Y2H v1",
+              "Arrayed Y2H v2",
+              "Arrayed Y2H v3",
+              "Pooled Y2H v1",
+              "Pooled Y2H v2",
+              "Pooled Y2H v3",
+              "Arrayed semi-qY2H v1",
+              "Arrayed semi-qY2H v2",
+              "Arrayed semi-qY2H v3",
+              "Arrayed yN2H",
+              "Arrayed mN2H",
               "smFISH",
               "MERFISH",
               "Proliferation CRISPR screen",
@@ -77226,7 +77334,6 @@
               "scCRISPR screen",
               "Perturb-seq",
               "Parse Perturb-seq",
-              "CERES-seq",
               "TAP-seq",
               "Variant-EFFECTS",
               "SGE",
@@ -77234,10 +77341,6 @@
               "snmC-Seq2",
               "snMCT-seq",
               "snM3C-seq",
-              "mN2H",
-              "semi-qY2H",
-              "Y2H",
-              "yN2H",
               "VAMP-seq",
               "VAMP-seq (MultiSTEP)",
               "Hi-C",
@@ -78142,6 +78245,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Gene",
+              "type": "string"
+            }
+          },
+          "associated_phenotypes": {
+            "title": "Associated Phenotype Terms",
+            "description": "Ontological terms for diseases or phenotypes associated with this prediction set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Associated Phenotype",
               "type": "string"
             }
           },
@@ -79563,6 +79676,17 @@
                 "Cell painting",
                 "Variant painting via fluorescence",
                 "Variant painting via immunostaining",
+                "Arrayed Y2H v1",
+                "Arrayed Y2H v2",
+                "Arrayed Y2H v3",
+                "Pooled Y2H v1",
+                "Pooled Y2H v2",
+                "Pooled Y2H v3",
+                "Arrayed semi-qY2H v1",
+                "Arrayed semi-qY2H v2",
+                "Arrayed semi-qY2H v3",
+                "Arrayed yN2H",
+                "Arrayed mN2H",
                 "smFISH",
                 "MERFISH",
                 "Proliferation CRISPR screen",
@@ -79575,7 +79699,6 @@
                 "scCRISPR screen",
                 "Perturb-seq",
                 "Parse Perturb-seq",
-                "CERES-seq",
                 "TAP-seq",
                 "Variant-EFFECTS",
                 "SGE",
@@ -79583,10 +79706,6 @@
                 "snmC-Seq2",
                 "snMCT-seq",
                 "snM3C-seq",
-                "mN2H",
-                "semi-qY2H",
-                "Y2H",
-                "yN2H",
                 "VAMP-seq",
                 "VAMP-seq (MultiSTEP)",
                 "Hi-C",
@@ -84551,7 +84670,7 @@
         }
       },
       "Tissue": {
-        "title": "Tissue",
+        "title": "Tissue/Organ",
         "description": "A biosample that is directly harvested from a donor, typically a dissection from an organ.",
         "type": "object",
         "additionalProperties": false,
@@ -84806,7 +84925,7 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Tissue Pooled From",
+              "title": "Tissue/Organ Pooled From",
               "type": "string"
             }
           },
@@ -85004,12 +85123,12 @@
           },
           "ccf_id": {
             "title": "Common Coordinate Framework Identifier",
-            "description": "HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen.",
+            "description": "HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen within an organ.",
             "type": "string"
           },
           "preservation_method": {
             "title": "Preservation Method",
-            "description": "The method by which the tissue was preserved: cryopreservation (slow-freeze) or flash-freezing.",
+            "description": "The method by which the tissue/organ was preserved: cryopreservation (slow-freeze) or flash-freezing.",
             "type": "string",
             "enum": [
               "cryopreservation",
