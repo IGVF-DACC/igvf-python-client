@@ -12,7 +12,6 @@
     RodentDonor = 'RodentDonor'
     AlignmentFile = 'AlignmentFile'
     ConfigurationFile = 'ConfigurationFile'
-    GenomeBrowserAnnotationFile = 'GenomeBrowserAnnotationFile'
     ImageFile = 'ImageFile'
     IndexFile = 'IndexFile'
     MatrixFile = 'MatrixFile'

@@ -41,8 +41,6 @@ docs/Gene.md
 docs/GeneLocation.md
 docs/GeneLocation1.md
 docs/GeneResults.md
-docs/GenomeBrowserAnnotationFile.md
-docs/GenomeBrowserAnnotationFileResults.md
 docs/HumanDonor.md
 docs/HumanDonorResults.md
 docs/IgvfApi.md
@@ -191,8 +189,6 @@ igvf_client/models/gene.py
 igvf_client/models/gene_location.py
 igvf_client/models/gene_location1.py
 igvf_client/models/gene_results.py
-igvf_client/models/genome_browser_annotation_file.py
-igvf_client/models/genome_browser_annotation_file_results.py
 igvf_client/models/human_donor.py
 igvf_client/models/human_donor_results.py
 igvf_client/models/image.py

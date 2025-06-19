@@ -22,7 +22,6 @@ Method | HTTP request | Description
 [**documents**](IgvfApi.md#documents) | **GET** /documents/@@listing | List items in the Document collection.
 [**download**](IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 [**genes**](IgvfApi.md#genes) | **GET** /genes/@@listing | List items in the Gene collection.
-[**genome_browser_annotation_files**](IgvfApi.md#genome_browser_annotation_files) | **GET** /genome-browser-annotation-files/@@listing | List items in the GenomeBrowserAnnotationFile collection.
 [**get_by_id**](IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 [**human_donors**](IgvfApi.md#human_donors) | **GET** /human-donors/@@listing | List items in the HumanDonor collection.
 [**image_files**](IgvfApi.md#image_files) | **GET** /image-files/@@listing | List items in the ImageFile collection.
@@ -1409,7 +1408,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crispr_modifications**
-> CrisprModificationResults crispr_modifications(query=query, limit=limit, sort=sort, id=id, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, aliases=aliases, award_id=award_id, award_component=award_component, biosamples_modified=biosamples_modified, cas=cas, cas_species=cas_species, creation_timestamp=creation_timestamp, description=description, documents=documents, fused_domain=fused_domain, lab_id=lab_id, lab_title=lab_title, lot_id=lot_id, modality=modality, notes=notes, preview_timestamp=preview_timestamp, product_id=product_id, release_timestamp=release_timestamp, sources=sources, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, tagged_proteins=tagged_proteins, uuid=uuid)
+> CrisprModificationResults crispr_modifications(query=query, limit=limit, sort=sort, id=id, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, aliases=aliases, award_id=award_id, award_component=award_component, biosamples_modified=biosamples_modified, cas=cas, cas_species=cas_species, creation_timestamp=creation_timestamp, description=description, documents=documents, fused_domain=fused_domain, lab_id=lab_id, lab_title=lab_title, lot_id=lot_id, modality=modality, notes=notes, preview_timestamp=preview_timestamp, product_id=product_id, release_timestamp=release_timestamp, sources=sources, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, tagged_proteins_id=tagged_proteins_id, tagged_proteins_symbol=tagged_proteins_symbol, uuid=uuid)
 
 List items in the CrisprModification collection.
 
@@ -1463,7 +1462,8 @@ Name | Type | Description  | Notes
  **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
  **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
  **summary** | **List[str]**| Filter by summary | [optional] 
- **tagged_proteins** | **List[str]**| Filter by tagged_proteins | [optional] 
+ **tagged_proteins_id** | **List[str]**| Filter by tagged_proteins.@id | [optional] 
+ **tagged_proteins_symbol** | **List[str]**| Filter by tagged_proteins.symbol | [optional] 
  **uuid** | **List[str]**| Filter by uuid | [optional] 
 
 ### Return type
@@ -1652,7 +1652,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **degron_modifications**
-> DegronModificationResults degron_modifications(query=query, limit=limit, sort=sort, id=id, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, aliases=aliases, award_id=award_id, award_component=award_component, biosamples_modified=biosamples_modified, creation_timestamp=creation_timestamp, degron_system=degron_system, description=description, documents=documents, lab_id=lab_id, lab_title=lab_title, lot_id=lot_id, modality=modality, notes=notes, preview_timestamp=preview_timestamp, product_id=product_id, release_timestamp=release_timestamp, sources=sources, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, tagged_proteins=tagged_proteins, uuid=uuid)
+> DegronModificationResults degron_modifications(query=query, limit=limit, sort=sort, id=id, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, aliases=aliases, award_id=award_id, award_component=award_component, biosamples_modified=biosamples_modified, creation_timestamp=creation_timestamp, degron_system=degron_system, description=description, documents=documents, lab_id=lab_id, lab_title=lab_title, lot_id=lot_id, modality=modality, notes=notes, preview_timestamp=preview_timestamp, product_id=product_id, release_timestamp=release_timestamp, sources=sources, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, tagged_proteins_id=tagged_proteins_id, tagged_proteins_symbol=tagged_proteins_symbol, uuid=uuid)
 
 List items in the DegronModification collection.
 
@@ -1704,7 +1704,8 @@ Name | Type | Description  | Notes
  **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
  **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
  **summary** | **List[str]**| Filter by summary | [optional] 
- **tagged_proteins** | **List[str]**| Filter by tagged_proteins | [optional] 
+ **tagged_proteins_id** | **List[str]**| Filter by tagged_proteins.@id | [optional] 
+ **tagged_proteins_symbol** | **List[str]**| Filter by tagged_proteins.symbol | [optional] 
  **uuid** | **List[str]**| Filter by uuid | [optional] 
 
 ### Return type
@@ -1910,162 +1911,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GeneResults**](GeneResults.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-**400** | Bad request |  -  |
-**404** | No results found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **genome_browser_annotation_files**
-> GenomeBrowserAnnotationFileResults genome_browser_annotation_files(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, analysis_step_version=analysis_step_version, assay_titles=assay_titles, assembly=assembly, award_id=award_id, award_component=award_component, cell_type_annotation_id=cell_type_annotation_id, cell_type_annotation_status=cell_type_annotation_status, cell_type_annotation_term_name=cell_type_annotation_term_name, checkfiles_version=checkfiles_version, collections=collections, content_md5sum=content_md5sum, content_type=content_type, creation_timestamp=creation_timestamp, dbxrefs=dbxrefs, derived_from=derived_from, derived_manually=derived_manually, description=description, documents=documents, file_format_specifications_id=file_format_specifications_id, file_format_specifications_description=file_format_specifications_description, file_format_specifications_standardized_file_format=file_format_specifications_standardized_file_format, file_format_type=file_format_type, file_set_id=file_set_id, file_set_accession=file_set_accession, file_set_assay_term_id=file_set_assay_term_id, file_set_assay_term_term_name=file_set_assay_term_term_name, file_set_controlled_access=file_set_controlled_access, file_set_data_use_limitation_summaries=file_set_data_use_limitation_summaries, file_set_file_set_type=file_set_file_set_type, file_set_samples_id=file_set_samples_id, file_set_samples_accession=file_set_samples_accession, file_set_samples_classifications=file_set_samples_classifications, file_set_samples_disease_terms_id=file_set_samples_disease_terms_id, file_set_samples_disease_terms_status=file_set_samples_disease_terms_status, file_set_samples_disease_terms_summary=file_set_samples_disease_terms_summary, file_set_samples_disease_terms_term_name=file_set_samples_disease_terms_term_name, file_set_samples_modifications_id=file_set_samples_modifications_id, file_set_samples_modifications_modality=file_set_samples_modifications_modality, file_set_samples_modifications_status=file_set_samples_modifications_status, file_set_samples_modifications_summary=file_set_samples_modifications_summary, file_set_samples_sample_terms_id=file_set_samples_sample_terms_id, file_set_samples_sample_terms_status=file_set_samples_sample_terms_status, file_set_samples_sample_terms_term_name=file_set_samples_sample_terms_term_name, file_set_samples_status=file_set_samples_status, file_set_samples_summary=file_set_samples_summary, file_set_samples_targeted_sample_term_id=file_set_samples_targeted_sample_term_id, file_set_samples_targeted_sample_term_status=file_set_samples_targeted_sample_term_status, file_set_samples_targeted_sample_term_term_name=file_set_samples_targeted_sample_term_term_name, file_set_samples_taxa=file_set_samples_taxa, file_set_samples_treatments_id=file_set_samples_treatments_id, file_set_samples_treatments_purpose=file_set_samples_treatments_purpose, file_set_samples_treatments_status=file_set_samples_treatments_status, file_set_samples_treatments_summary=file_set_samples_treatments_summary, file_set_samples_treatments_treatment_term_name=file_set_samples_treatments_treatment_term_name, file_set_status=file_set_status, file_set_summary=file_set_summary, file_set_taxa=file_set_taxa, file_size=file_size, gene_list_for=gene_list_for, href=href, input_file_for=input_file_for, integrated_in_id=integrated_in_id, integrated_in_applied_to_samples_id=integrated_in_applied_to_samples_id, integrated_in_applied_to_samples_sample_terms_id=integrated_in_applied_to_samples_sample_terms_id, integrated_in_applied_to_samples_sample_terms_summary=integrated_in_applied_to_samples_sample_terms_summary, integrated_in_applied_to_samples_sample_terms_term_name=integrated_in_applied_to_samples_sample_terms_term_name, integrated_in_applied_to_samples_summary=integrated_in_applied_to_samples_summary, integrated_in_associated_phenotypes_id=integrated_in_associated_phenotypes_id, integrated_in_associated_phenotypes_status=integrated_in_associated_phenotypes_status, integrated_in_associated_phenotypes_summary=integrated_in_associated_phenotypes_summary, integrated_in_associated_phenotypes_term_name=integrated_in_associated_phenotypes_term_name, integrated_in_file_set_type=integrated_in_file_set_type, integrated_in_small_scale_gene_list_id=integrated_in_small_scale_gene_list_id, integrated_in_small_scale_gene_list_status=integrated_in_small_scale_gene_list_status, integrated_in_small_scale_gene_list_symbol=integrated_in_small_scale_gene_list_symbol, integrated_in_status=integrated_in_status, integrated_in_summary=integrated_in_summary, lab_id=lab_id, lab_title=lab_title, loci_list_for=loci_list_for, md5sum=md5sum, notes=notes, preview_timestamp=preview_timestamp, quality_metrics=quality_metrics, release_timestamp=release_timestamp, revoke_detail=revoke_detail, s3_uri=s3_uri, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_file_name=submitted_file_name, submitter_comment=submitter_comment, summary=summary, transcriptome_annotation=transcriptome_annotation, upload_status=upload_status, uuid=uuid, validation_error_detail=validation_error_detail, workflow_id=workflow_id, workflow_name=workflow_name, workflow_uniform_pipeline=workflow_uniform_pipeline)
-
-List items in the GenomeBrowserAnnotationFile collection.
-
-Collection endpoint that accepts various query parameters to filter and sort GenomeBrowserAnnotationFile items. Supports filtering on fields within GenomeBrowserAnnotationFile items.
-
-### Example
-
-```python
-from igvf_client import IgvfApi
-
-api = IgvfApi()
-
-api.genome_browser_annotation_files(**parameters) # List items in the GenomeBrowserAnnotationFile collection. 
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **str**| Query string for searching. | [optional] 
- **limit** | **Limit**| Maximum number of results to return. Default is 25. Use &#39;all&#39; for all results. | [optional] 
- **sort** | **List[str]**| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **id** | **List[str]**| Filter by @id | [optional] 
- **accession** | **List[str]**| Filter by accession | [optional] 
- **aliases** | **List[str]**| Filter by aliases | [optional] 
- **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
- **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
- **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
- **assembly** | **List[str]**| Filter by assembly | [optional] 
- **award_id** | **List[str]**| Filter by award.@id | [optional] 
- **award_component** | **List[str]**| Filter by award.component | [optional] 
- **cell_type_annotation_id** | **List[str]**| Filter by cell_type_annotation.@id | [optional] 
- **cell_type_annotation_status** | **List[str]**| Filter by cell_type_annotation.status | [optional] 
- **cell_type_annotation_term_name** | **List[str]**| Filter by cell_type_annotation.term_name | [optional] 
- **checkfiles_version** | **List[str]**| Filter by checkfiles_version | [optional] 
- **collections** | **List[str]**| Filter by collections | [optional] 
- **content_md5sum** | **List[str]**| Filter by content_md5sum | [optional] 
- **content_type** | **List[str]**| Filter by content_type | [optional] 
- **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
- **dbxrefs** | **List[str]**| Filter by dbxrefs | [optional] 
- **derived_from** | **List[str]**| Filter by derived_from | [optional] 
- **derived_manually** | **List[bool]**| Filter by derived_manually | [optional] 
- **description** | **List[str]**| Filter by description | [optional] 
- **documents** | **List[str]**| Filter by documents | [optional] 
- **file_format_specifications_id** | **List[str]**| Filter by file_format_specifications.@id | [optional] 
- **file_format_specifications_description** | **List[str]**| Filter by file_format_specifications.description | [optional] 
- **file_format_specifications_standardized_file_format** | **List[bool]**| Filter by file_format_specifications.standardized_file_format | [optional] 
- **file_format_type** | **List[str]**| Filter by file_format_type | [optional] 
- **file_set_id** | **List[str]**| Filter by file_set.@id | [optional] 
- **file_set_accession** | **List[str]**| Filter by file_set.accession | [optional] 
- **file_set_assay_term_id** | **List[str]**| Filter by file_set.assay_term.@id | [optional] 
- **file_set_assay_term_term_name** | **List[str]**| Filter by file_set.assay_term.term_name | [optional] 
- **file_set_controlled_access** | **List[bool]**| Filter by file_set.controlled_access | [optional] 
- **file_set_data_use_limitation_summaries** | **List[str]**| Filter by file_set.data_use_limitation_summaries | [optional] 
- **file_set_file_set_type** | **List[str]**| Filter by file_set.file_set_type | [optional] 
- **file_set_samples_id** | **List[str]**| Filter by file_set.samples.@id | [optional] 
- **file_set_samples_accession** | **List[str]**| Filter by file_set.samples.accession | [optional] 
- **file_set_samples_classifications** | **List[str]**| Filter by file_set.samples.classifications | [optional] 
- **file_set_samples_disease_terms_id** | **List[str]**| Filter by file_set.samples.disease_terms.@id | [optional] 
- **file_set_samples_disease_terms_status** | **List[str]**| Filter by file_set.samples.disease_terms.status | [optional] 
- **file_set_samples_disease_terms_summary** | **List[str]**| Filter by file_set.samples.disease_terms.summary | [optional] 
- **file_set_samples_disease_terms_term_name** | **List[str]**| Filter by file_set.samples.disease_terms.term_name | [optional] 
- **file_set_samples_modifications_id** | **List[str]**| Filter by file_set.samples.modifications.@id | [optional] 
- **file_set_samples_modifications_modality** | **List[str]**| Filter by file_set.samples.modifications.modality | [optional] 
- **file_set_samples_modifications_status** | **List[str]**| Filter by file_set.samples.modifications.status | [optional] 
- **file_set_samples_modifications_summary** | **List[str]**| Filter by file_set.samples.modifications.summary | [optional] 
- **file_set_samples_sample_terms_id** | **List[str]**| Filter by file_set.samples.sample_terms.@id | [optional] 
- **file_set_samples_sample_terms_status** | **List[str]**| Filter by file_set.samples.sample_terms.status | [optional] 
- **file_set_samples_sample_terms_term_name** | **List[str]**| Filter by file_set.samples.sample_terms.term_name | [optional] 
- **file_set_samples_status** | **List[str]**| Filter by file_set.samples.status | [optional] 
- **file_set_samples_summary** | **List[str]**| Filter by file_set.samples.summary | [optional] 
- **file_set_samples_targeted_sample_term_id** | **List[str]**| Filter by file_set.samples.targeted_sample_term.@id | [optional] 
- **file_set_samples_targeted_sample_term_status** | **List[str]**| Filter by file_set.samples.targeted_sample_term.status | [optional] 
- **file_set_samples_targeted_sample_term_term_name** | **List[str]**| Filter by file_set.samples.targeted_sample_term.term_name | [optional] 
- **file_set_samples_taxa** | **List[str]**| Filter by file_set.samples.taxa | [optional] 
- **file_set_samples_treatments_id** | **List[str]**| Filter by file_set.samples.treatments.@id | [optional] 
- **file_set_samples_treatments_purpose** | **List[str]**| Filter by file_set.samples.treatments.purpose | [optional] 
- **file_set_samples_treatments_status** | **List[str]**| Filter by file_set.samples.treatments.status | [optional] 
- **file_set_samples_treatments_summary** | **List[str]**| Filter by file_set.samples.treatments.summary | [optional] 
- **file_set_samples_treatments_treatment_term_name** | **List[str]**| Filter by file_set.samples.treatments.treatment_term_name | [optional] 
- **file_set_status** | **List[str]**| Filter by file_set.status | [optional] 
- **file_set_summary** | **List[str]**| Filter by file_set.summary | [optional] 
- **file_set_taxa** | **List[str]**| Filter by file_set.taxa | [optional] 
- **file_size** | **List[int]**| Filter by file_size | [optional] 
- **gene_list_for** | **List[str]**| Filter by gene_list_for | [optional] 
- **href** | **List[str]**| Filter by href | [optional] 
- **input_file_for** | **List[str]**| Filter by input_file_for | [optional] 
- **integrated_in_id** | **List[str]**| Filter by integrated_in.@id | [optional] 
- **integrated_in_applied_to_samples_id** | **List[str]**| Filter by integrated_in.applied_to_samples.@id | [optional] 
- **integrated_in_applied_to_samples_sample_terms_id** | **List[str]**| Filter by integrated_in.applied_to_samples.sample_terms.@id | [optional] 
- **integrated_in_applied_to_samples_sample_terms_summary** | **List[str]**| Filter by integrated_in.applied_to_samples.sample_terms.summary | [optional] 
- **integrated_in_applied_to_samples_sample_terms_term_name** | **List[str]**| Filter by integrated_in.applied_to_samples.sample_terms.term_name | [optional] 
- **integrated_in_applied_to_samples_summary** | **List[str]**| Filter by integrated_in.applied_to_samples.summary | [optional] 
- **integrated_in_associated_phenotypes_id** | **List[str]**| Filter by integrated_in.associated_phenotypes.@id | [optional] 
- **integrated_in_associated_phenotypes_status** | **List[str]**| Filter by integrated_in.associated_phenotypes.status | [optional] 
- **integrated_in_associated_phenotypes_summary** | **List[str]**| Filter by integrated_in.associated_phenotypes.summary | [optional] 
- **integrated_in_associated_phenotypes_term_name** | **List[str]**| Filter by integrated_in.associated_phenotypes.term_name | [optional] 
- **integrated_in_file_set_type** | **List[str]**| Filter by integrated_in.file_set_type | [optional] 
- **integrated_in_small_scale_gene_list_id** | **List[str]**| Filter by integrated_in.small_scale_gene_list.@id | [optional] 
- **integrated_in_small_scale_gene_list_status** | **List[str]**| Filter by integrated_in.small_scale_gene_list.status | [optional] 
- **integrated_in_small_scale_gene_list_symbol** | **List[str]**| Filter by integrated_in.small_scale_gene_list.symbol | [optional] 
- **integrated_in_status** | **List[str]**| Filter by integrated_in.status | [optional] 
- **integrated_in_summary** | **List[str]**| Filter by integrated_in.summary | [optional] 
- **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
- **lab_title** | **List[str]**| Filter by lab.title | [optional] 
- **loci_list_for** | **List[str]**| Filter by loci_list_for | [optional] 
- **md5sum** | **List[str]**| Filter by md5sum | [optional] 
- **notes** | **List[str]**| Filter by notes | [optional] 
- **preview_timestamp** | **List[str]**| Filter by preview_timestamp | [optional] 
- **quality_metrics** | **List[str]**| Filter by quality_metrics | [optional] 
- **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
- **revoke_detail** | **List[str]**| Filter by revoke_detail | [optional] 
- **s3_uri** | **List[str]**| Filter by s3_uri | [optional] 
- **status** | **List[str]**| Filter by status | [optional] 
- **submitted_by_id** | **List[str]**| Filter by submitted_by.@id | [optional] 
- **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
- **submitted_file_name** | **List[str]**| Filter by submitted_file_name | [optional] 
- **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
- **summary** | **List[str]**| Filter by summary | [optional] 
- **transcriptome_annotation** | **List[str]**| Filter by transcriptome_annotation | [optional] 
- **upload_status** | **List[str]**| Filter by upload_status | [optional] 
- **uuid** | **List[str]**| Filter by uuid | [optional] 
- **validation_error_detail** | **List[str]**| Filter by validation_error_detail | [optional] 
- **workflow_id** | **List[str]**| Filter by workflow.@id | [optional] 
- **workflow_name** | **List[str]**| Filter by workflow.name | [optional] 
- **workflow_uniform_pipeline** | **List[bool]**| Filter by workflow.uniform_pipeline | [optional] 
-
-### Return type
-
-[**GenomeBrowserAnnotationFileResults**](GenomeBrowserAnnotationFileResults.md)
 
 ### Authorization
 
