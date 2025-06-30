@@ -32,7 +32,6 @@ Name | Type | Description | Notes
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets. | [optional] 
-**control_type** | **str** | The type of control this file set represents. | [optional] 
 **samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
 **donors** | **List[str]** | The donor(s) associated with this file set. | [optional] 
 **file_set_type** | **str** | The category that best describes this prediction set. | [optional] 

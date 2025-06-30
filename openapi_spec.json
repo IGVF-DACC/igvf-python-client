@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "83.0.0"
+    "version": "84.0.1"
   },
   "servers": [
     {
@@ -1535,7 +1535,7 @@
                   "edge weights",
                   "editing templates",
                   "element quantifications",
-                  "element to gene predictions",
+                  "element to gene interactions",
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
@@ -1636,7 +1636,7 @@
                   "unfiltered local differential expression",
                   "variant binding effects",
                   "variant effects",
-                  "variant functional predictions",
+                  "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
                   "variant to element mapping",
@@ -1774,7 +1774,7 @@
                   "edge weights",
                   "editing templates",
                   "element quantifications",
-                  "element to gene predictions",
+                  "element to gene interactions",
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
@@ -1875,7 +1875,7 @@
                   "unfiltered local differential expression",
                   "variant binding effects",
                   "variant effects",
-                  "variant functional predictions",
+                  "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
                   "variant to element mapping",
@@ -24907,22 +24907,6 @@
             "explode": true
           },
           {
-            "name": "control_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Control Type",
-                "enum": [],
-                "description": "The type of control this file set represents."
-              }
-            },
-            "description": "Filter by control_type",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "controlled_access",
             "in": "query",
             "schema": {
@@ -26996,22 +26980,6 @@
               }
             },
             "description": "Filter by control_for.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "control_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Control Type",
-                "enum": [],
-                "description": "The type of control this file set represents."
-              }
-            },
-            "description": "Filter by control_type",
             "style": "form",
             "explode": true
           },
@@ -29306,21 +29274,22 @@
             "explode": true
           },
           {
-            "name": "control_type",
+            "name": "control_types",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "Control Types",
               "items": {
                 "type": "string",
                 "title": "Control Type",
                 "enum": [
                   "reference transduction",
                   "non-targeting"
-                ],
-                "description": "The type of control this file set represents."
-              }
+                ]
+              },
+              "description": "The types of control this construct library set set represents."
             },
-            "description": "Filter by control_type",
+            "description": "Filter by control_types",
             "style": "form",
             "explode": true
           },
@@ -31034,22 +31003,6 @@
               }
             },
             "description": "Filter by control_for.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "control_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Control Type",
-                "enum": [],
-                "description": "The type of control this file set represents."
-              }
-            },
-            "description": "Filter by control_type",
             "style": "form",
             "explode": true
           },
@@ -33201,10 +33154,11 @@
             "explode": true
           },
           {
-            "name": "control_type",
+            "name": "control_types",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "Control Types",
               "items": {
                 "type": "string",
                 "title": "Control Type",
@@ -33215,12 +33169,13 @@
                   "non-targeting",
                   "unsorted FACS input",
                   "untransfected",
-                  "untreated"
-                ],
-                "description": "The type of control this file set represents."
-              }
+                  "untreated",
+                  "wildtype"
+                ]
+              },
+              "description": "The types of control this measurement set represents."
             },
-            "description": "Filter by control_type",
+            "description": "Filter by control_types",
             "style": "form",
             "explode": true
           },
@@ -35578,22 +35533,6 @@
             "explode": true
           },
           {
-            "name": "control_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Control Type",
-                "enum": [],
-                "description": "The type of control this file set represents."
-              }
-            },
-            "description": "Filter by control_type",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "controlled_access",
             "in": "query",
             "schema": {
@@ -37860,22 +37799,6 @@
             "explode": true
           },
           {
-            "name": "control_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Control Type",
-                "enum": [],
-                "description": "The type of control this file set represents."
-              }
-            },
-            "description": "Filter by control_type",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "controlled_access",
             "in": "query",
             "schema": {
@@ -38092,7 +38015,6 @@
                   "activity level",
                   "binding effect",
                   "functional effect",
-                  "pathogenicity",
                   "protein stability"
                 ],
                 "description": "The category that best describes this prediction set."
@@ -65763,7 +65685,7 @@
                   "edge weights",
                   "editing templates",
                   "element quantifications",
-                  "element to gene predictions",
+                  "element to gene interactions",
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
@@ -65864,7 +65786,7 @@
                   "unfiltered local differential expression",
                   "variant binding effects",
                   "variant effects",
-                  "variant functional predictions",
+                  "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
                   "variant to element mapping",
@@ -65958,7 +65880,7 @@
                   "edge weights",
                   "editing templates",
                   "element quantifications",
-                  "element to gene predictions",
+                  "element to gene interactions",
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
@@ -66059,7 +65981,7 @@
                   "unfiltered local differential expression",
                   "variant binding effects",
                   "variant effects",
-                  "variant functional predictions",
+                  "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
                   "variant to element mapping",
@@ -67239,7 +67161,7 @@
                 "edge weights",
                 "editing templates",
                 "element quantifications",
-                "element to gene predictions",
+                "element to gene interactions",
                 "elements reference",
                 "elements_genes",
                 "exclusion list",
@@ -67340,7 +67262,7 @@
                 "unfiltered local differential expression",
                 "variant binding effects",
                 "variant effects",
-                "variant functional predictions",
+                "variant functions",
                 "variant localization impacts",
                 "variant pathogenicity",
                 "variant to element mapping",
@@ -67413,7 +67335,7 @@
                 "edge weights",
                 "editing templates",
                 "element quantifications",
-                "element to gene predictions",
+                "element to gene interactions",
                 "elements reference",
                 "elements_genes",
                 "exclusion list",
@@ -67514,7 +67436,7 @@
                 "unfiltered local differential expression",
                 "variant binding effects",
                 "variant effects",
-                "variant functional predictions",
+                "variant functions",
                 "variant localization impacts",
                 "variant pathogenicity",
                 "variant to element mapping",
@@ -73446,12 +73368,6 @@
               "pattern": "^GEO:GSE\\d+$"
             }
           },
-          "control_type": {
-            "title": "Control Type",
-            "description": "The type of control this file set represents.",
-            "type": "string",
-            "enum": []
-          },
           "samples": {
             "title": "Samples",
             "description": "Samples associated with this analysis set.",
@@ -73804,12 +73720,6 @@
               "type": "string",
               "pattern": "^GEO:GSE\\d+$"
             }
-          },
-          "control_type": {
-            "title": "Control Type",
-            "description": "The type of control this file set represents.",
-            "type": "string",
-            "enum": []
           },
           "samples": {
             "title": "Samples",
@@ -74216,14 +74126,19 @@
               "editing template library"
             ]
           },
-          "control_type": {
-            "title": "Control Type",
-            "description": "The type of control this file set represents.",
-            "type": "string",
-            "enum": [
-              "reference transduction",
-              "non-targeting"
-            ]
+          "control_types": {
+            "title": "Control Types",
+            "description": "The types of control this construct library set set represents.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Control Type",
+              "type": "string",
+              "enum": [
+                "reference transduction",
+                "non-targeting"
+              ]
+            }
           },
           "scope": {
             "title": "Library Construct Scope",
@@ -74687,12 +74602,6 @@
               "pattern": "^GEO:GSE\\d+$"
             }
           },
-          "control_type": {
-            "title": "Control Type",
-            "description": "The type of control this file set represents.",
-            "type": "string",
-            "enum": []
-          },
           "samples": {
             "title": "Samples",
             "description": "The sample(s) associated with this file set.",
@@ -75019,20 +74928,6 @@
               "pattern": "^GEO:GSE\\d+$"
             }
           },
-          "control_type": {
-            "title": "Control Type",
-            "description": "The type of control this file set represents.",
-            "type": "string",
-            "enum": [
-              "baseline",
-              "reference transduction",
-              "low FACS signal",
-              "non-targeting",
-              "unsorted FACS input",
-              "untransfected",
-              "untreated"
-            ]
-          },
           "samples": {
             "title": "Samples",
             "description": "The sample(s) associated with this file set.",
@@ -75165,6 +75060,26 @@
             "description": "The number of datasets included in the multiome experiment this measurement set is a part of.",
             "type": "integer",
             "minimum": 2
+          },
+          "control_types": {
+            "title": "Control Types",
+            "description": "The types of control this measurement set represents.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Control Type",
+              "type": "string",
+              "enum": [
+                "baseline",
+                "reference transduction",
+                "low FACS signal",
+                "non-targeting",
+                "unsorted FACS input",
+                "untransfected",
+                "untreated",
+                "wildtype"
+              ]
+            }
           },
           "sequencing_library_types": {
             "title": "Sequencing Library Types",
@@ -75551,12 +75466,6 @@
               "type": "string",
               "pattern": "^GEO:GSE\\d+$"
             }
-          },
-          "control_type": {
-            "title": "Control Type",
-            "description": "The type of control this file set represents.",
-            "type": "string",
-            "enum": []
           },
           "samples": {
             "title": "Samples",
@@ -75995,12 +75904,6 @@
               "pattern": "^GEO:GSE\\d+$"
             }
           },
-          "control_type": {
-            "title": "Control Type",
-            "description": "The type of control this file set represents.",
-            "type": "string",
-            "enum": []
-          },
           "samples": {
             "title": "Samples",
             "description": "The sample(s) associated with this file set.",
@@ -76031,7 +75934,6 @@
               "activity level",
               "binding effect",
               "functional effect",
-              "pathogenicity",
               "protein stability"
             ]
           },
