@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "84.0.1"
+    "version": "85.0.0"
   },
   "servers": [
     {
@@ -13340,6 +13340,31 @@
             "explode": true
           },
           {
+            "name": "assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly",
+                "enum": [
+                  "GRCh38",
+                  "hg19",
+                  "Cast - GRCm39",
+                  "GRCm39",
+                  "mm10",
+                  "GRCh38, mm10",
+                  "custom",
+                  "Mixed genome assemblies"
+                ],
+                "description": "The assembly associated with the matrix file."
+              }
+            },
+            "description": "Filter by assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -14776,6 +14801,45 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "enum": [
+                  "GENCODE 22",
+                  "GENCODE 24",
+                  "GENCODE 28",
+                  "GENCODE 32",
+                  "GENCODE 40",
+                  "GENCODE 41",
+                  "GENCODE 42",
+                  "GENCODE 43",
+                  "GENCODE 44",
+                  "GENCODE 45",
+                  "GENCODE 47",
+                  "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
+                  "GENCODE M30",
+                  "GENCODE M31",
+                  "GENCODE M32",
+                  "GENCODE M33",
+                  "GENCODE M34",
+                  "GENCODE M36",
+                  "GENCODE 32, GENCODE M23",
+                  "Mixed transcriptome annotations"
+                ],
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -25216,8 +25280,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly",
-                "description": "Genome assembly applicable for the tabular data."
+                "title": "Genome Assembly"
               }
             },
             "description": "Filter by files.assembly",
@@ -26378,6 +26441,35 @@
             "explode": true
           },
           {
+            "name": "targeted_genes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by targeted_genes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "targeted_genes.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by targeted_genes.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "uuid",
             "in": "query",
             "schema": {
@@ -27266,8 +27358,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly",
-                "description": "Genome assembly applicable for the tabular data."
+                "title": "Genome Assembly"
               }
             },
             "description": "Filter by files.assembly",
@@ -31293,8 +31384,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly",
-                "description": "Genome assembly applicable for the tabular data."
+                "title": "Genome Assembly"
               }
             },
             "description": "Filter by files.assembly",
@@ -33486,8 +33576,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly",
-                "description": "Genome assembly applicable for the tabular data."
+                "title": "Genome Assembly"
               }
             },
             "description": "Filter by files.assembly",
@@ -33925,6 +34014,7 @@
                   "snRNA-seq",
                   "scNT-seq",
                   "scNT-seq2",
+                  "scNT-seq3",
                   "scMultiome-NT-seq",
                   "Parse SPLiT-seq",
                   "ATAC-seq",
@@ -33937,8 +34027,7 @@
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10X ATAC with Scale pre-indexing",
-                  "10X RNA with Scale pre-indexing",
+                  "10x with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -35843,8 +35932,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly",
-                "description": "Genome assembly applicable for the tabular data."
+                "title": "Genome Assembly"
               }
             },
             "description": "Filter by files.assembly",
@@ -38078,8 +38166,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Genome Assembly",
-                "description": "Genome assembly applicable for the tabular data."
+                "title": "Genome Assembly"
               }
             },
             "description": "Filter by files.assembly",
@@ -43180,6 +43267,7 @@
                   "snRNA-seq",
                   "scNT-seq",
                   "scNT-seq2",
+                  "scNT-seq3",
                   "scMultiome-NT-seq",
                   "Parse SPLiT-seq",
                   "ATAC-seq",
@@ -43192,8 +43280,7 @@
                   "DOGMA-seq",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10X ATAC with Scale pre-indexing",
-                  "10X RNA with Scale pre-indexing",
+                  "10x with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -70809,6 +70896,50 @@
             "title": "Content Summary",
             "type": "string",
             "description": "A summary of the data in the matrix file."
+          },
+          "transcriptome_annotation": {
+            "title": "Transcriptome Annotation",
+            "type": "string",
+            "description": "The annotation and version of the reference resource.",
+            "enum": [
+              "GENCODE 22",
+              "GENCODE 24",
+              "GENCODE 28",
+              "GENCODE 32",
+              "GENCODE 40",
+              "GENCODE 41",
+              "GENCODE 42",
+              "GENCODE 43",
+              "GENCODE 44",
+              "GENCODE 45",
+              "GENCODE 47",
+              "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
+              "GENCODE M30",
+              "GENCODE M31",
+              "GENCODE M32",
+              "GENCODE M33",
+              "GENCODE M34",
+              "GENCODE M36",
+              "GENCODE 32, GENCODE M23",
+              "Mixed transcriptome annotations"
+            ]
+          },
+          "assembly": {
+            "title": "Genome Assembly",
+            "type": "string",
+            "description": "The assembly associated with the matrix file.",
+            "enum": [
+              "GRCh38",
+              "hg19",
+              "Cast - GRCm39",
+              "GRCm39",
+              "mm10",
+              "GRCh38, mm10",
+              "custom",
+              "Mixed genome assemblies"
+            ]
           }
         }
       },
@@ -72988,6 +73119,7 @@
             "enum": [
               "bed",
               "bedpe",
+              "bigBed",
               "csv",
               "gtf",
               "tar",
@@ -73535,6 +73667,15 @@
             "type": "array",
             "items": {
               "title": "Workflow",
+              "type": "string"
+            }
+          },
+          "targeted_genes": {
+            "title": "Targeted Genes",
+            "description": "A list of genes targeted by the input measurement sets assays.",
+            "type": "array",
+            "items": {
+              "title": "Targeted Gene",
               "type": "string"
             }
           }
@@ -74984,6 +75125,7 @@
               "snRNA-seq",
               "scNT-seq",
               "scNT-seq2",
+              "scNT-seq3",
               "scMultiome-NT-seq",
               "Parse SPLiT-seq",
               "ATAC-seq",
@@ -74996,8 +75138,7 @@
               "DOGMA-seq",
               "10x multiome",
               "10x multiome with MULTI-seq",
-              "10X ATAC with Scale pre-indexing",
-              "10X RNA with Scale pre-indexing",
+              "10x with Scale pre-indexing",
               "MULTI-seq",
               "SHARE-seq",
               "Histone ChIP-seq",
@@ -77359,6 +77500,7 @@
                 "snRNA-seq",
                 "scNT-seq",
                 "scNT-seq2",
+                "scNT-seq3",
                 "scMultiome-NT-seq",
                 "Parse SPLiT-seq",
                 "ATAC-seq",
@@ -77371,8 +77513,7 @@
                 "DOGMA-seq",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
-                "10X ATAC with Scale pre-indexing",
-                "10X RNA with Scale pre-indexing",
+                "10x with Scale pre-indexing",
                 "MULTI-seq",
                 "SHARE-seq",
                 "Histone ChIP-seq",

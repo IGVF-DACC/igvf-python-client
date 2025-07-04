@@ -57,6 +57,8 @@ Name | Type | Description | Notes
 **s3_uri** | **str** | The S3 URI of public file object. | [optional] 
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 
 **content_summary** | **str** | A summary of the data in the matrix file. | [optional] 
+**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
+**assembly** | **str** | The assembly associated with the matrix file. | [optional] 
 
 ## Example
 
