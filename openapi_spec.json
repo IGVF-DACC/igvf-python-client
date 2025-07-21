@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "86.0.0"
+    "version": "87.0.1"
   },
   "servers": [
     {
@@ -70697,6 +70697,7 @@
               "hdf5",
               "mtx",
               "pkl",
+              "rds",
               "Robj",
               "tar",
               "hic",
