@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "87.0.1"
+    "version": "88.0.0"
   },
   "servers": [
     {
@@ -1543,8 +1543,10 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
+                  "functional impact score",
                   "gene program regulators",
                   "gene programs",
                   "gene quantifications",
@@ -1599,6 +1601,7 @@
                   "proteins_proteins",
                   "raw feature barcode matrix",
                   "raw signal",
+                  "read count",
                   "read-depth signal",
                   "reads",
                   "reporter elements",
@@ -1782,8 +1785,10 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
+                  "functional impact score",
                   "gene program regulators",
                   "gene programs",
                   "gene quantifications",
@@ -1838,6 +1843,7 @@
                   "proteins_proteins",
                   "raw feature barcode matrix",
                   "raw signal",
+                  "read count",
                   "read-depth signal",
                   "reads",
                   "reporter elements",
@@ -6277,17 +6283,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -6311,10 +6359,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -6750,6 +6798,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -6761,6 +6867,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -7582,6 +7716,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preview_timestamp",
             "in": "query",
             "schema": {
@@ -8153,17 +8304,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -8172,10 +8365,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -8529,6 +8722,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -8540,6 +8791,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -9342,6 +9621,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
             "style": "form",
             "explode": true
           },
@@ -9862,17 +10158,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -9881,10 +10219,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -10238,6 +10576,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -10249,6 +10645,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -11055,6 +11479,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preview_timestamp",
             "in": "query",
             "schema": {
@@ -11540,17 +11981,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -11574,10 +12057,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -11961,6 +12444,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -11972,6 +12513,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -12793,6 +13362,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preview_timestamp",
             "in": "query",
             "schema": {
@@ -13308,17 +13894,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -13327,10 +13955,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -13724,6 +14352,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -13735,6 +14421,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -14556,6 +15270,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preview_timestamp",
             "in": "query",
             "schema": {
@@ -15153,17 +15884,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -15187,10 +15960,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -15607,6 +16380,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -15618,6 +16449,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -16420,6 +17279,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
             "style": "form",
             "explode": true
           },
@@ -16909,17 +17785,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -16943,10 +17861,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -17400,6 +18318,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -17411,6 +18387,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -18213,6 +19217,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
             "style": "form",
             "explode": true
           },
@@ -18772,17 +19793,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -18806,10 +19869,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -19236,6 +20299,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -19247,6 +20368,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -20173,6 +21322,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preview_timestamp",
             "in": "query",
             "schema": {
@@ -20846,17 +22012,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -20865,10 +22073,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -21306,6 +22514,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -21317,6 +22583,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -22153,6 +23447,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preview_timestamp",
             "in": "query",
             "schema": {
@@ -22729,17 +24040,59 @@
             "explode": true
           },
           {
-            "name": "analysis_step_version",
+            "name": "analysis_step_version.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Analysis Step Version",
-                "description": "The analysis step version of the file."
+                "title": "ID"
               }
             },
-            "description": "Filter by analysis_step_version",
+            "description": "Filter by analysis_step_version.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_version.summary",
             "style": "form",
             "explode": true
           },
@@ -22763,10 +24116,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay from the file set this file belongs to."
               },
               "description": "Title(s) of assay from the file set this file belongs to."
@@ -23294,6 +24647,64 @@
             "explode": true
           },
           {
+            "name": "file_set.donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by file_set.donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by file_set.donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.file_set_type",
             "in": "query",
             "schema": {
@@ -23305,6 +24716,34 @@
               }
             },
             "description": "Filter by file_set.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.lab.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.lab.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "description": "Filter by file_set.lab.title",
             "style": "form",
             "explode": true
           },
@@ -24126,6 +25565,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Assay Title",
+                "description": "Preferred assay titles from the file set this file belongs to."
+              },
+              "description": "Preferred assay titles from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preview_timestamp",
             "in": "query",
             "schema": {
@@ -24669,13 +26125,13 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title",
+                "title": "Assay Term Names",
                 "description": "Title of assay that produced data analyzed in the analysis set."
               },
-              "description": "Title(s) of assays that produced data analyzed in the analysis set."
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
             },
             "description": "Filter by assay_titles",
             "style": "form",
@@ -25700,6 +27156,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "description": "Title of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preview_timestamp",
             "in": "query",
             "schema": {
@@ -26470,6 +27943,27 @@
             "explode": true
           },
           {
+            "name": "uniform_pipeline_status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Uniform Pipeline Status",
+                "enum": [
+                  "preprocessing",
+                  "processing",
+                  "error",
+                  "completed"
+                ],
+                "description": "The status of the single cell or Perturb-seq uniform pipeline processing for this analysis set, if applicable."
+              }
+            },
+            "description": "Filter by uniform_pipeline_status",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "uuid",
             "in": "query",
             "schema": {
@@ -26768,6 +28262,22 @@
               "description": "Accessions previously assigned to objects that have been merged with this object."
             },
             "description": "Filter by alternate_accessions",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by assay_titles",
             "style": "form",
             "explode": true
           },
@@ -27671,17 +29181,96 @@
             "explode": true
           },
           {
-            "name": "measurement_sets.preferred_assay_title",
+            "name": "measurement_sets.preferred_assay_titles",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "Preferred Assay Titles",
               "items": {
                 "type": "string",
-                "title": "Preferred Assay Title",
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
-              }
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "DOGMA-seq",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Arrayed Y2H v1",
+                  "Arrayed Y2H v2",
+                  "Arrayed Y2H v3",
+                  "Pooled Y2H v1",
+                  "Pooled Y2H v2",
+                  "Pooled Y2H v3",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "TAP-seq",
+                  "Variant-EFFECTS",
+                  "SGE",
+                  "Immune-SGE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
             },
-            "description": "Filter by measurement_sets.preferred_assay_title",
+            "description": "Filter by measurement_sets.preferred_assay_titles",
             "style": "form",
             "explode": true
           },
@@ -27713,6 +29302,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Title"
+              },
+              "description": "The preferred assay titles of the measurement sets that used this auxiliary set."
+            },
+            "description": "Filter by preferred_assay_titles",
             "style": "form",
             "explode": true
           },
@@ -29100,12 +30705,12 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Assay Titles",
+              "title": "Assay Term Names",
               "items": {
                 "type": "string",
-                "title": "Assay Title"
+                "title": "Assay Term Names"
               },
-              "description": "The assay titles of the file sets that used this construct library set."
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays."
             },
             "description": "Filter by assay_titles",
             "style": "form",
@@ -30069,6 +31674,22 @@
               }
             },
             "description": "Filter by orf_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Title"
+              },
+              "description": "The preferred assay titles of the file sets that used this construct library set."
+            },
+            "description": "Filter by preferred_assay_titles",
             "style": "form",
             "explode": true
           },
@@ -32712,6 +34333,21 @@
             "explode": true
           },
           {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string"
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "auxiliary_sets.@id",
             "in": "query",
             "schema": {
@@ -34001,13 +35637,14 @@
             "explode": true
           },
           {
-            "name": "preferred_assay_title",
+            "name": "preferred_assay_titles",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "Preferred Assay Titles",
               "items": {
                 "type": "string",
-                "title": "Preferred Assay Title",
+                "title": "Preferred Assay Titles",
                 "enum": [
                   "RNA-seq",
                   "scRNA-seq",
@@ -34085,11 +35722,11 @@
                   "ONT direct WGS",
                   "Bisulfite-seq",
                   "WGS"
-                ],
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
-              }
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
             },
-            "description": "Filter by preferred_assay_title",
+            "description": "Filter by preferred_assay_titles",
             "style": "form",
             "explode": true
           },
@@ -43262,7 +44899,7 @@
               "title": "Preferred Assay Titles",
               "items": {
                 "type": "string",
-                "title": "Preferred Assay Title",
+                "title": "Preferred Assay Titles",
                 "enum": [
                   "RNA-seq",
                   "scRNA-seq",
@@ -43340,10 +44977,9 @@
                   "ONT direct WGS",
                   "Bisulfite-seq",
                   "WGS"
-                ],
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
+                ]
               },
-              "description": "The custom lab preferred labels that this assay term may be associated with."
+              "description": "The custom lab preferred label for the experiment performed."
             },
             "description": "Filter by preferred_assay_titles",
             "style": "form",
@@ -51570,21 +53206,6 @@
             "explode": true
           },
           {
-            "name": "file_sets.preferred_assay_title",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Preferred Assay Title",
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
-              }
-            },
-            "description": "Filter by file_sets.preferred_assay_title",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "file_sets.status",
             "in": "query",
             "schema": {
@@ -53751,21 +55372,6 @@
             "explode": true
           },
           {
-            "name": "file_sets.preferred_assay_title",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Preferred Assay Title",
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
-              }
-            },
-            "description": "Filter by file_sets.preferred_assay_title",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "file_sets.status",
             "in": "query",
             "schema": {
@@ -55830,21 +57436,6 @@
             "explode": true
           },
           {
-            "name": "file_sets.preferred_assay_title",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Preferred Assay Title",
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
-              }
-            },
-            "description": "Filter by file_sets.preferred_assay_title",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "file_sets.status",
             "in": "query",
             "schema": {
@@ -57596,21 +59187,6 @@
             "explode": true
           },
           {
-            "name": "file_sets.preferred_assay_title",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Preferred Assay Title",
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
-              }
-            },
-            "description": "Filter by file_sets.preferred_assay_title",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "file_sets.status",
             "in": "query",
             "schema": {
@@ -59195,21 +60771,6 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "file_sets.preferred_assay_title",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Preferred Assay Title",
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
-              }
-            },
-            "description": "Filter by file_sets.preferred_assay_title",
             "style": "form",
             "explode": true
           },
@@ -61340,21 +62901,6 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "file_sets.preferred_assay_title",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Preferred Assay Title",
-                "description": "The custom lab preferred label for the experiment performed in this measurement set."
-              }
-            },
-            "description": "Filter by file_sets.preferred_assay_title",
             "style": "form",
             "explode": true
           },
@@ -65784,8 +67330,10 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
+                  "functional impact score",
                   "gene program regulators",
                   "gene programs",
                   "gene quantifications",
@@ -65840,6 +67388,7 @@
                   "proteins_proteins",
                   "raw feature barcode matrix",
                   "raw signal",
+                  "read count",
                   "read-depth signal",
                   "reads",
                   "reporter elements",
@@ -65979,8 +67528,10 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
+                  "functional impact score",
                   "gene program regulators",
                   "gene programs",
                   "gene quantifications",
@@ -66035,6 +67586,7 @@
                   "proteins_proteins",
                   "raw feature barcode matrix",
                   "raw signal",
+                  "read count",
                   "read-depth signal",
                   "reads",
                   "reporter elements",
@@ -67260,8 +68812,10 @@
                 "feature weights",
                 "fiducial alignment",
                 "filtered feature barcode matrix",
+                "fold change of post-selection and pre-selection",
                 "fold change over control",
                 "fragments",
+                "functional impact score",
                 "gene program regulators",
                 "gene programs",
                 "gene quantifications",
@@ -67316,6 +68870,7 @@
                 "proteins_proteins",
                 "raw feature barcode matrix",
                 "raw signal",
+                "read count",
                 "read-depth signal",
                 "reads",
                 "reporter elements",
@@ -67434,8 +68989,10 @@
                 "feature weights",
                 "fiducial alignment",
                 "filtered feature barcode matrix",
+                "fold change of post-selection and pre-selection",
                 "fold change over control",
                 "fragments",
+                "functional impact score",
                 "gene program regulators",
                 "gene programs",
                 "gene quantifications",
@@ -67490,6 +69047,7 @@
                 "proteins_proteins",
                 "raw feature barcode matrix",
                 "raw signal",
+                "read count",
                 "read-depth signal",
                 "reads",
                 "reporter elements",
@@ -69311,13 +70869,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -69687,13 +71256,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -70052,13 +71632,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -70423,13 +72014,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -70867,13 +72469,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -71312,13 +72925,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -71788,13 +73412,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -72327,13 +73962,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -72781,13 +74427,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -73266,13 +74923,24 @@
             }
           },
           "assay_titles": {
-            "title": "Assay Titles",
+            "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Assay Term Names",
               "description": "Title of assay from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred assay titles from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Title",
+              "description": "Preferred assay titles from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -73552,6 +75220,17 @@
               "type": "string"
             }
           },
+          "uniform_pipeline_status": {
+            "title": "Uniform Pipeline Status",
+            "description": "The status of the single cell or Perturb-seq uniform pipeline processing for this analysis set, if applicable.",
+            "type": "string",
+            "enum": [
+              "preprocessing",
+              "processing",
+              "error",
+              "completed"
+            ]
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -73629,13 +75308,24 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
-          "assay_titles": {
-            "title": "Assay Titles",
-            "description": "Title(s) of assays that produced data analyzed in the analysis set.",
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "Preferred Assay Title(s) of assays that produced data analyzed in the analysis set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Preferred Assay Titles",
+              "description": "Title of assay that produced data analyzed in the analysis set.",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Term Names",
+            "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Term Names",
               "description": "Title of assay that produced data analyzed in the analysis set.",
               "type": "string"
             }
@@ -73992,6 +75682,26 @@
             "uniqueItems": true,
             "items": {
               "title": "Measurement Set",
+              "type": "string"
+            }
+          },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "The preferred assay titles of the measurement sets that used this auxiliary set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Title",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Term Names",
+            "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Term Names",
               "type": "string"
             }
           }
@@ -74546,13 +76256,23 @@
               "type": "string"
             }
           },
-          "assay_titles": {
-            "title": "Assay Titles",
-            "description": "The assay titles of the file sets that used this construct library set.",
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "The preferred assay titles of the file sets that used this construct library set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Assay Title",
+              "title": "Preferred Assay Title",
+              "type": "string"
+            }
+          },
+          "assay_titles": {
+            "title": "Assay Term Names",
+            "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Term Names",
               "type": "string"
             }
           }
@@ -74893,6 +76613,93 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "The custom lab preferred label for the experiment performed.",
+            "type": "array",
+            "items": {
+              "title": "Preferred Assay Titles",
+              "type": "string",
+              "enum": [
+                "RNA-seq",
+                "scRNA-seq",
+                "snRNA-seq",
+                "scNT-seq",
+                "scNT-seq2",
+                "scNT-seq3",
+                "scMultiome-NT-seq",
+                "Parse SPLiT-seq",
+                "ATAC-seq",
+                "varACCESS",
+                "ACCESS-ATAC",
+                "scATAC-seq",
+                "scACCESS-ATAC",
+                "snATAC-seq",
+                "mtscMultiome",
+                "DOGMA-seq",
+                "10x multiome",
+                "10x multiome with MULTI-seq",
+                "10x with Scale pre-indexing",
+                "MULTI-seq",
+                "SHARE-seq",
+                "Histone ChIP-seq",
+                "TF ChIP-seq",
+                "CUT&RUN",
+                "MPRA",
+                "MPRA (scQer)",
+                "electroporated MPRA",
+                "AAV-MPRA",
+                "lentiMPRA",
+                "STARR-seq",
+                "Cell painting",
+                "Variant painting via fluorescence",
+                "Variant painting via immunostaining",
+                "Arrayed Y2H v1",
+                "Arrayed Y2H v2",
+                "Arrayed Y2H v3",
+                "Pooled Y2H v1",
+                "Pooled Y2H v2",
+                "Pooled Y2H v3",
+                "Arrayed semi-qY2H v1",
+                "Arrayed semi-qY2H v2",
+                "Arrayed semi-qY2H v3",
+                "Arrayed yN2H",
+                "Arrayed mN2H",
+                "smFISH",
+                "MERFISH",
+                "Proliferation CRISPR screen",
+                "Migration CRISPR screen",
+                "CRISPR FlowFISH screen",
+                "CRISPR FACS screen",
+                "CRISPR MACS screen",
+                "CRISPR mCherry screen",
+                "HCR-FlowFISH screen",
+                "scCRISPR screen",
+                "Perturb-seq",
+                "Parse Perturb-seq",
+                "TAP-seq",
+                "Variant-EFFECTS",
+                "SGE",
+                "Immune-SGE",
+                "MIAA",
+                "snmC-Seq2",
+                "snMCT-seq",
+                "snM3C-seq",
+                "VAMP-seq",
+                "VAMP-seq (MultiSTEP)",
+                "LABEL-seq",
+                "Hi-C",
+                "HiCAR",
+                "Spatial transcriptomics",
+                "HT-recruit",
+                "ONT dRNA",
+                "ONT Fiber-seq",
+                "ONT direct WGS",
+                "Bisulfite-seq",
+                "WGS"
+              ]
+            }
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -75120,89 +76927,6 @@
               "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
             }
           },
-          "preferred_assay_title": {
-            "title": "Preferred Assay Title",
-            "description": "The custom lab preferred label for the experiment performed in this measurement set.",
-            "type": "string",
-            "enum": [
-              "RNA-seq",
-              "scRNA-seq",
-              "snRNA-seq",
-              "scNT-seq",
-              "scNT-seq2",
-              "scNT-seq3",
-              "scMultiome-NT-seq",
-              "Parse SPLiT-seq",
-              "ATAC-seq",
-              "varACCESS",
-              "ACCESS-ATAC",
-              "scATAC-seq",
-              "scACCESS-ATAC",
-              "snATAC-seq",
-              "mtscMultiome",
-              "DOGMA-seq",
-              "10x multiome",
-              "10x multiome with MULTI-seq",
-              "10x with Scale pre-indexing",
-              "MULTI-seq",
-              "SHARE-seq",
-              "Histone ChIP-seq",
-              "TF ChIP-seq",
-              "CUT&RUN",
-              "MPRA",
-              "MPRA (scQer)",
-              "electroporated MPRA",
-              "AAV-MPRA",
-              "lentiMPRA",
-              "STARR-seq",
-              "Cell painting",
-              "Variant painting via fluorescence",
-              "Variant painting via immunostaining",
-              "Arrayed Y2H v1",
-              "Arrayed Y2H v2",
-              "Arrayed Y2H v3",
-              "Pooled Y2H v1",
-              "Pooled Y2H v2",
-              "Pooled Y2H v3",
-              "Arrayed semi-qY2H v1",
-              "Arrayed semi-qY2H v2",
-              "Arrayed semi-qY2H v3",
-              "Arrayed yN2H",
-              "Arrayed mN2H",
-              "smFISH",
-              "MERFISH",
-              "Proliferation CRISPR screen",
-              "Migration CRISPR screen",
-              "CRISPR FlowFISH screen",
-              "CRISPR FACS screen",
-              "CRISPR MACS screen",
-              "CRISPR mCherry screen",
-              "HCR-FlowFISH screen",
-              "scCRISPR screen",
-              "Perturb-seq",
-              "Parse Perturb-seq",
-              "TAP-seq",
-              "Variant-EFFECTS",
-              "SGE",
-              "Immune-SGE",
-              "MIAA",
-              "snmC-Seq2",
-              "snMCT-seq",
-              "snM3C-seq",
-              "VAMP-seq",
-              "VAMP-seq (MultiSTEP)",
-              "LABEL-seq",
-              "Hi-C",
-              "HiCAR",
-              "Spatial transcriptomics",
-              "HT-recruit",
-              "ONT dRNA",
-              "ONT Fiber-seq",
-              "ONT direct WGS",
-              "Bisulfite-seq",
-              "WGS"
-            ]
-          },
           "multiome_size": {
             "title": "Multiome Size",
             "description": "The number of datasets included in the multiome experiment this measurement set is a part of.",
@@ -75405,6 +77129,14 @@
             "title": "Controlled Access",
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
+          },
+          "assay_titles": {
+            "title": "Assay Term Names",
+            "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "related_multiome_datasets": {
             "title": "Related Multiome Datasets",
@@ -77385,6 +79117,93 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "The custom lab preferred label for the experiment performed.",
+            "type": "array",
+            "items": {
+              "title": "Preferred Assay Titles",
+              "type": "string",
+              "enum": [
+                "RNA-seq",
+                "scRNA-seq",
+                "snRNA-seq",
+                "scNT-seq",
+                "scNT-seq2",
+                "scNT-seq3",
+                "scMultiome-NT-seq",
+                "Parse SPLiT-seq",
+                "ATAC-seq",
+                "varACCESS",
+                "ACCESS-ATAC",
+                "scATAC-seq",
+                "scACCESS-ATAC",
+                "snATAC-seq",
+                "mtscMultiome",
+                "DOGMA-seq",
+                "10x multiome",
+                "10x multiome with MULTI-seq",
+                "10x with Scale pre-indexing",
+                "MULTI-seq",
+                "SHARE-seq",
+                "Histone ChIP-seq",
+                "TF ChIP-seq",
+                "CUT&RUN",
+                "MPRA",
+                "MPRA (scQer)",
+                "electroporated MPRA",
+                "AAV-MPRA",
+                "lentiMPRA",
+                "STARR-seq",
+                "Cell painting",
+                "Variant painting via fluorescence",
+                "Variant painting via immunostaining",
+                "Arrayed Y2H v1",
+                "Arrayed Y2H v2",
+                "Arrayed Y2H v3",
+                "Pooled Y2H v1",
+                "Pooled Y2H v2",
+                "Pooled Y2H v3",
+                "Arrayed semi-qY2H v1",
+                "Arrayed semi-qY2H v2",
+                "Arrayed semi-qY2H v3",
+                "Arrayed yN2H",
+                "Arrayed mN2H",
+                "smFISH",
+                "MERFISH",
+                "Proliferation CRISPR screen",
+                "Migration CRISPR screen",
+                "CRISPR FlowFISH screen",
+                "CRISPR FACS screen",
+                "CRISPR MACS screen",
+                "CRISPR mCherry screen",
+                "HCR-FlowFISH screen",
+                "scCRISPR screen",
+                "Perturb-seq",
+                "Parse Perturb-seq",
+                "TAP-seq",
+                "Variant-EFFECTS",
+                "SGE",
+                "Immune-SGE",
+                "MIAA",
+                "snmC-Seq2",
+                "snMCT-seq",
+                "snM3C-seq",
+                "VAMP-seq",
+                "VAMP-seq (MultiSTEP)",
+                "LABEL-seq",
+                "Hi-C",
+                "HiCAR",
+                "Spatial transcriptomics",
+                "HT-recruit",
+                "ONT dRNA",
+                "ONT Fiber-seq",
+                "ONT direct WGS",
+                "Bisulfite-seq",
+                "WGS"
+              ]
+            }
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -77490,95 +79309,6 @@
             "items": {
               "title": "Ontology Term",
               "type": "string"
-            }
-          },
-          "preferred_assay_titles": {
-            "title": "Preferred Assay Titles",
-            "description": "The custom lab preferred labels that this assay term may be associated with.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Preferred Assay Title",
-              "description": "The custom lab preferred label for the experiment performed in this measurement set.",
-              "type": "string",
-              "enum": [
-                "RNA-seq",
-                "scRNA-seq",
-                "snRNA-seq",
-                "scNT-seq",
-                "scNT-seq2",
-                "scNT-seq3",
-                "scMultiome-NT-seq",
-                "Parse SPLiT-seq",
-                "ATAC-seq",
-                "varACCESS",
-                "ACCESS-ATAC",
-                "scATAC-seq",
-                "scACCESS-ATAC",
-                "snATAC-seq",
-                "mtscMultiome",
-                "DOGMA-seq",
-                "10x multiome",
-                "10x multiome with MULTI-seq",
-                "10x with Scale pre-indexing",
-                "MULTI-seq",
-                "SHARE-seq",
-                "Histone ChIP-seq",
-                "TF ChIP-seq",
-                "CUT&RUN",
-                "MPRA",
-                "MPRA (scQer)",
-                "electroporated MPRA",
-                "AAV-MPRA",
-                "lentiMPRA",
-                "STARR-seq",
-                "Cell painting",
-                "Variant painting via fluorescence",
-                "Variant painting via immunostaining",
-                "Arrayed Y2H v1",
-                "Arrayed Y2H v2",
-                "Arrayed Y2H v3",
-                "Pooled Y2H v1",
-                "Pooled Y2H v2",
-                "Pooled Y2H v3",
-                "Arrayed semi-qY2H v1",
-                "Arrayed semi-qY2H v2",
-                "Arrayed semi-qY2H v3",
-                "Arrayed yN2H",
-                "Arrayed mN2H",
-                "smFISH",
-                "MERFISH",
-                "Proliferation CRISPR screen",
-                "Migration CRISPR screen",
-                "CRISPR FlowFISH screen",
-                "CRISPR FACS screen",
-                "CRISPR MACS screen",
-                "CRISPR mCherry screen",
-                "HCR-FlowFISH screen",
-                "scCRISPR screen",
-                "Perturb-seq",
-                "Parse Perturb-seq",
-                "TAP-seq",
-                "Variant-EFFECTS",
-                "SGE",
-                "Immune-SGE",
-                "MIAA",
-                "snmC-Seq2",
-                "snMCT-seq",
-                "snM3C-seq",
-                "VAMP-seq",
-                "VAMP-seq (MultiSTEP)",
-                "LABEL-seq",
-                "Hi-C",
-                "HiCAR",
-                "Spatial transcriptomics",
-                "HT-recruit",
-                "ONT dRNA",
-                "ONT Fiber-seq",
-                "ONT direct WGS",
-                "Bisulfite-seq",
-                "WGS"
-              ]
             }
           },
           "@id": {

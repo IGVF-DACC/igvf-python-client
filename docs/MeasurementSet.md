@@ -6,6 +6,7 @@ Measurement set is a file set that hosts raw data files (e.g. FASTQs) resulting 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preferred_assay_titles** | **List[str]** | The custom lab preferred label for the experiment performed. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this file set. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
@@ -32,7 +33,6 @@ Name | Type | Description | Notes
 **file_set_type** | **str** | The category that best describes this measurement set. | [optional] 
 **assay_term** | **str** | The assay used to produce data in this measurement set. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for conducting the assay on Protocols.io. | [optional] 
-**preferred_assay_title** | **str** | The custom lab preferred label for the experiment performed in this measurement set. | [optional] 
 **multiome_size** | **int** | The number of datasets included in the multiome experiment this measurement set is a part of. | [optional] 
 **control_types** | **List[str]** | The types of control this measurement set represents. | [optional] 
 **sequencing_library_types** | **List[str]** | Description of the libraries sequenced in this measurement set. | [optional] 
@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **construct_library_sets** | **List[str]** | The construct library sets associated with the samples of this file set. | [optional] 
 **data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
+**assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays | [optional] 
 **related_multiome_datasets** | **List[str]** | Related datasets included in the multiome experiment this measurement set is a part of. | [optional] 
 **externally_hosted** | **bool** |  | [optional] 
 

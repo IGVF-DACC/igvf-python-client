@@ -42,6 +42,8 @@ Name | Type | Description | Notes
 **data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **measurement_sets** | **List[str]** | The measurement sets that link to this auxiliary set. | [optional] 
+**preferred_assay_titles** | **List[str]** | The preferred assay titles of the measurement sets that used this auxiliary set. | [optional] 
+**assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays | [optional] 
 
 ## Example
 
