@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "88.0.0"
+    "version": "89.0.0"
   },
   "servers": [
     {
@@ -1522,6 +1522,7 @@
                   "complexes_terms",
                   "contact matrix",
                   "control signal",
+                  "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
                   "differential chromatin contact quantifications",
@@ -1764,6 +1765,7 @@
                   "complexes_terms",
                   "contact matrix",
                   "control signal",
+                  "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
                   "differential chromatin contact quantifications",
@@ -6372,30 +6374,6 @@
             "explode": true
           },
           {
-            "name": "assembly",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Genome Assembly",
-                "enum": [
-                  "GRCh38",
-                  "hg19",
-                  "Cast - GRCm39",
-                  "GRCm39",
-                  "mm10",
-                  "GRCh38, mm10",
-                  "custom"
-                ],
-                "description": "Genome assembly applicable for the annotation data."
-              }
-            },
-            "description": "Filter by assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -7953,44 +7931,6 @@
               }
             },
             "description": "Filter by summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "transcriptome_annotation",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Transcriptome Annotation",
-                "enum": [
-                  "GENCODE 22",
-                  "GENCODE 24",
-                  "GENCODE 28",
-                  "GENCODE 32",
-                  "GENCODE 40",
-                  "GENCODE 41",
-                  "GENCODE 42",
-                  "GENCODE 43",
-                  "GENCODE 44",
-                  "GENCODE 45",
-                  "GENCODE 47",
-                  "GENCODE Cast - M32",
-                  "GENCODE M17",
-                  "GENCODE M25",
-                  "GENCODE M30",
-                  "GENCODE M31",
-                  "GENCODE M32",
-                  "GENCODE M33",
-                  "GENCODE M34",
-                  "GENCODE M36",
-                  "GENCODE 32, GENCODE M23"
-                ],
-                "description": "The annotation and version of the reference resource."
-              }
-            },
-            "description": "Filter by transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -22086,30 +22026,6 @@
             "explode": true
           },
           {
-            "name": "assembly",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Genome Assembly",
-                "enum": [
-                  "GRCh38",
-                  "hg19",
-                  "Cast - GRCm39",
-                  "GRCm39",
-                  "mm10",
-                  "GRCh38, mm10",
-                  "custom"
-                ],
-                "description": "Genome assembly applicable for the annotation data."
-              }
-            },
-            "description": "Filter by assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -23689,44 +23605,6 @@
               }
             },
             "description": "Filter by summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "transcriptome_annotation",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Transcriptome Annotation",
-                "enum": [
-                  "GENCODE 22",
-                  "GENCODE 24",
-                  "GENCODE 28",
-                  "GENCODE 32",
-                  "GENCODE 40",
-                  "GENCODE 41",
-                  "GENCODE 42",
-                  "GENCODE 43",
-                  "GENCODE 44",
-                  "GENCODE 45",
-                  "GENCODE 47",
-                  "GENCODE Cast - M32",
-                  "GENCODE M17",
-                  "GENCODE M25",
-                  "GENCODE M30",
-                  "GENCODE M31",
-                  "GENCODE M32",
-                  "GENCODE M33",
-                  "GENCODE M34",
-                  "GENCODE M36",
-                  "GENCODE 32, GENCODE M23"
-                ],
-                "description": "The annotation and version of the reference resource."
-              }
-            },
-            "description": "Filter by transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -29245,8 +29123,9 @@
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
                   "Perturb-seq",
-                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
                   "TAP-seq",
+                  "CROP-seq",
                   "Variant-EFFECTS",
                   "SGE",
                   "Immune-SGE",
@@ -35701,8 +35580,9 @@
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
                   "Perturb-seq",
-                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
                   "TAP-seq",
+                  "CROP-seq",
                   "Variant-EFFECTS",
                   "SGE",
                   "Immune-SGE",
@@ -44956,8 +44836,9 @@
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
                   "Perturb-seq",
-                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
                   "TAP-seq",
+                  "CROP-seq",
                   "Variant-EFFECTS",
                   "SGE",
                   "Immune-SGE",
@@ -67309,6 +67190,7 @@
                   "complexes_terms",
                   "contact matrix",
                   "control signal",
+                  "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
                   "differential chromatin contact quantifications",
@@ -67507,6 +67389,7 @@
                   "complexes_terms",
                   "contact matrix",
                   "control signal",
+                  "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
                   "differential chromatin contact quantifications",
@@ -68791,6 +68674,7 @@
                 "complexes_terms",
                 "contact matrix",
                 "control signal",
+                "covariance matrix",
                 "derived barcode mapping",
                 "detected tissue",
                 "differential chromatin contact quantifications",
@@ -68968,6 +68852,7 @@
                 "complexes_terms",
                 "contact matrix",
                 "control signal",
+                "covariance matrix",
                 "derived barcode mapping",
                 "detected tissue",
                 "differential chromatin contact quantifications",
@@ -70482,48 +70367,6 @@
             "title": "AnVIL URL",
             "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
             "type": "string"
-          },
-          "transcriptome_annotation": {
-            "title": "Transcriptome Annotation",
-            "description": "The annotation and version of the reference resource.",
-            "type": "string",
-            "enum": [
-              "GENCODE 22",
-              "GENCODE 24",
-              "GENCODE 28",
-              "GENCODE 32",
-              "GENCODE 40",
-              "GENCODE 41",
-              "GENCODE 42",
-              "GENCODE 43",
-              "GENCODE 44",
-              "GENCODE 45",
-              "GENCODE 47",
-              "GENCODE Cast - M32",
-              "GENCODE M17",
-              "GENCODE M25",
-              "GENCODE M30",
-              "GENCODE M31",
-              "GENCODE M32",
-              "GENCODE M33",
-              "GENCODE M34",
-              "GENCODE M36",
-              "GENCODE 32, GENCODE M23"
-            ]
-          },
-          "assembly": {
-            "title": "Genome Assembly",
-            "description": "Genome assembly applicable for the annotation data.",
-            "type": "string",
-            "enum": [
-              "GRCh38",
-              "hg19",
-              "Cast - GRCm39",
-              "GRCm39",
-              "mm10",
-              "GRCh38, mm10",
-              "custom"
-            ]
           },
           "release_timestamp": {
             "title": "Release Timestamp",
@@ -74031,48 +73874,6 @@
             "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
             "type": "string"
           },
-          "transcriptome_annotation": {
-            "title": "Transcriptome Annotation",
-            "description": "The annotation and version of the reference resource.",
-            "type": "string",
-            "enum": [
-              "GENCODE 22",
-              "GENCODE 24",
-              "GENCODE 28",
-              "GENCODE 32",
-              "GENCODE 40",
-              "GENCODE 41",
-              "GENCODE 42",
-              "GENCODE 43",
-              "GENCODE 44",
-              "GENCODE 45",
-              "GENCODE 47",
-              "GENCODE Cast - M32",
-              "GENCODE M17",
-              "GENCODE M25",
-              "GENCODE M30",
-              "GENCODE M31",
-              "GENCODE M32",
-              "GENCODE M33",
-              "GENCODE M34",
-              "GENCODE M36",
-              "GENCODE 32, GENCODE M23"
-            ]
-          },
-          "assembly": {
-            "title": "Genome Assembly",
-            "description": "Genome assembly applicable for the annotation data.",
-            "type": "string",
-            "enum": [
-              "GRCh38",
-              "hg19",
-              "Cast - GRCm39",
-              "GRCm39",
-              "mm10",
-              "GRCh38, mm10",
-              "custom"
-            ]
-          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -76676,8 +76477,9 @@
                 "HCR-FlowFISH screen",
                 "scCRISPR screen",
                 "Perturb-seq",
-                "Parse Perturb-seq",
+                "CC-Perturb-seq",
                 "TAP-seq",
+                "CROP-seq",
                 "Variant-EFFECTS",
                 "SGE",
                 "Immune-SGE",
@@ -79180,8 +78982,9 @@
                 "HCR-FlowFISH screen",
                 "scCRISPR screen",
                 "Perturb-seq",
-                "Parse Perturb-seq",
+                "CC-Perturb-seq",
                 "TAP-seq",
+                "CROP-seq",
                 "Variant-EFFECTS",
                 "SGE",
                 "Immune-SGE",

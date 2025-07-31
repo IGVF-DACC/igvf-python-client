@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
 **anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
-**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
-**assembly** | **str** | Genome assembly applicable for the annotation data. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **reference_files** | **List[str]** | Link to the reference files used to generate this file. | [optional] 
 **filtered** | **bool** | Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling. | [optional] 
