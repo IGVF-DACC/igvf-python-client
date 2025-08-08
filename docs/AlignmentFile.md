@@ -56,11 +56,13 @@ Name | Type | Description | Notes
 **quality_metrics** | **List[str]** | The quality metrics that are associated with this file. | [optional] 
 **assay_titles** | **List[str]** | Title(s) of assay from the file set this file belongs to. | [optional] 
 **preferred_assay_titles** | **List[str]** | Preferred assay titles from the file set this file belongs to. | [optional] 
-**workflow** | **str** | The workflow used to produce this file. | [optional] 
+**workflows** | **List[str]** | The workflows associated with the analysis step version used to produce this file. | [optional] 
 **href** | **str** | The download path to obtain file. | [optional] 
 **s3_uri** | **str** | The S3 URI of public file object. | [optional] 
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 
 **content_summary** | **str** | A summary of the data in the alignment file. | [optional] 
+**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
+**assembly** | **str** | The assembly associated with the alignment file. | [optional] 
 
 ## Example
 

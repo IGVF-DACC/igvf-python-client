@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "89.0.0"
+    "version": "90.0.0"
   },
   "servers": [
     {
@@ -1427,6 +1427,36 @@
             "explode": true
           },
           {
+            "name": "analysis_step_versions.software_versions.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by analysis_step_versions.status",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -1695,21 +1725,6 @@
               }
             },
             "description": "Filter by lab.title",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "description": "Full name of the analysis step."
-              }
-            },
-            "description": "Filter by name",
             "style": "form",
             "explode": true
           },
@@ -2116,66 +2131,6 @@
             "description": "Filter by uuid",
             "style": "form",
             "explode": true
-          },
-          {
-            "name": "workflow.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by workflow.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "workflow.accession",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Accession",
-                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
-              }
-            },
-            "description": "Filter by workflow.accession",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "workflow.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
-                "description": "The preferred viewable name of the workflow."
-              }
-            },
-            "description": "Filter by workflow.name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "workflow.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by workflow.status",
-            "style": "form",
-            "explode": true
           }
         ],
         "responses": {
@@ -2372,17 +2327,420 @@
             "explode": true
           },
           {
-            "name": "analysis_step.name",
+            "name": "analysis_step.analysis_step_types",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "Analysis Step Types",
               "items": {
                 "type": "string",
-                "title": "Name",
-                "description": "Full name of the analysis step."
-              }
+                "title": "Type",
+                "enum": [
+                  "alignment",
+                  "barcode correction",
+                  "barcode counting",
+                  "barcode mapping generation",
+                  "base calling",
+                  "cell to feature barcode mapping",
+                  "computational model prediction",
+                  "computational model training",
+                  "counts normalization",
+                  "custom genome assembly",
+                  "demultiplexing",
+                  "differential expression analysis",
+                  "fastq concatenation",
+                  "file format conversion",
+                  "filtering",
+                  "fragment generation",
+                  "genome index generation",
+                  "interaction calling",
+                  "matrix generation",
+                  "merging",
+                  "modification calling",
+                  "modification site annotation",
+                  "peak calling",
+                  "read trimming",
+                  "quantification",
+                  "signal generation",
+                  "signal normalization",
+                  "spatial feature detection",
+                  "transcriptome index generation",
+                  "UMI deduplication",
+                  "UMI quantification",
+                  "variant annotation"
+                ]
+              },
+              "description": "The classification of the software."
             },
-            "description": "Filter by analysis_step.name",
+            "description": "Filter by analysis_step.analysis_step_types",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step.input_content_types",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Input Content Types",
+              "items": {
+                "type": "string",
+                "title": "Input Content Type",
+                "enum": [
+                  "DNA footprint scores",
+                  "MPRA sequence designs",
+                  "Nanopore reads",
+                  "PacBio subreads",
+                  "SNP effect matrix",
+                  "TF binding scores",
+                  "alignments",
+                  "alignments with modifications",
+                  "barcode onlist",
+                  "barcode replacement",
+                  "barcode to TF overexpression mapping",
+                  "barcode to element mapping",
+                  "barcode to hashtag mapping",
+                  "barcode to sample mapping",
+                  "barcode to variant mapping",
+                  "bin paired count",
+                  "biological_context",
+                  "cell hashing barcodes",
+                  "coding variant effects",
+                  "coding_variants",
+                  "complexes",
+                  "complexes_complexes",
+                  "complexes_proteins",
+                  "complexes_terms",
+                  "contact matrix",
+                  "control signal",
+                  "covariance matrix",
+                  "derived barcode mapping",
+                  "detected tissue",
+                  "differential chromatin contact quantifications",
+                  "differential element quantifications",
+                  "differential gene expression quantifications",
+                  "differential peak quantifications",
+                  "differential transcript expression quantifications",
+                  "diseases_genes",
+                  "documentation (readme)",
+                  "drugs",
+                  "edge weights",
+                  "editing templates",
+                  "element quantifications",
+                  "element to gene interactions",
+                  "elements reference",
+                  "elements_genes",
+                  "exclusion list",
+                  "external source data",
+                  "feature weights",
+                  "fiducial alignment",
+                  "filtered feature barcode matrix",
+                  "fold change of post-selection and pre-selection",
+                  "fold change over control",
+                  "fragments",
+                  "functional impact score",
+                  "gene program regulators",
+                  "gene programs",
+                  "gene quantifications",
+                  "genes",
+                  "genes_genes",
+                  "genes_pathways",
+                  "genes_terms",
+                  "genes_transcripts",
+                  "genome index",
+                  "genome reference",
+                  "genomic_elements",
+                  "genomic_elements_genes",
+                  "genomic_elements_genes_biosamples",
+                  "genomic_elements_genes_biosamples_donors",
+                  "genomic_elements_genes_biosamples_treatments_chebi",
+                  "genomic_elements_genes_biosamples_treatments_proteins",
+                  "genomic_elements_genomic_elements",
+                  "go_terms_proteins",
+                  "graph structure",
+                  "guide RNA sequences",
+                  "guide quantifications",
+                  "high resolution tissue",
+                  "inclusion list",
+                  "index",
+                  "kallisto single cell RNAseq output",
+                  "loci",
+                  "low resolution tissue",
+                  "machine learning model features",
+                  "methylated reads",
+                  "minus strand modification state",
+                  "model parameters",
+                  "motifs",
+                  "motifs_proteins",
+                  "nascent transcriptome index",
+                  "neural network architecture",
+                  "ontology_terms",
+                  "ontology_terms_ontology_terms",
+                  "pathways",
+                  "pathways_pathways",
+                  "peak quantifications",
+                  "peaks",
+                  "pipeline inputs",
+                  "plus strand modification state",
+                  "position weight matrix",
+                  "prime editing guide RNA sequences",
+                  "primer sequences",
+                  "primers table",
+                  "primers track",
+                  "protein language model",
+                  "protein to protein interaction score",
+                  "proteins",
+                  "proteins_proteins",
+                  "raw feature barcode matrix",
+                  "raw signal",
+                  "read count",
+                  "read-depth signal",
+                  "reads",
+                  "reporter elements",
+                  "reporter experiment",
+                  "reporter experiment barcode",
+                  "reporter genomic element effects",
+                  "reporter genomic variant effects",
+                  "reporter variants",
+                  "sample barcode count matrix",
+                  "sample sort parameters",
+                  "scale factors",
+                  "seqspec",
+                  "sequence attributes",
+                  "signal",
+                  "signal of all reads",
+                  "signal of unique reads",
+                  "signal p-value",
+                  "sparse gene count matrix",
+                  "sparse peak count matrix",
+                  "sparse transcript count matrix",
+                  "spike-ins",
+                  "studies",
+                  "studies_variants",
+                  "studies_variants_phenotypes",
+                  "target transcripts",
+                  "tissue positions",
+                  "transcript quantifications",
+                  "transcriptome alignments",
+                  "transcriptome annotations",
+                  "transcriptome index",
+                  "transcriptome reference",
+                  "transcripts",
+                  "transcripts_proteins",
+                  "unfiltered global differential expression",
+                  "unfiltered local differential expression",
+                  "variant binding effects",
+                  "variant effects",
+                  "variant functions",
+                  "variant localization impacts",
+                  "variant pathogenicity",
+                  "variant to element mapping",
+                  "variants",
+                  "variants_coding_variants",
+                  "variants_diseases",
+                  "variants_diseases_genes",
+                  "variants_drugs",
+                  "variants_drugs_genes",
+                  "variants_genes",
+                  "variants_genes_terms",
+                  "variants_genomic_elements",
+                  "variants_phenotypes",
+                  "variants_phenotypes_studies",
+                  "variants_proteins",
+                  "variants_proteins_biosamples",
+                  "variants_proteins_phenotypes",
+                  "variants_proteins_terms",
+                  "variants_variants",
+                  "vector sequences"
+                ],
+                "description": "A content type used as input for the analysis step."
+              },
+              "description": "The content types used as input for the analysis step."
+            },
+            "description": "Filter by analysis_step.input_content_types",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step.output_content_types",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Output Content Types",
+              "items": {
+                "type": "string",
+                "title": "Output Content Type",
+                "enum": [
+                  "DNA footprint scores",
+                  "MPRA sequence designs",
+                  "Nanopore reads",
+                  "PacBio subreads",
+                  "SNP effect matrix",
+                  "TF binding scores",
+                  "alignments",
+                  "alignments with modifications",
+                  "barcode onlist",
+                  "barcode replacement",
+                  "barcode to TF overexpression mapping",
+                  "barcode to element mapping",
+                  "barcode to hashtag mapping",
+                  "barcode to sample mapping",
+                  "barcode to variant mapping",
+                  "bin paired count",
+                  "biological_context",
+                  "cell hashing barcodes",
+                  "coding variant effects",
+                  "coding_variants",
+                  "complexes",
+                  "complexes_complexes",
+                  "complexes_proteins",
+                  "complexes_terms",
+                  "contact matrix",
+                  "control signal",
+                  "covariance matrix",
+                  "derived barcode mapping",
+                  "detected tissue",
+                  "differential chromatin contact quantifications",
+                  "differential element quantifications",
+                  "differential gene expression quantifications",
+                  "differential peak quantifications",
+                  "differential transcript expression quantifications",
+                  "diseases_genes",
+                  "documentation (readme)",
+                  "drugs",
+                  "edge weights",
+                  "editing templates",
+                  "element quantifications",
+                  "element to gene interactions",
+                  "elements reference",
+                  "elements_genes",
+                  "exclusion list",
+                  "external source data",
+                  "feature weights",
+                  "fiducial alignment",
+                  "filtered feature barcode matrix",
+                  "fold change of post-selection and pre-selection",
+                  "fold change over control",
+                  "fragments",
+                  "functional impact score",
+                  "gene program regulators",
+                  "gene programs",
+                  "gene quantifications",
+                  "genes",
+                  "genes_genes",
+                  "genes_pathways",
+                  "genes_terms",
+                  "genes_transcripts",
+                  "genome index",
+                  "genome reference",
+                  "genomic_elements",
+                  "genomic_elements_genes",
+                  "genomic_elements_genes_biosamples",
+                  "genomic_elements_genes_biosamples_donors",
+                  "genomic_elements_genes_biosamples_treatments_chebi",
+                  "genomic_elements_genes_biosamples_treatments_proteins",
+                  "genomic_elements_genomic_elements",
+                  "go_terms_proteins",
+                  "graph structure",
+                  "guide RNA sequences",
+                  "guide quantifications",
+                  "high resolution tissue",
+                  "inclusion list",
+                  "index",
+                  "kallisto single cell RNAseq output",
+                  "loci",
+                  "low resolution tissue",
+                  "machine learning model features",
+                  "methylated reads",
+                  "minus strand modification state",
+                  "model parameters",
+                  "motifs",
+                  "motifs_proteins",
+                  "nascent transcriptome index",
+                  "neural network architecture",
+                  "ontology_terms",
+                  "ontology_terms_ontology_terms",
+                  "pathways",
+                  "pathways_pathways",
+                  "peak quantifications",
+                  "peaks",
+                  "pipeline inputs",
+                  "plus strand modification state",
+                  "position weight matrix",
+                  "prime editing guide RNA sequences",
+                  "primer sequences",
+                  "primers table",
+                  "primers track",
+                  "protein language model",
+                  "protein to protein interaction score",
+                  "proteins",
+                  "proteins_proteins",
+                  "raw feature barcode matrix",
+                  "raw signal",
+                  "read count",
+                  "read-depth signal",
+                  "reads",
+                  "reporter elements",
+                  "reporter experiment",
+                  "reporter experiment barcode",
+                  "reporter genomic element effects",
+                  "reporter genomic variant effects",
+                  "reporter variants",
+                  "sample barcode count matrix",
+                  "sample sort parameters",
+                  "scale factors",
+                  "seqspec",
+                  "sequence attributes",
+                  "signal",
+                  "signal of all reads",
+                  "signal of unique reads",
+                  "signal p-value",
+                  "sparse gene count matrix",
+                  "sparse peak count matrix",
+                  "sparse transcript count matrix",
+                  "spike-ins",
+                  "studies",
+                  "studies_variants",
+                  "studies_variants_phenotypes",
+                  "target transcripts",
+                  "tissue positions",
+                  "transcript quantifications",
+                  "transcriptome alignments",
+                  "transcriptome annotations",
+                  "transcriptome index",
+                  "transcriptome reference",
+                  "transcripts",
+                  "transcripts_proteins",
+                  "unfiltered global differential expression",
+                  "unfiltered local differential expression",
+                  "variant binding effects",
+                  "variant effects",
+                  "variant functions",
+                  "variant localization impacts",
+                  "variant pathogenicity",
+                  "variant to element mapping",
+                  "variants",
+                  "variants_coding_variants",
+                  "variants_diseases",
+                  "variants_diseases_genes",
+                  "variants_drugs",
+                  "variants_drugs_genes",
+                  "variants_genes",
+                  "variants_genes_terms",
+                  "variants_genomic_elements",
+                  "variants_phenotypes",
+                  "variants_phenotypes_studies",
+                  "variants_proteins",
+                  "variants_proteins_biosamples",
+                  "variants_proteins_phenotypes",
+                  "variants_proteins_terms",
+                  "variants_variants",
+                  "vector sequences"
+                ],
+                "description": "A content type produced as output by the analysis step."
+              },
+              "description": "The content types produced as output by the analysis step."
+            },
+            "description": "Filter by analysis_step.output_content_types",
             "style": "form",
             "explode": true
           },
@@ -2414,66 +2772,6 @@
               }
             },
             "description": "Filter by analysis_step.title",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_step.workflow.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by analysis_step.workflow.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_step.workflow.accession",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Accession",
-                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
-              }
-            },
-            "description": "Filter by analysis_step.workflow.accession",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_step.workflow.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
-                "description": "The preferred viewable name of the workflow."
-              }
-            },
-            "description": "Filter by analysis_step.workflow.name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_step.workflow.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by analysis_step.workflow.status",
             "style": "form",
             "explode": true
           },
@@ -2753,18 +3051,62 @@
             "explode": true
           },
           {
-            "name": "workflows",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Workflows",
               "items": {
                 "type": "string",
-                "title": "Workflow"
-              },
-              "description": "The workflows that this analysis step version is a part of."
+                "title": "ID"
+              }
             },
-            "description": "Filter by workflows",
+            "description": "Filter by workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflows.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by workflows.status",
             "style": "form",
             "explode": true
           }
@@ -4558,6 +4900,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -4566,11 +4909,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -5416,6 +5761,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -5424,11 +5770,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -6374,6 +6722,31 @@
             "explode": true
           },
           {
+            "name": "assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly",
+                "enum": [
+                  "GRCh38",
+                  "hg19",
+                  "Cast - GRCm39",
+                  "GRCm39",
+                  "mm10",
+                  "GRCh38, mm10",
+                  "custom",
+                  "Mixed genome assemblies"
+                ],
+                "description": "The assembly associated with the alignment file."
+              }
+            },
+            "description": "Filter by assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -6455,6 +6828,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -6463,11 +6837,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -7935,6 +8311,45 @@
             "explode": true
           },
           {
+            "name": "transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "enum": [
+                  "GENCODE 22",
+                  "GENCODE 24",
+                  "GENCODE 28",
+                  "GENCODE 32",
+                  "GENCODE 40",
+                  "GENCODE 41",
+                  "GENCODE 42",
+                  "GENCODE 43",
+                  "GENCODE 44",
+                  "GENCODE 45",
+                  "GENCODE 47",
+                  "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
+                  "GENCODE M30",
+                  "GENCODE M31",
+                  "GENCODE M32",
+                  "GENCODE M33",
+                  "GENCODE M34",
+                  "GENCODE M36",
+                  "GENCODE 32, GENCODE M23",
+                  "Mixed transcriptome annotations"
+                ],
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by transcriptome_annotation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -7987,7 +8402,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -7996,12 +8411,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -8012,12 +8427,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -8027,7 +8442,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -8371,6 +8802,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -8379,11 +8811,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -9841,7 +10275,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -9850,12 +10284,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -9866,12 +10300,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -9881,7 +10315,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -10225,6 +10675,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -10233,11 +10684,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -11664,7 +12117,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -11673,12 +12126,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -11689,12 +12142,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -11704,7 +12157,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -12078,6 +12547,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -12086,11 +12556,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -13577,7 +14049,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -13586,12 +14058,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -13602,12 +14074,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -13617,7 +14089,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -13986,6 +14474,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -13994,11 +14483,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -15567,7 +16058,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -15576,12 +16067,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -15592,12 +16083,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -15607,7 +16098,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -15984,6 +16491,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -15992,11 +16500,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -17468,7 +17978,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -17477,12 +17987,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -17493,12 +18003,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -17508,7 +18018,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -17909,6 +18435,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -17917,11 +18444,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -19476,7 +20005,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -19485,12 +20014,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -19501,12 +20030,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -19516,7 +20045,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -19903,6 +20448,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -19911,11 +20457,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -21695,7 +22243,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -21704,12 +22252,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -21720,12 +22268,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -21735,7 +22283,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -22026,6 +22590,31 @@
             "explode": true
           },
           {
+            "name": "assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly",
+                "enum": [
+                  "GRCh38",
+                  "hg19",
+                  "Cast - GRCm39",
+                  "GRCm39",
+                  "mm10",
+                  "GRCh38, mm10",
+                  "custom",
+                  "Mixed genome assemblies"
+                ],
+                "description": "The assembly associated with the signal file."
+              }
+            },
+            "description": "Filter by assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.@id",
             "in": "query",
             "schema": {
@@ -22124,6 +22713,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -22132,11 +22722,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -23609,6 +24201,45 @@
             "explode": true
           },
           {
+            "name": "transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "enum": [
+                  "GENCODE 22",
+                  "GENCODE 24",
+                  "GENCODE 28",
+                  "GENCODE 32",
+                  "GENCODE 40",
+                  "GENCODE 41",
+                  "GENCODE 42",
+                  "GENCODE 43",
+                  "GENCODE 44",
+                  "GENCODE 45",
+                  "GENCODE 47",
+                  "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
+                  "GENCODE M30",
+                  "GENCODE M31",
+                  "GENCODE M32",
+                  "GENCODE M33",
+                  "GENCODE M34",
+                  "GENCODE M36",
+                  "GENCODE 32, GENCODE M23",
+                  "Mixed transcriptome annotations"
+                ],
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by transcriptome_annotation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -23661,7 +24292,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -23670,12 +24301,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -23686,12 +24317,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -23701,7 +24332,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -24191,6 +24838,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -24199,11 +24847,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -25507,6 +26157,23 @@
             "explode": true
           },
           {
+            "name": "reference_files",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Reference Files",
+              "items": {
+                "type": "string",
+                "title": "Reference File",
+                "description": "Link to a reference file used to generate this file."
+              },
+              "description": "Link to the reference files used to generate this file."
+            },
+            "description": "Filter by reference_files",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "release_timestamp",
             "in": "query",
             "schema": {
@@ -25742,7 +26409,7 @@
             "explode": true
           },
           {
-            "name": "workflow.@id",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -25751,12 +26418,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by workflow.@id",
+            "description": "Filter by workflows.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.name",
+            "name": "workflows.name",
             "in": "query",
             "schema": {
               "type": "array",
@@ -25767,12 +26434,12 @@
                 "description": "The preferred viewable name of the workflow."
               }
             },
-            "description": "Filter by workflow.name",
+            "description": "Filter by workflows.name",
             "style": "form",
             "explode": true
           },
           {
-            "name": "workflow.uniform_pipeline",
+            "name": "workflows.uniform_pipeline",
             "in": "query",
             "schema": {
               "type": "array",
@@ -25782,7 +26449,23 @@
                 "description": "Indicates whether the pipeline is developed by the IGVF consortium."
               }
             },
-            "description": "Filter by workflow.uniform_pipeline",
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -26099,6 +26782,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -26107,11 +26791,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -27930,6 +28616,22 @@
             "description": "Filter by workflows.uniform_pipeline",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -28258,6 +28960,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -28266,11 +28969,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -29123,6 +29828,7 @@
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
                   "Perturb-seq",
+                  "Parse Perturb-seq",
                   "CC-Perturb-seq",
                   "TAP-seq",
                   "CROP-seq",
@@ -30727,6 +31433,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -30735,11 +31442,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -32392,6 +33101,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -32400,11 +33110,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -34402,6 +35114,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -34410,11 +35123,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -35580,6 +36295,7 @@
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
                   "Perturb-seq",
+                  "Parse Perturb-seq",
                   "CC-Perturb-seq",
                   "TAP-seq",
                   "CROP-seq",
@@ -36935,6 +37651,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -36943,11 +37660,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -39200,6 +39919,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -39208,11 +39928,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -41259,6 +41981,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -41267,11 +41990,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -44836,6 +45561,7 @@
                   "HCR-FlowFISH screen",
                   "scCRISPR screen",
                   "Perturb-seq",
+                  "Parse Perturb-seq",
                   "CC-Perturb-seq",
                   "TAP-seq",
                   "CROP-seq",
@@ -52604,6 +53330,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -52612,11 +53339,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -54816,6 +55545,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -54824,11 +55554,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -56865,6 +57597,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -56873,11 +57606,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -58781,6 +59516,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -58789,11 +59525,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -60204,6 +60942,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -60212,11 +60951,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -62334,6 +63075,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -62342,11 +63084,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -66941,23 +67685,7 @@
             "explode": true
           },
           {
-            "name": "analysis_step_versions",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Analysis Step Versions",
-              "items": {
-                "type": "string",
-                "title": "Analysis Step Version"
-              },
-              "description": "The available versions of the analysis steps linked to this workflow."
-            },
-            "description": "Filter by analysis_step_versions",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.@id",
+            "name": "analysis_step_versions.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -66966,12 +67694,26 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by analysis_steps.@id",
+            "description": "Filter by analysis_step_versions.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "analysis_steps.analysis_step_types",
+            "name": "analysis_step_versions.analysis_step.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_versions.analysis_step.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.analysis_step.analysis_step_types",
             "in": "query",
             "schema": {
               "type": "array",
@@ -67016,146 +67758,12 @@
               },
               "description": "The classification of the software."
             },
-            "description": "Filter by analysis_steps.analysis_step_types",
+            "description": "Filter by analysis_step_versions.analysis_step.analysis_step_types",
             "style": "form",
             "explode": true
           },
           {
-            "name": "analysis_steps.analysis_step_versions.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.software_versions.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.software_versions.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "description": "A unique identifier for a software version."
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.software_versions.software.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.software_versions.software.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "pattern": "^[a-z0-9\\-_]+",
-                "description": "Unique name of the software package; a lowercase version of the title."
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.software_versions.software.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.software_versions.software.title",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Title",
-                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
-                "description": "The preferred viewable name of the software."
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.software.title",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.software_versions.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.software_versions.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.analysis_step_versions.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by analysis_steps.analysis_step_versions.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.input_content_types",
+            "name": "analysis_step_versions.analysis_step.input_content_types",
             "in": "query",
             "schema": {
               "type": "array",
@@ -67334,27 +67942,12 @@
               },
               "description": "The content types used as input for the analysis step."
             },
-            "description": "Filter by analysis_steps.input_content_types",
+            "description": "Filter by analysis_step_versions.analysis_step.input_content_types",
             "style": "form",
             "explode": true
           },
           {
-            "name": "analysis_steps.name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Name",
-                "description": "Full name of the analysis step."
-              }
-            },
-            "description": "Filter by analysis_steps.name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "analysis_steps.output_content_types",
+            "name": "analysis_step_versions.analysis_step.output_content_types",
             "in": "query",
             "schema": {
               "type": "array",
@@ -67533,12 +68126,12 @@
               },
               "description": "The content types produced as output by the analysis step."
             },
-            "description": "Filter by analysis_steps.output_content_types",
+            "description": "Filter by analysis_step_versions.analysis_step.output_content_types",
             "style": "form",
             "explode": true
           },
           {
-            "name": "analysis_steps.status",
+            "name": "analysis_step_versions.analysis_step.status",
             "in": "query",
             "schema": {
               "type": "array",
@@ -67548,12 +68141,12 @@
                 "description": "The status of the metadata object."
               }
             },
-            "description": "Filter by analysis_steps.status",
+            "description": "Filter by analysis_step_versions.analysis_step.status",
             "style": "form",
             "explode": true
           },
           {
-            "name": "analysis_steps.title",
+            "name": "analysis_step_versions.analysis_step.title",
             "in": "query",
             "schema": {
               "type": "array",
@@ -67564,7 +68157,127 @@
                 "description": "The preferred viewable name of the analysis step, likely the same as the step label."
               }
             },
-            "description": "Filter by analysis_steps.title",
+            "description": "Filter by analysis_step_versions.analysis_step.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[a-z0-9\\-_]+",
+                "description": "Unique name of the software package; a lowercase version of the title."
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.software.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.software.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.software_versions.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by analysis_step_versions.software_versions.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by analysis_step_versions.status",
             "style": "form",
             "explode": true
           },
@@ -67607,6 +68320,7 @@
                 "type": "string",
                 "enum": [
                   "ACMG73",
+                  "Benchmark",
                   "ClinGen",
                   "ENCODE",
                   "GREGoR",
@@ -67615,11 +68329,13 @@
                   "IGVF_catalog_beta_v0.3",
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
+                  "IGVF_catalog_v1.0",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
                   "MPRAbase",
                   "StanfordFCC",
+                  "TF Perturb-seq Project",
                   "TOPMED Freeze 8",
                   "VarChAMP",
                   "Vista",
@@ -68622,11 +69338,6 @@
             "type": "string",
             "pattern": "^[a-zA-Z\\d_().,-]+(?:\\s[a-zA-Z\\d_().,-]+)*[step|Step]$"
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The computational workflow in which this analysis step belongs.",
-            "type": "string"
-          },
           "parents": {
             "title": "Parents",
             "description": "The precursor steps.",
@@ -69009,11 +69720,6 @@
             "title": "Summary",
             "type": "string",
             "description": "A summary of the object."
-          },
-          "name": {
-            "title": "Name",
-            "type": "string",
-            "description": "Full name of the analysis step."
           },
           "analysis_step_versions": {
             "title": "Analysis Step Versions",
@@ -69782,6 +70488,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -69790,11 +70497,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -70133,6 +70842,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -70141,11 +70851,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -70435,6 +71147,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -70443,11 +71156,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -70733,10 +71448,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -70757,6 +71476,50 @@
             "title": "Content Summary",
             "type": "string",
             "description": "A summary of the data in the alignment file."
+          },
+          "transcriptome_annotation": {
+            "title": "Transcriptome Annotation",
+            "type": "string",
+            "description": "The annotation and version of the reference resource.",
+            "enum": [
+              "GENCODE 22",
+              "GENCODE 24",
+              "GENCODE 28",
+              "GENCODE 32",
+              "GENCODE 40",
+              "GENCODE 41",
+              "GENCODE 42",
+              "GENCODE 43",
+              "GENCODE 44",
+              "GENCODE 45",
+              "GENCODE 47",
+              "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
+              "GENCODE M30",
+              "GENCODE M31",
+              "GENCODE M32",
+              "GENCODE M33",
+              "GENCODE M34",
+              "GENCODE M36",
+              "GENCODE 32, GENCODE M23",
+              "Mixed transcriptome annotations"
+            ]
+          },
+          "assembly": {
+            "title": "Genome Assembly",
+            "type": "string",
+            "description": "The assembly associated with the alignment file.",
+            "enum": [
+              "GRCh38",
+              "hg19",
+              "Cast - GRCm39",
+              "GRCm39",
+              "mm10",
+              "GRCh38, mm10",
+              "custom",
+              "Mixed genome assemblies"
+            ]
           }
         }
       },
@@ -70822,6 +71585,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -70830,11 +71594,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -71120,10 +71886,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -71209,6 +71979,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -71217,11 +71988,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -71496,10 +72269,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -71590,6 +72367,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -71598,11 +72376,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -71878,10 +72658,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -71998,6 +72782,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -72006,11 +72791,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -72333,10 +73120,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -72486,6 +73277,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -72494,11 +73286,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -72789,10 +73583,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -72948,6 +73746,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -72956,11 +73755,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -73276,10 +74077,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -73402,6 +74207,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -73410,11 +74216,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -73826,10 +74634,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -73941,6 +74753,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -73949,11 +74762,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -74249,10 +75064,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -74273,6 +75092,50 @@
             "title": "Content Summary",
             "type": "string",
             "description": "A summary of the data in the signal file."
+          },
+          "transcriptome_annotation": {
+            "title": "Transcriptome Annotation",
+            "type": "string",
+            "description": "The annotation and version of the reference resource.",
+            "enum": [
+              "GENCODE 22",
+              "GENCODE 24",
+              "GENCODE 28",
+              "GENCODE 32",
+              "GENCODE 40",
+              "GENCODE 41",
+              "GENCODE 42",
+              "GENCODE 43",
+              "GENCODE 44",
+              "GENCODE 45",
+              "GENCODE 47",
+              "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
+              "GENCODE M30",
+              "GENCODE M31",
+              "GENCODE M32",
+              "GENCODE M33",
+              "GENCODE M34",
+              "GENCODE M36",
+              "GENCODE 32, GENCODE M23",
+              "Mixed transcriptome annotations"
+            ]
+          },
+          "assembly": {
+            "title": "Genome Assembly",
+            "type": "string",
+            "description": "The assembly associated with the signal file.",
+            "enum": [
+              "GRCh38",
+              "hg19",
+              "Cast - GRCm39",
+              "GRCm39",
+              "mm10",
+              "GRCh38, mm10",
+              "custom",
+              "Mixed genome assemblies"
+            ]
           }
         }
       },
@@ -74389,6 +75252,17 @@
               "GENCODE 32, GENCODE M23"
             ]
           },
+          "reference_files": {
+            "title": "Reference Files",
+            "description": "Link to the reference files used to generate this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Reference File",
+              "type": "string",
+              "description": "Link to a reference file used to generate this file."
+            }
+          },
           "filtered": {
             "title": "Filtered",
             "description": "Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling.",
@@ -74440,6 +75314,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -74448,11 +75323,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -74585,6 +75462,7 @@
               "bigBed",
               "csv",
               "gtf",
+              "gvcf",
               "tar",
               "tsv",
               "vcf"
@@ -74745,10 +75623,14 @@
               "type": "string"
             }
           },
-          "workflow": {
-            "title": "Workflow",
-            "description": "The workflow used to produce this file.",
-            "type": "string"
+          "workflows": {
+            "title": "Workflows",
+            "description": "The workflows associated with the analysis step version used to produce this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           },
           "href": {
             "title": "Download URL",
@@ -74871,6 +75753,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -74879,11 +75762,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -75250,6 +76135,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -75258,11 +76144,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -75681,6 +76569,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -75689,11 +76578,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -76161,6 +77052,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -76169,11 +77061,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -76477,6 +77371,7 @@
                 "HCR-FlowFISH screen",
                 "scCRISPR screen",
                 "Perturb-seq",
+                "Parse Perturb-seq",
                 "CC-Perturb-seq",
                 "TAP-seq",
                 "CROP-seq",
@@ -76580,6 +77475,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -76588,11 +77484,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -77041,6 +77939,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -77049,11 +77948,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -77478,6 +78379,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -77486,11 +78388,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -77854,6 +78758,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -77862,11 +78767,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -78982,6 +79889,7 @@
                 "HCR-FlowFISH screen",
                 "scCRISPR screen",
                 "Perturb-seq",
+                "Parse Perturb-seq",
                 "CC-Perturb-seq",
                 "TAP-seq",
                 "CROP-seq",
@@ -82069,6 +82977,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -82077,11 +82986,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -82679,6 +83590,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -82687,11 +83599,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -83185,6 +84099,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -83193,11 +84108,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -83756,6 +84673,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -83764,11 +84682,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -84174,6 +85094,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -84182,11 +85103,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -84764,6 +85687,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -84772,11 +85696,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -86163,6 +87089,7 @@
               "type": "string",
               "enum": [
                 "ACMG73",
+                "Benchmark",
                 "ClinGen",
                 "ENCODE",
                 "GREGoR",
@@ -86171,11 +87098,13 @@
                 "IGVF_catalog_beta_v0.3",
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
+                "IGVF_catalog_v1.0",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
                 "MPRAbase",
                 "StanfordFCC",
+                "TF Perturb-seq Project",
                 "TOPMED Freeze 8",
                 "VarChAMP",
                 "Vista",
@@ -86312,16 +87241,6 @@
             "title": "Summary",
             "type": "string",
             "description": "A summary of the object."
-          },
-          "analysis_steps": {
-            "title": "Analysis Steps",
-            "type": "array",
-            "description": "The analysis steps which are part of this workflow.",
-            "uniqueItems": true,
-            "items": {
-              "title": "Analysis Step",
-              "type": "string"
-            }
           }
         }
       }

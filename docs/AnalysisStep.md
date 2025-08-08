@@ -22,14 +22,12 @@ Name | Type | Description | Notes
 **analysis_step_types** | **List[str]** | The classification of the software. | [optional] 
 **step_label** | **str** | Unique lowercased label of the analysis step that includes the relevant assays, the software used, and the purpose of the step, e.g. rampage-grit-peak-calling-step | [optional] 
 **title** | **str** | The preferred viewable name of the analysis step, likely the same as the step label. | [optional] 
-**workflow** | **str** | The computational workflow in which this analysis step belongs. | [optional] 
 **parents** | **List[str]** | The precursor steps. | [optional] 
 **input_content_types** | **List[str]** | The content types used as input for the analysis step. | [optional] 
 **output_content_types** | **List[str]** | The content types produced as output by the analysis step. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
-**name** | **str** | Full name of the analysis step. | [optional] 
 **analysis_step_versions** | **List[str]** | The analysis step versions associated with this analysis step. | [optional] 
 
 ## Example

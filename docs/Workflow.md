@@ -35,7 +35,6 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
-**analysis_steps** | **List[str]** | The analysis steps which are part of this workflow. | [optional] 
 
 ## Example
 
