@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "90.0.0"
+    "version": "91.0.0"
   },
   "servers": [
     {
@@ -1360,6 +1360,7 @@
                   "filtering",
                   "fragment generation",
                   "genome index generation",
+                  "heteroplasmy ratio determination",
                   "interaction calling",
                   "matrix generation",
                   "merging",
@@ -1558,6 +1559,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential guide quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
@@ -1608,6 +1610,7 @@
                   "machine learning model features",
                   "methylated reads",
                   "minus strand modification state",
+                  "mitochondrial DNA heteroplasmy",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -1619,7 +1622,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
-                  "pipeline inputs",
+                  "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -1786,6 +1789,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential guide quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
@@ -1836,6 +1840,7 @@
                   "machine learning model features",
                   "methylated reads",
                   "minus strand modification state",
+                  "mitochondrial DNA heteroplasmy",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -1847,7 +1852,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
-                  "pipeline inputs",
+                  "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -2353,6 +2358,7 @@
                   "filtering",
                   "fragment generation",
                   "genome index generation",
+                  "heteroplasmy ratio determination",
                   "interaction calling",
                   "matrix generation",
                   "merging",
@@ -2418,6 +2424,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential guide quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
@@ -2468,6 +2475,7 @@
                   "machine learning model features",
                   "methylated reads",
                   "minus strand modification state",
+                  "mitochondrial DNA heteroplasmy",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -2479,7 +2487,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
-                  "pipeline inputs",
+                  "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -2602,6 +2610,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential guide quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
@@ -2652,6 +2661,7 @@
                   "machine learning model features",
                   "methylated reads",
                   "minus strand modification state",
+                  "mitochondrial DNA heteroplasmy",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -2663,7 +2673,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
-                  "pipeline inputs",
+                  "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -7771,80 +7781,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -7916,6 +7852,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -9700,80 +9710,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -9845,6 +9781,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -11573,80 +11583,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -11718,6 +11654,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -13475,80 +13485,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -13620,6 +13556,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -15402,80 +15412,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -15547,6 +15483,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -15744,6 +15754,7 @@
                   "cell",
                   "fragment",
                   "gene",
+                  "mitochondrial variants",
                   "time",
                   "treatment",
                   "variant",
@@ -17434,80 +17445,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -17579,6 +17516,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -19391,80 +19402,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -19536,6 +19473,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -21444,80 +21455,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -21589,6 +21526,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -23641,80 +23652,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -23786,6 +23723,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -25794,80 +25805,6 @@
             "explode": true
           },
           {
-            "name": "integrated_in.applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "integrated_in.applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by integrated_in.applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "integrated_in.associated_phenotypes.@id",
             "in": "query",
             "schema": {
@@ -25939,6 +25876,80 @@
               }
             },
             "description": "Filter by integrated_in.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the ontology term."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by integrated_in.samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "integrated_in.samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by integrated_in.samples.summary",
             "style": "form",
             "explode": true
           },
@@ -27716,6 +27727,22 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "pipeline_parameters",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Pipeline Parameters",
+              "items": {
+                "type": "string",
+                "title": "Pipeline Parameter"
+              },
+              "description": "The document(s) or file(s) providing necessary configurations for reproducing the analysis."
+            },
+            "description": "Filter by pipeline_parameters",
             "style": "form",
             "explode": true
           },
@@ -30858,434 +30885,6 @@
             "explode": true
           },
           {
-            "name": "applied_to_samples.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by applied_to_samples.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.accession",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Accession",
-                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
-              }
-            },
-            "description": "Filter by applied_to_samples.accession",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.aliases",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Aliases",
-              "items": {
-                "type": "string",
-                "title": "Lab Alias",
-                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
-                "description": "A lab specific identifier to reference an object."
-              },
-              "description": "Lab specific identifiers to reference an object."
-            },
-            "description": "Filter by applied_to_samples.aliases",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.classifications",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Classifications",
-              "items": {
-                "type": "string",
-                "title": "Classification",
-                "enum": [
-                  "organoid",
-                  "gastruloid",
-                  "embryoid",
-                  "cell line",
-                  "differentiated cell specimen",
-                  "reprogrammed cell specimen",
-                  "pooled cell specimen"
-                ],
-                "description": "The type of the in vitro system."
-              },
-              "description": "The general category of this type of sample."
-            },
-            "description": "Filter by applied_to_samples.classifications",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.disease_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by applied_to_samples.disease_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.disease_terms.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by applied_to_samples.disease_terms.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.disease_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by applied_to_samples.disease_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.donors.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by applied_to_samples.donors.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.donors.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by applied_to_samples.donors.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.donors.taxa",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Taxa",
-                "description": "The species of the organism."
-              }
-            },
-            "description": "Filter by applied_to_samples.donors.taxa",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.modifications.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by applied_to_samples.modifications.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.modifications.modality",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Modality",
-                "description": "The purpose or intended effect of a modification."
-              }
-            },
-            "description": "Filter by applied_to_samples.modifications.modality",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.modifications.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by applied_to_samples.modifications.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.modifications.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary"
-              }
-            },
-            "description": "Filter by applied_to_samples.modifications.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.nucleic_acid_delivery",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Nucleic Acid Delivery",
-                "description": "Method of introduction of nucleic acid into the cell."
-              }
-            },
-            "description": "Filter by applied_to_samples.nucleic_acid_delivery",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by applied_to_samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.sample_terms.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by applied_to_samples.sample_terms.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by applied_to_samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by applied_to_samples.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by applied_to_samples.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.targeted_sample_term.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by applied_to_samples.targeted_sample_term.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.targeted_sample_term.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by applied_to_samples.targeted_sample_term.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.targeted_sample_term.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by applied_to_samples.targeted_sample_term.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.taxa",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Taxa",
-                "description": "The species of the organism."
-              }
-            },
-            "description": "Filter by applied_to_samples.taxa",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.treatments.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by applied_to_samples.treatments.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.treatments.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by applied_to_samples.treatments.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.treatments.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary"
-              }
-            },
-            "description": "Filter by applied_to_samples.treatments.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "applied_to_samples.treatments.treatment_term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Treatment Term Name",
-                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
-              }
-            },
-            "description": "Filter by applied_to_samples.treatments.treatment_term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "assay_titles",
             "in": "query",
             "schema": {
@@ -31654,6 +31253,112 @@
               "description": "Documents that provide additional information (not data file)."
             },
             "description": "Filter by documents",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by donors.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by donors.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by donors.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.sex",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sex",
+                "description": "Sex of the donor."
+              }
+            },
+            "description": "Filter by donors.sex",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by donors.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by donors.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "donors.taxa",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Taxa",
+                "description": "The species of the organism."
+              }
+            },
+            "description": "Filter by donors.taxa",
             "style": "form",
             "explode": true
           },
@@ -32387,6 +32092,392 @@
               }
             },
             "description": "Filter by revoke_detail",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by samples.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by samples.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.classifications",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Classifications",
+              "items": {
+                "type": "string",
+                "title": "Classification",
+                "enum": [
+                  "organoid",
+                  "gastruloid",
+                  "embryoid",
+                  "cell line",
+                  "differentiated cell specimen",
+                  "reprogrammed cell specimen",
+                  "pooled cell specimen"
+                ],
+                "description": "The type of the in vitro system."
+              },
+              "description": "The general category of this type of sample."
+            },
+            "description": "Filter by samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.disease_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.disease_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.disease_terms.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.disease_terms.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.disease_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.donors",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Donors",
+              "items": {
+                "type": "string",
+                "title": "Donor",
+                "description": "Donor."
+              },
+              "description": "Donor(s) the sample was derived from."
+            },
+            "description": "Filter by samples.donors",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.modality",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Modality",
+                "description": "The purpose or intended effect of a modification."
+              }
+            },
+            "description": "Filter by samples.modifications.modality",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.modifications.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.modifications.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by samples.modifications.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.nucleic_acid_delivery",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Nucleic Acid Delivery",
+                "description": "Method of introduction of nucleic acid into the cell."
+              }
+            },
+            "description": "Filter by samples.nucleic_acid_delivery",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.sample_terms.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.sample_terms.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by samples.sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the sample."
+              }
+            },
+            "description": "Filter by samples.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.targeted_sample_term.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.targeted_sample_term.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by samples.treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by samples.treatments.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by samples.treatments.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by samples.treatments.treatment_term_name",
             "style": "form",
             "explode": true
           },
@@ -33530,6 +33621,7 @@
                   "genome",
                   "genes",
                   "guide RNAs",
+                  "pipeline parameters",
                   "primer design",
                   "training data for predictive models",
                   "transcriptome",
@@ -67739,6 +67831,7 @@
                   "filtering",
                   "fragment generation",
                   "genome index generation",
+                  "heteroplasmy ratio determination",
                   "interaction calling",
                   "matrix generation",
                   "merging",
@@ -67804,6 +67897,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential guide quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
@@ -67854,6 +67948,7 @@
                   "machine learning model features",
                   "methylated reads",
                   "minus strand modification state",
+                  "mitochondrial DNA heteroplasmy",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -67865,7 +67960,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
-                  "pipeline inputs",
+                  "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -67988,6 +68083,7 @@
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
+                  "differential guide quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "diseases_genes",
@@ -68038,6 +68134,7 @@
                   "machine learning model features",
                   "methylated reads",
                   "minus strand modification state",
+                  "mitochondrial DNA heteroplasmy",
                   "model parameters",
                   "motifs",
                   "motifs_proteins",
@@ -68049,7 +68146,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
-                  "pipeline inputs",
+                  "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
                   "prime editing guide RNA sequences",
@@ -69308,6 +69405,7 @@
                 "filtering",
                 "fragment generation",
                 "genome index generation",
+                "heteroplasmy ratio determination",
                 "interaction calling",
                 "matrix generation",
                 "merging",
@@ -69391,6 +69489,7 @@
                 "differential chromatin contact quantifications",
                 "differential element quantifications",
                 "differential gene expression quantifications",
+                "differential guide quantifications",
                 "differential peak quantifications",
                 "differential transcript expression quantifications",
                 "diseases_genes",
@@ -69441,6 +69540,7 @@
                 "machine learning model features",
                 "methylated reads",
                 "minus strand modification state",
+                "mitochondrial DNA heteroplasmy",
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
@@ -69452,7 +69552,7 @@
                 "pathways_pathways",
                 "peak quantifications",
                 "peaks",
-                "pipeline inputs",
+                "pipeline parameters",
                 "plus strand modification state",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
@@ -69569,6 +69669,7 @@
                 "differential chromatin contact quantifications",
                 "differential element quantifications",
                 "differential gene expression quantifications",
+                "differential guide quantifications",
                 "differential peak quantifications",
                 "differential transcript expression quantifications",
                 "diseases_genes",
@@ -69619,6 +69720,7 @@
                 "machine learning model features",
                 "methylated reads",
                 "minus strand modification state",
+                "mitochondrial DNA heteroplasmy",
                 "model parameters",
                 "motifs",
                 "motifs_proteins",
@@ -69630,7 +69732,7 @@
                 "pathways_pathways",
                 "peak quantifications",
                 "peaks",
-                "pipeline inputs",
+                "pipeline parameters",
                 "plus strand modification state",
                 "position weight matrix",
                 "prime editing guide RNA sequences",
@@ -73000,6 +73102,7 @@
               "cell",
               "fragment",
               "gene",
+              "mitochondrial variants",
               "time",
               "treatment",
               "variant",
@@ -75917,6 +76020,16 @@
               "completed"
             ]
           },
+          "pipeline_parameters": {
+            "title": "Pipeline Parameters",
+            "description": "The document(s) or file(s) providing necessary configurations for reproducing the analysis.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Pipeline Parameter",
+              "type": "string"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -76928,13 +77041,13 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
-          "applied_to_samples": {
-            "title": "Applied to Samples",
-            "description": "The samples that link to this construct library set.",
+          "samples": {
+            "title": "Samples",
+            "description": "The samples this construct library set was applied to.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Applied to Sample",
+              "title": "Sample",
               "type": "string"
             }
           },
@@ -76965,6 +77078,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Assay Term Names",
+              "type": "string"
+            }
+          },
+          "donors": {
+            "title": "Donors",
+            "description": "The donors of the samples associated with this auxiliary set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Donor",
+              "description": "Donor of a sample associated with this auxiliary set.",
               "type": "string"
             }
           }
@@ -77197,6 +77321,7 @@
               "genome",
               "genes",
               "guide RNAs",
+              "pipeline parameters",
               "primer design",
               "training data for predictive models",
               "transcriptome",

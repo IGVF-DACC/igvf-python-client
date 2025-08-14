@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **external_image_data_url** | **str** | Links to the external site where images and related data produced by this analysis are stored. | [optional] 
 **demultiplexed_samples** | **List[str]** | The sample(s) associated with this analysis set inferred through demultiplexing. | [optional] 
 **uniform_pipeline_status** | **str** | The status of the single cell or Perturb-seq uniform pipeline processing for this analysis set, if applicable. | [optional] 
+**pipeline_parameters** | **List[str]** | The document(s) or file(s) providing necessary configurations for reproducing the analysis. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
