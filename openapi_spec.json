@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "91.0.0"
+    "version": "92.0.0"
   },
   "servers": [
     {
@@ -1535,9 +1535,11 @@
                   "TF binding scores",
                   "alignments",
                   "alignments with modifications",
+                  "annotated multimodal CRISPR matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
+                  "barcode to cluster mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -1616,6 +1618,7 @@
                   "motifs_proteins",
                   "nascent transcriptome index",
                   "neural network architecture",
+                  "neural network architecture and edge weights",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -1765,9 +1768,11 @@
                   "TF binding scores",
                   "alignments",
                   "alignments with modifications",
+                  "annotated multimodal CRISPR matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
+                  "barcode to cluster mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -1846,6 +1851,7 @@
                   "motifs_proteins",
                   "nascent transcriptome index",
                   "neural network architecture",
+                  "neural network architecture and edge weights",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -2400,9 +2406,11 @@
                   "TF binding scores",
                   "alignments",
                   "alignments with modifications",
+                  "annotated multimodal CRISPR matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
+                  "barcode to cluster mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -2481,6 +2489,7 @@
                   "motifs_proteins",
                   "nascent transcriptome index",
                   "neural network architecture",
+                  "neural network architecture and edge weights",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -2586,9 +2595,11 @@
                   "TF binding scores",
                   "alignments",
                   "alignments with modifications",
+                  "annotated multimodal CRISPR matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
+                  "barcode to cluster mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -2667,6 +2678,7 @@
                   "motifs_proteins",
                   "nascent transcriptome index",
                   "neural network architecture",
+                  "neural network architecture and edge weights",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -4442,6 +4454,7 @@
                   "image",
                   "library structure seqspec",
                   "model source data",
+                  "pipeline log",
                   "pipeline parameters",
                   "plate map",
                   "plasmid map",
@@ -8426,6 +8439,21 @@
             "explode": true
           },
           {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "workflows.name",
             "in": "query",
             "schema": {
@@ -10299,6 +10327,21 @@
             "explode": true
           },
           {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "workflows.name",
             "in": "query",
             "schema": {
@@ -12137,6 +12180,21 @@
               }
             },
             "description": "Filter by workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -14073,6 +14131,21 @@
             "explode": true
           },
           {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "workflows.name",
             "in": "query",
             "schema": {
@@ -15752,6 +15825,7 @@
                 "title": "Principal Dimension",
                 "enum": [
                   "cell",
+                  "CRISPR guide capture",
                   "fragment",
                   "gene",
                   "mitochondrial variants",
@@ -16079,6 +16153,21 @@
               }
             },
             "description": "Filter by workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -17999,6 +18088,21 @@
               }
             },
             "description": "Filter by workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -20026,6 +20130,21 @@
               }
             },
             "description": "Filter by workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -22268,6 +22387,21 @@
             "explode": true
           },
           {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "workflows.name",
             "in": "query",
             "schema": {
@@ -24313,6 +24447,21 @@
               }
             },
             "description": "Filter by workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -26434,6 +26583,21 @@
             "explode": true
           },
           {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "workflows.name",
             "in": "query",
             "schema": {
@@ -27305,6 +27469,21 @@
             "explode": true
           },
           {
+            "name": "files.anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by files.anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.assembly",
             "in": "query",
             "schema": {
@@ -27315,6 +27494,36 @@
               }
             },
             "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -27380,17 +27589,17 @@
             "explode": true
           },
           {
-            "name": "files.file_format",
+            "name": "files.file_format_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "description": "The file format or extension of the file."
+                "title": "File Format Type",
+                "description": "The subtype of bed files."
               }
             },
-            "description": "Filter by files.file_format",
+            "description": "Filter by files.file_format_type",
             "style": "form",
             "explode": true
           },
@@ -27411,6 +27620,22 @@
             "explode": true
           },
           {
+            "name": "files.flowcell_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Flowcell ID",
+                "pattern": "^[a-zA-Z0-9-]+$",
+                "description": "The alphanumeric identifier for the flowcell of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.flowcell_id",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.href",
             "in": "query",
             "schema": {
@@ -27422,6 +27647,37 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.illumina_read_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Illumina Read Type",
+                "description": "The read type of the file. Relevant only for files produced using an Illumina sequencing platform."
+              }
+            },
+            "description": "Filter by files.illumina_read_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.lane",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Lane",
+                "minimum": 1,
+                "description": "An integer identifying the lane of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.lane",
             "style": "form",
             "explode": true
           },
@@ -27443,6 +27699,23 @@
             "explode": true
           },
           {
+            "name": "files.mean_read_length",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Read Length",
+                "minimum": 0,
+                "maximum": 300000000,
+                "description": "For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing."
+              }
+            },
+            "description": "Filter by files.mean_read_length",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.s3_uri",
             "in": "query",
             "schema": {
@@ -27458,17 +27731,109 @@
             "explode": true
           },
           {
-            "name": "files.sequencing_platform",
+            "name": "files.seqspec_document",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Sequencing Platform",
-                "description": "The measurement device used to produce sequencing data."
+                "title": "Seqspec Document",
+                "description": "A seqspec document describing the library and read structure."
               }
             },
-            "description": "Filter by files.sequencing_platform",
+            "description": "Filter by files.seqspec_document",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspecs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Seqspecs",
+              "items": {
+                "type": "string",
+                "title": "Seqspecs"
+              },
+              "description": "Link(s) to the associated seqspec YAML configuration file(s)."
+            },
+            "description": "Filter by files.seqspecs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_kit",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sequencing Kit",
+                "description": "A reagent kit used with a library to prepare it for sequencing."
+              }
+            },
+            "description": "Filter by files.sequencing_kit",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.sequencing_platform.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_run",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Sequencing Run",
+                "minimum": 1,
+                "description": "An ordinal number indicating which sequencing run of the associated library that the file belongs to."
+              }
+            },
+            "description": "Filter by files.sequencing_run",
             "style": "form",
             "explode": true
           },
@@ -27503,6 +27868,20 @@
             "explode": true
           },
           {
+            "name": "files.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by files.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -27529,6 +27908,35 @@
               }
             },
             "description": "Filter by files.upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by files.workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -27775,6 +28183,22 @@
               }
             },
             "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "primer_designs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Primer Designs",
+              "items": {
+                "type": "string",
+                "title": "Primer Design"
+              },
+              "description": "The primer designs used by the inputs of this analysis set."
+            },
+            "description": "Filter by primer_designs",
             "style": "form",
             "explode": true
           },
@@ -29472,6 +29896,21 @@
             "explode": true
           },
           {
+            "name": "files.anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by files.anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.assembly",
             "in": "query",
             "schema": {
@@ -29482,6 +29921,36 @@
               }
             },
             "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -29547,17 +30016,17 @@
             "explode": true
           },
           {
-            "name": "files.file_format",
+            "name": "files.file_format_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "description": "The file format or extension of the file."
+                "title": "File Format Type",
+                "description": "The subtype of bed files."
               }
             },
-            "description": "Filter by files.file_format",
+            "description": "Filter by files.file_format_type",
             "style": "form",
             "explode": true
           },
@@ -29578,6 +30047,22 @@
             "explode": true
           },
           {
+            "name": "files.flowcell_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Flowcell ID",
+                "pattern": "^[a-zA-Z0-9-]+$",
+                "description": "The alphanumeric identifier for the flowcell of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.flowcell_id",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.href",
             "in": "query",
             "schema": {
@@ -29589,6 +30074,37 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.illumina_read_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Illumina Read Type",
+                "description": "The read type of the file. Relevant only for files produced using an Illumina sequencing platform."
+              }
+            },
+            "description": "Filter by files.illumina_read_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.lane",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Lane",
+                "minimum": 1,
+                "description": "An integer identifying the lane of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.lane",
             "style": "form",
             "explode": true
           },
@@ -29610,6 +30126,23 @@
             "explode": true
           },
           {
+            "name": "files.mean_read_length",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Read Length",
+                "minimum": 0,
+                "maximum": 300000000,
+                "description": "For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing."
+              }
+            },
+            "description": "Filter by files.mean_read_length",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.s3_uri",
             "in": "query",
             "schema": {
@@ -29625,17 +30158,109 @@
             "explode": true
           },
           {
-            "name": "files.sequencing_platform",
+            "name": "files.seqspec_document",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Sequencing Platform",
-                "description": "The measurement device used to produce sequencing data."
+                "title": "Seqspec Document",
+                "description": "A seqspec document describing the library and read structure."
               }
             },
-            "description": "Filter by files.sequencing_platform",
+            "description": "Filter by files.seqspec_document",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspecs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Seqspecs",
+              "items": {
+                "type": "string",
+                "title": "Seqspecs"
+              },
+              "description": "Link(s) to the associated seqspec YAML configuration file(s)."
+            },
+            "description": "Filter by files.seqspecs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_kit",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sequencing Kit",
+                "description": "A reagent kit used with a library to prepare it for sequencing."
+              }
+            },
+            "description": "Filter by files.sequencing_kit",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.sequencing_platform.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_run",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Sequencing Run",
+                "minimum": 1,
+                "description": "An ordinal number indicating which sequencing run of the associated library that the file belongs to."
+              }
+            },
+            "description": "Filter by files.sequencing_run",
             "style": "form",
             "explode": true
           },
@@ -29670,6 +30295,20 @@
             "explode": true
           },
           {
+            "name": "files.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by files.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -29696,6 +30335,35 @@
               }
             },
             "description": "Filter by files.upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by files.workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -31463,6 +32131,50 @@
             "explode": true
           },
           {
+            "name": "files.anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by files.anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Genome Assembly"
+              }
+            },
+            "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Type Annotation",
+                "description": "The inferred cell type this file is associated with based on single-cell expression profiling."
+              }
+            },
+            "description": "Filter by files.cell_type_annotation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.content_type",
             "in": "query",
             "schema": {
@@ -31478,17 +32190,95 @@
             "explode": true
           },
           {
-            "name": "files.file_format",
+            "name": "files.controlled_access",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Controlled Access",
+                "description": "Boolean value, indicating the file being controlled access, if true."
+              }
+            },
+            "description": "Filter by files.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.creation_timestamp",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "description": "The file format or extension of the file."
+                "title": "Creation Timestamp",
+                "description": "The date the object was created."
               }
             },
-            "description": "Filter by files.file_format",
+            "description": "Filter by files.creation_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.derived_from",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Derived From",
+              "items": {
+                "type": "string",
+                "title": "File Derived From"
+              },
+              "description": "The files participating as inputs into software to produce this output file."
+            },
+            "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.file_format_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format Type",
+                "description": "The subtype of bed files."
+              }
+            },
+            "description": "Filter by files.file_format_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.file_size",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "File Size",
+                "minimum": 0,
+                "description": "File size specified in bytes."
+              }
+            },
+            "description": "Filter by files.file_size",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.flowcell_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Flowcell ID",
+                "pattern": "^[a-zA-Z0-9-]+$",
+                "description": "The alphanumeric identifier for the flowcell of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.flowcell_id",
             "style": "form",
             "explode": true
           },
@@ -31508,6 +32298,163 @@
             "explode": true
           },
           {
+            "name": "files.illumina_read_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Illumina Read Type",
+                "description": "The read type of the file. Relevant only for files produced using an Illumina sequencing platform."
+              }
+            },
+            "description": "Filter by files.illumina_read_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.lane",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Lane",
+                "minimum": 1,
+                "description": "An integer identifying the lane of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.lane",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.md5sum",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "MD5sum",
+                "pattern": "[a-f\\d]{32}|[A-F\\d]{32}",
+                "maxLength": 32,
+                "description": "The md5sum of the file being transferred."
+              }
+            },
+            "description": "Filter by files.md5sum",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.mean_read_length",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Read Length",
+                "minimum": 0,
+                "maximum": 300000000,
+                "description": "For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing."
+              }
+            },
+            "description": "Filter by files.mean_read_length",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.s3_uri",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "S3 URI",
+                "description": "The S3 URI of public file object."
+              }
+            },
+            "description": "Filter by files.s3_uri",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspec_document",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Seqspec Document",
+                "description": "A seqspec document describing the library and read structure."
+              }
+            },
+            "description": "Filter by files.seqspec_document",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspecs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Seqspecs",
+              "items": {
+                "type": "string",
+                "title": "Seqspecs"
+              },
+              "description": "Link(s) to the associated seqspec YAML configuration file(s)."
+            },
+            "description": "Filter by files.seqspecs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_kit",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sequencing Kit",
+                "description": "A reagent kit used with a library to prepare it for sequencing."
+              }
+            },
+            "description": "Filter by files.sequencing_kit",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sequencing Platform",
+                "description": "The measurement device used to produce sequencing data."
+              }
+            },
+            "description": "Filter by files.sequencing_platform",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_run",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Sequencing Run",
+                "minimum": 1,
+                "description": "An ordinal number indicating which sequencing run of the associated library that the file belongs to."
+              }
+            },
+            "description": "Filter by files.sequencing_run",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.status",
             "in": "query",
             "schema": {
@@ -31523,6 +32470,50 @@
             "explode": true
           },
           {
+            "name": "files.submitted_file_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted File Name",
+                "description": "Original name of the file."
+              }
+            },
+            "description": "Filter by files.submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by files.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Transcriptome Annotation",
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by files.transcriptome_annotation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.upload_status",
             "in": "query",
             "schema": {
@@ -31534,6 +32525,21 @@
               }
             },
             "description": "Filter by files.upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Workflows",
+              "items": {
+                "type": "string"
+              },
+              "description": "The workflows associated with the analysis step version used to produce this file."
+            },
+            "description": "Filter by files.workflows",
             "style": "form",
             "explode": true
           },
@@ -33682,6 +34688,21 @@
             "explode": true
           },
           {
+            "name": "files.anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by files.anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.assembly",
             "in": "query",
             "schema": {
@@ -33692,6 +34713,36 @@
               }
             },
             "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -33757,17 +34808,17 @@
             "explode": true
           },
           {
-            "name": "files.file_format",
+            "name": "files.file_format_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "description": "The file format or extension of the file."
+                "title": "File Format Type",
+                "description": "The subtype of bed files."
               }
             },
-            "description": "Filter by files.file_format",
+            "description": "Filter by files.file_format_type",
             "style": "form",
             "explode": true
           },
@@ -33788,6 +34839,22 @@
             "explode": true
           },
           {
+            "name": "files.flowcell_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Flowcell ID",
+                "pattern": "^[a-zA-Z0-9-]+$",
+                "description": "The alphanumeric identifier for the flowcell of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.flowcell_id",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.href",
             "in": "query",
             "schema": {
@@ -33799,6 +34866,37 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.illumina_read_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Illumina Read Type",
+                "description": "The read type of the file. Relevant only for files produced using an Illumina sequencing platform."
+              }
+            },
+            "description": "Filter by files.illumina_read_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.lane",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Lane",
+                "minimum": 1,
+                "description": "An integer identifying the lane of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.lane",
             "style": "form",
             "explode": true
           },
@@ -33820,6 +34918,23 @@
             "explode": true
           },
           {
+            "name": "files.mean_read_length",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Read Length",
+                "minimum": 0,
+                "maximum": 300000000,
+                "description": "For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing."
+              }
+            },
+            "description": "Filter by files.mean_read_length",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.s3_uri",
             "in": "query",
             "schema": {
@@ -33835,17 +34950,109 @@
             "explode": true
           },
           {
-            "name": "files.sequencing_platform",
+            "name": "files.seqspec_document",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Sequencing Platform",
-                "description": "The measurement device used to produce sequencing data."
+                "title": "Seqspec Document",
+                "description": "A seqspec document describing the library and read structure."
               }
             },
-            "description": "Filter by files.sequencing_platform",
+            "description": "Filter by files.seqspec_document",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspecs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Seqspecs",
+              "items": {
+                "type": "string",
+                "title": "Seqspecs"
+              },
+              "description": "Link(s) to the associated seqspec YAML configuration file(s)."
+            },
+            "description": "Filter by files.seqspecs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_kit",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sequencing Kit",
+                "description": "A reagent kit used with a library to prepare it for sequencing."
+              }
+            },
+            "description": "Filter by files.sequencing_kit",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.sequencing_platform.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_run",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Sequencing Run",
+                "minimum": 1,
+                "description": "An ordinal number indicating which sequencing run of the associated library that the file belongs to."
+              }
+            },
+            "description": "Filter by files.sequencing_run",
             "style": "form",
             "explode": true
           },
@@ -33880,6 +35087,20 @@
             "explode": true
           },
           {
+            "name": "files.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by files.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -33906,6 +35127,35 @@
               }
             },
             "description": "Filter by files.upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by files.workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -35892,6 +37142,21 @@
             "explode": true
           },
           {
+            "name": "files.anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by files.anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.assembly",
             "in": "query",
             "schema": {
@@ -35902,6 +37167,36 @@
               }
             },
             "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -35967,17 +37262,17 @@
             "explode": true
           },
           {
-            "name": "files.file_format",
+            "name": "files.file_format_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "description": "The file format or extension of the file."
+                "title": "File Format Type",
+                "description": "The subtype of bed files."
               }
             },
-            "description": "Filter by files.file_format",
+            "description": "Filter by files.file_format_type",
             "style": "form",
             "explode": true
           },
@@ -35998,6 +37293,22 @@
             "explode": true
           },
           {
+            "name": "files.flowcell_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Flowcell ID",
+                "pattern": "^[a-zA-Z0-9-]+$",
+                "description": "The alphanumeric identifier for the flowcell of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.flowcell_id",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.href",
             "in": "query",
             "schema": {
@@ -36009,6 +37320,37 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.illumina_read_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Illumina Read Type",
+                "description": "The read type of the file. Relevant only for files produced using an Illumina sequencing platform."
+              }
+            },
+            "description": "Filter by files.illumina_read_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.lane",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Lane",
+                "minimum": 1,
+                "description": "An integer identifying the lane of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.lane",
             "style": "form",
             "explode": true
           },
@@ -36030,6 +37372,23 @@
             "explode": true
           },
           {
+            "name": "files.mean_read_length",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Read Length",
+                "minimum": 0,
+                "maximum": 300000000,
+                "description": "For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing."
+              }
+            },
+            "description": "Filter by files.mean_read_length",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.s3_uri",
             "in": "query",
             "schema": {
@@ -36041,6 +37400,52 @@
               }
             },
             "description": "Filter by files.s3_uri",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspec_document",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Seqspec Document",
+                "description": "A seqspec document describing the library and read structure."
+              }
+            },
+            "description": "Filter by files.seqspec_document",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspecs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Seqspecs",
+              "items": {
+                "type": "string",
+                "title": "Seqspecs"
+              },
+              "description": "Link(s) to the associated seqspec YAML configuration file(s)."
+            },
+            "description": "Filter by files.seqspecs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_kit",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sequencing Kit",
+                "description": "A reagent kit used with a library to prepare it for sequencing."
+              }
+            },
+            "description": "Filter by files.sequencing_kit",
             "style": "form",
             "explode": true
           },
@@ -36090,6 +37495,22 @@
             "explode": true
           },
           {
+            "name": "files.sequencing_run",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Sequencing Run",
+                "minimum": 1,
+                "description": "An ordinal number indicating which sequencing run of the associated library that the file belongs to."
+              }
+            },
+            "description": "Filter by files.sequencing_run",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.status",
             "in": "query",
             "schema": {
@@ -36120,6 +37541,20 @@
             "explode": true
           },
           {
+            "name": "files.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by files.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -36146,6 +37581,35 @@
               }
             },
             "description": "Filter by files.upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by files.workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -38256,6 +39720,21 @@
             "explode": true
           },
           {
+            "name": "files.anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by files.anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.assembly",
             "in": "query",
             "schema": {
@@ -38266,6 +39745,36 @@
               }
             },
             "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -38331,17 +39840,17 @@
             "explode": true
           },
           {
-            "name": "files.file_format",
+            "name": "files.file_format_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "description": "The file format or extension of the file."
+                "title": "File Format Type",
+                "description": "The subtype of bed files."
               }
             },
-            "description": "Filter by files.file_format",
+            "description": "Filter by files.file_format_type",
             "style": "form",
             "explode": true
           },
@@ -38362,6 +39871,22 @@
             "explode": true
           },
           {
+            "name": "files.flowcell_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Flowcell ID",
+                "pattern": "^[a-zA-Z0-9-]+$",
+                "description": "The alphanumeric identifier for the flowcell of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.flowcell_id",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.href",
             "in": "query",
             "schema": {
@@ -38373,6 +39898,37 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.illumina_read_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Illumina Read Type",
+                "description": "The read type of the file. Relevant only for files produced using an Illumina sequencing platform."
+              }
+            },
+            "description": "Filter by files.illumina_read_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.lane",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Lane",
+                "minimum": 1,
+                "description": "An integer identifying the lane of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.lane",
             "style": "form",
             "explode": true
           },
@@ -38394,6 +39950,23 @@
             "explode": true
           },
           {
+            "name": "files.mean_read_length",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Read Length",
+                "minimum": 0,
+                "maximum": 300000000,
+                "description": "For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing."
+              }
+            },
+            "description": "Filter by files.mean_read_length",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.s3_uri",
             "in": "query",
             "schema": {
@@ -38409,17 +39982,109 @@
             "explode": true
           },
           {
-            "name": "files.sequencing_platform",
+            "name": "files.seqspec_document",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Sequencing Platform",
-                "description": "The measurement device used to produce sequencing data."
+                "title": "Seqspec Document",
+                "description": "A seqspec document describing the library and read structure."
               }
             },
-            "description": "Filter by files.sequencing_platform",
+            "description": "Filter by files.seqspec_document",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspecs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Seqspecs",
+              "items": {
+                "type": "string",
+                "title": "Seqspecs"
+              },
+              "description": "Link(s) to the associated seqspec YAML configuration file(s)."
+            },
+            "description": "Filter by files.seqspecs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_kit",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sequencing Kit",
+                "description": "A reagent kit used with a library to prepare it for sequencing."
+              }
+            },
+            "description": "Filter by files.sequencing_kit",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.sequencing_platform.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_run",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Sequencing Run",
+                "minimum": 1,
+                "description": "An ordinal number indicating which sequencing run of the associated library that the file belongs to."
+              }
+            },
+            "description": "Filter by files.sequencing_run",
             "style": "form",
             "explode": true
           },
@@ -38454,6 +40119,20 @@
             "explode": true
           },
           {
+            "name": "files.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by files.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -38480,6 +40159,35 @@
               }
             },
             "description": "Filter by files.upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by files.workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -40493,6 +42201,21 @@
             "explode": true
           },
           {
+            "name": "files.anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by files.anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.assembly",
             "in": "query",
             "schema": {
@@ -40503,6 +42226,36 @@
               }
             },
             "description": "Filter by files.assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.cell_type_annotation.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -40568,17 +42321,17 @@
             "explode": true
           },
           {
-            "name": "files.file_format",
+            "name": "files.file_format_type",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "File Format",
-                "description": "The file format or extension of the file."
+                "title": "File Format Type",
+                "description": "The subtype of bed files."
               }
             },
-            "description": "Filter by files.file_format",
+            "description": "Filter by files.file_format_type",
             "style": "form",
             "explode": true
           },
@@ -40599,6 +42352,22 @@
             "explode": true
           },
           {
+            "name": "files.flowcell_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Flowcell ID",
+                "pattern": "^[a-zA-Z0-9-]+$",
+                "description": "The alphanumeric identifier for the flowcell of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.flowcell_id",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.href",
             "in": "query",
             "schema": {
@@ -40610,6 +42379,37 @@
               }
             },
             "description": "Filter by files.href",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.illumina_read_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Illumina Read Type",
+                "description": "The read type of the file. Relevant only for files produced using an Illumina sequencing platform."
+              }
+            },
+            "description": "Filter by files.illumina_read_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.lane",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Lane",
+                "minimum": 1,
+                "description": "An integer identifying the lane of a sequencing machine."
+              }
+            },
+            "description": "Filter by files.lane",
             "style": "form",
             "explode": true
           },
@@ -40631,6 +42431,23 @@
             "explode": true
           },
           {
+            "name": "files.mean_read_length",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Read Length",
+                "minimum": 0,
+                "maximum": 300000000,
+                "description": "For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing."
+              }
+            },
+            "description": "Filter by files.mean_read_length",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.s3_uri",
             "in": "query",
             "schema": {
@@ -40646,17 +42463,109 @@
             "explode": true
           },
           {
-            "name": "files.sequencing_platform",
+            "name": "files.seqspec_document",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Sequencing Platform",
-                "description": "The measurement device used to produce sequencing data."
+                "title": "Seqspec Document",
+                "description": "A seqspec document describing the library and read structure."
               }
             },
-            "description": "Filter by files.sequencing_platform",
+            "description": "Filter by files.seqspec_document",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.seqspecs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Seqspecs",
+              "items": {
+                "type": "string",
+                "title": "Seqspecs"
+              },
+              "description": "Link(s) to the associated seqspec YAML configuration file(s)."
+            },
+            "description": "Filter by files.seqspecs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_kit",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Sequencing Kit",
+                "description": "A reagent kit used with a library to prepare it for sequencing."
+              }
+            },
+            "description": "Filter by files.sequencing_kit",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.sequencing_platform.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_platform.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by files.sequencing_platform.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.sequencing_run",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Sequencing Run",
+                "minimum": 1,
+                "description": "An ordinal number indicating which sequencing run of the associated library that the file belongs to."
+              }
+            },
+            "description": "Filter by files.sequencing_run",
             "style": "form",
             "explode": true
           },
@@ -40691,6 +42600,20 @@
             "explode": true
           },
           {
+            "name": "files.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by files.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -40717,6 +42640,35 @@
               }
             },
             "description": "Filter by files.upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by files.workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by files.workflows.accession",
             "style": "form",
             "explode": true
           },
@@ -67873,9 +69825,11 @@
                   "TF binding scores",
                   "alignments",
                   "alignments with modifications",
+                  "annotated multimodal CRISPR matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
+                  "barcode to cluster mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -67954,6 +69908,7 @@
                   "motifs_proteins",
                   "nascent transcriptome index",
                   "neural network architecture",
+                  "neural network architecture and edge weights",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -68059,9 +70014,11 @@
                   "TF binding scores",
                   "alignments",
                   "alignments with modifications",
+                  "annotated multimodal CRISPR matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
+                  "barcode to cluster mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -68140,6 +70097,7 @@
                   "motifs_proteins",
                   "nascent transcriptome index",
                   "neural network architecture",
+                  "neural network architecture and edge weights",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -69465,9 +71423,11 @@
                 "TF binding scores",
                 "alignments",
                 "alignments with modifications",
+                "annotated multimodal CRISPR matrix",
                 "barcode onlist",
                 "barcode replacement",
                 "barcode to TF overexpression mapping",
+                "barcode to cluster mapping",
                 "barcode to element mapping",
                 "barcode to hashtag mapping",
                 "barcode to sample mapping",
@@ -69546,6 +71506,7 @@
                 "motifs_proteins",
                 "nascent transcriptome index",
                 "neural network architecture",
+                "neural network architecture and edge weights",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
                 "pathways",
@@ -69645,9 +71606,11 @@
                 "TF binding scores",
                 "alignments",
                 "alignments with modifications",
+                "annotated multimodal CRISPR matrix",
                 "barcode onlist",
                 "barcode replacement",
                 "barcode to TF overexpression mapping",
+                "barcode to cluster mapping",
                 "barcode to element mapping",
                 "barcode to hashtag mapping",
                 "barcode to sample mapping",
@@ -69726,6 +71689,7 @@
                 "motifs_proteins",
                 "nascent transcriptome index",
                 "neural network architecture",
+                "neural network architecture and edge weights",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
                 "pathways",
@@ -70446,6 +72410,7 @@
               "image",
               "library structure seqspec",
               "model source data",
+              "pipeline log",
               "pipeline parameters",
               "plate map",
               "plasmid map",
@@ -73028,6 +74993,7 @@
             "type": "string",
             "enum": [
               "h5ad",
+              "h5mu",
               "hdf5",
               "mtx",
               "pkl",
@@ -73100,6 +75066,7 @@
             "type": "string",
             "enum": [
               "cell",
+              "CRISPR guide capture",
               "fragment",
               "gene",
               "mitochondrial variants",
@@ -73528,7 +75495,8 @@
               "pkl",
               "pt",
               "tar",
-              "tsv"
+              "tsv",
+              "zip"
             ]
           },
           "file_format_specifications": {
@@ -76170,6 +78138,15 @@
             "type": "array",
             "items": {
               "title": "Targeted Gene",
+              "type": "string"
+            }
+          },
+          "primer_designs": {
+            "title": "Primer Designs",
+            "description": "The primer designs used by the inputs of this analysis set.",
+            "type": "array",
+            "items": {
+              "title": "Primer Design",
               "type": "string"
             }
           }
