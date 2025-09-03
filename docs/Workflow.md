@@ -6,6 +6,7 @@ A workflow for computational analysis of genomic data. A workflow is made up of 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**preferred_assay_titles** | **List[str]** | The custom lab preferred label for the experiment performed. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **source_url** | **str** | An external resource to the code base of the workflow in github. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 

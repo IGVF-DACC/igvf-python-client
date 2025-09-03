@@ -110,6 +110,7 @@ Name | Type | Description | Notes
 **content_summary** | **str** | A summary of the data in the signal file. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **assembly** | **str** | Genome assembly applicable for the tabular data. | [optional] 
+**catalog_collections** | **List[str]** | The collections in the IGVF catalog that contain the data in this file. | [optional] 
 **seqspec_of** | **List[str]** | Sequence files this file is a seqspec of. | [optional] 
 **validate_onlist_files** | **bool** | Whether checkfiles will validate the onlist files. | [optional] 
 **principal_dimension** | **str** | The principal dimension of the matrix. | [optional] 
