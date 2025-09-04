@@ -135,7 +135,7 @@ Name | Type | Description | Notes
 **read_names** | **List[str]** | The read names of a sequence file based on how it will be used by uniform pipelines. | [optional] 
 **seqspecs** | **List[str]** | Link(s) to the associated seqspec YAML configuration file(s). | [optional] 
 **cell_type_annotation** | **str** | The inferred cell type this file is associated with based on single-cell expression profiling. | [optional] 
-**strand_specificity** | **str** | The strand-specificity of the sequencing results within Perturb-seq, scCRISPR screen, TAP-seq, and CERES-seq assays. | [optional] 
+**strand_specificity** | **str** | Indicates whether a transcriptomic library is forward, reverse, or unstranded based on the strand-specific protocol used. | [optional] 
 **normalized** | **bool** | Indicates if the signal file is normalized. | [optional] 
 **start_view_position** | **str** | The 0-based coordinate for the default starting position when viewing the signal in a genome browser. | [optional] 
 **barcode_map_for** | **List[str]** | Link(s) to the Multiplexed samples using this file as barcode map. | [optional] 

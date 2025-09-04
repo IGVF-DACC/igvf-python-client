@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "93.0.0"
+    "version": "94.0.1"
   },
   "servers": [
     {
@@ -1606,6 +1606,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "caQTL",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -1627,6 +1628,7 @@
                   "diseases_genes",
                   "documentation (readme)",
                   "drugs",
+                  "eQTL",
                   "edge weights",
                   "editing templates",
                   "element quantifications",
@@ -1720,6 +1722,7 @@
                   "sparse peak count matrix",
                   "sparse transcript count matrix",
                   "spike-ins",
+                  "spliceQTL",
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
@@ -1839,6 +1842,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "caQTL",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -1860,6 +1864,7 @@
                   "diseases_genes",
                   "documentation (readme)",
                   "drugs",
+                  "eQTL",
                   "edge weights",
                   "editing templates",
                   "element quantifications",
@@ -1953,6 +1958,7 @@
                   "sparse peak count matrix",
                   "sparse transcript count matrix",
                   "spike-ins",
+                  "spliceQTL",
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
@@ -2477,6 +2483,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "caQTL",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -2498,6 +2505,7 @@
                   "diseases_genes",
                   "documentation (readme)",
                   "drugs",
+                  "eQTL",
                   "edge weights",
                   "editing templates",
                   "element quantifications",
@@ -2591,6 +2599,7 @@
                   "sparse peak count matrix",
                   "sparse transcript count matrix",
                   "spike-ins",
+                  "spliceQTL",
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
@@ -2666,6 +2675,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "caQTL",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -2687,6 +2697,7 @@
                   "diseases_genes",
                   "documentation (readme)",
                   "drugs",
+                  "eQTL",
                   "edge weights",
                   "editing templates",
                   "element quantifications",
@@ -2780,6 +2791,7 @@
                   "sparse peak count matrix",
                   "sparse transcript count matrix",
                   "spike-ins",
+                  "spliceQTL",
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
@@ -5275,6 +5287,21 @@
             "explode": true
           },
           {
+            "name": "phenotypic_features.quantity",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Quantity",
+                "description": "A quantity associated with the phenotypic feature, if applicable."
+              }
+            },
+            "description": "Filter by phenotypic_features.quantity",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "phenotypic_features.quantity_units",
             "in": "query",
             "schema": {
@@ -6115,6 +6142,21 @@
               }
             },
             "description": "Filter by phenotypic_features.observation_date",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "phenotypic_features.quantity",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Quantity",
+                "description": "A quantity associated with the phenotypic feature, if applicable."
+              }
+            },
+            "description": "Filter by phenotypic_features.quantity",
             "style": "form",
             "explode": true
           },
@@ -28284,6 +28326,21 @@
             "explode": true
           },
           {
+            "name": "files.file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format",
+                "description": "The file format or extension of the file."
+              }
+            },
+            "description": "Filter by files.file_format",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format_type",
             "in": "query",
             "schema": {
@@ -29183,6 +29240,21 @@
               }
             },
             "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation",
             "style": "form",
             "explode": true
           },
@@ -30711,6 +30783,21 @@
             "explode": true
           },
           {
+            "name": "files.file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format",
+                "description": "The file format or extension of the file."
+              }
+            },
+            "description": "Filter by files.file_format",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format_type",
             "in": "query",
             "schema": {
@@ -31565,6 +31652,21 @@
               }
             },
             "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation",
             "style": "form",
             "explode": true
           },
@@ -32927,6 +33029,21 @@
               "description": "The files participating as inputs into software to produce this output file."
             },
             "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format",
+                "description": "The file format or extension of the file."
+              }
+            },
+            "description": "Filter by files.file_format",
             "style": "form",
             "explode": true
           },
@@ -35324,6 +35441,7 @@
                   "guide RNAs",
                   "pipeline parameters",
                   "primer design",
+                  "QTL",
                   "training data for predictive models",
                   "transcriptome",
                   "variants"
@@ -35499,6 +35617,21 @@
               "description": "The files participating as inputs into software to produce this output file."
             },
             "description": "Filter by files.derived_from",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "files.file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format",
+                "description": "The file format or extension of the file."
+              }
+            },
+            "description": "Filter by files.file_format",
             "style": "form",
             "explode": true
           },
@@ -36183,6 +36316,21 @@
               }
             },
             "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation",
             "style": "form",
             "explode": true
           },
@@ -37957,6 +38105,21 @@
             "explode": true
           },
           {
+            "name": "files.file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format",
+                "description": "The file format or extension of the file."
+              }
+            },
+            "description": "Filter by files.file_format",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format_type",
             "in": "query",
             "schema": {
@@ -38927,6 +39090,21 @@
             "explode": true
           },
           {
+            "name": "samples.institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.institutional_certificates.data_use_limitation_modifiers",
             "in": "query",
             "schema": {
@@ -39326,7 +39504,7 @@
                   "3 prime to 5 prime",
                   "unstranded"
                 ],
-                "description": "The strand-specificity of the sequencing results within Perturb-seq, scCRISPR screen, TAP-seq, and CERES-seq assays."
+                "description": "Indicates whether a transcriptomic library is forward, reverse, or unstranded based on the strand-specific protocol used."
               }
             },
             "description": "Filter by strand_specificity",
@@ -40535,6 +40713,21 @@
             "explode": true
           },
           {
+            "name": "files.file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format",
+                "description": "The file format or extension of the file."
+              }
+            },
+            "description": "Filter by files.file_format",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format_type",
             "in": "query",
             "schema": {
@@ -41348,6 +41541,21 @@
               }
             },
             "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation",
             "style": "form",
             "explode": true
           },
@@ -43016,6 +43224,21 @@
             "explode": true
           },
           {
+            "name": "files.file_format",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Format",
+                "description": "The file format or extension of the file."
+              }
+            },
+            "description": "Filter by files.file_format",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "files.file_format_type",
             "in": "query",
             "schema": {
@@ -43895,6 +44118,21 @@
               }
             },
             "description": "Filter by samples.institutional_certificates.controlled_access",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by samples.institutional_certificates.data_use_limitation",
             "style": "form",
             "explode": true
           },
@@ -56652,6 +56890,21 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.data_use_limitation_modifiers",
             "in": "query",
             "schema": {
@@ -56790,6 +57043,21 @@
               }
             },
             "description": "Filter by modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.cas",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas",
+                "description": "The name of the CRISPR associated protein used in the modification."
+              }
+            },
+            "description": "Filter by modifications.cas",
             "style": "form",
             "explode": true
           },
@@ -58800,6 +59068,21 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.data_use_limitation_modifiers",
             "in": "query",
             "schema": {
@@ -58892,6 +59175,21 @@
               }
             },
             "description": "Filter by modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.cas",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas",
+                "description": "The name of the CRISPR associated protein used in the modification."
+              }
+            },
+            "description": "Filter by modifications.cas",
             "style": "form",
             "explode": true
           },
@@ -60867,6 +61165,21 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.data_use_limitation_modifiers",
             "in": "query",
             "schema": {
@@ -61005,6 +61318,21 @@
               }
             },
             "description": "Filter by modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.cas",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas",
+                "description": "The name of the CRISPR associated protein used in the modification."
+              }
+            },
+            "description": "Filter by modifications.cas",
             "style": "form",
             "explode": true
           },
@@ -64212,6 +64540,21 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.data_use_limitation_modifiers",
             "in": "query",
             "schema": {
@@ -64350,6 +64693,21 @@
               }
             },
             "description": "Filter by modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.cas",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas",
+                "description": "The name of the CRISPR associated protein used in the modification."
+              }
+            },
+            "description": "Filter by modifications.cas",
             "style": "form",
             "explode": true
           },
@@ -66345,6 +66703,21 @@
             "explode": true
           },
           {
+            "name": "institutional_certificates.data_use_limitation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Data Use Limitation",
+                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
+              }
+            },
+            "description": "Filter by institutional_certificates.data_use_limitation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "institutional_certificates.data_use_limitation_modifiers",
             "in": "query",
             "schema": {
@@ -66483,6 +66856,21 @@
               }
             },
             "description": "Filter by modifications.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "modifications.cas",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cas",
+                "description": "The name of the CRISPR associated protein used in the modification."
+              }
+            },
+            "description": "Filter by modifications.cas",
             "style": "form",
             "explode": true
           },
@@ -70532,6 +70920,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "caQTL",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -70553,6 +70942,7 @@
                   "diseases_genes",
                   "documentation (readme)",
                   "drugs",
+                  "eQTL",
                   "edge weights",
                   "editing templates",
                   "element quantifications",
@@ -70646,6 +71036,7 @@
                   "sparse peak count matrix",
                   "sparse transcript count matrix",
                   "spike-ins",
+                  "spliceQTL",
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
@@ -70721,6 +71112,7 @@
                   "barcode to variant mapping",
                   "bin paired count",
                   "biological_context",
+                  "caQTL",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -70742,6 +71134,7 @@
                   "diseases_genes",
                   "documentation (readme)",
                   "drugs",
+                  "eQTL",
                   "edge weights",
                   "editing templates",
                   "element quantifications",
@@ -70835,6 +71228,7 @@
                   "sparse peak count matrix",
                   "sparse transcript count matrix",
                   "spike-ins",
+                  "spliceQTL",
                   "studies",
                   "studies_variants",
                   "studies_variants_phenotypes",
@@ -72226,6 +72620,7 @@
                 "barcode to variant mapping",
                 "bin paired count",
                 "biological_context",
+                "caQTL",
                 "cell hashing barcodes",
                 "coding variant effects",
                 "coding_variants",
@@ -72247,6 +72642,7 @@
                 "diseases_genes",
                 "documentation (readme)",
                 "drugs",
+                "eQTL",
                 "edge weights",
                 "editing templates",
                 "element quantifications",
@@ -72340,6 +72736,7 @@
                 "sparse peak count matrix",
                 "sparse transcript count matrix",
                 "spike-ins",
+                "spliceQTL",
                 "studies",
                 "studies_variants",
                 "studies_variants_phenotypes",
@@ -72409,6 +72806,7 @@
                 "barcode to variant mapping",
                 "bin paired count",
                 "biological_context",
+                "caQTL",
                 "cell hashing barcodes",
                 "coding variant effects",
                 "coding_variants",
@@ -72430,6 +72828,7 @@
                 "diseases_genes",
                 "documentation (readme)",
                 "drugs",
+                "eQTL",
                 "edge weights",
                 "editing templates",
                 "element quantifications",
@@ -72523,6 +72922,7 @@
                 "sparse peak count matrix",
                 "sparse transcript count matrix",
                 "spike-ins",
+                "spliceQTL",
                 "studies",
                 "studies_variants",
                 "studies_variants_phenotypes",
@@ -80679,6 +81079,7 @@
               "guide RNAs",
               "pipeline parameters",
               "primer design",
+              "QTL",
               "training data for predictive models",
               "transcriptome",
               "variants"
@@ -81164,7 +81565,7 @@
           },
           "strand_specificity": {
             "title": "Strand Specificity",
-            "description": "The strand-specificity of the sequencing results within Perturb-seq, scCRISPR screen, TAP-seq, and CERES-seq assays.",
+            "description": "Indicates whether a transcriptomic library is forward, reverse, or unstranded based on the strand-specific protocol used.",
             "type": "string",
             "enum": [
               "5 prime to 3 prime",
