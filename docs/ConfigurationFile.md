@@ -6,6 +6,7 @@ A file containing configuration settings or information defining the structure o
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **catalog_collections** | **List[str]** | The collections in the IGVF catalog that contain the data in this file. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 

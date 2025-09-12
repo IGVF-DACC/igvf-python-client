@@ -6,12 +6,12 @@ A file containing textual data with a tabular structure.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **catalog_collections** | **List[str]** | The collections in the IGVF catalog that contain the data in this file. | [optional] 
 **base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **cell_type_annotation** | **str** | The inferred cell type this file is associated with based on single-cell expression profiling. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
-**anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **assembly** | **str** | Genome assembly applicable for the tabular data. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 

@@ -6,11 +6,11 @@ A file containing diverse reference related information.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **catalog_collections** | **List[str]** | The collections in the IGVF catalog that contain the data in this file. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **source_url** | **str** | Link to external resource, such as NCBI or GENCODE, where the reference data was obtained. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
-**anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **assembly** | **str** | Genome assembly applicable for the reference data. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 

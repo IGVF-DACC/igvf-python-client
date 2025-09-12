@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "94.0.1"
+    "version": "95.0.0"
   },
   "servers": [
     {
@@ -8906,6 +8906,21 @@
             "explode": true
           },
           {
+            "name": "anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by anvil_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "assay_titles",
             "in": "query",
             "schema": {
@@ -10865,6 +10880,21 @@
               }
             },
             "description": "Filter by analysis_step_version.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by anvil_url",
             "style": "form",
             "explode": true
           },
@@ -14819,6 +14849,21 @@
               }
             },
             "description": "Filter by analysis_step_version.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by anvil_url",
             "style": "form",
             "explode": true
           },
@@ -23301,6 +23346,21 @@
               }
             },
             "description": "Filter by analysis_step_version.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "anvil_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "AnVIL URL",
+                "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace."
+              }
+            },
+            "description": "Filter by anvil_url",
             "style": "form",
             "explode": true
           },
@@ -49480,7 +49540,8 @@
                   "Pacific Biosciences",
                   "Parse Biosciences",
                   "Roche",
-                  "Singular Genomics"
+                  "Singular Genomics",
+                  "Ultima Genomics"
                 ],
                 "description": "The company that developed and sells the instrument."
               }
@@ -74336,6 +74397,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "base_modifications": {
             "title": "Base Modifications",
             "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
@@ -74367,11 +74433,6 @@
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
             "type": "boolean"
-          },
-          "anvil_url": {
-            "title": "AnVIL URL",
-            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
-            "type": "string"
           },
           "release_timestamp": {
             "title": "Release Timestamp",
@@ -74822,6 +74883,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "catalog_collections": {
             "title": "Catalog Collections",
             "description": "The collections in the IGVF catalog that contain the data in this file.",
@@ -75285,6 +75351,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "catalog_collections": {
             "title": "Catalog Collections",
             "description": "The collections in the IGVF catalog that contain the data in this file.",
@@ -75732,6 +75803,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "catalog_collections": {
             "title": "Catalog Collections",
             "description": "The collections in the IGVF catalog that contain the data in this file.",
@@ -75815,11 +75891,6 @@
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
             "type": "boolean"
-          },
-          "anvil_url": {
-            "title": "AnVIL URL",
-            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
-            "type": "string"
           },
           "documents": {
             "title": "Documents",
@@ -76210,6 +76281,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "catalog_collections": {
             "title": "Catalog Collections",
             "description": "The collections in the IGVF catalog that contain the data in this file.",
@@ -76773,6 +76849,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "catalog_collections": {
             "title": "Catalog Collections",
             "description": "The collections in the IGVF catalog that contain the data in this file.",
@@ -76861,11 +76942,6 @@
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
             "type": "boolean"
-          },
-          "anvil_url": {
-            "title": "AnVIL URL",
-            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
-            "type": "string"
           },
           "release_timestamp": {
             "title": "Release Timestamp",
@@ -77257,6 +77333,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "catalog_collections": {
             "title": "Catalog Collections",
             "description": "The collections in the IGVF catalog that contain the data in this file.",
@@ -77340,11 +77421,6 @@
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
             "type": "boolean"
-          },
-          "anvil_url": {
-            "title": "AnVIL URL",
-            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
-            "type": "string"
           },
           "assembly": {
             "title": "Genome Assembly",
@@ -77820,6 +77896,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "base_modifications": {
             "title": "Base Modifications",
             "description": "The chemical modifications to bases in a DNA sequence that are detected in this file.",
@@ -77861,11 +77942,6 @@
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
             "type": "boolean"
-          },
-          "anvil_url": {
-            "title": "AnVIL URL",
-            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
-            "type": "string"
           },
           "release_timestamp": {
             "title": "Release Timestamp",
@@ -78388,6 +78464,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "catalog_collections": {
             "title": "Catalog Collections",
             "description": "The collections in the IGVF catalog that contain the data in this file.",
@@ -78926,6 +79007,11 @@
         "additionalProperties": false,
         "type": "object",
         "properties": {
+          "anvil_url": {
+            "title": "AnVIL URL",
+            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
+            "type": "string"
+          },
           "catalog_collections": {
             "title": "Catalog Collections",
             "description": "The collections in the IGVF catalog that contain the data in this file.",
@@ -79031,11 +79117,6 @@
             "title": "Controlled Access",
             "description": "Boolean value, indicating the file being controlled access, if true.",
             "type": "boolean"
-          },
-          "anvil_url": {
-            "title": "AnVIL URL",
-            "description": "URL linking to the controlled access file that has been deposited at AnVIL workspace.",
-            "type": "string"
           },
           "assembly": {
             "title": "Genome Assembly",
@@ -84289,7 +84370,8 @@
               "Pacific Biosciences",
               "Parse Biosciences",
               "Roche",
-              "Singular Genomics"
+              "Singular Genomics",
+              "Ultima Genomics"
             ],
             "description": "The company that developed and sells the instrument."
           },

@@ -6,12 +6,12 @@ A file containing sequencing results in bam, fastq, or pod5 formats.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **externally_hosted** | **bool** | Indicates whether the file is externally hosted and not stored on portal. | [optional] 
 **external_host_url** | **str** | A link to the resource where the file is externally hosted. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
-**anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
