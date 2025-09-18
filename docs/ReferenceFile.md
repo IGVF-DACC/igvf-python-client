@@ -6,6 +6,8 @@ A file containing diverse reference related information.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**externally_hosted** | **bool** | Indicates whether the file is externally hosted and not stored on portal. | [optional] 
+**external_host_url** | **str** | A link to the resource where the file is externally hosted. | [optional] 
 **anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **catalog_collections** | **List[str]** | The collections in the IGVF catalog that contain the data in this file. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
@@ -48,7 +50,6 @@ Name | Type | Description | Notes
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **catalog_adapters** | **List[str]** | IGVF Catalog Adapters that ingests this file | [optional] 
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
-**external** | **bool** | Indicates whether the file was obtained from an external, non-IGVF source. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the reference file. | [optional] 

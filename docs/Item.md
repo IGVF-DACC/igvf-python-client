@@ -120,7 +120,6 @@ Name | Type | Description | Notes
 **catalog_adapters** | **List[str]** | IGVF Catalog Adapters that ingests this file | [optional] 
 **source_url** | **str** | An external resource to the code base of the workflow in github. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 
-**external** | **bool** | Indicates whether the file was obtained from an external, non-IGVF source. | [optional] 
 **flowcell_id** | **str** | The alphanumeric identifier for the flowcell of a sequencing machine. | [optional] 
 **lane** | **int** | An integer identifying the lane of a sequencing machine. | [optional] 
 **minimum_read_length** | **int** | For high-throughput sequencing, the minimum number of contiguous nucleotides determined by sequencing. | [optional] 
