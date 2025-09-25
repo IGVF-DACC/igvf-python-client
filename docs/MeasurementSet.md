@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **primer_designs** | **List[str]** | The primer designs used in this measurement set. | [optional] 
 **strand_specificity** | **str** | Indicates whether a transcriptomic library is forward, reverse, or unstranded based on the strand-specific protocol used. | [optional] 
 **auxiliary_sets** | **List[str]** | The auxiliary sets of files produced alongside raw data from this measurement set. | [optional] 
-**external_image_url** | **str** | Links to the external site where images produced by this measurement are stored. | [optional] 
+**external_image_urls** | **List[str]** | Links to the external site where images produced by this measurement are stored. | [optional] 
 **targeted_genes** | **List[str]** | A list of genes targeted in this assay. For example, TF ChIP-seq attempts to identify binding sites of a protein encoded by a specific gene. In CRISPR FlowFISH, the modified samples are sorted based on expression of a specific gene. This property differs from small_scale_gene_list in Construct Library Set, which describes genes targeted by the content integrated in the constructs (such as guide RNAs.) | [optional] 
 **functional_assay_mechanisms** | **List[str]** | The biological processes measured by this functional assay. For example, a VAMP-seq (MultiSTEP) assay measures the effects of variants on protein carboxylation and secretion processes. | [optional] 
 **onlist_method** | **str** | The method by which the onlist files will be combined by the seqspec onlist tool to generate the final barcode inclusion list for the single cell uniform pipeline. | [optional] 

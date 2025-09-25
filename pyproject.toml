@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "igvf_client"
-version = "96.1.0"
+version = "97.0.1"
 description = "IGVF Project API"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"

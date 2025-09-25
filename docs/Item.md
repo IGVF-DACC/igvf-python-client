@@ -189,7 +189,7 @@ Name | Type | Description | Notes
 **multiome_size** | **int** | The number of datasets included in the multiome experiment this measurement set is a part of. | [optional] 
 **sequencing_library_types** | **List[str]** | Description of the libraries sequenced in this measurement set. | [optional] 
 **auxiliary_sets** | **List[str]** | The auxiliary sets of files produced alongside raw data from this measurement set. | [optional] 
-**external_image_url** | **str** | Links to the external site where images produced by this measurement are stored. | [optional] 
+**external_image_urls** | **List[str]** | Links to the external site where images produced by this measurement are stored. | [optional] 
 **onlist_method** | **str** | The method by which the onlist files will be combined by the seqspec onlist tool to generate the final barcode inclusion list for the single cell uniform pipeline. | [optional] 
 **onlist_files** | **List[str]** | The barcode region onlist files listed in associated seqspec yaml files. | [optional] 
 **barcode_replacement_file** | **str** | A file containing original barcodes and the new barcodes used to replace the original barcodes. One common application is to use in preprocessing Parse SPLiT-seq data with the single cell uniform pipeline. | [optional] 

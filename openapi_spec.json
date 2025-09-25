@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "96.1.0"
+    "version": "97.0.1"
   },
   "servers": [
     {
@@ -1600,6 +1600,7 @@
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
+                  "barcode to donor mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -1676,6 +1677,7 @@
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
+                  "modification state",
                   "motifs",
                   "motifs_proteins",
                   "nascent transcriptome index",
@@ -1836,6 +1838,7 @@
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
+                  "barcode to donor mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -1912,6 +1915,7 @@
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
+                  "modification state",
                   "motifs",
                   "motifs_proteins",
                   "nascent transcriptome index",
@@ -2477,6 +2481,7 @@
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
+                  "barcode to donor mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -2553,6 +2558,7 @@
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
+                  "modification state",
                   "motifs",
                   "motifs_proteins",
                   "nascent transcriptome index",
@@ -2669,6 +2675,7 @@
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
+                  "barcode to donor mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -2745,6 +2752,7 @@
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
+                  "modification state",
                   "motifs",
                   "motifs_proteins",
                   "nascent transcriptome index",
@@ -20639,7 +20647,9 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 32, GENCODE M23"
+                  "GENCODE 32, GENCODE M23",
+                  "CAST_EiJ_T2T_v1_TA1",
+                  "C57BL_6J_T2T_v1_TA1 + M36_X"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -27223,7 +27233,9 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 32, GENCODE M23"
+                  "GENCODE 32, GENCODE M23",
+                  "CAST_EiJ_T2T_v1_TA1",
+                  "C57BL_6J_T2T_v1_TA1 + M36_X"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -37869,18 +37881,19 @@
             "explode": true
           },
           {
-            "name": "external_image_url",
+            "name": "external_image_urls",
             "in": "query",
             "schema": {
               "type": "array",
+              "title": "External Image URLs",
               "items": {
                 "type": "string",
-                "title": "External Image URL",
-                "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$",
-                "description": "Links to the external site where images produced by this measurement are stored."
-              }
+                "title": "External Image URLs",
+                "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$"
+              },
+              "description": "Links to the external site where images produced by this measurement are stored."
             },
-            "description": "Filter by external_image_url",
+            "description": "Filter by external_image_urls",
             "style": "form",
             "explode": true
           },
@@ -45456,7 +45469,9 @@
                   "GENCODE M33",
                   "GENCODE M34",
                   "GENCODE M36",
-                  "GENCODE 32, GENCODE M23"
+                  "GENCODE 32, GENCODE M23",
+                  "CAST_EiJ_T2T_v1_TA1",
+                  "C57BL_6J_T2T_v1_TA1 + M36_X"
                 ],
                 "description": "The annotation and version of the reference resource."
               }
@@ -71575,6 +71590,7 @@
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
+                  "barcode to donor mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -71651,6 +71667,7 @@
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
+                  "modification state",
                   "motifs",
                   "motifs_proteins",
                   "nascent transcriptome index",
@@ -71767,6 +71784,7 @@
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
+                  "barcode to donor mapping",
                   "barcode to element mapping",
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
@@ -71843,6 +71861,7 @@
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
+                  "modification state",
                   "motifs",
                   "motifs_proteins",
                   "nascent transcriptome index",
@@ -73275,6 +73294,7 @@
                 "barcode replacement",
                 "barcode to TF overexpression mapping",
                 "barcode to cluster mapping",
+                "barcode to donor mapping",
                 "barcode to element mapping",
                 "barcode to hashtag mapping",
                 "barcode to sample mapping",
@@ -73351,6 +73371,7 @@
                 "minus strand modification state",
                 "mitochondrial DNA heteroplasmy",
                 "model parameters",
+                "modification state",
                 "motifs",
                 "motifs_proteins",
                 "nascent transcriptome index",
@@ -73461,6 +73482,7 @@
                 "barcode replacement",
                 "barcode to TF overexpression mapping",
                 "barcode to cluster mapping",
+                "barcode to donor mapping",
                 "barcode to element mapping",
                 "barcode to hashtag mapping",
                 "barcode to sample mapping",
@@ -73537,6 +73559,7 @@
                 "minus strand modification state",
                 "mitochondrial DNA heteroplasmy",
                 "model parameters",
+                "modification state",
                 "motifs",
                 "motifs_proteins",
                 "nascent transcriptome index",
@@ -78029,7 +78052,9 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 32, GENCODE M23"
+              "GENCODE 32, GENCODE M23",
+              "CAST_EiJ_T2T_v1_TA1",
+              "C57BL_6J_T2T_v1_TA1 + M36_X"
             ]
           },
           "documents": {
@@ -79689,7 +79714,9 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 32, GENCODE M23"
+              "GENCODE 32, GENCODE M23",
+              "CAST_EiJ_T2T_v1_TA1",
+              "C57BL_6J_T2T_v1_TA1 + M36_X"
             ]
           },
           "reference_files": {
@@ -82174,11 +82201,15 @@
               "type": "string"
             }
           },
-          "external_image_url": {
-            "title": "External Image URL",
+          "external_image_urls": {
+            "title": "External Image URLs",
             "description": "Links to the external site where images produced by this measurement are stored.",
-            "type": "string",
-            "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$"
+            "type": "array",
+            "items": {
+              "title": "External Image URLs",
+              "type": "string",
+              "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$"
+            }
           },
           "targeted_genes": {
             "title": "Targeted Genes",
@@ -83236,7 +83267,9 @@
               "GENCODE M33",
               "GENCODE M34",
               "GENCODE M36",
-              "GENCODE 32, GENCODE M23"
+              "GENCODE 32, GENCODE M23",
+              "CAST_EiJ_T2T_v1_TA1",
+              "C57BL_6J_T2T_v1_TA1 + M36_X"
             ]
           },
           "taxa": {
