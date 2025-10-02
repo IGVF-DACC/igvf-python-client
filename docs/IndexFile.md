@@ -60,6 +60,7 @@ Name | Type | Description | Notes
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **filtered** | **bool** | Indicates whether reads that did not pass a filtering step, such as PCR duplicates, have been removed from the file. | [optional] 
 **redacted** | **bool** | Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information. | [optional] 
+**reference_files** | **List[str]** | The reference files of the file that this index file is derived from. | [optional] 
 
 ## Example
 

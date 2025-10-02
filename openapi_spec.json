@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "97.0.1"
+    "version": "98.0.0"
   },
   "servers": [
     {
@@ -1349,6 +1349,7 @@
                   "barcode mapping generation",
                   "base calling",
                   "cell to feature barcode mapping",
+                  "cell profiling",
                   "computational model prediction",
                   "computational model training",
                   "counts normalization",
@@ -1361,6 +1362,7 @@
                   "fragment generation",
                   "genome index generation",
                   "heteroplasmy ratio determination",
+                  "image analysis",
                   "interaction calling",
                   "matrix generation",
                   "merging",
@@ -1373,6 +1375,7 @@
                   "signal normalization",
                   "spatial feature detection",
                   "transcriptome index generation",
+                  "UMAP embedding",
                   "UMI deduplication",
                   "UMI quantification",
                   "variant annotation"
@@ -1588,11 +1591,13 @@
                 "title": "Input Content Type",
                 "enum": [
                   "DNA footprint scores",
+                  "DUAL-IPA score",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
                   "TF binding scores",
+                  "UMAP plot",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -1665,10 +1670,12 @@
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
+                  "guide RNA sequences reference",
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
@@ -1683,6 +1690,7 @@
                   "nascent transcriptome index",
                   "neural network architecture",
                   "neural network architecture and edge weights",
+                  "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -1697,6 +1705,7 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein stability fluorescence score",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -1714,6 +1723,7 @@
                   "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
+                  "selected normalized variants profile",
                   "seqspec",
                   "sequence attributes",
                   "signal",
@@ -1744,6 +1754,7 @@
                   "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
+                  "variant to cluster mapping",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -1826,11 +1837,13 @@
                 "title": "Output Content Type",
                 "enum": [
                   "DNA footprint scores",
+                  "DUAL-IPA score",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
                   "TF binding scores",
+                  "UMAP plot",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -1903,10 +1916,12 @@
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
+                  "guide RNA sequences reference",
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
@@ -1921,6 +1936,7 @@
                   "nascent transcriptome index",
                   "neural network architecture",
                   "neural network architecture and edge weights",
+                  "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -1935,6 +1951,7 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein stability fluorescence score",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -1952,6 +1969,7 @@
                   "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
+                  "selected normalized variants profile",
                   "seqspec",
                   "sequence attributes",
                   "signal",
@@ -1982,6 +2000,7 @@
                   "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
+                  "variant to cluster mapping",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -2423,6 +2442,7 @@
                   "barcode mapping generation",
                   "base calling",
                   "cell to feature barcode mapping",
+                  "cell profiling",
                   "computational model prediction",
                   "computational model training",
                   "counts normalization",
@@ -2435,6 +2455,7 @@
                   "fragment generation",
                   "genome index generation",
                   "heteroplasmy ratio determination",
+                  "image analysis",
                   "interaction calling",
                   "matrix generation",
                   "merging",
@@ -2447,6 +2468,7 @@
                   "signal normalization",
                   "spatial feature detection",
                   "transcriptome index generation",
+                  "UMAP embedding",
                   "UMI deduplication",
                   "UMI quantification",
                   "variant annotation"
@@ -2469,11 +2491,13 @@
                 "title": "Input Content Type",
                 "enum": [
                   "DNA footprint scores",
+                  "DUAL-IPA score",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
                   "TF binding scores",
+                  "UMAP plot",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -2546,10 +2570,12 @@
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
+                  "guide RNA sequences reference",
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
@@ -2564,6 +2590,7 @@
                   "nascent transcriptome index",
                   "neural network architecture",
                   "neural network architecture and edge weights",
+                  "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -2578,6 +2605,7 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein stability fluorescence score",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -2595,6 +2623,7 @@
                   "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
+                  "selected normalized variants profile",
                   "seqspec",
                   "sequence attributes",
                   "signal",
@@ -2625,6 +2654,7 @@
                   "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
+                  "variant to cluster mapping",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -2663,11 +2693,13 @@
                 "title": "Output Content Type",
                 "enum": [
                   "DNA footprint scores",
+                  "DUAL-IPA score",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
                   "TF binding scores",
+                  "UMAP plot",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -2740,10 +2772,12 @@
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
+                  "guide RNA sequences reference",
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
@@ -2758,6 +2792,7 @@
                   "nascent transcriptome index",
                   "neural network architecture",
                   "neural network architecture and edge weights",
+                  "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -2772,6 +2807,7 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein stability fluorescence score",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -2789,6 +2825,7 @@
                   "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
+                  "selected normalized variants profile",
                   "seqspec",
                   "sequence attributes",
                   "signal",
@@ -2819,6 +2856,7 @@
                   "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
+                  "variant to cluster mapping",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -14266,6 +14304,21 @@
               }
             },
             "description": "Filter by redacted",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "reference_files",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Reference Files",
+              "items": {
+                "type": "string"
+              },
+              "description": "The reference files of the file that this index file is derived from."
+            },
+            "description": "Filter by reference_files",
             "style": "form",
             "explode": true
           },
@@ -27802,6 +27855,128 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.selection_criteria",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Criteria",
+              "items": {
+                "type": "string",
+                "title": "Selection Criterion",
+                "enum": [
+                  "accessible genome regions",
+                  "candidate cis-regulatory elements",
+                  "controls",
+                  "chromatin states",
+                  "phenotype-associated variants",
+                  "DNase hypersensitive sites",
+                  "genes",
+                  "histone modifications",
+                  "protein interactors",
+                  "random selections",
+                  "sequence variants",
+                  "synthetic elements",
+                  "transcription start sites",
+                  "TF binding sites"
+                ],
+                "description": "The criterion used to select or design the sequence material cloned into the library."
+              },
+              "description": "The criteria used to select the sequence material cloned into the library."
+            },
+            "description": "Filter by construct_library_sets.selection_criteria",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.geneid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
+                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.geneid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "The full gene name preferably approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.status",
             "in": "query",
             "schema": {
@@ -29190,6 +29365,21 @@
             "explode": true
           },
           {
+            "name": "samples.growth_medium",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Growth Medium",
+                "description": "A growth medium of the in vitro system."
+              }
+            },
+            "description": "Filter by samples.growth_medium",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.institutional_certificates.@id",
             "in": "query",
             "schema": {
@@ -30286,6 +30476,128 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.selection_criteria",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Criteria",
+              "items": {
+                "type": "string",
+                "title": "Selection Criterion",
+                "enum": [
+                  "accessible genome regions",
+                  "candidate cis-regulatory elements",
+                  "controls",
+                  "chromatin states",
+                  "phenotype-associated variants",
+                  "DNase hypersensitive sites",
+                  "genes",
+                  "histone modifications",
+                  "protein interactors",
+                  "random selections",
+                  "sequence variants",
+                  "synthetic elements",
+                  "transcription start sites",
+                  "TF binding sites"
+                ],
+                "description": "The criterion used to select or design the sequence material cloned into the library."
+              },
+              "description": "The criteria used to select the sequence material cloned into the library."
+            },
+            "description": "Filter by construct_library_sets.selection_criteria",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.geneid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
+                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.geneid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "The full gene name preferably approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.status",
             "in": "query",
             "schema": {
@@ -31318,7 +31630,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ]
               },
               "description": "The custom lab preferred label for the experiment performed."
@@ -31598,6 +31911,21 @@
               }
             },
             "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.growth_medium",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Growth Medium",
+                "description": "A growth medium of the in vitro system."
+              }
+            },
+            "description": "Filter by samples.growth_medium",
             "style": "form",
             "explode": true
           },
@@ -35118,6 +35446,128 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.selection_criteria",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Criteria",
+              "items": {
+                "type": "string",
+                "title": "Selection Criterion",
+                "enum": [
+                  "accessible genome regions",
+                  "candidate cis-regulatory elements",
+                  "controls",
+                  "chromatin states",
+                  "phenotype-associated variants",
+                  "DNase hypersensitive sites",
+                  "genes",
+                  "histone modifications",
+                  "protein interactors",
+                  "random selections",
+                  "sequence variants",
+                  "synthetic elements",
+                  "transcription start sites",
+                  "TF binding sites"
+                ],
+                "description": "The criterion used to select or design the sequence material cloned into the library."
+              },
+              "description": "The criteria used to select the sequence material cloned into the library."
+            },
+            "description": "Filter by construct_library_sets.selection_criteria",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.geneid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
+                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.geneid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "The full gene name preferably approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.status",
             "in": "query",
             "schema": {
@@ -36266,6 +36716,21 @@
             "explode": true
           },
           {
+            "name": "samples.growth_medium",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Growth Medium",
+                "description": "A growth medium of the in vitro system."
+              }
+            },
+            "description": "Filter by samples.growth_medium",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.institutional_certificates.@id",
             "in": "query",
             "schema": {
@@ -37403,6 +37868,39 @@
               }
             },
             "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.selection_criteria",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Criteria",
+              "items": {
+                "type": "string",
+                "title": "Selection Criterion",
+                "enum": [
+                  "accessible genome regions",
+                  "candidate cis-regulatory elements",
+                  "controls",
+                  "chromatin states",
+                  "phenotype-associated variants",
+                  "DNase hypersensitive sites",
+                  "genes",
+                  "histone modifications",
+                  "protein interactors",
+                  "random selections",
+                  "sequence variants",
+                  "synthetic elements",
+                  "transcription start sites",
+                  "TF binding sites"
+                ],
+                "description": "The criterion used to select or design the sequence material cloned into the library."
+              },
+              "description": "The criteria used to select the sequence material cloned into the library."
+            },
+            "description": "Filter by construct_library_sets.selection_criteria",
             "style": "form",
             "explode": true
           },
@@ -38723,7 +39221,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ]
               },
               "description": "The custom lab preferred label for the experiment performed."
@@ -39033,6 +39532,21 @@
               }
             },
             "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.growth_medium",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Growth Medium",
+                "description": "A growth medium of the in vitro system."
+              }
+            },
+            "description": "Filter by samples.growth_medium",
             "style": "form",
             "explode": true
           },
@@ -40185,6 +40699,128 @@
               }
             },
             "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.selection_criteria",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Criteria",
+              "items": {
+                "type": "string",
+                "title": "Selection Criterion",
+                "enum": [
+                  "accessible genome regions",
+                  "candidate cis-regulatory elements",
+                  "controls",
+                  "chromatin states",
+                  "phenotype-associated variants",
+                  "DNase hypersensitive sites",
+                  "genes",
+                  "histone modifications",
+                  "protein interactors",
+                  "random selections",
+                  "sequence variants",
+                  "synthetic elements",
+                  "transcription start sites",
+                  "TF binding sites"
+                ],
+                "description": "The criterion used to select or design the sequence material cloned into the library."
+              },
+              "description": "The criteria used to select the sequence material cloned into the library."
+            },
+            "description": "Filter by construct_library_sets.selection_criteria",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.geneid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
+                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.geneid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "The full gene name preferably approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.symbol",
             "style": "form",
             "explode": true
           },
@@ -41351,7 +41987,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ]
               },
               "description": "The assay(s) that served as input tranining data for the derivation of this model set."
@@ -41584,6 +42221,21 @@
               }
             },
             "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.growth_medium",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Growth Medium",
+                "description": "A growth medium of the in vitro system."
+              }
+            },
+            "description": "Filter by samples.growth_medium",
             "style": "form",
             "explode": true
           },
@@ -42823,6 +43475,128 @@
               }
             },
             "description": "Filter by construct_library_sets.integrated_content_files.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.selection_criteria",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Criteria",
+              "items": {
+                "type": "string",
+                "title": "Selection Criterion",
+                "enum": [
+                  "accessible genome regions",
+                  "candidate cis-regulatory elements",
+                  "controls",
+                  "chromatin states",
+                  "phenotype-associated variants",
+                  "DNase hypersensitive sites",
+                  "genes",
+                  "histone modifications",
+                  "protein interactors",
+                  "random selections",
+                  "sequence variants",
+                  "synthetic elements",
+                  "transcription start sites",
+                  "TF binding sites"
+                ],
+                "description": "The criterion used to select or design the sequence material cloned into the library."
+              },
+              "description": "The criteria used to select the sequence material cloned into the library."
+            },
+            "description": "Filter by construct_library_sets.selection_criteria",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.geneid",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENS[A-Z]*G\\d{11}(_PAR_Y)?$",
+                "description": "ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.geneid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "The full gene name preferably approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.small_scale_gene_list.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by construct_library_sets.small_scale_gene_list.symbol",
             "style": "form",
             "explode": true
           },
@@ -44161,6 +44935,21 @@
               }
             },
             "description": "Filter by samples.disease_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.growth_medium",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Growth Medium",
+                "description": "A growth medium of the in vitro system."
+              }
+            },
+            "description": "Filter by samples.growth_medium",
             "style": "form",
             "explode": true
           },
@@ -48653,7 +49442,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ]
               },
               "description": "The custom lab preferred label for the experiment performed."
@@ -56974,7 +57764,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ],
                 "description": "Title of assay that produced data analyzed in the analysis set."
               },
@@ -57026,7 +57817,10 @@
                   "DMEM with serum",
                   "DMEM without serum",
                   "SMBM with serum",
-                  "SMBM without serum"
+                  "SMBM without serum",
+                  "1 kPa hydrogel",
+                  "50 kPa hydrogel",
+                  "tissue culture plastic plates (no hydrogel)"
                 ],
                 "description": "A growth medium of the in vitro system."
               }
@@ -59270,7 +60064,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ],
                 "description": "Title of assay that produced data analyzed in the analysis set."
               },
@@ -61464,7 +62259,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ],
                 "description": "Title of assay that produced data analyzed in the analysis set."
               },
@@ -63345,7 +64141,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ],
                 "description": "Title of assay that produced data analyzed in the analysis set."
               },
@@ -65033,7 +65830,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ],
                 "description": "Title of assay that produced data analyzed in the analysis set."
               },
@@ -67293,7 +68091,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ],
                 "description": "Title of assay that produced data analyzed in the analysis set."
               },
@@ -70570,8 +71369,8 @@
                   "agonist",
                   "antagonist",
                   "control",
-                  "differentiation",
                   "de-differentiation",
+                  "differentiation",
                   "perturbation",
                   "selection",
                   "stimulation"
@@ -70767,8 +71566,7 @@
                 "title": "Treatment Type",
                 "enum": [
                   "chemical",
-                  "protein",
-                  "environmental"
+                  "protein"
                 ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
@@ -71532,6 +72330,7 @@
                   "barcode mapping generation",
                   "base calling",
                   "cell to feature barcode mapping",
+                  "cell profiling",
                   "computational model prediction",
                   "computational model training",
                   "counts normalization",
@@ -71544,6 +72343,7 @@
                   "fragment generation",
                   "genome index generation",
                   "heteroplasmy ratio determination",
+                  "image analysis",
                   "interaction calling",
                   "matrix generation",
                   "merging",
@@ -71556,6 +72356,7 @@
                   "signal normalization",
                   "spatial feature detection",
                   "transcriptome index generation",
+                  "UMAP embedding",
                   "UMI deduplication",
                   "UMI quantification",
                   "variant annotation"
@@ -71578,11 +72379,13 @@
                 "title": "Input Content Type",
                 "enum": [
                   "DNA footprint scores",
+                  "DUAL-IPA score",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
                   "TF binding scores",
+                  "UMAP plot",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -71655,10 +72458,12 @@
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
+                  "guide RNA sequences reference",
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
@@ -71673,6 +72478,7 @@
                   "nascent transcriptome index",
                   "neural network architecture",
                   "neural network architecture and edge weights",
+                  "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -71687,6 +72493,7 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein stability fluorescence score",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -71704,6 +72511,7 @@
                   "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
+                  "selected normalized variants profile",
                   "seqspec",
                   "sequence attributes",
                   "signal",
@@ -71734,6 +72542,7 @@
                   "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
+                  "variant to cluster mapping",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -71772,11 +72581,13 @@
                 "title": "Output Content Type",
                 "enum": [
                   "DNA footprint scores",
+                  "DUAL-IPA score",
                   "MPRA sequence designs",
                   "Nanopore reads",
                   "PacBio subreads",
                   "SNP effect matrix",
                   "TF binding scores",
+                  "UMAP plot",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -71849,10 +72660,12 @@
                   "go_terms_proteins",
                   "graph structure",
                   "guide RNA sequences",
+                  "guide RNA sequences reference",
                   "guide quantifications",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
                   "low resolution tissue",
@@ -71867,6 +72680,7 @@
                   "nascent transcriptome index",
                   "neural network architecture",
                   "neural network architecture and edge weights",
+                  "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
                   "pathways",
@@ -71881,6 +72695,7 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein stability fluorescence score",
                   "protein to protein interaction score",
                   "proteins",
                   "proteins_proteins",
@@ -71898,6 +72713,7 @@
                   "sample barcode count matrix",
                   "sample sort parameters",
                   "scale factors",
+                  "selected normalized variants profile",
                   "seqspec",
                   "sequence attributes",
                   "signal",
@@ -71928,6 +72744,7 @@
                   "variant functions",
                   "variant localization impacts",
                   "variant pathogenicity",
+                  "variant to cluster mapping",
                   "variant to element mapping",
                   "variants",
                   "variants_coding_variants",
@@ -72368,7 +73185,8 @@
                   "ONT Fiber-seq",
                   "ONT direct WGS",
                   "Bisulfite-seq",
-                  "WGS"
+                  "WGS",
+                  "DNase-seq"
                 ]
               },
               "description": "The custom lab preferred label for the experiment performed."
@@ -73218,6 +74036,7 @@
                 "barcode mapping generation",
                 "base calling",
                 "cell to feature barcode mapping",
+                "cell profiling",
                 "computational model prediction",
                 "computational model training",
                 "counts normalization",
@@ -73230,6 +74049,7 @@
                 "fragment generation",
                 "genome index generation",
                 "heteroplasmy ratio determination",
+                "image analysis",
                 "interaction calling",
                 "matrix generation",
                 "merging",
@@ -73242,6 +74062,7 @@
                 "signal normalization",
                 "spatial feature detection",
                 "transcriptome index generation",
+                "UMAP embedding",
                 "UMI deduplication",
                 "UMI quantification",
                 "variant annotation"
@@ -73282,11 +74103,13 @@
               "type": "string",
               "enum": [
                 "DNA footprint scores",
+                "DUAL-IPA score",
                 "MPRA sequence designs",
                 "Nanopore reads",
                 "PacBio subreads",
                 "SNP effect matrix",
                 "TF binding scores",
+                "UMAP plot",
                 "alignments",
                 "alignments with modifications",
                 "annotated multimodal CRISPR matrix",
@@ -73359,10 +74182,12 @@
                 "go_terms_proteins",
                 "graph structure",
                 "guide RNA sequences",
+                "guide RNA sequences reference",
                 "guide quantifications",
                 "high resolution tissue",
                 "inclusion list",
                 "index",
+                "individual cells profile",
                 "kallisto single cell RNAseq output",
                 "loci",
                 "low resolution tissue",
@@ -73377,6 +74202,7 @@
                 "nascent transcriptome index",
                 "neural network architecture",
                 "neural network architecture and edge weights",
+                "normalized variants profile",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
                 "pathways",
@@ -73391,6 +74217,7 @@
                 "primers table",
                 "primers track",
                 "protein language model",
+                "protein stability fluorescence score",
                 "protein to protein interaction score",
                 "proteins",
                 "proteins_proteins",
@@ -73408,6 +74235,7 @@
                 "sample barcode count matrix",
                 "sample sort parameters",
                 "scale factors",
+                "selected normalized variants profile",
                 "seqspec",
                 "sequence attributes",
                 "signal",
@@ -73438,6 +74266,7 @@
                 "variant functions",
                 "variant localization impacts",
                 "variant pathogenicity",
+                "variant to cluster mapping",
                 "variant to element mapping",
                 "variants",
                 "variants_coding_variants",
@@ -73470,11 +74299,13 @@
               "type": "string",
               "enum": [
                 "DNA footprint scores",
+                "DUAL-IPA score",
                 "MPRA sequence designs",
                 "Nanopore reads",
                 "PacBio subreads",
                 "SNP effect matrix",
                 "TF binding scores",
+                "UMAP plot",
                 "alignments",
                 "alignments with modifications",
                 "annotated multimodal CRISPR matrix",
@@ -73547,10 +74378,12 @@
                 "go_terms_proteins",
                 "graph structure",
                 "guide RNA sequences",
+                "guide RNA sequences reference",
                 "guide quantifications",
                 "high resolution tissue",
                 "inclusion list",
                 "index",
+                "individual cells profile",
                 "kallisto single cell RNAseq output",
                 "loci",
                 "low resolution tissue",
@@ -73565,6 +74398,7 @@
                 "nascent transcriptome index",
                 "neural network architecture",
                 "neural network architecture and edge weights",
+                "normalized variants profile",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
                 "pathways",
@@ -73579,6 +74413,7 @@
                 "primers table",
                 "primers track",
                 "protein language model",
+                "protein stability fluorescence score",
                 "protein to protein interaction score",
                 "proteins",
                 "proteins_proteins",
@@ -73596,6 +74431,7 @@
                 "sample barcode count matrix",
                 "sample sort parameters",
                 "scale factors",
+                "selected normalized variants profile",
                 "seqspec",
                 "sequence attributes",
                 "signal",
@@ -73626,6 +74462,7 @@
                 "variant functions",
                 "variant localization impacts",
                 "variant pathogenicity",
+                "variant to cluster mapping",
                 "variant to element mapping",
                 "variants",
                 "variants_coding_variants",
@@ -76214,7 +77051,8 @@
             "type": "string",
             "enum": [
               "jpg",
-              "png"
+              "png",
+              "svg"
             ]
           },
           "file_format_specifications": {
@@ -76861,6 +77699,15 @@
             "title": "Redacted",
             "type": "boolean",
             "description": "Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information."
+          },
+          "reference_files": {
+            "title": "Reference Files",
+            "description": "The reference files of the file that this index file is derived from.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -81892,7 +82739,8 @@
                 "ONT Fiber-seq",
                 "ONT direct WGS",
                 "Bisulfite-seq",
-                "WGS"
+                "WGS",
+                "DNase-seq"
               ]
             }
           },
@@ -82449,7 +83297,8 @@
                 "ONT Fiber-seq",
                 "ONT direct WGS",
                 "Bisulfite-seq",
-                "WGS"
+                "WGS",
+                "DNase-seq"
               ]
             }
           },
@@ -84508,7 +85357,8 @@
                 "ONT Fiber-seq",
                 "ONT direct WGS",
                 "Bisulfite-seq",
-                "WGS"
+                "WGS",
+                "DNase-seq"
               ]
             }
           },
@@ -87968,7 +88818,10 @@
               "DMEM with serum",
               "DMEM without serum",
               "SMBM with serum",
-              "SMBM without serum"
+              "SMBM without serum",
+              "1 kPa hydrogel",
+              "50 kPa hydrogel",
+              "tissue culture plastic plates (no hydrogel)"
             ]
           },
           "biosample_qualifiers": {
@@ -91350,8 +92203,8 @@
               "agonist",
               "antagonist",
               "control",
-              "differentiation",
               "de-differentiation",
+              "differentiation",
               "perturbation",
               "selection",
               "stimulation"
@@ -91393,8 +92246,7 @@
             "description": "The classification of treatment agent that specifies its exact molecular nature. ",
             "enum": [
               "chemical",
-              "protein",
-              "environmental"
+              "protein"
             ]
           },
           "treatment_term_id": {
@@ -91700,7 +92552,8 @@
                 "ONT Fiber-seq",
                 "ONT direct WGS",
                 "Bisulfite-seq",
-                "WGS"
+                "WGS",
+                "DNase-seq"
               ]
             }
           },
