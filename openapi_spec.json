@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "98.0.0"
+    "version": "99.0.2"
   },
   "servers": [
     {
@@ -27877,7 +27877,8 @@
                   "sequence variants",
                   "synthetic elements",
                   "transcription start sites",
-                  "TF binding sites"
+                  "TF binding sites",
+                  "TF genes"
                 ],
                 "description": "The criterion used to select or design the sequence material cloned into the library."
               },
@@ -30498,7 +30499,8 @@
                   "sequence variants",
                   "synthetic elements",
                   "transcription start sites",
-                  "TF binding sites"
+                  "TF binding sites",
+                  "TF genes"
                 ],
                 "description": "The criterion used to select or design the sequence material cloned into the library."
               },
@@ -31453,18 +31455,79 @@
             "explode": true
           },
           {
-            "name": "input_for",
+            "name": "input_for.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Input For",
               "items": {
                 "type": "string",
-                "title": "Input For"
-              },
-              "description": "The file sets that use this file set as an input."
+                "title": "ID"
+              }
             },
-            "description": "Filter by input_for",
+            "description": "Filter by input_for.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by input_for.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for.aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by input_for.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by input_for.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for.uniform_pipeline_status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Uniform Pipeline Status",
+                "description": "The status of the single cell or Perturb-seq uniform pipeline processing for this analysis set, if applicable."
+              }
+            },
+            "description": "Filter by input_for.uniform_pipeline_status",
             "style": "form",
             "explode": true
           },
@@ -31569,9 +31632,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -34667,7 +34732,8 @@
                   "sequence variants",
                   "synthetic elements",
                   "transcription start sites",
-                  "TF binding sites"
+                  "TF binding sites",
+                  "TF genes"
                 ],
                 "description": "The criterion used to select or design the sequence material cloned into the library."
               },
@@ -35468,7 +35534,8 @@
                   "sequence variants",
                   "synthetic elements",
                   "transcription start sites",
-                  "TF binding sites"
+                  "TF binding sites",
+                  "TF genes"
                 ],
                 "description": "The criterion used to select or design the sequence material cloned into the library."
               },
@@ -35877,6 +35944,7 @@
                   "editing templates",
                   "elements",
                   "external data for catalog",
+                  "functional effect",
                   "genome",
                   "genes",
                   "guide RNAs",
@@ -37894,7 +37962,8 @@
                   "sequence variants",
                   "synthetic elements",
                   "transcription start sites",
-                  "TF binding sites"
+                  "TF binding sites",
+                  "TF genes"
                 ],
                 "description": "The criterion used to select or design the sequence material cloned into the library."
               },
@@ -39023,18 +39092,79 @@
             "explode": true
           },
           {
-            "name": "input_for",
+            "name": "input_for.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Input For",
               "items": {
                 "type": "string",
-                "title": "Input For"
-              },
-              "description": "The file sets that use this file set as an input."
+                "title": "ID"
+              }
             },
-            "description": "Filter by input_for",
+            "description": "Filter by input_for.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by input_for.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for.aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by input_for.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by input_for.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_for.uniform_pipeline_status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Uniform Pipeline Status",
+                "description": "The status of the single cell or Perturb-seq uniform pipeline processing for this analysis set, if applicable."
+              }
+            },
+            "description": "Filter by input_for.uniform_pipeline_status",
             "style": "form",
             "explode": true
           },
@@ -39160,9 +39290,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -40725,7 +40857,8 @@
                   "sequence variants",
                   "synthetic elements",
                   "transcription start sites",
-                  "TF binding sites"
+                  "TF binding sites",
+                  "TF genes"
                 ],
                 "description": "The criterion used to select or design the sequence material cloned into the library."
               },
@@ -41926,9 +42059,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -43501,7 +43636,8 @@
                   "sequence variants",
                   "synthetic elements",
                   "transcription start sites",
-                  "TF binding sites"
+                  "TF binding sites",
+                  "TF genes"
                 ],
                 "description": "The criterion used to select or design the sequence material cloned into the library."
               },
@@ -49381,9 +49517,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -57703,9 +57841,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -60003,9 +60143,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -62198,9 +62340,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -64080,9 +64224,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -65769,9 +65915,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -68030,9 +68178,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -73124,9 +73274,11 @@
                   "snATAC-seq",
                   "mtscMultiome",
                   "DOGMA-seq",
+                  "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
-                  "10x with Scale pre-indexing",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
                   "MULTI-seq",
                   "SHARE-seq",
                   "Histone ChIP-seq",
@@ -82060,7 +82212,8 @@
                 "sequence variants",
                 "synthetic elements",
                 "transcription start sites",
-                "TF binding sites"
+                "TF binding sites",
+                "TF genes"
               ]
             }
           },
@@ -82538,6 +82691,7 @@
               "editing templates",
               "elements",
               "external data for catalog",
+              "functional effect",
               "genome",
               "genes",
               "guide RNAs",
@@ -82678,9 +82832,11 @@
                 "snATAC-seq",
                 "mtscMultiome",
                 "DOGMA-seq",
+                "DUAL-IPA",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
-                "10x with Scale pre-indexing",
+                "10x snATAC-seq with Scale pre-indexing",
+                "snRNA-seq with Scale pre-indexing",
                 "MULTI-seq",
                 "SHARE-seq",
                 "Histone ChIP-seq",
@@ -83236,9 +83392,11 @@
                 "snATAC-seq",
                 "mtscMultiome",
                 "DOGMA-seq",
+                "DUAL-IPA",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
-                "10x with Scale pre-indexing",
+                "10x snATAC-seq with Scale pre-indexing",
+                "snRNA-seq with Scale pre-indexing",
                 "MULTI-seq",
                 "SHARE-seq",
                 "Histone ChIP-seq",
@@ -85296,9 +85454,11 @@
                 "snATAC-seq",
                 "mtscMultiome",
                 "DOGMA-seq",
+                "DUAL-IPA",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
-                "10x with Scale pre-indexing",
+                "10x snATAC-seq with Scale pre-indexing",
+                "snRNA-seq with Scale pre-indexing",
                 "MULTI-seq",
                 "SHARE-seq",
                 "Histone ChIP-seq",
@@ -92491,9 +92651,11 @@
                 "snATAC-seq",
                 "mtscMultiome",
                 "DOGMA-seq",
+                "DUAL-IPA",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
-                "10x with Scale pre-indexing",
+                "10x snATAC-seq with Scale pre-indexing",
+                "snRNA-seq with Scale pre-indexing",
                 "MULTI-seq",
                 "SHARE-seq",
                 "Histone ChIP-seq",
