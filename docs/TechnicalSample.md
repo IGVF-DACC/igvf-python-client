@@ -42,6 +42,7 @@ Name | Type | Description | Notes
 **time_post_library_delivery** | **float** | The time that elapsed past the time-point when the construct library sets were introduced. | [optional] 
 **time_post_library_delivery_units** | **str** | The units of time that elapsed past the point when the construct library sets were introduced. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
+**supersedes** | **List[str]** | The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **sample_material** | **str** |  | [optional] 
 **taxa** | **str** |  | [optional] 
 **sample_terms** | **List[str]** | Ontology terms identifying a technical sample. | [optional] 
@@ -53,6 +54,7 @@ Name | Type | Description | Notes
 **sorted_fractions** | **List[str]** | The fractions into which this sample has been sorted. | [optional] 
 **origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
 **institutional_certificates** | **List[str]** | The institutional certificates under which use of this sample is approved. | [optional] 
+**superseded_by** | **List[str]** | Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one. | [optional] 
 **classifications** | **List[str]** | The general category of this type of sample. | [optional] 
 
 ## Example

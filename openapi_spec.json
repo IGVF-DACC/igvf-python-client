@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "99.0.2"
+    "version": "100.0.0"
   },
   "servers": [
     {
@@ -5604,6 +5604,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "Donor(s) this donor is superseded by virtue of those donor(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded Donor",
+                "description": "Donor that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The donor(s) that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "taxa",
             "in": "query",
             "schema": {
@@ -6559,6 +6592,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "Donor(s) this donor is superseded by virtue of those donor(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded Donor",
+                "description": "Donor that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The donor(s) that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -8506,6 +8572,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -8979,6 +9078,26 @@
             "explode": true
           },
           {
+            "name": "catalog_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Class",
+                "enum": [
+                  "biological relationship",
+                  "observed data",
+                  "prediction"
+                ],
+                "description": "The class curated in the IGVF catalog that the data in this file belongs to."
+              }
+            },
+            "description": "Filter by catalog_class",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_collections",
             "in": "query",
             "schema": {
@@ -9050,6 +9169,22 @@
               "description": "The collections in the IGVF catalog that contain the data in this file."
             },
             "description": "Filter by catalog_collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC notes for data loading in the IGVF catalog"
+              }
+            },
+            "description": "Filter by catalog_notes",
             "style": "form",
             "explode": true
           },
@@ -10484,6 +10619,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -10957,6 +11125,26 @@
             "explode": true
           },
           {
+            "name": "catalog_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Class",
+                "enum": [
+                  "biological relationship",
+                  "observed data",
+                  "prediction"
+                ],
+                "description": "The class curated in the IGVF catalog that the data in this file belongs to."
+              }
+            },
+            "description": "Filter by catalog_class",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_collections",
             "in": "query",
             "schema": {
@@ -11028,6 +11216,22 @@
               "description": "The collections in the IGVF catalog that contain the data in this file."
             },
             "description": "Filter by catalog_collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC notes for data loading in the IGVF catalog"
+              }
+            },
+            "description": "Filter by catalog_notes",
             "style": "form",
             "explode": true
           },
@@ -12446,6 +12650,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -12919,6 +13156,26 @@
             "explode": true
           },
           {
+            "name": "catalog_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Class",
+                "enum": [
+                  "biological relationship",
+                  "observed data",
+                  "prediction"
+                ],
+                "description": "The class curated in the IGVF catalog that the data in this file belongs to."
+              }
+            },
+            "description": "Filter by catalog_class",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_collections",
             "in": "query",
             "schema": {
@@ -12990,6 +13247,22 @@
               "description": "The collections in the IGVF catalog that contain the data in this file."
             },
             "description": "Filter by catalog_collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC notes for data loading in the IGVF catalog"
+              }
+            },
+            "description": "Filter by catalog_notes",
             "style": "form",
             "explode": true
           },
@@ -14468,6 +14741,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -14956,6 +15262,26 @@
             "explode": true
           },
           {
+            "name": "catalog_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Class",
+                "enum": [
+                  "biological relationship",
+                  "observed data",
+                  "prediction"
+                ],
+                "description": "The class curated in the IGVF catalog that the data in this file belongs to."
+              }
+            },
+            "description": "Filter by catalog_class",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_collections",
             "in": "query",
             "schema": {
@@ -15027,6 +15353,22 @@
               "description": "The collections in the IGVF catalog that contain the data in this file."
             },
             "description": "Filter by catalog_collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC notes for data loading in the IGVF catalog"
+              }
+            },
+            "description": "Filter by catalog_notes",
             "style": "form",
             "explode": true
           },
@@ -16550,6 +16892,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -17041,6 +17416,26 @@
             "explode": true
           },
           {
+            "name": "catalog_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Class",
+                "enum": [
+                  "biological relationship",
+                  "observed data",
+                  "prediction"
+                ],
+                "description": "The class curated in the IGVF catalog that the data in this file belongs to."
+              }
+            },
+            "description": "Filter by catalog_class",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_collections",
             "in": "query",
             "schema": {
@@ -17112,6 +17507,22 @@
               "description": "The collections in the IGVF catalog that contain the data in this file."
             },
             "description": "Filter by catalog_collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC notes for data loading in the IGVF catalog"
+              }
+            },
+            "description": "Filter by catalog_notes",
             "style": "form",
             "explode": true
           },
@@ -18575,6 +18986,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -19077,6 +19521,26 @@
             "explode": true
           },
           {
+            "name": "catalog_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Class",
+                "enum": [
+                  "biological relationship",
+                  "observed data",
+                  "prediction"
+                ],
+                "description": "The class curated in the IGVF catalog that the data in this file belongs to."
+              }
+            },
+            "description": "Filter by catalog_class",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_collections",
             "in": "query",
             "schema": {
@@ -19148,6 +19612,22 @@
               "description": "The collections in the IGVF catalog that contain the data in this file."
             },
             "description": "Filter by catalog_collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC notes for data loading in the IGVF catalog"
+              }
+            },
+            "description": "Filter by catalog_notes",
             "style": "form",
             "explode": true
           },
@@ -20667,6 +21147,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -22966,6 +23479,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -23439,6 +23985,26 @@
             "explode": true
           },
           {
+            "name": "catalog_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Class",
+                "enum": [
+                  "biological relationship",
+                  "observed data",
+                  "prediction"
+                ],
+                "description": "The class curated in the IGVF catalog that the data in this file belongs to."
+              }
+            },
+            "description": "Filter by catalog_class",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_collections",
             "in": "query",
             "schema": {
@@ -23510,6 +24076,22 @@
               "description": "The collections in the IGVF catalog that contain the data in this file."
             },
             "description": "Filter by catalog_collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC notes for data loading in the IGVF catalog"
+              }
+            },
+            "description": "Filter by catalog_notes",
             "style": "form",
             "explode": true
           },
@@ -25071,6 +25653,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "transcriptome_annotation",
             "in": "query",
             "schema": {
@@ -25632,6 +26247,26 @@
             "explode": true
           },
           {
+            "name": "catalog_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Class",
+                "enum": [
+                  "biological relationship",
+                  "observed data",
+                  "prediction"
+                ],
+                "description": "The class curated in the IGVF catalog that the data in this file belongs to."
+              }
+            },
+            "description": "Filter by catalog_class",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_collections",
             "in": "query",
             "schema": {
@@ -25703,6 +26338,22 @@
               "description": "The collections in the IGVF catalog that contain the data in this file."
             },
             "description": "Filter by catalog_collections",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "catalog_notes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Notes",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "DACC notes for data loading in the IGVF catalog"
+              }
+            },
+            "description": "Filter by catalog_notes",
             "style": "form",
             "explode": true
           },
@@ -27253,6 +27904,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File",
+                "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -29130,7 +29814,7 @@
               "items": {
                 "type": "string",
                 "title": "Protocol",
-                "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+                "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
               },
               "description": "Links to the protocol(s) for conducting the assay on Protocols.io."
             },
@@ -29874,6 +30558,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File Set",
+                "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -32492,6 +33209,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File Set",
+                "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "url",
             "in": "query",
             "schema": {
@@ -35003,6 +35753,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File Set",
+                "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "targeton",
             "in": "query",
             "schema": {
@@ -37296,6 +38079,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File Set",
+                "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "taxa",
             "in": "query",
             "schema": {
@@ -39197,6 +40013,31 @@
             "explode": true
           },
           {
+            "name": "library_preparation_kit",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Library Preparation Kit",
+                "enum": [
+                  "10X Chromium Single Cell 3 prime v1",
+                  "10X Chromium Single Cell 3 prime v2",
+                  "10X Chromium Single Cell 3 prime v3",
+                  "10X Chromium Single Cell 3 prime v3.1",
+                  "10X Chromium Single Cell 3 prime v4",
+                  "10X Chromium Single Cell 5 prime v1",
+                  "10X Chromium Single Cell 5 prime v2",
+                  "10X Chromium Single Cell 5 prime v3"
+                ],
+                "description": "A kit utilized in the library preparation procedure."
+              }
+            },
+            "description": "Filter by library_preparation_kit",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "multiome_size",
             "in": "query",
             "schema": {
@@ -39204,7 +40045,7 @@
               "items": {
                 "type": "integer",
                 "title": "Multiome Size",
-                "minimum": 2,
+                "minimum": 1,
                 "description": "The number of datasets included in the multiome experiment this measurement set is a part of."
               }
             },
@@ -39403,7 +40244,7 @@
               "items": {
                 "type": "string",
                 "title": "Protocol",
-                "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+                "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
               },
               "description": "Links to the protocol(s) for conducting the assay on Protocols.io."
             },
@@ -40220,6 +41061,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File Set",
+                "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -43019,6 +43893,39 @@
             "explode": true
           },
           {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File Set",
+                "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "url",
             "in": "query",
             "schema": {
@@ -45653,6 +46560,153 @@
             "explode": true
           },
           {
+            "name": "software_versions.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.download_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Download ID",
+                "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used."
+              }
+            },
+            "description": "Filter by software_versions.download_id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.source_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Source URL",
+                "description": "An external resource to the codebase."
+              }
+            },
+            "description": "Filter by software_versions.software.source_url",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by software_versions.software.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by software_versions.software.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.source_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Source URL",
+                "description": "An external resource to track the version of the software download."
+              }
+            },
+            "description": "Filter by software_versions.source_url",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by software_versions.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by software_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "status",
             "in": "query",
             "schema": {
@@ -45748,6 +46802,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded File Set",
+                "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -58610,7 +59697,7 @@
               "items": {
                 "type": "string",
                 "title": "Protocol",
-                "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+                "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
               },
               "description": "Links to the protocol(s) for preparing the samples on Protocols.io."
             },
@@ -58972,6 +60059,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded Sample",
+                "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -60861,7 +61981,7 @@
               "items": {
                 "type": "string",
                 "title": "Protocol",
-                "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+                "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
               },
               "description": "Links to the protocol(s) for preparing the samples on Protocols.io."
             },
@@ -61203,6 +62323,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded Sample",
+                "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -63057,7 +64210,7 @@
               "items": {
                 "type": "string",
                 "title": "Protocol",
-                "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+                "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
               },
               "description": "Links to the protocol(s) for preparing the samples on Protocols.io."
             },
@@ -63419,6 +64572,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded Sample",
+                "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -64515,7 +65701,7 @@
               "items": {
                 "type": "string",
                 "title": "Protocol",
-                "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+                "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
               },
               "description": "Links to the protocol(s) for preparing the samples on Protocols.io."
             },
@@ -64877,6 +66063,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded Sample",
+                "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -66673,7 +67892,7 @@
               "items": {
                 "type": "string",
                 "title": "Protocol",
-                "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+                "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
               },
               "description": "Links to the protocol(s) for preparing the samples on Protocols.io."
             },
@@ -67035,6 +68254,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded Sample",
+                "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -68880,7 +70132,7 @@
               "items": {
                 "type": "string",
                 "title": "Protocol",
-                "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+                "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
               },
               "description": "Links to the protocol(s) for preparing the samples on Protocols.io."
             },
@@ -69242,6 +70494,39 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "superseded_by",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Superseded By",
+              "items": {
+                "type": "string",
+                "title": "Superseded By"
+              },
+              "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one."
+            },
+            "description": "Filter by superseded_by",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "supersedes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Supersedes",
+              "items": {
+                "type": "string",
+                "title": "Superseded Sample",
+                "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes."
+              },
+              "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes."
+            },
+            "description": "Filter by supersedes",
             "style": "form",
             "explode": true
           },
@@ -75552,6 +76837,17 @@
             "description": "Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.",
             "type": "boolean"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The donor(s) that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded Donor",
+              "description": "Donor that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "related_donors": {
             "title": "Related Donors",
             "description": "Familial relations of this donor.",
@@ -75662,6 +76958,16 @@
             "title": "Summary",
             "type": "string",
             "description": "A summary of the human donor."
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "Donor(s) this donor is superseded by virtue of those donor(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
+              "type": "string"
+            }
           }
         }
       },
@@ -75906,6 +77212,17 @@
             "description": "Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.",
             "type": "boolean"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The donor(s) that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded Donor",
+              "description": "Donor that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "strain_background": {
             "title": "Strain Background",
             "description": "The specific parent strain designation of a non-human donor.",
@@ -76000,6 +77317,16 @@
             "title": "Summary",
             "type": "string",
             "description": "A summary of the rodent donor."
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "Donor(s) this donor is superseded by virtue of those donor(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
+              "type": "string"
+            }
           }
         }
       },
@@ -76315,6 +77642,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "read_count": {
             "title": "Read Count",
             "description": "Number of reads in a bam file. Including both mapped, unmapped, and multi-mapped read counts.",
@@ -76389,6 +77727,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -76534,6 +77882,22 @@
                 "variants_variants"
               ]
             }
+          },
+          "catalog_class": {
+            "title": "Catalog Class",
+            "type": "string",
+            "description": "The class curated in the IGVF catalog that the data in this file belongs to.",
+            "enum": [
+              "biological relationship",
+              "observed data",
+              "prediction"
+            ]
+          },
+          "catalog_notes": {
+            "title": "Catalog Notes",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+            "description": "DACC notes for data loading in the IGVF catalog"
           },
           "preview_timestamp": {
             "title": "Preview Timestamp",
@@ -76794,6 +78158,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "seqspec_of": {
             "title": "Seqspec Of",
             "description": "Sequence files this file is a seqspec of.",
@@ -76867,6 +78242,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -77002,6 +78387,22 @@
                 "variants_variants"
               ]
             }
+          },
+          "catalog_class": {
+            "title": "Catalog Class",
+            "type": "string",
+            "description": "The class curated in the IGVF catalog that the data in this file belongs to.",
+            "enum": [
+              "biological relationship",
+              "observed data",
+              "prediction"
+            ]
+          },
+          "catalog_notes": {
+            "title": "Catalog Notes",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+            "description": "DACC notes for data loading in the IGVF catalog"
           },
           "preview_timestamp": {
             "title": "Preview Timestamp",
@@ -77262,6 +78663,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -77325,6 +78737,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -77455,6 +78877,22 @@
                 "variants_variants"
               ]
             }
+          },
+          "catalog_class": {
+            "title": "Catalog Class",
+            "type": "string",
+            "description": "The class curated in the IGVF catalog that the data in this file belongs to.",
+            "enum": [
+              "biological relationship",
+              "observed data",
+              "prediction"
+            ]
+          },
+          "catalog_notes": {
+            "title": "Catalog Notes",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+            "description": "DACC notes for data loading in the IGVF catalog"
           },
           "preview_timestamp": {
             "title": "Preview Timestamp",
@@ -77720,6 +79158,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -77783,6 +79232,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -77942,6 +79401,22 @@
                 "variants_variants"
               ]
             }
+          },
+          "catalog_class": {
+            "title": "Catalog Class",
+            "type": "string",
+            "description": "The class curated in the IGVF catalog that the data in this file belongs to.",
+            "enum": [
+              "biological relationship",
+              "observed data",
+              "prediction"
+            ]
+          },
+          "catalog_notes": {
+            "title": "Catalog Notes",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+            "description": "DACC notes for data loading in the IGVF catalog"
           },
           "preview_timestamp": {
             "title": "Preview Timestamp",
@@ -78226,6 +79701,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "principal_dimension": {
             "title": "Principal Dimension",
             "description": "The principal dimension of the matrix.",
@@ -78331,6 +79817,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -78476,6 +79972,22 @@
                 "variants_variants"
               ]
             }
+          },
+          "catalog_class": {
+            "title": "Catalog Class",
+            "type": "string",
+            "description": "The class curated in the IGVF catalog that the data in this file belongs to.",
+            "enum": [
+              "biological relationship",
+              "observed data",
+              "prediction"
+            ]
+          },
+          "catalog_notes": {
+            "title": "Catalog Notes",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+            "description": "DACC notes for data loading in the IGVF catalog"
           },
           "preview_timestamp": {
             "title": "Preview Timestamp",
@@ -78755,6 +80267,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "catalog_adapters": {
             "title": "IGVF Catalog Adapters",
             "description": "IGVF Catalog Adapters that ingests this file",
@@ -78830,6 +80353,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -78970,6 +80503,22 @@
                 "variants_variants"
               ]
             }
+          },
+          "catalog_class": {
+            "title": "Catalog Class",
+            "type": "string",
+            "description": "The class curated in the IGVF catalog that the data in this file belongs to.",
+            "enum": [
+              "biological relationship",
+              "observed data",
+              "prediction"
+            ]
+          },
+          "catalog_notes": {
+            "title": "Catalog Notes",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+            "description": "DACC notes for data loading in the IGVF catalog"
           },
           "preview_timestamp": {
             "title": "Preview Timestamp",
@@ -79317,6 +80866,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "catalog_adapters": {
             "title": "IGVF Catalog Adapters",
             "description": "IGVF Catalog Adapters that ingests this file",
@@ -79403,6 +80963,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -79761,6 +81331,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "flowcell_id": {
             "title": "Flowcell ID",
             "description": "The alphanumeric identifier for the flowcell of a sequencing machine.",
@@ -79964,6 +81545,16 @@
               "type": "string"
             }
           },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
+              "type": "string"
+            }
+          },
           "assay_titles": {
             "title": "Assay Term Names",
             "description": "Title(s) of assay from the file set this file belongs to.",
@@ -80101,6 +81692,22 @@
                 "variants_variants"
               ]
             }
+          },
+          "catalog_class": {
+            "title": "Catalog Class",
+            "type": "string",
+            "description": "The class curated in the IGVF catalog that the data in this file belongs to.",
+            "enum": [
+              "biological relationship",
+              "observed data",
+              "prediction"
+            ]
+          },
+          "catalog_notes": {
+            "title": "Catalog Notes",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+            "description": "DACC notes for data loading in the IGVF catalog"
           },
           "preview_timestamp": {
             "title": "Preview Timestamp",
@@ -80381,6 +81988,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "strand_specificity": {
             "title": "Strand Specificity",
             "description": "The strandedness of the signal file: plus, minus, or unstranded.",
@@ -80465,6 +82083,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -80610,6 +82238,22 @@
                 "variants_variants"
               ]
             }
+          },
+          "catalog_class": {
+            "title": "Catalog Class",
+            "type": "string",
+            "description": "The class curated in the IGVF catalog that the data in this file belongs to.",
+            "enum": [
+              "biological relationship",
+              "observed data",
+              "prediction"
+            ]
+          },
+          "catalog_notes": {
+            "title": "Catalog Notes",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+            "description": "DACC notes for data loading in the IGVF catalog"
           },
           "base_modifications": {
             "title": "Base Modifications",
@@ -80989,6 +82633,17 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File",
+              "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "catalog_adapters": {
             "title": "IGVF Catalog Adapters",
             "description": "IGVF Catalog Adapters that ingests this file",
@@ -81064,6 +82719,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Quality Metric",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -81356,6 +83021,17 @@
               "principal analysis"
             ]
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File Set",
+              "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "external_image_data_url": {
             "title": "External Image Data URL",
             "description": "Links to the external site where images and related data produced by this analysis are stored.",
@@ -81425,6 +83101,16 @@
             "uniqueItems": true,
             "items": {
               "title": "File Set Controlled By This File Set",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -81500,7 +83186,7 @@
             "items": {
               "title": "Protocol",
               "type": "string",
-              "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+              "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
             }
           },
           "sample_summary": {
@@ -81767,6 +83453,17 @@
               "quantification DNA barcode sequencing"
             ]
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File Set",
+              "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "barcode_map": {
             "title": "Link to barcode map tabular file",
             "description": "The link to the barcode mapping tabular file.",
@@ -81804,6 +83501,16 @@
             "uniqueItems": true,
             "items": {
               "title": "File Set Controlled By This File Set",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -82337,6 +84044,17 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File Set",
+              "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -82369,6 +84087,16 @@
             "uniqueItems": true,
             "items": {
               "title": "File Set Controlled By This File Set",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -82703,6 +84431,17 @@
               "variants"
             ]
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File Set",
+              "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -82735,6 +84474,16 @@
             "uniqueItems": true,
             "items": {
               "title": "File Set Controlled By This File Set",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -83114,6 +84863,17 @@
               "experimental data"
             ]
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File Set",
+              "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "assay_term": {
             "title": "Assay Term",
             "description": "The assay used to produce data in this measurement set.",
@@ -83127,14 +84887,14 @@
             "items": {
               "title": "Protocol",
               "type": "string",
-              "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+              "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
             }
           },
           "multiome_size": {
             "title": "Multiome Size",
             "description": "The number of datasets included in the multiome experiment this measurement set is a part of.",
             "type": "integer",
-            "minimum": 2
+            "minimum": 1
           },
           "control_types": {
             "title": "Control Types",
@@ -83260,6 +85020,21 @@
             "description": "A file containing original barcodes and the new barcodes used to replace the original barcodes. One common application is to use in preprocessing Parse SPLiT-seq data with the single cell uniform pipeline.",
             "type": "string"
           },
+          "library_preparation_kit": {
+            "title": "Library Preparation Kit",
+            "description": "A kit utilized in the library preparation procedure.",
+            "type": "string",
+            "enum": [
+              "10X Chromium Single Cell 3 prime v1",
+              "10X Chromium Single Cell 3 prime v2",
+              "10X Chromium Single Cell 3 prime v3",
+              "10X Chromium Single Cell 3 prime v3.1",
+              "10X Chromium Single Cell 3 prime v4",
+              "10X Chromium Single Cell 5 prime v1",
+              "10X Chromium Single Cell 5 prime v2",
+              "10X Chromium Single Cell 5 prime v3"
+            ]
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -83292,6 +85067,16 @@
             "uniqueItems": true,
             "items": {
               "title": "File Set Controlled By This File Set",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -83684,6 +85469,17 @@
               "variant binding effect"
             ]
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File Set",
+              "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "model_name": {
             "title": "Model Name",
             "description": "The custom lab name given to this predictive model set.",
@@ -83766,6 +85562,16 @@
             "uniqueItems": true,
             "items": {
               "title": "File Set Controlled By This File Set",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -84122,6 +85928,17 @@
               "protein stability"
             ]
           },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded File Set",
+              "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
+            }
+          },
           "scope": {
             "title": "Prediction Scope",
             "description": "The scope or scale that this prediction set is designed to target.",
@@ -84188,6 +86005,16 @@
               "type": "string"
             }
           },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
+              "type": "string"
+            }
+          },
           "submitted_files_timestamp": {
             "title": "Submitted Files Timestamp",
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
@@ -84229,6 +86056,17 @@
             "title": "Controlled Access",
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
+          },
+          "software_versions": {
+            "title": "Software Versions",
+            "description": "The software versions used to produce this prediction.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Software Version",
+              "description": "A software version used to produce this prediction.",
+              "type": "string"
+            }
           }
         }
       },
@@ -88909,7 +90747,18 @@
             "items": {
               "title": "Protocol",
               "type": "string",
-              "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+              "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
+            }
+          },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded Sample",
+              "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
             }
           },
           "classifications": {
@@ -89063,6 +90912,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Institutional Certificate",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -89403,7 +91262,18 @@
             "items": {
               "title": "Protocol",
               "type": "string",
-              "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+              "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
+            }
+          },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded Sample",
+              "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
             }
           },
           "multiplexed_samples": {
@@ -89505,6 +91375,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Institutional Certificate",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -90035,7 +91915,18 @@
             "items": {
               "title": "Protocol",
               "type": "string",
-              "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+              "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
+            }
+          },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded Sample",
+              "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
             }
           },
           "passage_number": {
@@ -90123,6 +92014,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Institutional Certificate",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -90486,7 +92387,18 @@
             "items": {
               "title": "Protocol",
               "type": "string",
-              "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+              "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
+            }
+          },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded Sample",
+              "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
             }
           },
           "sample_material": {
@@ -90581,6 +92493,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Institutional Certificate",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -91030,7 +92952,18 @@
             "items": {
               "title": "Protocol",
               "type": "string",
-              "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+              "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
+            }
+          },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded Sample",
+              "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
             }
           },
           "pmi": {
@@ -91128,6 +93061,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Institutional Certificate",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },
@@ -91624,7 +93567,18 @@
             "items": {
               "title": "Protocol",
               "type": "string",
-              "pattern": "^https://www\\.protocols\\.io/(\\S+)$"
+              "pattern": "^https://www\\.protocols\\.io/(private|view)/(\\S+)$"
+            }
+          },
+          "supersedes": {
+            "title": "Supersedes",
+            "description": "The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Superseded Sample",
+              "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
+              "type": "string"
             }
           },
           "@id": {
@@ -91690,6 +93644,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Institutional Certificate",
+              "type": "string"
+            }
+          },
+          "superseded_by": {
+            "title": "Superseded By",
+            "description": "Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Superseded By",
               "type": "string"
             }
           },

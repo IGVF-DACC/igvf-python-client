@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
 **donors** | **List[str]** | The donor(s) associated with this file set. | [optional] 
 **file_set_type** | **str** | The category that best describes this prediction set. | [optional] 
+**supersedes** | **List[str]** | The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **scope** | **str** | The scope or scale that this prediction set is designed to target. | [optional] 
 **assessed_genes** | **List[str]** | A list of gene(s) assessed in this prediction set. This property is used to describe the gene(s) being investigated, especially how the input variables in the prediction set affect some critical functionality of the gene(s). For example, the effect could be predicted from genetic variants on the binding affinity of a transcription factor encoded by a gene (assessed_genes). It differs from small_scale_gene_list and large_scale_gene_list, as these are used when the input variables of the prediction set are genes. | [optional] 
 **associated_phenotypes** | **List[str]** | Ontological terms for diseases or phenotypes associated with this prediction set. | [optional] 
@@ -43,11 +44,13 @@ Name | Type | Description | Notes
 **summary** | **str** | A summary of the prediction set. | [optional] 
 **files** | **List[str]** | The files associated with this file set. | [optional] 
 **control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
+**superseded_by** | **List[str]** | File set(s) this file set is superseded by virtue of those file set(s) being newer, better, or a fixed version of etc. than this one. | [optional] 
 **submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
 **input_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 **construct_library_sets** | **List[str]** | The construct library sets associated with the samples of this file set. | [optional] 
 **data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
+**software_versions** | **List[str]** | The software versions used to produce this prediction. | [optional] 
 
 ## Example
 
