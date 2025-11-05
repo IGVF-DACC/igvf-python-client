@@ -295,7 +295,7 @@ Name | Type | Description | Notes
 **paired_reads_mapped** | **float** | Paired reads mapped (n_pseudoaligned) reported by Kallisto. | [optional] 
 **alignment_percentage** | **float** | Alignment percentage (p_pseudoaligned) reported by Kallisto. | [optional] 
 **total_detected_scrna_barcodes** | **float** | Unfiltered total detected scRNA barcodes (numBarcodes) reported by Kallisto. | [optional] 
-**pct_duplicates** | **float** |  | [optional] 
+**pct_duplicates** | **float** | Percentage of reads that are duplicatively mapped to the same genomic region. | [optional] 
 **n_reads** | **float** | Total number of input reads. | [optional] 
 **n_mapped_reads** | **float** | Reads successfully aligned to the reference genome. | [optional] 
 **n_uniquely_mapped_reads** | **float** | Reads aligned to a single location in the genome. | [optional] 
