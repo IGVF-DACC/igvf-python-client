@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "101.0.0"
+    "version": "101.2.0"
   },
   "servers": [
     {
@@ -5049,7 +5049,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -5958,7 +5960,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -7097,7 +7101,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -9221,7 +9227,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -11268,7 +11276,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -13299,7 +13309,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -15405,7 +15417,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -17559,7 +17573,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -19664,7 +19680,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -21743,7 +21761,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -24173,7 +24193,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -26435,7 +26457,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -28430,7 +28454,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -28816,7 +28842,7 @@
               "items": {
                 "type": "string",
                 "title": "External identifier",
-                "pattern": "^GEO:GSE\\d+$",
+                "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$",
                 "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
@@ -31085,7 +31111,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -31471,7 +31499,7 @@
               "items": {
                 "type": "string",
                 "title": "External identifier",
-                "pattern": "^GEO:GSE\\d+$",
+                "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$",
                 "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
@@ -33640,7 +33668,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -36187,7 +36217,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -36573,7 +36605,7 @@
               "items": {
                 "type": "string",
                 "title": "External identifier",
-                "pattern": "^GEO:GSE\\d+$",
+                "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$",
                 "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
@@ -38648,7 +38680,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -39122,7 +39156,7 @@
               "items": {
                 "type": "string",
                 "title": "External identifier",
-                "pattern": "^GEO:GSE\\d+$",
+                "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$",
                 "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
@@ -41602,7 +41636,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -41988,7 +42024,7 @@
               "items": {
                 "type": "string",
                 "title": "External identifier",
-                "pattern": "^GEO:GSE\\d+$",
+                "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$",
                 "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
@@ -44415,7 +44451,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -44801,7 +44839,7 @@
               "items": {
                 "type": "string",
                 "title": "External identifier",
-                "pattern": "^GEO:GSE\\d+$",
+                "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$",
                 "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
               },
               "description": "Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets."
@@ -47069,7 +47107,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -58429,7 +58469,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -60811,7 +60853,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -63027,7 +63071,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -65110,7 +65156,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -66670,7 +66718,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -68967,7 +69017,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -72818,8 +72870,10 @@
                 "title": "Purpose",
                 "enum": [
                   "activation",
+                  "acute activation",
                   "agonist",
                   "antagonist",
+                  "chronic activation",
                   "control",
                   "de-differentiation",
                   "differentiation",
@@ -74418,7 +74472,9 @@
                 "enum": [
                   "ACMG73",
                   "Benchmark",
+                  "Bridge Sample",
                   "ClinGen",
+                  "E2G Pillar Project",
                   "ENCODE",
                   "GREGoR",
                   "IGVF_catalog_beta_v0.1",
@@ -76731,7 +76787,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -77106,7 +77164,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -77466,7 +77526,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -77981,7 +78043,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -78486,7 +78550,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -78981,7 +79047,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -79516,7 +79584,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -80086,7 +80156,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -80677,7 +80749,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -81154,7 +81228,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -81812,7 +81888,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -82450,7 +82528,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -82910,7 +82990,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -83012,7 +83094,7 @@
               "title": "External identifier",
               "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets.",
               "type": "string",
-              "pattern": "^GEO:GSE\\d+$"
+              "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$"
             }
           },
           "samples": {
@@ -83332,7 +83414,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -83439,7 +83523,7 @@
               "title": "External identifier",
               "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets.",
               "type": "string",
-              "pattern": "^GEO:GSE\\d+$"
+              "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$"
             }
           },
           "samples": {
@@ -83787,7 +83871,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -84303,7 +84389,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -84410,7 +84498,7 @@
               "title": "External identifier",
               "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets.",
               "type": "string",
-              "pattern": "^GEO:GSE\\d+$"
+              "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$"
             }
           },
           "samples": {
@@ -84754,7 +84842,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -84856,7 +84946,7 @@
               "title": "External identifier",
               "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets.",
               "type": "string",
-              "pattern": "^GEO:GSE\\d+$"
+              "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$"
             }
           },
           "samples": {
@@ -85351,7 +85441,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -85458,7 +85550,7 @@
               "title": "External identifier",
               "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets.",
               "type": "string",
-              "pattern": "^GEO:GSE\\d+$"
+              "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$"
             }
           },
           "samples": {
@@ -85812,7 +85904,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -85919,7 +86013,7 @@
               "title": "External identifier",
               "description": "Identifier from an external resource that may have 1-to-1 or 1-to-many relationships with IGVF file sets.",
               "type": "string",
-              "pattern": "^GEO:GSE\\d+$"
+              "pattern": "^(GEO:GSE\\d+|urn:mavedb:\\d{8}-[0a-z]+-\\d+)$"
             }
           },
           "samples": {
@@ -86226,7 +86320,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -90453,7 +90549,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -91090,7 +91188,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -91620,7 +91720,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -92215,7 +92317,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -92657,7 +92761,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -93271,7 +93377,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
@@ -94352,8 +94460,10 @@
             "description": "The intended purpose for treating the samples.",
             "enum": [
               "activation",
+              "acute activation",
               "agonist",
               "antagonist",
+              "chronic activation",
               "control",
               "de-differentiation",
               "differentiation",
@@ -94786,7 +94896,9 @@
               "enum": [
                 "ACMG73",
                 "Benchmark",
+                "Bridge Sample",
                 "ClinGen",
+                "E2G Pillar Project",
                 "ENCODE",
                 "GREGoR",
                 "IGVF_catalog_beta_v0.1",
