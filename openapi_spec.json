@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "101.2.0"
+    "version": "104.0.0"
   },
   "servers": [
     {
@@ -1348,6 +1348,7 @@
                   "barcode counting",
                   "barcode mapping generation",
                   "base calling",
+                  "calibration",
                   "cell profiling",
                   "cell to feature barcode mapping",
                   "computational model prediction",
@@ -1602,6 +1603,8 @@
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
+                  "annotated sparse gene count matrix",
+                  "annotated sparse peak count matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -1614,6 +1617,8 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effects",
+                  "cell annotations",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -1647,6 +1652,7 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -1677,6 +1683,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "index plate",
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
@@ -1695,6 +1702,7 @@
                   "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
+                  "pathogenicity validation",
                   "pathways",
                   "pathways_pathways",
                   "peak quantifications",
@@ -1707,8 +1715,11 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein sequences",
                   "protein stability fluorescence score",
                   "protein to protein interaction score",
+                  "protein-protein interaction edge-perturbation score",
+                  "protein-protein interaction edgotyping score",
                   "proteins",
                   "proteins_proteins",
                   "raw feature barcode matrix",
@@ -1849,6 +1860,8 @@
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
+                  "annotated sparse gene count matrix",
+                  "annotated sparse peak count matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -1861,6 +1874,8 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effects",
+                  "cell annotations",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -1894,6 +1909,7 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -1924,6 +1940,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "index plate",
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
@@ -1942,6 +1959,7 @@
                   "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
+                  "pathogenicity validation",
                   "pathways",
                   "pathways_pathways",
                   "peak quantifications",
@@ -1954,8 +1972,11 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein sequences",
                   "protein stability fluorescence score",
                   "protein to protein interaction score",
+                  "protein-protein interaction edge-perturbation score",
+                  "protein-protein interaction edgotyping score",
                   "proteins",
                   "proteins_proteins",
                   "raw feature barcode matrix",
@@ -2444,6 +2465,7 @@
                   "barcode counting",
                   "barcode mapping generation",
                   "base calling",
+                  "calibration",
                   "cell profiling",
                   "cell to feature barcode mapping",
                   "computational model prediction",
@@ -2505,6 +2527,8 @@
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
+                  "annotated sparse gene count matrix",
+                  "annotated sparse peak count matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -2517,6 +2541,8 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effects",
+                  "cell annotations",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -2550,6 +2576,7 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -2580,6 +2607,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "index plate",
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
@@ -2598,6 +2626,7 @@
                   "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
+                  "pathogenicity validation",
                   "pathways",
                   "pathways_pathways",
                   "peak quantifications",
@@ -2610,8 +2639,11 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein sequences",
                   "protein stability fluorescence score",
                   "protein to protein interaction score",
+                  "protein-protein interaction edge-perturbation score",
+                  "protein-protein interaction edgotyping score",
                   "proteins",
                   "proteins_proteins",
                   "raw feature barcode matrix",
@@ -2708,6 +2740,8 @@
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
+                  "annotated sparse gene count matrix",
+                  "annotated sparse peak count matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -2720,6 +2754,8 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effects",
+                  "cell annotations",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -2753,6 +2789,7 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -2783,6 +2820,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "index plate",
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
@@ -2801,6 +2839,7 @@
                   "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
+                  "pathogenicity validation",
                   "pathways",
                   "pathways_pathways",
                   "peak quantifications",
@@ -2813,8 +2852,11 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein sequences",
                   "protein stability fluorescence score",
                   "protein to protein interaction score",
+                  "protein-protein interaction edge-perturbation score",
+                  "protein-protein interaction edgotyping score",
                   "proteins",
                   "proteins_proteins",
                   "raw feature barcode matrix",
@@ -4571,6 +4613,7 @@
                 "title": "Document Type",
                 "enum": [
                   "cell fate change protocol",
+                  "cell marker file",
                   "characterization",
                   "computational protocol",
                   "experimental protocol",
@@ -4585,7 +4628,8 @@
                   "plasmid map",
                   "plasmid sequence",
                   "quality control report",
-                  "standards"
+                  "standards",
+                  "tile coordinates"
                 ],
                 "description": "The category that best describes the document."
               }
@@ -5204,6 +5248,21 @@
               "description": "Identifiers of this human donor."
             },
             "description": "Filter by human_donor_identifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is on AnVIL",
+                "description": "Indicates whether the donor has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -6082,6 +6141,21 @@
               }
             },
             "description": "Filter by individual_rodent",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is on AnVIL",
+                "description": "Indicates whether the donor has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -23539,6 +23613,22 @@
             "explode": true
           },
           {
+            "name": "tile",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Tile",
+                "minimum": 1,
+                "description": "An integer identifying the tile of a gene of interest."
+              }
+            },
+            "description": "Filter by tile",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -28513,6 +28603,51 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -29727,6 +29862,21 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether this file set has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -31170,6 +31320,51 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -32284,6 +32479,21 @@
             "explode": true
           },
           {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether this file set has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -32433,6 +32643,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -34640,6 +34851,21 @@
             "explode": true
           },
           {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether this file set has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -36276,6 +36502,51 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -37332,6 +37603,21 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether this file set has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -38739,6 +39025,51 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -40027,6 +40358,21 @@
             "explode": true
           },
           {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether this file set has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -40222,6 +40568,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -40343,7 +40690,7 @@
             "explode": true
           },
           {
-            "name": "related_multiome_datasets.@id",
+            "name": "related_measurement_sets.measurement_sets.@id",
             "in": "query",
             "schema": {
               "type": "array",
@@ -40352,12 +40699,12 @@
                 "title": "ID"
               }
             },
-            "description": "Filter by related_multiome_datasets.@id",
+            "description": "Filter by related_measurement_sets.measurement_sets.@id",
             "style": "form",
             "explode": true
           },
           {
-            "name": "related_multiome_datasets.accession",
+            "name": "related_measurement_sets.measurement_sets.accession",
             "in": "query",
             "schema": {
               "type": "array",
@@ -40367,12 +40714,12 @@
                 "description": "A unique identifier to be used to reference the object prefixed with IGVF."
               }
             },
-            "description": "Filter by related_multiome_datasets.accession",
+            "description": "Filter by related_measurement_sets.measurement_sets.accession",
             "style": "form",
             "explode": true
           },
           {
-            "name": "related_multiome_datasets.status",
+            "name": "related_measurement_sets.measurement_sets.status",
             "in": "query",
             "schema": {
               "type": "array",
@@ -40382,7 +40729,7 @@
                 "description": "The status of the metadata object."
               }
             },
-            "description": "Filter by related_multiome_datasets.status",
+            "description": "Filter by related_measurement_sets.measurement_sets.status",
             "style": "form",
             "explode": true
           },
@@ -41695,6 +42042,51 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -42838,6 +43230,21 @@
             "explode": true
           },
           {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether this file set has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -43027,6 +43434,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -44510,6 +44918,51 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.associated_phenotypes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "construct_library_sets.associated_phenotypes.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by construct_library_sets.associated_phenotypes.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -45000,6 +45453,7 @@
                   "activity level",
                   "binding effect",
                   "functional effect",
+                  "protein-protein interaction",
                   "protein stability"
                 ],
                 "description": "The category that best describes this prediction set."
@@ -45573,6 +46027,21 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether this file set has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -50703,6 +51172,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -59030,6 +59500,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -59221,6 +59692,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the sample has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -61368,6 +61854,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -61535,6 +62022,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the sample has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -63601,6 +64103,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -63768,6 +64271,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the sample has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -65521,6 +66039,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -65590,6 +66109,21 @@
               "description": "The institutional certificates under which use of this sample is approved."
             },
             "description": "Filter by institutional_certificates",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the sample has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -65721,6 +66255,37 @@
               "description": "The samples which originate from this sample, such as through a process of cell differentiation."
             },
             "description": "Filter by origin_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "part_of",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Part of sample",
+                "description": "Links to technical sample which represents a larger sample from which this sample was taken."
+              }
+            },
+            "description": "Filter by part_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "parts",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Technical Sample Parts",
+              "items": {
+                "type": "string",
+                "title": "Technical Sample Part"
+              },
+              "description": "The parts into which this sample has been divided."
+            },
+            "description": "Filter by parts",
             "style": "form",
             "explode": true
           },
@@ -66214,6 +66779,22 @@
               }
             },
             "description": "Filter by time_post_library_delivery_units",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "treatments",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Treatments",
+              "items": {
+                "type": "string",
+                "title": "Treatment"
+              },
+              "description": "A list of treatments applied to the technical sample with the purpose of perturbation."
+            },
+            "description": "Filter by treatments",
             "style": "form",
             "explode": true
           },
@@ -67248,6 +67829,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -67415,6 +67997,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the sample has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -69547,6 +70144,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -69714,6 +70312,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the sample has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -73072,7 +73685,8 @@
                 "title": "Treatment Type",
                 "enum": [
                   "chemical",
-                  "protein"
+                  "protein",
+                  "thermal"
                 ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
@@ -73835,6 +74449,7 @@
                   "barcode counting",
                   "barcode mapping generation",
                   "base calling",
+                  "calibration",
                   "cell profiling",
                   "cell to feature barcode mapping",
                   "computational model prediction",
@@ -73896,6 +74511,8 @@
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
+                  "annotated sparse gene count matrix",
+                  "annotated sparse peak count matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -73908,6 +74525,8 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effects",
+                  "cell annotations",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -73941,6 +74560,7 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -73971,6 +74591,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "index plate",
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
@@ -73989,6 +74610,7 @@
                   "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
+                  "pathogenicity validation",
                   "pathways",
                   "pathways_pathways",
                   "peak quantifications",
@@ -74001,8 +74623,11 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein sequences",
                   "protein stability fluorescence score",
                   "protein to protein interaction score",
+                  "protein-protein interaction edge-perturbation score",
+                  "protein-protein interaction edgotyping score",
                   "proteins",
                   "proteins_proteins",
                   "raw feature barcode matrix",
@@ -74099,6 +74724,8 @@
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
+                  "annotated sparse gene count matrix",
+                  "annotated sparse peak count matrix",
                   "barcode onlist",
                   "barcode replacement",
                   "barcode to TF overexpression mapping",
@@ -74111,6 +74738,8 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effects",
+                  "cell annotations",
                   "cell hashing barcodes",
                   "coding variant effects",
                   "coding_variants",
@@ -74144,6 +74773,7 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
+                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -74174,6 +74804,7 @@
                   "high resolution tissue",
                   "inclusion list",
                   "index",
+                  "index plate",
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "loci",
@@ -74192,6 +74823,7 @@
                   "normalized variants profile",
                   "ontology_terms",
                   "ontology_terms_ontology_terms",
+                  "pathogenicity validation",
                   "pathways",
                   "pathways_pathways",
                   "peak quantifications",
@@ -74204,8 +74836,11 @@
                   "primers table",
                   "primers track",
                   "protein language model",
+                  "protein sequences",
                   "protein stability fluorescence score",
                   "protein to protein interaction score",
+                  "protein-protein interaction edge-perturbation score",
+                  "protein-protein interaction edgotyping score",
                   "proteins",
                   "proteins_proteins",
                   "raw feature barcode matrix",
@@ -74684,6 +75319,7 @@
                   "Multiome Perturb-seq",
                   "SGE",
                   "Immune-SGE",
+                  "MAVE",
                   "MIAA",
                   "snmC-Seq2",
                   "snMCT-seq",
@@ -74810,7 +75446,7 @@
               "items": {
                 "type": "string",
                 "title": "Source URL",
-                "pattern": "^https?://(github\\.com/\\S+|support\\.parsebiosciences\\.com/\\S*)$",
+                "pattern": "^https?://(github\\.com/\\S+|support\\.parsebiosciences\\.com/\\S*|www\\.10xgenomics\\.com/\\S*)$",
                 "description": "An external resource to the code base of the workflow in github."
               }
             },
@@ -75549,6 +76185,7 @@
                 "barcode counting",
                 "barcode mapping generation",
                 "base calling",
+                "calibration",
                 "cell profiling",
                 "cell to feature barcode mapping",
                 "computational model prediction",
@@ -75628,6 +76265,8 @@
                 "alignments",
                 "alignments with modifications",
                 "annotated multimodal CRISPR matrix",
+                "annotated sparse gene count matrix",
+                "annotated sparse peak count matrix",
                 "barcode onlist",
                 "barcode replacement",
                 "barcode to TF overexpression mapping",
@@ -75640,6 +76279,8 @@
                 "bin paired count",
                 "biological_context",
                 "caQTL",
+                "calibrated coding variant effects",
+                "cell annotations",
                 "cell hashing barcodes",
                 "coding variant effects",
                 "coding_variants",
@@ -75673,6 +76314,7 @@
                 "feature weights",
                 "fiducial alignment",
                 "filtered feature barcode matrix",
+                "filtered global differential expressions",
                 "fold change of post-selection and pre-selection",
                 "fold change over control",
                 "fragments",
@@ -75703,6 +76345,7 @@
                 "high resolution tissue",
                 "inclusion list",
                 "index",
+                "index plate",
                 "individual cells profile",
                 "kallisto single cell RNAseq output",
                 "loci",
@@ -75721,6 +76364,7 @@
                 "normalized variants profile",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
+                "pathogenicity validation",
                 "pathways",
                 "pathways_pathways",
                 "peak quantifications",
@@ -75733,8 +76377,11 @@
                 "primers table",
                 "primers track",
                 "protein language model",
+                "protein sequences",
                 "protein stability fluorescence score",
                 "protein to protein interaction score",
+                "protein-protein interaction edge-perturbation score",
+                "protein-protein interaction edgotyping score",
                 "proteins",
                 "proteins_proteins",
                 "raw feature barcode matrix",
@@ -75825,6 +76472,8 @@
                 "alignments",
                 "alignments with modifications",
                 "annotated multimodal CRISPR matrix",
+                "annotated sparse gene count matrix",
+                "annotated sparse peak count matrix",
                 "barcode onlist",
                 "barcode replacement",
                 "barcode to TF overexpression mapping",
@@ -75837,6 +76486,8 @@
                 "bin paired count",
                 "biological_context",
                 "caQTL",
+                "calibrated coding variant effects",
+                "cell annotations",
                 "cell hashing barcodes",
                 "coding variant effects",
                 "coding_variants",
@@ -75870,6 +76521,7 @@
                 "feature weights",
                 "fiducial alignment",
                 "filtered feature barcode matrix",
+                "filtered global differential expressions",
                 "fold change of post-selection and pre-selection",
                 "fold change over control",
                 "fragments",
@@ -75900,6 +76552,7 @@
                 "high resolution tissue",
                 "inclusion list",
                 "index",
+                "index plate",
                 "individual cells profile",
                 "kallisto single cell RNAseq output",
                 "loci",
@@ -75918,6 +76571,7 @@
                 "normalized variants profile",
                 "ontology_terms",
                 "ontology_terms_ontology_terms",
+                "pathogenicity validation",
                 "pathways",
                 "pathways_pathways",
                 "peak quantifications",
@@ -75930,8 +76584,11 @@
                 "primers table",
                 "primers track",
                 "protein language model",
+                "protein sequences",
                 "protein stability fluorescence score",
                 "protein to protein interaction score",
+                "protein-protein interaction edge-perturbation score",
+                "protein-protein interaction edgotyping score",
                 "proteins",
                 "proteins_proteins",
                 "raw feature barcode matrix",
@@ -76633,6 +77290,7 @@
             "type": "string",
             "enum": [
               "cell fate change protocol",
+              "cell marker file",
               "characterization",
               "computational protocol",
               "experimental protocol",
@@ -76647,7 +77305,8 @@
               "plasmid map",
               "plasmid sequence",
               "quality control report",
-              "standards"
+              "standards",
+              "tile coordinates"
             ]
           },
           "characterization_method": {
@@ -76930,6 +77589,11 @@
               "description": "Donor that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
             }
+          },
+          "is_on_anvil": {
+            "title": "Is on AnVIL",
+            "description": "Indicates whether the donor has been submitted to AnVIL.",
+            "type": "boolean"
           },
           "related_donors": {
             "title": "Related Donors",
@@ -77307,6 +77971,11 @@
               "description": "Donor that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
             }
+          },
+          "is_on_anvil": {
+            "title": "Is on AnVIL",
+            "description": "Indicates whether the donor has been submitted to AnVIL.",
+            "type": "boolean"
           },
           "strain_background": {
             "title": "Strain Background",
@@ -81455,6 +82124,12 @@
             "type": "integer",
             "minimum": 1
           },
+          "tile": {
+            "title": "Tile",
+            "description": "An integer identifying the tile of a gene of interest.",
+            "type": "integer",
+            "minimum": 1
+          },
           "read_count": {
             "title": "Read Count",
             "description": "Number of reads in a fastq file.",
@@ -83263,6 +83938,11 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether this file set has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preferred_assay_titles": {
             "title": "Preferred Assay Titles",
             "description": "Preferred Assay Title(s) of assays that produced data analyzed in the analysis set.",
@@ -83663,6 +84343,11 @@
           "controlled_access": {
             "title": "Controlled Access",
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
+          },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether this file set has been submitted to AnVIL.",
             "type": "boolean"
           },
           "measurement_sets": {
@@ -84253,6 +84938,11 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether this file set has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "samples": {
             "title": "Samples",
             "description": "The samples this construct library set was applied to.",
@@ -84642,6 +85332,11 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether this file set has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "assemblies": {
             "title": "Assemblies",
             "description": "The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38).",
@@ -84743,6 +85438,7 @@
                 "Multiome Perturb-seq",
                 "SGE",
                 "Immune-SGE",
+                "MAVE",
                 "MIAA",
                 "snmC-Seq2",
                 "snMCT-seq",
@@ -85238,6 +85934,11 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether this file set has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "assay_titles": {
             "title": "Assay Term Names",
             "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays",
@@ -85246,15 +85947,41 @@
               "type": "string"
             }
           },
-          "related_multiome_datasets": {
-            "title": "Related Multiome Datasets",
-            "description": "Related datasets included in the multiome experiment this measurement set is a part of.",
+          "related_measurement_sets": {
+            "title": "Related Measurement Sets",
+            "description": "Measurement sets related to this one, grouped by relationship type.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Related Multiome Dataset",
-              "description": "Related dataset included in the multiome experiment this measurement set is a part of.",
-              "type": "string"
+              "title": "Related Measurement Set Group",
+              "description": "A group of related measurement sets of a given series type.",
+              "type": "object",
+              "properties": {
+                "measurement_sets": {
+                  "title": "Measurement Sets",
+                  "description": "Measurement sets related by this relationship.",
+                  "type": "array",
+                  "items": {
+                    "title": "Related Measurement Set",
+                    "description": "Related measurement set.",
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "series_type": {
+                  "title": "Series Type",
+                  "description": "Type of relationship between this measurement set and the related measurement sets.",
+                  "type": "string",
+                  "enum": [
+                    "multiome"
+                  ]
+                }
+              },
+              "required": [
+                "measurement_sets",
+                "series_type"
+              ],
+              "additionalProperties": false
             }
           },
           "externally_hosted": {
@@ -85342,6 +86069,7 @@
                 "Multiome Perturb-seq",
                 "SGE",
                 "Immune-SGE",
+                "MAVE",
                 "MIAA",
                 "snmC-Seq2",
                 "snMCT-seq",
@@ -85736,6 +86464,11 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether this file set has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "externally_hosted": {
             "title": "Externally Hosted",
             "type": "boolean"
@@ -86046,6 +86779,7 @@
               "activity level",
               "binding effect",
               "functional effect",
+              "protein-protein interaction",
               "protein stability"
             ]
           },
@@ -86176,6 +86910,11 @@
           "controlled_access": {
             "title": "Controlled Access",
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
+            "type": "boolean"
+          },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether this file set has been submitted to AnVIL.",
             "type": "boolean"
           },
           "software_versions": {
@@ -87464,6 +88203,7 @@
                 "Multiome Perturb-seq",
                 "SGE",
                 "Immune-SGE",
+                "MAVE",
                 "MIAA",
                 "snmC-Seq2",
                 "snMCT-seq",
@@ -91051,6 +91791,11 @@
               "type": "string"
             }
           },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "type": "boolean",
+            "description": "Indicates whether the sample has been submitted to AnVIL."
+          },
           "sex": {
             "title": "Sex",
             "type": "string",
@@ -91515,6 +92260,11 @@
               "title": "Superseded By",
               "type": "string"
             }
+          },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "type": "boolean",
+            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "sample_terms": {
             "title": "Sample Terms",
@@ -92157,6 +92907,11 @@
               "type": "string"
             }
           },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "type": "boolean",
+            "description": "Indicates whether the sample has been submitted to AnVIL."
+          },
           "sex": {
             "title": "Sex",
             "type": "string",
@@ -92562,6 +93317,21 @@
               "type": "string"
             }
           },
+          "treatments": {
+            "title": "Treatments",
+            "description": "A list of treatments applied to the technical sample with the purpose of perturbation.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Treatment",
+              "type": "string"
+            }
+          },
+          "part_of": {
+            "title": "Part of sample",
+            "description": "Links to technical sample which represents a larger sample from which this sample was taken.",
+            "type": "string"
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -92638,6 +93408,11 @@
               "type": "string"
             }
           },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "type": "boolean",
+            "description": "Indicates whether the sample has been submitted to AnVIL."
+          },
           "classifications": {
             "title": "Classifications",
             "description": "The general category of this type of sample.",
@@ -92645,6 +93420,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Classification",
+              "type": "string"
+            }
+          },
+          "parts": {
+            "title": "Technical Sample Parts",
+            "type": "array",
+            "description": "The parts into which this sample has been divided.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Technical Sample Part",
               "type": "string"
             }
           }
@@ -93207,6 +93992,11 @@
               "title": "Superseded By",
               "type": "string"
             }
+          },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "type": "boolean",
+            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "sex": {
             "title": "Sex",
@@ -93792,6 +94582,11 @@
               "title": "Superseded By",
               "type": "string"
             }
+          },
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "type": "boolean",
+            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "sex": {
             "title": "Sex",
@@ -94508,7 +95303,8 @@
             "description": "The classification of treatment agent that specifies its exact molecular nature. ",
             "enum": [
               "chemical",
-              "protein"
+              "protein",
+              "thermal"
             ]
           },
           "treatment_term_id": {
@@ -94802,6 +95598,7 @@
                 "Multiome Perturb-seq",
                 "SGE",
                 "Immune-SGE",
+                "MAVE",
                 "MIAA",
                 "snmC-Seq2",
                 "snMCT-seq",
@@ -94831,7 +95628,7 @@
             "title": "Source URL",
             "description": "An external resource to the code base of the workflow in github.",
             "type": "string",
-            "pattern": "^https?://(github\\.com/\\S+|support\\.parsebiosciences\\.com/\\S*)$"
+            "pattern": "^https?://(github\\.com/\\S+|support\\.parsebiosciences\\.com/\\S*|www\\.10xgenomics\\.com/\\S*)$"
           },
           "release_timestamp": {
             "title": "Release Timestamp",

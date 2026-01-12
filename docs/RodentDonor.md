@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **phenotypic_features** | **List[str]** | A list of associated phenotypic features of the donor. | [optional] 
 **virtual** | **bool** | Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for. | [optional] 
 **supersedes** | **List[str]** | The donor(s) that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
+**is_on_anvil** | **bool** | Indicates whether the donor has been submitted to AnVIL. | [optional] 
 **strain_background** | **str** | The specific parent strain designation of a non-human donor. | [optional] 
 **strain** | **str** | The specific strain designation of a non-human donor. | [optional] 
 **genotype** | **str** | The genotype of the strain according to accepted nomenclature conventions. | [optional] 

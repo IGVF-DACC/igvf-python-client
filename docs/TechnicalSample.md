@@ -46,6 +46,8 @@ Name | Type | Description | Notes
 **sample_material** | **str** |  | [optional] 
 **taxa** | **str** |  | [optional] 
 **sample_terms** | **List[str]** | Ontology terms identifying a technical sample. | [optional] 
+**treatments** | **List[str]** | A list of treatments applied to the technical sample with the purpose of perturbation. | [optional] 
+**part_of** | **str** | Links to technical sample which represents a larger sample from which this sample was taken. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of this sample. | [optional] 
@@ -55,7 +57,9 @@ Name | Type | Description | Notes
 **origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
 **institutional_certificates** | **List[str]** | The institutional certificates under which use of this sample is approved. | [optional] 
 **superseded_by** | **List[str]** | Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one. | [optional] 
+**is_on_anvil** | **bool** | Indicates whether the sample has been submitted to AnVIL. | [optional] 
 **classifications** | **List[str]** | The general category of this type of sample. | [optional] 
+**parts** | **List[str]** | The parts into which this sample has been divided. | [optional] 
 
 ## Example
 

@@ -103,6 +103,7 @@ docs/RNASeqKBInfo.md
 docs/ReferenceFile.md
 docs/ReferenceFileResults.md
 docs/RelatedDonor.md
+docs/RelatedMeasurementSetGroup.md
 docs/RodentDonor.md
 docs/RodentDonorResults.md
 docs/SampleTerm.md
@@ -249,6 +250,7 @@ igvf_client/models/publication_results.py
 igvf_client/models/reference_file.py
 igvf_client/models/reference_file_results.py
 igvf_client/models/related_donor.py
+igvf_client/models/related_measurement_set_group.py
 igvf_client/models/rna_seq_kb_info.py
 igvf_client/models/rodent_donor.py
 igvf_client/models/rodent_donor_results.py

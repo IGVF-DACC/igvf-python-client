@@ -68,6 +68,7 @@ Name | Type | Description | Notes
 **origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
 **institutional_certificates** | **List[str]** | The institutional certificates under which use of this sample is approved. | [optional] 
 **superseded_by** | **List[str]** | Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one. | [optional] 
+**is_on_anvil** | **bool** | Indicates whether the sample has been submitted to AnVIL. | [optional] 
 **sex** | **str** |  | [optional] 
 **age** | **str** | Age of organism at the time of collection of the sample. | [optional] 
 **upper_bound_age_in_hours** | **float** | Upper bound of age of organism in hours at the time of collection of the sample. | [optional] 

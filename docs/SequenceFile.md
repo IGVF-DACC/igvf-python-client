@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **supersedes** | **List[str]** | The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **flowcell_id** | **str** | The alphanumeric identifier for the flowcell of a sequencing machine. | [optional] 
 **lane** | **int** | An integer identifying the lane of a sequencing machine. | [optional] 
+**tile** | **int** | An integer identifying the tile of a gene of interest. | [optional] 
 **read_count** | **int** | Number of reads in a fastq file. | [optional] 
 **minimum_read_length** | **int** | For high-throughput sequencing, the minimum number of contiguous nucleotides determined by sequencing. | [optional] 
 **maximum_read_length** | **int** | For high-throughput sequencing, the maximum number of contiguous nucleotides determined by sequencing. | [optional] 
