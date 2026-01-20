@@ -6,6 +6,7 @@ Construct library set is a file set that hosts raw data files (e.g. FASTQs) resu
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**doi** | **str** | The Digital Object Identifier (DOI) associated with this object. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this file set. | [optional] 
 **small_scale_loci_list** | [**List[Locus1]**](Locus1.md) | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
@@ -63,7 +64,6 @@ Name | Type | Description | Notes
 **construct_library_sets** | **List[str]** | The construct library sets associated with the samples of this file set. | [optional] 
 **data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
-**is_on_anvil** | **bool** | Indicates whether this file set has been submitted to AnVIL. | [optional] 
 **samples** | **List[str]** | The samples this construct library set was applied to. | [optional] 
 **file_sets** | **List[str]** | The file sets that used this construct library set. | [optional] 
 **preferred_assay_titles** | **List[str]** | The preferred assay titles of the file sets that used this construct library set. | [optional] 

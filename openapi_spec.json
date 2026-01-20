@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "104.0.0"
+    "version": "105.0.0"
   },
   "servers": [
     {
@@ -1620,6 +1620,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "co-localization scores",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -1648,6 +1649,7 @@
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
+                  "exclusion list regions",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -1707,6 +1709,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "per cell type enrichment scores",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -1877,6 +1880,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "co-localization scores",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -1905,6 +1909,7 @@
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
+                  "exclusion list regions",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -1964,6 +1969,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "per cell type enrichment scores",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -2544,6 +2550,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "co-localization scores",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -2572,6 +2579,7 @@
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
+                  "exclusion list regions",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -2631,6 +2639,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "per cell type enrichment scores",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -2757,6 +2766,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "co-localization scores",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -2785,6 +2795,7 @@
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
+                  "exclusion list regions",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -2844,6 +2855,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "per cell type enrichment scores",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -5252,21 +5264,6 @@
             "explode": true
           },
           {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is on AnVIL",
-                "description": "Indicates whether the donor has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -6141,21 +6138,6 @@
               }
             },
             "description": "Filter by individual_rodent",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is on AnVIL",
-                "description": "Indicates whether the donor has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -29036,6 +29018,22 @@
             "explode": true
           },
           {
+            "name": "doi",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "DOI",
+                "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$",
+                "description": "The Digital Object Identifier (DOI) associated with this object."
+              }
+            },
+            "description": "Filter by doi",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "donors.@id",
             "in": "query",
             "schema": {
@@ -29862,21 +29860,6 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether this file set has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -31737,6 +31720,22 @@
             "explode": true
           },
           {
+            "name": "doi",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "DOI",
+                "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$",
+                "description": "The Digital Object Identifier (DOI) associated with this object."
+              }
+            },
+            "description": "Filter by doi",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "donors.@id",
             "in": "query",
             "schema": {
@@ -32475,21 +32474,6 @@
               }
             },
             "description": "Filter by input_for.uniform_pipeline_status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether this file set has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -34105,6 +34089,22 @@
             "explode": true
           },
           {
+            "name": "doi",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "DOI",
+                "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$",
+                "description": "The Digital Object Identifier (DOI) associated with this object."
+              }
+            },
+            "description": "Filter by doi",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "donors.@id",
             "in": "query",
             "schema": {
@@ -34847,21 +34847,6 @@
               }
             },
             "description": "Filter by integrated_content_files.upload_status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether this file set has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -37607,21 +37592,6 @@
             "explode": true
           },
           {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether this file set has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -39530,6 +39500,22 @@
             "explode": true
           },
           {
+            "name": "doi",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "DOI",
+                "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$",
+                "description": "The Digital Object Identifier (DOI) associated with this object."
+              }
+            },
+            "description": "Filter by doi",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "donors.@id",
             "in": "query",
             "schema": {
@@ -40354,21 +40340,6 @@
               }
             },
             "description": "Filter by input_for.uniform_pipeline_status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether this file set has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -42459,6 +42430,22 @@
             "explode": true
           },
           {
+            "name": "doi",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "DOI",
+                "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$",
+                "description": "The Digital Object Identifier (DOI) associated with this object."
+              }
+            },
+            "description": "Filter by doi",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "donors.@id",
             "in": "query",
             "schema": {
@@ -43226,21 +43213,6 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether this file set has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -45335,6 +45307,22 @@
             "explode": true
           },
           {
+            "name": "doi",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "DOI",
+                "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$",
+                "description": "The Digital Object Identifier (DOI) associated with this object."
+              }
+            },
+            "description": "Filter by doi",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "donors.@id",
             "in": "query",
             "schema": {
@@ -46027,21 +46015,6 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether this file set has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -59696,21 +59669,6 @@
             "explode": true
           },
           {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether the sample has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -60050,6 +60008,7 @@
                   "electroporation",
                   "lentiviral transduction",
                   "transfection",
+                  "transformation",
                   "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
@@ -62026,21 +61985,6 @@
             "explode": true
           },
           {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether the sample has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -62491,6 +62435,7 @@
                   "electroporation",
                   "lentiviral transduction",
                   "transfection",
+                  "transformation",
                   "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
@@ -64275,21 +64220,6 @@
             "explode": true
           },
           {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether the sample has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -64629,6 +64559,7 @@
                   "electroporation",
                   "lentiviral transduction",
                   "transfection",
+                  "transformation",
                   "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
@@ -66113,21 +66044,6 @@
             "explode": true
           },
           {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether the sample has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -66233,6 +66149,7 @@
                   "electroporation",
                   "lentiviral transduction",
                   "transfection",
+                  "transformation",
                   "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
@@ -68001,21 +67918,6 @@
             "explode": true
           },
           {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether the sample has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -68355,6 +68257,7 @@
                   "electroporation",
                   "lentiviral transduction",
                   "transfection",
+                  "transformation",
                   "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
@@ -70316,21 +70219,6 @@
             "explode": true
           },
           {
-            "name": "is_on_anvil",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Is On AnVIL",
-                "description": "Indicates whether the sample has been submitted to AnVIL."
-              }
-            },
-            "description": "Filter by is_on_anvil",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -70670,6 +70558,7 @@
                   "electroporation",
                   "lentiviral transduction",
                   "transfection",
+                  "transformation",
                   "nucleofection"
                 ],
                 "description": "Method of introduction of nucleic acid into the cell."
@@ -74528,6 +74417,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "co-localization scores",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -74556,6 +74446,7 @@
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
+                  "exclusion list regions",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -74615,6 +74506,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "per cell type enrichment scores",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -74741,6 +74633,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "co-localization scores",
                   "coding variant effects",
                   "coding_variants",
                   "complexes",
@@ -74769,6 +74662,7 @@
                   "elements reference",
                   "elements_genes",
                   "exclusion list",
+                  "exclusion list regions",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -74828,6 +74722,7 @@
                   "pathways_pathways",
                   "peak quantifications",
                   "peaks",
+                  "per cell type enrichment scores",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -76282,6 +76177,7 @@
                 "calibrated coding variant effects",
                 "cell annotations",
                 "cell hashing barcodes",
+                "co-localization scores",
                 "coding variant effects",
                 "coding_variants",
                 "complexes",
@@ -76310,6 +76206,7 @@
                 "elements reference",
                 "elements_genes",
                 "exclusion list",
+                "exclusion list regions",
                 "external source data",
                 "feature weights",
                 "fiducial alignment",
@@ -76369,6 +76266,7 @@
                 "pathways_pathways",
                 "peak quantifications",
                 "peaks",
+                "per cell type enrichment scores",
                 "pipeline parameters",
                 "plus strand modification state",
                 "position weight matrix",
@@ -76489,6 +76387,7 @@
                 "calibrated coding variant effects",
                 "cell annotations",
                 "cell hashing barcodes",
+                "co-localization scores",
                 "coding variant effects",
                 "coding_variants",
                 "complexes",
@@ -76517,6 +76416,7 @@
                 "elements reference",
                 "elements_genes",
                 "exclusion list",
+                "exclusion list regions",
                 "external source data",
                 "feature weights",
                 "fiducial alignment",
@@ -76576,6 +76476,7 @@
                 "pathways_pathways",
                 "peak quantifications",
                 "peaks",
+                "per cell type enrichment scores",
                 "pipeline parameters",
                 "plus strand modification state",
                 "position weight matrix",
@@ -77590,11 +77491,6 @@
               "type": "string"
             }
           },
-          "is_on_anvil": {
-            "title": "Is on AnVIL",
-            "description": "Indicates whether the donor has been submitted to AnVIL.",
-            "type": "boolean"
-          },
           "related_donors": {
             "title": "Related Donors",
             "description": "Familial relations of this donor.",
@@ -77971,11 +77867,6 @@
               "description": "Donor that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
             }
-          },
-          "is_on_anvil": {
-            "title": "Is on AnVIL",
-            "description": "Indicates whether the donor has been submitted to AnVIL.",
-            "type": "boolean"
           },
           "strain_background": {
             "title": "Strain Background",
@@ -83586,6 +83477,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "doi": {
+            "title": "DOI",
+            "description": "The Digital Object Identifier (DOI) associated with this object.",
+            "type": "string",
+            "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -83938,11 +83835,6 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "description": "Indicates whether this file set has been submitted to AnVIL.",
-            "type": "boolean"
-          },
           "preferred_assay_titles": {
             "title": "Preferred Assay Titles",
             "description": "Preferred Assay Title(s) of assays that produced data analyzed in the analysis set.",
@@ -84026,6 +83918,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "doi": {
+            "title": "DOI",
+            "description": "The Digital Object Identifier (DOI) associated with this object.",
+            "type": "string",
+            "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -84345,11 +84243,6 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "description": "Indicates whether this file set has been submitted to AnVIL.",
-            "type": "boolean"
-          },
           "measurement_sets": {
             "title": "Measurement Sets",
             "description": "The measurement sets that link to this auxiliary set.",
@@ -84388,6 +84281,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "doi": {
+            "title": "DOI",
+            "description": "The Digital Object Identifier (DOI) associated with this object.",
+            "type": "string",
+            "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -84938,11 +84837,6 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "description": "Indicates whether this file set has been submitted to AnVIL.",
-            "type": "boolean"
-          },
           "samples": {
             "title": "Samples",
             "description": "The samples this construct library set was applied to.",
@@ -85332,11 +85226,6 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "description": "Indicates whether this file set has been submitted to AnVIL.",
-            "type": "boolean"
-          },
           "assemblies": {
             "title": "Assemblies",
             "description": "The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38).",
@@ -85365,6 +85254,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "doi": {
+            "title": "DOI",
+            "description": "The Digital Object Identifier (DOI) associated with this object.",
+            "type": "string",
+            "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$"
+          },
           "preferred_assay_titles": {
             "title": "Preferred Assay Titles",
             "description": "The custom lab preferred label for the experiment performed.",
@@ -85934,11 +85829,6 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "description": "Indicates whether this file set has been submitted to AnVIL.",
-            "type": "boolean"
-          },
           "assay_titles": {
             "title": "Assay Term Names",
             "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays",
@@ -85996,6 +85886,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "doi": {
+            "title": "DOI",
+            "description": "The Digital Object Identifier (DOI) associated with this object.",
+            "type": "string",
+            "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$"
+          },
           "preferred_assay_titles": {
             "title": "Preferred Assay Titles",
             "description": "The assay(s) that served as input tranining data for the derivation of this model set.",
@@ -86464,11 +86360,6 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "description": "Indicates whether this file set has been submitted to AnVIL.",
-            "type": "boolean"
-          },
           "externally_hosted": {
             "title": "Externally Hosted",
             "type": "boolean"
@@ -86492,6 +86383,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "doi": {
+            "title": "DOI",
+            "description": "The Digital Object Identifier (DOI) associated with this object.",
+            "type": "string",
+            "pattern": "^(10.65695/IGVFDS\\d{4}[A-Z]{4})$"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -86910,11 +86807,6 @@
           "controlled_access": {
             "title": "Controlled Access",
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
-            "type": "boolean"
-          },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "description": "Indicates whether this file set has been submitted to AnVIL.",
             "type": "boolean"
           },
           "software_versions": {
@@ -91585,6 +91477,7 @@
               "electroporation",
               "lentiviral transduction",
               "transfection",
+              "transformation",
               "nucleofection"
             ]
           },
@@ -91790,11 +91683,6 @@
               "title": "Superseded By",
               "type": "string"
             }
-          },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "type": "boolean",
-            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "sex": {
             "title": "Sex",
@@ -92107,6 +91995,7 @@
               "electroporation",
               "lentiviral transduction",
               "transfection",
+              "transformation",
               "nucleofection"
             ]
           },
@@ -92260,11 +92149,6 @@
               "title": "Superseded By",
               "type": "string"
             }
-          },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "type": "boolean",
-            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "sample_terms": {
             "title": "Sample Terms",
@@ -92767,6 +92651,7 @@
               "electroporation",
               "lentiviral transduction",
               "transfection",
+              "transformation",
               "nucleofection"
             ]
           },
@@ -92906,11 +92791,6 @@
               "title": "Superseded By",
               "type": "string"
             }
-          },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "type": "boolean",
-            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "sex": {
             "title": "Sex",
@@ -93246,6 +93126,7 @@
               "electroporation",
               "lentiviral transduction",
               "transfection",
+              "transformation",
               "nucleofection"
             ]
           },
@@ -93407,11 +93288,6 @@
               "title": "Superseded By",
               "type": "string"
             }
-          },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "type": "boolean",
-            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "classifications": {
             "title": "Classifications",
@@ -93843,6 +93719,7 @@
               "electroporation",
               "lentiviral transduction",
               "transfection",
+              "transformation",
               "nucleofection"
             ]
           },
@@ -93992,11 +93869,6 @@
               "title": "Superseded By",
               "type": "string"
             }
-          },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "type": "boolean",
-            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "sex": {
             "title": "Sex",
@@ -94465,6 +94337,7 @@
               "electroporation",
               "lentiviral transduction",
               "transfection",
+              "transformation",
               "nucleofection"
             ]
           },
@@ -94582,11 +94455,6 @@
               "title": "Superseded By",
               "type": "string"
             }
-          },
-          "is_on_anvil": {
-            "title": "Is On AnVIL",
-            "type": "boolean",
-            "description": "Indicates whether the sample has been submitted to AnVIL."
           },
           "sex": {
             "title": "Sex",

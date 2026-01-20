@@ -53,7 +53,6 @@ Name | Type | Description | Notes
 **origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
 **institutional_certificates** | **List[str]** | The institutional certificates of the samples included in this multiplexed sample. | [optional] 
 **superseded_by** | **List[str]** | Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one. | [optional] 
-**is_on_anvil** | **bool** | Indicates whether the sample has been submitted to AnVIL. | [optional] 
 **sample_terms** | **List[str]** | The sample terms of the samples included in this multiplexed sample. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
 **disease_terms** | **List[str]** | The disease terms of the samples included in this multiplexed sample. | [optional] 
