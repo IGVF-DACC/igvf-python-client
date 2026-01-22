@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "105.0.0"
+    "version": "106.0.0"
   },
   "servers": [
     {
@@ -1600,6 +1600,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
+                  "aggregated calibrated coding variant effects",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -1617,6 +1618,7 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
@@ -1682,6 +1684,7 @@
                   "guide RNA sequences",
                   "guide RNA sequences reference",
                   "guide quantifications",
+                  "heritability enrichment",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
@@ -1717,6 +1720,7 @@
                   "primer sequences",
                   "primers table",
                   "primers track",
+                  "probes track",
                   "protein language model",
                   "protein sequences",
                   "protein stability fluorescence score",
@@ -1860,6 +1864,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
+                  "aggregated calibrated coding variant effects",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -1877,6 +1882,7 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
@@ -1942,6 +1948,7 @@
                   "guide RNA sequences",
                   "guide RNA sequences reference",
                   "guide quantifications",
+                  "heritability enrichment",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
@@ -1977,6 +1984,7 @@
                   "primer sequences",
                   "primers table",
                   "primers track",
+                  "probes track",
                   "protein language model",
                   "protein sequences",
                   "protein stability fluorescence score",
@@ -2530,6 +2538,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
+                  "aggregated calibrated coding variant effects",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -2547,6 +2556,7 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
@@ -2612,6 +2622,7 @@
                   "guide RNA sequences",
                   "guide RNA sequences reference",
                   "guide quantifications",
+                  "heritability enrichment",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
@@ -2647,6 +2658,7 @@
                   "primer sequences",
                   "primers table",
                   "primers track",
+                  "probes track",
                   "protein language model",
                   "protein sequences",
                   "protein stability fluorescence score",
@@ -2746,6 +2758,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
+                  "aggregated calibrated coding variant effects",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -2763,6 +2776,7 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
@@ -2828,6 +2842,7 @@
                   "guide RNA sequences",
                   "guide RNA sequences reference",
                   "guide quantifications",
+                  "heritability enrichment",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
@@ -2863,6 +2878,7 @@
                   "primer sequences",
                   "primers table",
                   "primers track",
+                  "probes track",
                   "protein language model",
                   "protein sequences",
                   "protein stability fluorescence score",
@@ -26703,6 +26719,22 @@
             "explode": true
           },
           {
+            "name": "enrichment_design_for",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Enrichment Design For",
+              "items": {
+                "type": "string",
+                "title": "Enrichment Design For"
+              },
+              "description": "Link(s) to the measurement sets using this file as a enrichment design."
+            },
+            "description": "Filter by enrichment_design_for",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_format_specifications.@id",
             "in": "query",
             "schema": {
@@ -27813,22 +27845,6 @@
               }
             },
             "description": "Filter by preview_timestamp",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "primer_design_for",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Primer Design For",
-              "items": {
-                "type": "string",
-                "title": "Primer Design For"
-              },
-              "description": "Link(s) to the MeasurementSets using this file as a primer design."
-            },
-            "description": "Filter by primer_design_for",
             "style": "form",
             "explode": true
           },
@@ -29141,6 +29157,22 @@
             "explode": true
           },
           {
+            "name": "enrichment_designs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Enrichment Designs",
+              "items": {
+                "type": "string",
+                "title": "Enrichment Design"
+              },
+              "description": "The enrichment designs used by the inputs of this analysis set."
+            },
+            "description": "Filter by enrichment_designs",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "external_image_data_url",
             "in": "query",
             "schema": {
@@ -29952,22 +29984,6 @@
               }
             },
             "description": "Filter by preview_timestamp",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "primer_designs",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Primer Designs",
-              "items": {
-                "type": "string",
-                "title": "Primer Design"
-              },
-              "description": "The primer designs used by the inputs of this analysis set."
-            },
-            "description": "Filter by primer_designs",
             "style": "form",
             "explode": true
           },
@@ -32597,12 +32613,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -37028,7 +37039,7 @@
                   "genes",
                   "guide RNAs",
                   "pipeline parameters",
-                  "primer design",
+                  "enrichment designs",
                   "QTL",
                   "training data for predictive models",
                   "transcriptome",
@@ -39623,6 +39634,22 @@
             "explode": true
           },
           {
+            "name": "enrichment_designs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Enrichment Designs",
+              "items": {
+                "type": "string",
+                "title": "Enrichment Design"
+              },
+              "description": "Files describing the assay-specific enrichment strategy (e.g., primer designs for PCR-based methods or probe/bait designs for hybrid capture) that define which regions are preferentially sequenced in this measurement set."
+            },
+            "description": "Filter by enrichment_designs",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "external_image_urls",
             "in": "query",
             "schema": {
@@ -40509,12 +40536,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -40577,22 +40599,6 @@
               }
             },
             "description": "Filter by preview_timestamp",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "primer_designs",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Primer Designs",
-              "items": {
-                "type": "string",
-                "title": "Primer Design"
-              },
-              "description": "The primer designs used in this measurement set."
-            },
-            "description": "Filter by primer_designs",
             "style": "form",
             "explode": true
           },
@@ -43376,12 +43382,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -51115,12 +51116,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -59443,12 +59439,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -60324,6 +60315,32 @@
               }
             },
             "description": "Filter by sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "selection_conditions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Conditions",
+              "items": {
+                "type": "string",
+                "title": "Selection Condition",
+                "enum": [
+                  "35 degrees Celsius",
+                  "glycine depletion",
+                  "transfection of target gene",
+                  "top 10% GFP-expressing cells",
+                  "1 mM 3-AT",
+                  "10 mM 3-AT",
+                  "25 mM 3-AT"
+                ],
+                "description": "The condition used for selecting the sample."
+              },
+              "description": "The conditions used for selecting the sample."
+            },
+            "description": "Filter by selection_conditions",
             "style": "form",
             "explode": true
           },
@@ -61783,12 +61800,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -62613,6 +62625,32 @@
               }
             },
             "description": "Filter by sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "selection_conditions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Conditions",
+              "items": {
+                "type": "string",
+                "title": "Selection Condition",
+                "enum": [
+                  "35 degrees Celsius",
+                  "glycine depletion",
+                  "transfection of target gene",
+                  "top 10% GFP-expressing cells",
+                  "1 mM 3-AT",
+                  "10 mM 3-AT",
+                  "25 mM 3-AT"
+                ],
+                "description": "The condition used for selecting the sample."
+              },
+              "description": "The conditions used for selecting the sample."
+            },
+            "description": "Filter by selection_conditions",
             "style": "form",
             "explode": true
           },
@@ -64018,12 +64056,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -64847,6 +64880,32 @@
               }
             },
             "description": "Filter by sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "selection_conditions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Conditions",
+              "items": {
+                "type": "string",
+                "title": "Selection Condition",
+                "enum": [
+                  "35 degrees Celsius",
+                  "glycine depletion",
+                  "transfection of target gene",
+                  "top 10% GFP-expressing cells",
+                  "1 mM 3-AT",
+                  "10 mM 3-AT",
+                  "25 mM 3-AT"
+                ],
+                "description": "The condition used for selecting the sample."
+              },
+              "description": "The conditions used for selecting the sample."
+            },
+            "description": "Filter by selection_conditions",
             "style": "form",
             "explode": true
           },
@@ -65940,12 +65999,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -66394,6 +66448,32 @@
               }
             },
             "description": "Filter by sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "selection_conditions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Conditions",
+              "items": {
+                "type": "string",
+                "title": "Selection Condition",
+                "enum": [
+                  "35 degrees Celsius",
+                  "glycine depletion",
+                  "transfection of target gene",
+                  "top 10% GFP-expressing cells",
+                  "1 mM 3-AT",
+                  "10 mM 3-AT",
+                  "25 mM 3-AT"
+                ],
+                "description": "The condition used for selecting the sample."
+              },
+              "description": "The conditions used for selecting the sample."
+            },
+            "description": "Filter by selection_conditions",
             "style": "form",
             "explode": true
           },
@@ -67716,12 +67796,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -68586,6 +68661,32 @@
               }
             },
             "description": "Filter by sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "selection_conditions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Conditions",
+              "items": {
+                "type": "string",
+                "title": "Selection Condition",
+                "enum": [
+                  "35 degrees Celsius",
+                  "glycine depletion",
+                  "transfection of target gene",
+                  "top 10% GFP-expressing cells",
+                  "1 mM 3-AT",
+                  "10 mM 3-AT",
+                  "25 mM 3-AT"
+                ],
+                "description": "The condition used for selecting the sample."
+              },
+              "description": "The conditions used for selecting the sample."
+            },
+            "description": "Filter by selection_conditions",
             "style": "form",
             "explode": true
           },
@@ -70017,12 +70118,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -70831,6 +70927,32 @@
               }
             },
             "description": "Filter by sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "selection_conditions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Selection Conditions",
+              "items": {
+                "type": "string",
+                "title": "Selection Condition",
+                "enum": [
+                  "35 degrees Celsius",
+                  "glycine depletion",
+                  "transfection of target gene",
+                  "top 10% GFP-expressing cells",
+                  "1 mM 3-AT",
+                  "10 mM 3-AT",
+                  "25 mM 3-AT"
+                ],
+                "description": "The condition used for selecting the sample."
+              },
+              "description": "The conditions used for selecting the sample."
+            },
+            "description": "Filter by selection_conditions",
             "style": "form",
             "explode": true
           },
@@ -74397,6 +74519,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
+                  "aggregated calibrated coding variant effects",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -74414,6 +74537,7 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
@@ -74479,6 +74603,7 @@
                   "guide RNA sequences",
                   "guide RNA sequences reference",
                   "guide quantifications",
+                  "heritability enrichment",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
@@ -74514,6 +74639,7 @@
                   "primer sequences",
                   "primers table",
                   "primers track",
+                  "probes track",
                   "protein language model",
                   "protein sequences",
                   "protein stability fluorescence score",
@@ -74613,6 +74739,7 @@
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
+                  "aggregated calibrated coding variant effects",
                   "alignments",
                   "alignments with modifications",
                   "annotated multimodal CRISPR matrix",
@@ -74630,6 +74757,7 @@
                   "bin paired count",
                   "biological_context",
                   "caQTL",
+                  "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
@@ -74695,6 +74823,7 @@
                   "guide RNA sequences",
                   "guide RNA sequences reference",
                   "guide quantifications",
+                  "heritability enrichment",
                   "high resolution tissue",
                   "inclusion list",
                   "index",
@@ -74730,6 +74859,7 @@
                   "primer sequences",
                   "primers table",
                   "primers track",
+                  "probes track",
                   "protein language model",
                   "protein sequences",
                   "protein stability fluorescence score",
@@ -75184,12 +75314,7 @@
                   "Cell painting",
                   "Variant painting via fluorescence",
                   "Variant painting via immunostaining",
-                  "Arrayed Y2H v1",
-                  "Arrayed Y2H v2",
-                  "Arrayed Y2H v3",
-                  "Pooled Y2H v1",
-                  "Pooled Y2H v2",
-                  "Pooled Y2H v3",
+                  "Pooled Y2H",
                   "Arrayed semi-qY2H v1",
                   "Arrayed semi-qY2H v2",
                   "Arrayed semi-qY2H v3",
@@ -76157,6 +76282,7 @@
                 "SNP effect matrix",
                 "TF binding scores",
                 "UMAP plot",
+                "aggregated calibrated coding variant effects",
                 "alignments",
                 "alignments with modifications",
                 "annotated multimodal CRISPR matrix",
@@ -76174,6 +76300,7 @@
                 "bin paired count",
                 "biological_context",
                 "caQTL",
+                "calibrated coding variant effect thresholds",
                 "calibrated coding variant effects",
                 "cell annotations",
                 "cell hashing barcodes",
@@ -76239,6 +76366,7 @@
                 "guide RNA sequences",
                 "guide RNA sequences reference",
                 "guide quantifications",
+                "heritability enrichment",
                 "high resolution tissue",
                 "inclusion list",
                 "index",
@@ -76274,6 +76402,7 @@
                 "primer sequences",
                 "primers table",
                 "primers track",
+                "probes track",
                 "protein language model",
                 "protein sequences",
                 "protein stability fluorescence score",
@@ -76367,6 +76496,7 @@
                 "SNP effect matrix",
                 "TF binding scores",
                 "UMAP plot",
+                "aggregated calibrated coding variant effects",
                 "alignments",
                 "alignments with modifications",
                 "annotated multimodal CRISPR matrix",
@@ -76384,6 +76514,7 @@
                 "bin paired count",
                 "biological_context",
                 "caQTL",
+                "calibrated coding variant effect thresholds",
                 "calibrated coding variant effects",
                 "cell annotations",
                 "cell hashing barcodes",
@@ -76449,6 +76580,7 @@
                 "guide RNA sequences",
                 "guide RNA sequences reference",
                 "guide quantifications",
+                "heritability enrichment",
                 "high resolution tissue",
                 "inclusion list",
                 "index",
@@ -76484,6 +76616,7 @@
                 "primer sequences",
                 "primers table",
                 "primers track",
+                "probes track",
                 "protein language model",
                 "protein sequences",
                 "protein stability fluorescence score",
@@ -83459,13 +83592,13 @@
               "type": "string"
             }
           },
-          "primer_design_for": {
-            "title": "Primer Design For",
-            "description": "Link(s) to the MeasurementSets using this file as a primer design.",
+          "enrichment_design_for": {
+            "title": "Enrichment Design For",
+            "description": "Link(s) to the measurement sets using this file as a enrichment design.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Primer Design For",
+              "title": "Enrichment Design For",
               "type": "string"
             }
           }
@@ -83901,12 +84034,12 @@
               "type": "string"
             }
           },
-          "primer_designs": {
-            "title": "Primer Designs",
-            "description": "The primer designs used by the inputs of this analysis set.",
+          "enrichment_designs": {
+            "title": "Enrichment Designs",
+            "description": "The enrichment designs used by the inputs of this analysis set.",
             "type": "array",
             "items": {
-              "title": "Primer Design",
+              "title": "Enrichment Design",
               "type": "string"
             }
           }
@@ -85121,7 +85254,7 @@
               "genes",
               "guide RNAs",
               "pipeline parameters",
-              "primer design",
+              "enrichment designs",
               "QTL",
               "training data for predictive models",
               "transcriptome",
@@ -85303,12 +85436,7 @@
                 "Cell painting",
                 "Variant painting via fluorescence",
                 "Variant painting via immunostaining",
-                "Arrayed Y2H v1",
-                "Arrayed Y2H v2",
-                "Arrayed Y2H v3",
-                "Pooled Y2H v1",
-                "Pooled Y2H v2",
-                "Pooled Y2H v3",
+                "Pooled Y2H",
                 "Arrayed semi-qY2H v1",
                 "Arrayed semi-qY2H v2",
                 "Arrayed semi-qY2H v3",
@@ -85641,13 +85769,13 @@
               ]
             }
           },
-          "primer_designs": {
-            "title": "Primer Designs",
-            "description": "The primer designs used in this measurement set.",
+          "enrichment_designs": {
+            "title": "Enrichment Designs",
+            "description": "Files describing the assay-specific enrichment strategy (e.g., primer designs for PCR-based methods or probe/bait designs for hybrid capture) that define which regions are preferentially sequenced in this measurement set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Primer Design",
+              "title": "Enrichment Design",
               "type": "string"
             }
           },
@@ -85935,12 +86063,7 @@
                 "Cell painting",
                 "Variant painting via fluorescence",
                 "Variant painting via immunostaining",
-                "Arrayed Y2H v1",
-                "Arrayed Y2H v2",
-                "Arrayed Y2H v3",
-                "Pooled Y2H v1",
-                "Pooled Y2H v2",
-                "Pooled Y2H v3",
+                "Pooled Y2H",
                 "Arrayed semi-qY2H v1",
                 "Arrayed semi-qY2H v2",
                 "Arrayed semi-qY2H v3",
@@ -88065,12 +88188,7 @@
                 "Cell painting",
                 "Variant painting via fluorescence",
                 "Variant painting via immunostaining",
-                "Arrayed Y2H v1",
-                "Arrayed Y2H v2",
-                "Arrayed Y2H v3",
-                "Pooled Y2H v1",
-                "Pooled Y2H v2",
-                "Pooled Y2H v3",
+                "Pooled Y2H",
                 "Arrayed semi-qY2H v1",
                 "Arrayed semi-qY2H v2",
                 "Arrayed semi-qY2H v3",
@@ -91520,6 +91638,26 @@
               "type": "string"
             }
           },
+          "selection_conditions": {
+            "title": "Selection Conditions",
+            "description": "The conditions used for selecting the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Selection Condition",
+              "description": "The condition used for selecting the sample.",
+              "type": "string",
+              "enum": [
+                "35 degrees Celsius",
+                "glycine depletion",
+                "transfection of target gene",
+                "top 10% GFP-expressing cells",
+                "1 mM 3-AT",
+                "10 mM 3-AT",
+                "25 mM 3-AT"
+              ]
+            }
+          },
           "classifications": {
             "title": "Classifications",
             "description": "The general category of this type of in vitro system.",
@@ -92036,6 +92174,26 @@
               "title": "Superseded Sample",
               "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
+            }
+          },
+          "selection_conditions": {
+            "title": "Selection Conditions",
+            "description": "The conditions used for selecting the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Selection Condition",
+              "description": "The condition used for selecting the sample.",
+              "type": "string",
+              "enum": [
+                "35 degrees Celsius",
+                "glycine depletion",
+                "transfection of target gene",
+                "top 10% GFP-expressing cells",
+                "1 mM 3-AT",
+                "10 mM 3-AT",
+                "25 mM 3-AT"
+              ]
             }
           },
           "multiplexed_samples": {
@@ -92694,6 +92852,26 @@
               "type": "string"
             }
           },
+          "selection_conditions": {
+            "title": "Selection Conditions",
+            "description": "The conditions used for selecting the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Selection Condition",
+              "description": "The condition used for selecting the sample.",
+              "type": "string",
+              "enum": [
+                "35 degrees Celsius",
+                "glycine depletion",
+                "transfection of target gene",
+                "top 10% GFP-expressing cells",
+                "1 mM 3-AT",
+                "10 mM 3-AT",
+                "25 mM 3-AT"
+              ]
+            }
+          },
           "passage_number": {
             "title": "Passage Number",
             "description": "Number of passages including the passages from the source.",
@@ -93167,6 +93345,26 @@
               "title": "Superseded Sample",
               "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
+            }
+          },
+          "selection_conditions": {
+            "title": "Selection Conditions",
+            "description": "The conditions used for selecting the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Selection Condition",
+              "description": "The condition used for selecting the sample.",
+              "type": "string",
+              "enum": [
+                "35 degrees Celsius",
+                "glycine depletion",
+                "transfection of target gene",
+                "top 10% GFP-expressing cells",
+                "1 mM 3-AT",
+                "10 mM 3-AT",
+                "25 mM 3-AT"
+              ]
             }
           },
           "sample_material": {
@@ -93760,6 +93958,26 @@
               "title": "Superseded Sample",
               "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
+            }
+          },
+          "selection_conditions": {
+            "title": "Selection Conditions",
+            "description": "The conditions used for selecting the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Selection Condition",
+              "description": "The condition used for selecting the sample.",
+              "type": "string",
+              "enum": [
+                "35 degrees Celsius",
+                "glycine depletion",
+                "transfection of target gene",
+                "top 10% GFP-expressing cells",
+                "1 mM 3-AT",
+                "10 mM 3-AT",
+                "25 mM 3-AT"
+              ]
             }
           },
           "pmi": {
@@ -94378,6 +94596,26 @@
               "title": "Superseded Sample",
               "description": "Sample that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
+            }
+          },
+          "selection_conditions": {
+            "title": "Selection Conditions",
+            "description": "The conditions used for selecting the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Selection Condition",
+              "description": "The condition used for selecting the sample.",
+              "type": "string",
+              "enum": [
+                "35 degrees Celsius",
+                "glycine depletion",
+                "transfection of target gene",
+                "top 10% GFP-expressing cells",
+                "1 mM 3-AT",
+                "10 mM 3-AT",
+                "25 mM 3-AT"
+              ]
             }
           },
           "@id": {
@@ -95436,12 +95674,7 @@
                 "Cell painting",
                 "Variant painting via fluorescence",
                 "Variant painting via immunostaining",
-                "Arrayed Y2H v1",
-                "Arrayed Y2H v2",
-                "Arrayed Y2H v3",
-                "Pooled Y2H v1",
-                "Pooled Y2H v2",
-                "Pooled Y2H v3",
+                "Pooled Y2H",
                 "Arrayed semi-qY2H v1",
                 "Arrayed semi-qY2H v2",
                 "Arrayed semi-qY2H v3",

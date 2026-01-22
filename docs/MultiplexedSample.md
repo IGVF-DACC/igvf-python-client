@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **time_post_library_delivery_units** | **str** | The units of time that elapsed past the point when the construct library sets were introduced. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
 **supersedes** | **List[str]** | The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
+**selection_conditions** | **List[str]** | The conditions used for selecting the sample. | [optional] 
 **multiplexed_samples** | **List[str]** | The samples multiplexed together to produce this sample. | [optional] 
 **multiplexing_methods** | **List[str]** | The methods used for multiplexing and demultiplexing. | [optional] 
 **cellular_sub_pool** | **str** | Cellular sub-pool fraction of the sample. Also known as PKR and sub-library. | [optional] 

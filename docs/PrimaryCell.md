@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **time_post_library_delivery_units** | **str** | The units of time that elapsed past the point when the construct library sets were introduced. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
 **supersedes** | **List[str]** | The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
+**selection_conditions** | **List[str]** | The conditions used for selecting the sample. | [optional] 
 **passage_number** | **int** | Number of passages including the passages from the source. | [optional] 
 **biosample_qualifiers** | **List[str]** | An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells. | [optional] 
 **id** | **str** |  | [optional] 

@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **multiome_size** | **int** | The number of datasets included in the multiome experiment this measurement set is a part of. | [optional] 
 **control_types** | **List[str]** | The types of control this measurement set represents. | [optional] 
 **sequencing_library_types** | **List[str]** | Description of the libraries sequenced in this measurement set. | [optional] 
-**primer_designs** | **List[str]** | The primer designs used in this measurement set. | [optional] 
+**enrichment_designs** | **List[str]** | Files describing the assay-specific enrichment strategy (e.g., primer designs for PCR-based methods or probe/bait designs for hybrid capture) that define which regions are preferentially sequenced in this measurement set. | [optional] 
 **strand_specificity** | **str** | Indicates whether a transcriptomic library is forward, reverse, or unstranded based on the strand-specific protocol used. | [optional] 
 **auxiliary_sets** | **List[str]** | The auxiliary sets of files produced alongside raw data from this measurement set. | [optional] 
 **external_image_urls** | **List[str]** | Links to the external site where images produced by this measurement are stored. | [optional] 

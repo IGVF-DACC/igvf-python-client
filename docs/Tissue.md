@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **time_post_library_delivery_units** | **str** | The units of time that elapsed past the point when the construct library sets were introduced. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
 **supersedes** | **List[str]** | The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
+**selection_conditions** | **List[str]** | The conditions used for selecting the sample. | [optional] 
 **pmi** | **int** | The amount of time elapsed since death. | [optional] 
 **pmi_units** | **str** | The unit in which the PMI time was reported. | [optional] 
 **ccf_id** | **str** | HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen within an organ. | [optional] 
