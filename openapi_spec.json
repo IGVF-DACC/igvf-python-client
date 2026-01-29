@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "106.0.0"
+    "version": "107.0.1"
   },
   "servers": [
     {
@@ -1734,6 +1734,7 @@
                   "read count",
                   "read-depth signal",
                   "reads",
+                  "regional constraint",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -1998,6 +1999,7 @@
                   "read count",
                   "read-depth signal",
                   "reads",
+                  "regional constraint",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -2672,6 +2674,7 @@
                   "read count",
                   "read-depth signal",
                   "reads",
+                  "regional constraint",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -2892,6 +2895,7 @@
                   "read count",
                   "read-depth signal",
                   "reads",
+                  "regional constraint",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -35867,6 +35871,11 @@
                     "minimum": 1,
                     "description": "The 1-based, closed (inclusive) starting coordinate."
                   },
+                  "name": {
+                    "type": "string",
+                    "title": "Locus Name",
+                    "description": "A human-readable name or identifier for the locus."
+                  },
                   "end": {
                     "type": "integer",
                     "title": "End",
@@ -35881,7 +35890,7 @@
                   },
                   "assembly": {
                     "type": "string",
-                    "title": "Mapping assembly",
+                    "title": "Mapping Assembly",
                     "enum": [
                       "GRCh38",
                       "GRCm39"
@@ -47020,6 +47029,11 @@
                     "minimum": 1,
                     "description": "The 1-based, closed (inclusive) starting coordinate."
                   },
+                  "name": {
+                    "type": "string",
+                    "title": "Locus Name",
+                    "description": "A human-readable name or identifier for the locus."
+                  },
                   "end": {
                     "type": "integer",
                     "title": "End",
@@ -47034,7 +47048,7 @@
                   },
                   "assembly": {
                     "type": "string",
-                    "title": "Mapping assembly",
+                    "title": "Mapping Assembly",
                     "enum": [
                       "GRCh38",
                       "GRCm39"
@@ -59366,6 +59380,23 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names",
+                "description": "Title of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by file_sets.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -59503,21 +59534,6 @@
               }
             },
             "description": "Filter by file_sets.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "file_sets.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the prediction set."
-              }
-            },
-            "description": "Filter by file_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -61727,6 +61743,23 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names",
+                "description": "Title of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by file_sets.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -61864,21 +61897,6 @@
               }
             },
             "description": "Filter by file_sets.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "file_sets.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the prediction set."
-              }
-            },
-            "description": "Filter by file_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -63983,6 +64001,23 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names",
+                "description": "Title of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by file_sets.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -64120,21 +64155,6 @@
               }
             },
             "description": "Filter by file_sets.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "file_sets.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the prediction set."
-              }
-            },
-            "description": "Filter by file_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -67723,6 +67743,23 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names",
+                "description": "Title of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by file_sets.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -67860,21 +67897,6 @@
               }
             },
             "description": "Filter by file_sets.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "file_sets.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the prediction set."
-              }
-            },
-            "description": "Filter by file_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -70045,6 +70067,23 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names",
+                "description": "Title of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by file_sets.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -70182,21 +70221,6 @@
               }
             },
             "description": "Filter by file_sets.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "file_sets.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the prediction set."
-              }
-            },
-            "description": "Filter by file_sets.summary",
             "style": "form",
             "explode": true
           },
@@ -74653,6 +74677,7 @@
                   "read count",
                   "read-depth signal",
                   "reads",
+                  "regional constraint",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -74873,6 +74898,7 @@
                   "read count",
                   "read-depth signal",
                   "reads",
+                  "regional constraint",
                   "reporter elements",
                   "reporter experiment",
                   "reporter experiment barcode",
@@ -76416,6 +76442,7 @@
                 "read count",
                 "read-depth signal",
                 "reads",
+                "regional constraint",
                 "reporter elements",
                 "reporter experiment",
                 "reporter experiment barcode",
@@ -76630,6 +76657,7 @@
                 "read count",
                 "read-depth signal",
                 "reads",
+                "regional constraint",
                 "reporter elements",
                 "reporter experiment",
                 "reporter experiment barcode",
@@ -84452,8 +84480,13 @@
               ],
               "additionalProperties": false,
               "properties": {
+                "name": {
+                  "title": "Locus Name",
+                  "description": "A human-readable name or identifier for the locus.",
+                  "type": "string"
+                },
                 "assembly": {
-                  "title": "Mapping assembly",
+                  "title": "Mapping Assembly",
                   "description": "The genome assembly to which coordinates relate (e.g., GRCh38).",
                   "type": "string",
                   "enum": [
@@ -86544,8 +86577,13 @@
               ],
               "additionalProperties": false,
               "properties": {
+                "name": {
+                  "title": "Locus Name",
+                  "description": "A human-readable name or identifier for the locus.",
+                  "type": "string"
+                },
                 "assembly": {
-                  "title": "Mapping assembly",
+                  "title": "Mapping Assembly",
                   "description": "The genome assembly to which coordinates relate (e.g., GRCh38).",
                   "type": "string",
                   "enum": [

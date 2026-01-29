@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** | A human-readable name or identifier for the locus. | [optional] 
 **assembly** | **str** | The genome assembly to which coordinates relate (e.g., GRCh38). | 
 **chromosome** | **str** | The number (or letter) designation for the chromosome, e.g. chr1 or chrX | 
 **start** | **int** | The 1-based, closed (inclusive) starting coordinate. | 
