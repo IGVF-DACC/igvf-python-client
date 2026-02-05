@@ -66,7 +66,7 @@ Name | Type | Description | Notes
 **file_sets** | **List[str]** | The file sets linked to this sample. | [optional] 
 **multiplexed_in** | **List[str]** | The multiplexed samples in which this sample is included. | [optional] 
 **sorted_fractions** | **List[str]** | The fractions into which this sample has been sorted. | [optional] 
-**origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
+**origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell fate change or the introduction of a genetic material. | [optional] 
 **institutional_certificates** | **List[str]** | The institutional certificates under which use of this sample is approved. | [optional] 
 **superseded_by** | **List[str]** | Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one. | [optional] 
 **sex** | **str** |  | [optional] 

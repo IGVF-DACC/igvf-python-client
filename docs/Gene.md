@@ -27,12 +27,14 @@ Name | Type | Description | Notes
 **study_sets** | **List[str]** | The studies of IGVF that this gene was a part of. | [optional] 
 **dbxrefs** | **List[str]** | Unique identifiers from external resources. | [optional] 
 **locations** | [**List[GeneLocation1]**](GeneLocation1.md) | Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies. | [optional] 
+**allele** | **str** | The allele of the gene. | [optional] 
 **version_number** | **str** | Current ENSEMBL GeneID version number of the gene. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **geneid_with_version** | **str** | The ENSEMBL GeneID concatenated with its version number. | [optional] 
+**geneid_with_allele** | **str** | The ENSEMBL GeneID concatenated with its allele info. | [optional] 
 
 ## Example
 

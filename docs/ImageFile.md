@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **supersedes** | **List[str]** | The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
+**imaging_platform** | **str** | The measurement device used to produce imaging data. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the image file. | [optional] 
