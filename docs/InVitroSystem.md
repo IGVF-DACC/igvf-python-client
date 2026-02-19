@@ -6,6 +6,7 @@ A biosample that is cultured, such as immortalized cell lines, organoids, gastru
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
@@ -37,7 +38,6 @@ Name | Type | Description | Notes
 **sample_terms** | **List[str]** | Ontology terms identifying a biosample. | [optional] 
 **disease_terms** | **List[str]** | Ontology term of the disease associated with the biosample. | [optional] 
 **pooled_from** | **List[str]** | The biosamples this biosample is pooled from. | [optional] 
-**part_of** | **str** | Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth. | [optional] 
 **originated_from** | **str** | Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification. | [optional] 
 **treatments** | **List[str]** | A list of treatments applied to the biosample with the purpose of perturbation. | [optional] 
 **donors** | **List[str]** | Donor(s) the sample was derived from. | [optional] 
@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **starting_amount_units** | **str** | The units used to quantify the amount of samples obtained. | [optional] 
 **dbxrefs** | **List[str]** | Biosample identifiers from external resources, such as Biosample database or Cellosaurus. | [optional] 
 **date_obtained** | **str** | The date the sample was harvested, dissected or created, depending on the type of the sample. | [optional] 
+**part_of** | **str** | Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth. | [optional] 
 **sorted_from** | **str** | Links to a larger sample from which this sample was obtained through sorting. | [optional] 
 **sorted_from_detail** | **str** | Detail for sample sorted into fractions capturing information about sorting. | [optional] 
 **virtual** | **bool** | Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for. | [optional] 
@@ -69,11 +70,14 @@ Name | Type | Description | Notes
 **targeted_sample_term** | **str** | Ontology term identifying the targeted endpoint biosample resulting from differentation or reprogramming. | [optional] 
 **growth_medium** | **str** | A growth medium of the in vitro system. | [optional] 
 **biosample_qualifiers** | **List[str]** | An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells. | [optional] 
+**time_post_culture** | **float** | The time that elapsed since the biosample was placed into culture. | [optional] 
+**time_post_culture_units** | **str** | The units of time that elapsed since the biosample was placed into culture. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the sample. | [optional] 
 **file_sets** | **List[str]** | The file sets linked to this sample. | [optional] 
 **multiplexed_in** | **List[str]** | The multiplexed samples in which this sample is included. | [optional] 
+**parts** | **List[str]** | The parts into which this sample has been divided. | [optional] 
 **sorted_fractions** | **List[str]** | The fractions into which this sample has been sorted. | [optional] 
 **origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell fate change or the introduction of a genetic material. | [optional] 
 **institutional_certificates** | **List[str]** | The institutional certificates under which use of this sample is approved. | [optional] 
@@ -82,7 +86,6 @@ Name | Type | Description | Notes
 **age** | **str** | Age of organism at the time of collection of the sample. | [optional] 
 **upper_bound_age_in_hours** | **float** | Upper bound of age of organism in hours at the time of collection of the sample. | [optional] 
 **lower_bound_age_in_hours** | **float** | Lower bound of age of organism in hours at the time of collection of the sample . | [optional] 
-**parts** | **List[str]** | The parts into which this sample has been divided. | [optional] 
 **pooled_in** | **List[str]** | The pooled samples in which this sample is included. | [optional] 
 **demultiplexed_to** | **List[str]** | The parts into which this sample has been demultiplexed. | [optional] 
 

@@ -6,6 +6,7 @@ A sample that is used as a medium to perform biological measurement without the 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
@@ -33,6 +34,7 @@ Name | Type | Description | Notes
 **starting_amount_units** | **str** | The units used to quantify the amount of samples obtained. | [optional] 
 **dbxrefs** | **List[str]** | Biosample identifiers from external resources, such as Biosample database or Cellosaurus. | [optional] 
 **date_obtained** | **str** | The date the sample was harvested, dissected or created, depending on the type of the sample. | [optional] 
+**part_of** | **str** | Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth. | [optional] 
 **sorted_from** | **str** | Links to a larger sample from which this sample was obtained through sorting. | [optional] 
 **sorted_from_detail** | **str** | Detail for sample sorted into fractions capturing information about sorting. | [optional] 
 **virtual** | **bool** | Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for. | [optional] 
@@ -48,19 +50,18 @@ Name | Type | Description | Notes
 **taxa** | **str** |  | [optional] 
 **sample_terms** | **List[str]** | Ontology terms identifying a technical sample. | [optional] 
 **treatments** | **List[str]** | A list of treatments applied to the technical sample with the purpose of perturbation. | [optional] 
-**part_of** | **str** | Links to technical sample which represents a larger sample from which this sample was taken. | [optional] 
 **originated_from** | **str** | Links to a technical sample that was originated from due to the introduction of a genetic modification. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of this sample. | [optional] 
 **file_sets** | **List[str]** | The file sets linked to this sample. | [optional] 
 **multiplexed_in** | **List[str]** | The multiplexed samples in which this sample is included. | [optional] 
+**parts** | **List[str]** | The parts into which this sample has been divided. | [optional] 
 **sorted_fractions** | **List[str]** | The fractions into which this sample has been sorted. | [optional] 
 **origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell fate change or the introduction of a genetic material. | [optional] 
 **institutional_certificates** | **List[str]** | The institutional certificates under which use of this sample is approved. | [optional] 
 **superseded_by** | **List[str]** | Sample(s) this sample is superseded by virtue of those sample(s) being newer, better, or a fixed version of etc. than this one. | [optional] 
 **classifications** | **List[str]** | The general category of this type of sample. | [optional] 
-**parts** | **List[str]** | The parts into which this sample has been divided. | [optional] 
 
 ## Example
 

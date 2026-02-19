@@ -6,6 +6,7 @@ Construct library set is a file set that hosts raw data files (e.g. FASTQs) resu
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
 **doi** | **str** | The Digital Object Identifier (DOI) associated with this object. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this file set. | [optional] 

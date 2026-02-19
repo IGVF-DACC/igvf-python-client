@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **upload_status** | **str** | The upload/validation status of the file. | [optional] 
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
+**checkfiles_timestamp** | **str** | The date and time the file object was last checked by the Checkfiles script. | [optional] 
 **supersedes** | **List[str]** | The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **read_count** | **int** | Number of reads in a bam file. Including both mapped, unmapped, and multi-mapped read counts. | [optional] 
 **redacted** | **bool** | Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information. | [optional] 

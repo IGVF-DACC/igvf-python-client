@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **analysis_step_versions** | **List[str]** | The available versions of the analysis steps linked to this workflow. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** |  | [optional] 
 
 ## Example
 

@@ -6,6 +6,7 @@ A file set for reference files which are utilized in the analysis of IGVF experi
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 

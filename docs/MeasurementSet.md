@@ -6,6 +6,7 @@ Measurement set is a file set that hosts raw data files (e.g. FASTQs) resulting 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
 **doi** | **str** | The Digital Object Identifier (DOI) associated with this object. | [optional] 
 **preferred_assay_titles** | **List[str]** | The custom lab preferred label for the experiment performed. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 

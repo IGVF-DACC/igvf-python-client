@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "108.0.1"
+    "version": "110.0.0"
   },
   "servers": [
     {
@@ -1624,6 +1624,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "chromatin contact quantifications",
                   "co-localization scores",
                   "coding variant effects",
                   "coding variants",
@@ -1654,7 +1655,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
-                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -1670,6 +1670,7 @@
                   "genes in pathway",
                   "genome index",
                   "genome reference",
+                  "global differential expression",
                   "graph structure",
                   "guide RNA sequences",
                   "guide RNA sequences reference",
@@ -1682,10 +1683,13 @@
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "linkage disequilibrium",
+                  "local differential expression",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "methylation count matrix",
+                  "methylation counts",
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
@@ -1755,8 +1759,6 @@
                   "transcriptome annotations",
                   "transcriptome index",
                   "transcriptome reference",
-                  "unfiltered global differential expression",
-                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant disease links",
                   "variant drug annotations",
@@ -1862,6 +1864,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "chromatin contact quantifications",
                   "co-localization scores",
                   "coding variant effects",
                   "coding variants",
@@ -1892,7 +1895,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
-                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -1908,6 +1910,7 @@
                   "genes in pathway",
                   "genome index",
                   "genome reference",
+                  "global differential expression",
                   "graph structure",
                   "guide RNA sequences",
                   "guide RNA sequences reference",
@@ -1920,10 +1923,13 @@
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "linkage disequilibrium",
+                  "local differential expression",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "methylation count matrix",
+                  "methylation counts",
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
@@ -1993,8 +1999,6 @@
                   "transcriptome annotations",
                   "transcriptome index",
                   "transcriptome reference",
-                  "unfiltered global differential expression",
-                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant disease links",
                   "variant drug annotations",
@@ -2510,6 +2514,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "chromatin contact quantifications",
                   "co-localization scores",
                   "coding variant effects",
                   "coding variants",
@@ -2540,7 +2545,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
-                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -2556,6 +2560,7 @@
                   "genes in pathway",
                   "genome index",
                   "genome reference",
+                  "global differential expression",
                   "graph structure",
                   "guide RNA sequences",
                   "guide RNA sequences reference",
@@ -2568,10 +2573,13 @@
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "linkage disequilibrium",
+                  "local differential expression",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "methylation count matrix",
+                  "methylation counts",
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
@@ -2641,8 +2649,6 @@
                   "transcriptome annotations",
                   "transcriptome index",
                   "transcriptome reference",
-                  "unfiltered global differential expression",
-                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant disease links",
                   "variant drug annotations",
@@ -2704,6 +2710,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "chromatin contact quantifications",
                   "co-localization scores",
                   "coding variant effects",
                   "coding variants",
@@ -2734,7 +2741,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
-                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -2750,6 +2756,7 @@
                   "genes in pathway",
                   "genome index",
                   "genome reference",
+                  "global differential expression",
                   "graph structure",
                   "guide RNA sequences",
                   "guide RNA sequences reference",
@@ -2762,10 +2769,13 @@
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "linkage disequilibrium",
+                  "local differential expression",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "methylation count matrix",
+                  "methylation counts",
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
@@ -2835,8 +2845,6 @@
                   "transcriptome annotations",
                   "transcriptome index",
                   "transcriptome reference",
-                  "unfiltered global differential expression",
-                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant disease links",
                   "variant drug annotations",
@@ -5028,6 +5036,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -5172,6 +5181,21 @@
               "description": "Identifiers of this human donor."
             },
             "description": "Filter by human_donor_identifiers",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -5939,6 +5963,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -6050,6 +6075,21 @@
               }
             },
             "description": "Filter by individual_rodent",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -7044,6 +7084,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -7080,6 +7135,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -9170,6 +9226,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -9206,6 +9277,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -11219,6 +11291,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -11255,6 +11342,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -13297,6 +13385,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -13333,6 +13436,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -15405,6 +15509,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -15441,6 +15560,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -17561,6 +17681,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -17597,6 +17732,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -19652,6 +19788,30 @@
             "explode": true
           },
           {
+            "name": "catalog_method",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Catalog Method",
+                "enum": [
+                  "ADASTRA",
+                  "COXPRESdb",
+                  "eQTL",
+                  "GWAS",
+                  "GVATdb",
+                  "pQTL",
+                  "splice_QTL"
+                ],
+                "description": "The method curated in the IGVF catalog that the non-IGVF data in this file processed with"
+              }
+            },
+            "description": "Filter by catalog_method",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_notes",
             "in": "query",
             "schema": {
@@ -19664,6 +19824,21 @@
               }
             },
             "description": "Filter by catalog_notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
             "style": "form",
             "explode": true
           },
@@ -19704,6 +19879,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -21749,6 +21925,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -21785,6 +21976,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -24197,6 +24389,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -24233,6 +24440,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -26461,6 +26669,21 @@
             "explode": true
           },
           {
+            "name": "checkfiles_timestamp",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Checkfiles Timestamp",
+                "description": "The date and time the file object was last checked by the Checkfiles script."
+              }
+            },
+            "description": "Filter by checkfiles_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "checkfiles_version",
             "in": "query",
             "schema": {
@@ -26497,6 +26720,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -28494,6 +28718,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -29882,6 +30107,21 @@
             "explode": true
           },
           {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -31257,6 +31497,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -32525,6 +32766,21 @@
             "explode": true
           },
           {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -32624,7 +32880,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -33916,6 +34172,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -34280,6 +34537,7 @@
                   "guide library",
                   "reporter library",
                   "expression vector library",
+                  "overexpression vector library",
                   "editing template library"
                 ],
                 "description": "The type or category of this construct library set."
@@ -34889,6 +35147,21 @@
               }
             },
             "description": "Filter by integrated_content_files.upload_status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -35799,6 +36072,21 @@
             "explode": true
           },
           {
+            "name": "small_scale_gene_list.allele",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Allele",
+                "description": "The allele of the gene."
+              }
+            },
+            "description": "Filter by small_scale_gene_list.allele",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "small_scale_gene_list.geneid",
             "in": "query",
             "schema": {
@@ -36486,6 +36774,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -37070,6 +37359,7 @@
                   "editing templates",
                   "elements",
                   "external data for catalog",
+                  "external sequencing data",
                   "functional effect",
                   "genome",
                   "genes",
@@ -37680,6 +37970,21 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -39039,6 +39344,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -40497,6 +40803,21 @@
             "explode": true
           },
           {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -40642,7 +40963,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -42097,6 +42418,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -43394,6 +43716,21 @@
             "explode": true
           },
           {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -43533,7 +43870,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -45014,6 +45351,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -46232,6 +46570,21 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -47801,6 +48154,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -51351,7 +51705,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -54749,7 +55103,8 @@
                   "nanogram per milliliter",
                   "milligram per deciliter",
                   "UPDRS",
-                  "MMSE"
+                  "MMSE",
+                  "SLEDAI"
                 ],
                 "description": "The unit of measurement for a quantity associated with the phenotypic feature."
               }
@@ -59189,6 +59544,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -59706,7 +60062,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -59928,6 +60284,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -60348,8 +60719,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Part of Biosample",
-                "description": "Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
+                "title": "Part of Sample",
+                "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
               }
             },
             "description": "Filter by part_of",
@@ -60361,10 +60732,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biosample Parts",
+              "title": "Sample Parts",
               "items": {
                 "type": "string",
-                "title": "Biosample Part"
+                "title": "Sample Part"
               },
               "description": "The parts into which this sample has been divided."
             },
@@ -60985,6 +61356,43 @@
             "explode": true
           },
           {
+            "name": "time_post_culture",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Time Post Culture",
+                "description": "The time that elapsed since the biosample was placed into culture."
+              }
+            },
+            "description": "Filter by time_post_culture",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "time_post_culture_units",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Time Post Culture Units",
+                "enum": [
+                  "minute",
+                  "hour",
+                  "day",
+                  "week",
+                  "month"
+                ],
+                "description": "The units of time that elapsed since the biosample was placed into culture."
+              }
+            },
+            "description": "Filter by time_post_culture_units",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "time_post_library_delivery",
             "in": "query",
             "schema": {
@@ -61598,6 +62006,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -62069,7 +62478,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -62267,6 +62676,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -62744,6 +63168,37 @@
               "description": "The samples which originate from this sample, such as through a process of cell fate change or the introduction of a genetic material."
             },
             "description": "Filter by origin_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "part_of",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Part of Sample",
+                "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
+              }
+            },
+            "description": "Filter by part_of",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "parts",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Sample Parts",
+              "items": {
+                "type": "string",
+                "title": "Sample Part"
+              },
+              "description": "The parts into which this sample has been divided."
+            },
+            "description": "Filter by parts",
             "style": "form",
             "explode": true
           },
@@ -63841,6 +64296,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -64327,7 +64783,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -64525,6 +64981,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -64895,17 +65366,46 @@
             "explode": true
           },
           {
-            "name": "originated_from",
+            "name": "originated_from.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Originated From",
-                "description": "Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification."
+                "title": "ID"
               }
             },
-            "description": "Filter by originated_from",
+            "description": "Filter by originated_from.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "originated_from.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by originated_from.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "originated_from.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by originated_from.status",
             "style": "form",
             "explode": true
           },
@@ -64916,8 +65416,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Part of Biosample",
-                "description": "Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
+                "title": "Part of Sample",
+                "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
               }
             },
             "description": "Filter by part_of",
@@ -64929,10 +65429,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biosample Parts",
+              "title": "Sample Parts",
               "items": {
                 "type": "string",
-                "title": "Biosample Part"
+                "title": "Sample Part"
               },
               "description": "The parts into which this sample has been divided."
             },
@@ -65951,6 +66451,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -66255,7 +66756,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -66370,6 +66871,21 @@
               "description": "The institutional certificates under which use of this sample is approved."
             },
             "description": "Filter by institutional_certificates",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -66506,17 +67022,46 @@
             "explode": true
           },
           {
-            "name": "originated_from",
+            "name": "originated_from.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Originated From",
-                "description": "Links to a technical sample that was originated from due to the introduction of a genetic modification."
+                "title": "ID"
               }
             },
-            "description": "Filter by originated_from",
+            "description": "Filter by originated_from.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "originated_from.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by originated_from.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "originated_from.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by originated_from.status",
             "style": "form",
             "explode": true
           },
@@ -66527,8 +67072,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Part of sample",
-                "description": "Links to technical sample which represents a larger sample from which this sample was taken."
+                "title": "Part of Sample",
+                "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
               }
             },
             "description": "Filter by part_of",
@@ -66540,10 +67085,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Technical Sample Parts",
+              "title": "Sample Parts",
               "items": {
                 "type": "string",
-                "title": "Technical Sample Part"
+                "title": "Sample Part"
               },
               "description": "The parts into which this sample has been divided."
             },
@@ -67071,18 +67616,91 @@
             "explode": true
           },
           {
-            "name": "treatments",
+            "name": "treatments.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Treatments",
               "items": {
                 "type": "string",
-                "title": "Treatment"
-              },
-              "description": "A list of treatments applied to the technical sample with the purpose of perturbation."
+                "title": "ID"
+              }
             },
-            "description": "Filter by treatments",
+            "description": "Filter by treatments.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "treatments.depletion",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Depletion",
+                "description": "Treatment is depleted."
+              }
+            },
+            "description": "Filter by treatments.depletion",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "treatments.purpose",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Purpose",
+                "description": "The intended purpose for treating the samples."
+              }
+            },
+            "description": "Filter by treatments.purpose",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "treatments.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by treatments.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "treatments.treatment_term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Term Name",
+                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
+              }
+            },
+            "description": "Filter by treatments.treatment_term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "treatments.treatment_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Treatment Type",
+                "description": "The classification of treatment agent that specifies its exact molecular nature. "
+              }
+            },
+            "description": "Filter by treatments.treatment_type",
             "style": "form",
             "explode": true
           },
@@ -67598,6 +68216,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -68084,7 +68703,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -68282,6 +68901,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -68652,17 +69286,46 @@
             "explode": true
           },
           {
-            "name": "originated_from",
+            "name": "originated_from.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Originated From",
-                "description": "Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification."
+                "title": "ID"
               }
             },
-            "description": "Filter by originated_from",
+            "description": "Filter by originated_from.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "originated_from.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by originated_from.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "originated_from.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by originated_from.status",
             "style": "form",
             "explode": true
           },
@@ -68673,8 +69336,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Part of Biosample",
-                "description": "Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
+                "title": "Part of Sample",
+                "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
               }
             },
             "description": "Filter by part_of",
@@ -68686,10 +69349,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biosample Parts",
+              "title": "Sample Parts",
               "items": {
                 "type": "string",
-                "title": "Biosample Part"
+                "title": "Sample Part"
               },
               "description": "The parts into which this sample has been divided."
             },
@@ -69922,6 +70585,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -70408,7 +71072,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -70606,6 +71270,21 @@
               }
             },
             "description": "Filter by institutional_certificates.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -70976,17 +71655,46 @@
             "explode": true
           },
           {
-            "name": "originated_from",
+            "name": "originated_from.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Originated From",
-                "description": "Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification."
+                "title": "ID"
               }
             },
-            "description": "Filter by originated_from",
+            "description": "Filter by originated_from.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "originated_from.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by originated_from.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "originated_from.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by originated_from.status",
             "style": "form",
             "explode": true
           },
@@ -70997,8 +71705,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Part of Biosample",
-                "description": "Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
+                "title": "Part of Sample",
+                "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth."
               }
             },
             "description": "Filter by part_of",
@@ -71010,10 +71718,10 @@
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Biosample Parts",
+              "title": "Sample Parts",
               "items": {
                 "type": "string",
-                "title": "Biosample Part"
+                "title": "Sample Part"
               },
               "description": "The parts into which this sample has been divided."
             },
@@ -74838,6 +75546,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "chromatin contact quantifications",
                   "co-localization scores",
                   "coding variant effects",
                   "coding variants",
@@ -74868,7 +75577,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
-                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -74884,6 +75592,7 @@
                   "genes in pathway",
                   "genome index",
                   "genome reference",
+                  "global differential expression",
                   "graph structure",
                   "guide RNA sequences",
                   "guide RNA sequences reference",
@@ -74896,10 +75605,13 @@
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "linkage disequilibrium",
+                  "local differential expression",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "methylation count matrix",
+                  "methylation counts",
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
@@ -74969,8 +75681,6 @@
                   "transcriptome annotations",
                   "transcriptome index",
                   "transcriptome reference",
-                  "unfiltered global differential expression",
-                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant disease links",
                   "variant drug annotations",
@@ -75032,6 +75742,7 @@
                   "calibrated coding variant effects",
                   "cell annotations",
                   "cell hashing barcodes",
+                  "chromatin contact quantifications",
                   "co-localization scores",
                   "coding variant effects",
                   "coding variants",
@@ -75062,7 +75773,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "filtered feature barcode matrix",
-                  "filtered global differential expressions",
                   "fold change of post-selection and pre-selection",
                   "fold change over control",
                   "fragments",
@@ -75078,6 +75788,7 @@
                   "genes in pathway",
                   "genome index",
                   "genome reference",
+                  "global differential expression",
                   "graph structure",
                   "guide RNA sequences",
                   "guide RNA sequences reference",
@@ -75090,10 +75801,13 @@
                   "individual cells profile",
                   "kallisto single cell RNAseq output",
                   "linkage disequilibrium",
+                  "local differential expression",
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
                   "methylated reads",
+                  "methylation count matrix",
+                  "methylation counts",
                   "minus strand modification state",
                   "mitochondrial DNA heteroplasmy",
                   "model parameters",
@@ -75163,8 +75877,6 @@
                   "transcriptome annotations",
                   "transcriptome index",
                   "transcriptome reference",
-                  "unfiltered global differential expression",
-                  "unfiltered local differential expression",
                   "variant binding effects",
                   "variant disease links",
                   "variant drug annotations",
@@ -75386,6 +76098,7 @@
                   "IGVF_catalog_beta_v0.4",
                   "IGVF_catalog_beta_v0.5",
                   "IGVF_catalog_v1.0",
+                  "IGVF_catalog_v1.1",
                   "IGVF phase 1",
                   "MaveDB",
                   "Morphic",
@@ -75537,7 +76250,7 @@
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
-                  "DOGMA-seq",
+                  "miDOGMA-seq",
                   "DUAL-IPA",
                   "10x multiome",
                   "10x multiome with MULTI-seq",
@@ -75837,8 +76550,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Summary",
-                "description": "A summary of the object."
+                "title": "Summary"
               }
             },
             "description": "Filter by summary",
@@ -76549,6 +77261,7 @@
                 "calibrated coding variant effects",
                 "cell annotations",
                 "cell hashing barcodes",
+                "chromatin contact quantifications",
                 "co-localization scores",
                 "coding variant effects",
                 "coding variants",
@@ -76579,7 +77292,6 @@
                 "feature weights",
                 "fiducial alignment",
                 "filtered feature barcode matrix",
-                "filtered global differential expressions",
                 "fold change of post-selection and pre-selection",
                 "fold change over control",
                 "fragments",
@@ -76595,6 +77307,7 @@
                 "genes in pathway",
                 "genome index",
                 "genome reference",
+                "global differential expression",
                 "graph structure",
                 "guide RNA sequences",
                 "guide RNA sequences reference",
@@ -76607,10 +77320,13 @@
                 "individual cells profile",
                 "kallisto single cell RNAseq output",
                 "linkage disequilibrium",
+                "local differential expression",
                 "loci",
                 "low resolution tissue",
                 "machine learning model features",
                 "methylated reads",
+                "methylation count matrix",
+                "methylation counts",
                 "minus strand modification state",
                 "mitochondrial DNA heteroplasmy",
                 "model parameters",
@@ -76680,8 +77396,6 @@
                 "transcriptome annotations",
                 "transcriptome index",
                 "transcriptome reference",
-                "unfiltered global differential expression",
-                "unfiltered local differential expression",
                 "variant binding effects",
                 "variant disease links",
                 "variant drug annotations",
@@ -76737,6 +77451,7 @@
                 "calibrated coding variant effects",
                 "cell annotations",
                 "cell hashing barcodes",
+                "chromatin contact quantifications",
                 "co-localization scores",
                 "coding variant effects",
                 "coding variants",
@@ -76767,7 +77482,6 @@
                 "feature weights",
                 "fiducial alignment",
                 "filtered feature barcode matrix",
-                "filtered global differential expressions",
                 "fold change of post-selection and pre-selection",
                 "fold change over control",
                 "fragments",
@@ -76783,6 +77497,7 @@
                 "genes in pathway",
                 "genome index",
                 "genome reference",
+                "global differential expression",
                 "graph structure",
                 "guide RNA sequences",
                 "guide RNA sequences reference",
@@ -76795,10 +77510,13 @@
                 "individual cells profile",
                 "kallisto single cell RNAseq output",
                 "linkage disequilibrium",
+                "local differential expression",
                 "loci",
                 "low resolution tissue",
                 "machine learning model features",
                 "methylated reads",
+                "methylation count matrix",
+                "methylation counts",
                 "minus strand modification state",
                 "mitochondrial DNA heteroplasmy",
                 "model parameters",
@@ -76868,8 +77586,6 @@
                 "transcriptome annotations",
                 "transcriptome index",
                 "transcriptome reference",
-                "unfiltered global differential expression",
-                "unfiltered local differential expression",
                 "variant binding effects",
                 "variant disease links",
                 "variant drug annotations",
@@ -77590,6 +78306,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -77682,6 +78403,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -77944,6 +78666,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -78059,6 +78786,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -78421,6 +79149,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -78611,6 +79340,11 @@
           "checkfiles_version": {
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
             "type": "string"
           },
           "supersedes": {
@@ -78938,6 +79672,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -79129,6 +79864,11 @@
           "checkfiles_version": {
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
             "type": "string"
           },
           "supersedes": {
@@ -79445,6 +80185,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -79636,6 +80377,11 @@
           "checkfiles_version": {
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
             "type": "string"
           },
           "supersedes": {
@@ -79947,6 +80693,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -80138,6 +80885,11 @@
           "checkfiles_version": {
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
             "type": "string"
           },
           "supersedes": {
@@ -80484,6 +81236,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -80683,6 +81436,11 @@
           "checkfiles_version": {
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
             "type": "string"
           },
           "supersedes": {
@@ -81056,6 +81814,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -81251,6 +82010,11 @@
           "checkfiles_version": {
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
             "type": "string"
           },
           "supersedes": {
@@ -81649,6 +82413,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -81854,6 +82619,11 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
+            "type": "string"
+          },
           "supersedes": {
             "title": "Supersedes",
             "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
@@ -81876,6 +82646,20 @@
               "type": "string",
               "pattern": "https:\\/\\/github\\.com\\/IGVF-DACC\\/igvf-catalog\\/blob\\/dev\\/data\\/adapters\\/(.)*\\.py"
             }
+          },
+          "catalog_method": {
+            "title": "Catalog Method",
+            "type": "string",
+            "description": "The method curated in the IGVF catalog that the non-IGVF data in this file processed with",
+            "enum": [
+              "ADASTRA",
+              "COXPRESdb",
+              "eQTL",
+              "GWAS",
+              "GVATdb",
+              "pQTL",
+              "splice_QTL"
+            ]
           },
           "sources": {
             "title": "Sources",
@@ -82128,6 +82912,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -82319,6 +83104,11 @@
           "checkfiles_version": {
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
             "type": "string"
           },
           "supersedes": {
@@ -82794,6 +83584,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -82984,6 +83775,11 @@
           "checkfiles_version": {
             "title": "Checkfiles Version",
             "description": "The Checkfiles GitHub version release the file was validated with.",
+            "type": "string"
+          },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
             "type": "string"
           },
           "supersedes": {
@@ -83434,6 +84230,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -83633,6 +84430,11 @@
             "description": "The Checkfiles GitHub version release the file was validated with.",
             "type": "string"
           },
+          "checkfiles_timestamp": {
+            "title": "Checkfiles Timestamp",
+            "description": "The date and time the file object was last checked by the Checkfiles script.",
+            "type": "string"
+          },
           "supersedes": {
             "title": "Supersedes",
             "description": "The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes.",
@@ -83806,6 +84608,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "doi": {
             "title": "DOI",
             "description": "The Digital Object Identifier (DOI) associated with this object.",
@@ -83902,6 +84709,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -84247,6 +85055,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "doi": {
             "title": "DOI",
             "description": "The Digital Object Identifier (DOI) associated with this object.",
@@ -84332,6 +85145,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -84610,6 +85424,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "doi": {
             "title": "DOI",
             "description": "The Digital Object Identifier (DOI) associated with this object.",
@@ -84800,6 +85619,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -84892,6 +85712,7 @@
               "guide library",
               "reporter library",
               "expression vector library",
+              "overexpression vector library",
               "editing template library"
             ]
           },
@@ -85230,6 +86051,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -85318,6 +86144,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -85450,6 +86277,7 @@
               "editing templates",
               "elements",
               "external data for catalog",
+              "external sequencing data",
               "functional effect",
               "genome",
               "genes",
@@ -85588,6 +86416,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "doi": {
             "title": "DOI",
             "description": "The Digital Object Identifier (DOI) associated with this object.",
@@ -85617,7 +86450,7 @@
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
-                "DOGMA-seq",
+                "miDOGMA-seq",
                 "DUAL-IPA",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
@@ -85773,6 +86606,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -86215,6 +87049,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "doi": {
             "title": "DOI",
             "description": "The Digital Object Identifier (DOI) associated with this object.",
@@ -86244,7 +87083,7 @@
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
-                "DOGMA-seq",
+                "miDOGMA-seq",
                 "DUAL-IPA",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
@@ -86400,6 +87239,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -86707,6 +87547,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "doi": {
             "title": "DOI",
             "description": "The Digital Object Identifier (DOI) associated with this object.",
@@ -86874,6 +87719,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -87291,6 +88137,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -88388,7 +89235,7 @@
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
-                "DOGMA-seq",
+                "miDOGMA-seq",
                 "DUAL-IPA",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
@@ -89727,7 +90574,8 @@
               "nanogram per milliliter",
               "milligram per deciliter",
               "UPDRS",
-              "MMSE"
+              "MMSE",
+              "SLEDAI"
             ]
           },
           "quality": {
@@ -91419,6 +92267,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -91535,6 +92388,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -91677,11 +92531,6 @@
               "type": "string"
             }
           },
-          "part_of": {
-            "title": "Part of Biosample",
-            "description": "Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
-            "type": "string"
-          },
           "originated_from": {
             "title": "Originated From",
             "description": "Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification.",
@@ -91777,6 +92626,11 @@
           "date_obtained": {
             "title": "Date Collected",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
+            "type": "string"
+          },
+          "part_of": {
+            "title": "Part of Sample",
+            "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
             "type": "string"
           },
           "sorted_from": {
@@ -91971,6 +92825,23 @@
               ]
             }
           },
+          "time_post_culture": {
+            "title": "Time Post Culture",
+            "description": "The time that elapsed since the biosample was placed into culture.",
+            "type": "number"
+          },
+          "time_post_culture_units": {
+            "title": "Time Post Culture Units",
+            "description": "The units of time that elapsed since the biosample was placed into culture.",
+            "type": "string",
+            "enum": [
+              "minute",
+              "hour",
+              "day",
+              "week",
+              "month"
+            ]
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -92004,6 +92875,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Multiplexed In",
+              "type": "string"
+            }
+          },
+          "parts": {
+            "title": "Sample Parts",
+            "type": "array",
+            "description": "The parts into which this sample has been divided.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Sample Part",
               "type": "string"
             }
           },
@@ -92073,16 +92954,6 @@
             "description": "Lower bound of age of organism in hours at the time of collection of the sample .",
             "type": "number"
           },
-          "parts": {
-            "title": "Biosample Parts",
-            "type": "array",
-            "description": "The parts into which this sample has been divided.",
-            "uniqueItems": true,
-            "items": {
-              "title": "Biosample Part",
-              "type": "string"
-            }
-          },
           "pooled_in": {
             "title": "Pooled In",
             "type": "array",
@@ -92111,6 +92982,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -92195,6 +93071,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -92315,6 +93192,11 @@
           "date_obtained": {
             "title": "Date Obtained",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
+            "type": "string"
+          },
+          "part_of": {
+            "title": "Part of Sample",
+            "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
             "type": "string"
           },
           "sorted_from": {
@@ -92493,6 +93375,16 @@
               "type": "string"
             }
           },
+          "parts": {
+            "title": "Sample Parts",
+            "type": "array",
+            "description": "The parts into which this sample has been divided.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Sample Part",
+              "type": "string"
+            }
+          },
           "sorted_fractions": {
             "title": "Sorted Fraction Samples",
             "type": "array",
@@ -92632,6 +93524,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -92748,6 +93645,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -92891,11 +93789,6 @@
               "type": "string"
             }
           },
-          "part_of": {
-            "title": "Part of Biosample",
-            "description": "Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
-            "type": "string"
-          },
           "originated_from": {
             "title": "Originated From",
             "description": "Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification.",
@@ -92991,6 +93884,11 @@
           "date_obtained": {
             "title": "Date Harvested",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
+            "type": "string"
+          },
+          "part_of": {
+            "title": "Part of Sample",
+            "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
             "type": "string"
           },
           "sorted_from": {
@@ -93155,6 +94053,16 @@
               "type": "string"
             }
           },
+          "parts": {
+            "title": "Sample Parts",
+            "type": "array",
+            "description": "The parts into which this sample has been divided.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Sample Part",
+              "type": "string"
+            }
+          },
           "sorted_fractions": {
             "title": "Sorted Fraction Samples",
             "type": "array",
@@ -93221,16 +94129,6 @@
             "description": "Lower bound of age of organism in hours at the time of collection of the sample .",
             "type": "number"
           },
-          "parts": {
-            "title": "Biosample Parts",
-            "type": "array",
-            "description": "The parts into which this sample has been divided.",
-            "uniqueItems": true,
-            "items": {
-              "title": "Biosample Part",
-              "type": "string"
-            }
-          },
           "pooled_in": {
             "title": "Pooled In",
             "type": "array",
@@ -93259,6 +94157,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -93366,6 +94269,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -93486,6 +94390,11 @@
           "date_obtained": {
             "title": "Date Obtained",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
+            "type": "string"
+          },
+          "part_of": {
+            "title": "Part of Sample",
+            "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
             "type": "string"
           },
           "sorted_from": {
@@ -93631,11 +94540,6 @@
               "type": "string"
             }
           },
-          "part_of": {
-            "title": "Part of sample",
-            "description": "Links to technical sample which represents a larger sample from which this sample was taken.",
-            "type": "string"
-          },
           "originated_from": {
             "title": "Originated From",
             "description": "Links to a technical sample that was originated from due to the introduction of a genetic modification.",
@@ -93674,6 +94578,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Multiplexed In",
+              "type": "string"
+            }
+          },
+          "parts": {
+            "title": "Sample Parts",
+            "type": "array",
+            "description": "The parts into which this sample has been divided.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Sample Part",
               "type": "string"
             }
           },
@@ -93726,16 +94640,6 @@
               "title": "Classification",
               "type": "string"
             }
-          },
-          "parts": {
-            "title": "Technical Sample Parts",
-            "type": "array",
-            "description": "The parts into which this sample has been divided.",
-            "uniqueItems": true,
-            "items": {
-              "title": "Technical Sample Part",
-              "type": "string"
-            }
           }
         }
       },
@@ -93745,6 +94649,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -93861,6 +94770,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -94004,11 +94914,6 @@
               "type": "string"
             }
           },
-          "part_of": {
-            "title": "Part of Biosample",
-            "description": "Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
-            "type": "string"
-          },
           "originated_from": {
             "title": "Originated From",
             "description": "Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification.",
@@ -94104,6 +95009,11 @@
           "date_obtained": {
             "title": "Date Harvested",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
+            "type": "string"
+          },
+          "part_of": {
+            "title": "Part of Sample",
+            "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
             "type": "string"
           },
           "sorted_from": {
@@ -94278,6 +95188,16 @@
               "type": "string"
             }
           },
+          "parts": {
+            "title": "Sample Parts",
+            "type": "array",
+            "description": "The parts into which this sample has been divided.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Sample Part",
+              "type": "string"
+            }
+          },
           "sorted_fractions": {
             "title": "Sorted Fraction Samples",
             "type": "array",
@@ -94344,16 +95264,6 @@
             "description": "Lower bound of age of organism in hours at the time of collection of the sample .",
             "type": "number"
           },
-          "parts": {
-            "title": "Biosample Parts",
-            "type": "array",
-            "description": "The parts into which this sample has been divided.",
-            "uniqueItems": true,
-            "items": {
-              "title": "Biosample Part",
-              "type": "string"
-            }
-          },
           "pooled_in": {
             "title": "Pooled In",
             "type": "array",
@@ -94382,6 +95292,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -94498,6 +95413,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -94642,11 +95558,6 @@
               "type": "string"
             }
           },
-          "part_of": {
-            "title": "Part of Biosample",
-            "description": "Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
-            "type": "string"
-          },
           "originated_from": {
             "title": "Originated From",
             "description": "Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification.",
@@ -94742,6 +95653,11 @@
           "date_obtained": {
             "title": "Date Obtained",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
+            "type": "string"
+          },
+          "part_of": {
+            "title": "Part of Sample",
+            "description": "Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.",
             "type": "string"
           },
           "sorted_from": {
@@ -94884,6 +95800,16 @@
               "type": "string"
             }
           },
+          "parts": {
+            "title": "Sample Parts",
+            "type": "array",
+            "description": "The parts into which this sample has been divided.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Sample Part",
+              "type": "string"
+            }
+          },
           "sorted_fractions": {
             "title": "Sorted Fraction Samples",
             "type": "array",
@@ -94949,16 +95875,6 @@
             "title": "Lower Bound Age In Hours",
             "description": "Lower bound of age of organism in hours at the time of collection of the sample .",
             "type": "number"
-          },
-          "parts": {
-            "title": "Biosample Parts",
-            "type": "array",
-            "description": "The parts into which this sample has been divided.",
-            "uniqueItems": true,
-            "items": {
-              "title": "Biosample Part",
-              "type": "string"
-            }
           },
           "pooled_in": {
             "title": "Pooled In",
@@ -95884,7 +96800,7 @@
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
-                "DOGMA-seq",
+                "miDOGMA-seq",
                 "DUAL-IPA",
                 "10x multiome",
                 "10x multiome with MULTI-seq",
@@ -96035,6 +96951,7 @@
                 "IGVF_catalog_beta_v0.4",
                 "IGVF_catalog_beta_v0.5",
                 "IGVF_catalog_v1.0",
+                "IGVF_catalog_v1.1",
                 "IGVF phase 1",
                 "MaveDB",
                 "Morphic",
@@ -96175,8 +97092,7 @@
           },
           "summary": {
             "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
+            "type": "string"
           }
         }
       }

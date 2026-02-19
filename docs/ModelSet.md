@@ -6,6 +6,7 @@ A file set grouping files that represent trained predictive models. Model file s
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
 **doi** | **str** | The Digital Object Identifier (DOI) associated with this object. | [optional] 
 **preferred_assay_titles** | **List[str]** | The assay(s) that served as input tranining data for the derivation of this model set. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
