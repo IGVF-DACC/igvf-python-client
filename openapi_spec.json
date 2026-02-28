@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "110.0.0"
+    "version": "111.0.0"
   },
   "servers": [
     {
@@ -1349,6 +1349,7 @@
                   "barcode mapping generation",
                   "base calling",
                   "calibration",
+                  "cell annotation",
                   "cell profiling",
                   "cell to feature barcode mapping",
                   "computational model prediction",
@@ -1380,7 +1381,8 @@
                   "UMAP embedding",
                   "UMI deduplication",
                   "UMI quantification",
-                  "variant annotation"
+                  "variant annotation",
+                  "variant calling"
                 ]
               },
               "description": "The classification of the software."
@@ -1606,6 +1608,7 @@
                   "alignments",
                   "alignments with modifications",
                   "allele specific binding",
+                  "allele specific sparse gene count matrix",
                   "annotated multimodal CRISPR matrix",
                   "annotated sparse gene count matrix",
                   "annotated sparse peak count matrix",
@@ -1846,6 +1849,7 @@
                   "alignments",
                   "alignments with modifications",
                   "allele specific binding",
+                  "allele specific sparse gene count matrix",
                   "annotated multimodal CRISPR matrix",
                   "annotated sparse gene count matrix",
                   "annotated sparse peak count matrix",
@@ -2432,6 +2436,7 @@
                   "barcode mapping generation",
                   "base calling",
                   "calibration",
+                  "cell annotation",
                   "cell profiling",
                   "cell to feature barcode mapping",
                   "computational model prediction",
@@ -2463,7 +2468,8 @@
                   "UMAP embedding",
                   "UMI deduplication",
                   "UMI quantification",
-                  "variant annotation"
+                  "variant annotation",
+                  "variant calling"
                 ]
               },
               "description": "The classification of the software."
@@ -2496,6 +2502,7 @@
                   "alignments",
                   "alignments with modifications",
                   "allele specific binding",
+                  "allele specific sparse gene count matrix",
                   "annotated multimodal CRISPR matrix",
                   "annotated sparse gene count matrix",
                   "annotated sparse peak count matrix",
@@ -2692,6 +2699,7 @@
                   "alignments",
                   "alignments with modifications",
                   "allele specific binding",
+                  "allele specific sparse gene count matrix",
                   "annotated multimodal CRISPR matrix",
                   "annotated sparse gene count matrix",
                   "annotated sparse peak count matrix",
@@ -19797,6 +19805,7 @@
                 "title": "Catalog Method",
                 "enum": [
                   "ADASTRA",
+                  "caQTL",
                   "COXPRESdb",
                   "eQTL",
                   "GWAS",
@@ -44597,21 +44606,6 @@
             "explode": true
           },
           {
-            "name": "software_versions.download_id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Download ID",
-                "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used."
-              }
-            },
-            "description": "Filter by software_versions.download_id",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "software_versions.software.@id",
             "in": "query",
             "schema": {
@@ -47635,21 +47629,6 @@
               }
             },
             "description": "Filter by software_versions.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "software_versions.download_id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Download ID",
-                "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used."
-              }
-            },
-            "description": "Filter by software_versions.download_id",
             "style": "form",
             "explode": true
           },
@@ -59740,7 +59719,7 @@
                 "type": "string",
                 "title": "Demultiplexed To"
               },
-              "description": "The parts into which this sample has been demultiplexed."
+              "description": "The in vitro system samples this in vitro system sample has been demultiplexed into."
             },
             "description": "Filter by demultiplexed_to",
             "style": "form",
@@ -61586,7 +61565,7 @@
               "items": {
                 "type": "boolean",
                 "title": "Virtual",
-                "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for."
+                "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing."
               }
             },
             "description": "Filter by virtual",
@@ -62174,6 +62153,22 @@
               "description": "Biosample identifiers from external resources, such as Biosample database or Cellosaurus."
             },
             "description": "Filter by dbxrefs",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "demultiplexed_to",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Demultiplexed To",
+              "items": {
+                "type": "string",
+                "title": "Demultiplexed To"
+              },
+              "description": "The in vitro system samples this multiplexed sample has been demultiplexed into."
+            },
+            "description": "Filter by demultiplexed_to",
             "style": "form",
             "explode": true
           },
@@ -63815,7 +63810,7 @@
               "items": {
                 "type": "boolean",
                 "title": "Virtual",
-                "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for."
+                "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing."
               }
             },
             "description": "Filter by virtual",
@@ -66165,7 +66160,7 @@
               "items": {
                 "type": "boolean",
                 "title": "Virtual",
-                "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for."
+                "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing."
               }
             },
             "description": "Filter by virtual",
@@ -67742,7 +67737,7 @@
               "items": {
                 "type": "boolean",
                 "title": "Virtual",
-                "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for."
+                "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing."
               }
             },
             "description": "Filter by virtual",
@@ -68144,21 +68139,6 @@
               }
             },
             "description": "Filter by biomarkers.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "ccf_id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Common Coordinate Framework Identifier",
-                "description": "HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen within an organ."
-              }
-            },
-            "description": "Filter by ccf_id",
             "style": "form",
             "explode": true
           },
@@ -70126,7 +70106,7 @@
               "items": {
                 "type": "boolean",
                 "title": "Virtual",
-                "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for."
+                "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing."
               }
             },
             "description": "Filter by virtual",
@@ -72439,7 +72419,7 @@
               "items": {
                 "type": "boolean",
                 "title": "Virtual",
-                "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for."
+                "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing."
               }
             },
             "description": "Filter by virtual",
@@ -73250,21 +73230,6 @@
               }
             },
             "description": "Filter by description",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "download_id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Download ID",
-                "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used."
-              }
-            },
-            "description": "Filter by download_id",
             "style": "form",
             "explode": true
           },
@@ -75464,6 +75429,7 @@
                   "barcode mapping generation",
                   "base calling",
                   "calibration",
+                  "cell annotation",
                   "cell profiling",
                   "cell to feature barcode mapping",
                   "computational model prediction",
@@ -75495,7 +75461,8 @@
                   "UMAP embedding",
                   "UMI deduplication",
                   "UMI quantification",
-                  "variant annotation"
+                  "variant annotation",
+                  "variant calling"
                 ]
               },
               "description": "The classification of the software."
@@ -75528,6 +75495,7 @@
                   "alignments",
                   "alignments with modifications",
                   "allele specific binding",
+                  "allele specific sparse gene count matrix",
                   "annotated multimodal CRISPR matrix",
                   "annotated sparse gene count matrix",
                   "annotated sparse peak count matrix",
@@ -75724,6 +75692,7 @@
                   "alignments",
                   "alignments with modifications",
                   "allele specific binding",
+                  "allele specific sparse gene count matrix",
                   "annotated multimodal CRISPR matrix",
                   "annotated sparse gene count matrix",
                   "annotated sparse peak count matrix",
@@ -77161,6 +77130,7 @@
                 "barcode mapping generation",
                 "base calling",
                 "calibration",
+                "cell annotation",
                 "cell profiling",
                 "cell to feature barcode mapping",
                 "computational model prediction",
@@ -77192,7 +77162,8 @@
                 "UMAP embedding",
                 "UMI deduplication",
                 "UMI quantification",
-                "variant annotation"
+                "variant annotation",
+                "variant calling"
               ]
             }
           },
@@ -77243,6 +77214,7 @@
                 "alignments",
                 "alignments with modifications",
                 "allele specific binding",
+                "allele specific sparse gene count matrix",
                 "annotated multimodal CRISPR matrix",
                 "annotated sparse gene count matrix",
                 "annotated sparse peak count matrix",
@@ -77433,6 +77405,7 @@
                 "alignments",
                 "alignments with modifications",
                 "allele specific binding",
+                "allele specific sparse gene count matrix",
                 "annotated multimodal CRISPR matrix",
                 "annotated sparse gene count matrix",
                 "annotated sparse peak count matrix",
@@ -82653,6 +82626,7 @@
             "description": "The method curated in the IGVF catalog that the non-IGVF data in this file processed with",
             "enum": [
               "ADASTRA",
+              "caQTL",
               "COXPRESdb",
               "eQTL",
               "GWAS",
@@ -92645,7 +92619,7 @@
           },
           "virtual": {
             "title": "Virtual",
-            "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
+            "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing.",
             "type": "boolean"
           },
           "construct_library_sets": {
@@ -92967,7 +92941,7 @@
           "demultiplexed_to": {
             "title": "Demultiplexed To",
             "type": "array",
-            "description": "The parts into which this sample has been demultiplexed.",
+            "description": "The in vitro system samples this in vitro system sample has been demultiplexed into.",
             "uniqueItems": true,
             "items": {
               "title": "Demultiplexed To",
@@ -93211,7 +93185,7 @@
           },
           "virtual": {
             "title": "Virtual",
-            "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
+            "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing.",
             "type": "boolean"
           },
           "construct_library_sets": {
@@ -93422,6 +93396,16 @@
             "uniqueItems": true,
             "items": {
               "title": "Superseded By",
+              "type": "string"
+            }
+          },
+          "demultiplexed_to": {
+            "title": "Demultiplexed To",
+            "type": "array",
+            "description": "The in vitro system samples this multiplexed sample has been demultiplexed into.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Demultiplexed To",
               "type": "string"
             }
           },
@@ -93903,7 +93887,7 @@
           },
           "virtual": {
             "title": "Virtual",
-            "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
+            "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing.",
             "type": "boolean"
           },
           "construct_library_sets": {
@@ -94409,7 +94393,7 @@
           },
           "virtual": {
             "title": "Virtual",
-            "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
+            "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing.",
             "type": "boolean"
           },
           "construct_library_sets": {
@@ -95028,7 +95012,7 @@
           },
           "virtual": {
             "title": "Virtual",
-            "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
+            "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing.",
             "type": "boolean"
           },
           "construct_library_sets": {
@@ -95137,11 +95121,6 @@
               "day",
               "week"
             ]
-          },
-          "ccf_id": {
-            "title": "Common Coordinate Framework Identifier",
-            "description": "HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen within an organ.",
-            "type": "string"
           },
           "preservation_method": {
             "title": "Preservation Method",
@@ -95672,7 +95651,7 @@
           },
           "virtual": {
             "title": "Virtual",
-            "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
+            "description": "Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing.",
             "type": "boolean"
           },
           "construct_library_sets": {
@@ -96192,11 +96171,6 @@
             "description": "The version of a particular software.",
             "type": "string",
             "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$"
-          },
-          "download_id": {
-            "title": "Download ID",
-            "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used.",
-            "type": "string"
           },
           "@id": {
             "title": "ID",

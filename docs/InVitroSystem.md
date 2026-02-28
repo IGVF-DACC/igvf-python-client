@@ -52,7 +52,7 @@ Name | Type | Description | Notes
 **part_of** | **str** | Links to a sample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth. | [optional] 
 **sorted_from** | **str** | Links to a larger sample from which this sample was obtained through sorting. | [optional] 
 **sorted_from_detail** | **str** | Detail for sample sorted into fractions capturing information about sorting. | [optional] 
-**virtual** | **bool** | Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for. | [optional] 
+**virtual** | **bool** | Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing. | [optional] 
 **construct_library_sets** | **List[str]** | The construct library sets of vectors introduced to this sample prior to performing an assay. | [optional] 
 **moi** | **float** | The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI. | [optional] 
 **nucleic_acid_delivery** | **str** | Method of introduction of nucleic acid into the cell. | [optional] 
@@ -87,7 +87,7 @@ Name | Type | Description | Notes
 **upper_bound_age_in_hours** | **float** | Upper bound of age of organism in hours at the time of collection of the sample. | [optional] 
 **lower_bound_age_in_hours** | **float** | Lower bound of age of organism in hours at the time of collection of the sample . | [optional] 
 **pooled_in** | **List[str]** | The pooled samples in which this sample is included. | [optional] 
-**demultiplexed_to** | **List[str]** | The parts into which this sample has been demultiplexed. | [optional] 
+**demultiplexed_to** | **List[str]** | The in vitro system samples this in vitro system sample has been demultiplexed into. | [optional] 
 
 ## Example
 

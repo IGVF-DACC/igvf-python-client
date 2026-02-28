@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **description** | **str** | A plain text description of the object. | [optional] 
 **software** | **str** | Unique name of the software package. | [optional] 
 **version** | **str** | The version of a particular software. | [optional] 
-**download_id** | **str** | The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
