@@ -97,6 +97,8 @@ docs/PredictionSet.md
 docs/PredictionSetResults.md
 docs/PrimaryCell.md
 docs/PrimaryCellResults.md
+docs/PseudobulkSet.md
+docs/PseudobulkSetResults.md
 docs/Publication.md
 docs/PublicationResults.md
 docs/RNASeqKBInfo.md
@@ -245,6 +247,8 @@ igvf_client/models/prediction_set.py
 igvf_client/models/prediction_set_results.py
 igvf_client/models/primary_cell.py
 igvf_client/models/primary_cell_results.py
+igvf_client/models/pseudobulk_set.py
+igvf_client/models/pseudobulk_set_results.py
 igvf_client/models/publication.py
 igvf_client/models/publication_results.py
 igvf_client/models/reference_file.py

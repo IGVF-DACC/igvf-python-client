@@ -27,6 +27,7 @@
     MeasurementSet = 'MeasurementSet'
     ModelSet = 'ModelSet'
     PredictionSet = 'PredictionSet'
+    PseudobulkSet = 'PseudobulkSet'
     Gene = 'Gene'
     Image = 'Image'
     InstitutionalCertificate = 'InstitutionalCertificate'

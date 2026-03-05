@@ -44,6 +44,7 @@ Method | HTTP request | Description
 [**platform_terms**](IgvfApi.md#platform_terms) | **GET** /platform-terms/@@listing | List items in the PlatformTerm collection.
 [**prediction_sets**](IgvfApi.md#prediction_sets) | **GET** /prediction-sets/@@listing | List items in the PredictionSet collection.
 [**primary_cells**](IgvfApi.md#primary_cells) | **GET** /primary-cells/@@listing | List items in the PrimaryCell collection.
+[**pseudobulk_sets**](IgvfApi.md#pseudobulk_sets) | **GET** /pseudobulk-sets/@@listing | List items in the PseudobulkSet collection.
 [**publications**](IgvfApi.md#publications) | **GET** /publications/@@listing | List items in the Publication collection.
 [**reference_files**](IgvfApi.md#reference_files) | **GET** /reference-files/@@listing | List items in the ReferenceFile collection.
 [**report**](IgvfApi.md#report) | **GET** /multireport.tsv | Generate a TSV file report based on search query. All results are returned.
@@ -4939,6 +4940,208 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrimaryCellResults**](PrimaryCellResults.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**400** | Bad request |  -  |
+**404** | No results found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pseudobulk_sets**
+> PseudobulkSetResults pseudobulk_sets(query=query, limit=limit, sort=sort, id=id, accession=accession, aliases=aliases, alternate_accessions=alternate_accessions, assay_titles=assay_titles, award_id=award_id, award_component=award_component, award_contact_pi_id=award_contact_pi_id, award_contact_pi_title=award_contact_pi_title, award_title=award_title, cell_qualifier=cell_qualifier, cell_type_id=cell_type_id, cell_type_status=cell_type_status, cell_type_term_name=cell_type_term_name, collections=collections, construct_library_sets_id=construct_library_sets_id, construct_library_sets_accession=construct_library_sets_accession, construct_library_sets_associated_phenotypes_id=construct_library_sets_associated_phenotypes_id, construct_library_sets_associated_phenotypes_status=construct_library_sets_associated_phenotypes_status, construct_library_sets_associated_phenotypes_term_name=construct_library_sets_associated_phenotypes_term_name, construct_library_sets_file_set_type=construct_library_sets_file_set_type, construct_library_sets_integrated_content_files_id=construct_library_sets_integrated_content_files_id, construct_library_sets_integrated_content_files_accession=construct_library_sets_integrated_content_files_accession, construct_library_sets_integrated_content_files_status=construct_library_sets_integrated_content_files_status, construct_library_sets_selection_criteria=construct_library_sets_selection_criteria, construct_library_sets_small_scale_gene_list_id=construct_library_sets_small_scale_gene_list_id, construct_library_sets_small_scale_gene_list_geneid=construct_library_sets_small_scale_gene_list_geneid, construct_library_sets_small_scale_gene_list_name=construct_library_sets_small_scale_gene_list_name, construct_library_sets_small_scale_gene_list_status=construct_library_sets_small_scale_gene_list_status, construct_library_sets_small_scale_gene_list_summary=construct_library_sets_small_scale_gene_list_summary, construct_library_sets_small_scale_gene_list_symbol=construct_library_sets_small_scale_gene_list_symbol, construct_library_sets_status=construct_library_sets_status, construct_library_sets_summary=construct_library_sets_summary, control_for_id=control_for_id, control_for_accession=control_for_accession, control_for_aliases=control_for_aliases, control_for_status=control_for_status, controlled_access=controlled_access, creation_timestamp=creation_timestamp, data_use_limitation_summaries=data_use_limitation_summaries, dbxrefs=dbxrefs, description=description, documents=documents, doi=doi, donors_id=donors_id, donors_accession=donors_accession, donors_aliases=donors_aliases, donors_sex=donors_sex, donors_status=donors_status, donors_strain_background=donors_strain_background, donors_taxa=donors_taxa, file_set_type=file_set_type, files_id=files_id, files_accession=files_accession, files_aliases=files_aliases, files_anvil_url=files_anvil_url, files_assembly=files_assembly, files_cell_type_annotation_id=files_cell_type_annotation_id, files_cell_type_annotation_term_name=files_cell_type_annotation_term_name, files_content_type=files_content_type, files_controlled_access=files_controlled_access, files_creation_timestamp=files_creation_timestamp, files_derived_from=files_derived_from, files_file_format=files_file_format, files_file_format_type=files_file_format_type, files_file_size=files_file_size, files_flowcell_id=files_flowcell_id, files_href=files_href, files_illumina_read_type=files_illumina_read_type, files_imaging_platform_id=files_imaging_platform_id, files_imaging_platform_status=files_imaging_platform_status, files_imaging_platform_term_name=files_imaging_platform_term_name, files_lane=files_lane, files_md5sum=files_md5sum, files_mean_read_length=files_mean_read_length, files_s3_uri=files_s3_uri, files_seqspec_document=files_seqspec_document, files_seqspecs=files_seqspecs, files_sequencing_kit=files_sequencing_kit, files_sequencing_platform_id=files_sequencing_platform_id, files_sequencing_platform_status=files_sequencing_platform_status, files_sequencing_platform_term_name=files_sequencing_platform_term_name, files_sequencing_run=files_sequencing_run, files_status=files_status, files_submitted_file_name=files_submitted_file_name, files_summary=files_summary, files_transcriptome_annotation=files_transcriptome_annotation, files_upload_status=files_upload_status, files_workflows_id=files_workflows_id, files_workflows_accession=files_workflows_accession, input_file_sets_id=input_file_sets_id, input_file_sets_accession=input_file_sets_accession, input_file_sets_aliases=input_file_sets_aliases, input_file_sets_file_set_type=input_file_sets_file_set_type, input_file_sets_status=input_file_sets_status, input_for=input_for, lab_id=lab_id, lab_title=lab_title, notes=notes, preferred_assay_titles=preferred_assay_titles, publications_id=publications_id, publications_publication_identifiers=publications_publication_identifiers, publications_status=publications_status, release_timestamp=release_timestamp, revoke_detail=revoke_detail, samples_id=samples_id, samples_accession=samples_accession, samples_aliases=samples_aliases, samples_cellular_sub_pool=samples_cellular_sub_pool, samples_classifications=samples_classifications, samples_disease_terms_id=samples_disease_terms_id, samples_disease_terms_status=samples_disease_terms_status, samples_disease_terms_term_name=samples_disease_terms_term_name, samples_growth_medium=samples_growth_medium, samples_institutional_certificates_id=samples_institutional_certificates_id, samples_institutional_certificates_certificate_identifier=samples_institutional_certificates_certificate_identifier, samples_institutional_certificates_controlled_access=samples_institutional_certificates_controlled_access, samples_institutional_certificates_data_use_limitation=samples_institutional_certificates_data_use_limitation, samples_institutional_certificates_data_use_limitation_modifiers=samples_institutional_certificates_data_use_limitation_modifiers, samples_institutional_certificates_status=samples_institutional_certificates_status, samples_modifications_id=samples_modifications_id, samples_modifications_modality=samples_modifications_modality, samples_modifications_status=samples_modifications_status, samples_sample_terms_id=samples_sample_terms_id, samples_sample_terms_aliases=samples_sample_terms_aliases, samples_sample_terms_status=samples_sample_terms_status, samples_sample_terms_summary=samples_sample_terms_summary, samples_sample_terms_term_name=samples_sample_terms_term_name, samples_status=samples_status, samples_summary=samples_summary, samples_targeted_sample_term_id=samples_targeted_sample_term_id, samples_targeted_sample_term_status=samples_targeted_sample_term_status, samples_targeted_sample_term_term_name=samples_targeted_sample_term_term_name, samples_taxa=samples_taxa, samples_treatments_id=samples_treatments_id, samples_treatments_purpose=samples_treatments_purpose, samples_treatments_status=samples_treatments_status, samples_treatments_summary=samples_treatments_summary, samples_treatments_treatment_term_name=samples_treatments_treatment_term_name, samples_treatments_treatment_type=samples_treatments_treatment_type, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitted_files_timestamp=submitted_files_timestamp, submitter_comment=submitter_comment, summary=summary, superseded_by=superseded_by, supersedes=supersedes, uuid=uuid, workflows=workflows)
+
+List items in the PseudobulkSet collection.
+
+Collection endpoint that accepts various query parameters to filter and sort PseudobulkSet items. Supports filtering on fields within PseudobulkSet items.
+
+### Example
+
+```python
+from igvf_client import IgvfApi
+
+api = IgvfApi()
+
+api.pseudobulk_sets(**parameters) # List items in the PseudobulkSet collection. 
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **str**| Query string for searching. | [optional] 
+ **limit** | **Limit**| Maximum number of results to return. Default is 25. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | **List[str]**| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
+ **id** | **List[str]**| Filter by @id | [optional] 
+ **accession** | **List[str]**| Filter by accession | [optional] 
+ **aliases** | **List[str]**| Filter by aliases | [optional] 
+ **alternate_accessions** | **List[str]**| Filter by alternate_accessions | [optional] 
+ **assay_titles** | **List[str]**| Filter by assay_titles | [optional] 
+ **award_id** | **List[str]**| Filter by award.@id | [optional] 
+ **award_component** | **List[str]**| Filter by award.component | [optional] 
+ **award_contact_pi_id** | **List[str]**| Filter by award.contact_pi.@id | [optional] 
+ **award_contact_pi_title** | **List[str]**| Filter by award.contact_pi.title | [optional] 
+ **award_title** | **List[str]**| Filter by award.title | [optional] 
+ **cell_qualifier** | **List[str]**| Filter by cell_qualifier | [optional] 
+ **cell_type_id** | **List[str]**| Filter by cell_type.@id | [optional] 
+ **cell_type_status** | **List[str]**| Filter by cell_type.status | [optional] 
+ **cell_type_term_name** | **List[str]**| Filter by cell_type.term_name | [optional] 
+ **collections** | **List[str]**| Filter by collections | [optional] 
+ **construct_library_sets_id** | **List[str]**| Filter by construct_library_sets.@id | [optional] 
+ **construct_library_sets_accession** | **List[str]**| Filter by construct_library_sets.accession | [optional] 
+ **construct_library_sets_associated_phenotypes_id** | **List[str]**| Filter by construct_library_sets.associated_phenotypes.@id | [optional] 
+ **construct_library_sets_associated_phenotypes_status** | **List[str]**| Filter by construct_library_sets.associated_phenotypes.status | [optional] 
+ **construct_library_sets_associated_phenotypes_term_name** | **List[str]**| Filter by construct_library_sets.associated_phenotypes.term_name | [optional] 
+ **construct_library_sets_file_set_type** | **List[str]**| Filter by construct_library_sets.file_set_type | [optional] 
+ **construct_library_sets_integrated_content_files_id** | **List[str]**| Filter by construct_library_sets.integrated_content_files.@id | [optional] 
+ **construct_library_sets_integrated_content_files_accession** | **List[str]**| Filter by construct_library_sets.integrated_content_files.accession | [optional] 
+ **construct_library_sets_integrated_content_files_status** | **List[str]**| Filter by construct_library_sets.integrated_content_files.status | [optional] 
+ **construct_library_sets_selection_criteria** | **List[str]**| Filter by construct_library_sets.selection_criteria | [optional] 
+ **construct_library_sets_small_scale_gene_list_id** | **List[str]**| Filter by construct_library_sets.small_scale_gene_list.@id | [optional] 
+ **construct_library_sets_small_scale_gene_list_geneid** | **List[str]**| Filter by construct_library_sets.small_scale_gene_list.geneid | [optional] 
+ **construct_library_sets_small_scale_gene_list_name** | **List[str]**| Filter by construct_library_sets.small_scale_gene_list.name | [optional] 
+ **construct_library_sets_small_scale_gene_list_status** | **List[str]**| Filter by construct_library_sets.small_scale_gene_list.status | [optional] 
+ **construct_library_sets_small_scale_gene_list_summary** | **List[str]**| Filter by construct_library_sets.small_scale_gene_list.summary | [optional] 
+ **construct_library_sets_small_scale_gene_list_symbol** | **List[str]**| Filter by construct_library_sets.small_scale_gene_list.symbol | [optional] 
+ **construct_library_sets_status** | **List[str]**| Filter by construct_library_sets.status | [optional] 
+ **construct_library_sets_summary** | **List[str]**| Filter by construct_library_sets.summary | [optional] 
+ **control_for_id** | **List[str]**| Filter by control_for.@id | [optional] 
+ **control_for_accession** | **List[str]**| Filter by control_for.accession | [optional] 
+ **control_for_aliases** | **List[str]**| Filter by control_for.aliases | [optional] 
+ **control_for_status** | **List[str]**| Filter by control_for.status | [optional] 
+ **controlled_access** | **List[bool]**| Filter by controlled_access | [optional] 
+ **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
+ **data_use_limitation_summaries** | **List[str]**| Filter by data_use_limitation_summaries | [optional] 
+ **dbxrefs** | **List[str]**| Filter by dbxrefs | [optional] 
+ **description** | **List[str]**| Filter by description | [optional] 
+ **documents** | **List[str]**| Filter by documents | [optional] 
+ **doi** | **List[str]**| Filter by doi | [optional] 
+ **donors_id** | **List[str]**| Filter by donors.@id | [optional] 
+ **donors_accession** | **List[str]**| Filter by donors.accession | [optional] 
+ **donors_aliases** | **List[str]**| Filter by donors.aliases | [optional] 
+ **donors_sex** | **List[str]**| Filter by donors.sex | [optional] 
+ **donors_status** | **List[str]**| Filter by donors.status | [optional] 
+ **donors_strain_background** | **List[str]**| Filter by donors.strain_background | [optional] 
+ **donors_taxa** | **List[str]**| Filter by donors.taxa | [optional] 
+ **file_set_type** | **List[str]**| Filter by file_set_type | [optional] 
+ **files_id** | **List[str]**| Filter by files.@id | [optional] 
+ **files_accession** | **List[str]**| Filter by files.accession | [optional] 
+ **files_aliases** | **List[str]**| Filter by files.aliases | [optional] 
+ **files_anvil_url** | **List[str]**| Filter by files.anvil_url | [optional] 
+ **files_assembly** | **List[str]**| Filter by files.assembly | [optional] 
+ **files_cell_type_annotation_id** | **List[str]**| Filter by files.cell_type_annotation.@id | [optional] 
+ **files_cell_type_annotation_term_name** | **List[str]**| Filter by files.cell_type_annotation.term_name | [optional] 
+ **files_content_type** | **List[str]**| Filter by files.content_type | [optional] 
+ **files_controlled_access** | **List[bool]**| Filter by files.controlled_access | [optional] 
+ **files_creation_timestamp** | **List[str]**| Filter by files.creation_timestamp | [optional] 
+ **files_derived_from** | **List[str]**| Filter by files.derived_from | [optional] 
+ **files_file_format** | **List[str]**| Filter by files.file_format | [optional] 
+ **files_file_format_type** | **List[str]**| Filter by files.file_format_type | [optional] 
+ **files_file_size** | **List[int]**| Filter by files.file_size | [optional] 
+ **files_flowcell_id** | **List[str]**| Filter by files.flowcell_id | [optional] 
+ **files_href** | **List[str]**| Filter by files.href | [optional] 
+ **files_illumina_read_type** | **List[str]**| Filter by files.illumina_read_type | [optional] 
+ **files_imaging_platform_id** | **List[str]**| Filter by files.imaging_platform.@id | [optional] 
+ **files_imaging_platform_status** | **List[str]**| Filter by files.imaging_platform.status | [optional] 
+ **files_imaging_platform_term_name** | **List[str]**| Filter by files.imaging_platform.term_name | [optional] 
+ **files_lane** | **List[int]**| Filter by files.lane | [optional] 
+ **files_md5sum** | **List[str]**| Filter by files.md5sum | [optional] 
+ **files_mean_read_length** | **List[float]**| Filter by files.mean_read_length | [optional] 
+ **files_s3_uri** | **List[str]**| Filter by files.s3_uri | [optional] 
+ **files_seqspec_document** | **List[str]**| Filter by files.seqspec_document | [optional] 
+ **files_seqspecs** | **List[str]**| Filter by files.seqspecs | [optional] 
+ **files_sequencing_kit** | **List[str]**| Filter by files.sequencing_kit | [optional] 
+ **files_sequencing_platform_id** | **List[str]**| Filter by files.sequencing_platform.@id | [optional] 
+ **files_sequencing_platform_status** | **List[str]**| Filter by files.sequencing_platform.status | [optional] 
+ **files_sequencing_platform_term_name** | **List[str]**| Filter by files.sequencing_platform.term_name | [optional] 
+ **files_sequencing_run** | **List[int]**| Filter by files.sequencing_run | [optional] 
+ **files_status** | **List[str]**| Filter by files.status | [optional] 
+ **files_submitted_file_name** | **List[str]**| Filter by files.submitted_file_name | [optional] 
+ **files_summary** | **List[str]**| Filter by files.summary | [optional] 
+ **files_transcriptome_annotation** | **List[str]**| Filter by files.transcriptome_annotation | [optional] 
+ **files_upload_status** | **List[str]**| Filter by files.upload_status | [optional] 
+ **files_workflows_id** | **List[str]**| Filter by files.workflows.@id | [optional] 
+ **files_workflows_accession** | **List[str]**| Filter by files.workflows.accession | [optional] 
+ **input_file_sets_id** | **List[str]**| Filter by input_file_sets.@id | [optional] 
+ **input_file_sets_accession** | **List[str]**| Filter by input_file_sets.accession | [optional] 
+ **input_file_sets_aliases** | **List[str]**| Filter by input_file_sets.aliases | [optional] 
+ **input_file_sets_file_set_type** | **List[str]**| Filter by input_file_sets.file_set_type | [optional] 
+ **input_file_sets_status** | **List[str]**| Filter by input_file_sets.status | [optional] 
+ **input_for** | **List[str]**| Filter by input_for | [optional] 
+ **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
+ **lab_title** | **List[str]**| Filter by lab.title | [optional] 
+ **notes** | **List[str]**| Filter by notes | [optional] 
+ **preferred_assay_titles** | **List[str]**| Filter by preferred_assay_titles | [optional] 
+ **publications_id** | **List[str]**| Filter by publications.@id | [optional] 
+ **publications_publication_identifiers** | **List[str]**| Filter by publications.publication_identifiers | [optional] 
+ **publications_status** | **List[str]**| Filter by publications.status | [optional] 
+ **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
+ **revoke_detail** | **List[str]**| Filter by revoke_detail | [optional] 
+ **samples_id** | **List[str]**| Filter by samples.@id | [optional] 
+ **samples_accession** | **List[str]**| Filter by samples.accession | [optional] 
+ **samples_aliases** | **List[str]**| Filter by samples.aliases | [optional] 
+ **samples_cellular_sub_pool** | **List[str]**| Filter by samples.cellular_sub_pool | [optional] 
+ **samples_classifications** | **List[str]**| Filter by samples.classifications | [optional] 
+ **samples_disease_terms_id** | **List[str]**| Filter by samples.disease_terms.@id | [optional] 
+ **samples_disease_terms_status** | **List[str]**| Filter by samples.disease_terms.status | [optional] 
+ **samples_disease_terms_term_name** | **List[str]**| Filter by samples.disease_terms.term_name | [optional] 
+ **samples_growth_medium** | **List[str]**| Filter by samples.growth_medium | [optional] 
+ **samples_institutional_certificates_id** | **List[str]**| Filter by samples.institutional_certificates.@id | [optional] 
+ **samples_institutional_certificates_certificate_identifier** | **List[str]**| Filter by samples.institutional_certificates.certificate_identifier | [optional] 
+ **samples_institutional_certificates_controlled_access** | **List[bool]**| Filter by samples.institutional_certificates.controlled_access | [optional] 
+ **samples_institutional_certificates_data_use_limitation** | **List[str]**| Filter by samples.institutional_certificates.data_use_limitation | [optional] 
+ **samples_institutional_certificates_data_use_limitation_modifiers** | **List[str]**| Filter by samples.institutional_certificates.data_use_limitation_modifiers | [optional] 
+ **samples_institutional_certificates_status** | **List[str]**| Filter by samples.institutional_certificates.status | [optional] 
+ **samples_modifications_id** | **List[str]**| Filter by samples.modifications.@id | [optional] 
+ **samples_modifications_modality** | **List[str]**| Filter by samples.modifications.modality | [optional] 
+ **samples_modifications_status** | **List[str]**| Filter by samples.modifications.status | [optional] 
+ **samples_sample_terms_id** | **List[str]**| Filter by samples.sample_terms.@id | [optional] 
+ **samples_sample_terms_aliases** | **List[str]**| Filter by samples.sample_terms.aliases | [optional] 
+ **samples_sample_terms_status** | **List[str]**| Filter by samples.sample_terms.status | [optional] 
+ **samples_sample_terms_summary** | **List[str]**| Filter by samples.sample_terms.summary | [optional] 
+ **samples_sample_terms_term_name** | **List[str]**| Filter by samples.sample_terms.term_name | [optional] 
+ **samples_status** | **List[str]**| Filter by samples.status | [optional] 
+ **samples_summary** | **List[str]**| Filter by samples.summary | [optional] 
+ **samples_targeted_sample_term_id** | **List[str]**| Filter by samples.targeted_sample_term.@id | [optional] 
+ **samples_targeted_sample_term_status** | **List[str]**| Filter by samples.targeted_sample_term.status | [optional] 
+ **samples_targeted_sample_term_term_name** | **List[str]**| Filter by samples.targeted_sample_term.term_name | [optional] 
+ **samples_taxa** | **List[str]**| Filter by samples.taxa | [optional] 
+ **samples_treatments_id** | **List[str]**| Filter by samples.treatments.@id | [optional] 
+ **samples_treatments_purpose** | **List[str]**| Filter by samples.treatments.purpose | [optional] 
+ **samples_treatments_status** | **List[str]**| Filter by samples.treatments.status | [optional] 
+ **samples_treatments_summary** | **List[str]**| Filter by samples.treatments.summary | [optional] 
+ **samples_treatments_treatment_term_name** | **List[str]**| Filter by samples.treatments.treatment_term_name | [optional] 
+ **samples_treatments_treatment_type** | **List[str]**| Filter by samples.treatments.treatment_type | [optional] 
+ **status** | **List[str]**| Filter by status | [optional] 
+ **submitted_by_id** | **List[str]**| Filter by submitted_by.@id | [optional] 
+ **submitted_by_title** | **List[str]**| Filter by submitted_by.title | [optional] 
+ **submitted_files_timestamp** | **List[str]**| Filter by submitted_files_timestamp | [optional] 
+ **submitter_comment** | **List[str]**| Filter by submitter_comment | [optional] 
+ **summary** | **List[str]**| Filter by summary | [optional] 
+ **superseded_by** | **List[str]**| Filter by superseded_by | [optional] 
+ **supersedes** | **List[str]**| Filter by supersedes | [optional] 
+ **uuid** | **List[str]**| Filter by uuid | [optional] 
+ **workflows** | **List[str]**| Filter by workflows | [optional] 
+
+### Return type
+
+[**PseudobulkSetResults**](PseudobulkSetResults.md)
 
 ### Authorization
 
