@@ -6,6 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
 **doi** | **str** | The Digital Object Identifier (DOI) associated with this object. | [optional] 
 **input_file_sets** | **List[str]** | The file set(s) required for this pseudobulking analysis. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 

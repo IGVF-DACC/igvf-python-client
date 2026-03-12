@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **embryonic** | **bool** | Biosample is embryonic. | [optional] 
 **modifications** | **List[str]** | Links to modifications applied to this biosample. | [optional] 
 **cellular_sub_pool** | **str** | Cellular sub-pool fraction of the sample. Also known as PKR and sub-library. | [optional] 
+**phenotypic_features** | **List[str]** | A list of associated phenotypic features of the sample. | [optional] 
 **starting_amount** | **float** | The initial quantity of samples obtained. | [optional] 
 **starting_amount_units** | **str** | The units used to quantify the amount of samples obtained. | [optional] 
 **dbxrefs** | **List[str]** | Biosample identifiers from external resources, such as Biosample database or Cellosaurus. | [optional] 

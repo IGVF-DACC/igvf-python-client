@@ -64,7 +64,7 @@ Name | Type | Description | Notes
 **revoke_detail** | **str** | Explanation of why an object was transitioned to the revoked status. | [optional] 
 **dbxrefs** | **List[str]** | Biosample identifiers from external resources, such as Biosample database or Cellosaurus. | [optional] 
 **sex** | **str** |  | [optional] 
-**phenotypic_features** | **List[str]** | A list of associated phenotypic features of the donor. | [optional] 
+**phenotypic_features** | **List[str]** | A list of associated phenotypic features of the sample. | [optional] 
 **virtual** | **bool** | Virtual samples do not represent actual physical entities from experiments, but instead capture metadata about hypothetical or inferred samples relevant to reported analysis results, including those derived through demultiplexing. | [optional] 
 **supersedes** | **List[str]** | The sample(s) that this sample supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **related_donors** | [**List[RelatedDonor]**](RelatedDonor.md) | Familial relations of this donor. | [optional] 

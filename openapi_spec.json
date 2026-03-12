@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "112.0.0"
+    "version": "113.0.0"
   },
   "servers": [
     {
@@ -1697,6 +1697,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "marker gene activity",
                   "marker genes",
                   "methylated reads",
                   "methylation count matrix",
@@ -1939,6 +1940,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "marker gene activity",
                   "marker genes",
                   "methylated reads",
                   "methylation count matrix",
@@ -2594,6 +2596,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "marker gene activity",
                   "marker genes",
                   "methylated reads",
                   "methylation count matrix",
@@ -2792,6 +2795,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "marker gene activity",
                   "marker genes",
                   "methylated reads",
                   "methylation count matrix",
@@ -19648,6 +19652,7 @@
                   "Cast - GRCm39",
                   "GRCm39",
                   "mm10",
+                  "GRCh38, GRCm39",
                   "GRCh38, mm10",
                   "C57BL_6J_T2T_v1 + GRCm39_X",
                   "CAST_EiJ_T2T_v1",
@@ -21443,6 +21448,8 @@
                   "GENCODE M34",
                   "GENCODE M36",
                   "GENCODE 32, GENCODE M23",
+                  "GENCODE 41, GENCODE M25",
+                  "GENCODE 44, GENCODE M33",
                   "CAST_EiJ_T2T_v1_TA1",
                   "C57BL_6J_T2T_v1_TA1 + M36_X"
                 ],
@@ -26422,6 +26429,7 @@
                   "Cast - GRCm39",
                   "GRCm39",
                   "mm10",
+                  "GRCh38, GRCm39",
                   "GRCh38, mm10",
                   "C57BL_6J_T2T_v1 + GRCm39_X",
                   "CAST_EiJ_T2T_v1",
@@ -28267,6 +28275,8 @@
                   "GENCODE M34",
                   "GENCODE M36",
                   "GENCODE 32, GENCODE M23",
+                  "GENCODE 41, GENCODE M25",
+                  "GENCODE 44, GENCODE M33",
                   "CAST_EiJ_T2T_v1_TA1",
                   "C57BL_6J_T2T_v1_TA1 + M36_X"
                 ],
@@ -32934,6 +32944,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -41016,6 +41027,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -43922,6 +43934,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -49527,21 +49540,6 @@
             "explode": true
           },
           {
-            "name": "input_file_sets.file_set_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "File Set Type",
-                "description": "The level of this analysis set."
-              }
-            },
-            "description": "Filter by input_file_sets.file_set_type",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "input_file_sets.status",
             "in": "query",
             "schema": {
@@ -49569,6 +49567,21 @@
               "description": "The file sets that use this file set as an input."
             },
             "description": "Filter by input_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "is_on_anvil",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Is On AnVIL",
+                "description": "Indicates whether the data object has been submitted to AnVIL."
+              }
+            },
+            "description": "Filter by is_on_anvil",
             "style": "form",
             "explode": true
           },
@@ -50799,6 +50812,7 @@
                       "Cast - GRCm39",
                       "GRCm39",
                       "mm10",
+                      "GRCh38, GRCm39",
                       "GRCh38, mm10",
                       "C57BL_6J_T2T_v1 + GRCm39_X",
                       "CAST_EiJ_T2T_v1",
@@ -51072,6 +51086,8 @@
                   "GENCODE M34",
                   "GENCODE M36",
                   "GENCODE 32, GENCODE M23",
+                  "GENCODE 41, GENCODE M25",
+                  "GENCODE 44, GENCODE M33",
                   "CAST_EiJ_T2T_v1_TA1",
                   "C57BL_6J_T2T_v1_TA1 + M36_X"
                 ],
@@ -54239,6 +54255,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -62593,6 +62610,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -63241,6 +63259,23 @@
               }
             },
             "description": "Filter by passage_number",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "phenotypic_features",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Phenotypic Features",
+              "items": {
+                "type": "string",
+                "title": "Phenotypic Feature",
+                "description": "Phenotypic feature"
+              },
+              "description": "A list of associated phenotypic features of the sample."
+            },
+            "description": "Filter by phenotypic_features",
             "style": "form",
             "explode": true
           },
@@ -65020,6 +65055,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -67320,6 +67356,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -67944,6 +67981,23 @@
               }
             },
             "description": "Filter by passage_number",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "phenotypic_features",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Phenotypic Features",
+              "items": {
+                "type": "string",
+                "title": "Phenotypic Feature",
+                "description": "Phenotypic feature"
+              },
+              "description": "A list of associated phenotypic features of the sample."
+            },
+            "description": "Filter by phenotypic_features",
             "style": "form",
             "explode": true
           },
@@ -69290,6 +69344,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -71217,6 +71272,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -71825,6 +71881,23 @@
               "description": "The parts into which this sample has been divided."
             },
             "description": "Filter by parts",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "phenotypic_features",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Phenotypic Features",
+              "items": {
+                "type": "string",
+                "title": "Phenotypic Feature",
+                "description": "Phenotypic feature"
+              },
+              "description": "A list of associated phenotypic features of the sample."
+            },
+            "description": "Filter by phenotypic_features",
             "style": "form",
             "explode": true
           },
@@ -73581,6 +73654,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -74189,6 +74263,23 @@
               "description": "The parts into which this sample has been divided."
             },
             "description": "Filter by parts",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "phenotypic_features",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Phenotypic Features",
+              "items": {
+                "type": "string",
+                "title": "Phenotypic Feature",
+                "description": "Phenotypic feature"
+              },
+              "description": "A list of associated phenotypic features of the sample."
+            },
+            "description": "Filter by phenotypic_features",
             "style": "form",
             "explode": true
           },
@@ -78061,6 +78152,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "marker gene activity",
                   "marker genes",
                   "methylated reads",
                   "methylation count matrix",
@@ -78259,6 +78351,7 @@
                   "loci",
                   "low resolution tissue",
                   "machine learning model features",
+                  "marker gene activity",
                   "marker genes",
                   "methylated reads",
                   "methylation count matrix",
@@ -78749,6 +78842,7 @@
                   "CROP-seq",
                   "Multiome Perturb-seq",
                   "SGE",
+                  "SGE-RNA",
                   "Immune-SGE",
                   "MAVE",
                   "MIAA",
@@ -79785,6 +79879,7 @@
                 "loci",
                 "low resolution tissue",
                 "machine learning model features",
+                "marker gene activity",
                 "marker genes",
                 "methylated reads",
                 "methylation count matrix",
@@ -79977,6 +80072,7 @@
                 "loci",
                 "low resolution tissue",
                 "machine learning model features",
+                "marker gene activity",
                 "marker genes",
                 "methylated reads",
                 "methylation count matrix",
@@ -84760,6 +84856,7 @@
               "Cast - GRCm39",
               "GRCm39",
               "mm10",
+              "GRCh38, GRCm39",
               "GRCh38, mm10",
               "C57BL_6J_T2T_v1 + GRCm39_X",
               "CAST_EiJ_T2T_v1",
@@ -84816,6 +84913,8 @@
               "GENCODE M34",
               "GENCODE M36",
               "GENCODE 32, GENCODE M23",
+              "GENCODE 41, GENCODE M25",
+              "GENCODE 44, GENCODE M33",
               "CAST_EiJ_T2T_v1_TA1",
               "C57BL_6J_T2T_v1_TA1 + M36_X"
             ]
@@ -86562,6 +86661,7 @@
               "Cast - GRCm39",
               "GRCm39",
               "mm10",
+              "GRCh38, GRCm39",
               "GRCh38, mm10",
               "C57BL_6J_T2T_v1 + GRCm39_X",
               "CAST_EiJ_T2T_v1",
@@ -86618,6 +86718,8 @@
               "GENCODE M34",
               "GENCODE M36",
               "GENCODE 32, GENCODE M23",
+              "GENCODE 41, GENCODE M25",
+              "GENCODE 44, GENCODE M33",
               "CAST_EiJ_T2T_v1_TA1",
               "C57BL_6J_T2T_v1_TA1 + M36_X"
             ]
@@ -88961,6 +89063,7 @@
                 "CROP-seq",
                 "Multiome Perturb-seq",
                 "SGE",
+                "SGE-RNA",
                 "Immune-SGE",
                 "MAVE",
                 "MIAA",
@@ -89595,6 +89698,7 @@
                 "CROP-seq",
                 "Multiome Perturb-seq",
                 "SGE",
+                "SGE-RNA",
                 "Immune-SGE",
                 "MAVE",
                 "MIAA",
@@ -90471,6 +90575,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "is_on_anvil": {
+            "title": "Is On AnVIL",
+            "description": "Indicates whether the data object has been submitted to AnVIL.",
+            "type": "boolean"
+          },
           "doi": {
             "title": "DOI",
             "description": "The Digital Object Identifier (DOI) associated with this object.",
@@ -90872,6 +90981,8 @@
               "GENCODE M34",
               "GENCODE M36",
               "GENCODE 32, GENCODE M23",
+              "GENCODE 41, GENCODE M25",
+              "GENCODE 44, GENCODE M33",
               "CAST_EiJ_T2T_v1_TA1",
               "C57BL_6J_T2T_v1_TA1 + M36_X"
             ]
@@ -91061,6 +91172,7 @@
                     "Cast - GRCm39",
                     "GRCm39",
                     "mm10",
+                    "GRCh38, GRCm39",
                     "GRCh38, mm10",
                     "C57BL_6J_T2T_v1 + GRCm39_X",
                     "CAST_EiJ_T2T_v1",
@@ -92113,6 +92225,7 @@
                 "CROP-seq",
                 "Multiome Perturb-seq",
                 "SGE",
+                "SGE-RNA",
                 "Immune-SGE",
                 "MAVE",
                 "MIAA",
@@ -95424,6 +95537,17 @@
             "type": "string",
             "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$"
           },
+          "phenotypic_features": {
+            "title": "Phenotypic Features",
+            "description": "A list of associated phenotypic features of the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Phenotypic Feature",
+              "description": "Phenotypic feature",
+              "type": "string"
+            }
+          },
           "starting_amount": {
             "title": "Starting Amount",
             "description": "The initial quantity of samples obtained.",
@@ -96692,6 +96816,17 @@
             "type": "string",
             "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$"
           },
+          "phenotypic_features": {
+            "title": "Phenotypic Features",
+            "description": "A list of associated phenotypic features of the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Phenotypic Feature",
+              "description": "Phenotypic feature",
+              "type": "string"
+            }
+          },
           "starting_amount": {
             "title": "Starting Amount",
             "description": "The initial quantity of samples obtained.",
@@ -97817,6 +97952,17 @@
             "type": "string",
             "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$"
           },
+          "phenotypic_features": {
+            "title": "Phenotypic Features",
+            "description": "A list of associated phenotypic features of the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Phenotypic Feature",
+              "description": "Phenotypic feature",
+              "type": "string"
+            }
+          },
           "starting_amount": {
             "title": "Starting Amount",
             "description": "The initial quantity of samples obtained.",
@@ -98455,6 +98601,17 @@
             "description": "Cellular sub-pool fraction of the sample. Also known as PKR and sub-library.",
             "type": "string",
             "pattern": "^[a-zA-Z\\d_.()-]+(?:\\s[a-zA-Z\\d_.()-]+)*$"
+          },
+          "phenotypic_features": {
+            "title": "Phenotypic Features",
+            "description": "A list of associated phenotypic features of the sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Phenotypic Feature",
+              "description": "Phenotypic feature",
+              "type": "string"
+            }
           },
           "starting_amount": {
             "title": "Starting Amount",
@@ -99678,6 +99835,7 @@
                 "CROP-seq",
                 "Multiome Perturb-seq",
                 "SGE",
+                "SGE-RNA",
                 "Immune-SGE",
                 "MAVE",
                 "MIAA",
