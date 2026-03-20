@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "113.0.0"
+    "version": "114.0.0"
   },
   "servers": [
     {
@@ -1652,6 +1652,7 @@
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
+                  "domain constraint",
                   "drugs",
                   "eQTL",
                   "edge weights",
@@ -1661,6 +1662,7 @@
                   "elements reference",
                   "exclusion list",
                   "exclusion list regions",
+                  "exon constraint",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -1895,6 +1897,7 @@
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
+                  "domain constraint",
                   "drugs",
                   "eQTL",
                   "edge weights",
@@ -1904,6 +1907,7 @@
                   "elements reference",
                   "exclusion list",
                   "exclusion list regions",
+                  "exon constraint",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -2551,6 +2555,7 @@
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
+                  "domain constraint",
                   "drugs",
                   "eQTL",
                   "edge weights",
@@ -2560,6 +2565,7 @@
                   "elements reference",
                   "exclusion list",
                   "exclusion list regions",
+                  "exon constraint",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -2750,6 +2756,7 @@
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
+                  "domain constraint",
                   "drugs",
                   "eQTL",
                   "edge weights",
@@ -2759,6 +2766,7 @@
                   "elements reference",
                   "exclusion list",
                   "exclusion list regions",
+                  "exon constraint",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -16953,6 +16961,7 @@
                   "gene",
                   "gene expression",
                   "genomic position",
+                  "multiplexing oligo",
                   "peak",
                   "time",
                   "treatment",
@@ -32928,6 +32937,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -41011,6 +41022,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -43918,6 +43931,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -50419,18 +50434,93 @@
             "explode": true
           },
           {
-            "name": "workflows",
+            "name": "workflows.@id",
             "in": "query",
             "schema": {
               "type": "array",
-              "title": "Workflows",
               "items": {
                 "type": "string",
-                "title": "Workflow"
-              },
-              "description": "A workflow for computational analysis of genomic data. A workflow is made up of analysis steps."
+                "title": "ID"
+              }
             },
-            "description": "Filter by workflows",
+            "description": "Filter by workflows.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by workflows.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the workflow."
+              }
+            },
+            "description": "Filter by workflows.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by workflows.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.uniform_pipeline",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Uniform Pipeline",
+                "description": "Indicates whether the pipeline is developed by the IGVF consortium."
+              }
+            },
+            "description": "Filter by workflows.uniform_pipeline",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "workflows.workflow_version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Workflow Version",
+                "pattern": "^v(?!0\\.0\\.0$)([0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?|0\\.0\\.0\\.[1-9][0-9]*)$",
+                "description": "The version of this workflow."
+              }
+            },
+            "description": "Filter by workflows.workflow_version",
             "style": "form",
             "explode": true
           }
@@ -52907,6 +52997,7 @@
                   "eA3A",
                   "eA3A-T31A",
                   "eA3A-T44D-S45A",
+                  "evoCDA",
                   "KOX1-KRAB",
                   "M-MLV RT (PE2)",
                   "p300",
@@ -54239,6 +54330,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -62594,6 +62687,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -65039,6 +65134,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -67340,6 +67437,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -69328,6 +69427,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -71256,6 +71357,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -73638,6 +73741,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -77239,7 +77344,7 @@
                 "enum": [
                   "chemical",
                   "protein",
-                  "thermal"
+                  "diet"
                 ],
                 "description": "The classification of treatment agent that specifies its exact molecular nature. "
               }
@@ -78107,6 +78212,7 @@
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
+                  "domain constraint",
                   "drugs",
                   "eQTL",
                   "edge weights",
@@ -78116,6 +78222,7 @@
                   "elements reference",
                   "exclusion list",
                   "exclusion list regions",
+                  "exon constraint",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -78306,6 +78413,7 @@
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
+                  "domain constraint",
                   "drugs",
                   "eQTL",
                   "edge weights",
@@ -78315,6 +78423,7 @@
                   "elements reference",
                   "exclusion list",
                   "exclusion list regions",
+                  "exon constraint",
                   "external source data",
                   "feature weights",
                   "fiducial alignment",
@@ -78826,6 +78935,8 @@
                   "Arrayed mN2H",
                   "smFISH",
                   "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
                   "Proliferation CRISPR screen",
                   "Migration CRISPR screen",
                   "CRISPR FlowFISH screen",
@@ -79834,6 +79945,7 @@
                 "differential peak quantifications",
                 "differential transcript expression quantifications",
                 "documentation (readme)",
+                "domain constraint",
                 "drugs",
                 "eQTL",
                 "edge weights",
@@ -79843,6 +79955,7 @@
                 "elements reference",
                 "exclusion list",
                 "exclusion list regions",
+                "exon constraint",
                 "external source data",
                 "feature weights",
                 "fiducial alignment",
@@ -80027,6 +80140,7 @@
                 "differential peak quantifications",
                 "differential transcript expression quantifications",
                 "documentation (readme)",
+                "domain constraint",
                 "drugs",
                 "eQTL",
                 "edge weights",
@@ -80036,6 +80150,7 @@
                 "elements reference",
                 "exclusion list",
                 "exclusion list regions",
+                "exon constraint",
                 "external source data",
                 "feature weights",
                 "fiducial alignment",
@@ -84049,6 +84164,7 @@
                 "gene",
                 "gene expression",
                 "genomic position",
+                "multiplexing oligo",
                 "peak",
                 "time",
                 "treatment",
@@ -89047,6 +89163,8 @@
                 "Arrayed mN2H",
                 "smFISH",
                 "MERFISH",
+                "CRISPR tiling screen guide readout",
+                "CRISPR tiling screen allelic readout",
                 "Proliferation CRISPR screen",
                 "Migration CRISPR screen",
                 "CRISPR FlowFISH screen",
@@ -89682,6 +89800,8 @@
                 "Arrayed mN2H",
                 "smFISH",
                 "MERFISH",
+                "CRISPR tiling screen guide readout",
+                "CRISPR tiling screen allelic readout",
                 "Proliferation CRISPR screen",
                 "Migration CRISPR screen",
                 "CRISPR FlowFISH screen",
@@ -91905,6 +92025,7 @@
               "eA3A",
               "eA3A-T31A",
               "eA3A-T44D-S45A",
+              "evoCDA",
               "KOX1-KRAB",
               "M-MLV RT (PE2)",
               "p300",
@@ -92209,6 +92330,8 @@
                 "Arrayed mN2H",
                 "smFISH",
                 "MERFISH",
+                "CRISPR tiling screen guide readout",
+                "CRISPR tiling screen allelic readout",
                 "Proliferation CRISPR screen",
                 "Migration CRISPR screen",
                 "CRISPR FlowFISH screen",
@@ -99547,7 +99670,7 @@
             "enum": [
               "chemical",
               "protein",
-              "thermal"
+              "diet"
             ]
           },
           "treatment_term_id": {
@@ -99819,6 +99942,8 @@
                 "Arrayed mN2H",
                 "smFISH",
                 "MERFISH",
+                "CRISPR tiling screen guide readout",
+                "CRISPR tiling screen allelic readout",
                 "Proliferation CRISPR screen",
                 "Migration CRISPR screen",
                 "CRISPR FlowFISH screen",
