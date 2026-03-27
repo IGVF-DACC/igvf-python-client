@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **catalog_notes** | **str** | DACC notes for data loading in the IGVF catalog | [optional] 
 **base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
-**cell_type_annotation** | **str** | The inferred cell type this file is associated with based on single-cell expression profiling. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
 **assembly** | **str** | Genome assembly applicable for the tabular data. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 

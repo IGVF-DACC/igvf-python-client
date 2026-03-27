@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "114.0.0"
+    "version": "115.0.0"
   },
   "servers": [
     {
@@ -7435,6 +7435,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -7583,6 +7697,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -7624,6 +7836,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -9546,6 +9759,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -9694,6 +10021,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -9735,6 +10160,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -11610,6 +12036,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -11758,6 +12298,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -11799,6 +12437,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -13718,6 +14357,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -13866,6 +14619,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -13907,6 +14758,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -15841,6 +16693,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -15989,6 +16955,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -16030,6 +17094,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -18043,6 +19108,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -18191,6 +19370,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -18232,6 +19509,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -19832,7 +21110,7 @@
                   "GWAS",
                   "GVATdb",
                   "pQTL",
-                  "splice_QTL"
+                  "spliceQTL"
                 ],
                 "description": "The method curated in the IGVF catalog that the non-IGVF data in this file processed with"
               }
@@ -20219,6 +21497,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -20367,6 +21759,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -20408,6 +21898,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -22289,6 +23780,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -22437,6 +24042,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -22478,6 +24181,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -24374,51 +26078,6 @@
             "explode": true
           },
           {
-            "name": "cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "cell_type_annotation.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by cell_type_annotation.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by cell_type_annotation.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "checkfiles_timestamp",
             "in": "query",
             "schema": {
@@ -24722,6 +26381,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -24870,6 +26643,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -24911,6 +26782,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -26654,51 +28526,6 @@
             "explode": true
           },
           {
-            "name": "cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "cell_type_annotation.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by cell_type_annotation.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by cell_type_annotation.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "checkfiles_timestamp",
             "in": "query",
             "schema": {
@@ -27046,6 +28873,120 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_set.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_term.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by file_set.assay_term.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.assay_term.term_name",
             "in": "query",
             "schema": {
@@ -27194,6 +29135,104 @@
             "explode": true
           },
           {
+            "name": "file_set.preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              }
+            },
+            "description": "Filter by file_set.preferred_assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.samples.@id",
             "in": "query",
             "schema": {
@@ -27235,6 +29274,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -28919,6 +30959,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "evolutionary constraint",
                   "random selections",
                   "sequence variants",
                   "synthetic elements",
@@ -29476,36 +31517,6 @@
               }
             },
             "description": "Filter by files.assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -30091,6 +32102,51 @@
             "explode": true
           },
           {
+            "name": "input_file_sets.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by input_file_sets.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_file_sets.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by input_file_sets.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_file_sets.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by input_file_sets.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "input_file_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -30428,6 +32484,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -31696,6 +33753,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "evolutionary constraint",
                   "random selections",
                   "sequence variants",
                   "synthetic elements",
@@ -32211,36 +34269,6 @@
               }
             },
             "description": "Filter by files.assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -33199,6 +35227,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -34672,21 +36701,6 @@
             "explode": true
           },
           {
-            "name": "files.cell_type_annotation",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Cell Type Annotation",
-                "description": "The inferred cell type this file is associated with based on single-cell expression profiling."
-              }
-            },
-            "description": "Filter by files.cell_type_annotation",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "files.content_type",
             "in": "query",
             "schema": {
@@ -35703,6 +37717,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -36074,6 +38089,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "evolutionary constraint",
                   "random selections",
                   "sequence variants",
                   "synthetic elements",
@@ -36976,6 +38992,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "evolutionary constraint",
                   "random selections",
                   "sequence variants",
                   "synthetic elements",
@@ -37482,36 +39499,6 @@
               }
             },
             "description": "Filter by files.assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -38232,6 +40219,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -39545,6 +41533,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "evolutionary constraint",
                   "random selections",
                   "sequence variants",
                   "synthetic elements",
@@ -40189,36 +42178,6 @@
               }
             },
             "description": "Filter by files.assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -41298,6 +43257,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -42622,6 +44582,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "evolutionary constraint",
                   "random selections",
                   "sequence variants",
                   "synthetic elements",
@@ -43164,36 +45125,6 @@
               }
             },
             "description": "Filter by files.assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -44146,6 +46077,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -45542,6 +47474,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "evolutionary constraint",
                   "random selections",
                   "sequence variants",
                   "synthetic elements",
@@ -46054,36 +47987,6 @@
               }
             },
             "description": "Filter by files.assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -46945,6 +48848,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -48493,6 +50397,7 @@
                   "genes",
                   "histone modifications",
                   "protein interactors",
+                  "evolutionary constraint",
                   "random selections",
                   "sequence variants",
                   "synthetic elements",
@@ -49001,36 +50906,6 @@
               }
             },
             "description": "Filter by files.assembly",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "files.cell_type_annotation.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by files.cell_type_annotation.term_name",
             "style": "form",
             "explode": true
           },
@@ -49815,6 +51690,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -62109,6 +63985,7 @@
                   "organoid",
                   "gastruloid",
                   "embryoid",
+                  "cell culture",
                   "cell line",
                   "differentiated cell specimen",
                   "reprogrammed cell specimen",
@@ -62588,6 +64465,51 @@
               "description": "Lab specific identifiers to reference an object."
             },
             "description": "Filter by file_sets.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_sets.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_sets.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_sets.assay_term.term_name",
             "style": "form",
             "explode": true
           },
@@ -63236,6 +65158,7 @@
                 "title": "Nucleic Acid Delivery",
                 "enum": [
                   "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
@@ -65039,6 +66962,51 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_sets.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_sets.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_sets.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.assay_titles",
             "in": "query",
             "schema": {
@@ -65770,6 +67738,7 @@
                 "title": "Nucleic Acid Delivery",
                 "enum": [
                   "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
@@ -67342,6 +69311,51 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_sets.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_sets.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_sets.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.assay_titles",
             "in": "query",
             "schema": {
@@ -67962,6 +69976,7 @@
                 "title": "Nucleic Acid Delivery",
                 "enum": [
                   "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
@@ -69347,6 +71362,51 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_sets.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_sets.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_sets.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -69635,6 +71695,7 @@
                 "title": "Nucleic Acid Delivery",
                 "enum": [
                   "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
@@ -71262,6 +73323,51 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_sets.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_sets.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_sets.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.assay_titles",
             "in": "query",
             "schema": {
@@ -71882,6 +73988,7 @@
                 "title": "Nucleic Acid Delivery",
                 "enum": [
                   "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
@@ -73646,6 +75753,51 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_sets.assay_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Type",
+              "items": {
+                "type": "string"
+              },
+              "description": "A broad categorization of the assay term."
+            },
+            "description": "Filter by file_sets.assay_term.assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.assay_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_sets.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.assay_titles",
             "in": "query",
             "schema": {
@@ -74266,6 +76418,7 @@
                 "title": "Nucleic Acid Delivery",
                 "enum": [
                   "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
                   "lipofectamine",
                   "electroporation",
                   "lentiviral transduction",
@@ -85339,7 +87492,7 @@
               "GWAS",
               "GVATdb",
               "pQTL",
-              "splice_QTL"
+              "spliceQTL"
             ]
           },
           "sources": {
@@ -86181,11 +88334,6 @@
             "description": "The date the object was previewed.",
             "type": "string"
           },
-          "cell_type_annotation": {
-            "title": "Cell Type Annotation",
-            "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
-            "type": "string"
-          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -86755,11 +88903,6 @@
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
-            "type": "string"
-          },
-          "cell_type_annotation": {
-            "title": "Cell Type Annotation",
-            "description": "The inferred cell type this file is associated with based on single-cell expression profiling.",
             "type": "string"
           },
           "controlled_access": {
@@ -88450,6 +90593,7 @@
                 "genes",
                 "histone modifications",
                 "protein interactors",
+                "evolutionary constraint",
                 "random selections",
                 "sequence variants",
                 "synthetic elements",
@@ -95751,6 +97895,7 @@
             "type": "string",
             "enum": [
               "adenoviral transduction",
+              "adeno-associated viral (AAV) transduction",
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
@@ -95831,6 +97976,7 @@
                 "organoid",
                 "gastruloid",
                 "embryoid",
+                "cell culture",
                 "cell line",
                 "differentiated cell specimen",
                 "reprogrammed cell specimen",
@@ -96317,6 +98463,7 @@
             "type": "string",
             "enum": [
               "adenoviral transduction",
+              "adeno-associated viral (AAV) transduction",
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
@@ -97030,6 +99177,7 @@
             "type": "string",
             "enum": [
               "adenoviral transduction",
+              "adeno-associated viral (AAV) transduction",
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
@@ -97536,6 +99684,7 @@
             "type": "string",
             "enum": [
               "adenoviral transduction",
+              "adeno-associated viral (AAV) transduction",
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
@@ -98166,6 +100315,7 @@
             "type": "string",
             "enum": [
               "adenoviral transduction",
+              "adeno-associated viral (AAV) transduction",
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",
@@ -98816,6 +100966,7 @@
             "type": "string",
             "enum": [
               "adenoviral transduction",
+              "adeno-associated viral (AAV) transduction",
               "lipofectamine",
               "electroporation",
               "lentiviral transduction",

@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **catalog_class** | **str** | The class curated in the IGVF catalog that the data in this file belongs to. | [optional] 
 **catalog_notes** | **str** | DACC notes for data loading in the IGVF catalog | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
-**cell_type_annotation** | **str** | The inferred cell type this file is associated with based on single-cell expression profiling. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **reference_files** | **List[str]** | Link to the reference files used to generate this file. | [optional] 
 **filtered** | **bool** | Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling. | [optional] 
