@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **workflows** | **List[str]** | A workflow for computational analysis of genomic data. A workflow is made up of analysis steps. | [optional] 
 **preferred_assay_titles** | **List[str]** | Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set. | [optional] 
 **assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays. | [optional] 
+**assay_slims** | **List[str]** | A broad categorization of the assay term. | [optional] 
 
 ## Example
 

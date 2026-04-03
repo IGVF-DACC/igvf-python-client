@@ -69,6 +69,7 @@ Name | Type | Description | Notes
 **file_sets** | **List[str]** | The file sets that used this construct library set. | [optional] 
 **preferred_assay_titles** | **List[str]** | The preferred assay titles of the file sets that used this construct library set. | [optional] 
 **assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays. | [optional] 
+**assay_slims** | **List[str]** | A broad categorization of the assay term. | [optional] 
 **donors** | **List[str]** | The donors of the samples associated with this auxiliary set. | [optional] 
 
 ## Example

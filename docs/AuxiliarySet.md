@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **donors** | **List[str]** | The donors of the samples associated with this auxiliary set. | [optional] 
 **file_set_type** | **str** | The category that best describes this auxiliary file set. | [optional] 
 **supersedes** | **List[str]** | The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
-**barcode_map** | **str** | The link to the barcode mapping tabular file. | [optional] 
+**hashtag_barcode_map** | **str** | The link to the hashtag barcode mapping tabular file. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **measurement_sets** | **List[str]** | The measurement sets that link to this auxiliary set. | [optional] 
 **preferred_assay_titles** | **List[str]** | The preferred assay titles of the measurement sets that used this auxiliary set. | [optional] 
 **assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays | [optional] 
+**assay_slims** | **List[str]** | A broad categorization of the assay term. | [optional] 
 
 ## Example
 

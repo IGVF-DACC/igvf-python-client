@@ -50,6 +50,7 @@ Name | Type | Description | Notes
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **preferred_assay_titles** | **List[str]** | Preferred Assay Title(s) of assays that produced data analyzed in the analysis set. | [optional] 
 **assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays | [optional] 
+**assay_slims** | **List[str]** | A broad categorization of the assay term. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for conducting the assay on Protocols.io. | [optional] 
 **sample_summary** | **str** | A summary of the samples associated with input file sets of this analysis set. | [optional] 
 **functional_assay_mechanisms** | **List[str]** | The biological processes measured by the functional assays. | [optional] 
