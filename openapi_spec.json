@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "116.0.1"
+    "version": "117.0.0"
   },
   "servers": [
     {
@@ -1629,6 +1629,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "barcode to well mapping",
                   "bin paired count",
                   "caQTL",
                   "calibrated coding variant effect thresholds",
@@ -1727,6 +1728,7 @@
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
+                  "predicted gene regulatory networks",
                   "prime editing guide RNA sequences",
                   "primer sequences",
                   "primers table",
@@ -1875,6 +1877,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "barcode to well mapping",
                   "bin paired count",
                   "caQTL",
                   "calibrated coding variant effect thresholds",
@@ -1973,6 +1976,7 @@
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
+                  "predicted gene regulatory networks",
                   "prime editing guide RNA sequences",
                   "primer sequences",
                   "primers table",
@@ -2534,6 +2538,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "barcode to well mapping",
                   "bin paired count",
                   "caQTL",
                   "calibrated coding variant effect thresholds",
@@ -2632,6 +2637,7 @@
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
+                  "predicted gene regulatory networks",
                   "prime editing guide RNA sequences",
                   "primer sequences",
                   "primers table",
@@ -2736,6 +2742,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "barcode to well mapping",
                   "bin paired count",
                   "caQTL",
                   "calibrated coding variant effect thresholds",
@@ -2834,6 +2841,7 @@
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
+                  "predicted gene regulatory networks",
                   "prime editing guide RNA sequences",
                   "primer sequences",
                   "primers table",
@@ -7584,6 +7592,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -7807,7 +7875,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -9923,6 +9992,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -10146,7 +10275,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -12215,6 +12345,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -12438,7 +12628,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -14551,6 +14742,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -14774,7 +15025,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -16902,6 +17154,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -17125,7 +17437,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -19332,6 +19645,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -19555,7 +19928,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -21736,6 +22110,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -21959,7 +22393,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -24034,6 +24469,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -24257,7 +24752,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -26651,6 +27147,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -26874,7 +27430,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -29158,6 +29715,66 @@
             "explode": true
           },
           {
+            "name": "file_set.cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+              }
+            },
+            "description": "Filter by file_set.cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by file_set.cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by file_set.cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by file_set.cell_type.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.controlled_access",
             "in": "query",
             "schema": {
@@ -29381,7 +29998,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_set.preferred_assay_titles",
             "style": "form",
@@ -29858,6 +30476,22 @@
               "description": "File Set(s) that this file is a gene list for."
             },
             "description": "Filter by gene_list_for",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "hashtag_barcode_map_for",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Hashtag Barcode Map For",
+              "items": {
+                "type": "string",
+                "title": "Hashtag Barcode Map For"
+              },
+              "description": "Link(s) to the auxiliary sets using this file as a hashtag barcode map."
+            },
+            "description": "Filter by hashtag_barcode_map_for",
             "style": "form",
             "explode": true
           },
@@ -38926,6 +39560,36 @@
             "explode": true
           },
           {
+            "name": "assay_term",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Assay Term",
+                "description": "The assay used to produce data in this curated set."
+              }
+            },
+            "description": "Filter by assay_term",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string"
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "assemblies",
             "in": "query",
             "schema": {
@@ -40262,6 +40926,105 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Titles",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Titles",
+                "enum": [
+                  "RNA-seq",
+                  "scRNA-seq",
+                  "snRNA-seq",
+                  "scNT-seq",
+                  "scNT-seq2",
+                  "scNT-seq3",
+                  "scMultiome-NT-seq",
+                  "Parse SPLiT-seq",
+                  "ATAC-seq",
+                  "varACCESS",
+                  "ACCESS-ATAC",
+                  "scATAC-seq",
+                  "scACCESS-ATAC",
+                  "snATAC-seq",
+                  "mtscMultiome",
+                  "miDOGMA-seq",
+                  "DUAL-IPA",
+                  "10x multiome",
+                  "10x multiome with MULTI-seq",
+                  "10x snATAC-seq with Scale pre-indexing",
+                  "snRNA-seq with Scale pre-indexing",
+                  "MULTI-seq",
+                  "SHARE-seq",
+                  "Histone ChIP-seq",
+                  "TF ChIP-seq",
+                  "CUT&RUN",
+                  "MPRA",
+                  "MPRA (scQer)",
+                  "electroporated MPRA",
+                  "AAV-MPRA",
+                  "lentiMPRA",
+                  "STARR-seq",
+                  "Cell painting",
+                  "Variant painting via fluorescence",
+                  "Variant painting via immunostaining",
+                  "Pooled Y2H",
+                  "Arrayed semi-qY2H v1",
+                  "Arrayed semi-qY2H v2",
+                  "Arrayed semi-qY2H v3",
+                  "Arrayed yN2H",
+                  "Arrayed mN2H",
+                  "smFISH",
+                  "MERFISH",
+                  "CRISPR tiling screen guide readout",
+                  "CRISPR tiling screen allelic readout",
+                  "Proliferation CRISPR screen",
+                  "Migration CRISPR screen",
+                  "CRISPR FlowFISH screen",
+                  "CRISPR FACS screen",
+                  "CRISPR MACS screen",
+                  "CRISPR mCherry screen",
+                  "HCR-FlowFISH screen",
+                  "Variant-EFFECTS",
+                  "scCRISPR screen",
+                  "Perturb-seq",
+                  "Parse Perturb-seq",
+                  "CC-Perturb-seq",
+                  "TAP-seq",
+                  "CROP-seq",
+                  "Multiome Perturb-seq",
+                  "SGE",
+                  "SGE-RNA",
+                  "Immune-SGE",
+                  "MAVE",
+                  "MIAA",
+                  "snmC-Seq2",
+                  "snMCT-seq",
+                  "snM3C-seq",
+                  "VAMP-seq",
+                  "VAMP-seq (MultiSTEP)",
+                  "LABEL-seq",
+                  "Hi-C",
+                  "HiCAR",
+                  "Spatial transcriptomics",
+                  "HT-recruit",
+                  "ONT dRNA",
+                  "ONT Fiber-seq",
+                  "ONT direct WGS",
+                  "Bisulfite-seq",
+                  "WGS",
+                  "DNase-seq"
+                ]
+              },
+              "description": "The custom lab preferred label for the experiment performed."
+            },
+            "description": "Filter by preferred_assay_titles",
             "style": "form",
             "explode": true
           },
@@ -64909,7 +65672,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_sets.preferred_assay_titles",
             "style": "form",
@@ -67417,7 +68181,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_sets.preferred_assay_titles",
             "style": "form",
@@ -69781,7 +70546,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_sets.preferred_assay_titles",
             "style": "form",
@@ -71832,7 +72598,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_sets.preferred_assay_titles",
             "style": "form",
@@ -73823,7 +74590,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_sets.preferred_assay_titles",
             "style": "form",
@@ -76268,7 +77036,8 @@
                   "WGS",
                   "DNase-seq"
                 ]
-              }
+              },
+              "description": "Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set."
             },
             "description": "Filter by file_sets.preferred_assay_titles",
             "style": "form",
@@ -79799,7 +80568,7 @@
               "items": {
                 "type": "string",
                 "title": "Treatment Term ID",
-                "pattern": "^((CHEBI:[0-9]{1,7})|(UniProtKB:[A-Z0-9]{6})|(NTR:[0-9]{2,8}))$",
+                "pattern": "^((CHEBI:[0-9]{1,7})|(UniProtKB:[A-Z0-9]{6})|(NTR:[0-9]{2,8})|(NCIT:C[0-9]{2,8}))$",
                 "description": "Ontology identifier describing a component in the treatment."
               }
             },
@@ -80678,6 +81447,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "barcode to well mapping",
                   "bin paired count",
                   "caQTL",
                   "calibrated coding variant effect thresholds",
@@ -80776,6 +81546,7 @@
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
+                  "predicted gene regulatory networks",
                   "prime editing guide RNA sequences",
                   "primer sequences",
                   "primers table",
@@ -80880,6 +81651,7 @@
                   "barcode to hashtag mapping",
                   "barcode to sample mapping",
                   "barcode to variant mapping",
+                  "barcode to well mapping",
                   "bin paired count",
                   "caQTL",
                   "calibrated coding variant effect thresholds",
@@ -80978,6 +81750,7 @@
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
+                  "predicted gene regulatory networks",
                   "prime editing guide RNA sequences",
                   "primer sequences",
                   "primers table",
@@ -82413,6 +83186,7 @@
                 "barcode to hashtag mapping",
                 "barcode to sample mapping",
                 "barcode to variant mapping",
+                "barcode to well mapping",
                 "bin paired count",
                 "caQTL",
                 "calibrated coding variant effect thresholds",
@@ -82511,6 +83285,7 @@
                 "pipeline parameters",
                 "plus strand modification state",
                 "position weight matrix",
+                "predicted gene regulatory networks",
                 "prime editing guide RNA sequences",
                 "primer sequences",
                 "primers table",
@@ -82609,6 +83384,7 @@
                 "barcode to hashtag mapping",
                 "barcode to sample mapping",
                 "barcode to variant mapping",
+                "barcode to well mapping",
                 "bin paired count",
                 "caQTL",
                 "calibrated coding variant effect thresholds",
@@ -82707,6 +83483,7 @@
                 "pipeline parameters",
                 "plus strand modification state",
                 "position weight matrix",
+                "predicted gene regulatory networks",
                 "prime editing guide RNA sequences",
                 "primer sequences",
                 "primers table",
@@ -89767,6 +90544,16 @@
               "title": "Enrichment Design For",
               "type": "string"
             }
+          },
+          "hashtag_barcode_map_for": {
+            "title": "Hashtag Barcode Map For",
+            "description": "Link(s) to the auxiliary sets using this file as a hashtag barcode map.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Hashtag Barcode Map For",
+              "type": "string"
+            }
           }
         }
       },
@@ -91253,6 +92040,98 @@
             "description": "Indicates whether the data object has been submitted to AnVIL.",
             "type": "boolean"
           },
+          "preferred_assay_titles": {
+            "title": "Preferred Assay Titles",
+            "description": "The custom lab preferred label for the experiment performed.",
+            "type": "array",
+            "items": {
+              "title": "Preferred Assay Titles",
+              "type": "string",
+              "enum": [
+                "RNA-seq",
+                "scRNA-seq",
+                "snRNA-seq",
+                "scNT-seq",
+                "scNT-seq2",
+                "scNT-seq3",
+                "scMultiome-NT-seq",
+                "Parse SPLiT-seq",
+                "ATAC-seq",
+                "varACCESS",
+                "ACCESS-ATAC",
+                "scATAC-seq",
+                "scACCESS-ATAC",
+                "snATAC-seq",
+                "mtscMultiome",
+                "miDOGMA-seq",
+                "DUAL-IPA",
+                "10x multiome",
+                "10x multiome with MULTI-seq",
+                "10x snATAC-seq with Scale pre-indexing",
+                "snRNA-seq with Scale pre-indexing",
+                "MULTI-seq",
+                "SHARE-seq",
+                "Histone ChIP-seq",
+                "TF ChIP-seq",
+                "CUT&RUN",
+                "MPRA",
+                "MPRA (scQer)",
+                "electroporated MPRA",
+                "AAV-MPRA",
+                "lentiMPRA",
+                "STARR-seq",
+                "Cell painting",
+                "Variant painting via fluorescence",
+                "Variant painting via immunostaining",
+                "Pooled Y2H",
+                "Arrayed semi-qY2H v1",
+                "Arrayed semi-qY2H v2",
+                "Arrayed semi-qY2H v3",
+                "Arrayed yN2H",
+                "Arrayed mN2H",
+                "smFISH",
+                "MERFISH",
+                "CRISPR tiling screen guide readout",
+                "CRISPR tiling screen allelic readout",
+                "Proliferation CRISPR screen",
+                "Migration CRISPR screen",
+                "CRISPR FlowFISH screen",
+                "CRISPR FACS screen",
+                "CRISPR MACS screen",
+                "CRISPR mCherry screen",
+                "HCR-FlowFISH screen",
+                "Variant-EFFECTS",
+                "scCRISPR screen",
+                "Perturb-seq",
+                "Parse Perturb-seq",
+                "CC-Perturb-seq",
+                "TAP-seq",
+                "CROP-seq",
+                "Multiome Perturb-seq",
+                "SGE",
+                "SGE-RNA",
+                "Immune-SGE",
+                "MAVE",
+                "MIAA",
+                "snmC-Seq2",
+                "snMCT-seq",
+                "snM3C-seq",
+                "VAMP-seq",
+                "VAMP-seq (MultiSTEP)",
+                "LABEL-seq",
+                "Hi-C",
+                "HiCAR",
+                "Spatial transcriptomics",
+                "HT-recruit",
+                "ONT dRNA",
+                "ONT Fiber-seq",
+                "ONT direct WGS",
+                "Bisulfite-seq",
+                "WGS",
+                "DNase-seq"
+              ]
+            }
+          },
           "preview_timestamp": {
             "title": "Preview Timestamp",
             "description": "The date the object was previewed.",
@@ -91498,6 +92377,11 @@
               "type": "string"
             }
           },
+          "assay_term": {
+            "title": "Assay Term",
+            "description": "The assay used to produce data in this curated set.",
+            "type": "string"
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -91584,6 +92468,14 @@
             "title": "Controlled Access",
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
+          },
+          "assay_titles": {
+            "title": "Assay Term Names",
+            "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "assemblies": {
             "title": "Assemblies",
@@ -102215,7 +103107,7 @@
             "title": "Treatment Term ID",
             "description": "Ontology identifier describing a component in the treatment.",
             "type": "string",
-            "pattern": "^((CHEBI:[0-9]{1,7})|(UniProtKB:[A-Z0-9]{6})|(NTR:[0-9]{2,8}))$"
+            "pattern": "^((CHEBI:[0-9]{1,7})|(UniProtKB:[A-Z0-9]{6})|(NTR:[0-9]{2,8})|(NCIT:C[0-9]{2,8}))$"
           },
           "treatment_term_name": {
             "title": "Treatment Term Name",

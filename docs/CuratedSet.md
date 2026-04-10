@@ -7,6 +7,7 @@ A file set for reference files which are utilized in the analysis of IGVF experi
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
+**preferred_assay_titles** | **List[str]** | The custom lab preferred label for the experiment performed. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
@@ -33,6 +34,7 @@ Name | Type | Description | Notes
 **donors** | **List[str]** | The donor(s) associated with this file set. | [optional] 
 **file_set_type** | **str** | The category that best describes this curated file set. | [optional] 
 **supersedes** | **List[str]** | The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
+**assay_term** | **str** | The assay used to produce data in this curated set. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
@@ -44,6 +46,7 @@ Name | Type | Description | Notes
 **construct_library_sets** | **List[str]** | The construct library sets associated with the samples of this file set. | [optional] 
 **data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
+**assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays | [optional] 
 **assemblies** | **List[str]** | The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38). | [optional] 
 **transcriptome_annotations** | **List[str]** | The annotation versions of the reference resource. | [optional] 
 

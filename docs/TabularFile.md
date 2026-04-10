@@ -70,6 +70,7 @@ Name | Type | Description | Notes
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 
 **barcode_map_for** | **List[str]** | Link(s) to the Multiplexed samples using this file as barcode map. | [optional] 
 **enrichment_design_for** | **List[str]** | Link(s) to the measurement sets using this file as a enrichment design. | [optional] 
+**hashtag_barcode_map_for** | **List[str]** | Link(s) to the auxiliary sets using this file as a hashtag barcode map. | [optional] 
 
 ## Example
 
