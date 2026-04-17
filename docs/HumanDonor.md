@@ -30,7 +30,6 @@ Name | Type | Description | Notes
 **description** | **str** | A plain text description of the object. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors. | [optional] 
 **sex** | **str** | Sex of the donor. | [optional] 
-**phenotypic_features** | **List[str]** | A list of associated phenotypic features of the donor. | [optional] 
 **virtual** | **bool** | Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for. | [optional] 
 **supersedes** | **List[str]** | The donor(s) that this donor supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **related_donors** | [**List[RelatedDonor]**](RelatedDonor.md) | Familial relations of this donor. | [optional] 

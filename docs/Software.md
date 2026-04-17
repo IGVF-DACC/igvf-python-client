@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**name** | **str** | Unique name of the software package; a lowercase version of the title. | [optional] 
+**name** | **str** | Unique name of the software package; a version of the title without white spaces. | [optional] 
 **title** | **str** | The preferred viewable name of the software. | [optional] 
 **used_by** | **List[str]** | The component(s) of the IGVF consortium that utilize this software. | [optional] 
 **categories** | **List[str]** | The general categories of this software. | [optional] 
