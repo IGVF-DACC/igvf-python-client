@@ -13,10 +13,8 @@ Name | Type | Description | Notes
 **base_modifications** | **List[str]** | The chemical modifications to bases in a DNA sequence that are detected in this file. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
 **controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
-**assembly** | **str** | Genome assembly applicable for the tabular data. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 
-**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **reference_files** | **List[str]** | Link to the reference files used to generate this file. | [optional] 
 **filtered** | **bool** | Indicates whether the file has gone through some filtering step, for example, removal of PCR duplicates or filtering based on significance calling. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
@@ -53,6 +51,8 @@ Name | Type | Description | Notes
 **checkfiles_timestamp** | **str** | The date and time the file object was last checked by the Checkfiles script. | [optional] 
 **supersedes** | **List[str]** | The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **catalog_adapters** | **List[str]** | IGVF Catalog Adapters that ingests this file | [optional] 
+**submitted_assembly** | **str** | Genome assembly for a tabular file. | [optional] 
+**submitted_transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the tabular file. | [optional] 
@@ -64,6 +64,7 @@ Name | Type | Description | Notes
 **superseded_by** | **List[str]** | File(s) this file is superseded by virtue of those file(s) being newer, better, or a fixed version of etc. than this one. | [optional] 
 **assay_titles** | **List[str]** | Title(s) of assay from the file set this file belongs to. | [optional] 
 **preferred_assay_titles** | **List[str]** | Preferred assay titles from the file set this file belongs to. | [optional] 
+**preferred_assay_slims** | **List[str]** | Preferred assay slims from the file set this file belongs to. | [optional] 
 **workflows** | **List[str]** | The workflows associated with the analysis step version used to produce this file. | [optional] 
 **href** | **str** | The download path to obtain file. | [optional] 
 **s3_uri** | **str** | The S3 URI of public file object. | [optional] 
@@ -71,6 +72,8 @@ Name | Type | Description | Notes
 **barcode_map_for** | **List[str]** | Link(s) to the Multiplexed samples using this file as barcode map. | [optional] 
 **enrichment_design_for** | **List[str]** | Link(s) to the measurement sets using this file as a enrichment design. | [optional] 
 **hashtag_barcode_map_for** | **List[str]** | Link(s) to the auxiliary sets using this file as a hashtag barcode map. | [optional] 
+**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
+**assembly** | **str** | The assembly associated with the alignment file. | [optional] 
 
 ## Example
 

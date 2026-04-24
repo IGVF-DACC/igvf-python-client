@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays | [optional] 
 **assemblies** | **List[str]** | The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38). | [optional] 
 **transcriptome_annotations** | **List[str]** | The annotation versions of the reference resource. | [optional] 
+**preferred_assay_slims** | **List[str]** | Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set. | [optional] 
 
 ## Example
 

@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **model_name** | **str** | The custom lab name given to this predictive model set. | [optional] 
 **model_version** | **str** | The semantic version number for this predictive model set. | [optional] 
 **prediction_objects** | **List[str]** | The objects this predictive model set is targeting. | [optional] 
+**assay_terms** | **List[str]** | The assay terms used to produce data in this model set. | [optional] 
 **model_zoo_location** | **str** | The link to the model on the Kipoi repository. | [optional] 
 **assessed_genes** | **List[str]** | A list of genes assessed in this model set. | [optional] 
 **external_input_data** | **str** | A tabular file with links to external data utilized for this model. | [optional] 
@@ -52,8 +53,10 @@ Name | Type | Description | Notes
 **construct_library_sets** | **List[str]** | The construct library sets associated with the samples of this file set. | [optional] 
 **data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
+**assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays | [optional] 
 **externally_hosted** | **bool** |  | [optional] 
 **software_versions** | **List[str]** | The software versions used to produce this predictive model. | [optional] 
+**preferred_assay_slims** | **List[str]** | Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set. | [optional] 
 
 ## Example
 

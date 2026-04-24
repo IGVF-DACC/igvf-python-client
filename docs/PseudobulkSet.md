@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **workflows** | **List[str]** | A workflow for computational analysis of genomic data. A workflow is made up of analysis steps. | [optional] 
 **preferred_assay_titles** | **List[str]** | Preferred Assay Title(s) of assays that produced data analyzed in the pseudobulk set. | [optional] 
+**preferred_assay_slims** | **List[str]** | Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set. | [optional] 
 **assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays. | [optional] 
 **assay_slims** | **List[str]** | A broad categorization of the assay term. | [optional] 
 

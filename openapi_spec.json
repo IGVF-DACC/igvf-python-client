@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "118.0.2"
+    "version": "119.0.0"
   },
   "servers": [
     {
@@ -8478,6 +8478,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -10906,6 +10923,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -13355,6 +13389,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -15765,6 +15816,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -18224,6 +18292,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -20751,6 +20836,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -23259,6 +23361,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -25785,6 +25904,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -28424,6 +28560,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -29154,19 +29307,7 @@
               "items": {
                 "type": "string",
                 "title": "Genome Assembly",
-                "enum": [
-                  "GRCh38",
-                  "hg19",
-                  "Cast - GRCm39",
-                  "GRCm39",
-                  "mm10",
-                  "GRCh38, GRCm39",
-                  "GRCh38, mm10",
-                  "C57BL_6J_T2T_v1 + GRCm39_X",
-                  "CAST_EiJ_T2T_v1",
-                  "custom"
-                ],
-                "description": "Genome assembly applicable for the tabular data."
+                "description": "The assembly associated with the alignment file."
               }
             },
             "description": "Filter by assembly",
@@ -31040,6 +31181,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Preferred assay slim from the file set this file belongs to."
+              },
+              "description": "Preferred assay slims from the file set this file belongs to."
+            },
+            "description": "Filter by preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -31175,6 +31333,34 @@
             "explode": true
           },
           {
+            "name": "submitted_assembly",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted Genome Assembly",
+                "enum": [
+                  "GRCh38",
+                  "hg19",
+                  "Cast - GRCm39",
+                  "GRCm39",
+                  "mm10",
+                  "GRCh38, GRCm39",
+                  "GRCh38, mm10",
+                  "C57BL_6J_T2T_v1 + GRCm39_X",
+                  "CAST_EiJ_T2T_v1",
+                  "custom",
+                  "unknown"
+                ],
+                "description": "Genome assembly for a tabular file."
+              }
+            },
+            "description": "Filter by submitted_assembly",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
@@ -31215,6 +31401,50 @@
               }
             },
             "description": "Filter by submitted_file_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "submitted_transcriptome_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Submitted Transcriptome Annotation",
+                "enum": [
+                  "GENCODE 22",
+                  "GENCODE 24",
+                  "GENCODE 28",
+                  "GENCODE 32",
+                  "GENCODE 38",
+                  "GENCODE 40",
+                  "GENCODE 41",
+                  "GENCODE 42",
+                  "GENCODE 43",
+                  "GENCODE 44",
+                  "GENCODE 45",
+                  "GENCODE 47",
+                  "GENCODE Cast - M32",
+                  "GENCODE M17",
+                  "GENCODE M25",
+                  "GENCODE M30",
+                  "GENCODE M31",
+                  "GENCODE M32",
+                  "GENCODE M33",
+                  "GENCODE M34",
+                  "GENCODE M36",
+                  "GENCODE 32, GENCODE M23",
+                  "GENCODE 41, GENCODE M25",
+                  "GENCODE 44, GENCODE M33",
+                  "CAST_EiJ_T2T_v1_TA1",
+                  "C57BL_6J_T2T_v1_TA1 + M36_X",
+                  "unknown"
+                ],
+                "description": "The annotation and version of the reference resource."
+              }
+            },
+            "description": "Filter by submitted_transcriptome_annotation",
             "style": "form",
             "explode": true
           },
@@ -31290,34 +31520,6 @@
               "items": {
                 "type": "string",
                 "title": "Transcriptome Annotation",
-                "enum": [
-                  "GENCODE 22",
-                  "GENCODE 24",
-                  "GENCODE 28",
-                  "GENCODE 32",
-                  "GENCODE 38",
-                  "GENCODE 40",
-                  "GENCODE 41",
-                  "GENCODE 42",
-                  "GENCODE 43",
-                  "GENCODE 44",
-                  "GENCODE 45",
-                  "GENCODE 47",
-                  "GENCODE Cast - M32",
-                  "GENCODE M17",
-                  "GENCODE M25",
-                  "GENCODE M30",
-                  "GENCODE M31",
-                  "GENCODE M32",
-                  "GENCODE M33",
-                  "GENCODE M34",
-                  "GENCODE M36",
-                  "GENCODE 32, GENCODE M23",
-                  "GENCODE 41, GENCODE M25",
-                  "GENCODE 44, GENCODE M33",
-                  "CAST_EiJ_T2T_v1_TA1",
-                  "C57BL_6J_T2T_v1_TA1 + M36_X"
-                ],
                 "description": "The annotation and version of the reference resource."
               }
             },
@@ -33282,6 +33484,23 @@
               "description": "The document(s) or file(s) providing necessary configurations for reproducing the analysis."
             },
             "description": "Filter by pipeline_parameters",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -36108,6 +36327,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -38638,6 +38874,23 @@
               }
             },
             "description": "Filter by orf_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -41240,6 +41493,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -44267,6 +44537,23 @@
             "explode": true
           },
           {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -45590,6 +45877,66 @@
               "description": "Accessions previously assigned to objects that have been merged with this object."
             },
             "description": "Filter by alternate_accessions",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assay_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by assay_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assay_terms.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by assay_terms.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assay_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by assay_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string"
+              },
+              "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays"
+            },
+            "description": "Filter by assay_titles",
             "style": "form",
             "explode": true
           },
@@ -47175,6 +47522,23 @@
               "description": "The objects this predictive model set is targeting."
             },
             "description": "Filter by prediction_objects",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -52991,6 +53355,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -86475,6 +86856,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
           "workflows": {
             "title": "Workflows",
             "description": "The workflows associated with the analysis step version used to produce this file.",
@@ -86998,6 +87390,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
           "workflows": {
             "title": "Workflows",
             "description": "The workflows associated with the analysis step version used to produce this file.",
@@ -87506,6 +87909,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
           "workflows": {
             "title": "Workflows",
             "description": "The workflows associated with the analysis step version used to produce this file.",
@@ -88006,6 +88420,17 @@
             "items": {
               "title": "Assay Title",
               "description": "Preferred assay titles from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -88603,6 +89028,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
           "workflows": {
             "title": "Workflows",
             "description": "The workflows associated with the analysis step version used to produce this file.",
@@ -89144,6 +89580,17 @@
             "items": {
               "title": "Assay Title",
               "description": "Preferred assay titles from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
               "type": "string"
             }
           },
@@ -89783,6 +90230,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
           "workflows": {
             "title": "Workflows",
             "description": "The workflows associated with the analysis step version used to produce this file.",
@@ -90377,6 +90835,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
           "workflows": {
             "title": "Workflows",
             "description": "The workflows associated with the analysis step version used to produce this file.",
@@ -90921,6 +91390,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
           "workflows": {
             "title": "Workflows",
             "description": "The workflows associated with the analysis step version used to produce this file.",
@@ -91090,23 +91570,6 @@
             "description": "Boolean value, indicating the file being controlled access, if true.",
             "type": "boolean"
           },
-          "assembly": {
-            "title": "Genome Assembly",
-            "description": "Genome assembly applicable for the tabular data.",
-            "type": "string",
-            "enum": [
-              "GRCh38",
-              "hg19",
-              "Cast - GRCm39",
-              "GRCm39",
-              "mm10",
-              "GRCh38, GRCm39",
-              "GRCh38, mm10",
-              "C57BL_6J_T2T_v1 + GRCm39_X",
-              "CAST_EiJ_T2T_v1",
-              "custom"
-            ]
-          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -91128,39 +91591,6 @@
               "mpra_starr",
               "mpra_element",
               "mpra_variant"
-            ]
-          },
-          "transcriptome_annotation": {
-            "title": "Transcriptome Annotation",
-            "description": "The annotation and version of the reference resource.",
-            "type": "string",
-            "enum": [
-              "GENCODE 22",
-              "GENCODE 24",
-              "GENCODE 28",
-              "GENCODE 32",
-              "GENCODE 38",
-              "GENCODE 40",
-              "GENCODE 41",
-              "GENCODE 42",
-              "GENCODE 43",
-              "GENCODE 44",
-              "GENCODE 45",
-              "GENCODE 47",
-              "GENCODE Cast - M32",
-              "GENCODE M17",
-              "GENCODE M25",
-              "GENCODE M30",
-              "GENCODE M31",
-              "GENCODE M32",
-              "GENCODE M33",
-              "GENCODE M34",
-              "GENCODE M36",
-              "GENCODE 32, GENCODE M23",
-              "GENCODE 41, GENCODE M25",
-              "GENCODE 44, GENCODE M33",
-              "CAST_EiJ_T2T_v1_TA1",
-              "C57BL_6J_T2T_v1_TA1 + M36_X"
             ]
           },
           "reference_files": {
@@ -91465,6 +91895,58 @@
               "pattern": "https:\\/\\/github\\.com\\/IGVF-DACC\\/igvf-catalog\\/blob\\/dev\\/data\\/adapters\\/(.)*\\.py"
             }
           },
+          "submitted_assembly": {
+            "title": "Submitted Genome Assembly",
+            "description": "Genome assembly for a tabular file.",
+            "type": "string",
+            "enum": [
+              "GRCh38",
+              "hg19",
+              "Cast - GRCm39",
+              "GRCm39",
+              "mm10",
+              "GRCh38, GRCm39",
+              "GRCh38, mm10",
+              "C57BL_6J_T2T_v1 + GRCm39_X",
+              "CAST_EiJ_T2T_v1",
+              "custom",
+              "unknown"
+            ]
+          },
+          "submitted_transcriptome_annotation": {
+            "title": "Submitted Transcriptome Annotation",
+            "description": "The annotation and version of the reference resource.",
+            "type": "string",
+            "enum": [
+              "GENCODE 22",
+              "GENCODE 24",
+              "GENCODE 28",
+              "GENCODE 32",
+              "GENCODE 38",
+              "GENCODE 40",
+              "GENCODE 41",
+              "GENCODE 42",
+              "GENCODE 43",
+              "GENCODE 44",
+              "GENCODE 45",
+              "GENCODE 47",
+              "GENCODE Cast - M32",
+              "GENCODE M17",
+              "GENCODE M25",
+              "GENCODE M30",
+              "GENCODE M31",
+              "GENCODE M32",
+              "GENCODE M33",
+              "GENCODE M34",
+              "GENCODE M36",
+              "GENCODE 32, GENCODE M23",
+              "GENCODE 41, GENCODE M25",
+              "GENCODE 44, GENCODE M33",
+              "CAST_EiJ_T2T_v1_TA1",
+              "C57BL_6J_T2T_v1_TA1 + M36_X",
+              "unknown"
+            ]
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -91563,6 +92045,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred assay slims from the file set this file belongs to.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Preferred assay slim from the file set this file belongs to.",
+              "type": "string"
+            }
+          },
           "workflows": {
             "title": "Workflows",
             "description": "The workflows associated with the analysis step version used to produce this file.",
@@ -91616,6 +92109,16 @@
               "title": "Hashtag Barcode Map For",
               "type": "string"
             }
+          },
+          "transcriptome_annotation": {
+            "title": "Transcriptome Annotation",
+            "type": "string",
+            "description": "The annotation and version of the reference resource."
+          },
+          "assembly": {
+            "title": "Genome Assembly",
+            "type": "string",
+            "description": "The assembly associated with the alignment file."
           }
         }
       },
@@ -91997,6 +92500,17 @@
             "items": {
               "title": "Preferred Assay Titles",
               "description": "Title of assay that produced data analyzed in the analysis set.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Category of assay that produced data analyzed in the analysis set.",
               "type": "string"
             }
           },
@@ -92430,6 +92944,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Preferred Assay Title",
+              "type": "string"
+            }
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Category of assay that produced data analyzed in the analysis set.",
               "type": "string"
             }
           },
@@ -93059,6 +93584,17 @@
               "type": "string"
             }
           },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Category of assay that produced data analyzed in the analysis set.",
+              "type": "string"
+            }
+          },
           "assay_titles": {
             "title": "Assay Term Names",
             "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays.",
@@ -93558,6 +94094,17 @@
             "uniqueItems": true,
             "items": {
               "title": "Transcriptome Annotation",
+              "type": "string"
+            }
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Category of assay that produced data analyzed in the analysis set.",
               "type": "string"
             }
           }
@@ -94208,6 +94755,17 @@
           "externally_hosted": {
             "title": "Externally Hosted",
             "type": "boolean"
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Category of assay that produced data analyzed in the analysis set.",
+              "type": "string"
+            }
           }
         }
       },
@@ -94589,6 +95147,17 @@
               ]
             }
           },
+          "assay_terms": {
+            "title": "Assay Terms",
+            "description": "The assay terms used to produce data in this model set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assay Term",
+              "description": "An assay term used to produce data in this model set.",
+              "type": "string"
+            }
+          },
           "model_zoo_location": {
             "title": "Model Zoo Location",
             "description": "The link to the model on the Kipoi repository.",
@@ -94697,6 +95266,14 @@
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
           },
+          "assay_titles": {
+            "title": "Assay Term Names",
+            "description": "Ontology term names from Ontology of Biomedical Investigations (OBI) for assays",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "externally_hosted": {
             "title": "Externally Hosted",
             "type": "boolean"
@@ -94709,6 +95286,17 @@
             "items": {
               "title": "Software Version",
               "description": "A software version used to produce this predictive model.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Category of assay that produced data analyzed in the analysis set.",
               "type": "string"
             }
           }
@@ -95523,6 +96111,17 @@
             "items": {
               "title": "Preferred Assay Titles",
               "description": "Title of assay that produced data analyzed in the pseudobulk set.",
+              "type": "string"
+            }
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Category of assay that produced data analyzed in the analysis set.",
               "type": "string"
             }
           },

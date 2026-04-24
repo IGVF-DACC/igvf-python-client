@@ -64,6 +64,7 @@ Name | Type | Description | Notes
 **assay_slims** | **List[str]** | A broad categorization of the assay term. | [optional] 
 **related_measurement_sets** | [**List[RelatedMeasurementSetGroup]**](RelatedMeasurementSetGroup.md) | Measurement sets related to this one, grouped by relationship type. | [optional] 
 **externally_hosted** | **bool** |  | [optional] 
+**preferred_assay_slims** | **List[str]** | Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set. | [optional] 
 
 ## Example
 
