@@ -113,7 +113,7 @@ Name | Type | Description | Notes
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 
 **content_summary** | **str** | A summary of the data in the signal file. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
-**assembly** | **str** | The assembly associated with the alignment file. | [optional] 
+**assembly** | **str** | The assembly associated with the tabular file. | [optional] 
 **catalog_collections** | **List[str]** | The collections in the IGVF catalog that contain the data in this file. | [optional] 
 **catalog_class** | **str** | The class curated in the IGVF catalog that the data in this file belongs to. | [optional] 
 **catalog_notes** | **str** | DACC notes for data loading in the IGVF catalog | [optional] 

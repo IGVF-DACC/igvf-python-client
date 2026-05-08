@@ -73,7 +73,7 @@ Name | Type | Description | Notes
 **enrichment_design_for** | **List[str]** | Link(s) to the measurement sets using this file as a enrichment design. | [optional] 
 **hashtag_barcode_map_for** | **List[str]** | Link(s) to the auxiliary sets using this file as a hashtag barcode map. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
-**assembly** | **str** | The assembly associated with the alignment file. | [optional] 
+**assembly** | **str** | The assembly associated with the tabular file. | [optional] 
 
 ## Example
 
