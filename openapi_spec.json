@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "120.1.1"
+    "version": "120.2.0"
   },
   "servers": [
     {
@@ -1473,6 +1473,21 @@
             "explode": true
           },
           {
+            "name": "analysis_step_versions.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary",
+                "description": "A summary of the object."
+              }
+            },
+            "description": "Filter by analysis_step_versions.summary",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_step_versions.workflows.@id",
             "in": "query",
             "schema": {
@@ -1529,6 +1544,20 @@
               }
             },
             "description": "Filter by analysis_step_versions.workflows.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_versions.workflows.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by analysis_step_versions.workflows.summary",
             "style": "form",
             "explode": true
           },
@@ -21488,7 +21517,13 @@
                 "enum": [
                   "GRCh38",
                   "hg19",
-                  "Cast - GRCm39",
+                  "129S1/SvImJ - GRCm39",
+                  "A/J - GRCm39",
+                  "Cast/EiJ - GRCm39",
+                  "NOD/ShiLtJ - GRCm39",
+                  "NZO/H1LtJ - GRCm39",
+                  "PWK/PhJ - GRCm39",
+                  "WSB/EiJ - GRCm39",
                   "GRCm39",
                   "mm10",
                   "GRCh38, GRCm39",
@@ -34325,6 +34360,28 @@
             "explode": true
           },
           {
+            "name": "targeted_proteins",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Targeted Proteins",
+              "items": {
+                "type": "string",
+                "title": "Targeted Protein",
+                "enum": [
+                  "H3K4me3",
+                  "H3K27ac",
+                  "H3K27me",
+                  "IgG"
+                ]
+              },
+              "description": "Immunoprecipitated protein targets or controls aggregated from the input measurement sets and analysis sets."
+            },
+            "description": "Filter by targeted_proteins",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "uniform_pipeline_status",
             "in": "query",
             "schema": {
@@ -45588,6 +45645,28 @@
             "explode": true
           },
           {
+            "name": "targeted_proteins",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Targeted Proteins",
+              "items": {
+                "type": "string",
+                "title": "Targeted Protein",
+                "enum": [
+                  "H3K4me3",
+                  "H3K27ac",
+                  "H3K27me",
+                  "IgG"
+                ]
+              },
+              "description": "Immunoprecipitated protein targets or controls for chromatin binding assays, such as histone post-translational modifications profiled by Histone ChIP-seq or CUT&RUN."
+            },
+            "description": "Filter by targeted_proteins",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "uuid",
             "in": "query",
             "schema": {
@@ -54611,7 +54690,13 @@
                     "enum": [
                       "GRCh38",
                       "hg19",
-                      "Cast - GRCm39",
+                      "129S1/SvImJ - GRCm39",
+                      "A/J - GRCm39",
+                      "Cast/EiJ - GRCm39",
+                      "NOD/ShiLtJ - GRCm39",
+                      "NZO/H1LtJ - GRCm39",
+                      "PWK/PhJ - GRCm39",
+                      "WSB/EiJ - GRCm39",
                       "GRCm39",
                       "mm10",
                       "GRCh38, GRCm39",
@@ -89690,7 +89775,13 @@
             "enum": [
               "GRCh38",
               "hg19",
-              "Cast - GRCm39",
+              "129S1/SvImJ - GRCm39",
+              "A/J - GRCm39",
+              "Cast/EiJ - GRCm39",
+              "NOD/ShiLtJ - GRCm39",
+              "NZO/H1LtJ - GRCm39",
+              "PWK/PhJ - GRCm39",
+              "WSB/EiJ - GRCm39",
               "GRCm39",
               "mm10",
               "GRCh38, GRCm39",
@@ -92530,6 +92621,22 @@
               "type": "string"
             }
           },
+          "targeted_proteins": {
+            "title": "Targeted Proteins",
+            "description": "Immunoprecipitated protein targets or controls aggregated from the input measurement sets and analysis sets.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Targeted Protein",
+              "type": "string",
+              "enum": [
+                "H3K4me3",
+                "H3K27ac",
+                "H3K27me",
+                "IgG"
+              ]
+            }
+          },
           "enrichment_designs": {
             "title": "Enrichment Designs",
             "description": "The enrichment designs used by the inputs of this analysis set.",
@@ -94511,6 +94618,22 @@
               "type": "string"
             }
           },
+          "targeted_proteins": {
+            "title": "Targeted Proteins",
+            "description": "Immunoprecipitated protein targets or controls for chromatin binding assays, such as histone post-translational modifications profiled by Histone ChIP-seq or CUT&RUN.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Targeted Protein",
+              "type": "string",
+              "enum": [
+                "H3K4me3",
+                "H3K27ac",
+                "H3K27me",
+                "IgG"
+              ]
+            }
+          },
           "functional_assay_mechanisms": {
             "title": "Functional Assay Mechanisms",
             "description": "The biological processes measured by this functional assay. For example, a VAMP-seq (MultiSTEP) assay measures the effects of variants on protein carboxylation and secretion processes.",
@@ -96332,7 +96455,13 @@
                   "enum": [
                     "GRCh38",
                     "hg19",
-                    "Cast - GRCm39",
+                    "129S1/SvImJ - GRCm39",
+                    "A/J - GRCm39",
+                    "Cast/EiJ - GRCm39",
+                    "NOD/ShiLtJ - GRCm39",
+                    "NZO/H1LtJ - GRCm39",
+                    "PWK/PhJ - GRCm39",
+                    "WSB/EiJ - GRCm39",
                     "GRCm39",
                     "mm10",
                     "GRCh38, GRCm39",
