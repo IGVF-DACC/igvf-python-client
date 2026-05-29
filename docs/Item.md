@@ -174,6 +174,7 @@ Name | Type | Description | Notes
 **enrichment_designs** | **List[str]** | Files describing the assay-specific enrichment strategy (e.g., primer designs for PCR-based methods or probe/bait designs for hybrid capture) that define which regions are preferentially sequenced in this measurement set. | [optional] 
 **hashtag_barcode_map** | **str** | The link to the hashtag barcode mapping tabular file. | [optional] 
 **measurement_sets** | **List[str]** | The measurement sets that link to this auxiliary set. | [optional] 
+**crispr_readout** | **str** | The sequencing readout produced by this CRISPR measurement set. | [optional] 
 **control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this file set. | [optional] 
 **small_scale_loci_list** | [**List[Locus1]**](Locus1.md) | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s) whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genetic variants whose functionality is predicted in this prediction set. | [optional] 
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genetic variants whose functionality is predicted in this prediction set. | [optional] 
