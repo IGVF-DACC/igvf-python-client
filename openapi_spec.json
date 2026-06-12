@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "122.0.0"
+    "version": "124.0.0"
   },
   "servers": [
     {
@@ -1680,6 +1680,8 @@
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
                   "chromatin contact quantifications",
+                  "cis differential expression quantifications per element",
+                  "cis differential expression quantifications per guide",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -1691,11 +1693,11 @@
                   "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
-                  "differential TF enrichment quantifications",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential guide quantifications",
+                  "differential open reading frame quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
@@ -1709,7 +1711,6 @@
                   "element to gene interactions",
                   "elements reference",
                   "exclusion list",
-                  "exclusion list regions",
                   "exon constraint",
                   "external source data",
                   "feature weights",
@@ -1762,6 +1763,9 @@
                   "neural network architecture and edge weights",
                   "normalized variants profile",
                   "ontology terms",
+                  "open reading frame quantifications",
+                  "open reading frame reference",
+                  "open reading frames",
                   "orthologs",
                   "pQTL",
                   "pathogenicity validation",
@@ -1770,6 +1774,7 @@
                   "peak quantifications",
                   "peaks",
                   "per cell type enrichment scores",
+                  "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -1818,6 +1823,8 @@
                   "spot by gene matrix",
                   "target transcripts",
                   "tissue positions",
+                  "trans differential expression quantifications per element",
+                  "trans differential expression quantifications per guide",
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome index",
@@ -1944,6 +1951,8 @@
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
                   "chromatin contact quantifications",
+                  "cis differential expression quantifications per element",
+                  "cis differential expression quantifications per guide",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -1955,11 +1964,11 @@
                   "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
-                  "differential TF enrichment quantifications",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential guide quantifications",
+                  "differential open reading frame quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
@@ -1973,7 +1982,6 @@
                   "element to gene interactions",
                   "elements reference",
                   "exclusion list",
-                  "exclusion list regions",
                   "exon constraint",
                   "external source data",
                   "feature weights",
@@ -2026,6 +2034,9 @@
                   "neural network architecture and edge weights",
                   "normalized variants profile",
                   "ontology terms",
+                  "open reading frame quantifications",
+                  "open reading frame reference",
+                  "open reading frames",
                   "orthologs",
                   "pQTL",
                   "pathogenicity validation",
@@ -2034,6 +2045,7 @@
                   "peak quantifications",
                   "peaks",
                   "per cell type enrichment scores",
+                  "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -2082,6 +2094,8 @@
                   "spot by gene matrix",
                   "target transcripts",
                   "tissue positions",
+                  "trans differential expression quantifications per element",
+                  "trans differential expression quantifications per guide",
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome index",
@@ -2622,6 +2636,8 @@
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
                   "chromatin contact quantifications",
+                  "cis differential expression quantifications per element",
+                  "cis differential expression quantifications per guide",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -2633,11 +2649,11 @@
                   "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
-                  "differential TF enrichment quantifications",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential guide quantifications",
+                  "differential open reading frame quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
@@ -2651,7 +2667,6 @@
                   "element to gene interactions",
                   "elements reference",
                   "exclusion list",
-                  "exclusion list regions",
                   "exon constraint",
                   "external source data",
                   "feature weights",
@@ -2704,6 +2719,9 @@
                   "neural network architecture and edge weights",
                   "normalized variants profile",
                   "ontology terms",
+                  "open reading frame quantifications",
+                  "open reading frame reference",
+                  "open reading frames",
                   "orthologs",
                   "pQTL",
                   "pathogenicity validation",
@@ -2712,6 +2730,7 @@
                   "peak quantifications",
                   "peaks",
                   "per cell type enrichment scores",
+                  "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -2760,6 +2779,8 @@
                   "spot by gene matrix",
                   "target transcripts",
                   "tissue positions",
+                  "trans differential expression quantifications per element",
+                  "trans differential expression quantifications per guide",
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome index",
@@ -2842,6 +2863,8 @@
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
                   "chromatin contact quantifications",
+                  "cis differential expression quantifications per element",
+                  "cis differential expression quantifications per guide",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -2853,11 +2876,11 @@
                   "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
-                  "differential TF enrichment quantifications",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential guide quantifications",
+                  "differential open reading frame quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
@@ -2871,7 +2894,6 @@
                   "element to gene interactions",
                   "elements reference",
                   "exclusion list",
-                  "exclusion list regions",
                   "exon constraint",
                   "external source data",
                   "feature weights",
@@ -2924,6 +2946,9 @@
                   "neural network architecture and edge weights",
                   "normalized variants profile",
                   "ontology terms",
+                  "open reading frame quantifications",
+                  "open reading frame reference",
+                  "open reading frames",
                   "orthologs",
                   "pQTL",
                   "pathogenicity validation",
@@ -2932,6 +2957,7 @@
                   "peak quantifications",
                   "peaks",
                   "per cell type enrichment scores",
+                  "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -2980,6 +3006,8 @@
                   "spot by gene matrix",
                   "target transcripts",
                   "tissue positions",
+                  "trans differential expression quantifications per element",
+                  "trans differential expression quantifications per guide",
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome index",
@@ -7339,7 +7367,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -7641,7 +7669,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -9791,7 +9819,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -10093,7 +10121,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -12196,7 +12224,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -12498,7 +12526,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -14645,7 +14673,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -14947,7 +14975,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -17094,7 +17122,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -17396,7 +17424,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -18369,33 +18397,6 @@
             "explode": true
           },
           {
-            "name": "principal_dimension",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Principal Dimension",
-                "enum": [
-                  "cell",
-                  "CRISPR guide capture",
-                  "fragment",
-                  "gene",
-                  "mitochondrial variants",
-                  "time",
-                  "treatment",
-                  "variant",
-                  "genomic position",
-                  "spot barcode"
-                ],
-                "description": "The principal dimension of the matrix."
-              }
-            },
-            "description": "Filter by principal_dimension",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "quality_metrics",
             "in": "query",
             "schema": {
@@ -18471,38 +18472,6 @@
               }
             },
             "description": "Filter by s3_uri",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "secondary_dimensions",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Secondary Dimensions",
-              "items": {
-                "type": "string",
-                "title": "Secondary Dimensions",
-                "enum": [
-                  "antibody capture",
-                  "barcode count",
-                  "cell",
-                  "CRISPR guide capture",
-                  "fragment",
-                  "gene",
-                  "gene expression",
-                  "genomic position",
-                  "multiplexing oligo",
-                  "peak",
-                  "time",
-                  "treatment",
-                  "UMI count",
-                  "variant"
-                ]
-              },
-              "description": "The secondary, tertiary....n levels of dimensions of the matrix."
-            },
-            "description": "Filter by secondary_dimensions",
             "style": "form",
             "explode": true
           },
@@ -19637,7 +19606,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -19939,7 +19908,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -22159,7 +22128,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -22461,7 +22430,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -24570,7 +24539,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -24872,7 +24841,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -27300,7 +27269,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -27602,7 +27571,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -29907,7 +29876,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -30209,7 +30178,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -33721,6 +33690,33 @@
             "explode": true
           },
           {
+            "name": "samples.construct_delivery_methods",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Construct Delivery Methods",
+              "items": {
+                "type": "string",
+                "title": "Construct Delivery Method",
+                "enum": [
+                  "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection",
+                  "transformation",
+                  "nucleofection",
+                  "transposase"
+                ]
+              },
+              "description": "Methods used to deliver construct libraries into the sample."
+            },
+            "description": "Filter by samples.construct_delivery_methods",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.growth_medium",
             "in": "query",
             "schema": {
@@ -36249,7 +36245,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -36555,6 +36551,33 @@
               "description": "The general category of this type of sample."
             },
             "description": "Filter by samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.construct_delivery_methods",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Construct Delivery Methods",
+              "items": {
+                "type": "string",
+                "title": "Construct Delivery Method",
+                "enum": [
+                  "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection",
+                  "transformation",
+                  "nucleofection",
+                  "transposase"
+                ]
+              },
+              "description": "Methods used to deliver construct libraries into the sample."
+            },
+            "description": "Filter by samples.construct_delivery_methods",
             "style": "form",
             "explode": true
           },
@@ -39173,7 +39196,8 @@
                   "lentiviral transduction",
                   "transfection",
                   "transformation",
-                  "nucleofection"
+                  "nucleofection",
+                  "transposase"
                 ]
               },
               "description": "Methods used to deliver construct libraries into the sample."
@@ -41610,7 +41634,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -41852,6 +41876,33 @@
               "description": "The general category of this type of sample."
             },
             "description": "Filter by samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.construct_delivery_methods",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Construct Delivery Methods",
+              "items": {
+                "type": "string",
+                "title": "Construct Delivery Method",
+                "enum": [
+                  "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection",
+                  "transformation",
+                  "nucleofection",
+                  "transposase"
+                ]
+              },
+              "description": "Methods used to deliver construct libraries into the sample."
+            },
+            "description": "Filter by samples.construct_delivery_methods",
             "style": "form",
             "explode": true
           },
@@ -44684,7 +44735,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -44987,6 +45038,33 @@
               "description": "The general category of this type of sample."
             },
             "description": "Filter by samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.construct_delivery_methods",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Construct Delivery Methods",
+              "items": {
+                "type": "string",
+                "title": "Construct Delivery Method",
+                "enum": [
+                  "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection",
+                  "transformation",
+                  "nucleofection",
+                  "transposase"
+                ]
+              },
+              "description": "Methods used to deliver construct libraries into the sample."
+            },
+            "description": "Filter by samples.construct_delivery_methods",
             "style": "form",
             "explode": true
           },
@@ -47690,7 +47768,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -47932,6 +48010,33 @@
               "description": "The general category of this type of sample."
             },
             "description": "Filter by samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.construct_delivery_methods",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Construct Delivery Methods",
+              "items": {
+                "type": "string",
+                "title": "Construct Delivery Method",
+                "enum": [
+                  "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection",
+                  "transformation",
+                  "nucleofection",
+                  "transposase"
+                ]
+              },
+              "description": "Methods used to deliver construct libraries into the sample."
+            },
+            "description": "Filter by samples.construct_delivery_methods",
             "style": "form",
             "explode": true
           },
@@ -50738,6 +50843,33 @@
             "explode": true
           },
           {
+            "name": "samples.construct_delivery_methods",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Construct Delivery Methods",
+              "items": {
+                "type": "string",
+                "title": "Construct Delivery Method",
+                "enum": [
+                  "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection",
+                  "transformation",
+                  "nucleofection",
+                  "transposase"
+                ]
+              },
+              "description": "Methods used to deliver construct libraries into the sample."
+            },
+            "description": "Filter by samples.construct_delivery_methods",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "samples.construct_library_sets.@id",
             "in": "query",
             "schema": {
@@ -52065,6 +52197,20 @@
             "explode": true
           },
           {
+            "name": "cell_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Annotation"
+              }
+            },
+            "description": "Filter by cell_annotation",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "cell_qualifier",
             "in": "query",
             "schema": {
@@ -53382,6 +53528,21 @@
             "explode": true
           },
           {
+            "name": "input_file_sets.file_set_type",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "File Set Type",
+                "description": "The level of this analysis set."
+              }
+            },
+            "description": "Filter by input_file_sets.file_set_type",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "input_file_sets.status",
             "in": "query",
             "schema": {
@@ -53452,6 +53613,21 @@
               }
             },
             "description": "Filter by lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "merged",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "title": "Merged",
+                "description": "Indicates if the pseudobulk set has been merged from other pseudobulk sets."
+              }
+            },
+            "description": "Filter by merged",
             "style": "form",
             "explode": true
           },
@@ -53670,6 +53846,33 @@
               "description": "The general category of this type of sample."
             },
             "description": "Filter by samples.classifications",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples.construct_delivery_methods",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Construct Delivery Methods",
+              "items": {
+                "type": "string",
+                "title": "Construct Delivery Method",
+                "enum": [
+                  "adenoviral transduction",
+                  "adeno-associated viral (AAV) transduction",
+                  "lipofectamine",
+                  "electroporation",
+                  "lentiviral transduction",
+                  "transfection",
+                  "transformation",
+                  "nucleofection",
+                  "transposase"
+                ]
+              },
+              "description": "Methods used to deliver construct libraries into the sample."
+            },
+            "description": "Filter by samples.construct_delivery_methods",
             "style": "form",
             "explode": true
           },
@@ -58205,7 +58408,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -65948,6 +66151,7 @@
                 "enum": [
                   "6 days calcified",
                   "10 days calcified",
+                  "partially exhausted",
                   "exhausted"
                 ],
                 "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
@@ -66076,7 +66280,8 @@
                   "lentiviral transduction",
                   "transfection",
                   "transformation",
-                  "nucleofection"
+                  "nucleofection",
+                  "transposase"
                 ]
               },
               "description": "Methods used to deliver construct libraries into the sample."
@@ -66603,7 +66808,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -69188,7 +69393,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -69900,6 +70105,51 @@
             "explode": true
           },
           {
+            "name": "multiplexed_samples.targeted_sample_term.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by multiplexed_samples.targeted_sample_term.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "multiplexed_samples.targeted_sample_term.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by multiplexed_samples.targeted_sample_term.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "multiplexed_samples.targeted_sample_term.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by multiplexed_samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "multiplexing_methods",
             "in": "query",
             "schema": {
@@ -70562,6 +70812,51 @@
             "explode": true
           },
           {
+            "name": "targeted_sample_terms.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by targeted_sample_terms.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "targeted_sample_terms.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by targeted_sample_terms.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "targeted_sample_terms.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by targeted_sample_terms.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "taxa",
             "in": "query",
             "schema": {
@@ -71163,6 +71458,7 @@
                 "enum": [
                   "6 days calcified",
                   "10 days calcified",
+                  "partially exhausted",
                   "exhausted"
                 ],
                 "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells."
@@ -71265,7 +71561,8 @@
                   "lentiviral transduction",
                   "transfection",
                   "transformation",
-                  "nucleofection"
+                  "nucleofection",
+                  "transposase"
                 ]
               },
               "description": "Methods used to deliver construct libraries into the sample."
@@ -71761,7 +72058,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -73583,7 +73880,8 @@
                   "lentiviral transduction",
                   "transfection",
                   "transformation",
-                  "nucleofection"
+                  "nucleofection",
+                  "transposase"
                 ]
               },
               "description": "Methods used to deliver construct libraries into the sample."
@@ -73944,7 +74242,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -75393,7 +75691,8 @@
                   "lentiviral transduction",
                   "transfection",
                   "transformation",
-                  "nucleofection"
+                  "nucleofection",
+                  "transposase"
                 ]
               },
               "description": "Methods used to deliver construct libraries into the sample."
@@ -75889,7 +76188,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -77925,7 +78224,8 @@
                   "lentiviral transduction",
                   "transfection",
                   "transformation",
-                  "nucleofection"
+                  "nucleofection",
+                  "transposase"
                 ]
               },
               "description": "Methods used to deliver construct libraries into the sample."
@@ -78421,7 +78721,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -83017,6 +83317,8 @@
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
                   "chromatin contact quantifications",
+                  "cis differential expression quantifications per element",
+                  "cis differential expression quantifications per guide",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -83028,11 +83330,11 @@
                   "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
-                  "differential TF enrichment quantifications",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential guide quantifications",
+                  "differential open reading frame quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
@@ -83046,7 +83348,6 @@
                   "element to gene interactions",
                   "elements reference",
                   "exclusion list",
-                  "exclusion list regions",
                   "exon constraint",
                   "external source data",
                   "feature weights",
@@ -83099,6 +83400,9 @@
                   "neural network architecture and edge weights",
                   "normalized variants profile",
                   "ontology terms",
+                  "open reading frame quantifications",
+                  "open reading frame reference",
+                  "open reading frames",
                   "orthologs",
                   "pQTL",
                   "pathogenicity validation",
@@ -83107,6 +83411,7 @@
                   "peak quantifications",
                   "peaks",
                   "per cell type enrichment scores",
+                  "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -83155,6 +83460,8 @@
                   "spot by gene matrix",
                   "target transcripts",
                   "tissue positions",
+                  "trans differential expression quantifications per element",
+                  "trans differential expression quantifications per guide",
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome index",
@@ -83237,6 +83544,8 @@
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
                   "chromatin contact quantifications",
+                  "cis differential expression quantifications per element",
+                  "cis differential expression quantifications per guide",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -83248,11 +83557,11 @@
                   "covariance matrix",
                   "derived barcode mapping",
                   "detected tissue",
-                  "differential TF enrichment quantifications",
                   "differential chromatin contact quantifications",
                   "differential element quantifications",
                   "differential gene expression quantifications",
                   "differential guide quantifications",
+                  "differential open reading frame quantifications",
                   "differential peak quantifications",
                   "differential transcript expression quantifications",
                   "documentation (readme)",
@@ -83266,7 +83575,6 @@
                   "element to gene interactions",
                   "elements reference",
                   "exclusion list",
-                  "exclusion list regions",
                   "exon constraint",
                   "external source data",
                   "feature weights",
@@ -83319,6 +83627,9 @@
                   "neural network architecture and edge weights",
                   "normalized variants profile",
                   "ontology terms",
+                  "open reading frame quantifications",
+                  "open reading frame reference",
+                  "open reading frames",
                   "orthologs",
                   "pQTL",
                   "pathogenicity validation",
@@ -83327,6 +83638,7 @@
                   "peak quantifications",
                   "peaks",
                   "per cell type enrichment scores",
+                  "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
                   "position weight matrix",
@@ -83375,6 +83687,8 @@
                   "spot by gene matrix",
                   "target transcripts",
                   "tissue positions",
+                  "trans differential expression quantifications per element",
+                  "trans differential expression quantifications per guide",
                   "transcript quantifications",
                   "transcriptome alignments",
                   "transcriptome index",
@@ -83761,7 +84075,7 @@
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
                   "SHARE-seq",
-                  "perturb-SHARE-seq",
+                  "MORF-SHARE-seq",
                   "MORF screen",
                   "Histone ChIP-seq",
                   "TF ChIP-seq",
@@ -84786,6 +85100,8 @@
                 "cell by position methylation count matrix",
                 "cell hashing barcodes",
                 "chromatin contact quantifications",
+                "cis differential expression quantifications per element",
+                "cis differential expression quantifications per guide",
                 "cis-trans regulatory differences",
                 "co-localization scores",
                 "coding variant effects",
@@ -84797,11 +85113,11 @@
                 "covariance matrix",
                 "derived barcode mapping",
                 "detected tissue",
-                "differential TF enrichment quantifications",
                 "differential chromatin contact quantifications",
                 "differential element quantifications",
                 "differential gene expression quantifications",
                 "differential guide quantifications",
+                "differential open reading frame quantifications",
                 "differential peak quantifications",
                 "differential transcript expression quantifications",
                 "documentation (readme)",
@@ -84815,7 +85131,6 @@
                 "element to gene interactions",
                 "elements reference",
                 "exclusion list",
-                "exclusion list regions",
                 "exon constraint",
                 "external source data",
                 "feature weights",
@@ -84868,6 +85183,9 @@
                 "neural network architecture and edge weights",
                 "normalized variants profile",
                 "ontology terms",
+                "open reading frame quantifications",
+                "open reading frame reference",
+                "open reading frames",
                 "orthologs",
                 "pQTL",
                 "pathogenicity validation",
@@ -84876,6 +85194,7 @@
                 "peak quantifications",
                 "peaks",
                 "per cell type enrichment scores",
+                "pipeline dashboard",
                 "pipeline parameters",
                 "plus strand modification state",
                 "position weight matrix",
@@ -84924,6 +85243,8 @@
                 "spot by gene matrix",
                 "target transcripts",
                 "tissue positions",
+                "trans differential expression quantifications per element",
+                "trans differential expression quantifications per guide",
                 "transcript quantifications",
                 "transcriptome alignments",
                 "transcriptome index",
@@ -85000,6 +85321,8 @@
                 "cell by position methylation count matrix",
                 "cell hashing barcodes",
                 "chromatin contact quantifications",
+                "cis differential expression quantifications per element",
+                "cis differential expression quantifications per guide",
                 "cis-trans regulatory differences",
                 "co-localization scores",
                 "coding variant effects",
@@ -85011,11 +85334,11 @@
                 "covariance matrix",
                 "derived barcode mapping",
                 "detected tissue",
-                "differential TF enrichment quantifications",
                 "differential chromatin contact quantifications",
                 "differential element quantifications",
                 "differential gene expression quantifications",
                 "differential guide quantifications",
+                "differential open reading frame quantifications",
                 "differential peak quantifications",
                 "differential transcript expression quantifications",
                 "documentation (readme)",
@@ -85029,7 +85352,6 @@
                 "element to gene interactions",
                 "elements reference",
                 "exclusion list",
-                "exclusion list regions",
                 "exon constraint",
                 "external source data",
                 "feature weights",
@@ -85082,6 +85404,9 @@
                 "neural network architecture and edge weights",
                 "normalized variants profile",
                 "ontology terms",
+                "open reading frame quantifications",
+                "open reading frame reference",
+                "open reading frames",
                 "orthologs",
                 "pQTL",
                 "pathogenicity validation",
@@ -85090,6 +85415,7 @@
                 "peak quantifications",
                 "peaks",
                 "per cell type enrichment scores",
+                "pipeline dashboard",
                 "pipeline parameters",
                 "plus strand modification state",
                 "position weight matrix",
@@ -85138,6 +85464,8 @@
                 "spot by gene matrix",
                 "target transcripts",
                 "tissue positions",
+                "trans differential expression quantifications per element",
+                "trans differential expression quantifications per guide",
                 "transcript quantifications",
                 "transcriptome alignments",
                 "transcriptome index",
@@ -89046,49 +89374,6 @@
               "title": "Superseded File",
               "description": "File that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
-            }
-          },
-          "principal_dimension": {
-            "title": "Principal Dimension",
-            "description": "The principal dimension of the matrix.",
-            "type": "string",
-            "enum": [
-              "cell",
-              "CRISPR guide capture",
-              "fragment",
-              "gene",
-              "mitochondrial variants",
-              "time",
-              "treatment",
-              "variant",
-              "genomic position",
-              "spot barcode"
-            ]
-          },
-          "secondary_dimensions": {
-            "title": "Secondary Dimensions",
-            "description": "The secondary, tertiary....n levels of dimensions of the matrix.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Secondary Dimensions",
-              "type": "string",
-              "enum": [
-                "antibody capture",
-                "barcode count",
-                "cell",
-                "CRISPR guide capture",
-                "fragment",
-                "gene",
-                "gene expression",
-                "genomic position",
-                "multiplexing oligo",
-                "peak",
-                "time",
-                "treatment",
-                "UMI count",
-                "variant"
-              ]
             }
           },
           "@id": {
@@ -93865,7 +94150,7 @@
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
                 "SHARE-seq",
-                "perturb-SHARE-seq",
+                "MORF-SHARE-seq",
                 "MORF screen",
                 "Histone ChIP-seq",
                 "TF ChIP-seq",
@@ -94349,7 +94634,7 @@
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
                 "SHARE-seq",
-                "perturb-SHARE-seq",
+                "MORF-SHARE-seq",
                 "MORF screen",
                 "Histone ChIP-seq",
                 "TF ChIP-seq",
@@ -95033,7 +95318,7 @@
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
                 "SHARE-seq",
-                "perturb-SHARE-seq",
+                "MORF-SHARE-seq",
                 "MORF screen",
                 "Histone ChIP-seq",
                 "TF ChIP-seq",
@@ -96185,12 +96470,12 @@
           },
           "donors": {
             "title": "Donors",
-            "description": "The donor(s) associated with this file set.",
+            "description": "The donors of the samples associated with this pseudobulk set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
               "title": "Donor",
-              "description": "A donor associated with this file set.",
+              "description": "Donor of a sample associated with this pseudobulk set.",
               "type": "string"
             }
           },
@@ -96222,6 +96507,11 @@
             "title": "Cell Qualifier",
             "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample.",
             "type": "string"
+          },
+          "merged": {
+            "title": "Merged",
+            "description": "Indicates if the pseudobulk set has been merged from other pseudobulk sets.",
+            "type": "boolean"
           },
           "@id": {
             "title": "ID",
@@ -96309,6 +96599,10 @@
             "title": "Controlled Access",
             "description": "The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set.",
             "type": "boolean"
+          },
+          "cell_annotation": {
+            "title": "Cell Annotation",
+            "type": "string"
           },
           "workflows": {
             "title": "Workflows",
@@ -97622,7 +97916,7 @@
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
                 "SHARE-seq",
-                "perturb-SHARE-seq",
+                "MORF-SHARE-seq",
                 "MORF screen",
                 "Histone ChIP-seq",
                 "TF ChIP-seq",
@@ -100721,6 +101015,23 @@
               "type": "string"
             }
           },
+          "biosample_qualifiers": {
+            "title": "Biosample Qualifiers",
+            "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Biosample Qualifiers",
+              "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
+              "type": "string",
+              "enum": [
+                "6 days calcified",
+                "10 days calcified",
+                "partially exhausted",
+                "exhausted"
+              ]
+            }
+          },
           "lab": {
             "title": "Lab",
             "description": "Lab associated with the submission.",
@@ -101063,7 +101374,8 @@
                 "lentiviral transduction",
                 "transfection",
                 "transformation",
-                "nucleofection"
+                "nucleofection",
+                "transposase"
               ]
             }
           },
@@ -101181,7 +101493,7 @@
             "minimum": 0
           },
           "targeted_sample_term": {
-            "title": "Targeted Sample Term",
+            "title": "Cellular Transformation Target",
             "description": "Ontology term identifying the targeted endpoint biosample resulting from differentation or reprogramming.",
             "type": "string"
           },
@@ -101198,22 +101510,6 @@
               "50 kPa hydrogel",
               "tissue culture plastic plates (no hydrogel)"
             ]
-          },
-          "biosample_qualifiers": {
-            "title": "Biosample Qualifiers",
-            "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Biosample Qualifiers",
-              "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
-              "type": "string",
-              "enum": [
-                "6 days calcified",
-                "10 days calcified",
-                "exhausted"
-              ]
-            }
           },
           "time_post_culture": {
             "title": "Time Post Culture",
@@ -101913,6 +102209,16 @@
               "title": "Classification",
               "type": "string"
             }
+          },
+          "targeted_sample_terms": {
+            "title": "Cellular Transformation Targets",
+            "description": "The targeted sample terms of subsamples that are a part of this multiplexed sample.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Cellular Transformation Target",
+              "type": "string"
+            }
           }
         }
       },
@@ -101994,6 +102300,23 @@
               "title": "Document",
               "description": "A document that provides additional information (not data file).",
               "type": "string"
+            }
+          },
+          "biosample_qualifiers": {
+            "title": "Biosample Qualifiers",
+            "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Biosample Qualifiers",
+              "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
+              "type": "string",
+              "enum": [
+                "6 days calcified",
+                "10 days calcified",
+                "partially exhausted",
+                "exhausted"
+              ]
             }
           },
           "lab": {
@@ -102339,7 +102662,8 @@
                 "lentiviral transduction",
                 "transfection",
                 "transformation",
-                "nucleofection"
+                "nucleofection",
+                "transposase"
               ]
             }
           },
@@ -102407,22 +102731,6 @@
             "description": "Number of passages including the passages from the source.",
             "type": "integer",
             "minimum": 0
-          },
-          "biosample_qualifiers": {
-            "title": "Biosample Qualifiers",
-            "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Biosample Qualifiers",
-              "description": "An array of various cell states. This property provides additional information about a cell at a finer-grained level compared to what ontologies currently capture. For example, exhausted T-cells.",
-              "type": "string",
-              "enum": [
-                "6 days calcified",
-                "10 days calcified",
-                "exhausted"
-              ]
-            }
           },
           "@id": {
             "title": "ID",
@@ -102853,7 +103161,8 @@
                 "lentiviral transduction",
                 "transfection",
                 "transformation",
-                "nucleofection"
+                "nucleofection",
+                "transposase"
               ]
             }
           },
@@ -103481,7 +103790,8 @@
                 "lentiviral transduction",
                 "transfection",
                 "transformation",
-                "nucleofection"
+                "nucleofection",
+                "transposase"
               ]
             }
           },
@@ -104129,7 +104439,8 @@
                 "lentiviral transduction",
                 "transfection",
                 "transformation",
-                "nucleofection"
+                "nucleofection",
+                "transposase"
               ]
             }
           },
@@ -105230,7 +105541,7 @@
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
                 "SHARE-seq",
-                "perturb-SHARE-seq",
+                "MORF-SHARE-seq",
                 "MORF screen",
                 "Histone ChIP-seq",
                 "TF ChIP-seq",

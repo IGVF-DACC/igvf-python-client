@@ -47,8 +47,6 @@ Name | Type | Description | Notes
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **checkfiles_timestamp** | **str** | The date and time the file object was last checked by the Checkfiles script. | [optional] 
 **supersedes** | **List[str]** | The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
-**principal_dimension** | **str** | The principal dimension of the matrix. | [optional] 
-**secondary_dimensions** | **List[str]** | The secondary, tertiary....n levels of dimensions of the matrix. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the matrix file. | [optional] 
