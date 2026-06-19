@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **file_set_type** | **str** | The level of this analysis set. | [optional] 
 **supersedes** | **List[str]** | The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **cell_type** | **str** | The ontology term that describes the cell type of the cells in this pseudobulk. | [optional] 
-**cell_qualifier** | **str** | A qualifier that provides additional detail about the cell type annotation or the source biosample. | [optional] 
+**cell_qualifier** | **str** | A qualifier that provides additional detail about the cell type annotation or the parent sample. | [optional] 
 **merged** | **bool** | Indicates if the pseudobulk set has been merged from other pseudobulk sets. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

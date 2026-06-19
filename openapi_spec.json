@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "124.0.0"
+    "version": "125.0.0"
   },
   "servers": [
     {
@@ -7453,7 +7453,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -9905,7 +9905,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -12310,7 +12310,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -14759,7 +14759,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -17208,7 +17208,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -19692,7 +19692,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -22214,7 +22214,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -24625,7 +24625,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -27355,7 +27355,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -29962,7 +29962,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -33307,16 +33307,77 @@
             "explode": true
           },
           {
-            "name": "input_file_sets.crispr_readout",
+            "name": "input_file_sets.crispr_screen_biometric.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "CRISPR Readout"
+                "title": "ID"
               }
             },
-            "description": "Filter by input_file_sets.crispr_readout",
+            "description": "Filter by input_file_sets.crispr_screen_biometric.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_file_sets.crispr_screen_biometric.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by input_file_sets.crispr_screen_biometric.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_file_sets.crispr_screen_biometric.term_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Phenotype Term ID",
+                "pattern": "^(DOID|EFO|HP|MONDO|OBA|NTR|GO):[0-9]{2,8}|OBA:VT[0-9]{2,8}|NCIT:C[0-9]{2,8}$",
+                "description": "An ontology term identifier describing a phenotype."
+              }
+            },
+            "description": "Filter by input_file_sets.crispr_screen_biometric.term_id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_file_sets.crispr_screen_biometric.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by input_file_sets.crispr_screen_biometric.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "input_file_sets.crispr_screen_readout",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "CRISPR Screen Readout"
+              }
+            },
+            "description": "Filter by input_file_sets.crispr_screen_readout",
             "style": "form",
             "explode": true
           },
@@ -35252,17 +35313,17 @@
             "explode": true
           },
           {
-            "name": "crispr_readout",
+            "name": "crispr_screen_readout",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "CRISPR Readout",
+                "title": "CRISPR Screen Readout",
                 "description": "For auxiliary sets linked to CRISPR screen measurement sets, equivalent to file set type."
               }
             },
-            "description": "Filter by crispr_readout",
+            "description": "Filter by crispr_screen_readout",
             "style": "form",
             "explode": true
           },
@@ -38795,6 +38856,68 @@
             "explode": true
           },
           {
+            "name": "large_scale_orf_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by large_scale_orf_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "large_scale_orf_list.accession",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
+              }
+            },
+            "description": "Filter by large_scale_orf_list.accession",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "large_scale_orf_list.aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|yang-li|hongbo-liu|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by large_scale_orf_list.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "large_scale_orf_list.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by large_scale_orf_list.status",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lot_id",
             "in": "query",
             "schema": {
@@ -38853,113 +38976,6 @@
               }
             },
             "description": "Filter by notes",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "orf_list.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by orf_list.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "orf_list.aliases",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Aliases",
-              "items": {
-                "type": "string",
-                "title": "Lab Alias",
-                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|yang-li|hongbo-liu|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
-                "description": "A lab specific identifier to reference an object."
-              },
-              "description": "Lab specific identifiers to reference an object."
-            },
-            "description": "Filter by orf_list.aliases",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "orf_list.genes.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by orf_list.genes.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "orf_list.genes.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by orf_list.genes.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "orf_list.genes.symbol",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Gene Symbol",
-                "description": "Gene symbol approved by the official nomenclature."
-              }
-            },
-            "description": "Filter by orf_list.genes.symbol",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "orf_list.orf_id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ORF ID",
-                "pattern": "^CCSBORF[1-9][0-9]*$",
-                "description": "Open reading frame ID."
-              }
-            },
-            "description": "Filter by orf_list.orf_id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "orf_list.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by orf_list.status",
             "style": "form",
             "explode": true
           },
@@ -39769,6 +39785,113 @@
               "description": "A small scale (<=100) list of specific chromosomal region(s)."
             },
             "description": "Filter by small_scale_loci_list",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "small_scale_orf_list.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by small_scale_orf_list.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "small_scale_orf_list.aliases",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Aliases",
+              "items": {
+                "type": "string",
+                "title": "Lab Alias",
+                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|yang-li|hongbo-liu|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
+                "description": "A lab specific identifier to reference an object."
+              },
+              "description": "Lab specific identifiers to reference an object."
+            },
+            "description": "Filter by small_scale_orf_list.aliases",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "small_scale_orf_list.genes.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by small_scale_orf_list.genes.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "small_scale_orf_list.genes.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by small_scale_orf_list.genes.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "small_scale_orf_list.genes.symbol",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Gene Symbol",
+                "description": "Gene symbol approved by the official nomenclature."
+              }
+            },
+            "description": "Filter by small_scale_orf_list.genes.symbol",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "small_scale_orf_list.orf_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ORF ID",
+                "pattern": "^(CCSBORF|TFORF)[1-9][0-9]*$",
+                "description": "Open reading frame ID."
+              }
+            },
+            "description": "Filter by small_scale_orf_list.orf_id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "small_scale_orf_list.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by small_scale_orf_list.status",
             "style": "form",
             "explode": true
           },
@@ -42940,17 +43063,17 @@
             "explode": true
           },
           {
-            "name": "auxiliary_sets.crispr_readout",
+            "name": "auxiliary_sets.crispr_screen_readout",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "CRISPR Readout",
+                "title": "CRISPR Screen Readout",
                 "description": "For auxiliary sets linked to CRISPR screen measurement sets, equivalent to file set type."
               }
             },
-            "description": "Filter by auxiliary_sets.crispr_readout",
+            "description": "Filter by auxiliary_sets.crispr_screen_readout",
             "style": "form",
             "explode": true
           },
@@ -43584,13 +43707,74 @@
             "explode": true
           },
           {
-            "name": "crispr_readout",
+            "name": "crispr_screen_biometric.@id",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "CRISPR Readout",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by crispr_screen_biometric.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "crispr_screen_biometric.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by crispr_screen_biometric.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "crispr_screen_biometric.term_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Phenotype Term ID",
+                "pattern": "^(DOID|EFO|HP|MONDO|OBA|NTR|GO):[0-9]{2,8}|OBA:VT[0-9]{2,8}|NCIT:C[0-9]{2,8}$",
+                "description": "An ontology term identifier describing a phenotype."
+              }
+            },
+            "description": "Filter by crispr_screen_biometric.term_id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "crispr_screen_biometric.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by crispr_screen_biometric.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "crispr_screen_readout",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "CRISPR Screen Readout",
                 "enum": [
                   "gRNA sequencing",
                   "endogenous allelic sequencing",
@@ -43602,7 +43786,7 @@
                 "description": "The sequencing readout produced by this CRISPR measurement set."
               }
             },
-            "description": "Filter by crispr_readout",
+            "description": "Filter by crispr_screen_readout",
             "style": "form",
             "explode": true
           },
@@ -52218,7 +52402,7 @@
               "items": {
                 "type": "string",
                 "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample."
+                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
               }
             },
             "description": "Filter by cell_qualifier",
@@ -60548,6 +60732,22 @@
             "explode": true
           },
           {
+            "name": "barcode_sequence",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Barcode Sequence",
+                "pattern": "^[ACGT]+$",
+                "description": "DNA sequence of the unique barcode identifier of the overexpressed construct"
+              }
+            },
+            "description": "Filter by barcode_sequence",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -60571,7 +60771,7 @@
               "items": {
                 "type": "string",
                 "title": "External Identifier",
-                "pattern": "^(hORFeome:[1-9][0-9]*)$",
+                "pattern": "^(hORFeome:[1-9][0-9]*|addgene:\\d{5,6})$",
                 "description": "A unique identifier from hORFeome database."
               },
               "description": "Unique identifiers from the hORFeome database"
@@ -60657,6 +60857,22 @@
             "explode": true
           },
           {
+            "name": "insert_sequence",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Insert Sequence",
+                "pattern": "^[ACGT]+$",
+                "description": "DNA sequence of longer construct"
+              }
+            },
+            "description": "Filter by insert_sequence",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "lab.@id",
             "in": "query",
             "schema": {
@@ -60708,11 +60924,27 @@
               "items": {
                 "type": "string",
                 "title": "ORF ID",
-                "pattern": "^CCSBORF[1-9][0-9]*$",
+                "pattern": "^(CCSBORF|TFORF)[1-9][0-9]*$",
                 "description": "Open reading frame ID."
               }
             },
             "description": "Filter by orf_id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "orf_sequence",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ORF Sequence",
+                "pattern": "^[ACGT]+$",
+                "description": "DNA sequence of the ORF specifically (this is a subset of the Insert DNA sequence)"
+              }
+            },
+            "description": "Filter by orf_sequence",
             "style": "form",
             "explode": true
           },
@@ -60891,6 +61123,24 @@
               }
             },
             "description": "Filter by summary",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "transcript_ids",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "ENSEMBL TranscriptID",
+              "items": {
+                "type": "string",
+                "title": "ENSEMBL GeneID",
+                "pattern": "^ENST\\d{11}(\\.\\d+)?$",
+                "description": "An identifier of the Gene."
+              },
+              "description": "ENSEMBL TranscriptID of official nomenclature approved transcript/isoform of that gene"
+            },
+            "description": "Filter by transcript_ids",
             "style": "form",
             "explode": true
           },
@@ -93433,8 +93683,8 @@
               "type": "string"
             }
           },
-          "crispr_readout": {
-            "title": "CRISPR Readout",
+          "crispr_screen_readout": {
+            "title": "CRISPR Screen Readout",
             "description": "For auxiliary sets linked to CRISPR screen measurement sets, equivalent to file set type.",
             "type": "string"
           },
@@ -93838,9 +94088,9 @@
               "type": "string"
             }
           },
-          "orf_list": {
-            "title": "List of Open Reading Frames (ORF)",
-            "description": "List of Open Reading Frame this construct library was designed to target.",
+          "small_scale_orf_list": {
+            "title": "Small List of Open Reading Frames (ORF)",
+            "description": "The specific, small scale list of (<=500) Open Reading Frame this construct library was designed to target.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -93848,6 +94098,11 @@
               "description": "List of Open Reading Frame this construct library was designed to target.",
               "type": "string"
             }
+          },
+          "large_scale_orf_list": {
+            "title": "Large List of Open Reading Frames (ORF)",
+            "description": "The large scale list of (>100 ORF) this construct library was designed to target.",
+            "type": "string"
           },
           "exon": {
             "title": "Exon",
@@ -94926,8 +95181,8 @@
             "description": "The assay used to produce data in this measurement set.",
             "type": "string"
           },
-          "crispr_readout": {
-            "title": "CRISPR Readout",
+          "crispr_screen_readout": {
+            "title": "CRISPR Screen Readout",
             "description": "The sequencing readout produced by this CRISPR measurement set.",
             "type": "string",
             "enum": [
@@ -94938,6 +95193,11 @@
               "scRNA-seq with guide capture",
               "scATAC-seq"
             ]
+          },
+          "crispr_screen_biometric": {
+            "title": "CRISPR Screen Biometric",
+            "description": "The phenotype used for selection or inference in this CRISPR screen, distinct from the sequencing readout.",
+            "type": "string"
           },
           "protocols": {
             "title": "Protocols",
@@ -96459,12 +96719,12 @@
             }
           },
           "samples": {
-            "title": "Source Biosamples",
+            "title": "Parent Samples",
             "description": "The sample(s) from which the cells in this pseudobulk originated.",
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Source Biosample",
+              "title": "Parent Sample",
               "type": "string"
             }
           },
@@ -96505,7 +96765,7 @@
           },
           "cell_qualifier": {
             "title": "Cell Qualifier",
-            "description": "A qualifier that provides additional detail about the cell type annotation or the source biosample.",
+            "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample.",
             "type": "string"
           },
           "merged": {
@@ -98897,7 +99157,7 @@
             "title": "ORF ID",
             "description": "Open reading frame ID.",
             "type": "string",
-            "pattern": "^CCSBORF[1-9][0-9]*$"
+            "pattern": "^(CCSBORF|TFORF)[1-9][0-9]*$"
           },
           "genes": {
             "title": "ENSEMBL GeneIDs",
@@ -98916,6 +99176,36 @@
             "type": "string",
             "pattern": "^ENSP\\d{11}.?\\d*?$"
           },
+          "transcript_ids": {
+            "title": "ENSEMBL TranscriptID",
+            "description": "ENSEMBL TranscriptID of official nomenclature approved transcript/isoform of that gene",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "ENSEMBL GeneID",
+              "description": "An identifier of the Gene.",
+              "pattern": "^ENST\\d{11}(\\.\\d+)?$",
+              "type": "string"
+            }
+          },
+          "barcode_sequence": {
+            "title": "Barcode Sequence",
+            "description": "DNA sequence of the unique barcode identifier of the overexpressed construct",
+            "type": "string",
+            "pattern": "^[ACGT]+$"
+          },
+          "orf_sequence": {
+            "title": "ORF Sequence",
+            "description": "DNA sequence of the ORF specifically (this is a subset of the Insert DNA sequence)",
+            "type": "string",
+            "pattern": "^[ACGT]+$"
+          },
+          "insert_sequence": {
+            "title": "Insert Sequence",
+            "description": "DNA sequence of longer construct",
+            "type": "string",
+            "pattern": "^[ACGT]+$"
+          },
           "dbxrefs": {
             "title": "External Resources",
             "description": "Unique identifiers from the hORFeome database",
@@ -98925,7 +99215,7 @@
               "title": "External Identifier",
               "description": "A unique identifier from hORFeome database.",
               "type": "string",
-              "pattern": "^(hORFeome:[1-9][0-9]*)$"
+              "pattern": "^(hORFeome:[1-9][0-9]*|addgene:\\d{5,6})$"
             }
           },
           "pct_identical_protein": {

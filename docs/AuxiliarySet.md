@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **measurement_sets** | **List[str]** | The measurement sets that link to this auxiliary set. | [optional] 
 **preferred_assay_titles** | **List[str]** | The preferred assay titles of the measurement sets that used this auxiliary set. | [optional] 
 **preferred_assay_slims** | **List[str]** | Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set. | [optional] 
-**crispr_readout** | **str** | For auxiliary sets linked to CRISPR screen measurement sets, equivalent to file set type. | [optional] 
+**crispr_screen_readout** | **str** | For auxiliary sets linked to CRISPR screen measurement sets, equivalent to file set type. | [optional] 
 **assay_titles** | **List[str]** | Ontology term names from Ontology of Biomedical Investigations (OBI) for assays | [optional] 
 **assay_slims** | **List[str]** | A broad categorization of the assay term. | [optional] 
 
