@@ -6,6 +6,8 @@ A file set of computational predictions. Prediction sets contain results of anal
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cell_type** | **str** | The ontology term that describes the cell type of the cells in predictions derived from single cell pseudobulks. Other non-pseudobulk based predictions should not specify this property. | [optional] 
+**cell_qualifier** | **str** | A qualifier that provides additional detail about the cell type annotation in predictions derived from single cell pseudobulks. Other non-pseudobulk based predictions should not specify this property. | [optional] 
 **is_on_anvil** | **bool** | Indicates whether the data object has been submitted to AnVIL. | [optional] 
 **doi** | **str** | The Digital Object Identifier (DOI) associated with this object. | [optional] 
 **preview_timestamp** | **str** | The date the object was previewed. | [optional] 
@@ -53,6 +55,7 @@ Name | Type | Description | Notes
 **data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **controlled_access** | **bool** | The controlled access of the institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **software_versions** | **List[str]** | The software versions used to produce this prediction. | [optional] 
+**cell_annotation** | **str** | The cell annotation of this File Set. | [optional] 
 
 ## Example
 

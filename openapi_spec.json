@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "125.0.0"
+    "version": "125.1.0"
   },
   "servers": [
     {
@@ -1591,6 +1591,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -1631,6 +1646,8 @@
                 "type": "string",
                 "title": "Input Content Type",
                 "enum": [
+                  "ATAC-seq signal",
+                  "ATAC-seq signal p-value",
                   "DNA footprint scores",
                   "DUAL-IPA score",
                   "GO annotation",
@@ -1639,6 +1656,8 @@
                   "Nanopore reads",
                   "PacBio consensus reads",
                   "PacBio subreads",
+                  "RNA-seq signal",
+                  "RNA-seq signal p-value",
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
@@ -1902,6 +1921,8 @@
                 "type": "string",
                 "title": "Output Content Type",
                 "enum": [
+                  "ATAC-seq signal",
+                  "ATAC-seq signal p-value",
                   "DNA footprint scores",
                   "DUAL-IPA score",
                   "GO annotation",
@@ -1910,6 +1931,8 @@
                   "Nanopore reads",
                   "PacBio consensus reads",
                   "PacBio subreads",
+                  "RNA-seq signal",
+                  "RNA-seq signal p-value",
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
@@ -2587,6 +2610,8 @@
                 "type": "string",
                 "title": "Input Content Type",
                 "enum": [
+                  "ATAC-seq signal",
+                  "ATAC-seq signal p-value",
                   "DNA footprint scores",
                   "DUAL-IPA score",
                   "GO annotation",
@@ -2595,6 +2620,8 @@
                   "Nanopore reads",
                   "PacBio consensus reads",
                   "PacBio subreads",
+                  "RNA-seq signal",
+                  "RNA-seq signal p-value",
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
@@ -2814,6 +2841,8 @@
                 "type": "string",
                 "title": "Output Content Type",
                 "enum": [
+                  "ATAC-seq signal",
+                  "ATAC-seq signal p-value",
                   "DNA footprint scores",
                   "DUAL-IPA score",
                   "GO annotation",
@@ -2822,6 +2851,8 @@
                   "Nanopore reads",
                   "PacBio consensus reads",
                   "PacBio subreads",
+                  "RNA-seq signal",
+                  "RNA-seq signal p-value",
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
@@ -3088,6 +3119,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -4646,6 +4692,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "characterization_method",
             "in": "query",
             "schema": {
@@ -5179,6 +5240,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -5973,6 +6049,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -6958,6 +7049,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "base_modifications",
             "in": "query",
             "schema": {
@@ -7452,8 +7558,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -9357,6 +9462,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_class",
             "in": "query",
             "schema": {
@@ -9904,8 +10024,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -11762,6 +11881,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_class",
             "in": "query",
             "schema": {
@@ -12309,8 +12443,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -14196,6 +14329,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_class",
             "in": "query",
             "schema": {
@@ -14758,8 +14906,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -16660,6 +16807,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_class",
             "in": "query",
             "schema": {
@@ -17207,8 +17369,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -19081,6 +19242,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_adapters",
             "in": "query",
             "schema": {
@@ -19691,8 +19867,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -21551,6 +21726,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_adapters",
             "in": "query",
             "schema": {
@@ -22213,8 +22403,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -24115,6 +24304,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "base_modifications",
             "in": "query",
             "schema": {
@@ -24624,8 +24828,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -26792,6 +26995,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "catalog_class",
             "in": "query",
             "schema": {
@@ -27354,8 +27572,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -29294,6 +29511,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "barcode_map_for",
             "in": "query",
             "schema": {
@@ -29961,8 +30193,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "title": "Cell Qualifier",
-                "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample."
+                "title": "Cell Qualifier"
               }
             },
             "description": "Filter by file_set.cell_qualifier",
@@ -31891,6 +32122,21 @@
               }
             },
             "description": "Filter by award.contact_pi.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -34876,6 +35122,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.title",
             "in": "query",
             "schema": {
@@ -37653,6 +37914,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -40441,6 +40717,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.title",
             "in": "query",
             "schema": {
@@ -43162,6 +43453,21 @@
               }
             },
             "description": "Filter by award.contact_pi.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -46467,6 +46773,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.title",
             "in": "query",
             "schema": {
@@ -49429,6 +49750,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "award.title",
             "in": "query",
             "schema": {
@@ -49441,6 +49777,112 @@
               }
             },
             "description": "Filter by award.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_annotation",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Annotation",
+                "description": "The cell annotation of this File Set."
+              }
+            },
+            "description": "Filter by cell_annotation",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_qualifier",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Cell Qualifier",
+                "description": "A qualifier that provides additional detail about the cell type annotation in predictions derived from single cell pseudobulks. Other non-pseudobulk based predictions should not specify this property."
+              }
+            },
+            "description": "Filter by cell_qualifier",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by cell_type.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type.definition",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Definition",
+                "description": "Definition for the term that was recorded in an ontology."
+              }
+            },
+            "description": "Filter by cell_type.definition",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by cell_type.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type.term_id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term ID",
+                "pattern": "^(UBERON|EFO|CL|CLO|NTR|PCL):[0-9]{2,8}$",
+                "description": "An ontology identifier describing a biological sample"
+              }
+            },
+            "description": "Filter by cell_type.term_id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "cell_type.term_name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Term Name",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease."
+              }
+            },
+            "description": "Filter by cell_type.term_name",
             "style": "form",
             "explode": true
           },
@@ -52361,6 +52803,21 @@
               }
             },
             "description": "Filter by award.contact_pi.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -56095,6 +56552,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "certificate_identifier",
             "in": "query",
             "schema": {
@@ -57151,6 +57623,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "biosamples_modified",
             "in": "query",
             "schema": {
@@ -57826,6 +58313,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -60732,6 +61234,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "barcode_sequence",
             "in": "query",
             "schema": {
@@ -61813,6 +62330,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -62406,6 +62938,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -63106,6 +63653,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "creation_timestamp",
             "in": "query",
             "schema": {
@@ -63679,6 +64241,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -64271,6 +64848,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -64938,6 +65530,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -65729,6 +66336,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "coverage",
             "in": "query",
             "schema": {
@@ -66283,6 +66905,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -68947,6 +69584,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "barcode_map",
             "in": "query",
             "schema": {
@@ -71594,6 +72246,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "biomarkers.@id",
             "in": "query",
             "schema": {
@@ -74055,6 +74722,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "classifications",
             "in": "query",
             "schema": {
@@ -75743,6 +76425,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -78280,6 +78977,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "biomarkers.@id",
             "in": "query",
             "schema": {
@@ -80671,6 +81383,21 @@
             "explode": true
           },
           {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "categories",
             "in": "query",
             "schema": {
@@ -81234,6 +81961,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -82226,6 +82968,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -83518,6 +84275,8 @@
                 "type": "string",
                 "title": "Input Content Type",
                 "enum": [
+                  "ATAC-seq signal",
+                  "ATAC-seq signal p-value",
                   "DNA footprint scores",
                   "DUAL-IPA score",
                   "GO annotation",
@@ -83526,6 +84285,8 @@
                   "Nanopore reads",
                   "PacBio consensus reads",
                   "PacBio subreads",
+                  "RNA-seq signal",
+                  "RNA-seq signal p-value",
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
@@ -83745,6 +84506,8 @@
                 "type": "string",
                 "title": "Output Content Type",
                 "enum": [
+                  "ATAC-seq signal",
+                  "ATAC-seq signal p-value",
                   "DNA footprint scores",
                   "DUAL-IPA score",
                   "GO annotation",
@@ -83753,6 +84516,8 @@
                   "Nanopore reads",
                   "PacBio consensus reads",
                   "PacBio subreads",
+                  "RNA-seq signal",
+                  "RNA-seq signal p-value",
                   "SNP effect matrix",
                   "TF binding scores",
                   "UMAP plot",
@@ -84139,6 +84904,21 @@
               }
             },
             "description": "Filter by award.component",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "award.project",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Project",
+                "description": "The collection of biological data related to a single initiative, originating from a consortium."
+              }
+            },
+            "description": "Filter by award.project",
             "style": "form",
             "explode": true
           },
@@ -85301,6 +86081,8 @@
               "description": "A content type used as input for the analysis step.",
               "type": "string",
               "enum": [
+                "ATAC-seq signal",
+                "ATAC-seq signal p-value",
                 "DNA footprint scores",
                 "DUAL-IPA score",
                 "GO annotation",
@@ -85309,6 +86091,8 @@
                 "Nanopore reads",
                 "PacBio consensus reads",
                 "PacBio subreads",
+                "RNA-seq signal",
+                "RNA-seq signal p-value",
                 "SNP effect matrix",
                 "TF binding scores",
                 "UMAP plot",
@@ -85522,6 +86306,8 @@
               "description": "A content type produced as output by the analysis step.",
               "type": "string",
               "enum": [
+                "ATAC-seq signal",
+                "ATAC-seq signal p-value",
                 "DNA footprint scores",
                 "DUAL-IPA score",
                 "GO annotation",
@@ -85530,6 +86316,8 @@
                 "Nanopore reads",
                 "PacBio consensus reads",
                 "PacBio subreads",
+                "RNA-seq signal",
+                "RNA-seq signal p-value",
                 "SNP effect matrix",
                 "TF binding scores",
                 "UMAP plot",
@@ -90716,6 +91504,7 @@
               "obo",
               "owl",
               "PWM",
+              "run",
               "tar",
               "tsv",
               "txt",
@@ -96065,6 +96854,16 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "cell_type": {
+            "title": "Cell Type",
+            "description": "The ontology term that describes the cell type of the cells in predictions derived from single cell pseudobulks. Other non-pseudobulk based predictions should not specify this property.",
+            "type": "string"
+          },
+          "cell_qualifier": {
+            "title": "Cell Qualifier",
+            "description": "A qualifier that provides additional detail about the cell type annotation in predictions derived from single cell pseudobulks. Other non-pseudobulk based predictions should not specify this property.",
+            "type": "string"
+          },
           "is_on_anvil": {
             "title": "Is On AnVIL",
             "description": "Indicates whether the data object has been submitted to AnVIL.",
@@ -96514,6 +97313,11 @@
               "description": "A software version used to produce this prediction.",
               "type": "string"
             }
+          },
+          "cell_annotation": {
+            "title": "Cell Annotation",
+            "type": "string",
+            "description": "The cell annotation of this File Set."
           }
         }
       },
@@ -96523,6 +97327,16 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "cell_type": {
+            "title": "Cell Type",
+            "description": "The ontology term that describes the cell type of the cells in this pseudobulk and/or pseudobulk-derived prediction.",
+            "type": "string"
+          },
+          "cell_qualifier": {
+            "title": "Cell Qualifier",
+            "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample.",
+            "type": "string"
+          },
           "is_on_anvil": {
             "title": "Is On AnVIL",
             "description": "Indicates whether the data object has been submitted to AnVIL.",
@@ -96757,16 +97571,6 @@
               "description": "File set that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one it supersedes.",
               "type": "string"
             }
-          },
-          "cell_type": {
-            "title": "Cell Type",
-            "description": "The ontology term that describes the cell type of the cells in this pseudobulk.",
-            "type": "string"
-          },
-          "cell_qualifier": {
-            "title": "Cell Qualifier",
-            "description": "A qualifier that provides additional detail about the cell type annotation or the parent sample.",
-            "type": "string"
           },
           "merged": {
             "title": "Merged",
