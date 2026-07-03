@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **large_scale_orf_list** | **str** | The large scale list of (&gt;100 ORF) this construct library was designed to target. | [optional] 
 **exon** | **str** | An identifier in plain text for the specific exon in an expression vector library. The associated gene must be listed in the small_scale_gene_list property. | [optional] 
 **tile** | [**Tile**](Tile.md) |  | [optional] 
+**chromosomes** | **List[str]** | The list of chromosomes this construct library was designed to target. | [optional] 
 **guide_type** | **str** | The design of guides used in a CRISPR library, paired-guide (pgRNA) or single-guide (sgRNA). | [optional] 
 **tiling_modality** | **str** | The tiling modality of guides across elements or loci in a CRISPR library. | [optional] 
 **average_guide_coverage** | **float** | The average number of guides targeting each element of interest in the library. | [optional] 

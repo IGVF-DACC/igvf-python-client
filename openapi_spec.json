@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "125.1.0"
+    "version": "126.0.0"
   },
   "servers": [
     {
@@ -1667,6 +1667,7 @@
                   "allele specific RNA pseudobulk counts",
                   "allele specific binding",
                   "allele specific cell by gene matrix",
+                  "allelic effects",
                   "annotated cell by gene and guide matrix",
                   "annotated cell by gene matrix",
                   "annotated cell by guide matrix",
@@ -1735,7 +1736,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "fold change of post-selection and pre-selection",
-                  "fold change over control",
                   "fragments",
                   "functional conservation mapping",
                   "functional impact score",
@@ -1942,6 +1942,7 @@
                   "allele specific RNA pseudobulk counts",
                   "allele specific binding",
                   "allele specific cell by gene matrix",
+                  "allelic effects",
                   "annotated cell by gene and guide matrix",
                   "annotated cell by gene matrix",
                   "annotated cell by guide matrix",
@@ -2010,7 +2011,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "fold change of post-selection and pre-selection",
-                  "fold change over control",
                   "fragments",
                   "functional conservation mapping",
                   "functional impact score",
@@ -2631,6 +2631,7 @@
                   "allele specific RNA pseudobulk counts",
                   "allele specific binding",
                   "allele specific cell by gene matrix",
+                  "allelic effects",
                   "annotated cell by gene and guide matrix",
                   "annotated cell by gene matrix",
                   "annotated cell by guide matrix",
@@ -2699,7 +2700,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "fold change of post-selection and pre-selection",
-                  "fold change over control",
                   "fragments",
                   "functional conservation mapping",
                   "functional impact score",
@@ -2862,6 +2862,7 @@
                   "allele specific RNA pseudobulk counts",
                   "allele specific binding",
                   "allele specific cell by gene matrix",
+                  "allelic effects",
                   "annotated cell by gene and guide matrix",
                   "annotated cell by gene matrix",
                   "annotated cell by guide matrix",
@@ -2930,7 +2931,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "fold change of post-selection and pre-selection",
-                  "fold change over control",
                   "fragments",
                   "functional conservation mapping",
                   "functional impact score",
@@ -7462,7 +7462,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -7763,7 +7762,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -9928,7 +9926,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -10229,7 +10226,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -12347,7 +12343,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -12648,7 +12643,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -14810,7 +14804,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -15111,7 +15104,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -17273,7 +17265,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -17574,7 +17565,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -19771,7 +19761,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -20072,7 +20061,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -22307,7 +22295,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -22608,7 +22595,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -23898,6 +23884,21 @@
             "explode": true
           },
           {
+            "name": "version",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Version",
+                "description": "The version of this reference file, used for external files loaded into the IGVF catalog."
+              }
+            },
+            "description": "Filter by version",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "workflows.@id",
             "in": "query",
             "schema": {
@@ -24732,7 +24733,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -25033,7 +25033,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -27476,7 +27475,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -27777,7 +27775,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -30097,7 +30094,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -30398,7 +30394,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -36556,7 +36551,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -37929,6 +37923,24 @@
               }
             },
             "description": "Filter by award.project",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "chromosomes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Chromosomes",
+              "items": {
+                "type": "string",
+                "title": "Chromosome",
+                "pattern": "^(chr[0-9A-Za-z_]+)$",
+                "description": "A chromosome this construct library was designed to target."
+              },
+              "description": "The list of chromosomes this construct library was designed to target."
+            },
+            "description": "Filter by chromosomes",
             "style": "form",
             "explode": true
           },
@@ -39856,6 +39868,7 @@
                   "interactors",
                   "alleles",
                   "targeton",
+                  "chromosome",
                   "control"
                 ],
                 "description": "The scope or scale that this construct library is designed to target."
@@ -40148,7 +40161,7 @@
               "items": {
                 "type": "string",
                 "title": "ORF ID",
-                "pattern": "^(CCSBORF|TFORF)[1-9][0-9]*$",
+                "pattern": "^(CCSBORF|TFORF)[0-9]+$",
                 "description": "Open reading frame ID."
               }
             },
@@ -42037,7 +42050,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -43001,6 +43013,22 @@
               }
             },
             "description": "Filter by uuid",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "versions",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Versions",
+              "items": {
+                "type": "string",
+                "title": "Version"
+              },
+              "description": "The versions of the reference files for external data loaded into the IGVF catalog."
+            },
+            "description": "Filter by versions",
             "style": "form",
             "explode": true
           }
@@ -45214,7 +45242,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -48262,7 +48289,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -54415,21 +54441,6 @@
             "explode": true
           },
           {
-            "name": "samples.accession",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Accession",
-                "description": "A unique identifier to be used to reference the object prefixed with IGVF."
-              }
-            },
-            "description": "Filter by samples.accession",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.aliases",
             "in": "query",
             "schema": {
@@ -54464,60 +54475,6 @@
             "explode": true
           },
           {
-            "name": "samples.classifications",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Classifications",
-              "items": {
-                "type": "string",
-                "title": "Classification",
-                "enum": [
-                  "organoid",
-                  "gastruloid",
-                  "embryoid",
-                  "cell culture",
-                  "cell line",
-                  "differentiated cell specimen",
-                  "reprogrammed cell specimen",
-                  "pooled cell specimen"
-                ],
-                "description": "The type of the in vitro system."
-              },
-              "description": "The general category of this type of sample."
-            },
-            "description": "Filter by samples.classifications",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.construct_delivery_methods",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Construct Delivery Methods",
-              "items": {
-                "type": "string",
-                "title": "Construct Delivery Method",
-                "enum": [
-                  "adenoviral transduction",
-                  "adeno-associated viral (AAV) transduction",
-                  "lipofectamine",
-                  "electroporation",
-                  "lentiviral transduction",
-                  "transfection",
-                  "transformation",
-                  "nucleofection",
-                  "transposase"
-                ]
-              },
-              "description": "Methods used to deliver construct libraries into the sample."
-            },
-            "description": "Filter by samples.construct_delivery_methods",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "samples.growth_medium",
             "in": "query",
             "schema": {
@@ -54529,345 +54486,6 @@
               }
             },
             "description": "Filter by samples.growth_medium",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.institutional_certificates.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.institutional_certificates.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.institutional_certificates.certificate_identifier",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Certificate Identifier",
-                "pattern": "^IP\\d{3}-\\d{2}$",
-                "description": "A unique identifier for the certificate."
-              }
-            },
-            "description": "Filter by samples.institutional_certificates.certificate_identifier",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.institutional_certificates.controlled_access",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean",
-                "title": "Controlled Access",
-                "description": "Indicator of whether the samples are under controlled access."
-              }
-            },
-            "description": "Filter by samples.institutional_certificates.controlled_access",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.institutional_certificates.data_use_limitation",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Data Use Limitation",
-                "description": "Code indicating the limitations on data use for data generated from the applicable samples."
-              }
-            },
-            "description": "Filter by samples.institutional_certificates.data_use_limitation",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.institutional_certificates.data_use_limitation_modifiers",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Data Use Limitation Modifiers",
-              "items": {
-                "type": "string",
-                "title": "Data Use Limitation Modifier",
-                "enum": [
-                  "COL",
-                  "GSO",
-                  "IRB",
-                  "MDS",
-                  "NPU",
-                  "PUB"
-                ]
-              },
-              "description": "Code indicating a modifier on the limitations on data use for data generated from the applicable samples."
-            },
-            "description": "Filter by samples.institutional_certificates.data_use_limitation_modifiers",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.institutional_certificates.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.institutional_certificates.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.modifications.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.modifications.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.modifications.modality",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Modality",
-                "description": "The purpose or intended effect of a modification."
-              }
-            },
-            "description": "Filter by samples.modifications.modality",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.modifications.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.modifications.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.phenotypic_features.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.phenotypic_features.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.phenotypic_features.feature.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.phenotypic_features.feature.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.phenotypic_features.feature.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.phenotypic_features.feature.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.phenotypic_features.feature.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by samples.phenotypic_features.feature.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.phenotypic_features.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.phenotypic_features.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.phenotypic_features.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary"
-              }
-            },
-            "description": "Filter by samples.phenotypic_features.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.sample_terms.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.sample_terms.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.sample_terms.aliases",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "title": "Aliases",
-              "items": {
-                "type": "string",
-                "title": "Lab Alias",
-                "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|raluca-gordan|bill-majoros|david-page|maya-kasowski|jimmie-ye|leif-ludwig|ryan-corces|jun-wu|tom-norman|bruce-posner|nhgri|community|igvf|igvf-dacc|stephen-yi|kushal-dey|katie-pollard|steven-gazal|yang-li|hongbo-liu|igvf-dacc-processing-pipeline):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$",
-                "description": "A lab specific identifier to reference an object."
-              },
-              "description": "Lab specific identifiers to reference an object."
-            },
-            "description": "Filter by samples.sample_terms.aliases",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.sample_terms.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.sample_terms.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.sample_terms.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the ontology term."
-              }
-            },
-            "description": "Filter by samples.sample_terms.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.sample_terms.term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Term Name",
-                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-                "description": "Ontology term describing a biological sample, assay, trait, or disease."
-              }
-            },
-            "description": "Filter by samples.sample_terms.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary",
-                "description": "A summary of the sample."
-              }
-            },
-            "description": "Filter by samples.summary",
             "style": "form",
             "explode": true
           },
@@ -54913,109 +54531,6 @@
               }
             },
             "description": "Filter by samples.targeted_sample_term.term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.taxa",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Taxa",
-                "description": "The species of the organism."
-              }
-            },
-            "description": "Filter by samples.taxa",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.treatments.@id",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "ID"
-              }
-            },
-            "description": "Filter by samples.treatments.@id",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.treatments.purpose",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Purpose",
-                "description": "The intended purpose for treating the samples."
-              }
-            },
-            "description": "Filter by samples.treatments.purpose",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.treatments.status",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Status",
-                "description": "The status of the metadata object."
-              }
-            },
-            "description": "Filter by samples.treatments.status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.treatments.summary",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Summary"
-              }
-            },
-            "description": "Filter by samples.treatments.summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.treatments.treatment_term_name",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Treatment Term Name",
-                "description": "Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc."
-              }
-            },
-            "description": "Filter by samples.treatments.treatment_term_name",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "samples.treatments.treatment_type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "title": "Treatment Type",
-                "description": "The classification of treatment agent that specifies its exact molecular nature. "
-              }
-            },
-            "description": "Filter by samples.treatments.treatment_type",
             "style": "form",
             "explode": true
           },
@@ -59083,7 +58598,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -61441,7 +60955,7 @@
               "items": {
                 "type": "string",
                 "title": "ORF ID",
-                "pattern": "^(CCSBORF|TFORF)[1-9][0-9]*$",
+                "pattern": "^(CCSBORF|TFORF)[0-9]+$",
                 "description": "Open reading frame ID."
               }
             },
@@ -67684,7 +67198,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -70284,7 +69797,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -72964,7 +72476,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -75163,7 +74674,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -77124,7 +76634,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -79672,7 +79181,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -84296,6 +83804,7 @@
                   "allele specific RNA pseudobulk counts",
                   "allele specific binding",
                   "allele specific cell by gene matrix",
+                  "allelic effects",
                   "annotated cell by gene and guide matrix",
                   "annotated cell by gene matrix",
                   "annotated cell by guide matrix",
@@ -84364,7 +83873,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "fold change of post-selection and pre-selection",
-                  "fold change over control",
                   "fragments",
                   "functional conservation mapping",
                   "functional impact score",
@@ -84527,6 +84035,7 @@
                   "allele specific RNA pseudobulk counts",
                   "allele specific binding",
                   "allele specific cell by gene matrix",
+                  "allelic effects",
                   "annotated cell by gene and guide matrix",
                   "annotated cell by gene matrix",
                   "annotated cell by guide matrix",
@@ -84595,7 +84104,6 @@
                   "feature weights",
                   "fiducial alignment",
                   "fold change of post-selection and pre-selection",
-                  "fold change over control",
                   "fragments",
                   "functional conservation mapping",
                   "functional impact score",
@@ -85094,7 +84602,6 @@
                   "ATAC-seq",
                   "varACCESS",
                   "ACCESS-ATAC",
-                  "scATAC-seq",
                   "scACCESS-ATAC",
                   "snATAC-seq",
                   "mtscMultiome",
@@ -86102,6 +85609,7 @@
                 "allele specific RNA pseudobulk counts",
                 "allele specific binding",
                 "allele specific cell by gene matrix",
+                "allelic effects",
                 "annotated cell by gene and guide matrix",
                 "annotated cell by gene matrix",
                 "annotated cell by guide matrix",
@@ -86170,7 +85678,6 @@
                 "feature weights",
                 "fiducial alignment",
                 "fold change of post-selection and pre-selection",
-                "fold change over control",
                 "fragments",
                 "functional conservation mapping",
                 "functional impact score",
@@ -86327,6 +85834,7 @@
                 "allele specific RNA pseudobulk counts",
                 "allele specific binding",
                 "allele specific cell by gene matrix",
+                "allelic effects",
                 "annotated cell by gene and guide matrix",
                 "annotated cell by gene matrix",
                 "annotated cell by guide matrix",
@@ -86395,7 +85903,6 @@
                 "feature weights",
                 "fiducial alignment",
                 "fold change of post-selection and pre-selection",
-                "fold change over control",
                 "fragments",
                 "functional conservation mapping",
                 "functional impact score",
@@ -91610,6 +91117,11 @@
               "spliceQTL"
             ]
           },
+          "version": {
+            "title": "Version",
+            "description": "The version of this reference file, used for external files loaded into the IGVF catalog.",
+            "type": "string"
+          },
           "sources": {
             "title": "Sources",
             "description": "The originating lab(s) or vendor(s).",
@@ -94825,6 +94337,7 @@
               "interactors",
               "alleles",
               "targeton",
+              "chromosome",
               "control"
             ]
           },
@@ -94923,6 +94436,18 @@
                 "type": "integer",
                 "minimum": 1
               }
+            }
+          },
+          "chromosomes": {
+            "title": "Chromosomes",
+            "description": "The list of chromosomes this construct library was designed to target.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Chromosome",
+              "description": "A chromosome this construct library was designed to target.",
+              "pattern": "^(chr[0-9A-Za-z_]+)$",
+              "type": "string"
             }
           },
           "guide_type": {
@@ -95183,7 +94708,6 @@
                 "ATAC-seq",
                 "varACCESS",
                 "ACCESS-ATAC",
-                "scATAC-seq",
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
@@ -95618,6 +95142,16 @@
               "type": "string"
             }
           },
+          "versions": {
+            "title": "Versions",
+            "description": "The versions of the reference files for external data loaded into the IGVF catalog.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Version",
+              "type": "string"
+            }
+          },
           "preferred_assay_slims": {
             "title": "Preferred Assay Slims",
             "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
@@ -95667,7 +95201,6 @@
                 "ATAC-seq",
                 "varACCESS",
                 "ACCESS-ATAC",
-                "scATAC-seq",
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
@@ -96356,7 +95889,6 @@
                 "ATAC-seq",
                 "varACCESS",
                 "ACCESS-ATAC",
-                "scATAC-seq",
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
@@ -98969,7 +98501,6 @@
                 "ATAC-seq",
                 "varACCESS",
                 "ACCESS-ATAC",
-                "scATAC-seq",
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
@@ -99961,7 +99492,7 @@
             "title": "ORF ID",
             "description": "Open reading frame ID.",
             "type": "string",
-            "pattern": "^(CCSBORF|TFORF)[1-9][0-9]*$"
+            "pattern": "^(CCSBORF|TFORF)[0-9]+$"
           },
           "genes": {
             "title": "ENSEMBL GeneIDs",
@@ -106624,7 +106155,6 @@
                 "ATAC-seq",
                 "varACCESS",
                 "ACCESS-ATAC",
-                "scATAC-seq",
                 "scACCESS-ATAC",
                 "snATAC-seq",
                 "mtscMultiome",
