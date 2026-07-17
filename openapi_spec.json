@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "127.0.0"
+    "version": "128.0.0"
   },
   "servers": [
     {
@@ -7585,6 +7585,21 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.cell_qualifier",
             "in": "query",
             "schema": {
@@ -10051,6 +10066,21 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.cell_qualifier",
             "in": "query",
             "schema": {
@@ -12466,6 +12496,21 @@
               }
             },
             "description": "Filter by file_set.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
             "style": "form",
             "explode": true
           },
@@ -14933,6 +14978,21 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.cell_qualifier",
             "in": "query",
             "schema": {
@@ -17392,6 +17452,21 @@
               }
             },
             "description": "Filter by file_set.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
             "style": "form",
             "explode": true
           },
@@ -19890,6 +19965,21 @@
               }
             },
             "description": "Filter by file_set.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
             "style": "form",
             "explode": true
           },
@@ -22430,6 +22520,21 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.cell_qualifier",
             "in": "query",
             "schema": {
@@ -24866,6 +24971,21 @@
               }
             },
             "description": "Filter by file_set.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
             "style": "form",
             "explode": true
           },
@@ -27614,6 +27734,21 @@
             "explode": true
           },
           {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_set.cell_qualifier",
             "in": "query",
             "schema": {
@@ -30231,6 +30366,21 @@
               }
             },
             "description": "Filter by file_set.assay_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_set.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_set.assay_titles",
             "style": "form",
             "explode": true
           },
@@ -44177,8 +44327,8 @@
                   "endogenous allelic sequencing",
                   "exogenous allelic sequencing",
                   "scRNA-seq",
-                  "scRNA-seq with guide capture",
-                  "scATAC-seq"
+                  "scRNA-seq including guide capture",
+                  "snATAC-seq"
                 ],
                 "description": "The sequencing readout produced by this CRISPR measurement set."
               }
@@ -67251,6 +67401,23 @@
             "explode": true
           },
           {
+            "name": "file_sets.preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by file_sets.preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -69848,6 +70015,23 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by file_sets.preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -72606,6 +72790,23 @@
             "explode": true
           },
           {
+            "name": "file_sets.preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by file_sets.preferred_assay_slims",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.preferred_assay_titles",
             "in": "query",
             "schema": {
@@ -74778,6 +74979,21 @@
             "explode": true
           },
           {
+            "name": "file_sets.assay_titles",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Assay Term Names",
+              "items": {
+                "type": "string",
+                "title": "Assay Term Names"
+              }
+            },
+            "description": "Filter by file_sets.assay_titles",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "file_sets.file_set_type",
             "in": "query",
             "schema": {
@@ -74802,6 +75018,23 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by file_sets.preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -76764,6 +76997,23 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by file_sets.preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -79313,6 +79563,23 @@
               }
             },
             "description": "Filter by file_sets.lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "file_sets.preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by file_sets.preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -84750,6 +85017,23 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "preferred_assay_slims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Preferred Assay Slims",
+              "items": {
+                "type": "string",
+                "title": "Preferred Assay Slim",
+                "description": "Category of assay that produced data analyzed in the analysis set."
+              },
+              "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set."
+            },
+            "description": "Filter by preferred_assay_slims",
             "style": "form",
             "explode": true
           },
@@ -95733,8 +96017,8 @@
               "endogenous allelic sequencing",
               "exogenous allelic sequencing",
               "scRNA-seq",
-              "scRNA-seq with guide capture",
-              "scATAC-seq"
+              "scRNA-seq including guide capture",
+              "snATAC-seq"
             ]
           },
           "crispr_screen_biometric": {
@@ -106694,6 +106978,17 @@
           "summary": {
             "title": "Summary",
             "type": "string"
+          },
+          "preferred_assay_slims": {
+            "title": "Preferred Assay Slims",
+            "description": "Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Preferred Assay Slim",
+              "description": "Category of assay that produced data analyzed in the analysis set.",
+              "type": "string"
+            }
           }
         }
       }

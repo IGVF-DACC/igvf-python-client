@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
+**preferred_assay_slims** | **List[str]** | Preferred Assay Slim(s) of assays that produced data analyzed in the analysis set. | [optional] 
 
 ## Example
 
