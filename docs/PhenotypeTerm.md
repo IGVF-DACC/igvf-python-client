@@ -1,6 +1,6 @@
 # PhenotypeTerm
 
-An ontology term from Experimental Factor Ontology (EFO), Human Disease Ontology (DOID), Human Phenotype Ontology (HP), Mondo Disease Ontology (MONDO), National Cancer Institute Thesaurus (NCIT), Ontology of Biological Attributes (OBA), or Gene Ontology (GO) for phenotypes, diseases, traits and biological processes.
+An ontology term from Experimental Factor Ontology (EFO), Human Disease Ontology (DOID), Human Phenotype Ontology (HP), Mondo Disease Ontology (MONDO), National Cancer Institute Thesaurus (NCIT), Ontology of Biological Attributes (OBA), BioAssay Ontology (BAO), or Gene Ontology (GO) for phenotypes, diseases, traits and biological processes.
 
 ## Properties
 
