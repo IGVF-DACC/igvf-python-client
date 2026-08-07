@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **classification** | **str** | Sample specific biomarker. | [optional] 
 **quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | [optional] 
 **synonyms** | **List[str]** | Alternate names for this biomarker. | [optional] 
-**gene** | **str** | Biomarker gene. | [optional] 
+**gene** | **str** | The gene associated with this biomarker. For flow cytometry assays such as CRISPR FACS or MACS screens, use this property when the gene is used for sample sorting or as a differentiation marker and is not the primary focus of the experiment. When the gene is the primary focus of the assay, use targeted_genes on the Measurement Set instead. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 

@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **originated_from** | **str** | Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification. | [optional] 
 **treatments** | **List[str]** | A list of treatments applied to the biosample with the purpose of perturbation. | [optional] 
 **donors** | **List[str]** | Donor(s) the sample was derived from. | [optional] 
-**biomarkers** | **List[str]** | Biological markers that are associated with this sample. | [optional] 
+**biomarkers** | **List[str]** | Biological markers associated with this sample, such as cell surface proteins or marker genes used for sorting. For flow cytometry assays, when a gene is used for sorting but is not the primary focus of the experiment, link a biomarker with gene here rather than using targeted_genes on the Measurement Set. | [optional] 
 **embryonic** | **bool** | Biosample is embryonic. | [optional] 
 **modifications** | **List[str]** | Links to modifications applied to this biosample. | [optional] 
 **cellular_sub_pool** | **str** | Cellular sub-pool fraction of the sample. Also known as PKR and sub-library. | [optional] 

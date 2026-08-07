@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "130.0.1"
+    "version": "130.1.0"
   },
   "servers": [
     {
@@ -1376,6 +1376,7 @@
                   "logistic regression",
                   "matrix generation",
                   "merging",
+                  "methylation calling",
                   "modification calling",
                   "modification site annotation",
                   "peak calling",
@@ -1704,6 +1705,7 @@
                   "cell hashing barcodes",
                   "chromatin conformation compartments",
                   "chromatin contact quantifications",
+                  "chromosome sizes",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -1730,6 +1732,7 @@
                   "eQTL",
                   "edge weights",
                   "editing templates",
+                  "effective spatial variability",
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
@@ -1990,6 +1993,7 @@
                   "cell hashing barcodes",
                   "chromatin conformation compartments",
                   "chromatin contact quantifications",
+                  "chromosome sizes",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -2016,6 +2020,7 @@
                   "eQTL",
                   "edge weights",
                   "editing templates",
+                  "effective spatial variability",
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
@@ -2600,6 +2605,7 @@
                   "logistic regression",
                   "matrix generation",
                   "merging",
+                  "methylation calling",
                   "modification calling",
                   "modification site annotation",
                   "peak calling",
@@ -2691,6 +2697,7 @@
                   "cell hashing barcodes",
                   "chromatin conformation compartments",
                   "chromatin contact quantifications",
+                  "chromosome sizes",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -2717,6 +2724,7 @@
                   "eQTL",
                   "edge weights",
                   "editing templates",
+                  "effective spatial variability",
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
@@ -2933,6 +2941,7 @@
                   "cell hashing barcodes",
                   "chromatin conformation compartments",
                   "chromatin contact quantifications",
+                  "chromosome sizes",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -2959,6 +2968,7 @@
                   "eQTL",
                   "edge weights",
                   "editing templates",
+                  "effective spatial variability",
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
@@ -4283,7 +4293,7 @@
               "items": {
                 "type": "string",
                 "title": "Gene",
-                "description": "Biomarker gene."
+                "description": "The gene associated with this biomarker. For flow cytometry assays such as CRISPR FACS or MACS screens, use this property when the gene is used for sample sorting or as a differentiation marker and is not the primary focus of the experiment. When the gene is the primary focus of the assay, use targeted_genes on the Measurement Set instead."
               }
             },
             "description": "Filter by gene",
@@ -46404,7 +46414,7 @@
                   "3 prime to 5 prime",
                   "unstranded"
                 ],
-                "description": "Indicates whether a transcriptomic library is forward, reverse, or unstranded based on the strand-specific protocol used."
+                "description": "Indicates which strand of the original RNA molecule the transcriptomic library represents. '5 prime to 3 prime' (forward) libraries generate cDNA corresponding to the same strand as the RNA, while '3 prime to 5 prime' (reverse) libraries generate cDNA complementary to the RNA. This property is independent of the physical direction of sequencing reads."
               }
             },
             "description": "Filter by strand_specificity",
@@ -57564,6 +57574,7 @@
                   "evoCDA",
                   "KOX1-KRAB",
                   "M-MLV RT (PE2)",
+                  "PEmax-La",
                   "p300",
                   "p300-2A-PuroR",
                   "TdCBE",
@@ -84238,6 +84249,7 @@
                   "logistic regression",
                   "matrix generation",
                   "merging",
+                  "methylation calling",
                   "modification calling",
                   "modification site annotation",
                   "peak calling",
@@ -84329,6 +84341,7 @@
                   "cell hashing barcodes",
                   "chromatin conformation compartments",
                   "chromatin contact quantifications",
+                  "chromosome sizes",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -84355,6 +84368,7 @@
                   "eQTL",
                   "edge weights",
                   "editing templates",
+                  "effective spatial variability",
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
@@ -84571,6 +84585,7 @@
                   "cell hashing barcodes",
                   "chromatin conformation compartments",
                   "chromatin contact quantifications",
+                  "chromosome sizes",
                   "cis-trans regulatory differences",
                   "co-localization scores",
                   "coding variant effects",
@@ -84597,6 +84612,7 @@
                   "eQTL",
                   "edge weights",
                   "editing templates",
+                  "effective spatial variability",
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
@@ -86068,6 +86084,7 @@
                 "logistic regression",
                 "matrix generation",
                 "merging",
+                "methylation calling",
                 "modification calling",
                 "modification site annotation",
                 "peak calling",
@@ -86177,6 +86194,7 @@
                 "cell hashing barcodes",
                 "chromatin conformation compartments",
                 "chromatin contact quantifications",
+                "chromosome sizes",
                 "cis-trans regulatory differences",
                 "co-localization scores",
                 "coding variant effects",
@@ -86203,6 +86221,7 @@
                 "eQTL",
                 "edge weights",
                 "editing templates",
+                "effective spatial variability",
                 "element quantifications",
                 "element to gene interactions",
                 "elements reference",
@@ -86413,6 +86432,7 @@
                 "cell hashing barcodes",
                 "chromatin conformation compartments",
                 "chromatin contact quantifications",
+                "chromosome sizes",
                 "cis-trans regulatory differences",
                 "co-localization scores",
                 "coding variant effects",
@@ -86439,6 +86459,7 @@
                 "eQTL",
                 "edge weights",
                 "editing templates",
+                "effective spatial variability",
                 "element quantifications",
                 "element to gene interactions",
                 "elements reference",
@@ -87032,7 +87053,7 @@
           },
           "gene": {
             "title": "Gene",
-            "description": "Biomarker gene.",
+            "description": "The gene associated with this biomarker. For flow cytometry assays such as CRISPR FACS or MACS screens, use this property when the gene is used for sample sorting or as a differentiation marker and is not the primary focus of the experiment. When the gene is the primary focus of the assay, use targeted_genes on the Measurement Set instead.",
             "type": "string"
           },
           "@id": {
@@ -94699,7 +94720,7 @@
           },
           "small_scale_gene_list": {
             "title": "Small Scale Gene List",
-            "description": "The specific, small scale list of (<=100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression.",
+            "description": "The specific, small scale list of (<=100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes that are the primary focus of an assay, and from biomarkers.gene on Sample, which describes genes used only as sort or differentiation markers.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -96196,7 +96217,7 @@
           },
           "strand_specificity": {
             "title": "Strand Specificity",
-            "description": "Indicates whether a transcriptomic library is forward, reverse, or unstranded based on the strand-specific protocol used.",
+            "description": "Indicates which strand of the original RNA molecule the transcriptomic library represents. '5 prime to 3 prime' (forward) libraries generate cDNA corresponding to the same strand as the RNA, while '3 prime to 5 prime' (reverse) libraries generate cDNA complementary to the RNA. This property is independent of the physical direction of sequencing reads.",
             "type": "string",
             "enum": [
               "5 prime to 3 prime",
@@ -96227,7 +96248,7 @@
           },
           "targeted_genes": {
             "title": "Targeted Genes",
-            "description": "A list of genes targeted in this assay. For example, TF ChIP-seq attempts to identify binding sites of a protein encoded by a specific gene. In CRISPR FlowFISH, the modified samples are sorted based on expression of a specific gene. This property differs from small_scale_gene_list in Construct Library Set, which describes genes targeted by the content integrated in the constructs (such as guide RNAs.)",
+            "description": "A list of genes that are the primary focus of this assay. For example, TF ChIP-seq attempts to identify binding sites of a protein encoded by a specific gene. In CRISPR FACS screens where the assay investigates abundance or expression of a specific gene, list that gene here. When a gene is used only as a sort or differentiation marker and is not the primary focus of the experiment, use biomarkers.gene on the sample instead and omit targeted_genes. This property differs from small_scale_gene_list in Construct Library Set, which describes genes targeted by the content integrated in the constructs (such as guide RNAs).",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -98847,6 +98868,7 @@
               "evoCDA",
               "KOX1-KRAB",
               "M-MLV RT (PE2)",
+              "PEmax-La",
               "p300",
               "p300-2A-PuroR",
               "TdCBE",
@@ -102486,7 +102508,7 @@
           },
           "biomarkers": {
             "title": "Biomarkers",
-            "description": "Biological markers that are associated with this sample.",
+            "description": "Biological markers associated with this sample, such as cell surface proteins or marker genes used for sorting. For flow cytometry assays, when a gene is used for sorting but is not the primary focus of the experiment, link a biomarker with gene here rather than using targeted_genes on the Measurement Set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -103778,7 +103800,7 @@
           },
           "biomarkers": {
             "title": "Biomarkers",
-            "description": "Biological markers that are associated with this sample.",
+            "description": "Biological markers associated with this sample, such as cell surface proteins or marker genes used for sorting. For flow cytometry assays, when a gene is used for sorting but is not the primary focus of the experiment, link a biomarker with gene here rather than using targeted_genes on the Measurement Set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -104910,7 +104932,7 @@
           },
           "biomarkers": {
             "title": "Biomarkers",
-            "description": "Biological markers that are associated with this sample.",
+            "description": "Biological markers associated with this sample, such as cell surface proteins or marker genes used for sorting. For flow cytometry assays, when a gene is used for sorting but is not the primary focus of the experiment, link a biomarker with gene here rather than using targeted_genes on the Measurement Set.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -105561,7 +105583,7 @@
           },
           "biomarkers": {
             "title": "Biomarkers",
-            "description": "Biological markers that are associated with this sample.",
+            "description": "Biological markers associated with this sample, such as cell surface proteins or marker genes used for sorting. For flow cytometry assays, when a gene is used for sorting but is not the primary focus of the experiment, link a biomarker with gene here rather than using targeted_genes on the Measurement Set.",
             "type": "array",
             "uniqueItems": true,
             "items": {

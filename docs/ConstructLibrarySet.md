@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **control_file_sets** | **List[str]** | File sets that can serve as scientific controls for this file set. | [optional] 
 **small_scale_loci_list** | [**List[Locus1]**](Locus1.md) | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions. | [optional] 
-**small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression. | [optional] 
+**small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes that are the primary focus of an assay, and from biomarkers.gene on Sample, which describes genes used only as sort or differentiation markers. | [optional] 
 **large_scale_gene_list** | **str** | The large scale list of (&gt;100 genes) this construct library was designed to target. | [optional] 
 **release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
