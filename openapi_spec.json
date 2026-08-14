@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "130.1.0"
+    "version": "131.0.0"
   },
   "servers": [
     {
@@ -1677,7 +1677,6 @@
                   "annotated cell by peak matrix",
                   "barcode onlist",
                   "barcode replacement",
-                  "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
                   "barcode to donor mapping",
                   "barcode to element mapping",
@@ -1689,6 +1688,7 @@
                   "caQTL",
                   "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
+                  "cell annotation with TF overexpression",
                   "cell annotations",
                   "cell by UMI count matrix",
                   "cell by bin contact matrix",
@@ -1965,7 +1965,6 @@
                   "annotated cell by peak matrix",
                   "barcode onlist",
                   "barcode replacement",
-                  "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
                   "barcode to donor mapping",
                   "barcode to element mapping",
@@ -1977,6 +1976,7 @@
                   "caQTL",
                   "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
+                  "cell annotation with TF overexpression",
                   "cell annotations",
                   "cell by UMI count matrix",
                   "cell by bin contact matrix",
@@ -2669,7 +2669,6 @@
                   "annotated cell by peak matrix",
                   "barcode onlist",
                   "barcode replacement",
-                  "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
                   "barcode to donor mapping",
                   "barcode to element mapping",
@@ -2681,6 +2680,7 @@
                   "caQTL",
                   "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
+                  "cell annotation with TF overexpression",
                   "cell annotations",
                   "cell by UMI count matrix",
                   "cell by bin contact matrix",
@@ -2913,7 +2913,6 @@
                   "annotated cell by peak matrix",
                   "barcode onlist",
                   "barcode replacement",
-                  "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
                   "barcode to donor mapping",
                   "barcode to element mapping",
@@ -2925,6 +2924,7 @@
                   "caQTL",
                   "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
+                  "cell annotation with TF overexpression",
                   "cell annotations",
                   "cell by UMI count matrix",
                   "cell by bin contact matrix",
@@ -54953,6 +54953,21 @@
             "explode": true
           },
           {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "URL",
+                "description": "An external resource with additional information."
+              }
+            },
+            "description": "Filter by url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "uuid",
             "in": "query",
             "schema": {
@@ -84313,7 +84328,6 @@
                   "annotated cell by peak matrix",
                   "barcode onlist",
                   "barcode replacement",
-                  "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
                   "barcode to donor mapping",
                   "barcode to element mapping",
@@ -84325,6 +84339,7 @@
                   "caQTL",
                   "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
+                  "cell annotation with TF overexpression",
                   "cell annotations",
                   "cell by UMI count matrix",
                   "cell by bin contact matrix",
@@ -84557,7 +84572,6 @@
                   "annotated cell by peak matrix",
                   "barcode onlist",
                   "barcode replacement",
-                  "barcode to TF overexpression mapping",
                   "barcode to cluster mapping",
                   "barcode to donor mapping",
                   "barcode to element mapping",
@@ -84569,6 +84583,7 @@
                   "caQTL",
                   "calibrated coding variant effect thresholds",
                   "calibrated coding variant effects",
+                  "cell annotation with TF overexpression",
                   "cell annotations",
                   "cell by UMI count matrix",
                   "cell by bin contact matrix",
@@ -86166,7 +86181,6 @@
                 "annotated cell by peak matrix",
                 "barcode onlist",
                 "barcode replacement",
-                "barcode to TF overexpression mapping",
                 "barcode to cluster mapping",
                 "barcode to donor mapping",
                 "barcode to element mapping",
@@ -86178,6 +86192,7 @@
                 "caQTL",
                 "calibrated coding variant effect thresholds",
                 "calibrated coding variant effects",
+                "cell annotation with TF overexpression",
                 "cell annotations",
                 "cell by UMI count matrix",
                 "cell by bin contact matrix",
@@ -86404,7 +86419,6 @@
                 "annotated cell by peak matrix",
                 "barcode onlist",
                 "barcode replacement",
-                "barcode to TF overexpression mapping",
                 "barcode to cluster mapping",
                 "barcode to donor mapping",
                 "barcode to element mapping",
@@ -86416,6 +86430,7 @@
                 "caQTL",
                 "calibrated coding variant effect thresholds",
                 "calibrated coding variant effects",
+                "cell annotation with TF overexpression",
                 "cell annotations",
                 "cell by UMI count matrix",
                 "cell by bin contact matrix",
@@ -97635,6 +97650,11 @@
             "type": "string",
             "description": "Explanation of why an object was transitioned to the revoked status.",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "url": {
+            "title": "URL",
+            "description": "An external resource with additional information.",
+            "type": "string"
           },
           "schema_version": {
             "title": "Schema Version",
