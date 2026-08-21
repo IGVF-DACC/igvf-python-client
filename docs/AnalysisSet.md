@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **file_set_type** | **str** | The level of this analysis set. | [optional] 
 **supersedes** | **List[str]** | The file set(s) that this file set supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **external_image_data_url** | **str** | Links to the external site where images and related data produced by this analysis are stored. | [optional] 
-**demultiplexed_samples** | **List[str]** | The sample(s) associated with this analysis set inferred through demultiplexing. | [optional] 
+**subset_samples** | **List[str]** | The subset of sample(s) this analysis set represents, such as demultiplexed constituents or a timepoint from a differentiation series. Takes priority over samples inferred from input_file_sets when calculating samples and sample_summary. | [optional] 
 **uniform_pipeline_status** | **str** | The status of the single cell or Perturb-seq uniform pipeline processing for this analysis set, if applicable. | [optional] 
 **pipeline_parameters** | **List[str]** | The document(s) or file(s) providing necessary configurations for reproducing the analysis. | [optional] 
 **id** | **str** |  | [optional] 

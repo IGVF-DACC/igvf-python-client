@@ -54,6 +54,7 @@ Name | Type | Description | Notes
 **supersedes** | **List[str]** | The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
 **catalog_adapters** | **List[str]** | IGVF Catalog Adapters that ingests this file | [optional] 
 **catalog_method** | **str** | The method curated in the IGVF catalog that the non-IGVF data in this file processed with | [optional] 
+**external_source** | **str** | The external, non-IGVF source of the data in this file. | [optional] 
 **version** | **str** | The version of this reference file, used for external files loaded into the IGVF catalog. | [optional] 
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **id** | **str** |  | [optional] 
