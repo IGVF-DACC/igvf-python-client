@@ -4421,7 +4421,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **perturb_seq_quality_metrics**
-> PerturbSeqQualityMetricResults perturb_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, alignment_percentage=alignment_percentage, analysis_step_version=analysis_step_version, avg_cells_per_target=avg_cells_per_target, avg_umis_per_cell=avg_umis_per_cell, award_id=award_id, award_component=award_component, award_project=award_project, creation_timestamp=creation_timestamp, description=description, guide_diversity=guide_diversity, lab_id=lab_id, lab_title=lab_title, mean_mitochondrial_reads=mean_mitochondrial_reads, moi=moi, notes=notes, paired_reads_mapped=paired_reads_mapped, pct_cells_assigned_guide=pct_cells_assigned_guide, preview_timestamp=preview_timestamp, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total_cells_passing_filters=total_cells_passing_filters, total_detected_scrna_barcodes=total_detected_scrna_barcodes, total_guides=total_guides, total_reads=total_reads, total_targets=total_targets, uuid=uuid)
+> PerturbSeqQualityMetricResults perturb_seq_quality_metrics(query=query, limit=limit, sort=sort, id=id, aliases=aliases, alignment_percentage=alignment_percentage, analysis_step_version=analysis_step_version, avg_cells_per_guide=avg_cells_per_guide, avg_umis_per_cell=avg_umis_per_cell, award_id=award_id, award_component=award_component, award_project=award_project, creation_timestamp=creation_timestamp, description=description, frac_cells_with_guide=frac_cells_with_guide, genes_median=genes_median, guide_umi_mean=guide_umi_mean, lab_id=lab_id, lab_title=lab_title, mean_percent_mitochondrial=mean_percent_mitochondrial, mean_umis_per_barcode=mean_umis_per_barcode, moi=moi, n_cells_exactly_1_guide=n_cells_exactly_1_guide, n_cells_with_guide=n_cells_with_guide, n_targets=n_targets, n_unique=n_unique, notes=notes, p_unique=p_unique, paired_reads_mapped=paired_reads_mapped, percentage_barcodes_on_onlist=percentage_barcodes_on_onlist, percentage_reads_on_onlist=percentage_reads_on_onlist, preview_timestamp=preview_timestamp, quality_metric_of=quality_metric_of, release_timestamp=release_timestamp, status=status, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, submitter_comment=submitter_comment, summary=summary, total_cells_passing_filters=total_cells_passing_filters, total_detected_scrna_barcodes=total_detected_scrna_barcodes, total_guides=total_guides, total_reads=total_reads, umi_median=umi_median, uuid=uuid)
 
 List items in the PerturbSeqQualityMetric collection.
 
@@ -4451,21 +4451,30 @@ Name | Type | Description  | Notes
  **aliases** | **List[str]**| Filter by aliases | [optional] 
  **alignment_percentage** | **List[float]**| Filter by alignment_percentage | [optional] 
  **analysis_step_version** | **List[str]**| Filter by analysis_step_version | [optional] 
- **avg_cells_per_target** | **List[float]**| Filter by avg_cells_per_target | [optional] 
+ **avg_cells_per_guide** | **List[float]**| Filter by avg_cells_per_guide | [optional] 
  **avg_umis_per_cell** | **List[float]**| Filter by avg_umis_per_cell | [optional] 
  **award_id** | **List[str]**| Filter by award.@id | [optional] 
  **award_component** | **List[str]**| Filter by award.component | [optional] 
  **award_project** | **List[str]**| Filter by award.project | [optional] 
  **creation_timestamp** | **List[str]**| Filter by creation_timestamp | [optional] 
  **description** | **List[str]**| Filter by description | [optional] 
- **guide_diversity** | **List[float]**| Filter by guide_diversity | [optional] 
+ **frac_cells_with_guide** | **List[float]**| Filter by frac_cells_with_guide | [optional] 
+ **genes_median** | **List[float]**| Filter by genes_median | [optional] 
+ **guide_umi_mean** | **List[float]**| Filter by guide_umi_mean | [optional] 
  **lab_id** | **List[str]**| Filter by lab.@id | [optional] 
  **lab_title** | **List[str]**| Filter by lab.title | [optional] 
- **mean_mitochondrial_reads** | **List[float]**| Filter by mean_mitochondrial_reads | [optional] 
+ **mean_percent_mitochondrial** | **List[float]**| Filter by mean_percent_mitochondrial | [optional] 
+ **mean_umis_per_barcode** | **List[float]**| Filter by mean_umis_per_barcode | [optional] 
  **moi** | **List[float]**| Filter by moi | [optional] 
+ **n_cells_exactly_1_guide** | **List[float]**| Filter by n_cells_exactly_1_guide | [optional] 
+ **n_cells_with_guide** | **List[float]**| Filter by n_cells_with_guide | [optional] 
+ **n_targets** | **List[float]**| Filter by n_targets | [optional] 
+ **n_unique** | **List[float]**| Filter by n_unique | [optional] 
  **notes** | **List[str]**| Filter by notes | [optional] 
+ **p_unique** | **List[float]**| Filter by p_unique | [optional] 
  **paired_reads_mapped** | **List[float]**| Filter by paired_reads_mapped | [optional] 
- **pct_cells_assigned_guide** | **List[float]**| Filter by pct_cells_assigned_guide | [optional] 
+ **percentage_barcodes_on_onlist** | **List[float]**| Filter by percentage_barcodes_on_onlist | [optional] 
+ **percentage_reads_on_onlist** | **List[float]**| Filter by percentage_reads_on_onlist | [optional] 
  **preview_timestamp** | **List[str]**| Filter by preview_timestamp | [optional] 
  **quality_metric_of** | **List[str]**| Filter by quality_metric_of | [optional] 
  **release_timestamp** | **List[str]**| Filter by release_timestamp | [optional] 
@@ -4478,7 +4487,7 @@ Name | Type | Description  | Notes
  **total_detected_scrna_barcodes** | **List[float]**| Filter by total_detected_scrna_barcodes | [optional] 
  **total_guides** | **List[float]**| Filter by total_guides | [optional] 
  **total_reads** | **List[float]**| Filter by total_reads | [optional] 
- **total_targets** | **List[float]**| Filter by total_targets | [optional] 
+ **umi_median** | **List[float]**| Filter by umi_median | [optional] 
  **uuid** | **List[str]**| Filter by uuid | [optional] 
 
 ### Return type

@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "133.0.0"
+    "version": "134.0.0"
   },
   "servers": [
     {
@@ -1757,6 +1757,8 @@
                   "gene programs",
                   "gene quantifications",
                   "gene universe",
+                  "gene-disease program",
+                  "gene-disease program heritability",
                   "genes",
                   "genes in pathway",
                   "genes in pathways",
@@ -2062,6 +2064,8 @@
                   "gene programs",
                   "gene quantifications",
                   "gene universe",
+                  "gene-disease program",
+                  "gene-disease program heritability",
                   "genes",
                   "genes in pathway",
                   "genes in pathways",
@@ -2783,6 +2787,8 @@
                   "gene programs",
                   "gene quantifications",
                   "gene universe",
+                  "gene-disease program",
+                  "gene-disease program heritability",
                   "genes",
                   "genes in pathway",
                   "genes in pathways",
@@ -3044,6 +3050,8 @@
                   "gene programs",
                   "gene quantifications",
                   "gene universe",
+                  "gene-disease program",
+                  "gene-disease program heritability",
                   "genes",
                   "genes in pathway",
                   "genes in pathways",
@@ -7606,6 +7614,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -7923,6 +7932,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -10093,6 +10103,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -10410,6 +10421,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -12533,6 +12545,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -12850,6 +12863,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -15017,6 +15031,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -15334,6 +15349,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -17501,6 +17517,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -17818,6 +17835,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -20020,6 +20038,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -20337,6 +20356,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -22641,6 +22661,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -22958,6 +22979,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -25102,6 +25124,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -25419,6 +25442,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -27867,6 +27891,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -28184,6 +28209,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -30509,6 +30535,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -30826,6 +30853,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -36992,6 +37020,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -42500,6 +42529,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -45697,6 +45727,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -48749,6 +48780,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -59099,6 +59131,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -64194,17 +64227,17 @@
             "explode": true
           },
           {
-            "name": "avg_cells_per_target",
+            "name": "avg_cells_per_guide",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "Average Cells Per Target",
-                "description": "Average Cells Per Target"
+                "title": "Average Cells Per Guide",
+                "description": "Average number of cells assigned to each guide."
               }
             },
-            "description": "Filter by avg_cells_per_target",
+            "description": "Filter by avg_cells_per_guide",
             "style": "form",
             "explode": true
           },
@@ -64299,17 +64332,47 @@
             "explode": true
           },
           {
-            "name": "guide_diversity",
+            "name": "frac_cells_with_guide",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "Guide Diversity",
-                "description": "Guide diversity (Gini index)"
+                "title": "Fraction Cells With Guide",
+                "description": "Fraction of cells with at least one assigned guide."
               }
             },
-            "description": "Filter by guide_diversity",
+            "description": "Filter by frac_cells_with_guide",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "genes_median",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Median Genes Per Cell",
+                "description": "Median number of expressed genes per cell after filtering."
+              }
+            },
+            "description": "Filter by genes_median",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "guide_umi_mean",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean Guide UMIs Per Cell",
+                "description": "Mean total guide UMIs per cell after filtering."
+              }
+            },
+            "description": "Filter by guide_umi_mean",
             "style": "form",
             "explode": true
           },
@@ -64342,17 +64405,32 @@
             "explode": true
           },
           {
-            "name": "mean_mitochondrial_reads",
+            "name": "mean_percent_mitochondrial",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "Mean Mitochondrial Reads",
-                "description": "Mean mitochondrial reads."
+                "title": "Mean Percent Mitochondrial",
+                "description": "Mean percent mitochondrial UMIs per cell."
               }
             },
-            "description": "Filter by mean_mitochondrial_reads",
+            "description": "Filter by mean_percent_mitochondrial",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "mean_umis_per_barcode",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Mean UMIs Per Barcode",
+                "description": "Mean number of UMIs per cell barcode."
+              }
+            },
+            "description": "Filter by mean_umis_per_barcode",
             "style": "form",
             "explode": true
           },
@@ -64368,6 +64446,66 @@
               }
             },
             "description": "Filter by moi",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_cells_exactly_1_guide",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Cells With Exactly One Guide",
+                "description": "Number of cells with exactly one assigned guide."
+              }
+            },
+            "description": "Filter by n_cells_exactly_1_guide",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_cells_with_guide",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Cells With Guide",
+                "description": "Number of cells with at least one assigned guide."
+              }
+            },
+            "description": "Filter by n_cells_with_guide",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_targets",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Target Sequences",
+                "description": "Total number of target sequences (e.g., transcripts) in the index."
+              }
+            },
+            "description": "Filter by n_targets",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "n_unique",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Number Of Reads Uniquely Pseudoaligned",
+                "description": "Number of reads that could be pseudoaligned to a unique target sequence."
+              }
+            },
+            "description": "Filter by n_unique",
             "style": "form",
             "explode": true
           },
@@ -64388,6 +64526,21 @@
             "explode": true
           },
           {
+            "name": "p_unique",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Percentage Of Reads Uniquely Pseudoaligned",
+                "description": "Percentage of reads that could be pseudoaligned to a unique target sequence."
+              }
+            },
+            "description": "Filter by p_unique",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "paired_reads_mapped",
             "in": "query",
             "schema": {
@@ -64403,17 +64556,32 @@
             "explode": true
           },
           {
-            "name": "pct_cells_assigned_guide",
+            "name": "percentage_barcodes_on_onlist",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "Percent Cells Assigned Guide",
-                "description": "Percent Cells Assigned Guide"
+                "title": "Percentage Of Barcodes On Onlist",
+                "description": "Percentage of cell barcodes matching an expected list of barcodes (onlist)."
               }
             },
-            "description": "Filter by pct_cells_assigned_guide",
+            "description": "Filter by percentage_barcodes_on_onlist",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "percentage_reads_on_onlist",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Percentage Of Reads On Onlist",
+                "description": "Percentage of reads associated with barcodes on the onlist."
+              }
+            },
+            "description": "Filter by percentage_reads_on_onlist",
             "style": "form",
             "explode": true
           },
@@ -64606,17 +64774,17 @@
             "explode": true
           },
           {
-            "name": "total_targets",
+            "name": "umi_median",
             "in": "query",
             "schema": {
               "type": "array",
               "items": {
                 "type": "number",
-                "title": "Total Targets",
-                "description": "Total Targets"
+                "title": "Median UMIs Per Cell",
+                "description": "Median total gene UMIs per cell after filtering."
               }
             },
-            "description": "Filter by total_targets",
+            "description": "Filter by umi_median",
             "style": "form",
             "explode": true
           },
@@ -67721,6 +67889,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -70342,6 +70511,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -73116,6 +73286,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -75351,6 +75522,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -77333,6 +77505,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -79902,6 +80075,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -84608,6 +84782,8 @@
                   "gene programs",
                   "gene quantifications",
                   "gene universe",
+                  "gene-disease program",
+                  "gene-disease program heritability",
                   "genes",
                   "genes in pathway",
                   "genes in pathways",
@@ -84869,6 +85045,8 @@
                   "gene programs",
                   "gene quantifications",
                   "gene universe",
+                  "gene-disease program",
+                  "gene-disease program heritability",
                   "genes",
                   "genes in pathway",
                   "genes in pathways",
@@ -85407,6 +85585,7 @@
                   "10x multiome with MULTI-seq",
                   "10x snATAC-seq with Scale pre-indexing",
                   "snRNA-seq with Scale pre-indexing",
+                  "4sU-SHARE-seq",
                   "SHARE-seq",
                   "MORF-SHARE-seq",
                   "MORF screen",
@@ -86497,6 +86676,8 @@
                 "gene programs",
                 "gene quantifications",
                 "gene universe",
+                "gene-disease program",
+                "gene-disease program heritability",
                 "genes",
                 "genes in pathway",
                 "genes in pathways",
@@ -86752,6 +86933,8 @@
                 "gene programs",
                 "gene quantifications",
                 "gene universe",
+                "gene-disease program",
+                "gene-disease program heritability",
                 "genes",
                 "genes in pathway",
                 "genes in pathways",
@@ -95689,6 +95872,7 @@
                 "10x multiome with MULTI-seq",
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
+                "4sU-SHARE-seq",
                 "SHARE-seq",
                 "MORF-SHARE-seq",
                 "MORF screen",
@@ -96188,6 +96372,7 @@
                 "10x multiome with MULTI-seq",
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
+                "4sU-SHARE-seq",
                 "SHARE-seq",
                 "MORF-SHARE-seq",
                 "MORF screen",
@@ -96881,6 +97066,7 @@
                 "10x multiome with MULTI-seq",
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
+                "4sU-SHARE-seq",
                 "SHARE-seq",
                 "MORF-SHARE-seq",
                 "MORF screen",
@@ -99527,6 +99713,7 @@
                 "10x multiome with MULTI-seq",
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
+                "4sU-SHARE-seq",
                 "SHARE-seq",
                 "MORF-SHARE-seq",
                 "MORF screen",
@@ -101608,14 +101795,14 @@
             "description": "Total Cells Passing Filters",
             "type": "number"
           },
-          "pct_cells_assigned_guide": {
-            "title": "Percent Cells Assigned Guide",
-            "description": "Percent Cells Assigned Guide",
+          "frac_cells_with_guide": {
+            "title": "Fraction Cells With Guide",
+            "description": "Fraction of cells with at least one assigned guide.",
             "type": "number"
           },
-          "avg_cells_per_target": {
-            "title": "Average Cells Per Target",
-            "description": "Average Cells Per Target",
+          "avg_cells_per_guide": {
+            "title": "Average Cells Per Guide",
+            "description": "Average number of cells assigned to each guide.",
             "type": "number"
           },
           "moi": {
@@ -101633,19 +101820,39 @@
             "description": "Total Guides",
             "type": "number"
           },
-          "total_targets": {
-            "title": "Total Targets",
-            "description": "Total Targets",
+          "umi_median": {
+            "title": "Median UMIs Per Cell",
+            "description": "Median total gene UMIs per cell after filtering.",
             "type": "number"
           },
-          "guide_diversity": {
-            "title": "Guide Diversity",
-            "description": "Guide diversity (Gini index)",
+          "genes_median": {
+            "title": "Median Genes Per Cell",
+            "description": "Median number of expressed genes per cell after filtering.",
             "type": "number"
           },
-          "mean_mitochondrial_reads": {
-            "title": "Mean Mitochondrial Reads",
-            "description": "Mean mitochondrial reads.",
+          "n_cells_with_guide": {
+            "title": "Number Of Cells With Guide",
+            "description": "Number of cells with at least one assigned guide.",
+            "type": "number"
+          },
+          "n_cells_exactly_1_guide": {
+            "title": "Number Of Cells With Exactly One Guide",
+            "description": "Number of cells with exactly one assigned guide.",
+            "type": "number"
+          },
+          "guide_umi_mean": {
+            "title": "Mean Guide UMIs Per Cell",
+            "description": "Mean total guide UMIs per cell after filtering.",
+            "type": "number"
+          },
+          "mean_percent_mitochondrial": {
+            "title": "Mean Percent Mitochondrial",
+            "description": "Mean percent mitochondrial UMIs per cell.",
+            "type": "number"
+          },
+          "n_targets": {
+            "title": "Number Of Target Sequences",
+            "description": "Total number of target sequences (e.g., transcripts) in the index.",
             "type": "number"
           },
           "total_reads": {
@@ -101666,6 +101873,31 @@
           "total_detected_scrna_barcodes": {
             "title": "Total Detected scRNA Barcodes",
             "description": "Unfiltered total detected scRNA barcodes (numBarcodes) reported by Kallisto.",
+            "type": "number"
+          },
+          "n_unique": {
+            "title": "Number Of Reads Uniquely Pseudoaligned",
+            "description": "Number of reads that could be pseudoaligned to a unique target sequence.",
+            "type": "number"
+          },
+          "p_unique": {
+            "title": "Percentage Of Reads Uniquely Pseudoaligned",
+            "description": "Percentage of reads that could be pseudoaligned to a unique target sequence.",
+            "type": "number"
+          },
+          "percentage_barcodes_on_onlist": {
+            "title": "Percentage Of Barcodes On Onlist",
+            "description": "Percentage of cell barcodes matching an expected list of barcodes (onlist).",
+            "type": "number"
+          },
+          "percentage_reads_on_onlist": {
+            "title": "Percentage Of Reads On Onlist",
+            "description": "Percentage of reads associated with barcodes on the onlist.",
+            "type": "number"
+          },
+          "mean_umis_per_barcode": {
+            "title": "Mean UMIs Per Barcode",
+            "description": "Mean number of UMIs per cell barcode.",
             "type": "number"
           },
           "@id": {
@@ -107201,6 +107433,7 @@
                 "10x multiome with MULTI-seq",
                 "10x snATAC-seq with Scale pre-indexing",
                 "snRNA-seq with Scale pre-indexing",
+                "4sU-SHARE-seq",
                 "SHARE-seq",
                 "MORF-SHARE-seq",
                 "MORF screen",
