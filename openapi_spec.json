@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "134.0.0"
+    "version": "135.0.0"
   },
   "servers": [
     {
@@ -1702,6 +1702,8 @@
                   "cell by gene matrix",
                   "cell by gene program matrix",
                   "cell by guide matrix",
+                  "cell by multiplexing oligo matrix",
+                  "cell by peak and guide matrix",
                   "cell by peak matrix",
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
@@ -2009,6 +2011,8 @@
                   "cell by gene matrix",
                   "cell by gene program matrix",
                   "cell by guide matrix",
+                  "cell by multiplexing oligo matrix",
+                  "cell by peak and guide matrix",
                   "cell by peak matrix",
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
@@ -2732,6 +2736,8 @@
                   "cell by gene matrix",
                   "cell by gene program matrix",
                   "cell by guide matrix",
+                  "cell by multiplexing oligo matrix",
+                  "cell by peak and guide matrix",
                   "cell by peak matrix",
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
@@ -2995,6 +3001,8 @@
                   "cell by gene matrix",
                   "cell by gene program matrix",
                   "cell by guide matrix",
+                  "cell by multiplexing oligo matrix",
+                  "cell by peak and guide matrix",
                   "cell by peak matrix",
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
@@ -32652,6 +32660,23 @@
             "explode": true
           },
           {
+            "name": "condition_treatments",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Condition Treatments",
+              "items": {
+                "type": "string",
+                "title": "Condition Treatment",
+                "description": "A treatment that is part of the experimental condition profile for this analysis set."
+              },
+              "description": "Treatments that define the experimental condition(s) this analysis set represents."
+            },
+            "description": "Filter by condition_treatments",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.@id",
             "in": "query",
             "schema": {
@@ -36246,6 +36271,7 @@
                   "cell hashing barcode sequencing",
                   "cell sorting",
                   "circularized RNA barcode detection",
+                  "exogenous allelic sequencing",
                   "full-length DNA sequencing",
                   "gRNA sequencing",
                   "lipid-conjugated oligo sequencing",
@@ -51021,23 +51047,18 @@
                 "type": "string",
                 "title": "File Set Type",
                 "enum": [
-                  "TF binding",
-                  "activity level",
-                  "binding effect",
                   "chromatin accessibility",
                   "coding variant effects",
                   "coding variant effects on PPI",
                   "coding variants pathogenicity",
                   "disease associations",
                   "element-gene links",
-                  "functional effect",
                   "gene regulatory networks",
                   "genetic constraint",
                   "meta analysis",
                   "non-coding variant effects",
-                  "protein stability",
-                  "protein-protein interaction",
                   "spatial gene expression variability",
+                  "TF binding",
                   "variant TF binding effects"
                 ],
                 "description": "The category that best describes this prediction set."
@@ -84727,6 +84748,8 @@
                   "cell by gene matrix",
                   "cell by gene program matrix",
                   "cell by guide matrix",
+                  "cell by multiplexing oligo matrix",
+                  "cell by peak and guide matrix",
                   "cell by peak matrix",
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
@@ -84990,6 +85013,8 @@
                   "cell by gene matrix",
                   "cell by gene program matrix",
                   "cell by guide matrix",
+                  "cell by multiplexing oligo matrix",
+                  "cell by peak and guide matrix",
                   "cell by peak matrix",
                   "cell by position methylation count matrix",
                   "cell hashing barcodes",
@@ -86621,6 +86646,8 @@
                 "cell by gene matrix",
                 "cell by gene program matrix",
                 "cell by guide matrix",
+                "cell by multiplexing oligo matrix",
+                "cell by peak and guide matrix",
                 "cell by peak matrix",
                 "cell by position methylation count matrix",
                 "cell hashing barcodes",
@@ -86878,6 +86905,8 @@
                 "cell by gene matrix",
                 "cell by gene program matrix",
                 "cell by guide matrix",
+                "cell by multiplexing oligo matrix",
+                "cell by peak and guide matrix",
                 "cell by peak matrix",
                 "cell by position methylation count matrix",
                 "cell hashing barcodes",
@@ -93955,6 +93984,7 @@
               "bed",
               "bedpe",
               "bigBed",
+              "bigInteract",
               "csv",
               "gtf",
               "gvcf",
@@ -94541,6 +94571,17 @@
               "type": "string"
             }
           },
+          "condition_treatments": {
+            "title": "Condition Treatments",
+            "description": "Treatments that define the experimental condition(s) this analysis set represents.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Condition Treatment",
+              "description": "A treatment that is part of the experimental condition profile for this analysis set.",
+              "type": "string"
+            }
+          },
           "uniform_pipeline_status": {
             "title": "Uniform Pipeline Status",
             "description": "The status of the single cell or Perturb-seq uniform pipeline processing for this analysis set, if applicable.",
@@ -94995,6 +95036,7 @@
               "cell hashing barcode sequencing",
               "cell sorting",
               "circularized RNA barcode detection",
+              "exogenous allelic sequencing",
               "full-length DNA sequencing",
               "gRNA sequencing",
               "lipid-conjugated oligo sequencing",
@@ -97876,23 +97918,18 @@
             "description": "The category that best describes this prediction set.",
             "type": "string",
             "enum": [
-              "TF binding",
-              "activity level",
-              "binding effect",
               "chromatin accessibility",
               "coding variant effects",
               "coding variant effects on PPI",
               "coding variants pathogenicity",
               "disease associations",
               "element-gene links",
-              "functional effect",
               "gene regulatory networks",
               "genetic constraint",
               "meta analysis",
               "non-coding variant effects",
-              "protein stability",
-              "protein-protein interaction",
               "spatial gene expression variability",
+              "TF binding",
               "variant TF binding effects"
             ]
           },
