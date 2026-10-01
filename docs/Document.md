@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
+**supersedes** | **List[str]** | The document(s) that this document supersedes by virtue of being newer, better, or a fixed version. | [optional] 
 **document_type** | **str** | The category that best describes the document. | [optional] 
 **characterization_method** | **str** | The method used for the characterization. | [optional] 
 **urls** | **List[str]** | External resources with additional information to the document. | [optional] 
@@ -27,6 +28,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the document. | [optional] 
+**superseded_by** | **List[str]** | The document(s) that supersede this document by virtue of being newer, better, or a fixed version. | [optional] 
 
 ## Example
 

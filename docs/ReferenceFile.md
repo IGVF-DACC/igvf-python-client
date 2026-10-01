@@ -52,7 +52,6 @@ Name | Type | Description | Notes
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **checkfiles_timestamp** | **str** | The date and time the file object was last checked by the Checkfiles script. | [optional] 
 **supersedes** | **List[str]** | The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
-**catalog_adapters** | **List[str]** | IGVF Catalog Adapters that ingests this file | [optional] 
 **catalog_method** | **str** | The method curated in the IGVF catalog that the non-IGVF data in this file processed with | [optional] 
 **external_source** | **str** | The external, non-IGVF source of the data in this file. | [optional] 
 **version** | **str** | The version of this reference file, used for external files loaded into the IGVF catalog. | [optional] 

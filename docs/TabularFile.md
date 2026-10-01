@@ -50,7 +50,6 @@ Name | Type | Description | Notes
 **checkfiles_version** | **str** | The Checkfiles GitHub version release the file was validated with. | [optional] 
 **checkfiles_timestamp** | **str** | The date and time the file object was last checked by the Checkfiles script. | [optional] 
 **supersedes** | **List[str]** | The file(s) that this file supersedes by virtue of being newer, better, or a fixed version of etc. than the one(s) it supersedes. | [optional] 
-**catalog_adapters** | **List[str]** | IGVF Catalog Adapters that ingests this file | [optional] 
 **submitted_assembly** | **str** | Genome assembly for a tabular file. | [optional] 
 **submitted_transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **id** | **str** |  | [optional] 
