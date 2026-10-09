@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "136.0.0"
+    "version": "137.0.0"
   },
   "servers": [
     {
@@ -1360,6 +1360,7 @@
                   "cell to feature barcode mapping",
                   "chromatin compartment generation",
                   "cis-trans classification",
+                  "computational model contribution",
                   "computational model prediction",
                   "computational model training",
                   "counts normalization",
@@ -1381,6 +1382,7 @@
                   "methylation calling",
                   "modification calling",
                   "modification site annotation",
+                  "motif identification",
                   "peak calling",
                   "pseudobulking",
                   "read trimming",
@@ -2648,6 +2650,7 @@
                   "cell to feature barcode mapping",
                   "chromatin compartment generation",
                   "cis-trans classification",
+                  "computational model contribution",
                   "computational model prediction",
                   "computational model training",
                   "counts normalization",
@@ -2669,6 +2672,7 @@
                   "methylation calling",
                   "modification calling",
                   "modification site annotation",
+                  "motif identification",
                   "peak calling",
                   "pseudobulking",
                   "read trimming",
@@ -5494,6 +5498,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -6309,6 +6314,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -7369,6 +7375,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -9899,6 +9906,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -12352,6 +12360,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -14834,6 +14843,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -17346,6 +17356,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -19815,6 +19826,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -22348,6 +22360,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -24898,6 +24911,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -27706,6 +27720,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -30300,6 +30315,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -32176,6 +32192,7 @@
                   "GENCODE 32, GENCODE M23",
                   "GENCODE 41, GENCODE M25",
                   "GENCODE 44, GENCODE M33",
+                  "GENCODE 50",
                   "CAST_EiJ_T2T_v1_TA1",
                   "C57BL_6J_T2T_v1_TA1 + M36_X",
                   "unknown"
@@ -32754,6 +32771,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -35873,6 +35891,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -38780,6 +38799,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -39931,6 +39951,22 @@
               }
             },
             "description": "Filter by lab.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by large_gene_count",
             "style": "form",
             "explode": true
           },
@@ -41702,6 +41738,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -44582,6 +44619,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -47991,6 +48029,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -51182,6 +51221,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -52529,6 +52569,22 @@
             "explode": true
           },
           {
+            "name": "large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by large_gene_count",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "large_scale_gene_list.@id",
             "in": "query",
             "schema": {
@@ -53608,6 +53664,22 @@
             "explode": true
           },
           {
+            "name": "software_versions.description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by software_versions.description",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "software_versions.software.@id",
             "in": "query",
             "schema": {
@@ -53618,6 +53690,22 @@
               }
             },
             "description": "Filter by software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software_versions.software.description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by software_versions.software.description",
             "style": "form",
             "explode": true
           },
@@ -54352,6 +54440,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -56475,6 +56564,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -65398,21 +65488,6 @@
             "explode": true
           },
           {
-            "name": "moi",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "title": "Multiplicity Of Infection",
-                "description": "Multiplicity Of Infection"
-              }
-            },
-            "description": "Filter by moi",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "n_cells_exactly_1_guide",
             "in": "query",
             "schema": {
@@ -65485,6 +65560,21 @@
               }
             },
             "description": "Filter by notes",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "observed_moi",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "title": "Observed Multiplicity Of Infection",
+                "description": "The multiplicity of infection (MOI) derived from the Perturb-seq pipeline output. This property is distinct from the experimentally reported `moi` property on the sample."
+              }
+            },
+            "description": "Filter by observed_moi",
             "style": "form",
             "explode": true
           },
@@ -68273,6 +68363,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -69348,7 +69439,7 @@
                 "type": "number",
                 "title": "Multiplicity Of Infection",
                 "minimum": 0,
-                "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI."
+                "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric."
               }
             },
             "description": "Filter by moi",
@@ -70939,6 +71030,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -71903,7 +71995,7 @@
                 "type": "number",
                 "title": "Multiplicity Of Infection",
                 "minimum": 0,
-                "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI."
+                "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric."
               }
             },
             "description": "Filter by moi",
@@ -73707,6 +73799,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -74727,7 +74820,7 @@
                 "type": "number",
                 "title": "Multiplicity Of Infection",
                 "minimum": 0,
-                "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI."
+                "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric."
               }
             },
             "description": "Filter by moi",
@@ -76066,6 +76159,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -76677,7 +76771,7 @@
                 "type": "number",
                 "title": "Multiplicity Of Infection",
                 "minimum": 0,
-                "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI."
+                "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric."
               }
             },
             "description": "Filter by moi",
@@ -77932,6 +78026,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -78952,7 +79047,7 @@
                 "type": "number",
                 "title": "Multiplicity Of Infection",
                 "minimum": 0,
-                "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI."
+                "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric."
               }
             },
             "description": "Filter by moi",
@@ -80505,6 +80600,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -81525,7 +81621,7 @@
                 "type": "number",
                 "title": "Multiplicity Of Infection",
                 "minimum": 0,
-                "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI."
+                "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric."
               }
             },
             "description": "Filter by moi",
@@ -85603,6 +85699,7 @@
                   "cell to feature barcode mapping",
                   "chromatin compartment generation",
                   "cis-trans classification",
+                  "computational model contribution",
                   "computational model prediction",
                   "computational model training",
                   "counts normalization",
@@ -85624,6 +85721,7 @@
                   "methylation calling",
                   "modification calling",
                   "modification site annotation",
+                  "motif identification",
                   "peak calling",
                   "pseudobulking",
                   "read trimming",
@@ -86413,6 +86511,7 @@
                   "IGVF_catalog_v1.0",
                   "IGVF_catalog_v1.1",
                   "IGVF_catalog_v1.2",
+                  "IGVF_catalog_v1.3",
                   "IGVF_catalog_v2.0",
                   "IGVF phase 1",
                   "MaveDB",
@@ -86757,7 +86856,7 @@
               "items": {
                 "type": "string",
                 "title": "Source URL",
-                "pattern": "^https?://(github\\.com/\\S+|support\\.parsebiosciences\\.com/\\S*|www\\.10xgenomics\\.com/\\S*|developer\\.illumina\\.com/\\S*)$",
+                "pattern": "^https?://(github\\.com/\\S+|bitbucket\\.org/\\S+|support\\.parsebiosciences\\.com/\\S*|www\\.10xgenomics\\.com/\\S*|developer\\.illumina\\.com/\\S*)$",
                 "description": "An external resource to the code base of the workflow in github."
               }
             },
@@ -87503,6 +87602,7 @@
                 "cell to feature barcode mapping",
                 "chromatin compartment generation",
                 "cis-trans classification",
+                "computational model contribution",
                 "computational model prediction",
                 "computational model training",
                 "counts normalization",
@@ -87524,6 +87624,7 @@
                 "methylation calling",
                 "modification calling",
                 "modification site annotation",
+                "motif identification",
                 "peak calling",
                 "pseudobulking",
                 "read trimming",
@@ -88930,6 +89031,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -89310,6 +89412,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -89670,6 +89773,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -90221,6 +90325,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -90762,6 +90867,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -91299,6 +91405,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -91870,6 +91977,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -92429,6 +92537,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -93054,6 +93163,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -93621,6 +93731,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -94317,6 +94428,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -94939,6 +95051,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -95207,6 +95320,7 @@
               "GENCODE 32, GENCODE M23",
               "GENCODE 41, GENCODE M25",
               "GENCODE 44, GENCODE M33",
+              "GENCODE 50",
               "CAST_EiJ_T2T_v1_TA1",
               "C57BL_6J_T2T_v1_TA1 + M36_X",
               "unknown"
@@ -95499,6 +95613,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -95990,6 +96105,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -96397,6 +96513,12 @@
             "description": "The large scale list of (>100 genes) this construct library was designed to target.",
             "type": "string"
           },
+          "large_gene_count": {
+            "title": "Number of Genes in Large Scale Gene List",
+            "description": "Number of genes in large_scale_gene_list",
+            "type": "integer",
+            "minimum": 99
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -96499,6 +96621,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -97160,6 +97283,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -97665,6 +97789,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -98362,6 +98487,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -98811,6 +98937,12 @@
             "description": "The large scale list of (>100 genes) whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genes whose expression level is predicted in this prediction set. It differs from assessed_genes (see more information under assessed_genes).",
             "type": "string"
           },
+          "large_gene_count": {
+            "title": "Number of Genes in Large Scale Gene List",
+            "description": "Number of genes in large_scale_gene_list",
+            "type": "integer",
+            "minimum": 99
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -98890,6 +99022,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -99301,6 +99434,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -99744,6 +99878,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -102953,9 +103088,9 @@
             "description": "Average number of cells assigned to each guide.",
             "type": "number"
           },
-          "moi": {
-            "title": "Multiplicity Of Infection",
-            "description": "Multiplicity Of Infection",
+          "observed_moi": {
+            "title": "Observed Multiplicity Of Infection",
+            "description": "The multiplicity of infection (MOI) derived from the Perturb-seq pipeline output. This property is distinct from the experimentally reported `moi` property on the sample.",
             "type": "number"
           },
           "avg_umis_per_cell": {
@@ -104108,6 +104243,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -104384,7 +104520,7 @@
           },
           "moi": {
             "title": "Multiplicity Of Infection",
-            "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI.",
+            "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric.",
             "type": "number",
             "minimum": 0
           },
@@ -104792,6 +104928,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -104950,7 +105087,7 @@
           },
           "moi": {
             "title": "Multiplicity Of Infection",
-            "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI.",
+            "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric.",
             "type": "number",
             "minimum": 0
           },
@@ -105407,6 +105544,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -105684,7 +105822,7 @@
           },
           "moi": {
             "title": "Multiplicity Of Infection",
-            "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI.",
+            "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric.",
             "type": "number",
             "minimum": 0
           },
@@ -106031,6 +106169,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -106189,7 +106328,7 @@
           },
           "moi": {
             "title": "Multiplicity Of Infection",
-            "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI.",
+            "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric.",
             "type": "number",
             "minimum": 0
           },
@@ -106547,6 +106686,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -106824,7 +106964,7 @@
           },
           "moi": {
             "title": "Multiplicity Of Infection",
-            "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI.",
+            "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric.",
             "type": "number",
             "minimum": 0
           },
@@ -107201,6 +107341,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",
@@ -107479,7 +107620,7 @@
           },
           "moi": {
             "title": "Multiplicity Of Infection",
-            "description": "The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI.",
+            "description": "The experimentally reported multiplicity of infection (MOI) for vectors introduced to this sample. This property captures the experimentally measured or estimated MOI, not the targeted MOI, and is distinct from the pipeline-derived observed_moi on a Perturb-seq quality metric.",
             "type": "number",
             "minimum": 0
           },
@@ -108669,7 +108810,7 @@
             "title": "Source URL",
             "description": "An external resource to the code base of the workflow in github.",
             "type": "string",
-            "pattern": "^https?://(github\\.com/\\S+|support\\.parsebiosciences\\.com/\\S*|www\\.10xgenomics\\.com/\\S*|developer\\.illumina\\.com/\\S*)$"
+            "pattern": "^https?://(github\\.com/\\S+|bitbucket\\.org/\\S+|support\\.parsebiosciences\\.com/\\S*|www\\.10xgenomics\\.com/\\S*|developer\\.illumina\\.com/\\S*)$"
           },
           "release_timestamp": {
             "title": "Release Timestamp",
@@ -108750,6 +108891,7 @@
                 "IGVF_catalog_v1.0",
                 "IGVF_catalog_v1.1",
                 "IGVF_catalog_v1.2",
+                "IGVF_catalog_v1.3",
                 "IGVF_catalog_v2.0",
                 "IGVF phase 1",
                 "MaveDB",

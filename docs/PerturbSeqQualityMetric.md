@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **total_cells_passing_filters** | **float** | Total Cells Passing Filters | [optional] 
 **frac_cells_with_guide** | **float** | Fraction of cells with at least one assigned guide. | [optional] 
 **avg_cells_per_guide** | **float** | Average number of cells assigned to each guide. | [optional] 
-**moi** | **float** | Multiplicity Of Infection | [optional] 
+**observed_moi** | **float** | The multiplicity of infection (MOI) derived from the Perturb-seq pipeline output. This property is distinct from the experimentally reported &#x60;moi&#x60; property on the sample. | [optional] 
 **avg_umis_per_cell** | **float** | Average UMIs Per Cell | [optional] 
 **total_guides** | **float** | Total Guides | [optional] 
 **umi_median** | **float** | Median total gene UMIs per cell after filtering. | [optional] 
