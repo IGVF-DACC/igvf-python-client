@@ -166,6 +166,7 @@ Name | Type | Description | Notes
 **construct_library_sets** | **List[str]** | The construct library sets of vectors introduced to this sample prior to performing an assay. | [optional] 
 **data_use_limitation_summaries** | **List[str]** | The data use limitation summaries of institutional certificates covering the sample associated with this file set which are signed by the same lab (or their partner lab) as the lab that submitted this file set. | [optional] 
 **assay_slims** | **List[str]** | A broad categorization of the assay term. | [optional] 
+**samples_class** | **str** | Human-readable classification of samples associated with this analysis set. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
 **simplified_sample_summary** | **str** | A summary of the samples associated with input file sets of this analysis set. | [optional] 
 **functional_assay_mechanisms** | **List[str]** | The biological processes measured by this functional assay. For example, a VAMP-seq (MultiSTEP) assay measures the effects of variants on protein carboxylation and secretion processes. | [optional] 
