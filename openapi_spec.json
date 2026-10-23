@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "137.1.0"
+    "version": "138.0.0"
   },
   "servers": [
     {
@@ -7171,6 +7171,67 @@
             "explode": true
           },
           {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_step_version.software_versions.summary",
             "in": "query",
             "schema": {
@@ -9625,6 +9686,67 @@
             "explode": true
           },
           {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_step_version.software_versions.summary",
             "in": "query",
             "schema": {
@@ -12075,6 +12197,67 @@
               }
             },
             "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
             "style": "form",
             "explode": true
           },
@@ -14543,6 +14726,67 @@
               }
             },
             "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
             "style": "form",
             "explode": true
           },
@@ -17060,6 +17304,67 @@
             "explode": true
           },
           {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_step_version.software_versions.summary",
             "in": "query",
             "schema": {
@@ -19545,6 +19850,67 @@
             "explode": true
           },
           {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_step_version.software_versions.summary",
             "in": "query",
             "schema": {
@@ -22009,6 +22375,67 @@
               }
             },
             "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
             "style": "form",
             "explode": true
           },
@@ -24722,6 +25149,67 @@
             "explode": true
           },
           {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_step_version.software_versions.summary",
             "in": "query",
             "schema": {
@@ -27424,6 +27912,67 @@
             "explode": true
           },
           {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "analysis_step_version.software_versions.summary",
             "in": "query",
             "schema": {
@@ -29971,6 +30520,67 @@
               }
             },
             "description": "Filter by analysis_step_version.software_versions.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "description": "A unique identifier for a software version."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "analysis_step_version.software_versions.software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by analysis_step_version.software_versions.software.title",
             "style": "form",
             "explode": true
           },
@@ -55056,7 +55666,9 @@
                 "type": "string",
                 "title": "File Set Type",
                 "enum": [
-                  "pseudobulk analysis"
+                  "accessibility pseudobulk",
+                  "demultiplexed pseudobulk",
+                  "gene expression pseudobulk"
                 ],
                 "description": "The level of this analysis set."
               }
@@ -99586,7 +100198,9 @@
             "description": "The level of this analysis set.",
             "type": "string",
             "enum": [
-              "pseudobulk analysis"
+              "accessibility pseudobulk",
+              "demultiplexed pseudobulk",
+              "gene expression pseudobulk"
             ]
           },
           "supersedes": {
