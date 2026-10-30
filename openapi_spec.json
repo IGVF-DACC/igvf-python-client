@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "138.0.0"
+    "version": "138.1.1"
   },
   "servers": [
     {
@@ -4962,6 +4962,7 @@
                   "library structure seqspec",
                   "model source data",
                   "ontology term reference",
+                  "pipeline dashboard",
                   "pipeline log",
                   "pipeline parameters",
                   "plate map",
@@ -9903,6 +9904,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -12418,6 +12420,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -14962,6 +14965,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -17536,6 +17540,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -20067,6 +20072,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -22629,6 +22635,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -28144,6 +28151,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -30800,6 +30808,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -33554,6 +33563,22 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by construct_library_sets.large_gene_count",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.selection_criteria",
             "in": "query",
             "schema": {
@@ -34149,6 +34174,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -36672,6 +36698,22 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by construct_library_sets.large_gene_count",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.selection_criteria",
             "in": "query",
             "schema": {
@@ -37257,6 +37299,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -39972,6 +40015,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -42519,6 +42563,22 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by construct_library_sets.large_gene_count",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.selection_criteria",
             "in": "query",
             "schema": {
@@ -43080,6 +43140,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -45400,6 +45461,22 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by construct_library_sets.large_gene_count",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.selection_criteria",
             "in": "query",
             "schema": {
@@ -46182,6 +46259,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -48810,6 +48888,22 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by construct_library_sets.large_gene_count",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.selection_criteria",
             "in": "query",
             "schema": {
@@ -49406,6 +49500,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -52002,6 +52097,22 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by construct_library_sets.large_gene_count",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.selection_criteria",
             "in": "query",
             "schema": {
@@ -52576,6 +52687,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -53361,6 +53473,51 @@
               }
             },
             "description": "Filter by preview_timestamp",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "principal_software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by principal_software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "principal_software.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by principal_software.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "principal_software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by principal_software.title",
             "style": "form",
             "explode": true
           },
@@ -54271,6 +54428,51 @@
               "description": "A small scale (<=100) list of specific chromosomal region(s) whose functionality is investigated in this prediction set. This property describes the input variables of the prediction set. For example, this list consists of the genetic variants whose functionality is predicted in this prediction set."
             },
             "description": "Filter by small_scale_loci_list",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software.@id",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "ID"
+              }
+            },
+            "description": "Filter by software.@id",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software.status",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Status",
+                "description": "The status of the metadata object."
+              }
+            },
+            "description": "Filter by software.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software.title",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Title",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "The preferred viewable name of the software."
+              }
+            },
+            "description": "Filter by software.title",
             "style": "form",
             "explode": true
           },
@@ -55221,6 +55423,22 @@
             "explode": true
           },
           {
+            "name": "construct_library_sets.large_gene_count",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "title": "Number of Genes in Large Scale Gene List",
+                "minimum": 99,
+                "description": "Number of genes in large_scale_gene_list"
+              }
+            },
+            "description": "Filter by construct_library_sets.large_gene_count",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "construct_library_sets.selection_criteria",
             "in": "query",
             "schema": {
@@ -55785,6 +56003,7 @@
                   "genes_structure",
                   "genes_transcripts",
                   "genes_transcripts_genes",
+                  "genes_transcripts_genomic_elements",
                   "genomic_elements",
                   "genomic_elements_biosamples",
                   "genomic_elements_genes",
@@ -89479,6 +89698,7 @@
               "library structure seqspec",
               "model source data",
               "ontology term reference",
+              "pipeline dashboard",
               "pipeline log",
               "pipeline parameters",
               "plate map",
@@ -90817,6 +91037,7 @@
                 "genes_structure",
                 "genes_transcripts",
                 "genes_transcripts_genes",
+                "genes_transcripts_genomic_elements",
                 "genomic_elements",
                 "genomic_elements_biosamples",
                 "genomic_elements_genes",
@@ -91359,6 +91580,7 @@
                 "genes_structure",
                 "genes_transcripts",
                 "genes_transcripts_genes",
+                "genes_transcripts_genomic_elements",
                 "genomic_elements",
                 "genomic_elements_biosamples",
                 "genomic_elements_genes",
@@ -91892,6 +92114,7 @@
                 "genes_structure",
                 "genes_transcripts",
                 "genes_transcripts_genes",
+                "genes_transcripts_genomic_elements",
                 "genomic_elements",
                 "genomic_elements_biosamples",
                 "genomic_elements_genes",
@@ -92453,6 +92676,7 @@
                 "genes_structure",
                 "genes_transcripts",
                 "genes_transcripts_genes",
+                "genes_transcripts_genomic_elements",
                 "genomic_elements",
                 "genomic_elements_biosamples",
                 "genomic_elements_genes",
@@ -93014,6 +93238,7 @@
                 "genes_structure",
                 "genes_transcripts",
                 "genes_transcripts_genes",
+                "genes_transcripts_genomic_elements",
                 "genomic_elements",
                 "genomic_elements_biosamples",
                 "genomic_elements_genes",
@@ -93570,6 +93795,7 @@
                 "genes_structure",
                 "genes_transcripts",
                 "genes_transcripts_genes",
+                "genes_transcripts_genomic_elements",
                 "genomic_elements",
                 "genomic_elements_biosamples",
                 "genomic_elements_genes",
@@ -94904,6 +95130,7 @@
                 "genes_structure",
                 "genes_transcripts",
                 "genes_transcripts_genes",
+                "genes_transcripts_genomic_elements",
                 "genomic_elements",
                 "genomic_elements_biosamples",
                 "genomic_elements_genes",
@@ -95483,6 +95710,7 @@
                 "genes_structure",
                 "genes_transcripts",
                 "genes_transcripts_genes",
+                "genes_transcripts_genomic_elements",
                 "genomic_elements",
                 "genomic_elements_biosamples",
                 "genomic_elements_genes",
@@ -95823,6 +96051,7 @@
               "csv",
               "gtf",
               "gvcf",
+              "parquet",
               "tar",
               "tsv",
               "vcf"
@@ -99843,6 +100072,11 @@
               "type": "string"
             }
           },
+          "principal_software": {
+            "title": "Principal Software",
+            "description": "The software that represents the primary method used to produce this prediction set.",
+            "type": "string"
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -99941,6 +100175,11 @@
               "description": "A software version used to produce this prediction.",
               "type": "string"
             }
+          },
+          "software": {
+            "title": "Software",
+            "description": "The software representing the method used to produce this prediction. This is the principal software if specified, otherwise the software of the first software version.",
+            "type": "string"
           },
           "cell_annotation": {
             "title": "Cell Annotation",
