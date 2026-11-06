@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "138.1.1"
+    "version": "138.2.0"
   },
   "servers": [
     {
@@ -1753,6 +1753,7 @@
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
+                  "embeddings",
                   "exclusion list",
                   "exon constraint",
                   "external source data",
@@ -1825,6 +1826,7 @@
                   "per cell type enrichment scores",
                   "per-barcode quality report",
                   "per-cell quality report",
+                  "perturbation significance matrix",
                   "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
@@ -1885,6 +1887,7 @@
                   "spike-ins",
                   "spliceQTL",
                   "spot by gene matrix",
+                  "target by target matrix",
                   "target transcripts",
                   "tissue positions",
                   "topologically associating domains",
@@ -1892,6 +1895,7 @@
                   "transcript identifier mapping",
                   "transcript quantifications",
                   "transcriptome alignments",
+                  "transcriptome distance matrix",
                   "transcriptome index",
                   "transcriptome reference",
                   "varACCESS sequence designs",
@@ -2069,6 +2073,7 @@
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
+                  "embeddings",
                   "exclusion list",
                   "exon constraint",
                   "external source data",
@@ -2141,6 +2146,7 @@
                   "per cell type enrichment scores",
                   "per-barcode quality report",
                   "per-cell quality report",
+                  "perturbation significance matrix",
                   "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
@@ -2201,6 +2207,7 @@
                   "spike-ins",
                   "spliceQTL",
                   "spot by gene matrix",
+                  "target by target matrix",
                   "target transcripts",
                   "tissue positions",
                   "topologically associating domains",
@@ -2208,6 +2215,7 @@
                   "transcript identifier mapping",
                   "transcript quantifications",
                   "transcriptome alignments",
+                  "transcriptome distance matrix",
                   "transcriptome index",
                   "transcriptome reference",
                   "varACCESS sequence designs",
@@ -2806,6 +2814,7 @@
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
+                  "embeddings",
                   "exclusion list",
                   "exon constraint",
                   "external source data",
@@ -2878,6 +2887,7 @@
                   "per cell type enrichment scores",
                   "per-barcode quality report",
                   "per-cell quality report",
+                  "perturbation significance matrix",
                   "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
@@ -2938,6 +2948,7 @@
                   "spike-ins",
                   "spliceQTL",
                   "spot by gene matrix",
+                  "target by target matrix",
                   "target transcripts",
                   "tissue positions",
                   "topologically associating domains",
@@ -2945,6 +2956,7 @@
                   "transcript identifier mapping",
                   "transcript quantifications",
                   "transcriptome alignments",
+                  "transcriptome distance matrix",
                   "transcriptome index",
                   "transcriptome reference",
                   "varACCESS sequence designs",
@@ -3078,6 +3090,7 @@
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
+                  "embeddings",
                   "exclusion list",
                   "exon constraint",
                   "external source data",
@@ -3150,6 +3163,7 @@
                   "per cell type enrichment scores",
                   "per-barcode quality report",
                   "per-cell quality report",
+                  "perturbation significance matrix",
                   "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
@@ -3210,6 +3224,7 @@
                   "spike-ins",
                   "spliceQTL",
                   "spot by gene matrix",
+                  "target by target matrix",
                   "target transcripts",
                   "tissue positions",
                   "topologically associating domains",
@@ -3217,6 +3232,7 @@
                   "transcript identifier mapping",
                   "transcript quantifications",
                   "transcriptome alignments",
+                  "transcriptome distance matrix",
                   "transcriptome index",
                   "transcriptome reference",
                   "varACCESS sequence designs",
@@ -35836,7 +35852,7 @@
               "items": {
                 "type": "string",
                 "title": "Samples Class",
-                "description": "Human-readable classification of samples associated with this analysis set."
+                "description": "Human-readable classification of samples associated with this file set."
               }
             },
             "description": "Filter by samples_class",
@@ -54446,6 +54462,79 @@
             "explode": true
           },
           {
+            "name": "software.categories",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "title": "Categories",
+              "items": {
+                "type": "string",
+                "title": "Category",
+                "enum": [
+                  "CRISPR Screens",
+                  "General Bioinformatic Utilities",
+                  "Genomic Annotations",
+                  "Networks",
+                  "Predictions",
+                  "Reporter Assays",
+                  "Single Cell Multiome"
+                ],
+                "description": "The main category describing the primary use of this software."
+              },
+              "description": "The general categories of this software."
+            },
+            "description": "Filter by software.categories",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software.description",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Description",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$",
+                "description": "A plain text description of the object."
+              }
+            },
+            "description": "Filter by software.description",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software.name",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Name",
+                "pattern": "^[A-Za-z0-9\\-_@.]+$",
+                "description": "Unique name of the software package; a version of the title without white spaces."
+              }
+            },
+            "description": "Filter by software.name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software.source_url",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Source URL",
+                "description": "An external resource to the codebase."
+              }
+            },
+            "description": "Filter by software.source_url",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "software.status",
             "in": "query",
             "schema": {
@@ -54457,6 +54546,20 @@
               }
             },
             "description": "Filter by software.status",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "software.summary",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Summary"
+              }
+            },
+            "description": "Filter by software.summary",
             "style": "form",
             "explode": true
           },
@@ -56929,6 +57032,21 @@
               }
             },
             "description": "Filter by samples.targeted_sample_term.term_name",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "samples_class",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "title": "Samples Class",
+                "description": "Human-readable classification of samples associated with this file set."
+              }
+            },
+            "description": "Filter by samples_class",
             "style": "form",
             "explode": true
           },
@@ -86701,6 +86819,7 @@
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
+                  "embeddings",
                   "exclusion list",
                   "exon constraint",
                   "external source data",
@@ -86773,6 +86892,7 @@
                   "per cell type enrichment scores",
                   "per-barcode quality report",
                   "per-cell quality report",
+                  "perturbation significance matrix",
                   "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
@@ -86833,6 +86953,7 @@
                   "spike-ins",
                   "spliceQTL",
                   "spot by gene matrix",
+                  "target by target matrix",
                   "target transcripts",
                   "tissue positions",
                   "topologically associating domains",
@@ -86840,6 +86961,7 @@
                   "transcript identifier mapping",
                   "transcript quantifications",
                   "transcriptome alignments",
+                  "transcriptome distance matrix",
                   "transcriptome index",
                   "transcriptome reference",
                   "varACCESS sequence designs",
@@ -86973,6 +87095,7 @@
                   "element quantifications",
                   "element to gene interactions",
                   "elements reference",
+                  "embeddings",
                   "exclusion list",
                   "exon constraint",
                   "external source data",
@@ -87045,6 +87168,7 @@
                   "per cell type enrichment scores",
                   "per-barcode quality report",
                   "per-cell quality report",
+                  "perturbation significance matrix",
                   "pipeline dashboard",
                   "pipeline parameters",
                   "plus strand modification state",
@@ -87105,6 +87229,7 @@
                   "spike-ins",
                   "spliceQTL",
                   "spot by gene matrix",
+                  "target by target matrix",
                   "target transcripts",
                   "tissue positions",
                   "topologically associating domains",
@@ -87112,6 +87237,7 @@
                   "transcript identifier mapping",
                   "transcript quantifications",
                   "transcriptome alignments",
+                  "transcriptome distance matrix",
                   "transcriptome index",
                   "transcriptome reference",
                   "varACCESS sequence designs",
@@ -88622,6 +88748,7 @@
                 "element quantifications",
                 "element to gene interactions",
                 "elements reference",
+                "embeddings",
                 "exclusion list",
                 "exon constraint",
                 "external source data",
@@ -88694,6 +88821,7 @@
                 "per cell type enrichment scores",
                 "per-barcode quality report",
                 "per-cell quality report",
+                "perturbation significance matrix",
                 "pipeline dashboard",
                 "pipeline parameters",
                 "plus strand modification state",
@@ -88754,6 +88882,7 @@
                 "spike-ins",
                 "spliceQTL",
                 "spot by gene matrix",
+                "target by target matrix",
                 "target transcripts",
                 "tissue positions",
                 "topologically associating domains",
@@ -88761,6 +88890,7 @@
                 "transcript identifier mapping",
                 "transcript quantifications",
                 "transcriptome alignments",
+                "transcriptome distance matrix",
                 "transcriptome index",
                 "transcriptome reference",
                 "varACCESS sequence designs",
@@ -88888,6 +89018,7 @@
                 "element quantifications",
                 "element to gene interactions",
                 "elements reference",
+                "embeddings",
                 "exclusion list",
                 "exon constraint",
                 "external source data",
@@ -88960,6 +89091,7 @@
                 "per cell type enrichment scores",
                 "per-barcode quality report",
                 "per-cell quality report",
+                "perturbation significance matrix",
                 "pipeline dashboard",
                 "pipeline parameters",
                 "plus strand modification state",
@@ -89020,6 +89152,7 @@
                 "spike-ins",
                 "spliceQTL",
                 "spot by gene matrix",
+                "target by target matrix",
                 "target transcripts",
                 "tissue positions",
                 "topologically associating domains",
@@ -89027,6 +89160,7 @@
                 "transcript identifier mapping",
                 "transcript quantifications",
                 "transcriptome alignments",
+                "transcriptome distance matrix",
                 "transcriptome index",
                 "transcriptome reference",
                 "varACCESS sequence designs",
@@ -96791,7 +96925,7 @@
           },
           "samples_class": {
             "title": "Samples Class",
-            "description": "Human-readable classification of samples associated with this analysis set.",
+            "description": "Human-readable classification of samples associated with this file set.",
             "type": "string"
           },
           "protocols": {
@@ -100599,6 +100733,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "samples_class": {
+            "title": "Samples Class",
+            "description": "Human-readable classification of samples associated with this file set.",
+            "type": "string"
           }
         }
       },
