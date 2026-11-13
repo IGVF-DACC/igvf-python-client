@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "IGVF Project API",
-    "version": "138.2.0"
+    "version": "138.3.0"
   },
   "servers": [
     {
@@ -9900,6 +9900,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -12416,6 +12417,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -14961,6 +14963,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -17536,6 +17539,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -20068,6 +20072,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -22631,6 +22636,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -27321,6 +27327,7 @@
                   "HiSeq 3000/4000 SR Cluster Kit",
                   "HiSeq 3000/4000 PE Cluster Kit",
                   "MiSeq Reagent Kit v2",
+                  "Illumina Single Cell CRISPR Prep, M1",
                   "NextSeq 500 Mid Output Kit",
                   "NextSeq 500 High Output Kit",
                   "NextSeq 500 Mid Output v2 Kit",
@@ -28147,6 +28154,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -30804,6 +30812,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -34170,6 +34179,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -37295,6 +37305,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -40011,6 +40022,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -43136,6 +43148,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -46255,6 +46268,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -49496,6 +49510,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -52683,6 +52698,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -56086,6 +56102,7 @@
                 "enum": [
                   "coding_variants",
                   "coding_variants_phenotypes",
+                  "coding_variants_proteins_proteins",
                   "coding_variants_proteins",
                   "complexes",
                   "complexes_proteins",
@@ -62313,6 +62330,7 @@
                   "HiSeq 3000/4000 SR Cluster Kit",
                   "HiSeq 3000/4000 PE Cluster Kit",
                   "MiSeq Reagent Kit v2",
+                  "Illumina Single Cell CRISPR Prep, M1",
                   "NextSeq 500 Mid Output Kit",
                   "NextSeq 500 High Output Kit",
                   "NextSeq 500 Mid Output v2 Kit",
@@ -91151,6 +91169,7 @@
               "enum": [
                 "coding_variants",
                 "coding_variants_phenotypes",
+                "coding_variants_proteins_proteins",
                 "coding_variants_proteins",
                 "complexes",
                 "complexes_proteins",
@@ -91694,6 +91713,7 @@
               "enum": [
                 "coding_variants",
                 "coding_variants_phenotypes",
+                "coding_variants_proteins_proteins",
                 "coding_variants_proteins",
                 "complexes",
                 "complexes_proteins",
@@ -92228,6 +92248,7 @@
               "enum": [
                 "coding_variants",
                 "coding_variants_phenotypes",
+                "coding_variants_proteins_proteins",
                 "coding_variants_proteins",
                 "complexes",
                 "complexes_proteins",
@@ -92790,6 +92811,7 @@
               "enum": [
                 "coding_variants",
                 "coding_variants_phenotypes",
+                "coding_variants_proteins_proteins",
                 "coding_variants_proteins",
                 "complexes",
                 "complexes_proteins",
@@ -93352,6 +93374,7 @@
               "enum": [
                 "coding_variants",
                 "coding_variants_phenotypes",
+                "coding_variants_proteins_proteins",
                 "coding_variants_proteins",
                 "complexes",
                 "complexes_proteins",
@@ -93909,6 +93932,7 @@
               "enum": [
                 "coding_variants",
                 "coding_variants_phenotypes",
+                "coding_variants_proteins_proteins",
                 "coding_variants_proteins",
                 "complexes",
                 "complexes_proteins",
@@ -95004,6 +95028,7 @@
               "HiSeq 3000/4000 SR Cluster Kit",
               "HiSeq 3000/4000 PE Cluster Kit",
               "MiSeq Reagent Kit v2",
+              "Illumina Single Cell CRISPR Prep, M1",
               "NextSeq 500 Mid Output Kit",
               "NextSeq 500 High Output Kit",
               "NextSeq 500 Mid Output v2 Kit",
@@ -95244,6 +95269,7 @@
               "enum": [
                 "coding_variants",
                 "coding_variants_phenotypes",
+                "coding_variants_proteins_proteins",
                 "coding_variants_proteins",
                 "complexes",
                 "complexes_proteins",
@@ -95824,6 +95850,7 @@
               "enum": [
                 "coding_variants",
                 "coding_variants_phenotypes",
+                "coding_variants_proteins_proteins",
                 "coding_variants_proteins",
                 "complexes",
                 "complexes_proteins",
@@ -102588,6 +102615,7 @@
                 "HiSeq 3000/4000 SR Cluster Kit",
                 "HiSeq 3000/4000 PE Cluster Kit",
                 "MiSeq Reagent Kit v2",
+                "Illumina Single Cell CRISPR Prep, M1",
                 "NextSeq 500 Mid Output Kit",
                 "NextSeq 500 High Output Kit",
                 "NextSeq 500 Mid Output v2 Kit",
